@@ -1,0 +1,110 @@
+﻿@using VirtualOffice.Web.Controllers
+@using VirtualOffice.Web.Infrastructure
+@using VirtualOffice.Web.Models
+@model VirtualOffice.Web.Models.UserReportViewModel
+
+@{
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+
+    var summarySalesOptions = Utils.GetSummarySalesOptions();
+}
+<div class="container select" id="main">
+    
+    <input type="hidden" id="optionSelected" value="6">
+    <h3 class="text-secundary">Summary Report</h3>
+    <hr />
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-2 col-sm-push-8 col-md-push-10" id="sidebar">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a data-toggle="collapse" data-target="#collapse2" class="expand">Filter Range <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                    </div>
+                    <div class="panel-body panel-collapse" id="collapse2">
+                        @*@Html.DropDownList("option",summarySalesOptions)*@
+                        
+                        <div class="radio">
+                            <label class="text-secundary">
+                                @Html.RadioButton("option", 12, false, new { onclick = "applyUserfilters(12)" }) Last 12 Months
+                            </label>
+                            <label class="text-secundary">
+                                @Html.RadioButton("option", 9, false, new { onclick = "applyUserfilters(9)" }) Last 9 Months
+                            </label>
+                            <label class="text-secundary">
+                                @Html.RadioButton("option", 6, true, new { onclick = "applyUserfilters(6)" }) Last 6 Months
+                            </label>
+                        </div>
+                        
+                        @*<div class="">
+                            <button type="button" class="btn btn-secundary" onclick="applyUserfilters()">Go!</button>
+                        </div>*@
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-10 col-sm-pull-4 col-md-pull-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="hidden-xs col-sm-9 col-md-9">
+                            <h4 class="">Your Results</h4>
+                        </div>
+                        @*<div class="col-xs-4 col-sm-3 col-md-3 text-right">
+                            <a class="btn btn-print btn-sm" id="PrintReportsBtn" onclick="PrintReport()"><span class="glyphicon glyphicon-print"></span> Print</a>
+                            <a id="exportButton" class="btn btn-print btn-sm" onclick="ExportReport()"><span class="glyphicon glyphicon-export"></span> Export</a>
+                        </div>*@
+                    </div>
+                </div>
+                <div class="panel-body-kendo">
+                    @(Html.Kendo().Grid<SalesSummary>()
+                          .Name("SummarySalesReport")
+                          .HtmlAttributes(new { @style = "text-align: left;" }).EnableCustomBinding(true)
+                          .Columns(col =>
+                          {
+                              col.Bound(c => c.Month).Width(100).ClientFooterTemplate("Totals: ");
+                              col.Bound(c => c.PrepaidSalesSummary).Title("Prepaid Sales").ClientFooterTemplate("#= kendo.toString(sum, 'c') #").ClientTemplate("<a href='/Reports/ExecuteSummaryReport?reportId=43&range=#=Month#'>$ #=PrepaidSalesSummary#</a>");
+                              col.Bound(c => c.MerchantServicesSalesSummary).Title("Merchant Services Commissions").ClientFooterTemplate("#= kendo.toString(sum, 'c') #").ClientTemplate(("<a href='/Reports/ExecuteSummaryReport?reportId=49&range=#=Month#'>$ #=MerchantServicesSalesSummary#</a>"));
+                              
+                          })
+                          .DataSource(ds => ds.Ajax()
+                                              .Aggregates(aggregates =>
+                                                         {
+                                                             aggregates.Add(c => c.PrepaidSalesSummary).Sum();
+                                                             aggregates.Add(c => c.MerchantServicesSalesSummary).Sum();
+
+                                                         })
+                              .Read(r => r.Action("GetSalesSummaryData", "Reports").Data("getSummaryReportParams"))
+                              .PageSize(15)
+                              .Model(model=> model.Id(a=> a.Month))
+                          )
+                          .Resizable(config => config.Columns(true))
+                          .Scrollable(scr => scr.Height("auto"))
+                          .AutoBind(true)
+                          )
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div> <!-- .container.select#main -->
+
+<script>
+
+    function getSummaryReportParams() {
+
+        var optionSelected = $("#optionSelected").val();
+        return {
+            option: optionSelected
+        };
+    }
+    
+    function applyUserfilters(value) {
+
+        $("#optionSelected").val(value);
+
+        $("#SummarySalesReport").data("kendoGrid").dataSource.read();
+    }
+
+</script>

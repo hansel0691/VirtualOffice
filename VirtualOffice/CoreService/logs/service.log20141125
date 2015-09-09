@@ -1,0 +1,92 @@
+11/25/2014 16:09:19: DEBUG 7  Generic Logger - Starting operation: User / TestGetUser
+11/25/2014 16:09:24: DEBUG 7  IInterceptor - Method GetUser called with parameters:
+11/25/2014 16:09:24: DEBUG 7  IInterceptor - userName: <3272a>
+11/25/2014 16:09:24: DEBUG 7  IInterceptor - password: <1010>
+11/25/2014 16:09:24: DEBUG 7  IInterceptor - 
+11/25/2014 16:09:24: DEBUG 7  IInterceptor - 
+11/25/2014 16:09:25: DEBUG 7  VirtualOfficeContext - Opened connection at 11/25/2014 4:09:25 PM -05:00
+
+11/25/2014 16:09:25: DEBUG 7  VirtualOfficeContext - get_user @userid, @passCredential
+11/25/2014 16:09:25: DEBUG 7  VirtualOfficeContext - 
+
+11/25/2014 16:09:25: DEBUG 7  VirtualOfficeContext - -- @userid: '3272a' (Type = String, IsNullable = false, Size = 5)
+
+11/25/2014 16:09:25: DEBUG 7  VirtualOfficeContext - -- @passCredential: '1010' (Type = String, IsNullable = false, Size = 4)
+
+11/25/2014 16:09:25: DEBUG 7  VirtualOfficeContext - -- Executing at 11/25/2014 4:09:25 PM -05:00
+
+11/25/2014 16:09:25: DEBUG 7  VirtualOfficeContext - -- Completed in 170 ms with result: SqlDataReader
+
+11/25/2014 16:09:25: DEBUG 7  VirtualOfficeContext - 
+
+11/25/2014 16:09:25: DEBUG 7  VirtualOfficeContext - Closed connection at 11/25/2014 4:09:25 PM -05:00
+
+11/25/2014 16:09:25: DEBUG 7  VirtualOfficeContext - Opened connection at 11/25/2014 4:09:25 PM -05:00
+
+11/25/2014 16:09:26: DEBUG 7  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ([Extent1].[RefId] = @p__linq__0) AND ( CAST( [Extent1].[Category] AS int) = @p__linq__1)
+11/25/2014 16:09:26: DEBUG 7  VirtualOfficeContext - 
+
+11/25/2014 16:09:26: DEBUG 7  VirtualOfficeContext - -- p__linq__0: '2272' (Type = Int32, IsNullable = false)
+
+11/25/2014 16:09:26: DEBUG 7  VirtualOfficeContext - -- p__linq__1: '3' (Type = Int32, IsNullable = false)
+
+11/25/2014 16:09:26: DEBUG 7  VirtualOfficeContext - -- Executing at 11/25/2014 4:09:26 PM -05:00
+
+11/25/2014 16:09:26: DEBUG 7  VirtualOfficeContext - -- Completed in 1 ms with result: SqlDataReader
+
+11/25/2014 16:09:26: DEBUG 7  VirtualOfficeContext - 
+
+11/25/2014 16:09:26: DEBUG 7  VirtualOfficeContext - Closed connection at 11/25/2014 4:09:26 PM -05:00
+
+11/25/2014 16:09:26: DEBUG 7  VirtualOfficeContext - Opened connection at 11/25/2014 4:09:26 PM -05:00
+
+11/25/2014 16:09:26: DEBUG 7  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE [Extent1].[RefId] = @p__linq__0
+11/25/2014 16:09:26: DEBUG 7  VirtualOfficeContext - 
+
+11/25/2014 16:09:26: DEBUG 7  VirtualOfficeContext - -- p__linq__0: '2272' (Type = Int32, IsNullable = false)
+
+11/25/2014 16:09:26: DEBUG 7  VirtualOfficeContext - -- Executing at 11/25/2014 4:09:26 PM -05:00
+
+11/25/2014 16:09:26: DEBUG 7  VirtualOfficeContext - -- Completed in 0 ms with result: SqlDataReader
+
+11/25/2014 16:09:26: DEBUG 7  VirtualOfficeContext - 
+
+11/25/2014 16:09:26: DEBUG 7  VirtualOfficeContext - Closed connection at 11/25/2014 4:09:26 PM -05:00
+
+11/25/2014 16:09:26: DEBUG 7  IInterceptor - Method: GetUser returned: 
+11/25/2014 16:09:26: DEBUG 7  IInterceptor - RefId : 2272 
+11/25/2014 16:09:26: DEBUG 7  IInterceptor - Category : AgentISO 
+11/25/2014 16:09:26: DEBUG 7  IInterceptor - BusinessName :  
+11/25/2014 16:09:26: DEBUG 7  IInterceptor - Address1 : 11270 SW 157 CT  
+11/25/2014 16:09:26: DEBUG 7  IInterceptor - Address2 :  
+11/25/2014 16:09:26: DEBUG 7  IInterceptor - ZipCode : 33196 
+11/25/2014 16:09:26: DEBUG 7  IInterceptor - State : FL 
+11/25/2014 16:09:26: DEBUG 7  IInterceptor - Email : eprepaid@comcast.net 
+11/25/2014 16:09:26: DEBUG 7  IInterceptor - Phone : 7864570621 
+11/25/2014 16:09:26: DEBUG 7  IInterceptor - Comission : 1858.8625 
+11/25/2014 16:09:26: DEBUG 7  IInterceptor - Name : ePREPAID NETWORK, INC. 
+11/25/2014 16:09:26: DEBUG 7  IInterceptor - City : MIAMI 
+11/25/2014 16:09:26: DEBUG 7  IInterceptor - Tokens : System.Collections.Generic.List`1[Domain.Models.HashKey] 
+11/25/2014 16:09:26: DEBUG 7  IInterceptor - Id : 18 
+11/25/2014 16:09:26: DEBUG 7  IInterceptor - RowVersion :  
+11/25/2014 16:09:26: DEBUG 7  IInterceptor - TimeSpan : 11/25/2014 4:09:25 PM 
+11/25/2014 16:09:26: DEBUG 7  IInterceptor - 
+11/25/2014 16:09:26: DEBUG 7  IInterceptor - 
+11/25/2014 16:09:51: DEBUG 7  Generic Logger - Ending operation: User / TestGetUser
+11/25/2014 16:09:51: INFO 7  Generic Logger - =========================================================================================================
+11/25/2014 16:09:51: INFO 7  Generic Logger - =========================================================================================================
+11/25/2014 16:09:52: INFO 7  Generic Logger - =========================================================================================================

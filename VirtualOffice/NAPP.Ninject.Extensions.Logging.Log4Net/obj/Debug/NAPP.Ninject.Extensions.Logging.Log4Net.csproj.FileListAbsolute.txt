@@ -1,0 +1,11 @@
+D:\Projects\Virtual Office\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\bin\Debug\NAPP.Ninject.Extensions.Logging.Log4Net.dll
+D:\Projects\Virtual Office\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\bin\Debug\NAPP.Ninject.Extensions.Logging.Log4Net.pdb
+D:\Projects\Virtual Office\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\bin\Debug\Domain.dll
+D:\Projects\Virtual Office\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\bin\Debug\log4net.dll
+D:\Projects\Virtual Office\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\bin\Debug\Ninject.dll
+D:\Projects\Virtual Office\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\bin\Debug\Domain.pdb
+D:\Projects\Virtual Office\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\bin\Debug\log4net.xml
+D:\Projects\Virtual Office\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\bin\Debug\Ninject.xml
+D:\Projects\Virtual Office\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\obj\Debug\NAPP.Ninject.Extensions.Logging.Log4Net.csprojResolveAssemblyReference.cache
+D:\Projects\Virtual Office\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\obj\Debug\NAPP.Ninject.Extensions.Logging.Log4Net.dll
+D:\Projects\Virtual Office\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\obj\Debug\NAPP.Ninject.Extensions.Logging.Log4Net.pdb

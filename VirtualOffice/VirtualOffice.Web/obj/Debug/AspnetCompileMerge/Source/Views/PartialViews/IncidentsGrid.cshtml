@@ -1,0 +1,29 @@
+﻿@using Domain.Models
+
+@(Html.Kendo().Grid<Incident>()
+                 .Name("incidents")
+                 .HtmlAttributes(new { @style = "text-align: left;" })
+                 .Resizable(config => config.Columns(true))
+              .Columns(columns =>
+                 {
+                     columns.Bound(p => p.AgentId);
+                     columns.Bound(p => p.CustomerId).Width(100);
+                     columns.Bound(p => p.MerchantName).Width(130);
+                     columns.Bound(p => p.Statuts).Width(130);
+                     columns.Bound(p => p.TerminalId).Width(130);
+                     columns.Bound(p => p.Type).Width(130);
+                     columns.Bound(p => p.TimeSpan).Width(130).Format("{0:MM/dd/yyyy hh:mm tt}");
+                     columns.Bound(p => p.DateClosed).Width(130).Format("{0:MM/dd/yyyy hh:mm tt}");
+                     columns.Bound(p => p.DateOpened).Width(130).Format("{0:MM/dd/yyyy hh:mm tt}");
+                 })
+                             .AutoBind(false)
+                             .Pageable()
+                             .Selectable()
+                             .Scrollable(s => s.Height("auto"))
+                             .DataSource(dataSource => dataSource
+                                 .Ajax()
+                                 .PageSize(7)
+                                 .Read(read => read.Action("GetIncidents", "MyProfile"))
+                             )
+)
+

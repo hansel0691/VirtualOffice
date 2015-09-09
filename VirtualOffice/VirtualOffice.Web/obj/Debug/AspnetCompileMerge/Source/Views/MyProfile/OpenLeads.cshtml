@@ -1,0 +1,129 @@
+﻿@using VirtualOffice.Web.Models
+@{
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+@Html.Partial("MyProfileNavigation")
+
+<div class="container">
+
+
+    <div class="container select" id="main">
+
+        <div class="page-header">
+            <h4>My Profile / Leads </h4>
+            <a class="btn text-primary pull-right" href="http://email.blackstoneonline.com"><span class="fa fa-envelope"></span> Check my email</a>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-3 col-md-2 col-sm-push-9 col-md-push-10" id="sidebar">
+                @*<div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#openLeads" onclick='changeMainLabelText("Open Leads", 0)'>
+                                Open Leads <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+                            </a>
+                        </div>
+
+                        <div class="panel-body collapse in" id="openLeads">
+                            <form class="" id="" action="">
+                                <div class="form-group">
+                                    <label for="startDate">Start Date: </label>
+                                    @(Html.Kendo().DatePicker().Name("openStartDate").Value(DateTime.Today.AddMonths(-1)))
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="endDate">End Date: </label>
+                                    @Html.Kendo().DatePicker().Name("openEndDate").Value(DateTime.Today)
+                                </div>
+
+                                <button type="button" class="btn btn-secundary" onclick="FilterOpenLeadsByDate()"> Go! </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#historicsLeads" onclick='changeMainLabelText("Historic Leads", 1)'>
+                                Historics Leads <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+                            </a>
+                        </div>
+                        
+                        
+
+                        <div class="panel-body collapse" id="historicsLeads">
+                            <form class="" id="" action="">
+                                <div class="form-group">
+                                    <label for="startDate">Start Date: </label>
+                                    @(Html.Kendo().DatePicker().Name("historicStartDate").Value(DateTime.Today.AddMonths(-1)))
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="endDate">End Date: </label>
+                                    @Html.Kendo().DatePicker().Name("historicEndDate").Value(DateTime.Today)
+                                </div>
+
+                                <button type="button" class="btn btn-secundary" onclick="FilterHistoricLeadsByDate()"> Go! </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>*@
+                 <!-- .panel-group -->
+                <p></p>
+                <button class="btn btn-secundary btn-block" onclick='changeMainLabelText("Open Leads", 0)'> Open Leads</button>
+                <button class="btn btn-secundary btn-block" onclick='changeMainLabelText("Historic Leads", 1)'> Historic Leads</button>
+                <a class="btn btn-secundary btn-block" href="@Url.Action("NewLead")"><span class="fa fa-plus"></span> New Lead</a>
+            </div>
+
+            <div class="col-xs-12 col-sm-8 col-md-10 col-sm-pull-4 col-md-pull-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 id="mainLabel">Open Leads</h4>
+                    </div>
+                    @Html.Partial("~/Views/PartialViews/LeadsGrid.cshtml", (int)LeadType.OpenOrInProccess)
+                </div>
+
+            </div>
+        </div> <!-- .row -->
+    </div> <!-- .container.select#main -->
+</div>
+
+<script>
+
+
+    function changeMainLabelText(text, leadType) {
+
+        $("#mainLabel").text(text);
+
+        if (leadType == 0)
+            FilterOpenLeadsByDate();
+        else
+            FilterHistoricLeadsByDate();
+    }
+
+    function FilterOpenLeadsByDate() {
+
+
+        var grid = $("#leads").data("kendoGrid");
+        grid.hideColumn("ClosedOn");
+
+        grid.dataSource.read(
+            { leadType: 0, startDate: $("#openStartDate").val(), endDate: $("#openEndDate").val() });
+
+    }
+
+    function FilterHistoricLeadsByDate() {
+
+        var grid = $("#leads").data("kendoGrid");
+        grid.showColumn("ClosedOn");
+
+        grid.dataSource.read(
+        { leadType: 1, startDate: $("#historicStartDate").val(), endDate: $("#historicEndDate").val() });
+    }
+    $(document).ready(function () {
+
+        $('#leadsMenuItem').addClass('active');
+
+        FilterOpenLeadsByDate();
+
+    });
+</script>

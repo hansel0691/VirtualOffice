@@ -1,0 +1,135 @@
+06/09/2015 15:12:00: DEBUG 10  Generic Logger - Starting operation: User / GetUserWithToken
+06/09/2015 15:12:00: DEBUG 10  IInterceptor - Method GetUserWithKey called with parameters:
+06/09/2015 15:12:00: DEBUG 10  IInterceptor - key: <73f15251-7d63-4fb5-8835-654accb90591>
+06/09/2015 15:12:00: DEBUG 10  IInterceptor - 
+06/09/2015 15:12:00: DEBUG 10  IInterceptor - 
+06/09/2015 15:12:00: DEBUG 10  VirtualOfficeContext - Opened connection at 6/9/2015 3:12:00 PM -04:00
+
+06/09/2015 15:12:01: DEBUG 10  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Hash] AS [Hash], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[HashKeys] AS [Extent1]
+    WHERE ([Extent1].[Hash] = @p__linq__0) OR (([Extent1].[Hash] IS NULL) AND (@p__linq__0 IS NULL))
+06/09/2015 15:12:01: DEBUG 10  VirtualOfficeContext - 
+
+06/09/2015 15:12:01: DEBUG 10  VirtualOfficeContext - -- p__linq__0: '73f15251-7d63-4fb5-8835-654accb90591' (Type = String, Size = 4000)
+
+06/09/2015 15:12:01: DEBUG 10  VirtualOfficeContext - -- Executing at 6/9/2015 3:12:01 PM -04:00
+
+06/09/2015 15:12:01: DEBUG 10  VirtualOfficeContext - -- Completed in 15 ms with result: SqlDataReader
+
+06/09/2015 15:12:01: DEBUG 10  VirtualOfficeContext - 
+
+06/09/2015 15:12:01: DEBUG 10  VirtualOfficeContext - Closed connection at 6/9/2015 3:12:01 PM -04:00
+
+06/09/2015 15:12:01: DEBUG 10  VirtualOfficeContext - Opened connection at 6/9/2015 3:12:01 PM -04:00
+
+06/09/2015 15:12:01: DEBUG 10  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE [Extent1].[Id] = @EntityKeyValue1
+06/09/2015 15:12:01: DEBUG 10  VirtualOfficeContext - 
+
+06/09/2015 15:12:01: DEBUG 10  VirtualOfficeContext - -- EntityKeyValue1: '763' (Type = Int32, IsNullable = false)
+
+06/09/2015 15:12:01: DEBUG 10  VirtualOfficeContext - -- Executing at 6/9/2015 3:12:01 PM -04:00
+
+06/09/2015 15:12:01: DEBUG 10  VirtualOfficeContext - -- Completed in 0 ms with result: SqlDataReader
+
+06/09/2015 15:12:01: DEBUG 10  VirtualOfficeContext - 
+
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - Closed connection at 6/9/2015 3:12:02 PM -04:00
+
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - Opened connection at 6/9/2015 3:12:02 PM -04:00
+
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - get_user @userid, @passCredential
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - 
+
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - -- @userid: '1912' (Type = String, IsNullable = false, Size = 4)
+
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - -- @passCredential: 'EAA6DD0D-CE53-445E-976E-363814FCC77F' (Type = String, IsNullable = false, Size = 36)
+
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - -- Executing at 6/9/2015 3:12:02 PM -04:00
+
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - -- Completed in 60 ms with result: SqlDataReader
+
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - 
+
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - Closed connection at 6/9/2015 3:12:02 PM -04:00
+
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - Opened connection at 6/9/2015 3:12:02 PM -04:00
+
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ([Extent1].[RefId] = @p__linq__0) AND ( CAST( [Extent1].[Category] AS int) = @p__linq__1)
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - 
+
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - -- p__linq__0: '1912' (Type = Int32, IsNullable = false)
+
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - -- p__linq__1: '3' (Type = Int32, IsNullable = false)
+
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - -- Executing at 6/9/2015 3:12:02 PM -04:00
+
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - -- Completed in 1 ms with result: SqlDataReader
+
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - 
+
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - Closed connection at 6/9/2015 3:12:02 PM -04:00
+
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - Opened connection at 6/9/2015 3:12:02 PM -04:00
+
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE [Extent1].[RefId] = @p__linq__0
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - 
+
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - -- p__linq__0: '1912' (Type = Int32, IsNullable = false)
+
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - -- Executing at 6/9/2015 3:12:02 PM -04:00
+
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - -- Completed in 0 ms with result: SqlDataReader
+
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - 
+
+06/09/2015 15:12:02: DEBUG 10  VirtualOfficeContext - Closed connection at 6/9/2015 3:12:02 PM -04:00
+
+06/09/2015 15:12:02: DEBUG 10  IInterceptor - Method: GetUserWithKey returned: 
+06/09/2015 15:12:02: DEBUG 10  IInterceptor - RefId : 1912 
+06/09/2015 15:12:02: DEBUG 10  IInterceptor - Category : AgentISO 
+06/09/2015 15:12:02: DEBUG 10  IInterceptor - BusinessName :  
+06/09/2015 15:12:02: DEBUG 10  IInterceptor - Address1 :  
+06/09/2015 15:12:02: DEBUG 10  IInterceptor - Address2 :  
+06/09/2015 15:12:02: DEBUG 10  IInterceptor - ZipCode :  
+06/09/2015 15:12:02: DEBUG 10  IInterceptor - State : FL 
+06/09/2015 15:12:02: DEBUG 10  IInterceptor - Email : kdiblin@hotmail.com 
+06/09/2015 15:12:02: DEBUG 10  IInterceptor - Phone : 7862531656 
+06/09/2015 15:12:02: DEBUG 10  IInterceptor - Comission : 934.6436 
+06/09/2015 15:12:02: DEBUG 10  IInterceptor - Name : NO LIMITS PREPAID INC 
+06/09/2015 15:12:02: DEBUG 10  IInterceptor - City :  
+06/09/2015 15:12:02: DEBUG 10  IInterceptor - Tokens : System.Collections.Generic.List`1[Domain.Models.HashKey] 
+06/09/2015 15:12:02: DEBUG 10  IInterceptor - Id : 763 
+06/09/2015 15:12:02: DEBUG 10  IInterceptor - RowVersion :  
+06/09/2015 15:12:02: DEBUG 10  IInterceptor - TimeSpan : 6/9/2015 3:12:02 PM 
+06/09/2015 15:12:02: DEBUG 10  IInterceptor - 
+06/09/2015 15:12:02: DEBUG 10  IInterceptor - 
+06/09/2015 15:12:02: DEBUG 10  Generic Logger - Ending operation: User / GetUserWithToken
+06/09/2015 15:12:02: INFO 10  Generic Logger - =========================================================================================================
+06/09/2015 15:12:02: INFO 10  Generic Logger - =========================================================================================================
+06/09/2015 15:12:02: INFO 10  Generic Logger - =========================================================================================================

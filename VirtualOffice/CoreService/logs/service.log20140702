@@ -1,0 +1,2576 @@
+07/02/2014 15:30:43: DEBUG 16  Generic Logger - Starting operation: Report / TestRunUserReport
+07/02/2014 15:30:45: DEBUG 16  IInterceptor - Method Run called with parameters:
+07/02/2014 15:30:45: DEBUG 16  IInterceptor - userId: <2272>
+07/02/2014 15:30:45: DEBUG 16  IInterceptor - reportId: <30>
+07/02/2014 15:30:45: DEBUG 16  IInterceptor - args: <System.Collections.Generic.List`1[Domain.Models.Argument]>
+07/02/2014 15:30:45: DEBUG 16  IInterceptor - 
+07/02/2014 15:30:45: DEBUG 16  IInterceptor - 
+07/02/2014 15:30:46: DEBUG 16  IInterceptor - Method Run EXCEPTION occured:
+07/02/2014 15:30:46: DEBUG 16  IInterceptor - System.NotSupportedException: The LINQ expression node type 'ArrayIndex' is not supported in LINQ to Entities.
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.NotSupportedTranslator.Translate(ExpressionConverter parent, Expression linq)
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.UnaryTranslator.TypedTranslate(ExpressionConverter parent, UnaryExpression linq)
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.EqualsTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at CoreData.Concrete.Repository`1.Get(Expression`1 filter, Func`2 orderBy, String includeProperties) in x:\Projects\Virtual Office\VirtualOffice\CoreData\Concrete\Repository.cs:line 44
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at CoreData.Concrete.SqlUserRepository.GetByID(Object[] ids) in x:\Projects\Virtual Office\VirtualOffice\CoreData\Concrete\SqlUserRepository.cs:line 58
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at Services.Concrete.ReportService.Run(Int32 userId, Int32 reportId, IEnumerable`1 args) in x:\Projects\Virtual Office\VirtualOffice\Services\Concrete\ReportService.cs:line 51
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at (Object , Object[] )
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at Ninject.Extensions.Interception.Injection.Dynamic.DynamicMethodInjector.Invoke(Object target, Object[] arguments)
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at Ninject.Extensions.Interception.Invocation.Invocation.CallTargetMethod()
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at Ninject.Extensions.Interception.Invocation.InvocationBase.Proceed()
+07/02/2014 15:30:46: DEBUG 16  IInterceptor -    at CoreService.Interceptors.LoggingInterceptor.Intercept(IInvocation invocation) in x:\Projects\Virtual Office\VirtualOffice\CoreService\Interceptors\LoggingInterceptor.cs:line 39
+07/02/2014 15:30:46: DEBUG 16  IInterceptor - 
+07/02/2014 15:31:58: DEBUG 10  Generic Logger - Starting operation: Report / TestRunUserReport
+07/02/2014 15:32:04: DEBUG 10  IInterceptor - Method Run called with parameters:
+07/02/2014 15:32:04: DEBUG 10  IInterceptor - userId: <2272>
+07/02/2014 15:32:04: DEBUG 10  IInterceptor - reportId: <30>
+07/02/2014 15:32:04: DEBUG 10  IInterceptor - args: <System.Collections.Generic.List`1[Domain.Models.Argument]>
+07/02/2014 15:32:04: DEBUG 10  IInterceptor - 
+07/02/2014 15:32:04: DEBUG 10  IInterceptor - 
+07/02/2014 15:32:58: DEBUG 7  Generic Logger - Starting operation: Report / TestRunUserReport
+07/02/2014 15:33:00: DEBUG 7  IInterceptor - Method Run called with parameters:
+07/02/2014 15:33:00: DEBUG 7  IInterceptor - userId: <2272>
+07/02/2014 15:33:00: DEBUG 7  IInterceptor - reportId: <30>
+07/02/2014 15:33:00: DEBUG 7  IInterceptor - args: <System.Collections.Generic.List`1[Domain.Models.Argument]>
+07/02/2014 15:33:00: DEBUG 7  IInterceptor - 
+07/02/2014 15:33:00: DEBUG 7  IInterceptor - 
+07/02/2014 15:33:21: DEBUG 7  IInterceptor - Method Run EXCEPTION occured:
+07/02/2014 15:33:21: DEBUG 7  IInterceptor - Domain.Models.Exceptions.ReportExecuterException: Report not found
+07/02/2014 15:33:21: DEBUG 7  IInterceptor -    at Services.Concrete.ReportService.Run(Int32 userId, Int32 reportId, IEnumerable`1 args) in x:\Projects\Virtual Office\VirtualOffice\Services\Concrete\ReportService.cs:line 62
+07/02/2014 15:33:21: DEBUG 7  IInterceptor -    at (Object , Object[] )
+07/02/2014 15:33:21: DEBUG 7  IInterceptor -    at Ninject.Extensions.Interception.Injection.Dynamic.DynamicMethodInjector.Invoke(Object target, Object[] arguments)
+07/02/2014 15:33:21: DEBUG 7  IInterceptor -    at Ninject.Extensions.Interception.Invocation.Invocation.CallTargetMethod()
+07/02/2014 15:33:21: DEBUG 7  IInterceptor -    at Ninject.Extensions.Interception.Invocation.InvocationBase.Proceed()
+07/02/2014 15:33:21: DEBUG 7  IInterceptor -    at CoreService.Interceptors.LoggingInterceptor.Intercept(IInvocation invocation) in x:\Projects\Virtual Office\VirtualOffice\CoreService\Interceptors\LoggingInterceptor.cs:line 39
+07/02/2014 15:33:21: DEBUG 7  IInterceptor - 
+07/02/2014 15:33:21: ERROR 7  ReportController - Error
+Domain.Models.Exceptions.ReportExecuterException: Report not found
+   at Services.Concrete.ReportService.Run(Int32 userId, Int32 reportId, IEnumerable`1 args) in x:\Projects\Virtual Office\VirtualOffice\Services\Concrete\ReportService.cs:line 62
+   at (Object , Object[] )
+   at Ninject.Extensions.Interception.Injection.Dynamic.DynamicMethodInjector.Invoke(Object target, Object[] arguments)
+   at Ninject.Extensions.Interception.Invocation.Invocation.CallTargetMethod()
+   at Ninject.Extensions.Interception.Invocation.InvocationBase.Proceed()
+   at CoreService.Interceptors.LoggingInterceptor.Intercept(IInvocation invocation) in x:\Projects\Virtual Office\VirtualOffice\CoreService\Interceptors\LoggingInterceptor.cs:line 55
+   at Ninject.Extensions.Interception.Invocation.InvocationBase.Proceed()
+   at Ninject.Extensions.Interception.Wrapper.LinFuWrapper.LinFu.DynamicProxy.IInterceptor.Intercept(InvocationInfo info)
+   at ObjectProxy.Run(Int32 , Int32 , IEnumerable`1 )
+   at CoreService.Controllers.ReportController.RunUserReport(UserReportInfoModel userReportInfo) in x:\Projects\Virtual Office\VirtualOffice\CoreService\Controllers\ReportController.cs:line 58
+07/02/2014 15:33:21: DEBUG 7  Generic Logger - Ending operation: Report / TestRunUserReport
+07/02/2014 15:33:21: INFO 7  Generic Logger - =========================================================================================================
+07/02/2014 15:33:21: INFO 7  Generic Logger - =========================================================================================================
+07/02/2014 15:33:21: INFO 7  Generic Logger - =========================================================================================================
+07/02/2014 15:33:44: DEBUG 11  Generic Logger - Starting operation: Report / TestRunUserReport
+07/02/2014 15:33:48: DEBUG 11  IInterceptor - Method Run called with parameters:
+07/02/2014 15:33:48: DEBUG 11  IInterceptor - userId: <2272>
+07/02/2014 15:33:48: DEBUG 11  IInterceptor - reportId: <30>
+07/02/2014 15:33:48: DEBUG 11  IInterceptor - args: <System.Collections.Generic.List`1[Domain.Models.Argument]>
+07/02/2014 15:33:48: DEBUG 11  IInterceptor - 
+07/02/2014 15:33:48: DEBUG 11  IInterceptor - 
+07/02/2014 15:34:19: DEBUG 7  Generic Logger - Starting operation: Report / TestRunUserReport
+07/02/2014 15:34:20: DEBUG 7  IInterceptor - Method Run called with parameters:
+07/02/2014 15:34:20: DEBUG 7  IInterceptor - userId: <2272>
+07/02/2014 15:34:20: DEBUG 7  IInterceptor - reportId: <30>
+07/02/2014 15:34:20: DEBUG 7  IInterceptor - args: <System.Collections.Generic.List`1[Domain.Models.Argument]>
+07/02/2014 15:34:20: DEBUG 7  IInterceptor - 
+07/02/2014 15:34:20: DEBUG 7  IInterceptor - 
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - Method Execute called with parameters:
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - userReport: <Report : ParentReports : System.Collections.Generic.HashSet`1[Domain.Models.ReportToReportRel] 
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - PredefinedFilters : System.Collections.Generic.HashSet`1[Domain.Models.ReportPredefinedFilterRel] 
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - SubReports : System.Collections.Generic.HashSet`1[Domain.Models.ReportToReportRel] 
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - UserFilters : System.Collections.Generic.HashSet`1[Domain.Models.ReportUserFilterRel] 
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - Name : First Report1 
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - Query : sp_acc_sales_report_by_product 
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - Output : Agent ID,Agent name 
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - DefaultOutput :  
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - ParamsDefaultConfiguration : net10,,,,, 
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - IsEnable : True 
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - Id : 30 
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - TimeSpan : 7/2/2014 2:13:56 PM 
+07/02/2014 15:34:28: DEBUG 7  IInterceptor -  
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - User : RefId : 2272 
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - Category : Agent 
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - Id : 9 
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - TimeSpan : 7/1/2014 1:16:35 PM 
+07/02/2014 15:34:28: DEBUG 7  IInterceptor -  
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - UserId : 9 
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - ReportId : 30 
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - Output : Agent ID,Agent name 
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - Name :  
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - TimeSpan : 7/2/2014 2:13:56 PM 
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - >
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - args: <System.Collections.Generic.List`1[Domain.Models.Argument]>
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - 
+07/02/2014 15:34:28: DEBUG 7  IInterceptor - 
+07/02/2014 15:34:40: DEBUG 7  IInterceptor - Method Parse called with parameters:
+07/02/2014 15:34:40: DEBUG 7  IInterceptor - output: <Agent ID,Agent name>
+07/02/2014 15:34:40: DEBUG 7  IInterceptor - 
+07/02/2014 15:34:40: DEBUG 7  IInterceptor - 
+07/02/2014 15:34:40: DEBUG 7  IInterceptor - Method: Parse returned: 
+07/02/2014 15:34:40: DEBUG 7  IInterceptor - System.String[]
+07/02/2014 15:34:40: DEBUG 7  IInterceptor - 
+07/02/2014 15:34:40: DEBUG 7  IInterceptor - Method Parse called with parameters:
+07/02/2014 15:34:40: DEBUG 7  IInterceptor - output: <Agent ID,Agent name>
+07/02/2014 15:34:40: DEBUG 7  IInterceptor - 
+07/02/2014 15:34:40: DEBUG 7  IInterceptor - 
+07/02/2014 15:34:40: DEBUG 7  IInterceptor - Method: Parse returned: 
+07/02/2014 15:34:40: DEBUG 7  IInterceptor - System.String[]
+07/02/2014 15:34:40: DEBUG 7  IInterceptor - 
+07/02/2014 15:34:40: DEBUG 7  IInterceptor - Method: Execute returned: 
+07/02/2014 15:34:40: DEBUG 7  IInterceptor - Services.Concrete.ReportExecuter+<Project>d__0
+07/02/2014 15:34:40: DEBUG 7  IInterceptor - 
+07/02/2014 15:34:40: DEBUG 7  IInterceptor - Method: Run returned: 
+07/02/2014 15:34:40: DEBUG 7  IInterceptor - Services.Concrete.ReportExecuter+<Project>d__0
+07/02/2014 15:34:40: DEBUG 7  IInterceptor - 
+07/02/2014 15:34:40: DEBUG 7  Generic Logger - Ending operation: Report / TestRunUserReport
+07/02/2014 15:34:40: INFO 7  Generic Logger - =========================================================================================================
+07/02/2014 15:34:40: INFO 7  Generic Logger - =========================================================================================================
+07/02/2014 15:34:40: INFO 7  Generic Logger - =========================================================================================================
+07/02/2014 15:41:30: DEBUG 6  Generic Logger - Starting operation: Report / TestRunUserReport
+07/02/2014 15:41:33: DEBUG 6  IInterceptor - Method Run called with parameters:
+07/02/2014 15:41:33: DEBUG 6  IInterceptor - userId: <2272>
+07/02/2014 15:41:33: DEBUG 6  IInterceptor - reportId: <30>
+07/02/2014 15:41:33: DEBUG 6  IInterceptor - args: <System.Collections.Generic.List`1[Domain.Models.Argument]>
+07/02/2014 15:41:33: DEBUG 6  IInterceptor - 
+07/02/2014 15:41:33: DEBUG 6  IInterceptor - 
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - Method Execute called with parameters:
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - userReport: <Report : ParentReports : System.Collections.Generic.HashSet`1[Domain.Models.ReportToReportRel] 
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - PredefinedFilters : System.Collections.Generic.HashSet`1[Domain.Models.ReportPredefinedFilterRel] 
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - SubReports : System.Collections.Generic.HashSet`1[Domain.Models.ReportToReportRel] 
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - UserFilters : System.Collections.Generic.HashSet`1[Domain.Models.ReportUserFilterRel] 
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - Name : First Report2 
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - Query : sp_acc_sales_report_by_product 
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - Output : Agent ID,Agent name,Product Description,Carrier Name,Vendor Name 
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - DefaultOutput :  
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - ParamsDefaultConfiguration : net10,,,,, 
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - IsEnable : True 
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - Id : 30 
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - TimeSpan : 7/2/2014 3:38:23 PM 
+07/02/2014 15:42:50: DEBUG 6  IInterceptor -  
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - User : RefId : 2272 
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - Category : Agent 
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - Id : 9 
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - TimeSpan : 7/1/2014 1:16:35 PM 
+07/02/2014 15:42:50: DEBUG 6  IInterceptor -  
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - UserId : 9 
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - ReportId : 30 
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - Output : Agent ID,Agent name,Product Description,Carrier Name,Vendor Name 
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - Name :  
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - TimeSpan : 7/2/2014 3:38:25 PM 
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - >
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - args: <System.Collections.Generic.List`1[Domain.Models.Argument]>
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - 
+07/02/2014 15:42:50: DEBUG 6  IInterceptor - 
+07/02/2014 15:42:53: DEBUG 6  IInterceptor - Method Parse called with parameters:
+07/02/2014 15:42:53: DEBUG 6  IInterceptor - output: <Agent ID,Agent name,Product Description,Carrier Name,Vendor Name>
+07/02/2014 15:42:53: DEBUG 6  IInterceptor - 
+07/02/2014 15:42:53: DEBUG 6  IInterceptor - 
+07/02/2014 15:42:53: DEBUG 6  IInterceptor - Method: Parse returned: 
+07/02/2014 15:42:53: DEBUG 6  IInterceptor - System.String[]
+07/02/2014 15:42:53: DEBUG 6  IInterceptor - 
+07/02/2014 15:42:53: DEBUG 6  IInterceptor - Method Parse called with parameters:
+07/02/2014 15:42:53: DEBUG 6  IInterceptor - output: <Agent ID,Agent name,Product Description,Carrier Name,Vendor Name>
+07/02/2014 15:42:53: DEBUG 6  IInterceptor - 
+07/02/2014 15:42:53: DEBUG 6  IInterceptor - 
+07/02/2014 15:42:53: DEBUG 6  IInterceptor - Method: Parse returned: 
+07/02/2014 15:42:53: DEBUG 6  IInterceptor - System.String[]
+07/02/2014 15:42:53: DEBUG 6  IInterceptor - 
+07/02/2014 15:42:53: DEBUG 6  IInterceptor - Method: Execute returned: 
+07/02/2014 15:42:53: DEBUG 6  IInterceptor - Services.Concrete.ReportExecuter+<Project>d__0
+07/02/2014 15:42:53: DEBUG 6  IInterceptor - 
+07/02/2014 15:42:53: DEBUG 6  IInterceptor - Method: Run returned: 
+07/02/2014 15:42:53: DEBUG 6  IInterceptor - Services.Concrete.ReportExecuter+<Project>d__0
+07/02/2014 15:42:53: DEBUG 6  IInterceptor - 
+07/02/2014 15:42:53: DEBUG 6  Generic Logger - Ending operation: Report / TestRunUserReport
+07/02/2014 15:42:53: INFO 6  Generic Logger - =========================================================================================================
+07/02/2014 15:42:53: INFO 6  Generic Logger - =========================================================================================================
+07/02/2014 15:42:53: INFO 6  Generic Logger - =========================================================================================================
+07/02/2014 16:04:47: DEBUG 7  Generic Logger - Starting operation: Report / TestRunUserReport
+07/02/2014 16:04:47: DEBUG 7  IInterceptor - Method Run called with parameters:
+07/02/2014 16:04:47: DEBUG 7  IInterceptor - userId: <2272>
+07/02/2014 16:04:47: DEBUG 7  IInterceptor - reportId: <30>
+07/02/2014 16:04:47: DEBUG 7  IInterceptor - args: <System.Collections.Generic.List`1[Domain.Models.Argument]>
+07/02/2014 16:04:47: DEBUG 7  IInterceptor - 
+07/02/2014 16:04:47: DEBUG 7  IInterceptor - 
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - Method Execute called with parameters:
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - userReport: <Report : ParentReports : System.Collections.Generic.HashSet`1[Domain.Models.ReportToReportRel] 
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - PredefinedFilters : System.Collections.Generic.HashSet`1[Domain.Models.ReportPredefinedFilterRel] 
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - SubReports : System.Collections.Generic.HashSet`1[Domain.Models.ReportToReportRel] 
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - UserFilters : System.Collections.Generic.HashSet`1[Domain.Models.ReportUserFilterRel] 
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - Name : First Report4 
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - Query : sp_acc_sales_report_by_product 
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - Output : Agent ID,Agent name,Product Description,Carrier Name,Vendor Name,Qty Sold,Total Sales 
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - DefaultOutput :  
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - ParamsDefaultConfiguration : net10,,,,, 
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - IsEnable : True 
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - Id : 30 
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - TimeSpan : 7/2/2014 3:51:50 PM 
+07/02/2014 16:04:54: DEBUG 7  IInterceptor -  
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - User : RefId : 2272 
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - Category : Agent 
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - Id : 9 
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - TimeSpan : 7/1/2014 1:16:35 PM 
+07/02/2014 16:04:54: DEBUG 7  IInterceptor -  
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - UserId : 9 
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - ReportId : 30 
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - Output : Agent ID,Agent name,Product Description,Carrier Name,Vendor Name,Qty Sold,Total Sales 
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - Name :  
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - TimeSpan : 7/2/2014 3:51:51 PM 
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - >
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - args: <System.Collections.Generic.List`1[Domain.Models.Argument]>
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - 
+07/02/2014 16:04:54: DEBUG 7  IInterceptor - 
+07/02/2014 16:05:01: DEBUG 7  IInterceptor - Method Parse called with parameters:
+07/02/2014 16:05:01: DEBUG 7  IInterceptor - output: <Agent ID,Agent name,Product Description,Carrier Name,Vendor Name,Qty Sold,Total Sales>
+07/02/2014 16:05:01: DEBUG 7  IInterceptor - 
+07/02/2014 16:05:01: DEBUG 7  IInterceptor - 
+07/02/2014 16:05:01: DEBUG 7  IInterceptor - Method: Parse returned: 
+07/02/2014 16:05:01: DEBUG 7  IInterceptor - System.String[]
+07/02/2014 16:05:01: DEBUG 7  IInterceptor - 
+07/02/2014 16:05:01: DEBUG 7  IInterceptor - Method Parse called with parameters:
+07/02/2014 16:05:01: DEBUG 7  IInterceptor - output: <Agent ID,Agent name,Product Description,Carrier Name,Vendor Name,Qty Sold,Total Sales>
+07/02/2014 16:05:01: DEBUG 7  IInterceptor - 
+07/02/2014 16:05:01: DEBUG 7  IInterceptor - 
+07/02/2014 16:05:01: DEBUG 7  IInterceptor - Method: Parse returned: 
+07/02/2014 16:05:01: DEBUG 7  IInterceptor - System.String[]
+07/02/2014 16:05:01: DEBUG 7  IInterceptor - 
+07/02/2014 16:05:01: DEBUG 7  IInterceptor - Method: Execute returned: 
+07/02/2014 16:05:01: DEBUG 7  IInterceptor - Services.Concrete.ReportExecuter+<Project>d__0
+07/02/2014 16:05:01: DEBUG 7  IInterceptor - 
+07/02/2014 16:05:01: DEBUG 7  IInterceptor - Method: Run returned: 
+07/02/2014 16:05:01: DEBUG 7  IInterceptor - Services.Concrete.ReportExecuter+<Project>d__0
+07/02/2014 16:05:01: DEBUG 7  IInterceptor - 
+07/02/2014 16:05:01: DEBUG 7  Generic Logger - Ending operation: Report / TestRunUserReport
+07/02/2014 16:05:01: INFO 7  Generic Logger - =========================================================================================================
+07/02/2014 16:05:01: INFO 7  Generic Logger - =========================================================================================================
+07/02/2014 16:05:01: INFO 7  Generic Logger - =========================================================================================================
+07/02/2014 16:42:34: DEBUG 6  Generic Logger - Starting operation: Token / TestPostToken
+07/02/2014 16:42:34: DEBUG 6  TokenController - Logging something
+07/02/2014 16:42:34: DEBUG 6  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:34: DEBUG 6  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:34: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:34: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Password : abc123 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Id : 2 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Password : abc123 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Id : 2 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - >
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - key: <abc>
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Password : abc123 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Id : 2 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Password : abc123 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Id : 2 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - >
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - key: <abc>
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Method GetNewTokenForUser called with parameters:
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Password : abc123 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Id : 2 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - >
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - key: <asdfasdfadfa>
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - data: <anicolasppabc12366792865820688427>
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - UaEa1FgTWUCGTNAqSoxf7iuyCb27uIUiDgmspbd7Mx0=
+07/02/2014 16:42:35: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:39: DEBUG 6  IInterceptor - Method: GetNewTokenForUser returned: 
+07/02/2014 16:42:39: DEBUG 6  IInterceptor - Value : UaEa1FgTWUCGTNAqSoxf7iuyCb27uIUiDgmspbd7Mx0= 
+07/02/2014 16:42:39: DEBUG 6  IInterceptor - ApiUserId : 2 
+07/02/2014 16:42:39: DEBUG 6  IInterceptor - ApiUser : Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:39: DEBUG 6  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:39: DEBUG 6  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:39: DEBUG 6  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:39: DEBUG 6  IInterceptor - Password : abc123 
+07/02/2014 16:42:39: DEBUG 6  IInterceptor - Id : 2 
+07/02/2014 16:42:39: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:39: DEBUG 6  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:39: DEBUG 6  IInterceptor -  
+07/02/2014 16:42:39: DEBUG 6  IInterceptor - Expiration : 7/2/2014 4:47:35 PM 
+07/02/2014 16:42:39: DEBUG 6  IInterceptor - IsActive : True 
+07/02/2014 16:42:39: DEBUG 6  IInterceptor - Id : 0 
+07/02/2014 16:42:39: DEBUG 6  IInterceptor - RowVersion :  
+07/02/2014 16:42:39: DEBUG 6  IInterceptor - TimeSpan : 7/2/2014 4:42:35 PM 
+07/02/2014 16:42:39: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:39: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:39: DEBUG 6  Generic Logger - Ending operation: Token / TestPostToken
+07/02/2014 16:42:39: INFO 6  Generic Logger - =========================================================================================================
+07/02/2014 16:42:39: INFO 6  Generic Logger - =========================================================================================================
+07/02/2014 16:42:39: INFO 6  Generic Logger - =========================================================================================================
+07/02/2014 16:42:41: DEBUG 9  Generic Logger - Starting operation: Token / TestPostToken
+07/02/2014 16:42:41: DEBUG 9  TokenController - Logging something
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Password : abc123 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Id : 2 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Password : abc123 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Id : 2 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - >
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - key: <abc>
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Password : abc123 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Id : 2 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Password : abc123 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Id : 2 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - >
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - key: <abc>
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Method GetNewTokenForUser called with parameters:
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Password : abc123 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Id : 2 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - >
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - key: <asdfasdfadfa>
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - data: <anicolasppabc123248546611597207486>
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - olC5HKtqlkvX9ZmutD7uPYlsDXjMowkXB0aq1h0F618=
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Method: GetNewTokenForUser returned: 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Value : olC5HKtqlkvX9ZmutD7uPYlsDXjMowkXB0aq1h0F618= 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - ApiUserId : 2 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - ApiUser : Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Password : abc123 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Id : 2 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor -  
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Expiration : 7/2/2014 4:47:41 PM 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - IsActive : True 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - Id : 0 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - RowVersion :  
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - TimeSpan : 7/2/2014 4:42:41 PM 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:41: DEBUG 9  Generic Logger - Ending operation: Token / TestPostToken
+07/02/2014 16:42:41: INFO 9  Generic Logger - =========================================================================================================
+07/02/2014 16:42:41: INFO 9  Generic Logger - =========================================================================================================
+07/02/2014 16:42:41: INFO 9  Generic Logger - =========================================================================================================
+07/02/2014 16:42:42: DEBUG 8  Generic Logger - Starting operation: Token / TestPostToken
+07/02/2014 16:42:42: DEBUG 8  TokenController - Logging something
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Password : abc123 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Id : 2 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Password : abc123 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Id : 2 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - >
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - key: <abc>
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Password : abc123 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Id : 2 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Password : abc123 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Id : 2 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - >
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - key: <abc>
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Method GetNewTokenForUser called with parameters:
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Password : abc123 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Id : 2 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - >
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - key: <asdfasdfadfa>
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - data: <anicolasppabc123470223121839677513>
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - wm/MSrfTxf9fdkOqoJKrLQ4NrLaAGkS+6qCddnNcKmo=
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Method: GetNewTokenForUser returned: 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Value : wm/MSrfTxf9fdkOqoJKrLQ4NrLaAGkS+6qCddnNcKmo= 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - ApiUserId : 2 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - ApiUser : Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Password : abc123 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Id : 2 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor -  
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Expiration : 7/2/2014 4:47:42 PM 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - IsActive : True 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - Id : 0 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - RowVersion :  
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - TimeSpan : 7/2/2014 4:42:42 PM 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 8  Generic Logger - Ending operation: Token / TestPostToken
+07/02/2014 16:42:42: INFO 8  Generic Logger - =========================================================================================================
+07/02/2014 16:42:42: INFO 8  Generic Logger - =========================================================================================================
+07/02/2014 16:42:42: INFO 8  Generic Logger - =========================================================================================================
+07/02/2014 16:42:42: DEBUG 13  Generic Logger - Starting operation: Token / TestPostToken
+07/02/2014 16:42:42: DEBUG 13  TokenController - Logging something
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Password : abc123 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Id : 2 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Password : abc123 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Id : 2 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - >
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - key: <abc>
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Password : abc123 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Id : 2 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Password : abc123 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Id : 2 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - >
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - key: <abc>
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Method GetNewTokenForUser called with parameters:
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Password : abc123 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Id : 2 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - >
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - key: <asdfasdfadfa>
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - data: <anicolasppabc123665926902128246817>
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - YzZUFIBCuXY094+UWSR3zQCzqzZlAIPny7HiKQWlecE=
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Method: GetNewTokenForUser returned: 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Value : YzZUFIBCuXY094+UWSR3zQCzqzZlAIPny7HiKQWlecE= 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - ApiUserId : 2 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - ApiUser : Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Password : abc123 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Id : 2 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor -  
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Expiration : 7/2/2014 4:47:42 PM 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - IsActive : True 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - Id : 0 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - RowVersion :  
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - TimeSpan : 7/2/2014 4:42:42 PM 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 13  Generic Logger - Ending operation: Token / TestPostToken
+07/02/2014 16:42:42: INFO 13  Generic Logger - =========================================================================================================
+07/02/2014 16:42:42: INFO 13  Generic Logger - =========================================================================================================
+07/02/2014 16:42:42: INFO 13  Generic Logger - =========================================================================================================
+07/02/2014 16:42:42: DEBUG 9  Generic Logger - Starting operation: Token / TestPostToken
+07/02/2014 16:42:42: DEBUG 9  TokenController - Logging something
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Password : abc123 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Id : 2 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Password : abc123 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Id : 2 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - >
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - key: <abc>
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Password : abc123 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Id : 2 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Password : abc123 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Id : 2 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - >
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - key: <abc>
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Method GetNewTokenForUser called with parameters:
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Password : abc123 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Id : 2 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - >
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - key: <asdfasdfadfa>
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - data: <anicolasppabc12324854661955551356>
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - FWuvlFtUtvahOkHqx6fc2uXGoOTI/hrB+uCtz5MCWBc=
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Method: GetNewTokenForUser returned: 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Value : FWuvlFtUtvahOkHqx6fc2uXGoOTI/hrB+uCtz5MCWBc= 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - ApiUserId : 2 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - ApiUser : Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Password : abc123 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Id : 2 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor -  
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Expiration : 7/2/2014 4:47:42 PM 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - IsActive : True 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - Id : 0 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - RowVersion :  
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - TimeSpan : 7/2/2014 4:42:42 PM 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 9  Generic Logger - Ending operation: Token / TestPostToken
+07/02/2014 16:42:42: INFO 9  Generic Logger - =========================================================================================================
+07/02/2014 16:42:42: INFO 9  Generic Logger - =========================================================================================================
+07/02/2014 16:42:42: INFO 9  Generic Logger - =========================================================================================================
+07/02/2014 16:42:42: DEBUG 12  Generic Logger - Starting operation: Token / TestPostToken
+07/02/2014 16:42:42: DEBUG 12  TokenController - Logging something
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Password : abc123 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Id : 2 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Password : abc123 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Id : 2 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - >
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - key: <abc>
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Password : abc123 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Id : 2 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Password : abc123 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Id : 2 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - >
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - key: <abc>
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Method GetNewTokenForUser called with parameters:
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Password : abc123 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Id : 2 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - >
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - key: <asdfasdfadfa>
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - data: <anicolasppabc12313542291731079980>
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 9E3t1OIpikjNLN4/bmouwL9MaASTs48ROn9RrpJNl/w=
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Method: GetNewTokenForUser returned: 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Value : 9E3t1OIpikjNLN4/bmouwL9MaASTs48ROn9RrpJNl/w= 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - ApiUserId : 2 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - ApiUser : Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Password : abc123 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Id : 2 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor -  
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Expiration : 7/2/2014 4:47:42 PM 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - IsActive : True 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - Id : 0 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - RowVersion :  
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - TimeSpan : 7/2/2014 4:42:42 PM 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:42: DEBUG 12  Generic Logger - Ending operation: Token / TestPostToken
+07/02/2014 16:42:42: INFO 12  Generic Logger - =========================================================================================================
+07/02/2014 16:42:42: INFO 12  Generic Logger - =========================================================================================================
+07/02/2014 16:42:42: INFO 12  Generic Logger - =========================================================================================================
+07/02/2014 16:42:43: DEBUG 7  Generic Logger - Starting operation: Token / TestPostToken
+07/02/2014 16:42:43: DEBUG 7  TokenController - Logging something
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Password : abc123 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Id : 2 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Password : abc123 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Id : 2 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - >
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - key: <abc>
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Password : abc123 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Id : 2 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Password : abc123 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Id : 2 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - >
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - key: <abc>
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Method GetNewTokenForUser called with parameters:
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Password : abc123 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Id : 2 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - >
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - key: <asdfasdfadfa>
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - data: <anicolasppabc123244245122132994012>
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - k2ZakhZepdIIVl7MwYd+OvN6BFF87c27DsnLLKrWQu4=
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Method: GetNewTokenForUser returned: 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Value : k2ZakhZepdIIVl7MwYd+OvN6BFF87c27DsnLLKrWQu4= 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - ApiUserId : 2 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - ApiUser : Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Password : abc123 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Id : 2 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor -  
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Expiration : 7/2/2014 4:47:43 PM 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - IsActive : True 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - Id : 0 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - RowVersion :  
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - TimeSpan : 7/2/2014 4:42:43 PM 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 7  Generic Logger - Ending operation: Token / TestPostToken
+07/02/2014 16:42:43: INFO 7  Generic Logger - =========================================================================================================
+07/02/2014 16:42:43: INFO 7  Generic Logger - =========================================================================================================
+07/02/2014 16:42:43: INFO 7  Generic Logger - =========================================================================================================
+07/02/2014 16:42:43: DEBUG 12  Generic Logger - Starting operation: Token / TestPostToken
+07/02/2014 16:42:43: DEBUG 12  TokenController - Logging something
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Password : abc123 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Id : 2 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Password : abc123 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Id : 2 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - >
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - key: <abc>
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Password : abc123 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Id : 2 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Password : abc123 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Id : 2 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - >
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - key: <abc>
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Method GetNewTokenForUser called with parameters:
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Password : abc123 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Id : 2 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - >
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - key: <asdfasdfadfa>
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - data: <anicolasppabc12313542291090534592>
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - wqpyjQrrWr6ZCxJ7JktxBVGh6/eoxqqm93mlghkdgPI=
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Method: GetNewTokenForUser returned: 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Value : wqpyjQrrWr6ZCxJ7JktxBVGh6/eoxqqm93mlghkdgPI= 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - ApiUserId : 2 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - ApiUser : Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Password : abc123 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Id : 2 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor -  
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Expiration : 7/2/2014 4:47:43 PM 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - IsActive : True 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - Id : 0 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - RowVersion :  
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - TimeSpan : 7/2/2014 4:42:43 PM 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:43: DEBUG 12  Generic Logger - Ending operation: Token / TestPostToken
+07/02/2014 16:42:43: INFO 12  Generic Logger - =========================================================================================================
+07/02/2014 16:42:43: INFO 12  Generic Logger - =========================================================================================================
+07/02/2014 16:42:43: INFO 12  Generic Logger - =========================================================================================================
+07/02/2014 16:42:49: DEBUG 8  Generic Logger - Starting operation: Token / TestPostToken
+07/02/2014 16:42:49: DEBUG 8  TokenController - Logging something
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Password : abc123 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Id : 2 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Password : abc123 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Id : 2 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - >
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - key: <abc>
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Password : abc123 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Id : 2 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Password : abc123 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Id : 2 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - >
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - key: <abc>
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Method GetNewTokenForUser called with parameters:
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Password : abc123 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Id : 2 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - >
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - key: <asdfasdfadfa>
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - data: <anicolasppabc123470223121977967447>
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - kSuYaaxI9SCPLrso177B1IV45OJUIMHe1n3RPlAVhoA=
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Method: GetNewTokenForUser returned: 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Value : kSuYaaxI9SCPLrso177B1IV45OJUIMHe1n3RPlAVhoA= 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - ApiUserId : 2 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - ApiUser : Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Password : abc123 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Id : 2 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor -  
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Expiration : 7/2/2014 4:47:49 PM 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - IsActive : True 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - Id : 0 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - RowVersion :  
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - TimeSpan : 7/2/2014 4:42:49 PM 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:49: DEBUG 8  Generic Logger - Ending operation: Token / TestPostToken
+07/02/2014 16:42:49: INFO 8  Generic Logger - =========================================================================================================
+07/02/2014 16:42:49: INFO 8  Generic Logger - =========================================================================================================
+07/02/2014 16:42:49: INFO 8  Generic Logger - =========================================================================================================
+07/02/2014 16:42:50: DEBUG 13  Generic Logger - Starting operation: Token / TestPostToken
+07/02/2014 16:42:50: DEBUG 13  TokenController - Logging something
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Password : abc123 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Id : 2 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Password : abc123 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Id : 2 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - >
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - key: <abc>
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Password : abc123 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Id : 2 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Password : abc123 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Id : 2 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - >
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - key: <abc>
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Method GetNewTokenForUser called with parameters:
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Password : abc123 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Id : 2 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - >
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - key: <asdfasdfadfa>
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - data: <anicolasppabc123665926901838984657>
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - chOXdDus598e/DTlSPMqRzOFmusHowzEbOz0XVpIZX8=
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Method: GetNewTokenForUser returned: 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Value : chOXdDus598e/DTlSPMqRzOFmusHowzEbOz0XVpIZX8= 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - ApiUserId : 2 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - ApiUser : Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Password : abc123 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Id : 2 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor -  
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Expiration : 7/2/2014 4:47:50 PM 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - IsActive : True 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - Id : 0 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - RowVersion :  
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - TimeSpan : 7/2/2014 4:42:50 PM 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  IInterceptor - 
+07/02/2014 16:42:50: DEBUG 13  Generic Logger - Ending operation: Token / TestPostToken
+07/02/2014 16:42:50: INFO 13  Generic Logger - =========================================================================================================
+07/02/2014 16:42:50: INFO 13  Generic Logger - =========================================================================================================
+07/02/2014 16:42:50: INFO 13  Generic Logger - =========================================================================================================
+07/02/2014 16:42:51: DEBUG 11  Generic Logger - Starting operation: Token / TestPostToken
+07/02/2014 16:42:51: DEBUG 11  TokenController - Logging something
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Password : abc123 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Id : 2 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Password : abc123 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Id : 2 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - >
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - key: <abc>
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Password : abc123 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Id : 2 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Password : abc123 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Id : 2 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - >
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - key: <abc>
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Method GetNewTokenForUser called with parameters:
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Password : abc123 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Id : 2 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - >
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - key: <asdfasdfadfa>
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - data: <anicolasppabc123632894211389793853>
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - UPh/VivHqbTiFLM+pYp/VLV6er8vCsYM3cryidTEXgE=
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Method: GetNewTokenForUser returned: 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Value : UPh/VivHqbTiFLM+pYp/VLV6er8vCsYM3cryidTEXgE= 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - ApiUserId : 2 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - ApiUser : Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Password : abc123 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Id : 2 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor -  
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Expiration : 7/2/2014 4:47:51 PM 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - IsActive : True 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - Id : 0 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - RowVersion :  
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - TimeSpan : 7/2/2014 4:42:51 PM 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 11  Generic Logger - Ending operation: Token / TestPostToken
+07/02/2014 16:42:51: INFO 11  Generic Logger - =========================================================================================================
+07/02/2014 16:42:51: INFO 11  Generic Logger - =========================================================================================================
+07/02/2014 16:42:51: INFO 11  Generic Logger - =========================================================================================================
+07/02/2014 16:42:51: DEBUG 12  Generic Logger - Starting operation: Token / TestPostToken
+07/02/2014 16:42:51: DEBUG 12  TokenController - Logging something
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Password : abc123 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Id : 2 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Password : abc123 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Id : 2 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - >
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - key: <abc>
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Password : abc123 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Id : 2 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Password : abc123 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Id : 2 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - >
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - key: <abc>
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Method GetNewTokenForUser called with parameters:
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Password : abc123 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Id : 2 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - >
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - key: <asdfasdfadfa>
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - data: <anicolasppabc12313542291777322846>
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - mfGMpSUxkGjcdvNgK3VzbnJM/6pkcYla7qR8cfuL5e8=
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Method: GetNewTokenForUser returned: 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Value : mfGMpSUxkGjcdvNgK3VzbnJM/6pkcYla7qR8cfuL5e8= 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - ApiUserId : 2 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - ApiUser : Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Password : abc123 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Id : 2 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor -  
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Expiration : 7/2/2014 4:47:51 PM 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - IsActive : True 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - Id : 0 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - RowVersion :  
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - TimeSpan : 7/2/2014 4:42:51 PM 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  IInterceptor - 
+07/02/2014 16:42:51: DEBUG 12  Generic Logger - Ending operation: Token / TestPostToken
+07/02/2014 16:42:51: INFO 12  Generic Logger - =========================================================================================================
+07/02/2014 16:42:51: INFO 12  Generic Logger - =========================================================================================================
+07/02/2014 16:42:51: INFO 12  Generic Logger - =========================================================================================================
+07/02/2014 16:42:52: DEBUG 10  Generic Logger - Starting operation: Token / TestPostToken
+07/02/2014 16:42:52: DEBUG 10  TokenController - Logging something
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Password : abc123 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Id : 2 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Password : abc123 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Id : 2 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - >
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - key: <abc>
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Password : abc123 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Id : 2 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Password : abc123 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Id : 2 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - >
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - key: <abc>
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Method GetNewTokenForUser called with parameters:
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Password : abc123 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Id : 2 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - >
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - key: <asdfasdfadfa>
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - data: <anicolasppabc12353740413593190828>
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - W2SlwYqVHhZ9fkY6JdZ8SNwkO0f9B7S17bsRqtOqxnM=
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Method: GetNewTokenForUser returned: 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Value : W2SlwYqVHhZ9fkY6JdZ8SNwkO0f9B7S17bsRqtOqxnM= 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - ApiUserId : 2 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - ApiUser : Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Password : abc123 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Id : 2 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor -  
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Expiration : 7/2/2014 4:47:52 PM 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - IsActive : True 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - Id : 0 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - RowVersion :  
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - TimeSpan : 7/2/2014 4:42:52 PM 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 10  Generic Logger - Ending operation: Token / TestPostToken
+07/02/2014 16:42:52: INFO 10  Generic Logger - =========================================================================================================
+07/02/2014 16:42:52: INFO 10  Generic Logger - =========================================================================================================
+07/02/2014 16:42:52: INFO 10  Generic Logger - =========================================================================================================
+07/02/2014 16:42:52: DEBUG 6  Generic Logger - Starting operation: Token / TestPostToken
+07/02/2014 16:42:52: DEBUG 6  TokenController - Logging something
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Password : abc123 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Id : 2 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Password : abc123 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Id : 2 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - >
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - key: <abc>
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Password : abc123 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Id : 2 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Password : abc123 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Id : 2 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - >
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - key: <abc>
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Method GetNewTokenForUser called with parameters:
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Password : abc123 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Id : 2 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - >
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - key: <asdfasdfadfa>
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - data: <anicolasppabc123667928651217743430>
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 6j/5uJ4lU2XEGWthfXpzK5Qa0aL6b74vvp3cjJcqi2w=
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Method: GetNewTokenForUser returned: 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Value : 6j/5uJ4lU2XEGWthfXpzK5Qa0aL6b74vvp3cjJcqi2w= 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - ApiUserId : 2 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - ApiUser : Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Password : abc123 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Id : 2 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor -  
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Expiration : 7/2/2014 4:47:52 PM 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - IsActive : True 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - Id : 0 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - RowVersion :  
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - TimeSpan : 7/2/2014 4:42:52 PM 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  IInterceptor - 
+07/02/2014 16:42:52: DEBUG 6  Generic Logger - Ending operation: Token / TestPostToken
+07/02/2014 16:42:52: INFO 6  Generic Logger - =========================================================================================================
+07/02/2014 16:42:52: INFO 6  Generic Logger - =========================================================================================================
+07/02/2014 16:42:52: INFO 6  Generic Logger - =========================================================================================================
+07/02/2014 16:42:53: DEBUG 8  Generic Logger - Starting operation: Token / TestPostToken
+07/02/2014 16:42:53: DEBUG 8  TokenController - Logging something
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Password : abc123 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Id : 2 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Password : abc123 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Id : 2 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - >
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - key: <abc>
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - apiKey: <abc>
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Password : abc123 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Id : 2 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Password : abc123 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Id : 2 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - >
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - key: <abc>
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Method GetNewTokenForUser called with parameters:
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Password : abc123 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Id : 2 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - >
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - key: <asdfasdfadfa>
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - data: <anicolasppabc123470223121937105134>
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - VxulgOCNEc/2QeLxCm/BJIu8a6tagNzDtnh8WIYf9NQ=
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Method: GetNewTokenForUser returned: 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Value : VxulgOCNEc/2QeLxCm/BJIu8a6tagNzDtnh8WIYf9NQ= 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - ApiUserId : 2 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - ApiUser : Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - ApiKey : abc 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Password : abc123 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Id : 2 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor -  
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Expiration : 7/2/2014 4:47:53 PM 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - IsActive : True 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - Id : 0 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - RowVersion :  
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - TimeSpan : 7/2/2014 4:42:53 PM 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  IInterceptor - 
+07/02/2014 16:42:53: DEBUG 8  Generic Logger - Ending operation: Token / TestPostToken
+07/02/2014 16:42:53: INFO 8  Generic Logger - =========================================================================================================
+07/02/2014 16:42:53: INFO 8  Generic Logger - =========================================================================================================
+07/02/2014 16:42:53: INFO 8  Generic Logger - =========================================================================================================
+07/02/2014 16:43:47: DEBUG 6  Generic Logger - Starting operation: Token / TestPostToken
+07/02/2014 16:43:47: DEBUG 6  TokenController - Logging something
+07/02/2014 16:43:47: DEBUG 6  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:43:47: DEBUG 6  IInterceptor - apiKey: <abc>
+07/02/2014 16:43:47: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:47: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - ApiKey : abc 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Password : abc123 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Id : 2 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - ApiKey : abc 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Password : abc123 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Id : 2 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - >
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - key: <abc>
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - apiKey: <abc>
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - ApiKey : abc 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Password : abc123 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Id : 2 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - ApiKey : abc 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Password : abc123 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Id : 2 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - >
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - key: <abc>
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Method GetNewTokenForUser called with parameters:
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - ApiKey : abc 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Password : abc123 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Id : 2 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - >
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - key: <asdfasdfadfa>
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - data: <anicolasppabc123188035341236673772>
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - JQhaLwOuJ7ivzFXkHXRlmnqRia3ljFSceNAxCwPkKnc=
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Method: GetNewTokenForUser returned: 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Value : JQhaLwOuJ7ivzFXkHXRlmnqRia3ljFSceNAxCwPkKnc= 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - ApiUserId : 2 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - ApiUser : Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - ApiKey : abc 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Password : abc123 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Id : 2 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor -  
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Expiration : 7/2/2014 4:48:48 PM 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - IsActive : True 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - Id : 0 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - RowVersion :  
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - TimeSpan : 7/2/2014 4:43:48 PM 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:48: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:48: DEBUG 6  Generic Logger - Ending operation: Token / TestPostToken
+07/02/2014 16:43:48: INFO 6  Generic Logger - =========================================================================================================
+07/02/2014 16:43:48: INFO 6  Generic Logger - =========================================================================================================
+07/02/2014 16:43:48: INFO 6  Generic Logger - =========================================================================================================
+07/02/2014 16:43:50: DEBUG 6  Generic Logger - Starting operation: Token / TestPostToken
+07/02/2014 16:43:50: DEBUG 6  TokenController - Logging something
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - apiKey: <abc>
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - ApiKey : abc 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Password : abc123 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Id : 2 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - ApiKey : abc 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Password : abc123 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Id : 2 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - >
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - key: <abc>
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - apiKey: <abc>
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - ApiKey : abc 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Password : abc123 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Id : 2 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - ApiKey : abc 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Password : abc123 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Id : 2 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - >
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - key: <abc>
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Method GetNewTokenForUser called with parameters:
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - ApiKey : abc 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Password : abc123 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Id : 2 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - >
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - key: <asdfasdfadfa>
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - data: <anicolasppabc12318803534888850883>
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - x6ubWaCg/EXVkxEeCWk3MQppfkS/HUdzk8TxjgTgTBo=
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Method: GetNewTokenForUser returned: 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Value : x6ubWaCg/EXVkxEeCWk3MQppfkS/HUdzk8TxjgTgTBo= 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - ApiUserId : 2 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - ApiUser : Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - ApiKey : abc 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Password : abc123 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Id : 2 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor -  
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Expiration : 7/2/2014 4:48:50 PM 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - IsActive : True 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - Id : 0 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - RowVersion :  
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - TimeSpan : 7/2/2014 4:43:50 PM 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  IInterceptor - 
+07/02/2014 16:43:50: DEBUG 6  Generic Logger - Ending operation: Token / TestPostToken
+07/02/2014 16:43:50: INFO 6  Generic Logger - =========================================================================================================
+07/02/2014 16:43:50: INFO 6  Generic Logger - =========================================================================================================
+07/02/2014 16:43:50: INFO 6  Generic Logger - =========================================================================================================
+07/02/2014 16:44:24: DEBUG 16  Generic Logger - Starting operation: Token / TestPostToken
+07/02/2014 16:44:24: DEBUG 16  TokenController - Logging something
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - apiKey: <abc>
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - ApiKey : abc 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Password : abc123 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Id : 2 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - ApiKey : abc 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Password : abc123 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Id : 2 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - >
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - key: <abc>
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - apiKey: <abc>
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - ApiKey : abc 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Password : abc123 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Id : 2 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - ApiKey : abc 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Password : abc123 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Id : 2 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - >
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - key: <abc>
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Method GetNewTokenForUser called with parameters:
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - ApiKey : abc 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Password : abc123 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Id : 2 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - >
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - key: <asdfasdfadfa>
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - data: <anicolasppabc123336416111316519226>
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - P1Kyhn7016tJp3JrbqXid/kii60tphLjOfUmpcGcjWk=
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Method: GetNewTokenForUser returned: 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Value : P1Kyhn7016tJp3JrbqXid/kii60tphLjOfUmpcGcjWk= 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - ApiUserId : 2 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - ApiUser : Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - ApiKey : abc 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Password : abc123 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Id : 2 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor -  
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Expiration : 7/2/2014 4:49:24 PM 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - IsActive : True 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - Id : 0 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - RowVersion :  
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - TimeSpan : 7/2/2014 4:44:24 PM 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:24: DEBUG 16  Generic Logger - Ending operation: Token / TestPostToken
+07/02/2014 16:44:24: INFO 16  Generic Logger - =========================================================================================================
+07/02/2014 16:44:24: INFO 16  Generic Logger - =========================================================================================================
+07/02/2014 16:44:24: INFO 16  Generic Logger - =========================================================================================================
+07/02/2014 16:44:25: DEBUG 16  Generic Logger - Starting operation: Token / TestPostToken
+07/02/2014 16:44:25: DEBUG 16  TokenController - Logging something
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - apiKey: <abc>
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - ApiKey : abc 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Password : abc123 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Id : 2 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - ApiKey : abc 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Password : abc123 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Id : 2 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - >
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - key: <abc>
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Method GetUserWithKey called with parameters:
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - apiKey: <abc>
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Method: GetUserWithKey returned: 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - ApiKey : abc 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Password : abc123 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Id : 2 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Method GetSignatureForUser called with parameters:
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - ApiKey : abc 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Password : abc123 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Id : 2 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - >
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - key: <abc>
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - data: <asdfasdfadfa>
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Method: GetSignatureForUser returned: 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Method GetNewTokenForUser called with parameters:
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - user: <Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - ApiKey : abc 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Password : abc123 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Id : 2 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - >
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Method GetHash called with parameters:
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - key: <asdfasdfadfa>
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - data: <anicolasppabc12333641611679361516>
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Method: GetHash returned: 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - WdsbUaa1GcnsuRvyPmRrfAdTB61vFr9G5LinyB/9AOk=
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Method: GetNewTokenForUser returned: 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Value : WdsbUaa1GcnsuRvyPmRrfAdTB61vFr9G5LinyB/9AOk= 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - ApiUserId : 2 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - ApiUser : Tokens : System.Collections.Generic.HashSet`1[Domain.Models.AuthToken] 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - ApiKey : abc 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Secret : asdfasdfadfa 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - UserName : anicolaspp 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Password : abc123 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Id : 2 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - RowVersion : System.Byte[] 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - TimeSpan : 6/24/2014 11:53:00 AM 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor -  
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Expiration : 7/2/2014 4:49:25 PM 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - IsActive : True 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - Id : 0 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - RowVersion :  
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - TimeSpan : 7/2/2014 4:44:25 PM 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  IInterceptor - 
+07/02/2014 16:44:25: DEBUG 16  Generic Logger - Ending operation: Token / TestPostToken
+07/02/2014 16:44:25: INFO 16  Generic Logger - =========================================================================================================
+07/02/2014 16:44:25: INFO 16  Generic Logger - =========================================================================================================
+07/02/2014 16:44:25: INFO 16  Generic Logger - =========================================================================================================

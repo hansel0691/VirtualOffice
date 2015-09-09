@@ -1,0 +1,190 @@
+﻿@using VirtualOffice.Web.Infrastructure
+@model VirtualOffice.Web.Models.NewLeadViewModel
+    @{
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    IEnumerable<Domain.Models.ConsignmentType> leadsFor = ViewBag.LeadsFor;
+    IEnumerable<Domain.Models.ConsignmentType> leadshearing = ViewBag.LeadsHearing;
+}
+@Html.Partial("MyProfileNavigation")
+
+<div class="container">
+
+    <div class="container select" id="main">
+
+        <!-- <div class="alert alert-warning alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <span class="msg"></span>
+        </div> -->
+
+        <div class="page-header">
+            <h4>My Profile / New Lead </h4>
+            <a class="btn text-primary pull-right" href="mailto:blackstone@blackstoneonline.com"><span class="fa fa-envelope"></span> Check my email</a>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-3 col-md-2 col-sm-push-9 col-md-push-10" id="sidebar">
+                <a class="btn btn-primary btn-block" id="" href="@Url.Action("OpenLeads")">Leads</a>
+                @*<a class="btn btn-primary btn-block" id="" href="@Url.Action("HistoricLeads")">Historics Leads</a>*@
+                <a class="btn btn-secundary btn-block" id="" href="#">New Lead</a>
+            </div>
+
+            <div class="col-xs-12 col-sm-8 col-md-10 col-sm-pull-4 col-md-pull-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>New Lead</h4>
+                    </div>
+                    <div class="panel-body">
+                        <form id="newLeadForm">
+                            <div id="myAccountSuccessMessageConfirmation" class="collapse alert alert-success">
+                                <span class="glyphicon glyphicon-ok"></span>
+                                <label id="myAccountSuccessMessageText"></label>
+                            </div>
+                            <div id="myAccountFailedMessageConfirmation" class="collapse  alert alert-danger">
+                                <label id="myAccountFailedMessageText"></label>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Contact)
+                                            @Html.TextBoxFor(model => model.Contact, new { @class = "form-control", @placeholder = "Enter Contact Name" })
+                                            @Html.ValidationMessageFor(model => model.Contact)
+                                        </div>
+
+                                        @Html.LabelFor(model => model.Company)
+                                        @Html.TextBoxFor(model => model.Company, new { @class = "form-control", @placeholder = "Enter Company Name" })
+                                        @Html.ValidationMessageFor(model => model.Company)
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Email)
+                                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Enter Email" })
+                                        @Html.ValidationMessageFor(model => model.Email)
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Phone)
+                                        @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", @placeholder = "Enter Bussiness Phone Number" })
+                                        @Html.ValidationMessageFor(model => model.Phone)
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Address)
+                                        @Html.TextBoxFor(model => model.Address, new { @class = "form-control", @placeholder = "Enter Address" })
+                                        @Html.ValidationMessageFor(model => model.Address)
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.City)
+                                        @Html.TextBoxFor(model => model.City, new { @class = "form-control", @placeholder = "Enter City" })
+                                        @Html.ValidationMessageFor(model => model.City)
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.State)
+                                        @Html.DropDownListFor(model => model.State,Utils.GetAllStates(), "Select State", new { @class = "form-control" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.language)
+                                        @Html.DropDownListFor(model=> model.language,Utils.GetAllLanguages(),"Select Language",new { @class = "form-control"})
+                                    </div>
+
+
+                                </div> <!-- .col -->
+
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <p class="lead">Lead for *</p>
+                                    @foreach (var propose in leadsFor)
+                                    {
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" value="@propose.Id" id="interested" name="interested"> @propose.Description
+                                            </label>
+                                        </div>
+                                    }
+                                </div>
+
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <p class="lead">How did you hear from us *</p>
+                                    @foreach (var hearnigType in leadshearing)
+                                    {
+
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="hear"  id="hear" value="@hearnigType.Id"> @hearnigType.Description
+                                            </label>
+                                        </div>
+                                    }
+
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            @Html.TextAreaFor(model => model.other, 3, 1, new { @class = "form-control", @placeholder = "Other:" })
+                                            @*<textarea class="form-control" rows="3"  placeholder="Other:"></textarea>*@
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.TextAreaFor(model => model.Notes, 3, 1, new { @class = "form-control", @placeholder = "Notes:" })
+                                            @*<textarea class="form-control" placeholder="Notes:" rows="3"></textarea>*@
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- .row -->
+                            <button type="button" class="btn btn-secundary" onclick="AddNewLead()">Add Lead</button>  
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- .container.select#main -->
+</div>
+
+<script>
+
+    $(document).ready(function() {
+
+        $("[data-val-regex]").keyup(function () { return false; });
+        $("[data-val-required]").keyup(function () { return false; });
+
+    });
+
+    function AddNewLead() {
+
+        if ($("#newLeadForm").valid()) {
+
+            var addNewLeadUrl = '@Url.Action("AddNewLead","MyProfile")';
+
+            $.post(addNewLeadUrl, {
+                Contact: $("#Contact").val(),
+                Company: $("#Company").val(),
+                Email: $("#Email").val(),
+                Phone: $("#Phone").val(),
+                Address: $("#Address").val(),
+                City: $("#City").val(),
+                State: $("#State").val(),
+                language: $("#language").val(),
+                interested: $("#interested").val(),
+                hear: $("#hear").val(),
+                other: $("#other").val(),
+                Notes: $("#Notes").val()
+            }, myAccountShowResultMessage);
+        }
+    }
+
+    function myAccountShowResultMessage(result) {
+        var response = result.Result;
+        var message = result.Message;
+
+        if (response == "Success") {
+            $("#myAccountSuccessMessageText").text(message);
+            $("#myAccountSuccessMessageConfirmation").fadeIn();
+            setTimeout(timeOut("#myAccountSuccessMessageConfirmation", 3000));
+        } else {
+            $("#myAccountFailedMessageText").text(message);
+            $("#myAccountFailedMessageConfirmation").fadeIn();
+            setTimeout(timeOut("#myAccountFailedMessageConfirmation", 3000));
+        }
+    }
+
+    function timeOut(id, time) {
+        $(id).fadeOut(time);
+    }
+
+</script>

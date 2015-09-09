@@ -1,0 +1,598 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2F2B0D4D-582A-4D7D-8019-62EA76B46A3E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoreData</RootNamespace>
+    <AssemblyName>CoreData</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.2.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.2.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contexts\BMSExternalLogin.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BMSExternalLogin.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\BMSExternalLogin.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BMSExternalLogin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\BMSExternalLogin.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BMSExternalLogin.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\VonageExternalLogin.cs">
+      <DependentUpon>BMSExternalLogin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201408281309193_orders3.cs" />
+    <Compile Include="Migrations\201408281309193_orders3.Designer.cs">
+      <DependentUpon>201408281309193_orders3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201408291819275_orders4.cs" />
+    <Compile Include="Migrations\201408291819275_orders4.Designer.cs">
+      <DependentUpon>201408291819275_orders4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201408291830516_users.cs" />
+    <Compile Include="Migrations\201408291830516_users.Designer.cs">
+      <DependentUpon>201408291830516_users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201408291836262_users1.cs" />
+    <Compile Include="Migrations\201408291836262_users1.Designer.cs">
+      <DependentUpon>201408291836262_users1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409021815597_username.cs" />
+    <Compile Include="Migrations\201409021815597_username.Designer.cs">
+      <DependentUpon>201409021815597_username.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409021823131_username1.cs" />
+    <Compile Include="Migrations\201409021823131_username1.Designer.cs">
+      <DependentUpon>201409021823131_username1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409041906494_user_token.cs" />
+    <Compile Include="Migrations\201409041906494_user_token.Designer.cs">
+      <DependentUpon>201409041906494_user_token.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409041928529_user_token1.cs" />
+    <Compile Include="Migrations\201409041928529_user_token1.Designer.cs">
+      <DependentUpon>201409041928529_user_token1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409042007259_user_token2.cs" />
+    <Compile Include="Migrations\201409042007259_user_token2.Designer.cs">
+      <DependentUpon>201409042007259_user_token2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201410151316177_user_report_dates.cs" />
+    <Compile Include="Migrations\201410151316177_user_report_dates.Designer.cs">
+      <DependentUpon>201410151316177_user_report_dates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Mapping\ConsignmentTypeMapping.cs" />
+    <Compile Include="Helpers\MapperHelper.cs" />
+    <Compile Include="Concrete\SqlConsignmentLeadRepository.cs" />
+    <Compile Include="Concrete\SqlIncidentRepository.cs" />
+    <Compile Include="Concrete\SqlInventoryRepository.cs" />
+    <Compile Include="Contexts\ConsignmentContext.cs" />
+    <Compile Include="Concrete\SqlLeadRepository.cs" />
+    <Compile Include="Migrations\201408261601237_orders.cs" />
+    <Compile Include="Migrations\201408261601237_orders.Designer.cs">
+      <DependentUpon>201408261601237_orders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201408261844317_orders1.cs" />
+    <Compile Include="Migrations\201408261844317_orders1.Designer.cs">
+      <DependentUpon>201408261844317_orders1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201408261935272_orders2.cs" />
+    <Compile Include="Migrations\201408261935272_orders2.Designer.cs">
+      <DependentUpon>201408261935272_orders2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201408262005529_reports.cs" />
+    <Compile Include="Migrations\201408262005529_reports.Designer.cs">
+      <DependentUpon>201408262005529_reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201408262009101_reports1.cs" />
+    <Compile Include="Migrations\201408262009101_reports1.Designer.cs">
+      <DependentUpon>201408262009101_reports1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InventoryItem.cs" />
+    <Compile Include="Models\Mapping\LeadMapping.cs" />
+    <Compile Include="Contexts\PindataContext.cs" />
+    <Compile Include="Concrete\Repository.cs" />
+    <Compile Include="Concrete\SqlQueryExecutor.cs" />
+    <Compile Include="Concrete\SqlReportInfoRepository.cs" />
+    <Compile Include="Concrete\SqlTokenRepository.cs" />
+    <Compile Include="Concrete\SqlUserRepository.cs" />
+    <Compile Include="Concrete\UnitOfWork.cs" />
+    <Compile Include="Migrations\201407011347295_adding_references.cs" />
+    <Compile Include="Migrations\201407011347295_adding_references.Designer.cs">
+      <DependentUpon>201407011347295_adding_references.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407011553167_adding_default_output.cs" />
+    <Compile Include="Migrations\201407011553167_adding_default_output.Designer.cs">
+      <DependentUpon>201407011553167_adding_default_output.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407011806260_removing_rowversion.cs" />
+    <Compile Include="Migrations\201407011806260_removing_rowversion.Designer.cs">
+      <DependentUpon>201407011806260_removing_rowversion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407011807391_optimistic_concurrence.cs" />
+    <Compile Include="Migrations\201407011807391_optimistic_concurrence.Designer.cs">
+      <DependentUpon>201407011807391_optimistic_concurrence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407021507008_add_name.cs" />
+    <Compile Include="Migrations\201407021507008_add_name.Designer.cs">
+      <DependentUpon>201407021507008_add_name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407071744596_removing_user_filter.cs" />
+    <Compile Include="Migrations\201407071744596_removing_user_filter.Designer.cs">
+      <DependentUpon>201407071744596_removing_user_filter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407071819054_user_filter_max_length.cs" />
+    <Compile Include="Migrations\201407071819054_user_filter_max_length.Designer.cs">
+      <DependentUpon>201407071819054_user_filter_max_length.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407072022061_adding_user_filters.cs" />
+    <Compile Include="Migrations\201407072022061_adding_user_filters.Designer.cs">
+      <DependentUpon>201407072022061_adding_user_filters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407081334109_soft_delete.cs" />
+    <Compile Include="Migrations\201407081334109_soft_delete.Designer.cs">
+      <DependentUpon>201407081334109_soft_delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407081344189_f_key.cs" />
+    <Compile Include="Migrations\201407081344189_f_key.Designer.cs">
+      <DependentUpon>201407081344189_f_key.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407092055297_change_name_predifined_filters.cs" />
+    <Compile Include="Migrations\201407092055297_change_name_predifined_filters.Designer.cs">
+      <DependentUpon>201407092055297_change_name_predifined_filters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407101440162_indexColumn.cs" />
+    <Compile Include="Migrations\201407101440162_indexColumn.Designer.cs">
+      <DependentUpon>201407101440162_indexColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407211957189_report_stand_alone.cs" />
+    <Compile Include="Migrations\201407211957189_report_stand_alone.Designer.cs">
+      <DependentUpon>201407211957189_report_stand_alone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407231744184_report_labels.cs" />
+    <Compile Include="Migrations\201407231744184_report_labels.Designer.cs">
+      <DependentUpon>201407231744184_report_labels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407241325493_report_labels_mod.cs" />
+    <Compile Include="Migrations\201407241325493_report_labels_mod.Designer.cs">
+      <DependentUpon>201407241325493_report_labels_mod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407241835294_user_report_output_config.cs" />
+    <Compile Include="Migrations\201407241835294_user_report_output_config.Designer.cs">
+      <DependentUpon>201407241835294_user_report_output_config.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407241946234_report_category.cs" />
+    <Compile Include="Migrations\201407241946234_report_category.Designer.cs">
+      <DependentUpon>201407241946234_report_category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407251252578_user_report_config_requiered.cs" />
+    <Compile Include="Migrations\201407251252578_user_report_config_requiered.Designer.cs">
+      <DependentUpon>201407251252578_user_report_config_requiered.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RawUser.cs" />
+    <Compile Include="Contexts\VirtualOfficeContext.cs" />
+    <Compile Include="DataModule\DataModule.cs" />
+    <Compile Include="Migrations\201406171651273_adding_reports_table.cs" />
+    <Compile Include="Migrations\201406171651273_adding_reports_table.Designer.cs">
+      <DependentUpon>201406171651273_adding_reports_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406171656101_adding_parameters_table.cs" />
+    <Compile Include="Migrations\201406171656101_adding_parameters_table.Designer.cs">
+      <DependentUpon>201406171656101_adding_parameters_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406171718250_adding_report_parameters_table.cs" />
+    <Compile Include="Migrations\201406171718250_adding_report_parameters_table.Designer.cs">
+      <DependentUpon>201406171718250_adding_report_parameters_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406171724483_adding_filters_table.cs" />
+    <Compile Include="Migrations\201406171724483_adding_filters_table.Designer.cs">
+      <DependentUpon>201406171724483_adding_filters_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406171757254_adding_report_report_table.cs" />
+    <Compile Include="Migrations\201406171757254_adding_report_report_table.Designer.cs">
+      <DependentUpon>201406171757254_adding_report_report_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406181230482_add_filters.cs" />
+    <Compile Include="Migrations\201406181230482_add_filters.Designer.cs">
+      <DependentUpon>201406181230482_add_filters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406181235330_add_filter_name.cs" />
+    <Compile Include="Migrations\201406181235330_add_filter_name.Designer.cs">
+      <DependentUpon>201406181235330_add_filter_name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406181247278_add_report_filter_rel.cs" />
+    <Compile Include="Migrations\201406181247278_add_report_filter_rel.Designer.cs">
+      <DependentUpon>201406181247278_add_report_filter_rel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406181408214_update_filter_definitions.cs" />
+    <Compile Include="Migrations\201406181408214_update_filter_definitions.Designer.cs">
+      <DependentUpon>201406181408214_update_filter_definitions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406181443133_add_filter_option_definitions.cs" />
+    <Compile Include="Migrations\201406181443133_add_filter_option_definitions.Designer.cs">
+      <DependentUpon>201406181443133_add_filter_option_definitions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406181534527_add_user_definition.cs" />
+    <Compile Include="Migrations\201406181534527_add_user_definition.Designer.cs">
+      <DependentUpon>201406181534527_add_user_definition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406181807116_remove_filters.cs" />
+    <Compile Include="Migrations\201406181807116_remove_filters.Designer.cs">
+      <DependentUpon>201406181807116_remove_filters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406181822596_add_field_name_to_predefined_filter.cs" />
+    <Compile Include="Migrations\201406181822596_add_field_name_to_predefined_filter.Designer.cs">
+      <DependentUpon>201406181822596_add_field_name_to_predefined_filter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406181828530_add_index_on_filters.cs" />
+    <Compile Include="Migrations\201406181828530_add_index_on_filters.Designer.cs">
+      <DependentUpon>201406181828530_add_index_on_filters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406191943054_remove_param_table.cs" />
+    <Compile Include="Migrations\201406191943054_remove_param_table.Designer.cs">
+      <DependentUpon>201406191943054_remove_param_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406201803183_add_token_and_apiuser_tables.cs" />
+    <Compile Include="Migrations\201406201803183_add_token_and_apiuser_tables.Designer.cs">
+      <DependentUpon>201406201803183_add_token_and_apiuser_tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406201810293_update_token_table.cs" />
+    <Compile Include="Migrations\201406201810293_update_token_table.Designer.cs">
+      <DependentUpon>201406201810293_update_token_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406271703445_add_usertype.cs" />
+    <Compile Include="Migrations\201406271703445_add_usertype.Designer.cs">
+      <DependentUpon>201406271703445_add_usertype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Mapping\ApiUserMapping.cs" />
+    <Compile Include="Models\Mapping\BaseMapping.cs" />
+    <Compile Include="Models\Mapping\ParameterMapping.cs" />
+    <Compile Include="Models\Mapping\PredefinedFilterMapping.cs" />
+    <Compile Include="Models\Mapping\ReportMapping.cs" />
+    <Compile Include="Models\Mapping\ReportParamMapping.cs" />
+    <Compile Include="Models\Mapping\ReportPredefinedFilterRelMapping.cs" />
+    <Compile Include="Models\Mapping\ReportToReportRelMappign.cs" />
+    <Compile Include="Models\Mapping\ReportUserFilterRelMapping.cs" />
+    <Compile Include="Models\Mapping\TokenMapping.cs" />
+    <Compile Include="Models\Mapping\UserFilterMapping.cs" />
+    <Compile Include="Models\Mapping\UserFilterOptionMapping.cs" />
+    <Compile Include="Models\Mapping\UserMapping.cs" />
+    <Compile Include="Models\Mapping\UserReportMapping.cs" />
+    <Compile Include="Models\Mapping\UserTypeMapping.cs" />
+    <Compile Include="PindataMigrations\201408121259224_Init.cs" />
+    <Compile Include="PindataMigrations\201408121259224_Init.Designer.cs">
+      <DependentUpon>201408121259224_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PindataMigrations\201408121331375_config.cs" />
+    <Compile Include="PindataMigrations\201408121331375_config.Designer.cs">
+      <DependentUpon>201408121331375_config.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PindataMigrations\201408121458448_config2.cs" />
+    <Compile Include="PindataMigrations\201408121458448_config2.Designer.cs">
+      <DependentUpon>201408121458448_config2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PindataMigrations\201408121509391_config3.cs" />
+    <Compile Include="PindataMigrations\201408121509391_config3.Designer.cs">
+      <DependentUpon>201408121509391_config3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PindataMigrations\201408121512006_config4.cs" />
+    <Compile Include="PindataMigrations\201408121512006_config4.Designer.cs">
+      <DependentUpon>201408121512006_config4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PindataMigrations\201408121525163_config5.cs" />
+    <Compile Include="PindataMigrations\201408121525163_config5.Designer.cs">
+      <DependentUpon>201408121525163_config5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PindataMigrations\201408121527451_config6.cs" />
+    <Compile Include="PindataMigrations\201408121527451_config6.Designer.cs">
+      <DependentUpon>201408121527451_config6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PindataMigrations\201408121528491_config61.cs" />
+    <Compile Include="PindataMigrations\201408121528491_config61.Designer.cs">
+      <DependentUpon>201408121528491_config61.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PindataMigrations\201408121530521_config62.cs" />
+    <Compile Include="PindataMigrations\201408121530521_config62.Designer.cs">
+      <DependentUpon>201408121530521_config62.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PindataMigrations\201408191718128_incidents.cs" />
+    <Compile Include="PindataMigrations\201408191718128_incidents.Designer.cs">
+      <DependentUpon>201408191718128_incidents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PindataMigrations\201408191735454_incidents1.cs" />
+    <Compile Include="PindataMigrations\201408191735454_incidents1.Designer.cs">
+      <DependentUpon>201408191735454_incidents1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PindataMigrations\PindataConfiguration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{1569623e-f6eb-4128-8403-01fb780d9815}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201406171651273_adding_reports_table.resx">
+      <DependentUpon>201406171651273_adding_reports_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406171656101_adding_parameters_table.resx">
+      <DependentUpon>201406171656101_adding_parameters_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406171718250_adding_report_parameters_table.resx">
+      <DependentUpon>201406171718250_adding_report_parameters_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406171724483_adding_filters_table.resx">
+      <DependentUpon>201406171724483_adding_filters_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406171757254_adding_report_report_table.resx">
+      <DependentUpon>201406171757254_adding_report_report_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406181230482_add_filters.resx">
+      <DependentUpon>201406181230482_add_filters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406181235330_add_filter_name.resx">
+      <DependentUpon>201406181235330_add_filter_name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406181247278_add_report_filter_rel.resx">
+      <DependentUpon>201406181247278_add_report_filter_rel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406181408214_update_filter_definitions.resx">
+      <DependentUpon>201406181408214_update_filter_definitions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406181443133_add_filter_option_definitions.resx">
+      <DependentUpon>201406181443133_add_filter_option_definitions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406181534527_add_user_definition.resx">
+      <DependentUpon>201406181534527_add_user_definition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406181807116_remove_filters.resx">
+      <DependentUpon>201406181807116_remove_filters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406181822596_add_field_name_to_predefined_filter.resx">
+      <DependentUpon>201406181822596_add_field_name_to_predefined_filter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406181828530_add_index_on_filters.resx">
+      <DependentUpon>201406181828530_add_index_on_filters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406191943054_remove_param_table.resx">
+      <DependentUpon>201406191943054_remove_param_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406201803183_add_token_and_apiuser_tables.resx">
+      <DependentUpon>201406201803183_add_token_and_apiuser_tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406201810293_update_token_table.resx">
+      <DependentUpon>201406201810293_update_token_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406271703445_add_usertype.resx">
+      <DependentUpon>201406271703445_add_usertype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407011347295_adding_references.resx">
+      <DependentUpon>201407011347295_adding_references.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407011553167_adding_default_output.resx">
+      <DependentUpon>201407011553167_adding_default_output.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407011806260_removing_rowversion.resx">
+      <DependentUpon>201407011806260_removing_rowversion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407011807391_optimistic_concurrence.resx">
+      <DependentUpon>201407011807391_optimistic_concurrence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407021507008_add_name.resx">
+      <DependentUpon>201407021507008_add_name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407071744596_removing_user_filter.resx">
+      <DependentUpon>201407071744596_removing_user_filter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407071819054_user_filter_max_length.resx">
+      <DependentUpon>201407071819054_user_filter_max_length.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407072022061_adding_user_filters.resx">
+      <DependentUpon>201407072022061_adding_user_filters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407081334109_soft_delete.resx">
+      <DependentUpon>201407081334109_soft_delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407081344189_f_key.resx">
+      <DependentUpon>201407081344189_f_key.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407092055297_change_name_predifined_filters.resx">
+      <DependentUpon>201407092055297_change_name_predifined_filters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407101440162_indexColumn.resx">
+      <DependentUpon>201407101440162_indexColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407211957189_report_stand_alone.resx">
+      <DependentUpon>201407211957189_report_stand_alone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407231744184_report_labels.resx">
+      <DependentUpon>201407231744184_report_labels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407241325493_report_labels_mod.resx">
+      <DependentUpon>201407241325493_report_labels_mod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407241835294_user_report_output_config.resx">
+      <DependentUpon>201407241835294_user_report_output_config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407241946234_report_category.resx">
+      <DependentUpon>201407241946234_report_category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407251252578_user_report_config_requiered.resx">
+      <DependentUpon>201407251252578_user_report_config_requiered.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408261601237_orders.resx">
+      <DependentUpon>201408261601237_orders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408261844317_orders1.resx">
+      <DependentUpon>201408261844317_orders1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408261935272_orders2.resx">
+      <DependentUpon>201408261935272_orders2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408262005529_reports.resx">
+      <DependentUpon>201408262005529_reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408262009101_reports1.resx">
+      <DependentUpon>201408262009101_reports1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408281309193_orders3.resx">
+      <DependentUpon>201408281309193_orders3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408291819275_orders4.resx">
+      <DependentUpon>201408291819275_orders4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408291830516_users.resx">
+      <DependentUpon>201408291830516_users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408291836262_users1.resx">
+      <DependentUpon>201408291836262_users1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409021815597_username.resx">
+      <DependentUpon>201409021815597_username.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409021823131_username1.resx">
+      <DependentUpon>201409021823131_username1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409041906494_user_token.resx">
+      <DependentUpon>201409041906494_user_token.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409041928529_user_token1.resx">
+      <DependentUpon>201409041928529_user_token1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409042007259_user_token2.resx">
+      <DependentUpon>201409042007259_user_token2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410151316177_user_report_dates.resx">
+      <DependentUpon>201410151316177_user_report_dates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PindataMigrations\201408121259224_Init.resx">
+      <DependentUpon>201408121259224_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PindataMigrations\201408121331375_config.resx">
+      <DependentUpon>201408121331375_config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PindataMigrations\201408121458448_config2.resx">
+      <DependentUpon>201408121458448_config2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PindataMigrations\201408121509391_config3.resx">
+      <DependentUpon>201408121509391_config3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PindataMigrations\201408121512006_config4.resx">
+      <DependentUpon>201408121512006_config4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PindataMigrations\201408121525163_config5.resx">
+      <DependentUpon>201408121525163_config5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PindataMigrations\201408121527451_config6.resx">
+      <DependentUpon>201408121527451_config6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PindataMigrations\201408121528491_config61.resx">
+      <DependentUpon>201408121528491_config61.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PindataMigrations\201408121530521_config62.resx">
+      <DependentUpon>201408121530521_config62.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PindataMigrations\201408191718128_incidents.resx">
+      <DependentUpon>201408191718128_incidents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PindataMigrations\201408191735454_incidents1.resx">
+      <DependentUpon>201408191735454_incidents1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="CodeTemplates\ReverseEngineerCodeFirst\Context.tt" />
+    <None Include="CodeTemplates\ReverseEngineerCodeFirst\Entity.tt" />
+    <None Include="CodeTemplates\ReverseEngineerCodeFirst\Mapping.tt" />
+    <EntityDeploy Include="Contexts\BMSExternalLogin.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BMSExternalLogin.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Contexts\BMSExternalLogin.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BMSExternalLogin.edmx</DependentUpon>
+      <LastGenOutput>BMSExternalLogin.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Contexts\BMSExternalLogin.edmx.diagram">
+      <DependentUpon>BMSExternalLogin.edmx</DependentUpon>
+    </None>
+    <None Include="Contexts\BMSExternalLogin.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BMSExternalLogin.edmx</DependentUpon>
+      <LastGenOutput>BMSExternalLogin.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\AutoMapper.3.2.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.2.1\tools\AutoMapper.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

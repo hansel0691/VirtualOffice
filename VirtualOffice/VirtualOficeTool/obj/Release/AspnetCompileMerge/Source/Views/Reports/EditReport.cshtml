@@ -1,0 +1,164 @@
+﻿@using VirtualOfficeToolManager.Domain
+@using VirtualOficeTool.Models
+@model VirtualOficeTool.Models.ReportViewModel
+@{
+    var reportId = Model.Id;
+
+    var mode = (int) Mode.Edition;
+}
+  <fieldset>
+        <legend>PromotionViewModel</legend>
+      <div class="row clearfix">
+          <h1><b>Edit Report</b></h1>
+          <br><br>
+          @using (Html.BeginForm("ExecuteEditReport", "Reports", FormMethod.Post))
+          {
+                 
+              <input id="mode" type="hidden" value ="@mode" />
+              
+              @Html.HiddenFor(model=> model.Id)
+              @Html.HiddenFor(model=> model.IsEnable)
+              <div class="col-md-4">
+                  @Html.ValidationSummary(true,"",new{@class="alert-danger"})
+                  <div class="form-group">
+                      @Html.LabelFor(model => model.Name)
+                      @(Html.Kendo().DropDownListFor(model => model.Query)
+                      .OptionLabel("Select Procedure")
+                      .DataSource(source => source.Read(read => read.Action("GetStoredProcedureNames", "Reports"))
+                      .ServerFiltering(true))
+                      .AutoBind(false))
+                      @Html.ValidationMessageFor(model => model.Name)       
+              
+                  </div>
+                  <div class="form-group">
+                      @Html.LabelFor(model => model.Query)
+                      @Html.TextBoxFor(model => model.Query)
+                      @Html.ValidationMessageFor(model => model.Query)       
+              
+                  </div>
+                  <button id="parametersSelection" type="button" onclick="showParameters()" class="btn-warning">Get Parameters</button>
+                  <button id="resetOutPutSelection" style="display: none" type="button" onclick="onResetOutPutSelection()" class="btn-warning">Reset OutPut</button>
+                  <br>
+                    
+                  <div class="alert alert-danger" style="display: none" id="OutPutSummary">
+                      <p>
+                          <strong></strong><label id="OutPutError"></label>
+                      </p>
+                  </div>
+               
+                  <div id="parametersDiv" style="display: none">
+                      @Html.Partial("~/Views/PartialViews/ReportsParametersGrid.cshtml")
+                      <button id="outPutSelection" type="button" onclick="onOutPutSelection()" class="btn-warning">Run to Select OutPut</button>
+                  </div>
+               
+                 
+
+                  <div id="outPut" style="display: none">
+                      @Html.Partial("~/Views/PartialViews/ReportColumns.cshtml")
+                  </div>
+                        
+                  <br>
+              </div>
+              <div class="col-md-4">
+                  <h4>User Filters</h4>
+                  @Html.Partial("~/Views/PartialViews/UserFilterReports.cshtml")
+           
+                   <br>
+               
+               <h4>Predefined Filters</h4>
+                  @Html.Partial("~/Views/PartialViews/PredefinedFilterReports.cshtml")
+               
+               <br>
+               
+               <button type="submit" class="btn-warning">Save Report</button> 
+              </div>  
+           
+           <div class="col-md-4">
+                 <h4>SubReports Associated</h4>
+                  @Html.Partial("~/Views/PartialViews/SubReportsGrid.cshtml")
+              </div>
+      
+          }
+        
+      </div>
+
+        
+    </fieldset>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script>
+    
+    function showParameters() {
+
+        if ($("#Query").valid()) {
+            $("#ReportParametersGrid").data("kendoGrid").dataSource.read();
+            $("#outPutSelection").fadeIn();
+            
+        }
+    }
+    
+    function getColumnNames() {
+
+        var query = $("#Query").val();
+
+        var parameters = JSON.stringify(getParameters());
+
+        var reportId = $("#Id").val();
+
+        return {            
+            query: query,
+            parameters: parameters,
+            reportId: reportId
+        };
+    }
+
+    function onOutPutSelection() {
+        if (!$("#Query").valid()) {
+            return;
+        }
+        
+        $("#outPutSelection").fadeOut();
+        
+
+        $("#ReportColumnNames").data("kendoGrid").dataSource.read();
+    }
+    
+    function getParameters() {
+
+        var parameters = [];
+
+        var inputs = document.getElementsByTagName('input');
+        
+        for (var i = 0; i < inputs.length; i++) {
+            if (inputs[i].name === 'parameter') {
+                parameters.push(inputs[i].value);
+            }
+        }
+        return parameters;
+    }
+    
+    function onResetOutPutSelection() {
+
+        $("#resetOutPutSelection").fadeOut();
+        $("#outPutSelection").fadeOut();
+        $("#parametersSelection").fadeIn();
+        $("#parametersDiv").fadeOut();
+        $("#outPut").fadeOut();
+    }
+
+    function getFilteringData() {
+        return {
+            reportId: $("#Id").val(),
+            mode: $("#mode").val()
+        };
+    }
+    
+    function getStoreProcedureName() {
+        return {            
+            spName: $("#Query").val()  
+        };
+    }
+
+</script>

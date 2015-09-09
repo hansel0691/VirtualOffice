@@ -1,0 +1,142 @@
+@charset "UTF-8";
+// Core variables and mixins
+@import "less/variables.less";
+@import "shared/variables.less";
+//
+#isotope{
+	margin: 20px 0;
+}
+
+.element-item {
+	position: relative;
+	float: left;
+	width: 100px;
+	height: 100px;
+	color: #262524;
+	margin-bottom: 20px;
+	//border: 1px solid #000;
+
+	.item-details{
+		position: absolute;
+		top: 10%;
+		/*padding: 10px;*/
+		text-align: center;
+		height: 100%;
+		width: 100%;
+		.no-item{
+			height: 28%;
+			display: block;
+			text-align: center;
+			.badge{
+				position: absolute;
+				left: 35%;
+				top: 11%;
+				background-color: #fff;
+				color: @brand-primary;
+			}
+		}
+		.name {
+			display: block;
+			margin-top: 11%;
+			text-transform: none;
+			color: @white;
+			font-weight: 600;
+			font-size: @font-size-base;
+			height: 65%;
+			text-decoration: none;
+			&:hover{
+				color: darken(@brand-primary, 15%);
+			}
+		}
+	}
+}
+.width50{
+	.item-details{
+
+		.badge{
+			font-size: @font-size-base - 5;
+			//padding: 0 3px;
+		}
+		.name {
+			//margin-top: -2px;
+			font-size: @font-size-base - 5;
+			line-height: @line-height-computed - 12;
+			color: @brand-primary;
+		}
+	}
+}
+.width100{
+	.item-details{
+
+		.badge{
+			font-size: @font-size-base - 1;
+			//padding: 2px 5px;
+		}
+		.name {
+			//margin-top: 5px;
+			font-size: @font-size-base - 1;
+			line-height: @line-height-computed - 7;
+		}
+	}
+}
+.width150{
+	.item-details{
+
+		.badge{
+			font-size: @font-size-base;
+			//padding: 3px 7px;
+		}
+		.name {
+			//margin-top: 15px;
+			font-size: @font-size-base + 2;
+			line-height: @line-height-computed - 2;
+		}
+	}
+}
+.width200{
+	.item-details{
+
+		.badge{
+			font-size: @font-size-base + 8;
+		}
+		.name {
+			font-size: @font-size-base + 8;
+			line-height: @line-height-computed;
+		}
+	}
+}
+.width250{
+	.item-details{
+		//top: 27%;
+
+		.badge{
+			font-size: @font-size-base + 14;
+		}
+		.name {
+			font-size: @font-size-base + 12;
+			line-height: @line-height-computed + 4;
+		}
+	}
+}
+.width300{
+	.item-details{
+		//top: 27%;
+
+		.badge{
+			font-size: @font-size-base + 18;
+		}
+		.name {
+			//margin-top: 13%;
+			font-size: @font-size-base + 18;
+			line-height: @line-height-computed + 8;
+		}
+	}
+}
+.btn-secundary{
+	&:hover{
+		color: @white;
+		}
+	&:focus{
+		color: @white;
+	}
+}

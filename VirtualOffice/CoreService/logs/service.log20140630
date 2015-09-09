@@ -1,0 +1,440 @@
+06/30/2014 14:38:15: DEBUG 10  Generic Logger - Starting operation: Token / TestPostToken
+06/30/2014 14:38:15: DEBUG 10  TokenController - Logging something
+06/30/2014 14:38:15: DEBUG 10  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 14:38:16: INFO 10  IApiUserService - User 2 found with key: abc
+06/30/2014 14:38:16: DEBUG 10  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 14:38:16: DEBUG 10  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 14:38:16: DEBUG 10  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 14:38:16: DEBUG 10  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 14:38:16: DEBUG 10  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 14:38:16: DEBUG 10  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 14:38:16: INFO 10  IApiUserService - User 2 found with key: abc
+06/30/2014 14:38:16: DEBUG 10  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 14:38:16: DEBUG 10  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 14:38:16: DEBUG 10  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 14:38:16: DEBUG 10  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 14:38:16: DEBUG 10  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 14:38:16: DEBUG 10  IInterceptor - Method GetNewTokenForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 14:38:16: DEBUG 10  IInterceptor - Method GetHash called with parameters <key>:<asdfasdfadfa>,<data>:<anicolasppabc123408334571733912289>,
+06/30/2014 14:38:16: DEBUG 10  IInterceptor - Method GetHash returned <p96eIjtGBW5AXbbNpfwZMJKe5cwM6ntATuSSRIjJfqQ=>
+06/30/2014 14:38:17: DEBUG 10  IInterceptor - Method GetNewTokenForUser returned <Domain.Models.AuthToken>
+06/30/2014 14:38:17: DEBUG 10  Generic Logger - Ending operation: Token / TestPostToken
+06/30/2014 14:38:17: INFO 10  Generic Logger - =========================================================================================================
+06/30/2014 14:38:17: INFO 10  Generic Logger - =========================================================================================================
+06/30/2014 14:38:17: INFO 10  Generic Logger - =========================================================================================================
+06/30/2014 14:38:18: DEBUG 12  Generic Logger - Starting operation: Token / TestPostToken
+06/30/2014 14:38:18: DEBUG 12  TokenController - Logging something
+06/30/2014 14:38:18: DEBUG 12  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 14:38:18: INFO 12  IApiUserService - User 2 found with key: abc
+06/30/2014 14:38:18: DEBUG 12  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 14:38:18: DEBUG 12  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 14:38:18: DEBUG 12  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 14:38:18: DEBUG 12  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 14:38:18: DEBUG 12  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 14:38:18: DEBUG 12  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 14:38:18: INFO 12  IApiUserService - User 2 found with key: abc
+06/30/2014 14:38:18: DEBUG 12  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 14:38:18: DEBUG 12  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 14:38:18: DEBUG 12  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 14:38:18: DEBUG 12  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 14:38:18: DEBUG 12  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 14:38:18: DEBUG 12  IInterceptor - Method GetNewTokenForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 14:38:18: DEBUG 12  IInterceptor - Method GetHash called with parameters <key>:<asdfasdfadfa>,<data>:<anicolasppabc123408334571936970546>,
+06/30/2014 14:38:18: DEBUG 12  IInterceptor - Method GetHash returned <tbAqAznXw/O7dQCSyMnOcNDoJVXuPG3U3oVbBwnLGRw=>
+06/30/2014 14:38:18: DEBUG 12  IInterceptor - Method GetNewTokenForUser returned <Domain.Models.AuthToken>
+06/30/2014 14:38:18: DEBUG 12  Generic Logger - Ending operation: Token / TestPostToken
+06/30/2014 14:38:18: INFO 12  Generic Logger - =========================================================================================================
+06/30/2014 14:38:18: INFO 12  Generic Logger - =========================================================================================================
+06/30/2014 14:38:18: INFO 12  Generic Logger - =========================================================================================================
+06/30/2014 14:38:19: DEBUG 13  Generic Logger - Starting operation: Token / TestPostToken
+06/30/2014 14:38:19: DEBUG 13  TokenController - Logging something
+06/30/2014 14:38:19: DEBUG 13  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 14:38:19: INFO 13  IApiUserService - User 2 found with key: abc
+06/30/2014 14:38:19: DEBUG 13  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 14:38:19: DEBUG 13  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 14:38:19: DEBUG 13  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 14:38:19: DEBUG 13  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 14:38:19: DEBUG 13  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 14:38:19: DEBUG 13  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 14:38:19: INFO 13  IApiUserService - User 2 found with key: abc
+06/30/2014 14:38:19: DEBUG 13  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 14:38:19: DEBUG 13  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 14:38:19: DEBUG 13  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 14:38:19: DEBUG 13  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 14:38:19: DEBUG 13  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 14:38:19: DEBUG 13  IInterceptor - Method GetNewTokenForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 14:38:19: DEBUG 13  IInterceptor - Method GetHash called with parameters <key>:<asdfasdfadfa>,<data>:<anicolasppabc12340833457836684625>,
+06/30/2014 14:38:19: DEBUG 13  IInterceptor - Method GetHash returned <unWfQ1UtKG2Jgp4oVpsYsc3/nlEKiRCEk4ImtRE7zj4=>
+06/30/2014 14:38:19: DEBUG 13  IInterceptor - Method GetNewTokenForUser returned <Domain.Models.AuthToken>
+06/30/2014 14:38:19: DEBUG 13  Generic Logger - Ending operation: Token / TestPostToken
+06/30/2014 14:38:19: INFO 13  Generic Logger - =========================================================================================================
+06/30/2014 14:38:19: INFO 13  Generic Logger - =========================================================================================================
+06/30/2014 14:38:19: INFO 13  Generic Logger - =========================================================================================================
+06/30/2014 14:38:20: DEBUG 11  Generic Logger - Starting operation: Token / TestPostToken
+06/30/2014 14:38:20: DEBUG 11  TokenController - Logging something
+06/30/2014 14:38:20: DEBUG 11  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 14:38:20: INFO 11  IApiUserService - User 2 found with key: abc
+06/30/2014 14:38:20: DEBUG 11  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 14:38:20: DEBUG 11  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 14:38:20: DEBUG 11  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 14:38:20: DEBUG 11  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 14:38:20: DEBUG 11  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 14:38:20: DEBUG 11  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 14:38:20: INFO 11  IApiUserService - User 2 found with key: abc
+06/30/2014 14:38:20: DEBUG 11  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 14:38:20: DEBUG 11  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 14:38:20: DEBUG 11  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 14:38:20: DEBUG 11  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 14:38:20: DEBUG 11  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 14:38:20: DEBUG 11  IInterceptor - Method GetNewTokenForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 14:38:20: DEBUG 11  IInterceptor - Method GetHash called with parameters <key>:<asdfasdfadfa>,<data>:<anicolasppabc12340833457756793582>,
+06/30/2014 14:38:20: DEBUG 11  IInterceptor - Method GetHash returned <gu8ToXnZPR75D4QQKHdA1lHUxvM/DtxRyeqK9Ri4ZUg=>
+06/30/2014 14:38:20: DEBUG 11  IInterceptor - Method GetNewTokenForUser returned <Domain.Models.AuthToken>
+06/30/2014 14:38:20: DEBUG 11  Generic Logger - Ending operation: Token / TestPostToken
+06/30/2014 14:38:20: INFO 11  Generic Logger - =========================================================================================================
+06/30/2014 14:38:20: INFO 11  Generic Logger - =========================================================================================================
+06/30/2014 14:38:20: INFO 11  Generic Logger - =========================================================================================================
+06/30/2014 14:38:20: DEBUG 9  Generic Logger - Starting operation: Token / TestPostToken
+06/30/2014 14:38:20: DEBUG 9  TokenController - Logging something
+06/30/2014 14:38:20: DEBUG 9  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 14:38:20: INFO 9  IApiUserService - User 2 found with key: abc
+06/30/2014 14:38:20: DEBUG 9  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 14:38:20: DEBUG 9  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 14:38:20: DEBUG 9  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 14:38:20: DEBUG 9  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 14:38:20: DEBUG 9  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 14:38:20: DEBUG 9  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 14:38:20: INFO 9  IApiUserService - User 2 found with key: abc
+06/30/2014 14:38:20: DEBUG 9  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 14:38:20: DEBUG 9  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 14:38:20: DEBUG 9  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 14:38:20: DEBUG 9  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 14:38:20: DEBUG 9  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 14:38:20: DEBUG 9  IInterceptor - Method GetNewTokenForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 14:38:20: DEBUG 9  IInterceptor - Method GetHash called with parameters <key>:<asdfasdfadfa>,<data>:<anicolasppabc12340833457772625136>,
+06/30/2014 14:38:20: DEBUG 9  IInterceptor - Method GetHash returned <3guxW0V9hp4XYxwahTuzYia1nuAFvr2V3GnV2ACI70g=>
+06/30/2014 14:38:20: DEBUG 9  IInterceptor - Method GetNewTokenForUser returned <Domain.Models.AuthToken>
+06/30/2014 14:38:20: DEBUG 9  Generic Logger - Ending operation: Token / TestPostToken
+06/30/2014 14:38:20: INFO 9  Generic Logger - =========================================================================================================
+06/30/2014 14:38:20: INFO 9  Generic Logger - =========================================================================================================
+06/30/2014 14:38:20: INFO 9  Generic Logger - =========================================================================================================
+06/30/2014 14:38:21: DEBUG 11  Generic Logger - Starting operation: Token / TestPostToken
+06/30/2014 14:38:21: DEBUG 11  TokenController - Logging something
+06/30/2014 14:38:21: DEBUG 11  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 14:38:21: INFO 11  IApiUserService - User 2 found with key: abc
+06/30/2014 14:38:21: DEBUG 11  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 14:38:21: DEBUG 11  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 14:38:21: DEBUG 11  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 14:38:21: DEBUG 11  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 14:38:21: DEBUG 11  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 14:38:21: DEBUG 11  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 14:38:21: INFO 11  IApiUserService - User 2 found with key: abc
+06/30/2014 14:38:21: DEBUG 11  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 14:38:21: DEBUG 11  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 14:38:21: DEBUG 11  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 14:38:21: DEBUG 11  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 14:38:21: DEBUG 11  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 14:38:21: DEBUG 11  IInterceptor - Method GetNewTokenForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 14:38:21: DEBUG 11  IInterceptor - Method GetHash called with parameters <key>:<asdfasdfadfa>,<data>:<anicolasppabc123408334571909125974>,
+06/30/2014 14:38:21: DEBUG 11  IInterceptor - Method GetHash returned <SYbVDSzfDH6XWjShm+ZkMQXhGajjc5YETSeF0OkxSs4=>
+06/30/2014 14:38:21: DEBUG 11  IInterceptor - Method GetNewTokenForUser returned <Domain.Models.AuthToken>
+06/30/2014 14:38:21: DEBUG 11  Generic Logger - Ending operation: Token / TestPostToken
+06/30/2014 14:38:21: INFO 11  Generic Logger - =========================================================================================================
+06/30/2014 14:38:21: INFO 11  Generic Logger - =========================================================================================================
+06/30/2014 14:38:21: INFO 11  Generic Logger - =========================================================================================================
+06/30/2014 15:01:46: DEBUG 12  Generic Logger - Starting operation: Token / TestPostToken
+06/30/2014 15:01:46: DEBUG 12  TokenController - Logging something
+06/30/2014 15:01:46: DEBUG 12  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 15:01:47: DEBUG 12  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 15:01:47: DEBUG 12  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 15:01:47: DEBUG 12  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 15:01:47: DEBUG 12  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:01:47: DEBUG 12  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:01:47: DEBUG 12  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 15:01:47: DEBUG 12  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 15:01:47: DEBUG 12  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 15:01:47: DEBUG 12  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 15:01:47: DEBUG 12  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:01:47: DEBUG 12  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:01:47: DEBUG 12  IInterceptor - Method GetNewTokenForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 15:01:47: DEBUG 12  IInterceptor - Method GetHash called with parameters <key>:<asdfasdfadfa>,<data>:<anicolasppabc123153741361486487244>,
+06/30/2014 15:01:47: DEBUG 12  IInterceptor - Method GetHash returned <YJdBvqe6aaPuJKwiIyIEwaMGlXgOlPqEZi9vPpBqfT8=>
+06/30/2014 15:01:48: DEBUG 12  IInterceptor - Method GetNewTokenForUser returned <Domain.Models.AuthToken>
+06/30/2014 15:01:48: DEBUG 12  Generic Logger - Ending operation: Token / TestPostToken
+06/30/2014 15:01:48: INFO 12  Generic Logger - =========================================================================================================
+06/30/2014 15:01:48: INFO 12  Generic Logger - =========================================================================================================
+06/30/2014 15:01:48: INFO 12  Generic Logger - =========================================================================================================
+06/30/2014 15:01:54: DEBUG 11  Generic Logger - Starting operation: Report / TestRunReport
+06/30/2014 15:01:57: DEBUG 11  IInterceptor - Method Run called with parameters <reportId>:<13>,<args>:<System.Collections.Generic.List`1[Domain.Models.Argument]>,
+06/30/2014 15:01:57: DEBUG 11  IInterceptor - Method Execute called with parameters <report>:<Domain.Models.ReportModel>,<args>:<System.Collections.Generic.List`1[Domain.Models.Argument]>,
+06/30/2014 15:02:09: DEBUG 11  IInterceptor - Method Parse called with parameters <output>:<Agent ID,Agent name,Product Description,Carrier Name,Vendor Name,Total Sales>,
+06/30/2014 15:02:09: DEBUG 11  IInterceptor - Method Parse returned <System.String[]>
+06/30/2014 15:02:09: DEBUG 11  IInterceptor - Method Execute returned <Services.Concrete.ReportExecuter+<Project>d__0>
+06/30/2014 15:02:09: DEBUG 11  IInterceptor - Method Run returned <Services.Concrete.ReportExecuter+<Project>d__0>
+06/30/2014 15:02:09: DEBUG 11  Generic Logger - Ending operation: Report / TestRunReport
+06/30/2014 15:02:09: INFO 11  Generic Logger - =========================================================================================================
+06/30/2014 15:02:09: INFO 11  Generic Logger - =========================================================================================================
+06/30/2014 15:02:09: INFO 11  Generic Logger - =========================================================================================================
+06/30/2014 15:11:26: DEBUG 11  Generic Logger - Starting operation: Report / TestRunReport
+06/30/2014 15:11:28: DEBUG 11  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 15:11:30: DEBUG 11  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 15:11:30: DEBUG 11  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 15:11:30: DEBUG 11  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 15:11:30: DEBUG 11  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:11:30: DEBUG 11  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:13:10: DEBUG 7  Generic Logger - Starting operation: Report / TestRunReport
+06/30/2014 15:13:11: DEBUG 7  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 15:13:13: DEBUG 7  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 15:13:13: DEBUG 7  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 15:13:13: DEBUG 7  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 15:13:13: DEBUG 7  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:13:13: DEBUG 7  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:13:30: DEBUG 7  Generic Logger - Ending operation: Report / TestRunReport
+06/30/2014 15:13:30: INFO 7  Generic Logger - =========================================================================================================
+06/30/2014 15:13:30: INFO 7  Generic Logger - =========================================================================================================
+06/30/2014 15:13:30: INFO 7  Generic Logger - =========================================================================================================
+06/30/2014 15:14:12: DEBUG 7  Generic Logger - Starting operation: Report / TestRunReport
+06/30/2014 15:14:15: DEBUG 7  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 15:14:16: DEBUG 7  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 15:14:17: DEBUG 7  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 15:14:17: DEBUG 7  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 15:14:17: DEBUG 7  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:14:17: DEBUG 7  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:14:55: DEBUG 7  Generic Logger - Ending operation: Report / TestRunReport
+06/30/2014 15:14:55: INFO 7  Generic Logger - =========================================================================================================
+06/30/2014 15:14:55: INFO 7  Generic Logger - =========================================================================================================
+06/30/2014 15:14:55: INFO 7  Generic Logger - =========================================================================================================
+06/30/2014 15:15:34: DEBUG 7  Generic Logger - Starting operation: Report / TestRunReport
+06/30/2014 15:15:34: DEBUG 7  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 15:15:35: DEBUG 7  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 15:15:35: DEBUG 7  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 15:15:35: DEBUG 7  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 15:15:35: DEBUG 7  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:15:35: DEBUG 7  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:17:11: DEBUG 7  Generic Logger - Starting operation: Report / TestRunReport
+06/30/2014 15:17:11: DEBUG 7  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 15:17:12: DEBUG 7  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 15:17:12: DEBUG 7  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 15:17:12: DEBUG 7  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 15:17:12: DEBUG 7  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:17:12: DEBUG 7  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:17:18: DEBUG 7  IInterceptor - Method Run called with parameters <reportId>:<13>,<args>:<System.Collections.Generic.List`1[Domain.Models.Argument]>,
+06/30/2014 15:17:19: DEBUG 7  IInterceptor - Method Execute called with parameters <report>:<Domain.Models.ReportModel>,<args>:<System.Collections.Generic.List`1[Domain.Models.Argument]>,
+06/30/2014 15:17:27: DEBUG 7  IInterceptor - Method Parse called with parameters <output>:<Agent ID,Agent name,Product Description,Carrier Name,Vendor Name,Total Sales>,
+06/30/2014 15:17:27: DEBUG 7  IInterceptor - Method Parse returned <System.String[]>
+06/30/2014 15:17:27: DEBUG 7  IInterceptor - Method Execute returned <Services.Concrete.ReportExecuter+<Project>d__0>
+06/30/2014 15:17:27: DEBUG 7  IInterceptor - Method Run returned <Services.Concrete.ReportExecuter+<Project>d__0>
+06/30/2014 15:17:38: DEBUG 7  Generic Logger - Ending operation: Report / TestRunReport
+06/30/2014 15:17:38: INFO 7  Generic Logger - =========================================================================================================
+06/30/2014 15:17:38: INFO 7  Generic Logger - =========================================================================================================
+06/30/2014 15:17:38: INFO 7  Generic Logger - =========================================================================================================
+06/30/2014 15:18:35: DEBUG 7  Generic Logger - Starting operation: Report / TestRunReport
+06/30/2014 15:18:35: DEBUG 7  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 15:18:37: DEBUG 7  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 15:18:37: DEBUG 7  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 15:18:37: DEBUG 7  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 15:18:37: DEBUG 7  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:18:37: DEBUG 7  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:19:04: DEBUG 7  Generic Logger - Starting operation: Report / TestRunReport
+06/30/2014 15:19:04: DEBUG 7  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 15:19:07: DEBUG 7  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 15:19:07: DEBUG 7  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 15:19:07: DEBUG 7  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 15:19:07: DEBUG 7  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:19:07: DEBUG 7  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:20:35: DEBUG 7  Generic Logger - Starting operation: Report / TestRunReport
+06/30/2014 15:20:35: DEBUG 7  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 15:20:37: DEBUG 7  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 15:20:37: DEBUG 7  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 15:20:37: DEBUG 7  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 15:20:37: DEBUG 7  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:20:37: DEBUG 7  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:20:41: DEBUG 13  Generic Logger - Starting operation: Report / RunReport
+06/30/2014 15:21:13: DEBUG 7  Generic Logger - Starting operation: Report / TestRunReport
+06/30/2014 15:21:13: DEBUG 7  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 15:21:15: DEBUG 7  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 15:21:15: DEBUG 7  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 15:21:15: DEBUG 7  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 15:21:15: DEBUG 7  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:21:15: DEBUG 7  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:22:38: DEBUG 7  Generic Logger - Starting operation: Report / TestRunReport
+06/30/2014 15:22:38: DEBUG 7  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 15:22:40: DEBUG 7  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 15:22:40: DEBUG 7  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 15:22:40: DEBUG 7  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 15:22:40: DEBUG 7  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:22:40: DEBUG 7  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:22:48: DEBUG 13  Generic Logger - Starting operation: Report / RunReport
+06/30/2014 15:23:08: DEBUG 7  Generic Logger - Starting operation: Report / TestRunReport
+06/30/2014 15:23:08: DEBUG 7  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 15:23:10: DEBUG 7  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 15:23:10: DEBUG 7  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 15:23:10: DEBUG 7  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 15:23:10: DEBUG 7  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:23:10: DEBUG 7  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:23:58: DEBUG 7  Generic Logger - Starting operation: Report / TestRunReport
+06/30/2014 15:23:58: DEBUG 7  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 15:24:00: DEBUG 7  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 15:24:00: DEBUG 7  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 15:24:00: DEBUG 7  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 15:24:00: DEBUG 7  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:24:00: DEBUG 7  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:24:06: INFO 9  Generic Logger - Key: abc
+06/30/2014 15:24:06: INFO 9  Generic Logger - Token: 4na7+qvvgyKyHyZ55jKEKykaS3z57oZe/PjAh6KYny4=
+06/30/2014 15:24:07: DEBUG 9  IInterceptor - Method GetToken called with parameters <token>:<4na7+qvvgyKyHyZ55jKEKykaS3z57oZe/PjAh6KYny4=>,
+06/30/2014 15:24:07: DEBUG 9  IInterceptor - Method GetToken returned <System.Data.Entity.DynamicProxies.AuthToken_DC7F69CC2F52E685042BCB6858149E6F4194B3FB650842F667F38591841B7722>
+06/30/2014 15:24:07: DEBUG 9  IInterceptor - Method ToString called with parameters 
+06/30/2014 15:24:07: DEBUG 9  IInterceptor - Method ToString returned <Services.Concrete.TokenService>
+06/30/2014 15:24:07: DEBUG 9  IInterceptor - Method ToString called with parameters 
+06/30/2014 15:24:07: DEBUG 9  IInterceptor - Method ToString returned <Services.Concrete.TokenService>
+06/30/2014 15:24:08: DEBUG 9  Generic Logger - Token found
+06/30/2014 15:24:08: DEBUG 9  Generic Logger - Token not active
+06/30/2014 15:24:08: DEBUG 9  Generic Logger - Unauthorized
+06/30/2014 15:24:08: DEBUG 7  Generic Logger - Ending operation: Report / TestRunReport
+06/30/2014 15:24:08: INFO 7  Generic Logger - =========================================================================================================
+06/30/2014 15:24:08: INFO 7  Generic Logger - =========================================================================================================
+06/30/2014 15:24:08: INFO 7  Generic Logger - =========================================================================================================
+06/30/2014 15:24:17: DEBUG 13  Generic Logger - Starting operation: Report / TestRunReport
+06/30/2014 15:24:17: DEBUG 13  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 15:24:17: DEBUG 13  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 15:24:17: DEBUG 13  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 15:24:17: DEBUG 13  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 15:24:17: DEBUG 13  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:24:17: DEBUG 13  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:24:22: INFO 11  Generic Logger - Key: abc
+06/30/2014 15:24:22: INFO 11  Generic Logger - Token: 0ni4EeQP+rh38Kxh2MuDzk6iaGrMjqGbnb2VBmnHxCM=
+06/30/2014 15:24:23: DEBUG 11  IInterceptor - Method GetToken called with parameters <token>:<0ni4EeQP+rh38Kxh2MuDzk6iaGrMjqGbnb2VBmnHxCM=>,
+06/30/2014 15:24:23: DEBUG 11  IInterceptor - Method GetToken returned <System.Data.Entity.DynamicProxies.AuthToken_DC7F69CC2F52E685042BCB6858149E6F4194B3FB650842F667F38591841B7722>
+06/30/2014 15:24:23: DEBUG 11  IInterceptor - Method ToString called with parameters 
+06/30/2014 15:24:23: DEBUG 11  IInterceptor - Method ToString returned <Services.Concrete.TokenService>
+06/30/2014 15:24:23: DEBUG 11  IInterceptor - Method ToString called with parameters 
+06/30/2014 15:24:23: DEBUG 11  IInterceptor - Method ToString returned <Services.Concrete.TokenService>
+06/30/2014 15:24:23: DEBUG 11  Generic Logger - Token found
+06/30/2014 15:25:39: DEBUG 7  Generic Logger - Starting operation: Report / TestRunReport
+06/30/2014 15:25:39: DEBUG 7  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 15:25:40: DEBUG 7  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 15:25:40: DEBUG 7  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 15:25:40: DEBUG 7  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 15:25:40: DEBUG 7  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:25:40: DEBUG 7  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:25:47: INFO 11  Generic Logger - Key: abc
+06/30/2014 15:25:47: INFO 11  Generic Logger - Token: hvbz082GIDl7251Kv+d8oTu5nPFBkQHaR6DOFS3WkWI=
+06/30/2014 15:25:48: DEBUG 11  IInterceptor - Method GetToken called with parameters <token>:<hvbz082GIDl7251Kv+d8oTu5nPFBkQHaR6DOFS3WkWI=>,
+06/30/2014 15:25:48: DEBUG 11  IInterceptor - Method GetToken returned <System.Data.Entity.DynamicProxies.AuthToken_DC7F69CC2F52E685042BCB6858149E6F4194B3FB650842F667F38591841B7722>
+06/30/2014 15:25:48: DEBUG 11  IInterceptor - Method ToString called with parameters 
+06/30/2014 15:25:48: DEBUG 11  IInterceptor - Method ToString returned <Services.Concrete.TokenService>
+06/30/2014 15:25:48: DEBUG 11  IInterceptor - Method ToString called with parameters 
+06/30/2014 15:25:48: DEBUG 11  IInterceptor - Method ToString returned <Services.Concrete.TokenService>
+06/30/2014 15:25:49: DEBUG 11  Generic Logger - Token found
+06/30/2014 15:26:33: DEBUG 7  Generic Logger - Starting operation: Report / TestRunReport
+06/30/2014 15:26:33: DEBUG 7  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 15:26:34: DEBUG 7  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 15:26:34: DEBUG 7  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 15:26:34: DEBUG 7  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 15:26:34: DEBUG 7  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:26:34: DEBUG 7  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:26:49: INFO 14  Generic Logger - Key: abc
+06/30/2014 15:26:50: INFO 14  Generic Logger - Token: 5bU7dSQNGGD476y5EjOhJB0Va7nvAm7r6Gs/P4kpFcQ=
+06/30/2014 15:26:50: DEBUG 14  IInterceptor - Method GetToken called with parameters <token>:<5bU7dSQNGGD476y5EjOhJB0Va7nvAm7r6Gs/P4kpFcQ=>,
+06/30/2014 15:26:50: DEBUG 14  IInterceptor - Method GetToken returned <System.Data.Entity.DynamicProxies.AuthToken_DC7F69CC2F52E685042BCB6858149E6F4194B3FB650842F667F38591841B7722>
+06/30/2014 15:26:50: DEBUG 14  IInterceptor - Method ToString called with parameters 
+06/30/2014 15:26:50: DEBUG 14  IInterceptor - Method ToString returned <Services.Concrete.TokenService>
+06/30/2014 15:26:50: DEBUG 14  IInterceptor - Method ToString called with parameters 
+06/30/2014 15:26:50: DEBUG 14  IInterceptor - Method ToString returned <Services.Concrete.TokenService>
+06/30/2014 15:26:52: DEBUG 14  Generic Logger - Token found
+06/30/2014 15:26:54: DEBUG 14  Generic Logger - Token active
+06/30/2014 15:26:56: DEBUG 14  Generic Logger - Starting operation: Report / RunReport
+06/30/2014 15:27:01: DEBUG 14  IInterceptor - Method ToString called with parameters 
+06/30/2014 15:27:01: DEBUG 14  IInterceptor - Method ToString returned <Services.Concrete.ReportService>
+06/30/2014 15:27:26: DEBUG 6  Generic Logger - Starting operation: Report / TestRunReport
+06/30/2014 15:27:26: DEBUG 6  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 15:27:27: DEBUG 6  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 15:27:27: DEBUG 6  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 15:27:27: DEBUG 6  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 15:27:27: DEBUG 6  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:27:27: DEBUG 6  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:27:31: INFO 7  Generic Logger - Key: abc
+06/30/2014 15:27:31: INFO 7  Generic Logger - Token: 9K9fH/P5oFMsjeWvVmHg94u41v2Lu0lJeGU/pF53C1c=
+06/30/2014 15:27:31: DEBUG 7  IInterceptor - Method GetToken called with parameters <token>:<9K9fH/P5oFMsjeWvVmHg94u41v2Lu0lJeGU/pF53C1c=>,
+06/30/2014 15:27:32: DEBUG 7  IInterceptor - Method GetToken returned <System.Data.Entity.DynamicProxies.AuthToken_DC7F69CC2F52E685042BCB6858149E6F4194B3FB650842F667F38591841B7722>
+06/30/2014 15:27:32: DEBUG 7  Generic Logger - Token found
+06/30/2014 15:27:32: DEBUG 7  Generic Logger - Token active
+06/30/2014 15:29:00: DEBUG 7  Generic Logger - Starting operation: Report / TestRunReport
+06/30/2014 15:29:00: DEBUG 7  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 15:29:01: DEBUG 7  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 15:29:01: DEBUG 7  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 15:29:01: DEBUG 7  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 15:29:01: DEBUG 7  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:29:01: DEBUG 7  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:30:14: DEBUG 13  Generic Logger - Starting operation: Report / TestRunReport
+06/30/2014 15:30:14: DEBUG 13  IInterceptor - Method GetUserWithKey called with parameters <apiKey>:<abc>,
+06/30/2014 15:30:16: DEBUG 13  IInterceptor - Method GetUserWithKey returned <System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>
+06/30/2014 15:30:16: DEBUG 13  IInterceptor - Method GetSignatureForUser called with parameters <user>:<System.Data.Entity.DynamicProxies.ApiUser_34F9A7A26C71B2065E5D9B2FCF2EF872AB0C345027A3D86C95438FC08EFAE7D2>,
+06/30/2014 15:30:16: DEBUG 13  IInterceptor - Method GetHash called with parameters <key>:<abc>,<data>:<asdfasdfadfa>,
+06/30/2014 15:30:16: DEBUG 13  IInterceptor - Method GetHash returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:30:16: DEBUG 13  IInterceptor - Method GetSignatureForUser returned <ZntcvA3klBXwr+oKUVx4IF1MDZ/oGMZXL7tBwMGDEsk=>
+06/30/2014 15:30:39: INFO 15  Generic Logger - Key: abc
+06/30/2014 15:30:39: INFO 15  Generic Logger - Token: AYyy0k8qVeuxXFiFPtWhZ2rFNJLR8bGaF/nTrerVfLQ=
+06/30/2014 15:30:39: DEBUG 15  IInterceptor - Method GetToken called with parameters <token>:<AYyy0k8qVeuxXFiFPtWhZ2rFNJLR8bGaF/nTrerVfLQ=>,
+06/30/2014 15:30:39: DEBUG 15  IInterceptor - Method GetToken returned <System.Data.Entity.DynamicProxies.AuthToken_DC7F69CC2F52E685042BCB6858149E6F4194B3FB650842F667F38591841B7722>
+06/30/2014 15:30:39: DEBUG 15  Generic Logger - Token found
+06/30/2014 15:30:39: DEBUG 15  Generic Logger - Token active
+06/30/2014 15:31:24: DEBUG 12  Generic Logger - Starting operation: Report / TestRunReport
+06/30/2014 15:31:30: INFO 11  Generic Logger - Key: abc
+06/30/2014 15:31:30: INFO 11  Generic Logger - Token: 2qy3C+jFiZi9AXA8h+UcoBDi8czInIVE2lilDGpe3BA=
+06/30/2014 15:31:30: DEBUG 11  Generic Logger - Token found
+06/30/2014 15:31:30: DEBUG 11  Generic Logger - Token active
+06/30/2014 15:31:55: DEBUG 7  Generic Logger - Starting operation: Report / TestRunReport
+06/30/2014 15:33:40: DEBUG 8  Generic Logger - Starting operation: Report / TestRunReport
+06/30/2014 15:33:55: DEBUG 12  Generic Logger - Starting operation: Report / RunReport
+06/30/2014 15:34:18: DEBUG 12  Generic Logger - Ending operation: Report / RunReport
+06/30/2014 15:34:18: INFO 12  Generic Logger - =========================================================================================================
+06/30/2014 15:34:18: INFO 12  Generic Logger - =========================================================================================================
+06/30/2014 15:34:18: INFO 12  Generic Logger - =========================================================================================================
+06/30/2014 15:34:18: DEBUG 8  Generic Logger - Ending operation: Report / TestRunReport
+06/30/2014 15:34:18: INFO 8  Generic Logger - =========================================================================================================
+06/30/2014 15:34:18: INFO 8  Generic Logger - =========================================================================================================
+06/30/2014 15:34:18: INFO 8  Generic Logger - =========================================================================================================
+06/30/2014 15:35:13: DEBUG 7  Generic Logger - Starting operation: Report / TestRunReport
+06/30/2014 15:35:15: DEBUG 9  Generic Logger - Starting operation: Report / RunReport
+06/30/2014 15:35:27: DEBUG 9  Generic Logger - Ending operation: Report / RunReport
+06/30/2014 15:35:27: INFO 9  Generic Logger - =========================================================================================================
+06/30/2014 15:35:27: INFO 9  Generic Logger - =========================================================================================================
+06/30/2014 15:35:27: INFO 9  Generic Logger - =========================================================================================================
+06/30/2014 15:35:27: DEBUG 7  Generic Logger - Ending operation: Report / TestRunReport
+06/30/2014 15:35:27: INFO 7  Generic Logger - =========================================================================================================
+06/30/2014 15:35:27: INFO 7  Generic Logger - =========================================================================================================
+06/30/2014 15:35:27: INFO 7  Generic Logger - =========================================================================================================
+06/30/2014 16:07:12: DEBUG 6  Generic Logger - Starting operation: Report / GetReports
+06/30/2014 16:07:15: DEBUG 6  IInterceptor - Method GetAll called with parameters 
+06/30/2014 16:07:15: DEBUG 6  IInterceptor - Method GetAll returned <Services.Concrete.ReportService+<GetAll>d__3>
+06/30/2014 16:07:41: DEBUG 10  Generic Logger - Starting operation: Report / GetReports
+06/30/2014 16:07:43: DEBUG 10  IInterceptor - Method GetAll called with parameters 
+06/30/2014 16:07:43: DEBUG 10  IInterceptor - Method GetAll returned <Services.Concrete.ReportService+<GetAll>d__3>
+06/30/2014 16:07:44: DEBUG 10  IInterceptor - Method GetReportParameters called with parameters <reportName>:<Third Report>,
+06/30/2014 16:07:44: DEBUG 10  IInterceptor - Method GetReportParameters returned <Domain.Models.Parameter[]>
+06/30/2014 16:08:23: DEBUG 7  Generic Logger - Starting operation: Report / GetReports
+06/30/2014 16:08:25: DEBUG 7  IInterceptor - Method GetAll called with parameters 
+06/30/2014 16:08:25: DEBUG 7  IInterceptor - Method GetAll returned <Services.Concrete.ReportService+<GetAll>d__3>
+06/30/2014 16:08:38: DEBUG 7  IInterceptor - Method GetReportParameters called with parameters <reportName>:<Third Report>,
+06/30/2014 16:08:38: DEBUG 7  IInterceptor - Method GetReportParameters returned <Domain.Models.Parameter[]>
+06/30/2014 16:09:04: DEBUG 7  Generic Logger - Starting operation: Report / GetReports
+06/30/2014 16:09:05: DEBUG 7  IInterceptor - Method GetAll called with parameters 
+06/30/2014 16:09:05: DEBUG 7  IInterceptor - Method GetAll returned <Services.Concrete.ReportService+<GetAll>d__3>
+06/30/2014 16:09:13: DEBUG 7  IInterceptor - Method GetReportParameters called with parameters <reportName>:<Third Report>,
+06/30/2014 16:09:14: DEBUG 7  IInterceptor - Method GetReportParameters returned <Domain.Models.Parameter[]>
+06/30/2014 16:09:39: DEBUG 7  Generic Logger - Starting operation: Report / GetReports
+06/30/2014 16:09:43: DEBUG 7  IInterceptor - Method GetAll called with parameters 
+06/30/2014 16:09:43: DEBUG 7  IInterceptor - Method GetAll returned <Services.Concrete.ReportService+<GetAll>d__3>
+06/30/2014 16:09:44: DEBUG 7  IInterceptor - Method GetReportParameters called with parameters <reportName>:<sp_acc_sales_report_by_product>,
+06/30/2014 16:09:44: DEBUG 7  IInterceptor - Method GetReportParameters returned <Domain.Models.Parameter[]>
+06/30/2014 16:09:50: DEBUG 7  Generic Logger - Ending operation: Report / GetReports
+06/30/2014 16:09:50: INFO 7  Generic Logger - =========================================================================================================
+06/30/2014 16:09:50: INFO 7  Generic Logger - =========================================================================================================
+06/30/2014 16:09:50: INFO 7  Generic Logger - =========================================================================================================
+06/30/2014 16:10:48: DEBUG 11  Generic Logger - Starting operation: Report / GetReports
+06/30/2014 16:10:51: DEBUG 11  IInterceptor - Method GetAll called with parameters 
+06/30/2014 16:10:51: DEBUG 11  IInterceptor - Method GetAll returned <Services.Concrete.ReportService+<GetAll>d__3>
+06/30/2014 16:11:33: DEBUG 7  Generic Logger - Starting operation: Report / GetReports
+06/30/2014 16:11:35: DEBUG 7  IInterceptor - Method GetAll called with parameters 
+06/30/2014 16:11:35: DEBUG 7  IInterceptor - Method GetAll returned <Services.Concrete.ReportService+<GetAll>d__3>

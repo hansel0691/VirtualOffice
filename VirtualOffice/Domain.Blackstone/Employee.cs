@@ -1,0 +1,99 @@
+using System;
+using Domain.Models;
+
+namespace Domain.Blackstone
+{
+    public partial class Employee : BaseUModel
+    {
+        public int Employee_ID { get; set; }
+        public string FirstName { get; set; }
+        public string MiddleName { get; set; }
+        public string LastName { get; set; }
+        public string Address { get; set; }
+        public string Unit { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Zip { get; set; }
+        public Nullable<System.DateTime> DateOfBirth { get; set; }
+        public string HomePhone { get; set; }
+        public string CellularPhone { get; set; }
+        public string PagerNumber { get; set; }
+        public string FaxNumber { get; set; }
+        public string PersonalEmail { get; set; }
+        public string BlackstoneEmail { get; set; }
+        public string RadioID { get; set; }
+        public string ExtensionNumber { get; set; }
+        public Nullable<System.DateTime> DateOfHire { get; set; }
+        public string DepartmentCode { get; set; }
+        public string DepartmentName { get; set; }
+        public Nullable<int> Manager_Id { get; set; }
+        public string ManagerName { get; set; }
+        public string Title { get; set; }
+        public Nullable<System.DateTime> PersonalDaysBeginningDate { get; set; }
+        public Nullable<System.DateTime> VacationBeginningDate { get; set; }
+        public Nullable<System.DateTime> TenDaysVacationBeginningDate { get; set; }
+        public Nullable<int> Status { get; set; }
+        public Nullable<System.DateTime> PersonalDay1 { get; set; }
+        public Nullable<System.DateTime> PersonalDay2 { get; set; }
+        public Nullable<System.DateTime> PersonalDay3 { get; set; }
+        public Nullable<System.DateTime> VacationDay1 { get; set; }
+        public Nullable<System.DateTime> VacationDay2 { get; set; }
+        public Nullable<System.DateTime> VacationDay3 { get; set; }
+        public Nullable<System.DateTime> VacationDay4 { get; set; }
+        public Nullable<System.DateTime> VacationDay5 { get; set; }
+        public Nullable<System.DateTime> VacationDay6 { get; set; }
+        public Nullable<System.DateTime> VacationDay7 { get; set; }
+        public Nullable<System.DateTime> VacationDay8 { get; set; }
+        public Nullable<System.DateTime> VacationDay9 { get; set; }
+        public Nullable<System.DateTime> VacationDay10 { get; set; }
+        public Nullable<bool> NonCompete { get; set; }
+        public string ZoneCode { get; set; }
+        public string Notes { get; set; }
+        public Nullable<System.DateTime> TerminationDate { get; set; }
+        public string UserEditor { get; set; }
+        public Nullable<System.DateTime> DateEdited { get; set; }
+        public string SSN { get; set; }
+        public string HandKey { get; set; }
+        public string IDBadge { get; set; }
+        public string Computer { get; set; }
+        public string PhoneExt { get; set; }
+        public string PrinterLoc { get; set; }
+        public string PrinterNT { get; set; }
+        public string Instr { get; set; }
+        public string Signature { get; set; }
+        public string networkuser { get; set; }
+        public string PaymentType { get; set; }
+        public Nullable<float> MaxHoursPerDay { get; set; }
+        public Nullable<int> ShiftType { get; set; }
+        public Nullable<bool> IsOpenSchedule { get; set; }
+        public string EmergencyContactFirstName { get; set; }
+        public string EmergencyContactLastName { get; set; }
+        public string EmergencyContactRelationship { get; set; }
+        public string EmergencyContactPhone1 { get; set; }
+        public string EmergencyContactPhone2 { get; set; }
+        public string Relative1FirstName { get; set; }
+        public string Relative1LastName { get; set; }
+        public string Relative1Relationship { get; set; }
+        public string Relative1Phone1 { get; set; }
+        public string Relative1Phone2 { get; set; }
+        public string Relative2FirstName { get; set; }
+        public string Relative2LastName { get; set; }
+        public string Relative2Relationship { get; set; }
+        public string Relative2Phone1 { get; set; }
+        public string Relative2Phone2 { get; set; }
+        public string Relative3FirstName { get; set; }
+        public string Relative3LastName { get; set; }
+        public string Relative3Relationship { get; set; }
+        public string Relative3Phone1 { get; set; }
+        public string Relative3Phone2 { get; set; }
+        public string DriverLicenseState { get; set; }
+        public string DriverLicenseNumber { get; set; }
+        public string DriverLicenseTrack { get; set; }
+        public Nullable<int> Gender { get; set; }
+        public Nullable<int> EthnicGroup { get; set; }
+        public string Company { get; set; }
+        public Nullable<bool> ReceiveIncidents { get; set; }
+        public string TerminationReason { get; set; }
+        public Nullable<int> Agent_ID { get; set; }
+    }
+}

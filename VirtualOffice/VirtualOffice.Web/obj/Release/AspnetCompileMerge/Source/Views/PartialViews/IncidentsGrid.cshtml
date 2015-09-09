@@ -1,0 +1,34 @@
+﻿@using Incident = ClassLibrary2.Domain.Others.Incident
+
+@(Html.Kendo().Grid<Incident>()
+                 .Name("incidents")
+                 .HtmlAttributes(new { @style = "text-align: left;" })
+                 .Resizable(config => config.Columns(true))
+              .Columns(columns =>
+                 {
+                     columns.Bound(p => p.ID).Width(100).Filterable(f=> f.Extra(false));
+                     columns.Bound(p => p.customer_id).Width(120).Title("Customer").Filterable(f=> f.Extra(false));
+                     columns.Bound(p => p.Merchant).Width(130).Filterable(f=> f.Extra(false));
+                     columns.Bound(p => p.Terminal_Id).Width(100).Title("Terminal").Filterable(f=> f.Extra(false));
+                     columns.Bound(p => p.Incident_Type).Width(130).Title("Type").Filterable(f=> f.Extra(false));
+                     columns.Bound(p => p.Incident_Status).Width(130).Title("Status").Filterable(f=> f.Extra(false));
+                     columns.Bound(p => p.Date_Opened).Width(110).Format("{0:MM/dd/yyyy}").Title("Opened");
+                     columns.Bound(p => p.Date_Closed).Width(110).Format("{0:MM/dd/yyyy}").Title("Closed");
+                 })
+                             .AutoBind(false)
+                             .Pageable()
+                             .Selectable()
+                             .Sortable()
+                                 .Filterable(filter => filter.Operators(operators => operators
+                                      .ForString(str => str.Clear()
+                                          .Contains("Search:")
+                                      ).ForDate(date=> date.Clear().IsLessThanOrEqualTo("Before:").IsGreaterThanOrEqualTo("After:"))
+                                      .ForNumber(n=> n.Clear().IsEqualTo("Search:"))
+                                      ).Messages(mess => mess.Or(string.Empty)))
+                             .Scrollable(s => s.Height("auto"))
+                             .DataSource(dataSource => dataSource
+                                 .Ajax()
+                                 .PageSize(7)
+                                 .Read(read => read.Action("GetIncidents", "MyProfile")))
+)
+

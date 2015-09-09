@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>Hello Many:</h1>
+                <h2>Welcome to the VIRTUAL OFFICE REPORTS TOOL</h2>
+            </hgroup>
+            <p>
+                To learn more about this amazing tool, please read more about its functionalities below...
+            </p>
+        </div>
+    </section>
+}
+<h3>Tool Functionalities:</h3>
+<ol class="round">
+    <li class="one">
+        <h4>Reports Management</h4>
+        This is the tool very main functionality. It allows the user to view, create, edit and remove Report Configurations so 
+        they can be executed and linked to the Virtual Office Main Web Application!
+        <a href="@Url.Action("Index","Reports")">Go…</a>
+    </li>
+
+    <li class="two">
+        <h4>User Filters Management</h4>
+        The User Filters are the ones which are going to be available for the user to apply them over specific Reports. This part allows you to perform basic Operations over the filters 
+        so they can interact successfully along with the Reports.
+        <a href="@Url.Action("Index","UserFilters")">Go…</a>
+    </li>
+
+    <li class="three">
+        <h4>Predefined Filters Management</h4>
+        The Predefined Filters are the ones which are going to be available to be applied over specific Reports as a default configuration. This part allows you to perform basic Operations over the filters 
+        so they can interact successfully along with the Reports.
+       <a href="@Url.Action("Index","PredefinedFilters")">Go…</a>
+    </li>
+</ol>

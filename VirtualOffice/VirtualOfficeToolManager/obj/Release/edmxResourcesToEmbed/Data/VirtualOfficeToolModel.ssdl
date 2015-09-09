@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VirtualOfficeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="PredefinedFilters">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TimeSpan" Type="datetime" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Value" Type="nvarchar(max)" />
+    <Property Name="Type" Type="int" Nullable="false" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="ColumnName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ParameterName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReportLabels">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ColumnName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Label" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="TimeSpan" Type="datetime" Nullable="false" />
+    <Property Name="ReportId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReportPredefinedFilterRels">
+    <Key>
+      <PropertyRef Name="ReportId" />
+      <PropertyRef Name="FilterId" />
+    </Key>
+    <Property Name="ReportId" Type="int" Nullable="false" />
+    <Property Name="FilterId" Type="int" Nullable="false" />
+    <Property Name="TimeSpan" Type="datetime" Nullable="false" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reports">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Query" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsEnable" Type="bit" Nullable="false" />
+    <Property Name="TimeSpan" Type="datetime" Nullable="false" />
+    <Property Name="Output" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="DefaultOutput" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="ParamsDefaultConfiguration" Type="nvarchar(max)" />
+    <Property Name="UserFilters" Type="nvarchar(max)" />
+    <Property Name="IndexColumnName" Type="nvarchar(max)" />
+    <Property Name="IsStandAlone" Type="bit" Nullable="false" />
+    <Property Name="Category" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ReportToReportRel">
+    <Key>
+      <PropertyRef Name="FromId" />
+      <PropertyRef Name="ToId" />
+    </Key>
+    <Property Name="FromId" Type="int" Nullable="false" />
+    <Property Name="ToId" Type="int" Nullable="false" />
+    <Property Name="DependencyProperty" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TimeSpan" Type="datetime" Nullable="false" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="IndexParamName" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Sql_HtmlTypeNameMappings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SqlTypeName" Type="nvarchar" MaxLength="50" />
+    <Property Name="HtmlTypeName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="UserReports">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="ReportId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="ReportId" Type="int" Nullable="false" />
+    <Property Name="Output" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TimeSpan" Type="datetime" Nullable="false" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="OutputConfiguration" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RefId" Type="int" Nullable="false" />
+    <Property Name="Category" Type="int" Nullable="false" />
+    <Property Name="TimeSpan" Type="datetime" Nullable="false" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_dbo_ReportLabels_dbo_Reports_Report_Id">
+    <End Role="Reports" Type="Self.Reports" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ReportLabels" Type="Self.ReportLabels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reports">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ReportLabels">
+        <PropertyRef Name="ReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ReportPredefinedFilterRels_dbo_PredefinedFilters_FilterId">
+    <End Role="PredefinedFilters" Type="Self.PredefinedFilters" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ReportPredefinedFilterRels" Type="Self.ReportPredefinedFilterRels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PredefinedFilters">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ReportPredefinedFilterRels">
+        <PropertyRef Name="FilterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ReportPredefinedFilterRels_dbo_Reports_ReportId">
+    <End Role="Reports" Type="Self.Reports" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ReportPredefinedFilterRels" Type="Self.ReportPredefinedFilterRels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reports">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ReportPredefinedFilterRels">
+        <PropertyRef Name="ReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ReportToReportRel_dbo_Reports_FromId">
+    <End Role="Reports" Type="Self.Reports" Multiplicity="1" />
+    <End Role="ReportToReportRel" Type="Self.ReportToReportRel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reports">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ReportToReportRel">
+        <PropertyRef Name="FromId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ReportToReportRel_dbo_Reports_ToId">
+    <End Role="Reports" Type="Self.Reports" Multiplicity="1" />
+    <End Role="ReportToReportRel" Type="Self.ReportToReportRel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reports">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ReportToReportRel">
+        <PropertyRef Name="ToId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UserReports_dbo_Reports_ReportId">
+    <End Role="Reports" Type="Self.Reports" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserReports" Type="Self.UserReports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reports">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserReports">
+        <PropertyRef Name="ReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UserReports_dbo_Users_UserId">
+    <End Role="Users" Type="Self.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserReports" Type="Self.UserReports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserReports">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="sp_retrieve_spNames" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_retrieve_storedprocedure_columns" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="spname" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="VirtualOfficeModelStoreContainer">
+    <EntitySet Name="PredefinedFilters" EntityType="Self.PredefinedFilters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReportLabels" EntityType="Self.ReportLabels" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReportPredefinedFilterRels" EntityType="Self.ReportPredefinedFilterRels" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reports" EntityType="Self.Reports" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReportToReportRel" EntityType="Self.ReportToReportRel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sql_HtmlTypeNameMappings" EntityType="Self.Sql_HtmlTypeNameMappings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserReports" EntityType="Self.UserReports" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_ReportLabels_dbo_Reports_Report_Id" Association="Self.FK_dbo_ReportLabels_dbo_Reports_Report_Id">
+      <End Role="Reports" EntitySet="Reports" />
+      <End Role="ReportLabels" EntitySet="ReportLabels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ReportPredefinedFilterRels_dbo_PredefinedFilters_FilterId" Association="Self.FK_dbo_ReportPredefinedFilterRels_dbo_PredefinedFilters_FilterId">
+      <End Role="PredefinedFilters" EntitySet="PredefinedFilters" />
+      <End Role="ReportPredefinedFilterRels" EntitySet="ReportPredefinedFilterRels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ReportPredefinedFilterRels_dbo_Reports_ReportId" Association="Self.FK_dbo_ReportPredefinedFilterRels_dbo_Reports_ReportId">
+      <End Role="Reports" EntitySet="Reports" />
+      <End Role="ReportPredefinedFilterRels" EntitySet="ReportPredefinedFilterRels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ReportToReportRel_dbo_Reports_FromId" Association="Self.FK_dbo_ReportToReportRel_dbo_Reports_FromId">
+      <End Role="Reports" EntitySet="Reports" />
+      <End Role="ReportToReportRel" EntitySet="ReportToReportRel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ReportToReportRel_dbo_Reports_ToId" Association="Self.FK_dbo_ReportToReportRel_dbo_Reports_ToId">
+      <End Role="Reports" EntitySet="Reports" />
+      <End Role="ReportToReportRel" EntitySet="ReportToReportRel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UserReports_dbo_Reports_ReportId" Association="Self.FK_dbo_UserReports_dbo_Reports_ReportId">
+      <End Role="Reports" EntitySet="Reports" />
+      <End Role="UserReports" EntitySet="UserReports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UserReports_dbo_Users_UserId" Association="Self.FK_dbo_UserReports_dbo_Users_UserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserReports" EntitySet="UserReports" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

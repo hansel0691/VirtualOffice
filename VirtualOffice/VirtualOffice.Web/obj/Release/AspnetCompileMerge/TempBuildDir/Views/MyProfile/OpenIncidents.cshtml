@@ -1,0 +1,116 @@
+﻿@using VirtualOffice.Web.Models
+@{
+    Layout = "~/Views/Shared/_NewUserLayout.cshtml";
+}
+@Html.Partial("MyProfileNavigation")
+
+<div class="container">
+
+
+    <div class="container select" id="main">
+
+        <div class="page-header">
+            <h4>My Profile / Incidents </h4>
+            <a class="btn text-primary pull-right" href="http://email.blackstoneonline.com"><span class="fa fa-envelope"></span> Check my email</a>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-3 col-md-2 col-sm-push-9 col-md-push-10" id="sidebar">
+                @*<div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#openLeads" onclick='changeMainLabelText("Open Incidents")'>
+                                Open Incidents <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+                            </a>
+                        </div>
+
+                        <div class="panel-body collapse in" id="openLeads">
+                            <form class="" id="" action="">
+                                <div class="form-group">
+                                    <label for="startDate">Start Date: </label>
+                                    @(Html.Kendo().DatePicker().Name("openStartDate").Value(DateTime.Today.AddMonths(-1)))
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="endDate">End Date: </label>
+                                    @Html.Kendo().DatePicker().Name("openEndDate").Value(DateTime.Today)
+                                </div>
+
+                                <button type="button" class="btn btn-secundary" onclick="FilterOpenIncidentsByDate()"> Go! </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#historicsLeads" onclick='changeMainLabelText("Historic Incidents")'>
+                                Historics Incidents <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+                            </a>
+                        </div>
+
+                        <div class="panel-body collapse" id="historicsLeads">
+                            <form class="" id="" action="">
+                                <div class="form-group">
+                                    <label for="startDate">Start Date: </label>
+                                    @(Html.Kendo().DatePicker().Name("historicStartDate").Value(DateTime.Today.AddMonths(-1)))
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="endDate">End Date: </label>
+                                    @Html.Kendo().DatePicker().Name("historicEndDate").Value(DateTime.Today)
+                                </div>
+
+                                <button type="button" class="btn btn-secundary" onclick="FilterHistoricIncidentsByDate()"> Go! </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>*@ <!-- .panel-group -->
+                <p></p>
+                <button class="btn btn-secundary btn-block" onclick='changeMainLabelText("Open Incidents", 0)'> Open Incidents</button>
+                <button class="btn btn-secundary btn-block" onclick='changeMainLabelText("Historic Incidents", 1)'> Historic Incidents</button>
+            </div>
+
+            <div class="col-xs-12 col-sm-8 col-md-10 col-sm-pull-4 col-md-pull-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 id="mainLabel">Open Incidents</h4>
+                    </div>
+                    @Html.Partial("~/Views/PartialViews/IncidentsGrid.cshtml")
+                </div>
+
+            </div>
+        </div> <!-- .row -->
+    </div> <!-- .container.select#main -->
+</div>
+
+<script>
+
+
+    function changeMainLabelText(text, incidentType) {
+
+        $("#mainLabel").text(text);
+        
+        if (incidentType == 0)
+            FilterOpenIncidentsByDate();
+        else
+            FilterHistoricIncidentsByDate();
+    }
+
+    function FilterOpenIncidentsByDate() {
+        $("#incidents").data("kendoGrid").dataSource.read(
+            { incidentType: 0});
+
+    }
+
+    function FilterHistoricIncidentsByDate() {
+        $("#incidents").data("kendoGrid").dataSource.read(
+        { incidentType: 1});
+    }
+    $(document).ready(function () {
+
+        $('#incidentsMenuItem').addClass('active');
+
+        FilterOpenIncidentsByDate();
+
+    });
+</script>

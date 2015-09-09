@@ -1,0 +1,28 @@
+﻿@using VirtualOffice.Web.Infrastructure
+@{
+    Layout = null;
+}
+<nav class="navbar navbar-default" id="secundaryNavbar" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#secundaryMenu">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span> 
+            </button>
+            <span class="navbar-brand visible-xs" href="home.html" title="App logo"><span class="app-name">My Profile</span></span>
+        </div>
+
+        <div class="collapse navbar-collapse" id="secundaryMenu">
+            <ul class="nav navbar-nav">
+                <li class="@Utils.GetListItemClassByUrl( Request.Url.ToString(),Url.Action("CompanyPolice", "MyProfile"))" id="policiesMenuItem"><a href="@Url.Action("CompanyPolice", "MyProfile")">Company Policies <span class="badge"></span></a></li>    
+                <li class="@Utils.GetListItemClassByUrl(Request.Url.ToString(), Url.Action("ContactList", "MyProfile"))" id="contactMenuItem"><a href="@Url.Action("ContactList", "MyProfile")">Contacts List <span class="badge"></span></a></li>    
+                <li class="@Utils.GetListItemClassByUrl(Request.Url.ToString(),Url.Action("ChangePassword", "MyProfile"))" id="passwordMenuItem"><a href="@Url.Action("ChangePassword", "MyProfile")">Password Change <span class="badge"></span></a></li>    
+                @*<li class="@Utils.GetListItemClassByUrl(Request.Url.ToString(), Url.Action("OpenLeads", "MyProfile"), Url.Action("HistoricLeads", "MyProfile"), Url.Action("NewLead", "MyProfile"))" id="leadsMenuItem"><a href="@Url.Action("OpenLeads", "MyProfile")">Leads <span class="badge"></span></a></li>    
+                <li class="@Utils.GetListItemClassByUrl(Request.Url.ToString(), Url.Action("Incidents", "MyProfile"), Url.Action("HistoricIncidents", "MyProfile"))" id="incidentsMenuItem"><a href="@Url.Action("Incidents", "MyProfile")">Incidents <span class="badge"></span></a></li>*@    
+            </ul>
+        </div>
+        <!-- Menu style like breadcumb http://css-tricks.com/triangle-breadcrumbs/ --> 
+    </div> <!-- .container -->
+</nav> <!--end navbar-->

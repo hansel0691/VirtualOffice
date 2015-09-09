@@ -1,0 +1,171 @@
+﻿@using System.Web.Services.Description
+@using VirtualOffice.Web.Infrastructure
+@using VirtualOffice.Web.Models
+<!DOCTYPE html>
+@{
+    var url = Request;
+    
+    IEnumerable<UserReportViewModel> reports = ViewBag.Reports;
+
+    var portfolioReports = reports!= null? reports.Where(rep => rep.Category == Utils.Portfolio): new List<UserReportViewModel>();
+
+    var salesReports = reports != null ? reports.Where(rep => rep.Category == Utils.Sales) : new List<UserReportViewModel>();
+
+    var additionalSalesReports = Utils.GetAdditionalSalesReport(this);
+}
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Virtual Office | Home">
+
+    <title>@ViewBag.Title - Virtual Office</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- jQuery -->
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <![if lt IE 9]>
+        <script src="/Scripts/html5shiv.js"></script>
+    <![endif]>
+
+    <!-- IE10 Mobile for Windows 8 or Windows Phone 8 -->
+    <script>
+        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+            //var msViewportStyle = document.createElement("style");
+            //msViewportStyle.appendChild(document.createTextNode("-ms-viewport{width:auto!important}"));
+            //document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+        }
+    </script>
+    <!--script to measure viewport to match media queries-->
+    <script>
+        function viewport() {
+            var e = window, a = 'inner';
+            if (!('innerWidth' in window)) {
+                a = 'client';
+                e = document.documentElement || document.body;
+            }
+            return { width: e[a + 'Width'], height: e[a + 'Height'] };
+        }
+
+    </script>
+
+    <link href="@Url.Content("~/Content/kendo/2014.1.415/kendo.common.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2014.1.415/kendo.dataviz.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2014.1.415/kendo.default.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2014.1.415/kendo.dataviz.default.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2014.1.415/kendo.dataviz.min.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/kendo/2014.1.415/jquery.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2014.1.415/kendo.all.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2014.1.415/kendo.aspnetmvc.min.js")"></script>
+
+    <!-- Custom CSS-->
+    <link href="@Url.Content("~/Content/styles.css")" rel="stylesheet">
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/global.js"></script>
+    <script src="/Scripts/jquery.printpage.js"></script>
+</head>
+<body>
+    <header class="" id="headerArea">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-4 hidden-xs" id="logoArea">
+                    <a class="logo" href='@Url.Action("Index","Reports")' title="App logo">
+                        <img src="../Images/logo-virtualoffice.svg" class="" style="width: 40px"/> <strong class="h2"> Virtual Office</strong>
+                    </a>
+                </div>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </header>
+
+    <!-- navigation container -->
+    <nav class="navbar-area" id="navbar">
+        <!-- navbar -->
+        <nav class="navbar navbar-inverse" id="mainNavbar" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainMenu">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @*<a class="navbar-brand app-logo"  title="App logo"><span class="app-name">Virtual <strong>Office</strong></span></a>*@
+                    <a href='@Url.Action("Index","Reports")' class="navbar-brand">
+                        <img class="img-responsive" src="../Images/logo-blackstone.svg" id="appLogo">
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="@Url.Action("Index","Reports")" class="dropdown-toggle" data-toggle="dropdown">My Portfolio <span class="badge">@portfolioReports.Count()</span><b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                @foreach (var report in portfolioReports)
+                                {
+                                <li><a href='@Url.Action("ExecuteReport","Reports", new{reportId= report.ReportId})'><span class="badge"></span> @report.Name</a></li>    
+                                }
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="@Url.Action("Index","Reports")" class="dropdown-toggle" data-toggle="dropdown"> Sales Report <span class="badge">@(salesReports.Count() + additionalSalesReports.Count())</span><b class="caret"></b></a>
+                                                         
+                            <ul class="dropdown-menu">
+                                @foreach (var report in salesReports)
+                                {
+                                    <li><a href='@Url.Action("ExecuteReport","Reports", new{reportId= report.ReportId})'><span class="badge"></span> @report.Name</a></li>
+                                }
+                                @foreach (var additionalSalesReport in additionalSalesReports)
+                                {
+                                <li><a href='@additionalSalesReport.ReportLink'><span class="badge"></span>@additionalSalesReport.ReportName</a></li>    
+                                }
+                                
+                            </ul>
+                        </li>
+                        <li class="@Utils.GetListItemClassByController(Url.Action("CompanyPolice", "MyProfile"), Request.Url.ToString())">
+                            <a href="@Url.Action("CompanyPolice","MyProfile")">My Profile <span class="badge"></span></a>
+                        </li>
+                        <li class="@Utils.GetListItemClassByController(Url.Action("MarketingMaterial", "Tools"), Request.Url.ToString())">
+                            <a href="@Url.Action("MarketingMaterial","Tools")">Tools <span class="badge"></span></a>
+                        </li>
+                        <li class="">
+                            <a href="@Url.Action("OpenLeads","MyProfile")">Open Leads <span class="badge"></span></a>
+                        </li>
+                        <li class="">
+                            <a href="@Url.Action("Incidents","MyProfile")">Incidents<span class="badge"></span></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Menu style like breadcumb http://css-tricks.com/triangle-breadcrumbs/ -->
+            </div> <!-- .container -->
+        </nav> <!--end navbar-->  
+    </nav>
+
+            @RenderBody()
+
+    <div class="footer-area" id="footer">
+        <footer class="container">
+            <div class="row">
+                <div class="col-xs-8">&copy; Blackstone Virtual Office 2014</div>
+                <div class="col-xs-4 text-right">
+                    <a href="#" target="_blank"><img src="../Images/facebook.png"></a>
+                    <a href="#" target="_blank"><img src="../Images/twitter-2.png"></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+</body>
+</html>
+
+

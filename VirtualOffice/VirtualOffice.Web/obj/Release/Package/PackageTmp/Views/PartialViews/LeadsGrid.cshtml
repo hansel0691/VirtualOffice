@@ -1,0 +1,70 @@
+﻿@using ClassLibrary2.Domain.Others
+@model int
+           
+<input type="hidden" id="leadType" value="@Model">
+
+
+    @(Html.Kendo().Grid<Lead>()
+                 .Name("leads")
+                 .HtmlAttributes(new { @style = "text-align: left;" })
+                 .Resizable(config => config.Columns(true))
+              .Columns(columns =>
+                 {
+                     columns.Bound(p => p.createdBy).Width(100).Title("Created By").Groupable(false);
+                     columns.Bound(p => p.leadSource).Width(100).Title("Source").Groupable(false);
+                     columns.Bound(p => p.agentID).Width(80).Title("Agent");
+                     columns.Bound(p => p.Assigned_to).Width(130).Title("Assigned").Groupable(false);
+                     columns.Bound(p => p.Contact_person).Width(130).Title("Contact Person").Groupable(false);
+                     columns.Bound(p => p.Business_address).Width(130).Title("Business Address").Groupable(false);
+                     columns.Bound(p => p.Business_type).Width(130).Title("Business Type").Groupable(false);
+                     columns.Bound(p => p.Area_of_Interest).Width(130).Title("Area of Interest").Groupable(false);
+                     columns.Bound(p => p.Entered).Width(80).Format("{0:MM/dd/yyyy hh:mm tt}").Groupable(false);
+                     columns.Bound(p => p.Contacted).Width(80).Format("{0:MM/dd/yyyy hh:mm tt}").Groupable(false);
+                     columns.Bound(p => p.Closed_on).Width(80).Format("{0:MM/dd/yyyy hh:mm tt}").Groupable(false);
+                     columns.Bound(p => p.Status).Width(130).Groupable(false);
+                     columns.Bound(p => p.Comments).Width(400).Groupable(false);
+                     columns.Bound(p => p.Company).Width(130).Groupable(false);
+                     columns.Bound(p => p.City).Width(120).Groupable(false);
+                     columns.Bound(p => p.State).Width(50).Groupable(false);
+                     columns.Bound(p => p.Zip).Width(50).Groupable(false);
+                     columns.Bound(p => p.Phone).Width(80).Groupable(false);
+                     columns.Bound(p => p.Nxt_Visit).Width(80).Format("{0:MM/dd/yyyy hh:mm tt}").Groupable(false);
+
+
+                 })
+                             .AutoBind(false)
+                             .Pageable()
+                             .Selectable()
+                             .Groupable()
+                             .Scrollable(s => s.Height("auto"))
+                             .DataSource(dataSource => dataSource
+                                 .Ajax()
+                                 .ServerOperation(false)
+                                 .PageSize(7)
+                                 .Read(read => read.Action("GetLeads", "MyProfile").Data("onLeadsGridRead"))
+                             )
+    )
+
+
+<script>
+
+    function onLeadsGridRead() {
+
+        var leadtType = $("#leadType").val();
+
+        if (leadtType == 0) {
+            return {
+                leadType: 0,
+                startDate: $("#openStartDate").val(),
+                endDate: $("#openEndDate").val()
+            };
+        } else {
+            return {
+                leadType: 1,
+                startDate: $("#historicStartDate").val(),
+                endDate: $("#historicEndDate").val()
+            };
+        }
+    }
+
+</script>

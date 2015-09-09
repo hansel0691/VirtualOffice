@@ -1,0 +1,45 @@
+﻿@using ClassLibrary2.Domain
+@{
+    IEnumerable<DashboardItem> clouds = ViewBag.Clouds;
+    var prepaidClouds = clouds.Where(c => c.DashboardItemType == DashboardItemType.Prepaid).ToList();
+}
+<div class="gridster prepaid" id="">
+    <div class="well well-sm"><h3>Prepaid</h3></div>
+    <ul>
+
+        @for (var item = 1; item <= prepaidClouds.Count(); item++)
+        {
+            var cloud = prepaidClouds[item - 1];
+            var cloudItems = cloud.Items;
+            var cloudSize = cloudItems.Count() > 2 ? 3 : 2;
+            var category = cloud.Title;
+
+            <li class="@category" data-row="@item" data-col="1" data-sizex="1" data-sizey="@cloudSize">
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#"><img class="media-object img-rounded" src="@cloud.ImageUrl" alt="@cloud.Title"></a>
+                    </div>
+                    <div class="media-body">
+                        <table class="" style="width:100%;">
+                            <tbody>
+                                <tr><td><h3 class="media-heading">@cloud.Title</h3></td><td class="text-right"><em>@cloud.Remark</em></td></tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-condensed">
+                            <tbody>
+                                @foreach (var cloudItem in cloudItems)
+                                {
+                                    var leftSubColumn = cloudItem.Key;
+
+                                    var rightSubcolumn = cloudItem.Value;
+
+                                    <tr><td>@leftSubColumn</td><td class="text-right"><span class="badge">@rightSubcolumn</span></td></tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </li>
+        }
+    </ul>
+</div>

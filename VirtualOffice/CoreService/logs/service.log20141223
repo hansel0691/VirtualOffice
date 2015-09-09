@@ -1,0 +1,110 @@
+12/23/2014 16:38:45: DEBUG 11  Generic Logger - Starting operation: User / TestGetUserToken
+12/23/2014 16:38:56: DEBUG 11  IInterceptor - Method GetUser called with parameters:
+12/23/2014 16:38:56: DEBUG 11  IInterceptor - userName: <82817>
+12/23/2014 16:38:56: DEBUG 11  IInterceptor - password: <M48804>
+12/23/2014 16:38:56: DEBUG 11  IInterceptor - 
+12/23/2014 16:38:56: DEBUG 11  IInterceptor - 
+12/23/2014 16:38:57: DEBUG 11  VirtualOfficeContext - Opened connection at 12/23/2014 4:38:57 PM -05:00
+
+12/23/2014 16:38:57: DEBUG 11  VirtualOfficeContext - get_user @userid, @passCredential
+12/23/2014 16:38:57: DEBUG 11  VirtualOfficeContext - 
+
+12/23/2014 16:38:57: DEBUG 11  VirtualOfficeContext - -- @userid: '82817' (Type = String, IsNullable = false, Size = 5)
+
+12/23/2014 16:38:57: DEBUG 11  VirtualOfficeContext - -- @passCredential: 'M48804' (Type = String, IsNullable = false, Size = 6)
+
+12/23/2014 16:38:57: DEBUG 11  VirtualOfficeContext - -- Executing at 12/23/2014 4:38:57 PM -05:00
+
+12/23/2014 16:38:57: DEBUG 11  VirtualOfficeContext - -- Completed in 25 ms with result: SqlDataReader
+
+12/23/2014 16:38:57: DEBUG 11  VirtualOfficeContext - 
+
+12/23/2014 16:38:57: DEBUG 11  VirtualOfficeContext - Closed connection at 12/23/2014 4:38:57 PM -05:00
+
+12/23/2014 16:38:57: DEBUG 11  VirtualOfficeContext - Opened connection at 12/23/2014 4:38:57 PM -05:00
+
+12/23/2014 16:38:58: DEBUG 11  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ([Extent1].[RefId] = @p__linq__0) AND ( CAST( [Extent1].[Category] AS int) = @p__linq__1)
+12/23/2014 16:38:58: DEBUG 11  VirtualOfficeContext - 
+
+12/23/2014 16:38:58: DEBUG 11  VirtualOfficeContext - -- p__linq__0: '82817' (Type = Int32, IsNullable = false)
+
+12/23/2014 16:38:58: DEBUG 11  VirtualOfficeContext - -- p__linq__1: '5' (Type = Int32, IsNullable = false)
+
+12/23/2014 16:38:58: DEBUG 11  VirtualOfficeContext - -- Executing at 12/23/2014 4:38:58 PM -05:00
+
+12/23/2014 16:38:58: DEBUG 11  VirtualOfficeContext - -- Completed in 19 ms with result: SqlDataReader
+
+12/23/2014 16:38:58: DEBUG 11  VirtualOfficeContext - 
+
+12/23/2014 16:38:58: DEBUG 11  VirtualOfficeContext - Closed connection at 12/23/2014 4:38:58 PM -05:00
+
+12/23/2014 16:38:58: DEBUG 11  VirtualOfficeContext - Opened connection at 12/23/2014 4:38:58 PM -05:00
+
+12/23/2014 16:38:58: DEBUG 11  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE [Extent1].[RefId] = @p__linq__0
+12/23/2014 16:38:58: DEBUG 11  VirtualOfficeContext - 
+
+12/23/2014 16:38:58: DEBUG 11  VirtualOfficeContext - -- p__linq__0: '82817' (Type = Int32, IsNullable = false)
+
+12/23/2014 16:38:58: DEBUG 11  VirtualOfficeContext - -- Executing at 12/23/2014 4:38:58 PM -05:00
+
+12/23/2014 16:38:58: DEBUG 11  VirtualOfficeContext - -- Completed in 14 ms with result: SqlDataReader
+
+12/23/2014 16:38:58: DEBUG 11  VirtualOfficeContext - 
+
+12/23/2014 16:38:58: DEBUG 11  VirtualOfficeContext - Closed connection at 12/23/2014 4:38:58 PM -05:00
+
+12/23/2014 16:38:58: DEBUG 11  IInterceptor - Method: GetUser returned: 
+12/23/2014 16:38:58: DEBUG 11  IInterceptor - RefId : 82817 
+12/23/2014 16:38:58: DEBUG 11  IInterceptor - Category : Nothing 
+12/23/2014 16:38:58: DEBUG 11  IInterceptor - BusinessName : 4A USA INC 
+12/23/2014 16:38:58: DEBUG 11  IInterceptor - Address1 : 6420 SW 62ND AVE 
+12/23/2014 16:38:58: DEBUG 11  IInterceptor - Address2 :  
+12/23/2014 16:38:58: DEBUG 11  IInterceptor - ZipCode : 33143 
+12/23/2014 16:38:58: DEBUG 11  IInterceptor - State : FL 
+12/23/2014 16:38:58: DEBUG 11  IInterceptor - Email :  
+12/23/2014 16:38:58: DEBUG 11  IInterceptor - Phone : (305) 665-1646 
+12/23/2014 16:38:58: DEBUG 11  IInterceptor - Comission :  
+12/23/2014 16:38:58: DEBUG 11  IInterceptor - Name : 4A USA INC 
+12/23/2014 16:38:58: DEBUG 11  IInterceptor - City : MIAMI 
+12/23/2014 16:38:58: DEBUG 11  IInterceptor - Tokens : System.Collections.Generic.List`1[Domain.Models.HashKey] 
+12/23/2014 16:38:58: DEBUG 11  IInterceptor - Id : 204 
+12/23/2014 16:38:58: DEBUG 11  IInterceptor - RowVersion :  
+12/23/2014 16:38:58: DEBUG 11  IInterceptor - TimeSpan : 12/23/2014 4:38:57 PM 
+12/23/2014 16:38:58: DEBUG 11  IInterceptor - 
+12/23/2014 16:38:58: DEBUG 11  IInterceptor - 
+12/23/2014 16:39:20: DEBUG 11  IInterceptor - Method GetUser called with parameters:
+12/23/2014 16:39:20: DEBUG 11  IInterceptor - userName: <82817>
+12/23/2014 16:39:20: DEBUG 11  IInterceptor - password: <M48804>
+12/23/2014 16:39:20: DEBUG 11  IInterceptor - 
+12/23/2014 16:39:20: DEBUG 11  IInterceptor - 
+12/23/2014 16:39:29: DEBUG 11  VirtualOfficeContext - Opened connection at 12/23/2014 4:39:29 PM -05:00
+
+12/23/2014 16:39:29: DEBUG 11  VirtualOfficeContext - get_user @userid, @passCredential
+12/23/2014 16:39:29: DEBUG 11  VirtualOfficeContext - 
+
+12/23/2014 16:39:29: DEBUG 11  VirtualOfficeContext - -- @userid: '82817' (Type = String, IsNullable = false, Size = 5)
+
+12/23/2014 16:39:29: DEBUG 11  VirtualOfficeContext - -- @passCredential: 'M48804' (Type = String, IsNullable = false, Size = 6)
+
+12/23/2014 16:39:29: DEBUG 11  VirtualOfficeContext - -- Executing at 12/23/2014 4:39:29 PM -05:00
+
+12/23/2014 16:39:29: DEBUG 11  VirtualOfficeContext - -- Completed in 17 ms with result: SqlDataReader
+
+12/23/2014 16:39:29: DEBUG 11  VirtualOfficeContext - 
+
+12/23/2014 16:39:29: DEBUG 11  VirtualOfficeContext - Closed connection at 12/23/2014 4:39:29 PM -05:00
+

@@ -1,0 +1,380 @@
+﻿@using System.Resources
+@using Microsoft.Ajax.Utilities
+@using Microsoft.Data.Edm.Values
+@using VirtualOffice.Web.Infrastructure
+@using VirtualOffice.Web.Models
+@{
+    Layout = "~/Views/Shared/_NewUserLayout.cshtml";
+    IEnumerable<MarketingProduct> marketingMaterials = ViewBag.MarketingMaterials;
+
+    var categories = marketingMaterials.DistinctBy(a => a.Category).Count();
+
+}
+
+@Html.Partial("ToolsNavigation")
+
+<div class="container">
+
+    <input id="itemsCount" type="hidden" value="@marketingMaterials.Count()">
+
+    <div class="container select" id="main">
+
+        <!-- <div class="alert alert-warning alert-dismissable">
+                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                 <span class="msg"></span>
+             </div> -->
+
+        <div class="page-header">
+            <h4>My Profile / Marketing Material</h4>
+            <!-- <a class="btn text-primary pull-right" href="mailto:blackstone@blackstoneonline.com"><span class="fa fa-envelope"></span> Check my email</a> -->
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-3 col-md-2 col-sm-push-9 col-md-push-10" id="sidebar">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <a data-toggle="collapse" data-target="#filters" class="expand">Categories <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                    </div>
+                    <div class="panel-body collapse in" id="filters">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" onchange="FilterMarketingMaterials()" value="@Utils.MarketingPosters" checked>
+                                Posters
+                            </label>
+                        </div>
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" onchange="FilterMarketingMaterials()" value="@Utils.MarketingBanners" checked>
+                                Banners
+                            </label>
+                        </div>
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="@Utils.MarketingStickers" onchange="FilterMarketingMaterials()" checked>
+                                Stickers
+                            </label>
+                        </div>
+                    </div>
+                </div> <!-- .panel -->
+
+                <div class="panel panel-order">
+                    <div class="panel-heading">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                        <a data-toggle="collapse" data-target=".order" onclick="GetMyOrderDetails()" class=" expand">My Order <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                    </div>
+                    <div class="panel-body collapse order" id="myOrder">
+                        <table class="table table-hover table-condensed">
+                            <tbody>
+                                @for (var i = 0; i < categories; i++)
+                                {
+                                    <tr>
+                                        <td id='@string.Format("categoryId_{0}", i)' class="title"></td>
+                                        <td id='@string.Format("categoryAmount_{0}", i)' class="amount"></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="collapse order" id="totalOrder">
+                        <div class="heading">Will be charged to your account</div>
+
+                        <div id="orderDetails">
+                            <p>Shipping <i class="fa fa-usd"></i><span id="shipping"></span></p>
+                            <button type="button" onclick="SendOrder()" class="btn btn-secundary btn-block"><i class="fa fa-truck"></i> Send</button>
+                        </div>
+                    </div>
+                </div> <!-- .panel -->
+            </div>
+
+            <div class="col-xs-12 col-sm-9 col-md-10 col-sm-pull-3 col-md-pull-2">
+                <div id="myAccountSuccessMessageConfirmation" class="collapse alert alert-success">
+                    <span class="glyphicon glyphicon-ok"></span>
+                    <label id="myAccountSuccessMessageText"></label>
+                </div>
+                <div id="myAccountFailedMessageConfirmation" class="collapse  alert alert-danger">
+                    <label id="myAccountFailedMessageText"></label>
+                </div>
+                <div class="panel panel-default marketing-materials">
+                    <div class="panel-heading">
+                        <h4>Marketing Material</h4>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table products">
+                            <thead>
+                                <tr>
+                                    <th>&nbsp;</th>
+                                    <th>Product</th>
+                                    <th>Price</th>
+                                    <th>Qty.</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in marketingMaterials)
+                                {
+                                    <tr id=@string.Format("row_{0}", item.Id) class="item">
+                                        <td class="thumb"><img class="img-responsive" src='@string.Format("http://virtualoffice.blackstoneonline.com/images/virtualoffice/{0}",item.filename)' alt="" style="height: 100px"></td>
+                                        <td id='@string.Format("itemName_{0}",item.Id)' class="title">@item.Name</td>
+                                        <td class="title">@item.Price.Value.ToString("C")</td>
+                                        <td class="amount" id='@string.Format("itemQuantity_{0}", item.Id)'>0</td>
+                                        <td class="handler"><a class="btn plus" id="plus" onclick='AddItemToSelection(@item.Id)'><span class="glyphicon glyphicon-plus-sign"></span></a></td>
+                                        <td class="handler"><a class="btn minus" id="minus" onclick='RemoveItemFromSelection(@item.Id)'><span class="glyphicon glyphicon-minus-sign"></span></a></td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- .container.select#main -->
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Order Confirmation</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Order Summary</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Confirmation Number</td>
+                            <td id="confirmationNumberValue"></td>
+                        </tr>
+                        <tr>
+                            <td>Business Name</td>
+                            <td id="businessNameValue"></td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td id="addressValue"></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td id="emailValue"></td>
+                        </tr>
+                        <tr>
+                            <td>Phone</td>
+                            <td id="phoneValue"></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <!-- content goes here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var thingIds = [];
+
+    function AddThingId(thingId) {
+        thingIds.push(thingId);
+    }
+
+    function AddItemToSelection(itemId) {
+
+        var inputId = "#itemQuantity_" + itemId;
+
+        var value = $(inputId).text();
+
+        value++;
+
+        $(inputId).text(value);
+    }
+
+    function RemoveItemFromSelection(itemId) {
+
+        var inputId = "#itemQuantity_" + itemId;
+
+        var value = $(inputId).text();
+
+        value--;
+
+        if (value < 0)
+            value = 0;
+
+        $(inputId).text(value);
+    }
+
+    function FilterMarketingMaterials() {
+
+        var categories = $("input:checked");
+
+        var catValues = [];
+
+        for (var i = 0; i < categories.length; i++) {
+
+            var catValue = categories[i].value;
+
+            catValues.push(catValue);
+        }
+
+        categories = JSON.stringify(catValues);;
+
+        var url = '@Url.Action("GetMaterialsByCategory")';
+
+        $.post(url, { categories: categories },
+            function (result) {
+
+                for (var i = 0; i < result.length; i++) {
+
+                    var id = result[i].Id;
+                    var visible = result[i].Visible;
+
+                    var rowId = "#row_" + id;
+
+                    if (visible) {
+                        $(rowId).fadeIn();
+                    } else {
+                        $(rowId).fadeOut();
+                    }
+                }
+
+            });
+    }
+
+    function GetMyOrderDetails() {
+
+        var url = '@Url.Action("GetOrderSummary")';
+
+        var mySelection = JSON.stringify(GetMaterialSelection());
+
+        $.post(url, { mySelection: mySelection},
+            function (result) {
+
+                var data = result.Summary;
+                var cost = result.Cost;
+
+                for (var i = 0; i < data.length; i++) {
+
+                    var categoryTdId = "#categoryId_" + i;
+                    var categoryAmountId = "#categoryAmount_" + i;
+                    var category = data[i].Category;
+                    var categoryAmount = data[i].Amount;
+
+                    $(categoryTdId).text(category);
+                    $(categoryAmountId).text(categoryAmount);
+                }
+
+                $("#shipping").text(cost);
+            });
+
+
+    }
+
+    @*function GetMaterialSelection() {
+
+        var result = [];
+
+        var thingIdsUrl = '@Url.Action("GetThingIds")';
+
+        $.post(thingIdsUrl, function(thingIds) {
+
+            for (var i = 0; i < thingIds.length; i++) {
+
+                var itemQuantityId = "#itemQuantity_" + thingIds[i];
+
+                var itemQuantity = $(itemQuantityId).text();
+
+                var obj = { Id: thingIds[i], Quantity: itemQuantity };
+
+                result.push(obj);
+            }
+            }
+        );
+        return result;
+    }*@
+
+    function SendOrder() {
+
+        var url = '@Url.Action("SendOrder","Tools")';
+
+        var mySelection = JSON.stringify(GetMaterialSelection());
+
+        $.post(url, {things: mySelection}, orderConfirmationShowResultMessage);
+    }
+
+    function orderConfirmationShowResultMessage(result) {
+
+
+        var response = result.Result;
+        var shippingInfo = result.ShippingInfo;
+
+        if (response == "Success") {
+
+            var confirmationNumber = shippingInfo.OrderConfirmationNumber;
+            var address = shippingInfo.Address;
+            var businessName = shippingInfo.Name;
+            var email = shippingInfo.Email;
+            var phone = shippingInfo.Phone;
+
+            $("#confirmationNumberValue").text(confirmationNumber);
+            $("#addressValue").text(address);
+            $("#businessNameValue").text(businessName);
+            $("#emailValue").text(email);
+            $("#phoneValue").text(phone);
+
+            $("#myModal").modal();
+
+        } else {
+            $("#myAccountFailedMessageText").text(response);
+            $("#myAccountFailedMessageConfirmation").fadeIn();
+            setTimeout(timeOut("#myAccountFailedMessageConfirmation", 10000));
+        }
+    }
+
+    function timeOut(id, time) {
+        $(id).fadeOut(time);
+    }
+
+    function GetMaterialSelection() {
+
+        var result = [];
+
+        var tds = $("td");
+
+        for (var j = 0; j < tds.length; j++) {
+            var tdId = tds[j].id;
+
+            if (tdId.indexOf("itemQuantity_") != -1) {
+
+                var splitted = tdId.split('_');
+
+                var thingId = splitted[1];
+
+                var itemQuantityId = "#itemQuantity_" + thingId;
+
+                var itemQuantity = $(itemQuantityId).text();
+
+                var obj = { Id: thingId, Quantity: itemQuantity };
+
+                result.push(obj);
+            }
+        }
+
+        return result;
+    }
+
+</script>
+
+
+

@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{640F824A-75EB-4656-8895-5E80B30102AB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoreData.Inventory</RootNamespace>
+    <AssemblyName>CoreData.Inventory</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodaInventoryModule.cs" />
+    <Compile Include="InventoryRepository.cs" />
+    <Compile Include="Models\Acc_InventoryCountingPOS.cs" />
+    <Compile Include="Models\BusinessCard.cs" />
+    <Compile Include="Models\Cart_Detail.cs" />
+    <Compile Include="Models\Cart_Header.cs" />
+    <Compile Include="Models\CreditCardType.cs" />
+    <Compile Include="Models\dtproperty.cs" />
+    <Compile Include="Models\GEO_Cities.cs" />
+    <Compile Include="Models\GEO_Counties.cs" />
+    <Compile Include="Models\GEO_States.cs" />
+    <Compile Include="Models\GEO_Zips.cs" />
+    <Compile Include="Models\Mapping\Acc_InventoryCountingPOSMap.cs" />
+    <Compile Include="Models\Mapping\BusinessCardMap.cs" />
+    <Compile Include="Models\Mapping\Cart_DetailMap.cs" />
+    <Compile Include="Models\Mapping\Cart_HeaderMap.cs" />
+    <Compile Include="Models\Mapping\CreditCardTypeMap.cs" />
+    <Compile Include="Models\Mapping\dtpropertyMap.cs" />
+    <Compile Include="Models\Mapping\GEO_CitiesMap.cs" />
+    <Compile Include="Models\Mapping\GEO_CountiesMap.cs" />
+    <Compile Include="Models\Mapping\GEO_StatesMap.cs" />
+    <Compile Include="Models\Mapping\GEO_ZipsMap.cs" />
+    <Compile Include="Models\Mapping\MonthMap.cs" />
+    <Compile Include="Models\Mapping\pinproductMap.cs" />
+    <Compile Include="Models\Mapping\POSInvoiceDetailMap.cs" />
+    <Compile Include="Models\Mapping\PosInvoiceHeaderMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_ApplicationsMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_CodeGenTestTableMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_CodesMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_DefaultIDSuppliesMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_DeployMethodsMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_EntriesMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_EquipmentByLocationHistoryMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_EquipmentMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_EquipsByOrderMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_InvoicesMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_ItemsMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_KitsbyOrderMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_KitsMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_LocationHistoryMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_LocationsMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_LocationTypesMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_MeasureConversionMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_MeasuresMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_MovementGroupCountersMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_MovementsMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_Movements_BackMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_OrderCCNumbersMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_OrderCCVerifyMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_Orders1Map.cs" />
+    <Compile Include="Models\Mapping\pos_inv_ordersbck2007Map.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_OrdersMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_Orders_UpdatedToProcessedMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_PackageByOrderbck2007Map.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_PackageByOrderMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_PackagesMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_PartsMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_PaymentTypesMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_PrintersMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_ProvidersMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_PurchasesMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_ReasonsMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_ReplacementsMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_ReturnsMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_RotationsMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_SalesMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_StatusMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_SustitutionsMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_TerminalsMap.cs" />
+    <Compile Include="Models\Mapping\pos_inv_thingsbck12122013Map.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_ThingsbyKitMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_ThingsByOrderMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_ThingsByProviderMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_ThingsMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_TransferencesMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_TypesMap.cs" />
+    <Compile Include="Models\Mapping\POS_Inv_UsersMap.cs" />
+    <Compile Include="Models\Mapping\StateMap.cs" />
+    <Compile Include="Models\Mapping\table1Map.cs" />
+    <Compile Include="Models\Mapping\vw_AllProcessedOrdersMap.cs" />
+    <Compile Include="Models\Mapping\vw_AuxCreateThingMap.cs" />
+    <Compile Include="Models\Mapping\vw_aux_EntriesMap.cs" />
+    <Compile Include="Models\Mapping\vw_aux_ReplacementsMap.cs" />
+    <Compile Include="Models\Mapping\vw_Aux_ReservedAmountsMap.cs" />
+    <Compile Include="Models\Mapping\vw_aux_ReturnsMap.cs" />
+    <Compile Include="Models\Mapping\vw_aux_RotationsMap.cs" />
+    <Compile Include="Models\Mapping\vw_aux_SalesMap.cs" />
+    <Compile Include="Models\Mapping\vw_aux_SustitutionsMap.cs" />
+    <Compile Include="Models\Mapping\vw_aux_TransferencesMap.cs" />
+    <Compile Include="Models\Mapping\vw_CheckReadersAtLocationsMap.cs" />
+    <Compile Include="Models\Mapping\vw_CheckReadersAtMerchantsMap.cs" />
+    <Compile Include="Models\Mapping\vw_EquipmentsMap.cs" />
+    <Compile Include="Models\Mapping\vw_GetCancelableOrdersMap.cs" />
+    <Compile Include="Models\Mapping\vw_IDOrdersReadyToDeployMap.cs" />
+    <Compile Include="Models\Mapping\vw_ImprintersAtLocationsMap.cs" />
+    <Compile Include="Models\Mapping\vw_ImprintersAtMerchantsMap.cs" />
+    <Compile Include="Models\Mapping\vw_LocationDescripMap.cs" />
+    <Compile Include="Models\Mapping\vw_LocationMainFieldsMap.cs" />
+    <Compile Include="Models\Mapping\vw_LocationsBasicMap.cs" />
+    <Compile Include="Models\Mapping\vw_LocationsMap.cs" />
+    <Compile Include="Models\Mapping\vw_LocationTypesMap.cs" />
+    <Compile Include="Models\Mapping\vw_MerchantsMap.cs" />
+    <Compile Include="Models\Mapping\vw_Orders_MerchantsMap.cs" />
+    <Compile Include="Models\Mapping\vw_PinpadsAtLocationsMap.cs" />
+    <Compile Include="Models\Mapping\vw_PinpadsAtMerchantsMap.cs" />
+    <Compile Include="Models\Mapping\vw_PrintersAtLocationsMap.cs" />
+    <Compile Include="Models\Mapping\vw_PrintersAtMerchantsMap.cs" />
+    <Compile Include="Models\Mapping\vw_ProcessedOrdersMap.cs" />
+    <Compile Include="Models\Mapping\vw_QueuedOrdersMap.cs" />
+    <Compile Include="Models\Mapping\vw_ReadyOrdersMap.cs" />
+    <Compile Include="Models\Mapping\vw_ReasonsMap.cs" />
+    <Compile Include="Models\Mapping\vw_rpt_OrderItemsDetailsMap.cs" />
+    <Compile Include="Models\Mapping\vw_rpt_PackagesByOrderMap.cs" />
+    <Compile Include="Models\Mapping\vw_rpt_Packages_and_Kits_By_OrderMap.cs" />
+    <Compile Include="Models\Mapping\vw_rpt_ThingsByOrderMap.cs" />
+    <Compile Include="Models\Mapping\vw_SPOrdersReadyToDeployMap.cs" />
+    <Compile Include="Models\Mapping\vw_TerminalsAtLocationsMap.cs" />
+    <Compile Include="Models\Mapping\vw_TerminalsAtMerchantsMap.cs" />
+    <Compile Include="Models\Mapping\vw_ThingsMap.cs" />
+    <Compile Include="Models\Mapping\vw_UsersMap.cs" />
+    <Compile Include="Models\Mapping\YearMap.cs" />
+    <Compile Include="Models\Month.cs" />
+    <Compile Include="Models\pinproduct.cs" />
+    <Compile Include="Models\POSInventoryContext.cs" />
+    <Compile Include="Models\POSInvoiceDetail.cs" />
+    <Compile Include="Models\PosInvoiceHeader.cs" />
+    <Compile Include="Models\POS_Inv_Applications.cs" />
+    <Compile Include="Models\POS_Inv_CodeGenTestTable.cs" />
+    <Compile Include="Models\POS_Inv_Codes.cs" />
+    <Compile Include="Models\POS_Inv_DefaultIDSupplies.cs" />
+    <Compile Include="Models\POS_Inv_DeployMethods.cs" />
+    <Compile Include="Models\POS_Inv_Entries.cs" />
+    <Compile Include="Models\POS_Inv_Equipment.cs" />
+    <Compile Include="Models\POS_Inv_EquipmentByLocationHistory.cs" />
+    <Compile Include="Models\POS_Inv_EquipsByOrder.cs" />
+    <Compile Include="Models\POS_Inv_Invoices.cs" />
+    <Compile Include="Models\POS_Inv_Items.cs" />
+    <Compile Include="Models\POS_Inv_Kits.cs" />
+    <Compile Include="Models\POS_Inv_KitsbyOrder.cs" />
+    <Compile Include="Models\POS_Inv_LocationHistory.cs" />
+    <Compile Include="Models\POS_Inv_Locations.cs" />
+    <Compile Include="Models\POS_Inv_LocationTypes.cs" />
+    <Compile Include="Models\POS_Inv_MeasureConversion.cs" />
+    <Compile Include="Models\POS_Inv_Measures.cs" />
+    <Compile Include="Models\POS_Inv_MovementGroupCounters.cs" />
+    <Compile Include="Models\POS_Inv_Movements.cs" />
+    <Compile Include="Models\POS_Inv_Movements_Back.cs" />
+    <Compile Include="Models\POS_Inv_OrderCCNumbers.cs" />
+    <Compile Include="Models\POS_Inv_OrderCCVerify.cs" />
+    <Compile Include="Models\POS_Inv_Orders.cs" />
+    <Compile Include="Models\POS_Inv_Orders1.cs" />
+    <Compile Include="Models\pos_inv_ordersbck2007.cs" />
+    <Compile Include="Models\POS_Inv_Orders_UpdatedToProcessed.cs" />
+    <Compile Include="Models\POS_Inv_PackageByOrder.cs" />
+    <Compile Include="Models\POS_Inv_PackageByOrderbck2007.cs" />
+    <Compile Include="Models\POS_Inv_Packages.cs" />
+    <Compile Include="Models\POS_Inv_Parts.cs" />
+    <Compile Include="Models\POS_Inv_PaymentTypes.cs" />
+    <Compile Include="Models\POS_Inv_Printers.cs" />
+    <Compile Include="Models\POS_Inv_Providers.cs" />
+    <Compile Include="Models\POS_Inv_Purchases.cs" />
+    <Compile Include="Models\POS_Inv_Reasons.cs" />
+    <Compile Include="Models\POS_Inv_Replacements.cs" />
+    <Compile Include="Models\POS_Inv_Returns.cs" />
+    <Compile Include="Models\POS_Inv_Rotations.cs" />
+    <Compile Include="Models\POS_Inv_Sales.cs" />
+    <Compile Include="Models\POS_Inv_Status.cs" />
+    <Compile Include="Models\POS_Inv_Sustitutions.cs" />
+    <Compile Include="Models\POS_Inv_Terminals.cs" />
+    <Compile Include="Models\POS_Inv_Things.cs" />
+    <Compile Include="Models\pos_inv_thingsbck12122013.cs" />
+    <Compile Include="Models\POS_Inv_ThingsbyKit.cs" />
+    <Compile Include="Models\POS_Inv_ThingsByOrder.cs" />
+    <Compile Include="Models\POS_Inv_ThingsByProvider.cs" />
+    <Compile Include="Models\POS_Inv_Transferences.cs" />
+    <Compile Include="Models\POS_Inv_Types.cs" />
+    <Compile Include="Models\POS_Inv_Users.cs" />
+    <Compile Include="Models\State.cs" />
+    <Compile Include="Models\table1.cs" />
+    <Compile Include="Models\vw_AllProcessedOrders.cs" />
+    <Compile Include="Models\vw_AuxCreateThing.cs" />
+    <Compile Include="Models\vw_aux_Entries.cs" />
+    <Compile Include="Models\vw_aux_Replacements.cs" />
+    <Compile Include="Models\vw_Aux_ReservedAmounts.cs" />
+    <Compile Include="Models\vw_aux_Returns.cs" />
+    <Compile Include="Models\vw_aux_Rotations.cs" />
+    <Compile Include="Models\vw_aux_Sales.cs" />
+    <Compile Include="Models\vw_aux_Sustitutions.cs" />
+    <Compile Include="Models\vw_aux_Transferences.cs" />
+    <Compile Include="Models\vw_CheckReadersAtLocations.cs" />
+    <Compile Include="Models\vw_CheckReadersAtMerchants.cs" />
+    <Compile Include="Models\vw_Equipments.cs" />
+    <Compile Include="Models\vw_GetCancelableOrders.cs" />
+    <Compile Include="Models\vw_IDOrdersReadyToDeploy.cs" />
+    <Compile Include="Models\vw_ImprintersAtLocations.cs" />
+    <Compile Include="Models\vw_ImprintersAtMerchants.cs" />
+    <Compile Include="Models\vw_LocationDescrip.cs" />
+    <Compile Include="Models\vw_LocationMainFields.cs" />
+    <Compile Include="Models\vw_Locations.cs" />
+    <Compile Include="Models\vw_LocationsBasic.cs" />
+    <Compile Include="Models\vw_LocationTypes.cs" />
+    <Compile Include="Models\vw_Merchants.cs" />
+    <Compile Include="Models\vw_Orders_Merchants.cs" />
+    <Compile Include="Models\vw_PinpadsAtLocations.cs" />
+    <Compile Include="Models\vw_PinpadsAtMerchants.cs" />
+    <Compile Include="Models\vw_PrintersAtLocations.cs" />
+    <Compile Include="Models\vw_PrintersAtMerchants.cs" />
+    <Compile Include="Models\vw_ProcessedOrders.cs" />
+    <Compile Include="Models\vw_QueuedOrders.cs" />
+    <Compile Include="Models\vw_ReadyOrders.cs" />
+    <Compile Include="Models\vw_Reasons.cs" />
+    <Compile Include="Models\vw_rpt_OrderItemsDetails.cs" />
+    <Compile Include="Models\vw_rpt_PackagesByOrder.cs" />
+    <Compile Include="Models\vw_rpt_Packages_and_Kits_By_Order.cs" />
+    <Compile Include="Models\vw_rpt_ThingsByOrder.cs" />
+    <Compile Include="Models\vw_SPOrdersReadyToDeploy.cs" />
+    <Compile Include="Models\vw_TerminalsAtLocations.cs" />
+    <Compile Include="Models\vw_TerminalsAtMerchants.cs" />
+    <Compile Include="Models\vw_Things.cs" />
+    <Compile Include="Models\vw_Users.cs" />
+    <Compile Include="Models\Year.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain.Inventory\Domain.Inventory.csproj">
+      <Project>{ceb821f5-9a7d-42d9-8749-6dcbee1b042d}</Project>
+      <Name>Domain.Inventory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{1569623E-F6EB-4128-8403-01FB780D9815}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

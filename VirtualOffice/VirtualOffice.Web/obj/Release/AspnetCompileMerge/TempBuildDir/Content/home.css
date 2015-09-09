@@ -1,0 +1,108 @@
+﻿@charset "UTF-8";
+#isotope {
+  margin: 20px 0;
+}
+.element-item {
+  position: relative;
+  float: left;
+  height: 100px;
+  color: #262524;
+  margin-bottom: 20px;
+}
+.element-item .item-details {
+  position: absolute;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+.element-item .item-details .no-item {
+  height: 28%;
+  display: block;
+  text-align: center;
+}
+.element-item .item-details .no-item .badge {
+  position: absolute;
+  left: 35%;
+  top: 11%;
+  background-color: #fff;
+  color: #3776bd;
+}
+.element-item .item-details .name {
+  display: block;
+  margin-top: 11%;
+  text-transform: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  height: 65%;
+  text-decoration: none;
+}
+.element-item .item-details .name:hover {
+  color: #265182;
+}
+.width50 .item-details .badge {
+  font-size: 9px;
+}
+.width50 .item-details .name {
+  font-size: 9px;
+  line-height: 8px;
+  color: #3776bd;
+}
+.width100 .item-details .badge {
+  font-size: 13px;
+}
+.width100 .item-details .name {
+  font-size: 13px;
+  line-height: 13px;
+}
+.width150 .item-details .badge {
+  font-size: 14px;
+}
+.width150 .item-details .name {
+  font-size: 16px;
+  line-height: 18px;
+}
+.width200 .item-details .badge {
+  font-size: 22px;
+}
+.width200 .item-details .name {
+  font-size: 22px;
+  line-height: 20px;
+}
+.width250 .item-details .badge {
+  font-size: 28px;
+}
+.width250 .item-details .name {
+  font-size: 26px;
+  line-height: 24px;
+}
+.width300 .item-details .badge {
+  font-size: 32px;
+}
+.width300 .item-details .name {
+  font-size: 32px;
+  line-height: 28px;
+}
+.btn-secundary:hover {
+  color: #ffffff;
+}
+.btn-secundary:focus {
+  color: #ffffff;
+}
+   .layer {
+        width: 3096px;
+        min-height: 137px;
+        margin: 0 auto 0 -300px;
+        background-repeat: repeat-x;
+        background-position: center top;
+    }
+
+    .blue {
+        background-image: url('../Images/clouds-bg-blue.png');
+        /*background-color: #3f8ac9;*/
+    }
+
+    .white {
+        background-image: url('../Images/clouds-bg-white.png');
+        /*background-color: #fff;*/
+    }

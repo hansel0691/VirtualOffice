@@ -1,0 +1,51 @@
+﻿@using Microsoft.Ajax.Utilities
+@model VirtualOficeTool.Models.UserFilterViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>User Filters</h2>
+
+@using (Html.BeginForm("AddNewUserFilter", "UserFilters", FormMethod.Post))
+{
+    @Html.ValidationSummary(true,"",new{@class="alert-danger"})
+
+    <button class="btn-warning" onclick="ShowNewUserDiv()">Add Filter</button>
+    @Html.Partial("~/Views/PartialViews/UserFiltersGrid.cshtml")
+
+    <div id="newUserFilterDiv" class="row" style="display: none">
+      <div class="form-group">
+        @Html.LabelFor(model=> model.Label)
+        @Html.TextBoxFor(model=> model.Label)
+        @Html.ValidationMessageFor(model=> model.Label)
+      </div> 
+      <div class="form-group">
+        @Html.LabelFor(model=> model.Name)
+        @Html.TextBoxFor(model=> model.Name)
+        @Html.ValidationMessageFor(model=> model.Name)
+      </div>   
+      <div class="form-group">
+        @Html.LabelFor(model=> model.FieldName)
+        @Html.TextBoxFor(model=> model.FieldName)
+        @Html.ValidationMessageFor(model=> model.FieldName)
+      </div>   
+      <button type="submit" class="btn-warning">Save Filter</button>
+    </div>
+    
+ 
+
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script>
+
+    $(document).ready(function() {
+        $("#newUserFilterDiv").fadeOut();
+    });
+
+    function ShowNewUserDiv() {
+
+        $("#newUserFilterDiv").fadeIn();
+    }
+</script>

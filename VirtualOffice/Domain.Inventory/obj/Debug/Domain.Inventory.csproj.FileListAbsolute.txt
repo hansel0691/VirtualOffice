@@ -1,0 +1,7 @@
+D:\Projects\Virtual Office\VirtualOffice\Domain.Inventory\bin\Debug\Domain.Inventory.dll
+D:\Projects\Virtual Office\VirtualOffice\Domain.Inventory\bin\Debug\Domain.Inventory.pdb
+D:\Projects\Virtual Office\VirtualOffice\Domain.Inventory\bin\Debug\Domain.dll
+D:\Projects\Virtual Office\VirtualOffice\Domain.Inventory\bin\Debug\Domain.pdb
+D:\Projects\Virtual Office\VirtualOffice\Domain.Inventory\obj\Debug\Domain.Inventory.csprojResolveAssemblyReference.cache
+D:\Projects\Virtual Office\VirtualOffice\Domain.Inventory\obj\Debug\Domain.Inventory.dll
+D:\Projects\Virtual Office\VirtualOffice\Domain.Inventory\obj\Debug\Domain.Inventory.pdb

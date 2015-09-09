@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="78ac23719f394171af7a53cbd13138ba" Name="Diagram1">
+        <EntityTypeShape EntityType="VirtualOfficeModel.PredefinedFilter" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.ReportPredefinedFilterRel" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.Report" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.ReportToReportRel" Width="1.5" PointX="3" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.sysdiagram" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.UserReport" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.User" Width="1.5" PointX="3.75" PointY="1.625" IsExpanded="true" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_ReportPredefinedFilterRels_dbo_PredefinedFilters_FilterId" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_ReportPredefinedFilterRels_dbo_Reports_ReportId" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_ReportToReportRel_dbo_Reports_FromId" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_ReportToReportRel_dbo_Reports_ToId" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_UserReports_dbo_Reports_ReportId" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_UserReports_dbo_Users_UserId" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.Sql_HtmlTypeNameMappings" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.ReportLabel" Width="1.5" PointX="3" PointY="7.875" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_ReportLabels_dbo_Reports_Report_Id" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

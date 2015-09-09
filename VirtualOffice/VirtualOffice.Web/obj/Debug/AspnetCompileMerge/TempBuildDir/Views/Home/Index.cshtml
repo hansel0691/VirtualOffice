@@ -1,0 +1,91 @@
+﻿@model VirtualOffice.Web.Models.LoginModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-push-8">
+    <div class="panel panel-default" id="login">
+        <div class="panel-heading">
+            <h4 class="">Login</h4>
+        </div>
+        <div class="panel-body">
+            @if (ViewBag.Error != null)
+            {
+                <div class="alert alert-danger alert-dismissable in fade" style="display: block;">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span class="msg">@ViewBag.Error</span>
+                </div>
+            }
+
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @id = "form", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.UserName)
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder = "User name" })
+                    @Html.ValidationMessageFor(m => m.UserName)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password)
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password" })
+                    @Html.ValidationMessageFor(m => m.Password)
+                </div>
+                <div class="form-group">
+                    @Html.CheckBoxFor(m => m.RememberMe)
+                    @Html.LabelFor(m => m.RememberMe)
+                </div>
+                    
+                <div class="form-group">
+                    <button type="submit" class="btn btn-secundary btn-lg btn-block">Log In</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-md-pull-4">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4">
+            <h3 class="font-light text-muted">Making a Sale just got Easier!</h3>
+            <p>eBoarding is Blackstone’s proprietary software for the automation of new client applications. No more paper forms to complete and send in! With eBoarding, you can fill out forms electronically on mobile devices such as a tablet, smartphone or computer. The software simplifies things with drop down menus, pre-filled fields, image capture, digital signatures and much more.</p>
+        </div> <!-- .col -->
+        <div class="col-xs-12 col-sm-12 col-md-8">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <!-- <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol> -->
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="../Images/banners/01-banner-virtual-office.png" alt="...">
+                        <!-- <div class="carousel-caption">...</div> -->
+                    </div>
+                    <div class="item">
+                        <img src="../Images/banners/02-banner-virtual-office.png" alt="...">
+                        <!-- <div class="carousel-caption">...</div> -->
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+
+            @*<div class="">
+                <iframe width="480" height="327" src="http://www.youtube.com/embed/5yNXdpW33gU?autoplay=true"></iframe>
+            </div>*@
+        </div> <!-- .col -->
+    </div> <!-- .row -->
+</div>
+

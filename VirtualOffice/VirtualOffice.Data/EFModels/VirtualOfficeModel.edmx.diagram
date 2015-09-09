@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c75cd4bccfe94d999a7840539c1da634" Name="Diagram1">
+        <EntityTypeShape EntityType="VirtualOfficeModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.ApiUser" Width="1.5" PointX="8.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.Currency" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.DashboardConfig" Width="1.5" PointX="8.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.HashKey" Width="1.5" PointX="6" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.Order" Width="1.5" PointX="6" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.PredefinedFilter" Width="1.5" PointX="3.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.ReportLabel" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.ReportLog" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.ReportPredefinedFilterRel" Width="1.5" PointX="6" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.Report" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.ReportToReportRel" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.Sql_HtmlTypeNameMappings" Width="1.5" PointX="8.875" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.sysdiagram" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.Token" Width="1.5" PointX="11" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.UserReportFilter" Width="1.5" PointX="8.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.UserReportFilterValue" Width="1.5" PointX="10.5" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.UserReport" Width="1.5" PointX="6" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.User" Width="1.5" PointX="3.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.UserType" Width="1.5" PointX="12.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.C_acc_invoiceheader" Width="1.5" PointX="10.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.C_account_register" Width="1.5" PointX="12.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.C_account_register_merchant" Width="1.5" PointX="13.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.user_roles" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_Tokens_dbo_ApiUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_HashKeys_dbo_Users_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_Orders_dbo_Users_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_ReportPredefinedFilterRels_dbo_PredefinedFilters_FilterId" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_ReportLabels_dbo_Reports_Report_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_ReportPredefinedFilterRels_dbo_Reports_ReportId" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_ReportToReportRel_dbo_Reports_FromId" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_ReportToReportRel_dbo_Reports_ToId" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_UserReports_dbo_Reports_ReportId" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_UserReportFilter_dbo_UserReports_UserReport_UserId_UserReport_ReportId" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_UserReportFilterValue_dbo_UserReportFilter_UserReportFilter_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_UserReports_dbo_Users_UserId" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

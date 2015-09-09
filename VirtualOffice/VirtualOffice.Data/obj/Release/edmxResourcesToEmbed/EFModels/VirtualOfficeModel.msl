@@ -1,0 +1,1191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VirtualOfficeModelStoreContainer" CdmEntityContainer="VirtualOfficeEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="VirtualOfficeModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApiUsers">
+      <EntityTypeMapping TypeName="VirtualOfficeModel.ApiUser">
+        <MappingFragment StoreEntitySet="ApiUsers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ApiKey" ColumnName="ApiKey" />
+          <ScalarProperty Name="Secret" ColumnName="Secret" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Currencies">
+      <EntityTypeMapping TypeName="VirtualOfficeModel.Currency">
+        <MappingFragment StoreEntitySet="Currency">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DashboardConfigs">
+      <EntityTypeMapping TypeName="VirtualOfficeModel.DashboardConfig">
+        <MappingFragment StoreEntitySet="DashboardConfigs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ItemsFunction" ColumnName="ItemsFunction" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="DashboardItemType" ColumnName="DashboardItemType" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HashKeys">
+      <EntityTypeMapping TypeName="VirtualOfficeModel.HashKey">
+        <MappingFragment StoreEntitySet="HashKeys">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Hash" ColumnName="Hash" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="VirtualOfficeModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="RefId" ColumnName="RefId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PredefinedFilters">
+      <EntityTypeMapping TypeName="VirtualOfficeModel.PredefinedFilter">
+        <MappingFragment StoreEntitySet="PredefinedFilters">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="ColumnName" ColumnName="ColumnName" />
+          <ScalarProperty Name="ParameterName" ColumnName="ParameterName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportLabels">
+      <EntityTypeMapping TypeName="VirtualOfficeModel.ReportLabel">
+        <MappingFragment StoreEntitySet="ReportLabels">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ColumnName" ColumnName="ColumnName" />
+          <ScalarProperty Name="Label" ColumnName="Label" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+          <ScalarProperty Name="ReportId" ColumnName="ReportId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportLogs">
+      <EntityTypeMapping TypeName="VirtualOfficeModel.ReportLog">
+        <MappingFragment StoreEntitySet="ReportLogs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ReportName" ColumnName="ReportName" />
+          <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+          <ScalarProperty Name="ReportCount" ColumnName="ReportCount" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+          <ScalarProperty Name="AgentId" ColumnName="AgentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportPredefinedFilterRels">
+      <EntityTypeMapping TypeName="VirtualOfficeModel.ReportPredefinedFilterRel">
+        <MappingFragment StoreEntitySet="ReportPredefinedFilterRels">
+          <ScalarProperty Name="ReportId" ColumnName="ReportId" />
+          <ScalarProperty Name="FilterId" ColumnName="FilterId" />
+          <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reports">
+      <EntityTypeMapping TypeName="VirtualOfficeModel.Report">
+        <MappingFragment StoreEntitySet="Reports">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Query" ColumnName="Query" />
+          <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+          <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+          <ScalarProperty Name="Output" ColumnName="Output" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DefaultOutput" ColumnName="DefaultOutput" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="ParamsDefaultConfiguration" ColumnName="ParamsDefaultConfiguration" />
+          <ScalarProperty Name="UserFilters" ColumnName="UserFilters" />
+          <ScalarProperty Name="IndexColumnName" ColumnName="IndexColumnName" />
+          <ScalarProperty Name="IsStandAlone" ColumnName="IsStandAlone" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportToReportRels">
+      <EntityTypeMapping TypeName="VirtualOfficeModel.ReportToReportRel">
+        <MappingFragment StoreEntitySet="ReportToReportRel">
+          <ScalarProperty Name="FromId" ColumnName="FromId" />
+          <ScalarProperty Name="ToId" ColumnName="ToId" />
+          <ScalarProperty Name="DependencyProperty" ColumnName="DependencyProperty" />
+          <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="IndexParamName" ColumnName="IndexParamName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sql_HtmlTypeNameMappings">
+      <EntityTypeMapping TypeName="VirtualOfficeModel.Sql_HtmlTypeNameMappings">
+        <MappingFragment StoreEntitySet="Sql_HtmlTypeNameMappings">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SqlTypeName" ColumnName="SqlTypeName" />
+          <ScalarProperty Name="HtmlTypeName" ColumnName="HtmlTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="VirtualOfficeModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tokens">
+      <EntityTypeMapping TypeName="VirtualOfficeModel.Token">
+        <MappingFragment StoreEntitySet="Tokens">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="ApiUserId" ColumnName="ApiUserId" />
+          <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="ApiUserPassword" ColumnName="ApiUserPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserReportFilters">
+      <EntityTypeMapping TypeName="VirtualOfficeModel.UserReportFilter">
+        <MappingFragment StoreEntitySet="UserReportFilter">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ColunmName" ColumnName="ColunmName" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+          <ScalarProperty Name="UserReport_UserId" ColumnName="UserReport_UserId" />
+          <ScalarProperty Name="UserReport_ReportId" ColumnName="UserReport_ReportId" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserReportFilterValues">
+      <EntityTypeMapping TypeName="VirtualOfficeModel.UserReportFilterValue">
+        <MappingFragment StoreEntitySet="UserReportFilterValue">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+          <ScalarProperty Name="UserReportFilterId" ColumnName="UserReportFilterId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserReports">
+      <EntityTypeMapping TypeName="VirtualOfficeModel.UserReport">
+        <MappingFragment StoreEntitySet="UserReports">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ReportId" ColumnName="ReportId" />
+          <ScalarProperty Name="Output" ColumnName="Output" />
+          <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="OutputConfiguration" ColumnName="OutputConfiguration" />
+          <ScalarProperty Name="ExecutionCount" ColumnName="ExecutionCount" />
+          <ScalarProperty Name="RowCount" ColumnName="RowCount" />
+          <ScalarProperty Name="ShouldBeShownAtDesktop" ColumnName="ShouldBeShownAtDesktop" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="VirtualOfficeModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RefId" ColumnName="RefId" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTypes">
+      <EntityTypeMapping TypeName="VirtualOfficeModel.UserType">
+        <MappingFragment StoreEntitySet="UserTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="C_acc_invoiceheader">
+      <EntityTypeMapping TypeName="VirtualOfficeModel.C_acc_invoiceheader">
+        <MappingFragment StoreEntitySet="_acc_invoiceheader">
+          <ScalarProperty Name="inv_id" ColumnName="inv_id" />
+          <ScalarProperty Name="inv_date" ColumnName="inv_date" />
+          <ScalarProperty Name="merchant_fk" ColumnName="merchant_fk" />
+          <ScalarProperty Name="merchant_StoreNo" ColumnName="merchant_StoreNo" />
+          <ScalarProperty Name="merchant_businessname" ColumnName="merchant_businessname" />
+          <ScalarProperty Name="merchant_busphone" ColumnName="merchant_busphone" />
+          <ScalarProperty Name="merchant_busaddress" ColumnName="merchant_busaddress" />
+          <ScalarProperty Name="merchant_addressCityID" ColumnName="merchant_addressCityID" />
+          <ScalarProperty Name="merchant_addressStateID" ColumnName="merchant_addressStateID" />
+          <ScalarProperty Name="merchant_addressZIP" ColumnName="merchant_addressZIP" />
+          <ScalarProperty Name="merchant_addressCountryID" ColumnName="merchant_addressCountryID" />
+          <ScalarProperty Name="ach_status" ColumnName="ach_status" />
+          <ScalarProperty Name="ach_sentdate" ColumnName="ach_sentdate" />
+          <ScalarProperty Name="ach_id" ColumnName="ach_id" />
+          <ScalarProperty Name="RepCommission_fk" ColumnName="RepCommission_fk" />
+          <ScalarProperty Name="Posted" ColumnName="Posted" />
+          <ScalarProperty Name="Posted_date" ColumnName="Posted_date" />
+          <ScalarProperty Name="Printed" ColumnName="Printed" />
+          <ScalarProperty Name="PrintedMonth" ColumnName="PrintedMonth" />
+          <ScalarProperty Name="PrintedYear" ColumnName="PrintedYear" />
+          <ScalarProperty Name="PrintedDate" ColumnName="PrintedDate" />
+          <ScalarProperty Name="PaidDate" ColumnName="PaidDate" />
+          <ScalarProperty Name="HoldNotesId" ColumnName="HoldNotesId" />
+          <ScalarProperty Name="Hold" ColumnName="Hold" />
+          <ScalarProperty Name="Inv_Related" ColumnName="Inv_Related" />
+          <ScalarProperty Name="approx_PaidDate" ColumnName="approx_PaidDate" />
+          <ScalarProperty Name="GroupPrinted" ColumnName="GroupPrinted" />
+          <ScalarProperty Name="GroupPrintedDate" ColumnName="GroupPrintedDate" />
+          <ScalarProperty Name="ComInvoice_fk" ColumnName="ComInvoice_fk" />
+          <ScalarProperty Name="ConfirmPaid" ColumnName="ConfirmPaid" />
+          <ScalarProperty Name="ConfirmPaidDate" ColumnName="ConfirmPaidDate" />
+          <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
+          <ScalarProperty Name="Payments" ColumnName="Payments" />
+          <ScalarProperty Name="UserPaid" ColumnName="UserPaid" />
+          <ScalarProperty Name="DownInvoice" ColumnName="DownInvoice" />
+          <ScalarProperty Name="ClubId" ColumnName="ClubId" />
+          <ScalarProperty Name="SpecialDate" ColumnName="SpecialDate" />
+          <ScalarProperty Name="SpecialBilling" ColumnName="SpecialBilling" />
+          <ScalarProperty Name="SpecialActBilling" ColumnName="SpecialActBilling" />
+          <ScalarProperty Name="inv_type" ColumnName="inv_type" />
+          <ScalarProperty Name="inv_TermsId" ColumnName="inv_TermsId" />
+          <ScalarProperty Name="inv_void" ColumnName="inv_void" />
+          <ScalarProperty Name="waswriteoff" ColumnName="waswriteoff" />
+          <ScalarProperty Name="amountwriteoff" ColumnName="amountwriteoff" />
+          <ScalarProperty Name="inv_comments" ColumnName="inv_comments" />
+          <ScalarProperty Name="inv_createdby" ColumnName="inv_createdby" />
+          <ScalarProperty Name="merchant_shipto" ColumnName="merchant_shipto" />
+          <ScalarProperty Name="merchant_shipaddress1" ColumnName="merchant_shipaddress1" />
+          <ScalarProperty Name="merchant_shipaddress2" ColumnName="merchant_shipaddress2" />
+          <ScalarProperty Name="merchant_shipcity" ColumnName="merchant_shipcity" />
+          <ScalarProperty Name="merchant_shipstate" ColumnName="merchant_shipstate" />
+          <ScalarProperty Name="merchant_shipzip" ColumnName="merchant_shipzip" />
+          <ScalarProperty Name="merchant_shipcountry" ColumnName="merchant_shipcountry" />
+          <ScalarProperty Name="POSARInvoiceID" ColumnName="POSARInvoiceID" />
+          <ScalarProperty Name="PortalAPInvoiceID" ColumnName="PortalAPInvoiceID" />
+          <ScalarProperty Name="inv_voiddate" ColumnName="inv_voiddate" />
+          <ScalarProperty Name="inv_voidedby" ColumnName="inv_voidedby" />
+          <ScalarProperty Name="glID" ColumnName="glID" />
+          <ScalarProperty Name="paymentscc" ColumnName="paymentscc" />
+          <ScalarProperty Name="paymentscash" ColumnName="paymentscash" />
+          <ScalarProperty Name="inv_noSplit" ColumnName="inv_noSplit" />
+          <ScalarProperty Name="flagcommCCDateI" ColumnName="flagcommCCDateI" />
+          <ScalarProperty Name="flagcommCCDateF" ColumnName="flagcommCCDateF" />
+          <ScalarProperty Name="PinServeARInvID" ColumnName="PinServeARInvID" />
+          <ScalarProperty Name="CompanyAPInvID" ColumnName="CompanyAPInvID" />
+          <ScalarProperty Name="formerPOS" ColumnName="formerPOS" />
+          <ScalarProperty Name="AgentId" ColumnName="AgentId" />
+          <ScalarProperty Name="DistId" ColumnName="DistId" />
+          <ScalarProperty Name="MDistId" ColumnName="MDistId" />
+          <ScalarProperty Name="inv_timeStamp" ColumnName="inv_timeStamp" />
+          <ScalarProperty Name="inv_tnb_llc" ColumnName="inv_tnb_llc" />
+          <ScalarProperty Name="VoidedBalance" ColumnName="VoidedBalance" />
+          <ScalarProperty Name="Voidedpayment" ColumnName="Voidedpayment" />
+          <ScalarProperty Name="InvoiceAmount" ColumnName="InvoiceAmount" />
+          <ScalarProperty Name="BillingType" ColumnName="BillingType" />
+          <ScalarProperty Name="SRPTotal" ColumnName="SRPTotal" />
+          <ScalarProperty Name="DiscountTotal" ColumnName="DiscountTotal" />
+          <ScalarProperty Name="TaxTotal" ColumnName="TaxTotal" />
+          <ScalarProperty Name="IsManualInv" ColumnName="IsManualInv" />
+          <ScalarProperty Name="ValueRecPlan" ColumnName="ValueRecPlan" />
+          <ScalarProperty Name="Original_InvoiceAmount" ColumnName="Original_InvoiceAmount" />
+          <ScalarProperty Name="RecPlanDone" ColumnName="RecPlanDone" />
+          <ScalarProperty Name="percentdiscount" ColumnName="percentdiscount" />
+          <ScalarProperty Name="mastercard" ColumnName="mastercard" />
+          <ScalarProperty Name="giftcard" ColumnName="giftcard" />
+          <ScalarProperty Name="isPlanC" ColumnName="isPlanC" />
+          <ScalarProperty Name="prepay_statement_sent" ColumnName="prepay_statement_sent" />
+          <ScalarProperty Name="IsBadDebt" ColumnName="IsBadDebt" />
+          <ScalarProperty Name="midbaddebt" ColumnName="midbaddebt" />
+          <ScalarProperty Name="IsDtvPP" ColumnName="IsDtvPP" />
+          <ScalarProperty Name="original_merchant_fk" ColumnName="original_merchant_fk" />
+          <ScalarProperty Name="original_inv_id" ColumnName="original_inv_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="C_account_register">
+      <EntityTypeMapping TypeName="VirtualOfficeModel.C_account_register">
+        <MappingFragment StoreEntitySet="_account_register">
+          <ScalarProperty Name="reg_pk" ColumnName="reg_pk" />
+          <ScalarProperty Name="distID" ColumnName="distID" />
+          <ScalarProperty Name="distName" ColumnName="distName" />
+          <ScalarProperty Name="transactionDate" ColumnName="transactionDate" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="transactionID" ColumnName="transactionID" />
+          <ScalarProperty Name="transactionType" ColumnName="transactionType" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="accountID" ColumnName="accountID" />
+          <ScalarProperty Name="accountName" ColumnName="accountName" />
+          <ScalarProperty Name="debit" ColumnName="debit" />
+          <ScalarProperty Name="credit" ColumnName="credit" />
+          <ScalarProperty Name="accBalance" ColumnName="accBalance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="C_account_register_merchant">
+      <EntityTypeMapping TypeName="VirtualOfficeModel.C_account_register_merchant">
+        <MappingFragment StoreEntitySet="_account_register_merchant">
+          <ScalarProperty Name="reg_pk" ColumnName="reg_pk" />
+          <ScalarProperty Name="MID" ColumnName="MID" />
+          <ScalarProperty Name="merchantName" ColumnName="merchantName" />
+          <ScalarProperty Name="transactionType" ColumnName="transactionType" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="transactionDate" ColumnName="transactionDate" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="debit" ColumnName="debit" />
+          <ScalarProperty Name="credit" ColumnName="credit" />
+          <ScalarProperty Name="accBalance" ColumnName="accBalance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_roles">
+      <EntityTypeMapping TypeName="VirtualOfficeModel.user_roles">
+        <MappingFragment StoreEntitySet="user_roles">
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="AgentId" ColumnName="AgentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AccountsInCollection" FunctionName="VirtualOfficeModel.Store.AccountsInCollection">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.AccountsInCollection_Result">
+          <ScalarProperty Name="agentID" ColumnName="agentID" />
+          <ScalarProperty Name="legalName" ColumnName="legalName" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="merchant_pk" ColumnName="merchant_pk" />
+          <ScalarProperty Name="mer_name" ColumnName="mer_name" />
+          <ScalarProperty Name="suspended_date" ColumnName="suspended_date" />
+          <ScalarProperty Name="accBalance" ColumnName="accBalance" />
+          <ScalarProperty Name="balanceToBeTransferred" ColumnName="balanceToBeTransferred" />
+          <ScalarProperty Name="dscCommission" ColumnName="dscCommission" />
+          <ScalarProperty Name="badDebtBalance" ColumnName="badDebtBalance" />
+          <ScalarProperty Name="transfer_date" ColumnName="transfer_date" />
+          <ScalarProperty Name="collection_incidents" ColumnName="collection_incidents" />
+          <ScalarProperty Name="collection_lastContact" ColumnName="collection_lastContact" />
+          <ScalarProperty Name="merchant_DBA" ColumnName="merchant_DBA" />
+          <ScalarProperty Name="MerType" ColumnName="MerType" />
+          <ScalarProperty Name="reportSource" ColumnName="reportSource" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="get_agents" FunctionName="VirtualOfficeModel.Store.get_agents">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.get_agents_Result">
+          <ScalarProperty Name="AgentId" ColumnName="AgentId" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="agentname" ColumnName="agentname" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="cntAccounts" ColumnName="cntAccounts" />
+          <ScalarProperty Name="Agent_" ColumnName="Agent#" />
+          <ScalarProperty Name="Agent_name" ColumnName="Agent name" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="SalesStructureLevel" ColumnName="SalesStructureLevel" />
+          <ScalarProperty Name="address1" ColumnName="address1" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="zipCode" ColumnName="zipCode" />
+          <ScalarProperty Name="businessName" ColumnName="businessName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="comission" ColumnName="comission" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="get_system_logins" FunctionName="VirtualOfficeModel.Store.get_system_logins">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.get_system_logins_Result">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="system_code" ColumnName="system_code" />
+          <ScalarProperty Name="system_name" ColumnName="system_name" />
+          <ScalarProperty Name="PassUpdateable" ColumnName="PassUpdateable" />
+          <ScalarProperty Name="system_mainpage" ColumnName="system_mainpage" />
+          <ScalarProperty Name="system_session" ColumnName="system_session" />
+          <ScalarProperty Name="GoldProgram" ColumnName="GoldProgram" />
+          <ScalarProperty Name="groupID" ColumnName="groupID" />
+          <ScalarProperty Name="groupName" ColumnName="groupName" />
+          <ScalarProperty Name="VendingMachine" ColumnName="VendingMachine" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetTodayTransactions" FunctionName="VirtualOfficeModel.Store.GetTodayTransactions">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.GetTodayTransactions_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="TrxType_hyp_fk" ColumnName="TrxType_hyp_fk" />
+          <ScalarProperty Name="Product_Hyp_fk" ColumnName="Product_Hyp_fk" />
+          <ScalarProperty Name="pro_description" ColumnName="pro_description" />
+          <ScalarProperty Name="mer_MID" ColumnName="mer_MID" />
+          <ScalarProperty Name="mer_name" ColumnName="mer_name" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="language" ColumnName="language" />
+          <ScalarProperty Name="carrier_fk" ColumnName="carrier_fk" />
+          <ScalarProperty Name="pin_controlno" ColumnName="pin_controlno" />
+          <ScalarProperty Name="product_sbt" ColumnName="product_sbt" />
+          <ScalarProperty Name="systemtracenumber" ColumnName="systemtracenumber" />
+          <ScalarProperty Name="TransPaymentMethod" ColumnName="TransPaymentMethod" />
+          <ScalarProperty Name="SaleStatus" ColumnName="SaleStatus" />
+          <ScalarProperty Name="OriginalSaleDate" ColumnName="OriginalSaleDate" />
+          <ScalarProperty Name="merchant_BusAddress" ColumnName="merchant_BusAddress" />
+          <ScalarProperty Name="merchant_AddressCityID" ColumnName="merchant_AddressCityID" />
+          <ScalarProperty Name="merchant_AddressStateID" ColumnName="merchant_AddressStateID" />
+          <ScalarProperty Name="merchant_AddressZIP" ColumnName="merchant_AddressZIP" />
+          <ScalarProperty Name="merchant_busphone" ColumnName="merchant_busphone" />
+          <ScalarProperty Name="Status_Message" ColumnName="Status_Message" />
+          <ScalarProperty Name="ReversedTrans" ColumnName="ReversedTrans" />
+          <ScalarProperty Name="SettledSale" ColumnName="SettledSale" />
+          <ScalarProperty Name="vending" ColumnName="vending" />
+          <ScalarProperty Name="VendingType" ColumnName="VendingType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SetStandAloneReportsOnDesktop" FunctionName="VirtualOfficeModel.Store.SetStandAloneReportsOnDesktop" />
+    <FunctionImportMapping FunctionImportName="SP_accountsInCollection" FunctionName="VirtualOfficeModel.Store.SP_accountsInCollection" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="VirtualOfficeModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="VirtualOfficeModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="VirtualOfficeModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_get_marketing_materials" FunctionName="VirtualOfficeModel.Store.sp_get_marketing_materials">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_get_marketing_materials_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="packageid" ColumnName="packageid" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Weight_measureID" ColumnName="Weight_measureID" />
+          <ScalarProperty Name="thingID" ColumnName="thingID" />
+          <ScalarProperty Name="thType" ColumnName="thType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_get_Today_Transactions" FunctionName="VirtualOfficeModel.Store.Sp_get_Today_Transactions" />
+    <FunctionImportMapping FunctionImportName="Sp_GetMerchantStatement" FunctionName="VirtualOfficeModel.Store.Sp_GetMerchantStatement">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.Sp_GetMerchantStatement_Result">
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+          <ScalarProperty Name="LongDistanceSales" ColumnName="LongDistanceSales" />
+          <ScalarProperty Name="LongDistanceDiscount" ColumnName="LongDistanceDiscount" />
+          <ScalarProperty Name="LongDistanceNet" ColumnName="LongDistanceNet" />
+          <ScalarProperty Name="CellularRechargeSales" ColumnName="CellularRechargeSales" />
+          <ScalarProperty Name="CellularRechargeDiscount" ColumnName="CellularRechargeDiscount" />
+          <ScalarProperty Name="CellularRechargeNet" ColumnName="CellularRechargeNet" />
+          <ScalarProperty Name="DialtoneSales" ColumnName="DialtoneSales" />
+          <ScalarProperty Name="DialtoneDiscount" ColumnName="DialtoneDiscount" />
+          <ScalarProperty Name="DialtoneNet" ColumnName="DialtoneNet" />
+          <ScalarProperty Name="PINLessSales" ColumnName="PINLessSales" />
+          <ScalarProperty Name="PINLessDiscount" ColumnName="PINLessDiscount" />
+          <ScalarProperty Name="PINLessNet" ColumnName="PINLessNet" />
+          <ScalarProperty Name="GiftCardSales" ColumnName="GiftCardSales" />
+          <ScalarProperty Name="GiftCardDiscount" ColumnName="GiftCardDiscount" />
+          <ScalarProperty Name="GiftCardNet" ColumnName="GiftCardNet" />
+          <ScalarProperty Name="PrepaidCellularSales" ColumnName="PrepaidCellularSales" />
+          <ScalarProperty Name="PrepaidCellularDiscount" ColumnName="PrepaidCellularDiscount" />
+          <ScalarProperty Name="PrepaidCellularNet" ColumnName="PrepaidCellularNet" />
+          <ScalarProperty Name="PostpaidCellularSales" ColumnName="PostpaidCellularSales" />
+          <ScalarProperty Name="PostpaidCellularDiscount" ColumnName="PostpaidCellularDiscount" />
+          <ScalarProperty Name="PostpaidCellularNet" ColumnName="PostpaidCellularNet" />
+          <ScalarProperty Name="TrafficSchoolSales" ColumnName="TrafficSchoolSales" />
+          <ScalarProperty Name="TrafficSchoolDiscount" ColumnName="TrafficSchoolDiscount" />
+          <ScalarProperty Name="TrafficSchoolNet" ColumnName="TrafficSchoolNet" />
+          <ScalarProperty Name="FeesDebitCreditSales" ColumnName="FeesDebitCreditSales" />
+          <ScalarProperty Name="FeesDebitCreditDiscount" ColumnName="FeesDebitCreditDiscount" />
+          <ScalarProperty Name="FeesDebitCreditNet" ColumnName="FeesDebitCreditNet" />
+          <ScalarProperty Name="GeneralTotalSales" ColumnName="GeneralTotalSales" />
+          <ScalarProperty Name="GeneralTotalDiscount" ColumnName="GeneralTotalDiscount" />
+          <ScalarProperty Name="GeneralTotalNet" ColumnName="GeneralTotalNet" />
+          <ScalarProperty Name="LoneStarTotal" ColumnName="LoneStarTotal" />
+          <ScalarProperty Name="SpeakEZTotal" ColumnName="SpeakEZTotal" />
+          <ScalarProperty Name="AgentDiscount" ColumnName="AgentDiscount" />
+          <ScalarProperty Name="TotalOtherProducts" ColumnName="TotalOtherProducts" />
+          <ScalarProperty Name="DiscountOtherProducts" ColumnName="DiscountOtherProducts" />
+          <ScalarProperty Name="NetOtherProducts" ColumnName="NetOtherProducts" />
+          <ScalarProperty Name="DistCommission" ColumnName="DistCommission" />
+          <ScalarProperty Name="MDistCommission" ColumnName="MDistCommission" />
+          <ScalarProperty Name="SalesTaxAmt" ColumnName="SalesTaxAmt" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="VirtualOfficeModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="VirtualOfficeModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_InsertCardHeader" FunctionName="VirtualOfficeModel.Store.SP_InsertCardHeader" />
+    <FunctionImportMapping FunctionImportName="SP_ippBrowser" FunctionName="VirtualOfficeModel.Store.SP_ippBrowser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.SP_ippBrowser_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="merchant_fk" ColumnName="merchant_fk" />
+          <ScalarProperty Name="vendorID" ColumnName="vendorID" />
+          <ScalarProperty Name="accountNo" ColumnName="accountNo" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="fee_type" ColumnName="fee_type" />
+          <ScalarProperty Name="merchantFeeShare" ColumnName="merchantFeeShare" />
+          <ScalarProperty Name="fee" ColumnName="fee" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="reversed" ColumnName="reversed" />
+          <ScalarProperty Name="acksent" ColumnName="acksent" />
+          <ScalarProperty Name="ackflag" ColumnName="ackflag" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_merchant_commisions" FunctionName="VirtualOfficeModel.Store.sp_merchant_commisions" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="VirtualOfficeModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_report_balance_details" FunctionName="VirtualOfficeModel.Store.sp_report_balance_details">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_report_balance_details_Result">
+          <ScalarProperty Name="inv_id" ColumnName="inv_id" />
+          <ScalarProperty Name="inv_date" ColumnName="inv_date" />
+          <ScalarProperty Name="gr_sales" ColumnName="gr_sales" />
+          <ScalarProperty Name="nt_sales" ColumnName="nt_sales" />
+          <ScalarProperty Name="invoice_payments" ColumnName="invoice_payments" />
+          <ScalarProperty Name="invoice_balance" ColumnName="invoice_balance" />
+          <ScalarProperty Name="invoice_last_payment" ColumnName="invoice_last_payment" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_report_general_sales_summary" FunctionName="VirtualOfficeModel.Store.sp_report_general_sales_summary">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_report_general_sales_summary_Result">
+          <ScalarProperty Name="mid" ColumnName="mid" />
+          <ScalarProperty Name="mer_name" ColumnName="mer_name" />
+          <ScalarProperty Name="grSalesLD" ColumnName="grSalesLD" />
+          <ScalarProperty Name="grSalesCEL" ColumnName="grSalesCEL" />
+          <ScalarProperty Name="grSalesOTH" ColumnName="grSalesOTH" />
+          <ScalarProperty Name="GrSalesTOT" ColumnName="GrSalesTOT" />
+          <ScalarProperty Name="mchCommission" ColumnName="mchCommission" />
+          <ScalarProperty Name="feesANDcredits" ColumnName="feesANDcredits" />
+          <ScalarProperty Name="netSales" ColumnName="netSales" />
+          <ScalarProperty Name="agtCommission" ColumnName="agtCommission" />
+          <ScalarProperty Name="dstCommission" ColumnName="dstCommission" />
+          <ScalarProperty Name="isoCommission" ColumnName="isoCommission" />
+          <ScalarProperty Name="accBalance" ColumnName="accBalance" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_report_general_sales_summary_dated" FunctionName="VirtualOfficeModel.Store.sp_report_general_sales_summary_dated">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_report_general_sales_summary_dated_Result">
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="mid" ColumnName="mid" />
+          <ScalarProperty Name="mer_name" ColumnName="mer_name" />
+          <ScalarProperty Name="grSalesLD" ColumnName="grSalesLD" />
+          <ScalarProperty Name="grSalesCEL" ColumnName="grSalesCEL" />
+          <ScalarProperty Name="grSalesOTH" ColumnName="grSalesOTH" />
+          <ScalarProperty Name="GrSalesTOT" ColumnName="GrSalesTOT" />
+          <ScalarProperty Name="mchCommission" ColumnName="mchCommission" />
+          <ScalarProperty Name="feesANDcredits" ColumnName="feesANDcredits" />
+          <ScalarProperty Name="netSales" ColumnName="netSales" />
+          <ScalarProperty Name="agtCommission" ColumnName="agtCommission" />
+          <ScalarProperty Name="dstCommission" ColumnName="dstCommission" />
+          <ScalarProperty Name="isoCommission" ColumnName="isoCommission" />
+          <ScalarProperty Name="accBalance" ColumnName="accBalance" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_report_invoice_details" FunctionName="VirtualOfficeModel.Store.sp_report_invoice_details">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_report_invoice_details_Result">
+          <ScalarProperty Name="det_id" ColumnName="det_id" />
+          <ScalarProperty Name="inv_det_date" ColumnName="inv_det_date" />
+          <ScalarProperty Name="product_maincode" ColumnName="product_maincode" />
+          <ScalarProperty Name="pro_rootname" ColumnName="pro_rootname" />
+          <ScalarProperty Name="pro_denomination" ColumnName="pro_denomination" />
+          <ScalarProperty Name="inv_discount" ColumnName="inv_discount" />
+          <ScalarProperty Name="inv_subtotal" ColumnName="inv_subtotal" />
+          <ScalarProperty Name="agentcommission" ColumnName="agentcommission" />
+          <ScalarProperty Name="distcommission" ColumnName="distcommission" />
+          <ScalarProperty Name="mdistcommission" ColumnName="mdistcommission" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_report_msv_commission_details" FunctionName="VirtualOfficeModel.Store.sp_report_msv_commission_details">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_report_msv_commission_details_Result">
+          <ScalarProperty Name="merchantnumber" ColumnName="merchantnumber" />
+          <ScalarProperty Name="merchantname" ColumnName="merchantname" />
+          <ScalarProperty Name="cnt_credits" ColumnName="cnt_credits" />
+          <ScalarProperty Name="cnt_debits" ColumnName="cnt_debits" />
+          <ScalarProperty Name="cnt_ebts" ColumnName="cnt_ebts" />
+          <ScalarProperty Name="cnt_other" ColumnName="cnt_other" />
+          <ScalarProperty Name="cnt_total" ColumnName="cnt_total" />
+          <ScalarProperty Name="amt_sales" ColumnName="amt_sales" />
+          <ScalarProperty Name="avg_ticket" ColumnName="avg_ticket" />
+          <ScalarProperty Name="income" ColumnName="income" />
+          <ScalarProperty Name="expenses" ColumnName="expenses" />
+          <ScalarProperty Name="netincome" ColumnName="netincome" />
+          <ScalarProperty Name="commission" ColumnName="commission" />
+          <ScalarProperty Name="adjustments" ColumnName="adjustments" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_report_msv_commission_details_by_totals" FunctionName="VirtualOfficeModel.Store.sp_report_msv_commission_details_by_totals">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_report_msv_commission_details_by_totals_Result">
+          <ScalarProperty Name="merchantnumber" ColumnName="merchantnumber" />
+          <ScalarProperty Name="merchantname" ColumnName="merchantname" />
+          <ScalarProperty Name="cnt_credits" ColumnName="cnt_credits" />
+          <ScalarProperty Name="cnt_debits" ColumnName="cnt_debits" />
+          <ScalarProperty Name="cnt_other" ColumnName="cnt_other" />
+          <ScalarProperty Name="cnt_total" ColumnName="cnt_total" />
+          <ScalarProperty Name="amt_sales" ColumnName="amt_sales" />
+          <ScalarProperty Name="avg_ticket" ColumnName="avg_ticket" />
+          <ScalarProperty Name="income" ColumnName="income" />
+          <ScalarProperty Name="expenses" ColumnName="expenses" />
+          <ScalarProperty Name="netincome" ColumnName="netincome" />
+          <ScalarProperty Name="commission" ColumnName="commission" />
+          <ScalarProperty Name="adjustments" ColumnName="adjustments" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_report_msv_commission_details_from_amex" FunctionName="VirtualOfficeModel.Store.sp_report_msv_commission_details_from_amex">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_report_msv_commission_details_from_amex_Result">
+          <ScalarProperty Name="merchantnumber" ColumnName="merchantnumber" />
+          <ScalarProperty Name="merchantname" ColumnName="merchantname" />
+          <ScalarProperty Name="cnt_credits" ColumnName="cnt_credits" />
+          <ScalarProperty Name="cnt_debits" ColumnName="cnt_debits" />
+          <ScalarProperty Name="cnt_other" ColumnName="cnt_other" />
+          <ScalarProperty Name="cnt_total" ColumnName="cnt_total" />
+          <ScalarProperty Name="amt_sales" ColumnName="amt_sales" />
+          <ScalarProperty Name="avg_ticket" ColumnName="avg_ticket" />
+          <ScalarProperty Name="income" ColumnName="income" />
+          <ScalarProperty Name="expenses" ColumnName="expenses" />
+          <ScalarProperty Name="netincome" ColumnName="netincome" />
+          <ScalarProperty Name="commission" ColumnName="commission" />
+          <ScalarProperty Name="adjustments" ColumnName="adjustments" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_report_msv_commission_details_from_other" FunctionName="VirtualOfficeModel.Store.sp_report_msv_commission_details_from_other">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_report_msv_commission_details_from_other_Result">
+          <ScalarProperty Name="merchantnumber" ColumnName="merchantnumber" />
+          <ScalarProperty Name="merchantname" ColumnName="merchantname" />
+          <ScalarProperty Name="cnt_credits" ColumnName="cnt_credits" />
+          <ScalarProperty Name="cnt_debits" ColumnName="cnt_debits" />
+          <ScalarProperty Name="cnt_other" ColumnName="cnt_other" />
+          <ScalarProperty Name="cnt_total" ColumnName="cnt_total" />
+          <ScalarProperty Name="amt_sales" ColumnName="amt_sales" />
+          <ScalarProperty Name="avg_ticket" ColumnName="avg_ticket" />
+          <ScalarProperty Name="income" ColumnName="income" />
+          <ScalarProperty Name="expenses" ColumnName="expenses" />
+          <ScalarProperty Name="netincome" ColumnName="netincome" />
+          <ScalarProperty Name="commission" ColumnName="commission" />
+          <ScalarProperty Name="adjustments" ColumnName="adjustments" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_report_msv_commission_details_from_visamc" FunctionName="VirtualOfficeModel.Store.sp_report_msv_commission_details_from_visamc">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_report_msv_commission_details_from_visamc_Result">
+          <ScalarProperty Name="merchantnumber" ColumnName="merchantnumber" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="cnt_credits" ColumnName="cnt_credits" />
+          <ScalarProperty Name="cnt_debits" ColumnName="cnt_debits" />
+          <ScalarProperty Name="cnt_other" ColumnName="cnt_other" />
+          <ScalarProperty Name="cnt_total" ColumnName="cnt_total" />
+          <ScalarProperty Name="amt_sales" ColumnName="amt_sales" />
+          <ScalarProperty Name="avg_ticket" ColumnName="avg_ticket" />
+          <ScalarProperty Name="income" ColumnName="income" />
+          <ScalarProperty Name="expenses" ColumnName="expenses" />
+          <ScalarProperty Name="netincome" ColumnName="netincome" />
+          <ScalarProperty Name="commisison" ColumnName="commisison" />
+          <ScalarProperty Name="adjustments" ColumnName="adjustments" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_report_msv_commission_details_from_visamcBCK02062015" FunctionName="VirtualOfficeModel.Store.sp_report_msv_commission_details_from_visamcBCK02062015">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_report_msv_commission_details_from_visamcBCK02062015_Result">
+          <ScalarProperty Name="merchantnumber" ColumnName="merchantnumber" />
+          <ScalarProperty Name="merchantname" ColumnName="merchantname" />
+          <ScalarProperty Name="cnt_credits" ColumnName="cnt_credits" />
+          <ScalarProperty Name="cnt_debits" ColumnName="cnt_debits" />
+          <ScalarProperty Name="cnt_other" ColumnName="cnt_other" />
+          <ScalarProperty Name="cnt_total" ColumnName="cnt_total" />
+          <ScalarProperty Name="amt_sales" ColumnName="amt_sales" />
+          <ScalarProperty Name="avg_ticket" ColumnName="avg_ticket" />
+          <ScalarProperty Name="income" ColumnName="income" />
+          <ScalarProperty Name="expenses" ColumnName="expenses" />
+          <ScalarProperty Name="netincome" ColumnName="netincome" />
+          <ScalarProperty Name="commission" ColumnName="commission" />
+          <ScalarProperty Name="adjustments" ColumnName="adjustments" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_report_msv_commission_details_from_visamcMine" FunctionName="VirtualOfficeModel.Store.sp_report_msv_commission_details_from_visamcMine">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_report_msv_commission_details_from_visamcMine_Result">
+          <ScalarProperty Name="merchantnumber" ColumnName="merchantnumber" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="cnt_credits" ColumnName="cnt_credits" />
+          <ScalarProperty Name="cnt_debits" ColumnName="cnt_debits" />
+          <ScalarProperty Name="cnt_other" ColumnName="cnt_other" />
+          <ScalarProperty Name="cnt_total" ColumnName="cnt_total" />
+          <ScalarProperty Name="amt_sales" ColumnName="amt_sales" />
+          <ScalarProperty Name="avg_ticket" ColumnName="avg_ticket" />
+          <ScalarProperty Name="income" ColumnName="income" />
+          <ScalarProperty Name="expenses" ColumnName="expenses" />
+          <ScalarProperty Name="netincome" ColumnName="netincome" />
+          <ScalarProperty Name="commission" ColumnName="commission" />
+          <ScalarProperty Name="adjustments" ColumnName="adjustments" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_report_msv_commission_summary" FunctionName="VirtualOfficeModel.Store.sp_report_msv_commission_summary">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_report_msv_commission_summary_Result">
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="begindate" ColumnName="begindate" />
+          <ScalarProperty Name="enddate" ColumnName="enddate" />
+          <ScalarProperty Name="cnt_credits" ColumnName="cnt_credits" />
+          <ScalarProperty Name="cnt_debits" ColumnName="cnt_debits" />
+          <ScalarProperty Name="cnt_other" ColumnName="cnt_other" />
+          <ScalarProperty Name="cnt_total" ColumnName="cnt_total" />
+          <ScalarProperty Name="amt_sales" ColumnName="amt_sales" />
+          <ScalarProperty Name="amt_returns" ColumnName="amt_returns" />
+          <ScalarProperty Name="avg_ticket" ColumnName="avg_ticket" />
+          <ScalarProperty Name="amex_commission" ColumnName="amex_commission" />
+          <ScalarProperty Name="vmc_commission" ColumnName="vmc_commission" />
+          <ScalarProperty Name="oth_commission" ColumnName="oth_commission" />
+          <ScalarProperty Name="tot_commission" ColumnName="tot_commission" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_report_msv_portfolio_AccountsByType" FunctionName="VirtualOfficeModel.Store.sp_report_msv_portfolio_AccountsByType">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_report_msv_portfolio_AccountsByType_Result">
+          <ScalarProperty Name="merchant_pk" ColumnName="merchant_pk" />
+          <ScalarProperty Name="mer_name" ColumnName="mer_name" />
+          <ScalarProperty Name="processingtype" ColumnName="processingtype" />
+          <ScalarProperty Name="merchant_BusAddress" ColumnName="merchant_BusAddress" />
+          <ScalarProperty Name="merchant_AddressCityID" ColumnName="merchant_AddressCityID" />
+          <ScalarProperty Name="merchant_AddressStateID" ColumnName="merchant_AddressStateID" />
+          <ScalarProperty Name="merchant_AddressZIP" ColumnName="merchant_AddressZIP" />
+          <ScalarProperty Name="merchant_maincontact" ColumnName="merchant_maincontact" />
+          <ScalarProperty Name="merchant_maincontactphone" ColumnName="merchant_maincontactphone" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_report_msv_portfolio_summary" FunctionName="VirtualOfficeModel.Store.sp_report_msv_portfolio_summary">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_report_msv_portfolio_summary_Result">
+          <ScalarProperty Name="merchant_pk" ColumnName="merchant_pk" />
+          <ScalarProperty Name="mer_name" ColumnName="mer_name" />
+          <ScalarProperty Name="mer_appdate" ColumnName="mer_appdate" />
+          <ScalarProperty Name="mer_midBank" ColumnName="mer_midBank" />
+          <ScalarProperty Name="agentId" ColumnName="agentId" />
+          <ScalarProperty Name="Agent_name" ColumnName="Agent name" />
+          <ScalarProperty Name="merchant_busaddress" ColumnName="merchant_busaddress" />
+          <ScalarProperty Name="merchant_addressCityID" ColumnName="merchant_addressCityID" />
+          <ScalarProperty Name="merchant_addressStateID" ColumnName="merchant_addressStateID" />
+          <ScalarProperty Name="merchant_addressZip" ColumnName="merchant_addressZip" />
+          <ScalarProperty Name="merchant_guarantorname" ColumnName="merchant_guarantorname" />
+          <ScalarProperty Name="merchant_busphone" ColumnName="merchant_busphone" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="merchant_email" ColumnName="merchant_email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_report_msv_portfolio_summary_general" FunctionName="VirtualOfficeModel.Store.sp_report_msv_portfolio_summary_general" />
+    <FunctionImportMapping FunctionImportName="sp_report_prepaid_portfolio_inAlert" FunctionName="VirtualOfficeModel.Store.sp_report_prepaid_portfolio_inAlert">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_report_prepaid_portfolio_inAlert_Result">
+          <ScalarProperty Name="MID" ColumnName="MID" />
+          <ScalarProperty Name="Alert" ColumnName="Alert" />
+          <ScalarProperty Name="business_name" ColumnName="business_name" />
+          <ScalarProperty Name="business_address" ColumnName="business_address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Opened" ColumnName="Opened" />
+          <ScalarProperty Name="acc_type" ColumnName="acc_type" />
+          <ScalarProperty Name="p_plan" ColumnName="p_plan" />
+          <ScalarProperty Name="service_type" ColumnName="service_type" />
+          <ScalarProperty Name="weekly_credit_limit" ColumnName="weekly_credit_limit" />
+          <ScalarProperty Name="daily_credit_limit" ColumnName="daily_credit_limit" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="returned_achs" ColumnName="returned_achs" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="suspended" ColumnName="suspended" />
+          <ScalarProperty Name="compliance" ColumnName="compliance" />
+          <ScalarProperty Name="closed" ColumnName="closed" />
+          <ScalarProperty Name="suspended_reason" ColumnName="suspended_reason" />
+          <ScalarProperty Name="connection_type" ColumnName="connection_type" />
+          <ScalarProperty Name="bill_payment" ColumnName="bill_payment" />
+          <ScalarProperty Name="prepaid_tolls" ColumnName="prepaid_tolls" />
+          <ScalarProperty Name="last_sale" ColumnName="last_sale" />
+          <ScalarProperty Name="last_month_sales" ColumnName="last_month_sales" />
+          <ScalarProperty Name="this_month_sales" ColumnName="this_month_sales" />
+          <ScalarProperty Name="seven_day_sales" ColumnName="seven_day_sales" />
+          <ScalarProperty Name="today_sales" ColumnName="today_sales" />
+          <ScalarProperty Name="software_version" ColumnName="software_version" />
+          <ScalarProperty Name="profile_date" ColumnName="profile_date" />
+          <ScalarProperty Name="is_ach_active" ColumnName="is_ach_active" />
+          <ScalarProperty Name="top_selling_product" ColumnName="top_selling_product" />
+          <ScalarProperty Name="sort_order" ColumnName="sort_order" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_report_sales_details" FunctionName="VirtualOfficeModel.Store.sp_report_sales_details">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_report_sales_details_Result">
+          <ScalarProperty Name="inv_id" ColumnName="inv_id" />
+          <ScalarProperty Name="inv_date" ColumnName="inv_date" />
+          <ScalarProperty Name="ld_sales" ColumnName="ld_sales" />
+          <ScalarProperty Name="pinless_sales" ColumnName="pinless_sales" />
+          <ScalarProperty Name="wireless_sales" ColumnName="wireless_sales" />
+          <ScalarProperty Name="international_sales" ColumnName="international_sales" />
+          <ScalarProperty Name="other_sales" ColumnName="other_sales" />
+          <ScalarProperty Name="debits" ColumnName="debits" />
+          <ScalarProperty Name="credits" ColumnName="credits" />
+          <ScalarProperty Name="total_sales" ColumnName="total_sales" />
+          <ScalarProperty Name="mrch_commission" ColumnName="mrch_commission" />
+          <ScalarProperty Name="net_sales" ColumnName="net_sales" />
+          <ScalarProperty Name="agt_commission" ColumnName="agt_commission" />
+          <ScalarProperty Name="dst_commission" ColumnName="dst_commission" />
+          <ScalarProperty Name="iso_commission" ColumnName="iso_commission" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_report_sales_invoice_details" FunctionName="VirtualOfficeModel.Store.sp_report_sales_invoice_details">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_report_sales_invoice_details_Result">
+          <ScalarProperty Name="det_id" ColumnName="det_id" />
+          <ScalarProperty Name="inv_timestamp" ColumnName="inv_timestamp" />
+          <ScalarProperty Name="product_sbt" ColumnName="product_sbt" />
+          <ScalarProperty Name="pro_description" ColumnName="pro_description" />
+          <ScalarProperty Name="gr_sales" ColumnName="gr_sales" />
+          <ScalarProperty Name="store_commission" ColumnName="store_commission" />
+          <ScalarProperty Name="net_sales" ColumnName="net_sales" />
+          <ScalarProperty Name="agt_commission" ColumnName="agt_commission" />
+          <ScalarProperty Name="dst_commission" ColumnName="dst_commission" />
+          <ScalarProperty Name="iso_commission" ColumnName="iso_commission" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_retrieve_documents" FunctionName="VirtualOfficeModel.Store.sp_retrieve_documents">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_retrieve_documents_Result">
+          <ScalarProperty Name="id_document" ColumnName="id_document" />
+          <ScalarProperty Name="file_name" ColumnName="file_name" />
+          <ScalarProperty Name="file_title" ColumnName="file_title" />
+          <ScalarProperty Name="file_route" ColumnName="file_route" />
+          <ScalarProperty Name="typ_description" ColumnName="typ_description" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="added_date" ColumnName="added_date" />
+          <ScalarProperty Name="added_by" ColumnName="added_by" />
+          <ScalarProperty Name="lastupload_date" ColumnName="lastupload_date" />
+          <ScalarProperty Name="lastupload_by" ColumnName="lastupload_by" />
+          <ScalarProperty Name="lastmodified_date" ColumnName="lastmodified_date" />
+          <ScalarProperty Name="lastmodified_by" ColumnName="lastmodified_by" />
+          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+          <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
+          <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="comp_name" ColumnName="comp_name" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="subcategory" ColumnName="subcategory" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_retrieve_incidents" FunctionName="VirtualOfficeModel.Store.sp_retrieve_incidents">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_retrieve_incidents_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="Merchant" ColumnName="Merchant" />
+          <ScalarProperty Name="Incident_Type" ColumnName="Incident Type" />
+          <ScalarProperty Name="Incident_Status" ColumnName="Incident Status" />
+          <ScalarProperty Name="Terminal_Id" ColumnName="Terminal Id" />
+          <ScalarProperty Name="Date_Opened" ColumnName="Date Opened" />
+          <ScalarProperty Name="Date_Closed" ColumnName="Date Closed" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_retrieve_leads" FunctionName="VirtualOfficeModel.Store.sp_retrieve_leads">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_retrieve_leads_Result">
+          <ScalarProperty Name="Lead_" ColumnName="Lead#" />
+          <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+          <ScalarProperty Name="leadSource" ColumnName="leadSource" />
+          <ScalarProperty Name="Emp_" ColumnName="Emp#" />
+          <ScalarProperty Name="Assigned_to" ColumnName="Assigned to" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Contact_person" ColumnName="Contact person" />
+          <ScalarProperty Name="Business_address" ColumnName="Business address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Business_type" ColumnName="Business type" />
+          <ScalarProperty Name="Area_of_Interest" ColumnName="Area of Interest" />
+          <ScalarProperty Name="Entered" ColumnName="Entered" />
+          <ScalarProperty Name="Contacted" ColumnName="Contacted" />
+          <ScalarProperty Name="Nxt_Visit" ColumnName="Nxt.Visit" />
+          <ScalarProperty Name="Closed_on" ColumnName="Closed on" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="agentID" ColumnName="agentID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_retrieve_parameters" FunctionName="VirtualOfficeModel.Store.sp_retrieve_parameters">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_retrieve_parameters_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_retrieve_spNames" FunctionName="VirtualOfficeModel.Store.sp_retrieve_spNames" />
+    <FunctionImportMapping FunctionImportName="sp_retrieve_storedprocedure_columns" FunctionName="VirtualOfficeModel.Store.sp_retrieve_storedprocedure_columns" />
+    <FunctionImportMapping FunctionImportName="SP_ShowAccountRegister" FunctionName="VirtualOfficeModel.Store.SP_ShowAccountRegister">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.SP_ShowAccountRegister_Result">
+          <ScalarProperty Name="reg_pk" ColumnName="reg_pk" />
+          <ScalarProperty Name="distID" ColumnName="distID" />
+          <ScalarProperty Name="distName" ColumnName="distName" />
+          <ScalarProperty Name="transactionDate" ColumnName="transactionDate" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="transactionID" ColumnName="transactionID" />
+          <ScalarProperty Name="transactionType" ColumnName="transactionType" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="accountID" ColumnName="accountID" />
+          <ScalarProperty Name="accountName" ColumnName="accountName" />
+          <ScalarProperty Name="debit" ColumnName="debit" />
+          <ScalarProperty Name="credit" ColumnName="credit" />
+          <ScalarProperty Name="accBalance" ColumnName="accBalance" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_update_user_password" FunctionName="VirtualOfficeModel.Store.sp_update_user_password" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="VirtualOfficeModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="Sp_WEB_POS_Merchant_GetTransactions_AgentGroup" FunctionName="VirtualOfficeModel.Store.Sp_WEB_POS_Merchant_GetTransactions_AgentGroup" />
+    <FunctionImportMapping FunctionImportName="Test" FunctionName="VirtualOfficeModel.Store.Test">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.Test_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="mid" ColumnName="mid" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="AppType" ColumnName="AppType" />
+          <ScalarProperty Name="AppKey" ColumnName="AppKey" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="get_user" FunctionName="VirtualOfficeModel.Store.get_user">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.get_user_Result">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="businessName" ColumnName="businessName" />
+          <ScalarProperty Name="address1" ColumnName="address1" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="zipCode" ColumnName="zipCode" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="comission" ColumnName="comission" />
+          <ScalarProperty Name="usertype" ColumnName="usertype" />
+          <ScalarProperty Name="isFullcarga" ColumnName="isFullcarga" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_report_portfolio_summary" FunctionName="VirtualOfficeModel.Store.sp_report_portfolio_summary">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_report_portfolio_summary_Result">
+          <ScalarProperty Name="MID" ColumnName="MID" />
+          <ScalarProperty Name="BillAgentName" ColumnName="BillAgentName" />
+          <ScalarProperty Name="DistName" ColumnName="DistName" />
+          <ScalarProperty Name="Alert" ColumnName="Alert" />
+          <ScalarProperty Name="business_name" ColumnName="business_name" />
+          <ScalarProperty Name="business_address" ColumnName="business_address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Opened" ColumnName="Opened" />
+          <ScalarProperty Name="acc_type" ColumnName="acc_type" />
+          <ScalarProperty Name="p_plan" ColumnName="p_plan" />
+          <ScalarProperty Name="service_type" ColumnName="service_type" />
+          <ScalarProperty Name="weekly_credit_limit" ColumnName="weekly_credit_limit" />
+          <ScalarProperty Name="daily_credit_limit" ColumnName="daily_credit_limit" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="returned_achs" ColumnName="returned_achs" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="suspended" ColumnName="suspended" />
+          <ScalarProperty Name="compliance" ColumnName="compliance" />
+          <ScalarProperty Name="closed" ColumnName="closed" />
+          <ScalarProperty Name="suspended_reason" ColumnName="suspended_reason" />
+          <ScalarProperty Name="connection_type" ColumnName="connection_type" />
+          <ScalarProperty Name="bill_payment" ColumnName="bill_payment" />
+          <ScalarProperty Name="prepaid_tolls" ColumnName="prepaid_tolls" />
+          <ScalarProperty Name="last_sale" ColumnName="last_sale" />
+          <ScalarProperty Name="last_month_sales" ColumnName="last_month_sales" />
+          <ScalarProperty Name="this_month_sales" ColumnName="this_month_sales" />
+          <ScalarProperty Name="seven_day_sales" ColumnName="seven_day_sales" />
+          <ScalarProperty Name="today_sales" ColumnName="today_sales" />
+          <ScalarProperty Name="software_version" ColumnName="software_version" />
+          <ScalarProperty Name="profile_date" ColumnName="profile_date" />
+          <ScalarProperty Name="is_ach_active" ColumnName="is_ach_active" />
+          <ScalarProperty Name="top_selling_product" ColumnName="top_selling_product" />
+          <ScalarProperty Name="sort_order" ColumnName="sort_order" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_Fullcarga_Statetement" FunctionName="VirtualOfficeModel.Store.SP_Fullcarga_Statetement">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.SP_Fullcarga_Statetement_Result">
+          <ScalarProperty Name="Invoice" ColumnName="Invoice" />
+          <ScalarProperty Name="Billed" ColumnName="Billed" />
+          <ScalarProperty Name="Billed_Name" ColumnName="Billed_Name" />
+          <ScalarProperty Name="Inv_Date" ColumnName="Inv_Date" />
+          <ScalarProperty Name="Invoice_Amount" ColumnName="Invoice_Amount" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_Fullcarga_PrepaidSalesSummary" FunctionName="VirtualOfficeModel.Store.SP_Fullcarga_PrepaidSalesSummary">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.SP_Fullcarga_PrepaidSalesSummary_Result">
+          <ScalarProperty Name="Store" ColumnName="Store" />
+          <ScalarProperty Name="Store_Name" ColumnName="Store_Name" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Gross_Sale" ColumnName="Gross_Sale" />
+          <ScalarProperty Name="Net_Sale" ColumnName="Net_Sale" />
+          <ScalarProperty Name="Merchant_Comm_V" ColumnName="Merchant_Comm V" />
+          <ScalarProperty Name="Dist_Comm_V" ColumnName="Dist_Comm V" />
+          <ScalarProperty Name="ISO_Comm_V" ColumnName="ISO_Comm V" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_Fullcarga_DetailInvoice" FunctionName="VirtualOfficeModel.Store.SP_Fullcarga_DetailInvoice">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.SP_Fullcarga_DetailInvoice_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Store" ColumnName="Store" />
+          <ScalarProperty Name="Store_Name" ColumnName="Store_Name" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Denomination" ColumnName="Denomination" />
+          <ScalarProperty Name="Net_Sale" ColumnName="Net_Sale" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetMerchantCommissionsProfile" FunctionName="VirtualOfficeModel.Store.sp_GetMerchantCommissionsProfile">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_GetMerchantCommissionsProfile_Result">
+          <ScalarProperty Name="merchant_fk" ColumnName="merchant_fk" />
+          <ScalarProperty Name="pro_description" ColumnName="pro_description" />
+          <ScalarProperty Name="Product_MainCode" ColumnName="Product_MainCode" />
+          <ScalarProperty Name="pro_Type" ColumnName="pro_Type" />
+          <ScalarProperty Name="pro_TypeDesc" ColumnName="pro_TypeDesc" />
+          <ScalarProperty Name="ProfCommMerchant" ColumnName="ProfCommMerchant" />
+          <ScalarProperty Name="ProfCommAgent" ColumnName="ProfCommAgent" />
+          <ScalarProperty Name="ProfCommDist" ColumnName="ProfCommDist" />
+          <ScalarProperty Name="ProfCommISO" ColumnName="ProfCommISO" />
+          <ScalarProperty Name="ProfCommTotal" ColumnName="ProfCommTotal" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_TransactionsSummary" FunctionName="VirtualOfficeModel.Store.Sp_TransactionsSummary">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.Sp_TransactionsSummary_Result">
+          <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
+          <ScalarProperty Name="Store" ColumnName="Store" />
+          <ScalarProperty Name="Store_Name" ColumnName="Store_Name" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Gross_Sale" ColumnName="Gross_Sale" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetMerchantCreditLimits" FunctionName="VirtualOfficeModel.Store.sp_GetMerchantCreditLimits" />
+    <FunctionImportMapping FunctionImportName="GetMerchantCreditLimits" FunctionName="VirtualOfficeModel.Store.GetMerchantCreditLimits">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.GetMerchantCreditLimits_Result">
+          <ScalarProperty Name="merchant_pk" ColumnName="merchant_pk" />
+          <ScalarProperty Name="mer_name" ColumnName="mer_name" />
+          <ScalarProperty Name="dailylimit_max" ColumnName="dailylimit_max" />
+          <ScalarProperty Name="creditlimit_max" ColumnName="creditlimit_max" />
+          <ScalarProperty Name="dailyLevels" ColumnName="dailyLevels" />
+          <ScalarProperty Name="creditLevels" ColumnName="creditLevels" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

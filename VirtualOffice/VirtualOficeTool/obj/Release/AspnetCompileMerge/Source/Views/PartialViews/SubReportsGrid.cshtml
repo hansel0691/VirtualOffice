@@ -1,0 +1,33 @@
+﻿@using VirtualOfficeToolManager.Domain
+@using VirtualOficeTool.Models
+
+@(Html.Kendo().Grid<SubReportViewModel>()
+        .Name("SubReportColumnNames")
+    .HtmlAttributes(new { @style = "text-align: left;" })
+     .Resizable(config => config.Columns(true))
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.Id).Hidden(true);
+        columns.Bound(p => p.Name).Width(100).Title("Report");
+        columns.Bound(p => p.ColumnName).ClientTemplate("<input type='text' style=\"width: 100px\" name=\"SubReportColumns\" value=#=ColumnName#></input>").Filterable(false).Width(120);
+        columns.Bound(p => p.Selected).ClientTemplate("<input type='checkbox' name=\"SubReportIds\" value=#=Id# #= Selected ? checked='checked' : '' # ></input>").Filterable(false).Width(30).Title("");
+    })
+        .AutoBind(true)
+        .Pageable()
+        .Events(events => events.DataBound("CheckSubReportsEmptyness"))
+        .Sortable()
+         .Filterable()
+        .Scrollable(s => s.Height("auto"))
+        .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(100)
+        .Model(model => model.Id(p => p.Id))
+                    .Read(read => read.Action("GetSubReports", "Reports").Data("getFilteringData"))
+      )) 
+<script>
+    function CheckSubReportsEmptyness(data) {
+        if (data.sender._data.length == 0) {
+            $("#subReportsDiv").fadeOut();
+        } 
+    };
+</script>

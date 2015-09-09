@@ -1,0 +1,828 @@
+12/08/2014 10:50:21: DEBUG 12  Generic Logger - Starting operation: User / TestGetUserToken
+12/08/2014 10:50:30: DEBUG 12  IInterceptor - Method GetUser called with parameters:
+12/08/2014 10:50:30: DEBUG 12  IInterceptor - userName: <11821>
+12/08/2014 10:50:30: DEBUG 12  IInterceptor - password: <M97556>
+12/08/2014 10:50:30: DEBUG 12  IInterceptor - 
+12/08/2014 10:50:30: DEBUG 12  IInterceptor - 
+12/08/2014 10:50:31: DEBUG 12  VirtualOfficeContext - Opened connection at 12/8/2014 10:50:31 AM -05:00
+
+12/08/2014 10:50:31: DEBUG 12  VirtualOfficeContext - get_user @userid, @passCredential
+12/08/2014 10:50:31: DEBUG 12  VirtualOfficeContext - 
+
+12/08/2014 10:50:31: DEBUG 12  VirtualOfficeContext - -- @userid: '11821' (Type = String, IsNullable = false, Size = 5)
+
+12/08/2014 10:50:31: DEBUG 12  VirtualOfficeContext - -- @passCredential: 'M97556' (Type = String, IsNullable = false, Size = 6)
+
+12/08/2014 10:50:31: DEBUG 12  VirtualOfficeContext - -- Executing at 12/8/2014 10:50:31 AM -05:00
+
+12/08/2014 10:50:31: DEBUG 12  VirtualOfficeContext - -- Completed in 31 ms with result: SqlDataReader
+
+12/08/2014 10:50:31: DEBUG 12  VirtualOfficeContext - 
+
+12/08/2014 10:50:31: DEBUG 12  VirtualOfficeContext - Closed connection at 12/8/2014 10:50:31 AM -05:00
+
+12/08/2014 10:50:31: DEBUG 12  VirtualOfficeContext - Opened connection at 12/8/2014 10:50:31 AM -05:00
+
+12/08/2014 10:50:32: DEBUG 12  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ([Extent1].[RefId] = @p__linq__0) AND ( CAST( [Extent1].[Category] AS int) = @p__linq__1)
+12/08/2014 10:50:32: DEBUG 12  VirtualOfficeContext - 
+
+12/08/2014 10:50:32: DEBUG 12  VirtualOfficeContext - -- p__linq__0: '11821' (Type = Int32, IsNullable = false)
+
+12/08/2014 10:50:32: DEBUG 12  VirtualOfficeContext - -- p__linq__1: '4' (Type = Int32, IsNullable = false)
+
+12/08/2014 10:50:32: DEBUG 12  VirtualOfficeContext - -- Executing at 12/8/2014 10:50:32 AM -05:00
+
+12/08/2014 10:50:32: DEBUG 12  VirtualOfficeContext - -- Completed in 23 ms with result: SqlDataReader
+
+12/08/2014 10:50:32: DEBUG 12  VirtualOfficeContext - 
+
+12/08/2014 10:50:32: DEBUG 12  VirtualOfficeContext - Closed connection at 12/8/2014 10:50:32 AM -05:00
+
+12/08/2014 10:50:32: DEBUG 12  VirtualOfficeContext - Opened connection at 12/8/2014 10:50:32 AM -05:00
+
+12/08/2014 10:50:32: DEBUG 12  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE [Extent1].[RefId] = @p__linq__0
+12/08/2014 10:50:32: DEBUG 12  VirtualOfficeContext - 
+
+12/08/2014 10:50:32: DEBUG 12  VirtualOfficeContext - -- p__linq__0: '11821' (Type = Int32, IsNullable = false)
+
+12/08/2014 10:50:32: DEBUG 12  VirtualOfficeContext - -- Executing at 12/8/2014 10:50:32 AM -05:00
+
+12/08/2014 10:50:32: DEBUG 12  VirtualOfficeContext - -- Completed in 19 ms with result: SqlDataReader
+
+12/08/2014 10:50:32: DEBUG 12  VirtualOfficeContext - 
+
+12/08/2014 10:50:32: DEBUG 12  VirtualOfficeContext - Closed connection at 12/8/2014 10:50:32 AM -05:00
+
+12/08/2014 10:50:32: DEBUG 12  IInterceptor - Method: GetUser returned: 
+12/08/2014 10:50:32: DEBUG 12  IInterceptor - RefId : 11821 
+12/08/2014 10:50:32: DEBUG 12  IInterceptor - Category : MerchantServiceUser 
+12/08/2014 10:50:32: DEBUG 12  IInterceptor - BusinessName : BLACKSTONE ECOMMERCE  
+12/08/2014 10:50:32: DEBUG 12  IInterceptor - Address1 : 11600 NW 34TH ST 
+12/08/2014 10:50:32: DEBUG 12  IInterceptor - Address2 :  
+12/08/2014 10:50:32: DEBUG 12  IInterceptor - ZipCode : 33178 
+12/08/2014 10:50:32: DEBUG 12  IInterceptor - State : FL 
+12/08/2014 10:50:32: DEBUG 12  IInterceptor - Email : support@blackstoneonline.com  
+12/08/2014 10:50:32: DEBUG 12  IInterceptor - Phone : (305) 639-9590 
+12/08/2014 10:50:32: DEBUG 12  IInterceptor - Comission :  
+12/08/2014 10:50:32: DEBUG 12  IInterceptor - Name : BLACKSTONE ECOMMERCE  
+12/08/2014 10:50:32: DEBUG 12  IInterceptor - City : DORAL 
+12/08/2014 10:50:32: DEBUG 12  IInterceptor - Tokens : System.Collections.Generic.List`1[Domain.Models.HashKey] 
+12/08/2014 10:50:32: DEBUG 12  IInterceptor - Id : 36 
+12/08/2014 10:50:32: DEBUG 12  IInterceptor - RowVersion :  
+12/08/2014 10:50:32: DEBUG 12  IInterceptor - TimeSpan : 12/8/2014 10:50:31 AM 
+12/08/2014 10:50:32: DEBUG 12  IInterceptor - 
+12/08/2014 10:50:32: DEBUG 12  IInterceptor - 
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - Method GetHash called with parameters:
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - key: <11821>
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - data: <M97556-8587835530371051932>
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - 
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - 
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - Method: GetHash returned: 
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - f658a806-b319-4173-be9e-c3cb7bf7002a
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - 
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - Method AddHashToUser called with parameters:
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - user: <RefId : 11821 
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - Category : MerchantServiceUser 
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - BusinessName : BLACKSTONE ECOMMERCE  
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - Address1 : 11600 NW 34TH ST 
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - Address2 :  
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - ZipCode : 33178 
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - State : FL 
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - Email : support@blackstoneonline.com  
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - Phone : (305) 639-9590 
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - Comission :  
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - Name : BLACKSTONE ECOMMERCE  
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - City : DORAL 
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - Tokens : System.Collections.Generic.List`1[Domain.Models.HashKey] 
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - Id : 36 
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - RowVersion :  
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - TimeSpan : 12/8/2014 10:50:31 AM 
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - >
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - hash: <f658a806-b319-4173-be9e-c3cb7bf7002a>
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - 
+12/08/2014 10:50:48: DEBUG 12  IInterceptor - 
+12/08/2014 10:50:48: DEBUG 12  VirtualOfficeContext - Opened connection at 12/8/2014 10:50:48 AM -05:00
+
+12/08/2014 10:50:48: DEBUG 12  VirtualOfficeContext - Started transaction at 12/8/2014 10:50:48 AM -05:00
+
+12/08/2014 10:50:48: DEBUG 12  VirtualOfficeContext - INSERT [dbo].[HashKeys]([Hash], [UserId], [TimeSpan])
+VALUES (@0, @1, @2)
+SELECT [Id], [RowVersion]
+FROM [dbo].[HashKeys]
+WHERE @@ROWCOUNT > 0 AND [Id] = scope_identity()
+12/08/2014 10:50:48: DEBUG 12  VirtualOfficeContext - 
+
+12/08/2014 10:50:48: DEBUG 12  VirtualOfficeContext - -- @0: 'f658a806-b319-4173-be9e-c3cb7bf7002a' (Type = String, Size = -1)
+
+12/08/2014 10:50:48: DEBUG 12  VirtualOfficeContext - -- @1: '36' (Type = Int32)
+
+12/08/2014 10:50:48: DEBUG 12  VirtualOfficeContext - -- @2: '12/8/2014 10:50:48 AM' (Type = DateTime2)
+
+12/08/2014 10:50:48: DEBUG 12  VirtualOfficeContext - -- Executing at 12/8/2014 10:50:48 AM -05:00
+
+12/08/2014 10:50:49: DEBUG 12  VirtualOfficeContext - -- Completed in 23 ms with result: SqlDataReader
+
+12/08/2014 10:50:49: DEBUG 12  VirtualOfficeContext - 
+
+12/08/2014 10:50:49: DEBUG 12  VirtualOfficeContext - Committed transaction at 12/8/2014 10:50:49 AM -05:00
+
+12/08/2014 10:50:49: DEBUG 12  VirtualOfficeContext - Closed connection at 12/8/2014 10:50:49 AM -05:00
+
+12/08/2014 10:50:49: DEBUG 12  IInterceptor - Method: AddHashToUser returned: 
+12/08/2014 10:50:49: DEBUG 12  IInterceptor - void
+12/08/2014 10:50:49: DEBUG 12  IInterceptor - 
+12/08/2014 10:52:27: DEBUG 12  Generic Logger - Ending operation: User / TestGetUserToken
+12/08/2014 10:52:27: INFO 12  Generic Logger - =========================================================================================================
+12/08/2014 10:52:27: INFO 12  Generic Logger - =========================================================================================================
+12/08/2014 10:52:27: INFO 12  Generic Logger - =========================================================================================================
+12/08/2014 10:52:40: DEBUG 11  Generic Logger - Starting operation: User / TestGetUserToken
+12/08/2014 10:52:44: DEBUG 11  IInterceptor - Method GetUser called with parameters:
+12/08/2014 10:52:44: DEBUG 11  IInterceptor - userName: <11821>
+12/08/2014 10:52:44: DEBUG 11  IInterceptor - password: <M97556>
+12/08/2014 10:52:44: DEBUG 11  IInterceptor - 
+12/08/2014 10:52:44: DEBUG 11  IInterceptor - 
+12/08/2014 10:52:44: DEBUG 11  VirtualOfficeContext - Opened connection at 12/8/2014 10:52:44 AM -05:00
+
+12/08/2014 10:52:44: DEBUG 11  VirtualOfficeContext - get_user @userid, @passCredential
+12/08/2014 10:52:44: DEBUG 11  VirtualOfficeContext - 
+
+12/08/2014 10:52:44: DEBUG 11  VirtualOfficeContext - -- @userid: '11821' (Type = String, IsNullable = false, Size = 5)
+
+12/08/2014 10:52:44: DEBUG 11  VirtualOfficeContext - -- @passCredential: 'M97556' (Type = String, IsNullable = false, Size = 6)
+
+12/08/2014 10:52:44: DEBUG 11  VirtualOfficeContext - -- Executing at 12/8/2014 10:52:44 AM -05:00
+
+12/08/2014 10:52:44: DEBUG 11  VirtualOfficeContext - -- Completed in 20 ms with result: SqlDataReader
+
+12/08/2014 10:52:44: DEBUG 11  VirtualOfficeContext - 
+
+12/08/2014 10:52:44: DEBUG 11  VirtualOfficeContext - Closed connection at 12/8/2014 10:52:44 AM -05:00
+
+12/08/2014 10:52:44: DEBUG 11  VirtualOfficeContext - Opened connection at 12/8/2014 10:52:44 AM -05:00
+
+12/08/2014 10:52:44: DEBUG 11  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ([Extent1].[RefId] = @p__linq__0) AND ( CAST( [Extent1].[Category] AS int) = @p__linq__1)
+12/08/2014 10:52:44: DEBUG 11  VirtualOfficeContext - 
+
+12/08/2014 10:52:44: DEBUG 11  VirtualOfficeContext - -- p__linq__0: '11821' (Type = Int32, IsNullable = false)
+
+12/08/2014 10:52:44: DEBUG 11  VirtualOfficeContext - -- p__linq__1: '4' (Type = Int32, IsNullable = false)
+
+12/08/2014 10:52:44: DEBUG 11  VirtualOfficeContext - -- Executing at 12/8/2014 10:52:44 AM -05:00
+
+12/08/2014 10:52:44: DEBUG 11  VirtualOfficeContext - -- Completed in 19 ms with result: SqlDataReader
+
+12/08/2014 10:52:44: DEBUG 11  VirtualOfficeContext - 
+
+12/08/2014 10:52:44: DEBUG 11  VirtualOfficeContext - Closed connection at 12/8/2014 10:52:44 AM -05:00
+
+12/08/2014 10:52:44: DEBUG 11  VirtualOfficeContext - Opened connection at 12/8/2014 10:52:44 AM -05:00
+
+12/08/2014 10:52:44: DEBUG 11  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE [Extent1].[RefId] = @p__linq__0
+12/08/2014 10:52:44: DEBUG 11  VirtualOfficeContext - 
+
+12/08/2014 10:52:44: DEBUG 11  VirtualOfficeContext - -- p__linq__0: '11821' (Type = Int32, IsNullable = false)
+
+12/08/2014 10:52:44: DEBUG 11  VirtualOfficeContext - -- Executing at 12/8/2014 10:52:44 AM -05:00
+
+12/08/2014 10:52:44: DEBUG 11  VirtualOfficeContext - -- Completed in 19 ms with result: SqlDataReader
+
+12/08/2014 10:52:44: DEBUG 11  VirtualOfficeContext - 
+
+12/08/2014 10:52:44: DEBUG 11  VirtualOfficeContext - Closed connection at 12/8/2014 10:52:44 AM -05:00
+
+12/08/2014 10:52:44: DEBUG 11  IInterceptor - Method: GetUser returned: 
+12/08/2014 10:52:44: DEBUG 11  IInterceptor - RefId : 11821 
+12/08/2014 10:52:44: DEBUG 11  IInterceptor - Category : MerchantServiceUser 
+12/08/2014 10:52:44: DEBUG 11  IInterceptor - BusinessName : BLACKSTONE ECOMMERCE  
+12/08/2014 10:52:44: DEBUG 11  IInterceptor - Address1 : 11600 NW 34TH ST 
+12/08/2014 10:52:44: DEBUG 11  IInterceptor - Address2 :  
+12/08/2014 10:52:44: DEBUG 11  IInterceptor - ZipCode : 33178 
+12/08/2014 10:52:44: DEBUG 11  IInterceptor - State : FL 
+12/08/2014 10:52:44: DEBUG 11  IInterceptor - Email : support@blackstoneonline.com  
+12/08/2014 10:52:44: DEBUG 11  IInterceptor - Phone : (305) 639-9590 
+12/08/2014 10:52:44: DEBUG 11  IInterceptor - Comission :  
+12/08/2014 10:52:44: DEBUG 11  IInterceptor - Name : BLACKSTONE ECOMMERCE  
+12/08/2014 10:52:44: DEBUG 11  IInterceptor - City : DORAL 
+12/08/2014 10:52:44: DEBUG 11  IInterceptor - Tokens : System.Collections.Generic.List`1[Domain.Models.HashKey] 
+12/08/2014 10:52:44: DEBUG 11  IInterceptor - Id : 36 
+12/08/2014 10:52:44: DEBUG 11  IInterceptor - RowVersion :  
+12/08/2014 10:52:44: DEBUG 11  IInterceptor - TimeSpan : 12/8/2014 10:52:44 AM 
+12/08/2014 10:52:44: DEBUG 11  IInterceptor - 
+12/08/2014 10:52:44: DEBUG 11  IInterceptor - 
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - Method GetHash called with parameters:
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - key: <11821>
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - data: <M97556-8587835529199901413>
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - 
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - 
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - Method: GetHash returned: 
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - 776436f8-bb38-41bc-896d-f8ab2503b81c
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - 
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - Method AddHashToUser called with parameters:
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - user: <RefId : 11821 
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - Category : MerchantServiceUser 
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - BusinessName : BLACKSTONE ECOMMERCE  
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - Address1 : 11600 NW 34TH ST 
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - Address2 :  
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - ZipCode : 33178 
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - State : FL 
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - Email : support@blackstoneonline.com  
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - Phone : (305) 639-9590 
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - Comission :  
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - Name : BLACKSTONE ECOMMERCE  
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - City : DORAL 
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - Tokens : System.Collections.Generic.List`1[Domain.Models.HashKey] 
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - Id : 36 
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - RowVersion :  
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - TimeSpan : 12/8/2014 10:52:44 AM 
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - >
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - hash: <776436f8-bb38-41bc-896d-f8ab2503b81c>
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - 
+12/08/2014 10:52:45: DEBUG 11  IInterceptor - 
+12/08/2014 10:53:18: DEBUG 11  VirtualOfficeContext - Opened connection at 12/8/2014 10:53:18 AM -05:00
+
+12/08/2014 10:53:18: DEBUG 11  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Hash] AS [Hash], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[HashKeys] AS [Extent1]
+12/08/2014 10:53:18: DEBUG 11  VirtualOfficeContext - 
+
+12/08/2014 10:53:18: DEBUG 11  VirtualOfficeContext - -- Executing at 12/8/2014 10:53:18 AM -05:00
+
+12/08/2014 10:53:18: DEBUG 11  VirtualOfficeContext - -- Completed in 4 ms with result: SqlDataReader
+
+12/08/2014 10:53:18: DEBUG 11  VirtualOfficeContext - 
+
+12/08/2014 10:53:18: DEBUG 11  VirtualOfficeContext - Closed connection at 12/8/2014 10:53:18 AM -05:00
+
+12/08/2014 10:53:18: DEBUG 11  VirtualOfficeContext - Opened connection at 12/8/2014 10:53:18 AM -05:00
+
+12/08/2014 10:53:18: DEBUG 11  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE [Extent1].[Id] = @EntityKeyValue1
+12/08/2014 10:53:18: DEBUG 11  VirtualOfficeContext - 
+
+12/08/2014 10:53:18: DEBUG 11  VirtualOfficeContext - -- EntityKeyValue1: '18' (Type = Int32, IsNullable = false)
+
+12/08/2014 10:53:18: DEBUG 11  VirtualOfficeContext - -- Executing at 12/8/2014 10:53:18 AM -05:00
+
+12/08/2014 10:53:18: DEBUG 11  VirtualOfficeContext - -- Completed in 6 ms with result: SqlDataReader
+
+12/08/2014 10:53:18: DEBUG 11  VirtualOfficeContext - 
+
+12/08/2014 10:53:18: DEBUG 11  VirtualOfficeContext - Closed connection at 12/8/2014 10:53:18 AM -05:00
+
+12/08/2014 10:53:18: DEBUG 11  VirtualOfficeContext - Opened connection at 12/8/2014 10:53:18 AM -05:00
+
+12/08/2014 10:53:18: DEBUG 11  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Hash] AS [Hash], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[HashKeys] AS [Extent1]
+    WHERE [Extent1].[UserId] = @EntityKeyValue1
+12/08/2014 10:53:18: DEBUG 11  VirtualOfficeContext - 
+
+12/08/2014 10:53:18: DEBUG 11  VirtualOfficeContext - -- EntityKeyValue1: '18' (Type = Int32, IsNullable = false)
+
+12/08/2014 10:53:18: DEBUG 11  VirtualOfficeContext - -- Executing at 12/8/2014 10:53:18 AM -05:00
+
+12/08/2014 10:53:18: DEBUG 11  VirtualOfficeContext - -- Completed in 2 ms with result: SqlDataReader
+
+12/08/2014 10:53:18: DEBUG 11  VirtualOfficeContext - 
+
+12/08/2014 10:53:18: DEBUG 11  VirtualOfficeContext - Closed connection at 12/8/2014 10:53:18 AM -05:00
+
+12/08/2014 10:53:38: DEBUG 11  VirtualOfficeContext - Opened connection at 12/8/2014 10:53:38 AM -05:00
+
+12/08/2014 10:53:38: DEBUG 11  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Hash] AS [Hash], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[HashKeys] AS [Extent1]
+    WHERE [Extent1].[UserId] = @EntityKeyValue1
+12/08/2014 10:53:38: DEBUG 11  VirtualOfficeContext - 
+
+12/08/2014 10:53:38: DEBUG 11  VirtualOfficeContext - -- EntityKeyValue1: '36' (Type = Int32, IsNullable = false)
+
+12/08/2014 10:53:38: DEBUG 11  VirtualOfficeContext - -- Executing at 12/8/2014 10:53:38 AM -05:00
+
+12/08/2014 10:53:38: DEBUG 11  VirtualOfficeContext - -- Completed in 2 ms with result: SqlDataReader
+
+12/08/2014 10:53:38: DEBUG 11  VirtualOfficeContext - 
+
+12/08/2014 10:53:38: DEBUG 11  VirtualOfficeContext - Closed connection at 12/8/2014 10:53:38 AM -05:00
+
+12/08/2014 10:55:13: DEBUG 11  VirtualOfficeContext - Opened connection at 12/8/2014 10:55:13 AM -05:00
+
+12/08/2014 10:55:13: DEBUG 11  VirtualOfficeContext - Started transaction at 12/8/2014 10:55:13 AM -05:00
+
+12/08/2014 10:55:13: DEBUG 11  VirtualOfficeContext - INSERT [dbo].[HashKeys]([Hash], [UserId], [TimeSpan])
+VALUES (@0, @1, @2)
+SELECT [Id], [RowVersion]
+FROM [dbo].[HashKeys]
+WHERE @@ROWCOUNT > 0 AND [Id] = scope_identity()
+12/08/2014 10:55:13: DEBUG 11  VirtualOfficeContext - 
+
+12/08/2014 10:55:13: DEBUG 11  VirtualOfficeContext - -- @0: '776436f8-bb38-41bc-896d-f8ab2503b81c' (Type = String, Size = -1)
+
+12/08/2014 10:55:13: DEBUG 11  VirtualOfficeContext - -- @1: '36' (Type = Int32)
+
+12/08/2014 10:55:13: DEBUG 11  VirtualOfficeContext - -- @2: '12/8/2014 10:52:57 AM' (Type = DateTime2)
+
+12/08/2014 10:55:13: DEBUG 11  VirtualOfficeContext - -- Executing at 12/8/2014 10:55:13 AM -05:00
+
+12/08/2014 10:55:13: DEBUG 11  VirtualOfficeContext - -- Completed in 18 ms with result: SqlDataReader
+
+12/08/2014 10:55:13: DEBUG 11  VirtualOfficeContext - 
+
+12/08/2014 10:55:13: DEBUG 11  VirtualOfficeContext - INSERT [dbo].[HashKeys]([Hash], [UserId], [TimeSpan])
+VALUES (@0, @1, @2)
+SELECT [Id], [RowVersion]
+FROM [dbo].[HashKeys]
+WHERE @@ROWCOUNT > 0 AND [Id] = scope_identity()
+12/08/2014 10:55:13: DEBUG 11  VirtualOfficeContext - 
+
+12/08/2014 10:55:13: DEBUG 11  VirtualOfficeContext - -- @0: '776436f8-bb38-41bc-896d-f8ab2503b81c' (Type = String, Size = -1)
+
+12/08/2014 10:55:13: DEBUG 11  VirtualOfficeContext - -- @1: '36' (Type = Int32)
+
+12/08/2014 10:55:13: DEBUG 11  VirtualOfficeContext - -- @2: '12/8/2014 10:54:13 AM' (Type = DateTime2)
+
+12/08/2014 10:55:13: DEBUG 11  VirtualOfficeContext - -- Executing at 12/8/2014 10:55:13 AM -05:00
+
+12/08/2014 10:55:13: DEBUG 11  VirtualOfficeContext - -- Completed in 26 ms with result: SqlDataReader
+
+12/08/2014 10:55:13: DEBUG 11  VirtualOfficeContext - 
+
+12/08/2014 10:55:13: DEBUG 11  VirtualOfficeContext - Committed transaction at 12/8/2014 10:55:13 AM -05:00
+
+12/08/2014 10:55:13: DEBUG 11  VirtualOfficeContext - Closed connection at 12/8/2014 10:55:13 AM -05:00
+
+12/08/2014 10:55:22: DEBUG 11  IInterceptor - Method: AddHashToUser returned: 
+12/08/2014 10:55:22: DEBUG 11  IInterceptor - void
+12/08/2014 10:55:22: DEBUG 11  IInterceptor - 
+12/08/2014 10:57:15: DEBUG 7  Generic Logger - Starting operation: User / TestGetUserToken
+12/08/2014 10:57:24: DEBUG 7  IInterceptor - Method GetUser called with parameters:
+12/08/2014 10:57:24: DEBUG 7  IInterceptor - userName: <11821>
+12/08/2014 10:57:24: DEBUG 7  IInterceptor - password: <M97556>
+12/08/2014 10:57:24: DEBUG 7  IInterceptor - 
+12/08/2014 10:57:24: DEBUG 7  IInterceptor - 
+12/08/2014 10:57:25: DEBUG 7  VirtualOfficeContext - Opened connection at 12/8/2014 10:57:25 AM -05:00
+
+12/08/2014 10:57:25: DEBUG 7  VirtualOfficeContext - get_user @userid, @passCredential
+12/08/2014 10:57:25: DEBUG 7  VirtualOfficeContext - 
+
+12/08/2014 10:57:25: DEBUG 7  VirtualOfficeContext - -- @userid: '11821' (Type = String, IsNullable = false, Size = 5)
+
+12/08/2014 10:57:25: DEBUG 7  VirtualOfficeContext - -- @passCredential: 'M97556' (Type = String, IsNullable = false, Size = 6)
+
+12/08/2014 10:57:25: DEBUG 7  VirtualOfficeContext - -- Executing at 12/8/2014 10:57:25 AM -05:00
+
+12/08/2014 10:57:25: DEBUG 7  VirtualOfficeContext - -- Completed in 33 ms with result: SqlDataReader
+
+12/08/2014 10:57:25: DEBUG 7  VirtualOfficeContext - 
+
+12/08/2014 10:57:25: DEBUG 7  VirtualOfficeContext - Closed connection at 12/8/2014 10:57:25 AM -05:00
+
+12/08/2014 10:57:25: DEBUG 7  VirtualOfficeContext - Opened connection at 12/8/2014 10:57:25 AM -05:00
+
+12/08/2014 10:57:26: DEBUG 7  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ([Extent1].[RefId] = @p__linq__0) AND ( CAST( [Extent1].[Category] AS int) = @p__linq__1)
+12/08/2014 10:57:26: DEBUG 7  VirtualOfficeContext - 
+
+12/08/2014 10:57:26: DEBUG 7  VirtualOfficeContext - -- p__linq__0: '11821' (Type = Int32, IsNullable = false)
+
+12/08/2014 10:57:26: DEBUG 7  VirtualOfficeContext - -- p__linq__1: '4' (Type = Int32, IsNullable = false)
+
+12/08/2014 10:57:26: DEBUG 7  VirtualOfficeContext - -- Executing at 12/8/2014 10:57:26 AM -05:00
+
+12/08/2014 10:57:26: DEBUG 7  VirtualOfficeContext - -- Completed in 23 ms with result: SqlDataReader
+
+12/08/2014 10:57:26: DEBUG 7  VirtualOfficeContext - 
+
+12/08/2014 10:57:26: DEBUG 7  VirtualOfficeContext - Closed connection at 12/8/2014 10:57:26 AM -05:00
+
+12/08/2014 10:57:26: DEBUG 7  VirtualOfficeContext - Opened connection at 12/8/2014 10:57:26 AM -05:00
+
+12/08/2014 10:57:26: DEBUG 7  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE [Extent1].[RefId] = @p__linq__0
+12/08/2014 10:57:26: DEBUG 7  VirtualOfficeContext - 
+
+12/08/2014 10:57:26: DEBUG 7  VirtualOfficeContext - -- p__linq__0: '11821' (Type = Int32, IsNullable = false)
+
+12/08/2014 10:57:26: DEBUG 7  VirtualOfficeContext - -- Executing at 12/8/2014 10:57:26 AM -05:00
+
+12/08/2014 10:57:26: DEBUG 7  VirtualOfficeContext - -- Completed in 31 ms with result: SqlDataReader
+
+12/08/2014 10:57:26: DEBUG 7  VirtualOfficeContext - 
+
+12/08/2014 10:57:26: DEBUG 7  VirtualOfficeContext - Closed connection at 12/8/2014 10:57:26 AM -05:00
+
+12/08/2014 10:57:26: DEBUG 7  IInterceptor - Method: GetUser returned: 
+12/08/2014 10:57:26: DEBUG 7  IInterceptor - RefId : 11821 
+12/08/2014 10:57:26: DEBUG 7  IInterceptor - Category : MerchantServiceUser 
+12/08/2014 10:57:26: DEBUG 7  IInterceptor - BusinessName : BLACKSTONE ECOMMERCE  
+12/08/2014 10:57:26: DEBUG 7  IInterceptor - Address1 : 11600 NW 34TH ST 
+12/08/2014 10:57:26: DEBUG 7  IInterceptor - Address2 :  
+12/08/2014 10:57:26: DEBUG 7  IInterceptor - ZipCode : 33178 
+12/08/2014 10:57:26: DEBUG 7  IInterceptor - State : FL 
+12/08/2014 10:57:26: DEBUG 7  IInterceptor - Email : support@blackstoneonline.com  
+12/08/2014 10:57:26: DEBUG 7  IInterceptor - Phone : (305) 639-9590 
+12/08/2014 10:57:26: DEBUG 7  IInterceptor - Comission :  
+12/08/2014 10:57:26: DEBUG 7  IInterceptor - Name : BLACKSTONE ECOMMERCE  
+12/08/2014 10:57:26: DEBUG 7  IInterceptor - City : DORAL 
+12/08/2014 10:57:26: DEBUG 7  IInterceptor - Tokens : System.Collections.Generic.List`1[Domain.Models.HashKey] 
+12/08/2014 10:57:26: DEBUG 7  IInterceptor - Id : 36 
+12/08/2014 10:57:26: DEBUG 7  IInterceptor - RowVersion :  
+12/08/2014 10:57:26: DEBUG 7  IInterceptor - TimeSpan : 12/8/2014 10:57:25 AM 
+12/08/2014 10:57:26: DEBUG 7  IInterceptor - 
+12/08/2014 10:57:26: DEBUG 7  IInterceptor - 
+12/08/2014 10:57:32: DEBUG 7  IInterceptor - Method ToString called with parameters:
+12/08/2014 10:57:32: DEBUG 7  IInterceptor - 
+12/08/2014 10:57:32: DEBUG 7  IInterceptor - 
+12/08/2014 10:57:32: DEBUG 7  IInterceptor - Method: ToString returned: 
+12/08/2014 10:57:32: DEBUG 7  IInterceptor - Services.Concrete.UserService
+12/08/2014 10:57:32: DEBUG 7  IInterceptor - 
+12/08/2014 10:57:42: DEBUG 7  IInterceptor - Method GetHash called with parameters:
+12/08/2014 10:57:42: DEBUG 7  IInterceptor - key: <11821>
+12/08/2014 10:57:42: DEBUG 7  IInterceptor - data: <M97556-8587835526233405466>
+12/08/2014 10:57:42: DEBUG 7  IInterceptor - 
+12/08/2014 10:57:42: DEBUG 7  IInterceptor - 
+12/08/2014 10:57:42: DEBUG 7  IInterceptor - Method: GetHash returned: 
+12/08/2014 10:57:42: DEBUG 7  IInterceptor - 83989703-d36c-4b57-90de-c5bc94c3cbc3
+12/08/2014 10:57:42: DEBUG 7  IInterceptor - 
+12/08/2014 10:58:00: DEBUG 7  IInterceptor - Method AddHashToUser called with parameters:
+12/08/2014 10:58:00: DEBUG 7  IInterceptor - user: <RefId : 11821 
+12/08/2014 10:58:00: DEBUG 7  IInterceptor - Category : MerchantServiceUser 
+12/08/2014 10:58:00: DEBUG 7  IInterceptor - BusinessName : BLACKSTONE ECOMMERCE  
+12/08/2014 10:58:00: DEBUG 7  IInterceptor - Address1 : 11600 NW 34TH ST 
+12/08/2014 10:58:00: DEBUG 7  IInterceptor - Address2 :  
+12/08/2014 10:58:00: DEBUG 7  IInterceptor - ZipCode : 33178 
+12/08/2014 10:58:00: DEBUG 7  IInterceptor - State : FL 
+12/08/2014 10:58:00: DEBUG 7  IInterceptor - Email : support@blackstoneonline.com  
+12/08/2014 10:58:00: DEBUG 7  IInterceptor - Phone : (305) 639-9590 
+12/08/2014 10:58:00: DEBUG 7  IInterceptor - Comission :  
+12/08/2014 10:58:00: DEBUG 7  IInterceptor - Name : BLACKSTONE ECOMMERCE  
+12/08/2014 10:58:00: DEBUG 7  IInterceptor - City : DORAL 
+12/08/2014 10:58:00: DEBUG 7  IInterceptor - Tokens : System.Collections.Generic.List`1[Domain.Models.HashKey] 
+12/08/2014 10:58:00: DEBUG 7  IInterceptor - Id : 36 
+12/08/2014 10:58:00: DEBUG 7  IInterceptor - RowVersion :  
+12/08/2014 10:58:00: DEBUG 7  IInterceptor - TimeSpan : 12/8/2014 10:57:25 AM 
+12/08/2014 10:58:00: DEBUG 7  IInterceptor - >
+12/08/2014 10:58:00: DEBUG 7  IInterceptor - hash: <83989703-d36c-4b57-90de-c5bc94c3cbc3>
+12/08/2014 10:58:00: DEBUG 7  IInterceptor - 
+12/08/2014 10:58:00: DEBUG 7  IInterceptor - 
+12/08/2014 10:58:00: DEBUG 7  VirtualOfficeContext - Opened connection at 12/8/2014 10:58:00 AM -05:00
+
+12/08/2014 10:58:00: DEBUG 7  VirtualOfficeContext - Started transaction at 12/8/2014 10:58:00 AM -05:00
+
+12/08/2014 10:58:00: DEBUG 7  VirtualOfficeContext - INSERT [dbo].[HashKeys]([Hash], [UserId], [TimeSpan])
+VALUES (@0, @1, @2)
+SELECT [Id], [RowVersion]
+FROM [dbo].[HashKeys]
+WHERE @@ROWCOUNT > 0 AND [Id] = scope_identity()
+12/08/2014 10:58:00: DEBUG 7  VirtualOfficeContext - 
+
+12/08/2014 10:58:00: DEBUG 7  VirtualOfficeContext - -- @0: '83989703-d36c-4b57-90de-c5bc94c3cbc3' (Type = String, Size = -1)
+
+12/08/2014 10:58:00: DEBUG 7  VirtualOfficeContext - -- @1: '36' (Type = Int32)
+
+12/08/2014 10:58:00: DEBUG 7  VirtualOfficeContext - -- @2: '12/8/2014 10:58:00 AM' (Type = DateTime2)
+
+12/08/2014 10:58:00: DEBUG 7  VirtualOfficeContext - -- Executing at 12/8/2014 10:58:00 AM -05:00
+
+12/08/2014 10:58:00: DEBUG 7  VirtualOfficeContext - -- Completed in 23 ms with result: SqlDataReader
+
+12/08/2014 10:58:00: DEBUG 7  VirtualOfficeContext - 
+
+12/08/2014 10:58:00: DEBUG 7  VirtualOfficeContext - Committed transaction at 12/8/2014 10:58:00 AM -05:00
+
+12/08/2014 10:58:00: DEBUG 7  VirtualOfficeContext - Closed connection at 12/8/2014 10:58:00 AM -05:00
+
+12/08/2014 10:58:00: DEBUG 7  IInterceptor - Method: AddHashToUser returned: 
+12/08/2014 10:58:00: DEBUG 7  IInterceptor - void
+12/08/2014 10:58:00: DEBUG 7  IInterceptor - 
+12/08/2014 10:58:11: DEBUG 7  IInterceptor - Method AddHashToUser called with parameters:
+12/08/2014 10:58:11: DEBUG 7  IInterceptor - user: <RefId : 11821 
+12/08/2014 10:58:11: DEBUG 7  IInterceptor - Category : MerchantServiceUser 
+12/08/2014 10:58:11: DEBUG 7  IInterceptor - BusinessName : BLACKSTONE ECOMMERCE  
+12/08/2014 10:58:11: DEBUG 7  IInterceptor - Address1 : 11600 NW 34TH ST 
+12/08/2014 10:58:11: DEBUG 7  IInterceptor - Address2 :  
+12/08/2014 10:58:11: DEBUG 7  IInterceptor - ZipCode : 33178 
+12/08/2014 10:58:11: DEBUG 7  IInterceptor - State : FL 
+12/08/2014 10:58:11: DEBUG 7  IInterceptor - Email : support@blackstoneonline.com  
+12/08/2014 10:58:11: DEBUG 7  IInterceptor - Phone : (305) 639-9590 
+12/08/2014 10:58:11: DEBUG 7  IInterceptor - Comission :  
+12/08/2014 10:58:11: DEBUG 7  IInterceptor - Name : BLACKSTONE ECOMMERCE  
+12/08/2014 10:58:11: DEBUG 7  IInterceptor - City : DORAL 
+12/08/2014 10:58:11: DEBUG 7  IInterceptor - Tokens : System.Collections.Generic.List`1[Domain.Models.HashKey] 
+12/08/2014 10:58:11: DEBUG 7  IInterceptor - Id : 36 
+12/08/2014 10:58:11: DEBUG 7  IInterceptor - RowVersion :  
+12/08/2014 10:58:11: DEBUG 7  IInterceptor - TimeSpan : 12/8/2014 10:57:25 AM 
+12/08/2014 10:58:11: DEBUG 7  IInterceptor - >
+12/08/2014 10:58:11: DEBUG 7  IInterceptor - hash: <83989703-d36c-4b57-90de-c5bc94c3cbc3>
+12/08/2014 10:58:11: DEBUG 7  IInterceptor - 
+12/08/2014 10:58:11: DEBUG 7  IInterceptor - 
+12/08/2014 11:05:38: DEBUG 7  VirtualOfficeContext - Opened connection at 12/8/2014 11:05:38 AM -05:00
+
+12/08/2014 11:05:38: DEBUG 7  VirtualOfficeContext - Started transaction at 12/8/2014 11:05:38 AM -05:00
+
+12/08/2014 11:05:38: DEBUG 7  VirtualOfficeContext - INSERT [dbo].[HashKeys]([Hash], [UserId], [TimeSpan])
+VALUES (@0, @1, @2)
+SELECT [Id], [RowVersion]
+FROM [dbo].[HashKeys]
+WHERE @@ROWCOUNT > 0 AND [Id] = scope_identity()
+12/08/2014 11:05:38: DEBUG 7  VirtualOfficeContext - 
+
+12/08/2014 11:05:38: DEBUG 7  VirtualOfficeContext - -- @0: '83989703-d36c-4b57-90de-c5bc94c3cbc3' (Type = String, Size = -1)
+
+12/08/2014 11:05:38: DEBUG 7  VirtualOfficeContext - -- @1: '36' (Type = Int32)
+
+12/08/2014 11:05:38: DEBUG 7  VirtualOfficeContext - -- @2: '12/8/2014 10:58:35 AM' (Type = DateTime2)
+
+12/08/2014 11:05:38: DEBUG 7  VirtualOfficeContext - -- Executing at 12/8/2014 11:05:38 AM -05:00
+
+12/08/2014 11:05:38: DEBUG 7  VirtualOfficeContext - -- Failed in 223 ms with error: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.HashKeys_dbo.Users_UserId". The conflict occurred in database "VirtualOffice", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+
+12/08/2014 11:05:38: DEBUG 7  VirtualOfficeContext - 
+
+12/08/2014 11:05:38: DEBUG 7  VirtualOfficeContext - Closed connection at 12/8/2014 11:05:38 AM -05:00
+
+12/08/2014 11:05:39: DEBUG 7  IInterceptor - Method AddHashToUser EXCEPTION occured:
+12/08/2014 11:05:39: DEBUG 7  IInterceptor - System.Data.Entity.Infrastructure.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.Entity.Core.UpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.HashKeys_dbo.Users_UserId". The conflict occurred in database "VirtualOffice", table "dbo.Users", column 'Id'.
+12/08/2014 11:05:39: DEBUG 7  IInterceptor - The statement has been terminated.
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.SqlClient.SqlDataReader.get_MetaData()
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<Reader>b__c(DbCommand t, DbCommandInterceptionContext`1 c)
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    --- End of inner exception stack trace ---
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.<Update>b__2(UpdateTranslator ut)
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction)
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update()
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStore>b__35()
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass2a.<SaveChangesInternal>b__27()
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.Entity.Internal.InternalContext.SaveChanges()
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    --- End of inner exception stack trace ---
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.Entity.Internal.InternalContext.SaveChanges()
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at System.Data.Entity.DbContext.SaveChanges()
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at CoreData.Concrete.UnitOfWork.Commit() in d:\Projects\Virtual Office\VirtualOffice\CoreData\Concrete\UnitOfWork.cs:line 39
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at Services.Concrete.UserService.AddHashToUser(User user, String hash) in d:\Projects\Virtual Office\VirtualOffice\Services\Concrete\UserService.cs:line 90
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at (Object , Object[] )
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at Ninject.Extensions.Interception.Injection.Dynamic.DynamicMethodInjector.Invoke(Object target, Object[] arguments)
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at Ninject.Extensions.Interception.Invocation.Invocation.CallTargetMethod()
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at Ninject.Extensions.Interception.Invocation.InvocationBase.Proceed()
+12/08/2014 11:05:39: DEBUG 7  IInterceptor -    at CoreService.Interceptors.LoggingInterceptor.Intercept(IInvocation invocation) in d:\Projects\Virtual Office\VirtualOffice\CoreService\Interceptors\LoggingInterceptor.cs:line 37
+12/08/2014 11:05:39: DEBUG 7  IInterceptor - 
+12/08/2014 11:05:46: DEBUG 7  Generic Logger - Ending operation: User / TestGetUserToken
+12/08/2014 11:05:46: INFO 7  Generic Logger - =========================================================================================================
+12/08/2014 11:05:46: INFO 7  Generic Logger - =========================================================================================================
+12/08/2014 11:05:46: INFO 7  Generic Logger - =========================================================================================================
+12/08/2014 11:05:46: DEBUG 7  Generic Logger - An exception has been thrown by: UserController in action: TestGetUserToken
+System.Data.Entity.Infrastructure.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.Entity.Core.UpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.HashKeys_dbo.Users_UserId". The conflict occurred in database "VirtualOffice", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<Reader>b__c(DbCommand t, DbCommandInterceptionContext`1 c)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   at System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   at System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.<Update>b__2(UpdateTranslator ut)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update()
+   at System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStore>b__35()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass2a.<SaveChangesInternal>b__27()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at CoreData.Concrete.UnitOfWork.Commit() in d:\Projects\Virtual Office\VirtualOffice\CoreData\Concrete\UnitOfWork.cs:line 39
+   at Services.Concrete.UserService.AddHashToUser(User user, String hash) in d:\Projects\Virtual Office\VirtualOffice\Services\Concrete\UserService.cs:line 90
+   at (Object , Object[] )
+   at Ninject.Extensions.Interception.Injection.Dynamic.DynamicMethodInjector.Invoke(Object target, Object[] arguments)
+   at Ninject.Extensions.Interception.Invocation.Invocation.CallTargetMethod()
+   at Ninject.Extensions.Interception.Invocation.InvocationBase.Proceed()
+   at CoreService.Interceptors.LoggingInterceptor.Intercept(IInvocation invocation) in d:\Projects\Virtual Office\VirtualOffice\CoreService\Interceptors\LoggingInterceptor.cs:line 53
+   at Ninject.Extensions.Interception.Invocation.InvocationBase.Proceed()
+   at Ninject.Extensions.Interception.Wrapper.LinFuWrapper.LinFu.DynamicProxy.IInterceptor.Intercept(InvocationInfo info)
+   at ObjectProxy.AddHashToUser(User , String )
+   at CoreService.Controllers.UserController.GetUserExternalToken(LoginDataModel loginData) in d:\Projects\Virtual Office\VirtualOffice\CoreService\Controllers\UserController.cs:line 72
+   at CoreService.Controllers.UserController.TestGetUserToken(String userId, String password) in d:\Projects\Virtual Office\VirtualOffice\CoreService\Controllers\UserController.cs:line 149
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+12/08/2014 11:13:33: DEBUG 9  Generic Logger - Starting operation: User / TestGetUserToken
+12/08/2014 11:13:40: DEBUG 9  IInterceptor - Method GetUser called with parameters:
+12/08/2014 11:13:40: DEBUG 9  IInterceptor - userName: <81965>
+12/08/2014 11:13:40: DEBUG 9  IInterceptor - password: <M42515>
+12/08/2014 11:13:40: DEBUG 9  IInterceptor - 
+12/08/2014 11:13:40: DEBUG 9  IInterceptor - 
+12/08/2014 11:13:41: DEBUG 9  VirtualOfficeContext - Opened connection at 12/8/2014 11:13:41 AM -05:00
+
+12/08/2014 11:13:41: DEBUG 9  VirtualOfficeContext - get_user @userid, @passCredential
+12/08/2014 11:13:41: DEBUG 9  VirtualOfficeContext - 
+
+12/08/2014 11:13:41: DEBUG 9  VirtualOfficeContext - -- @userid: '81965' (Type = String, IsNullable = false, Size = 5)
+
+12/08/2014 11:13:41: DEBUG 9  VirtualOfficeContext - -- @passCredential: 'M42515' (Type = String, IsNullable = false, Size = 6)
+
+12/08/2014 11:13:41: DEBUG 9  VirtualOfficeContext - -- Executing at 12/8/2014 11:13:41 AM -05:00
+
+12/08/2014 11:13:41: DEBUG 9  VirtualOfficeContext - -- Completed in 30 ms with result: SqlDataReader
+
+12/08/2014 11:13:41: DEBUG 9  VirtualOfficeContext - 
+
+12/08/2014 11:13:41: DEBUG 9  VirtualOfficeContext - Closed connection at 12/8/2014 11:13:41 AM -05:00
+
+12/08/2014 11:13:41: DEBUG 9  IInterceptor - Method: GetUser returned: 
+12/08/2014 11:13:41: DEBUG 9  IInterceptor - 
+12/08/2014 11:13:41: DEBUG 9  IInterceptor - 
+12/08/2014 11:13:45: DEBUG 9  IInterceptor - Method GetUser called with parameters:
+12/08/2014 11:13:45: DEBUG 9  IInterceptor - userName: <81965>
+12/08/2014 11:13:45: DEBUG 9  IInterceptor - password: <M42515>
+12/08/2014 11:13:45: DEBUG 9  IInterceptor - 
+12/08/2014 11:13:45: DEBUG 9  IInterceptor - 
+12/08/2014 11:13:45: DEBUG 9  VirtualOfficeContext - Opened connection at 12/8/2014 11:13:45 AM -05:00
+
+12/08/2014 11:13:45: DEBUG 9  VirtualOfficeContext - get_user @userid, @passCredential
+12/08/2014 11:13:45: DEBUG 9  VirtualOfficeContext - 
+
+12/08/2014 11:13:45: DEBUG 9  VirtualOfficeContext - -- @userid: '81965' (Type = String, IsNullable = false, Size = 5)
+
+12/08/2014 11:13:45: DEBUG 9  VirtualOfficeContext - -- @passCredential: 'M42515' (Type = String, IsNullable = false, Size = 6)
+
+12/08/2014 11:13:45: DEBUG 9  VirtualOfficeContext - -- Executing at 12/8/2014 11:13:45 AM -05:00
+
+12/08/2014 11:13:45: DEBUG 9  VirtualOfficeContext - -- Completed in 45 ms with result: SqlDataReader
+
+12/08/2014 11:13:45: DEBUG 9  VirtualOfficeContext - 
+
+12/08/2014 11:13:45: DEBUG 9  VirtualOfficeContext - Closed connection at 12/8/2014 11:13:45 AM -05:00
+
+12/08/2014 11:13:45: DEBUG 9  IInterceptor - Method: GetUser returned: 
+12/08/2014 11:13:45: DEBUG 9  IInterceptor - 
+12/08/2014 11:13:45: DEBUG 9  IInterceptor - 
+12/08/2014 11:14:08: DEBUG 9  IInterceptor - Method GetUser called with parameters:
+12/08/2014 11:14:08: DEBUG 9  IInterceptor - userName: <81965>
+12/08/2014 11:14:08: DEBUG 9  IInterceptor - password: <M42515>
+12/08/2014 11:14:08: DEBUG 9  IInterceptor - 
+12/08/2014 11:14:08: DEBUG 9  IInterceptor - 
+12/08/2014 11:14:12: DEBUG 9  VirtualOfficeContext - Opened connection at 12/8/2014 11:14:12 AM -05:00
+
+12/08/2014 11:14:12: DEBUG 9  VirtualOfficeContext - get_user @userid, @passCredential
+12/08/2014 11:14:12: DEBUG 9  VirtualOfficeContext - 
+
+12/08/2014 11:14:12: DEBUG 9  VirtualOfficeContext - -- @userid: '81965' (Type = String, IsNullable = false, Size = 5)
+
+12/08/2014 11:14:12: DEBUG 9  VirtualOfficeContext - -- @passCredential: 'M42515' (Type = String, IsNullable = false, Size = 6)
+
+12/08/2014 11:14:12: DEBUG 9  VirtualOfficeContext - -- Executing at 12/8/2014 11:14:12 AM -05:00
+
+12/08/2014 11:14:12: DEBUG 9  VirtualOfficeContext - -- Completed in 25 ms with result: SqlDataReader
+
+12/08/2014 11:14:12: DEBUG 9  VirtualOfficeContext - 
+
+12/08/2014 11:14:12: DEBUG 9  VirtualOfficeContext - Closed connection at 12/8/2014 11:14:12 AM -05:00
+
+12/08/2014 11:14:23: DEBUG 9  VirtualOfficeContext - Opened connection at 12/8/2014 11:14:23 AM -05:00
+
+12/08/2014 11:14:23: DEBUG 9  VirtualOfficeContext - get_user @userid, @passCredential
+12/08/2014 11:14:23: DEBUG 9  VirtualOfficeContext - 
+
+12/08/2014 11:14:23: DEBUG 9  VirtualOfficeContext - -- @userid: '81965' (Type = String, IsNullable = false, Size = 5)
+
+12/08/2014 11:14:23: DEBUG 9  VirtualOfficeContext - -- @passCredential: 'M42515' (Type = String, IsNullable = false, Size = 6)
+
+12/08/2014 11:14:23: DEBUG 9  VirtualOfficeContext - -- Executing at 12/8/2014 11:14:23 AM -05:00
+
+12/08/2014 11:14:23: DEBUG 9  VirtualOfficeContext - -- Completed in 26 ms with result: SqlDataReader
+
+12/08/2014 11:14:23: DEBUG 9  VirtualOfficeContext - 
+
+12/08/2014 11:14:23: DEBUG 9  VirtualOfficeContext - Closed connection at 12/8/2014 11:14:23 AM -05:00
+

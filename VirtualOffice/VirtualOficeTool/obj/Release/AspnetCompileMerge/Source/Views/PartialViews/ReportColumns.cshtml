@@ -1,0 +1,42 @@
+﻿@using VirtualOficeTool.Models
+<h4>Column Names</h4>
+@(Html.Kendo().Grid<ReportColumn>()
+        .Name("ReportColumnNames")
+    .HtmlAttributes(new { @style = "text-align: left;" })
+     .Resizable(config => config.Columns(true))
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.Name).Width(100).Title("Column Name");
+        columns.Bound(p => p.Selected).ClientTemplate("<input type='checkbox' name=\"OutPut\" value=#=Name# #= Selected ? checked='checked' : '' # ></input>").Filterable(false).Width(20).Title("");
+    })
+        .AutoBind(false)
+        .Pageable()
+        .Sortable()
+         .Filterable()
+        .Scrollable(s => s.Height("auto"))
+        .Events(events => events.DataBound("CheckColumnNamesEmptyness"))
+        .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(100)
+        .Model(model => model.Id(p => p))
+                    .Read(read => read.Action("GetColumnNames", "Reports").Data("getColumnNames"))
+      )) 
+
+<script>
+    function CheckColumnNamesEmptyness(data) {
+        if (data.sender._data.length != 0) {
+            $("#outPut").fadeIn();
+            $("#resetOutPutSelection").fadeIn();
+            $("#parametersSelection").fadeOut();
+        } else {
+            var message = 'SP Not Found or errors on execution.Please, try again later!';
+            $("#OutPutError").text(message);
+            $("#OutPutSummary").fadeIn();
+            setTimeout(function () {
+                $("#OutPutSummary").fadeOut();
+            }, 4000);
+
+            $("#outPutSelection").fadeIn();
+        }
+    };
+</script>

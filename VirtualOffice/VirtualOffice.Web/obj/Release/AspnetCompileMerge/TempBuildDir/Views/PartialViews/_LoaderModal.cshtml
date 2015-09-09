@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "_LoaderModal";
+}
+<script src="~/Scripts/spin.min.js"></script>
+
+<div id="loaderModal" class="modal fade" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" aria-labelledby="basicModal" aria-hidden="true">
+    <span id="spinner_center" style="position: absolute;display: block;top: 50%;left: 50%;"></span>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		var loaderOpts = {
+			show: false,
+			lines: 12,		// The number of lines to draw
+			length: 12,		// The length of each line
+			width: 5,		// The line thickness
+			radius: 12,		// The radius of the inner circle
+			corners: 1,	// Corner roundness (0..1)
+			rotate: 0,		// The rotation offset
+			direction: 1,	// 1: clockwise, -1: counterclockwise
+			color: '#FF0000',	// #rgb or #rrggbb or array of colors
+			speed: 2,		// Rounds per second
+			trail: 60,		// Afterglow percentage
+			shadow: false,	// Whether to render a shadow
+			hwaccel: false, // Whether to use hardware acceleration
+			className: 'spinner', // The CSS class to assign to the spinner
+			zIndex: 2e9,	// The z-index (defaults to 2000000000)
+			top: 'auto',	// Top position relative to parent in px
+			left: 'auto'	// Left position relative to parent in px
+		};
+
+		var target = document.getElementById('spinner_center');
+		var spinner = new Spinner(loaderOpts).spin(target);
+	});
+</script>

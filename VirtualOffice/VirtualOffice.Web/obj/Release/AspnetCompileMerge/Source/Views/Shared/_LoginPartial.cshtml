@@ -1,0 +1,39 @@
+﻿@using System.Globalization
+@using ClassLibrary2.Domain
+@using VirtualOffice.Web.Infrastructure
+@using VirtualOffice.Web.Models
+@{
+    var user = Session[Utils.UserKey] as UserModel;
+
+    var comission = !user.IsNull() ? user.Comission : 0;
+
+    var userLabel = user.IsNull() || string.IsNullOrEmpty(user.Role) ? "User" : user.Role;
+    
+}
+<div class="col-xs-12 col-sm-7 col-md-7" id="userArea">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 padd" id="userDetails">
+            <ul class="list-inline" id="">
+                <li class="">
+                    @if (!user.IsNull())
+                    {
+                        <span class="icon icon18 icon-user"></span> <span class="hidden-xs">@userLabel:</span> <strong><span class="limitChar">@user.Name</span></strong>
+                    }
+                </li>
+                <li class="">
+                    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <span class="icon icon18 icon-logout"></span> <a href="javascript:document.getElementById('logoutForm').submit()">Log Off</a>
+                    }
+                </li>
+            </ul>
+        </div>
+
+        <div id="infoArea" class="col-xs-6 col-sm-6 col-md-6 text-right hidden-xs">
+            <ul class="list-inline">
+                <li><span class="h4">@string.Format("{0:dddd, MMMM d, yyyy}", DateTime.Now)</span></li>
+            </ul>
+        </div><!-- .col -->
+    </div>
+</div>

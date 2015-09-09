@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5B2AC6E1-5BAD-4620-B492-BA1C85BC3854}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VirtualOffice.Data</RootNamespace>
+    <AssemblyName>VirtualOffice.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EFModels\AccountsInCollection_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\ApiUser.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\Currency.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\C_account_register.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\C_account_register_merchant.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\C_acc_invoiceheader.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\C__MigrationHistory.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\DashboardConfig.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\GetMerchantCreditLimits_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\GetTodayTransactions_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\get_agents_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\get_system_logins_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\get_user_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\HashKey.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\Order.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\PredefinedFilter.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\Report.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\ReportLabel.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\ReportLog.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\ReportPredefinedFilterRel.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\ReportToReportRel.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\SP_Fullcarga_DetailInvoice_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\SP_Fullcarga_PrepaidSalesSummary_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\SP_Fullcarga_Statetement_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_GetMerchantCommissionsProfile_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\Sp_GetMerchantStatement_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_get_marketing_materials_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_helpdiagrams_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\SP_ippBrowser_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_report_balance_details_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_report_general_sales_summary_dated_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_report_general_sales_summary_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_report_invoice_details_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_report_msv_commission_details_by_totals_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_report_msv_commission_details_from_amex_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_report_msv_commission_details_from_other_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_report_msv_commission_details_from_visamcBCK02062015_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_report_msv_commission_details_from_visamcMine_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_report_msv_commission_details_from_visamc_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_report_msv_commission_details_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_report_msv_commission_summary_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_report_msv_portfolio_AccountsByType_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_report_msv_portfolio_summary_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_report_portfolio_summary_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_report_prepaid_portfolio_inAlert_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_report_sales_details_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_report_sales_invoice_details_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_retrieve_documents_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_retrieve_incidents_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_retrieve_leads_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_retrieve_parameters_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\SP_ShowAccountRegister_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\Sp_TransactionsSummary_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\Sql_HtmlTypeNameMappings.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sysdiagram.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\Test_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\Token.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\User.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\UserReport.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\UserReportFilter.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\UserReportFilterValue.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\UserType.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\user_roles.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\VirtualOfficeModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VirtualOfficeModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\VirtualOfficeModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\VirtualOfficeModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VirtualOfficeModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Helper.cs" />
+    <Compile Include="Repositories\BaseRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\DashboardConfigsRepository.cs" />
+    <Compile Include="Repositories\DocumentsRepository.cs" />
+    <Compile Include="Repositories\IncidentsRepository.cs" />
+    <Compile Include="Repositories\InventoryRepository.cs" />
+    <Compile Include="Repositories\LeadRepository.cs" />
+    <Compile Include="Repositories\ReportLabelsRepository.cs" />
+    <Compile Include="Repositories\ReportLogsRepository.cs" />
+    <Compile Include="Repositories\ReportRepository.cs" />
+    <Compile Include="Repositories\UserHashRepository.cs" />
+    <Compile Include="Repositories\UserReportRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ApiRestClient\ApiRestClient.csproj">
+      <Project>{9b4d75c0-daee-49fa-b4d1-f11d9181bc6f}</Project>
+      <Name>ApiRestClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{1569623e-f6eb-4128-8403-01fb780d9815}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="EFModels\VirtualOfficeModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>VirtualOfficeModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EFModels\VirtualOfficeModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VirtualOfficeModel.edmx</DependentUpon>
+      <LastGenOutput>VirtualOfficeModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="EFModels\VirtualOfficeModel.edmx.diagram">
+      <DependentUpon>VirtualOfficeModel.edmx</DependentUpon>
+    </None>
+    <None Include="EFModels\VirtualOfficeModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VirtualOfficeModel.edmx</DependentUpon>
+      <LastGenOutput>VirtualOfficeModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

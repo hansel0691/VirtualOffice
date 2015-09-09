@@ -1,0 +1,264 @@
+﻿@using VirtualOffice.Web.Models
+@{
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+
+    IEnumerable<CloudInfoModel> clouds = ViewBag.Clouds;
+}
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand " href="#" title="App logo"><span class="app-name">Filtering:</span></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="sort-buttons" id="filters">
+                    <button class="btn btn-secundary navbar-btn is-checked" data-filter="*">show all</button>
+                    @*<button class="btn btn-secundary navbar-btn" data-filter=".messages">messages</button>
+                    <button class="btn btn-secundary navbar-btn" data-filter=".personal">personal</button>
+                    <button class="btn btn-secundary navbar-btn" data-filter=".accounts, .account">Accounts</button>
+                    <button class="btn btn-secundary navbar-btn" data-filter=":not(.personal)">not personal</button>
+                    <!-- <button class="btn btn-secundary navbar-btn" data-filter=".metal:not(.transition)">metal but not transition</button> -->
+                    <button class="btn btn-secundary navbar-btn" data-filter="numberGreaterThan50">number > 50</button>
+                    <!-- <button class="btn btn-secundary navbar-btn" data-filter="ium">name ends with &ndash;ium</button> -->
+                    <button class="btn btn-secundary navbar-btn" data-sort-by="count">by number of items</button>*@
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="container home text-center">
+    
+    <div class="isotope" id="isotope">
+        @foreach (var cloud in clouds)
+        {
+
+            <div data-category="@cloud.Category" style="@string.Format("width{0}px; height{1}px;",cloud.Width,cloud.Height)" class="@string.Format("element-item width{0} {1}", cloud.Width, cloud.Category)">
+                <svg preserveAspectRatio="" viewBox="0 0 305.9 191.6" height="@cloud.Height" width="@cloud.Width" cy="0" cx="0" id="cloud_1" version="1.1">
+                    <path d="M260.3,67.2c0-0.3,0-0.7,0-1c0-15.7-12.7-28.5-28.4-28.5c-4.5,0-8.8,1.1-12.6,2.9c-4.1-7.3-9.4-14.1-15.8-19.9C188.9,7.4,169.8,0,149.9,0C114.8,0,85,22.8,74.4,54.3c-1.9-0.2-3.8-0.3-5.7-0.3 C30.7,54.1,0,84.8,0,122.7c0,22.8,11.1,42.9,28.1,55.4c9.1,8.3,21.2,13.4,34.5,13.4h184.9c14.3,0,28-6.1,37.7-16.7 c13.2-12,20.7-29.1,20.7-46.8C305.9,99.3,286.6,74.9,260.3,67.2z" fill="@cloud.Color" />
+                </svg>
+                <a id='@string.Format("cloudRefreshner_{0}",cloud.Id)'class="btn-refresh pull-right text-center" onclick='refreshReportRowCount(@cloud.Id, @cloud.Items)'><i class="fa fa-refresh"></i></a>
+                <div class="item-details">
+                    <div class="no-item">
+                        <span id='@string.Format("cloud_{0}",cloud.Id)' style="font-size:" class="badge">@cloud.Items</span>
+                    </div><a href="@cloud.Url" class="name">@cloud.Title</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<script src="~/Scripts/isotope.pkgd.min.js"></script>
+
+<script type="text/javascript">
+
+   function refreshReportRowCount(reportId, lastRowCount) {
+        var refreshUrl = '@Url.Action("RefreshCloud")';
+
+       var cloudRefreshnerId = "#cloudRefreshner_" + reportId;
+
+       $(cloudRefreshnerId).addClass('fa-spin');
+
+        $.post(refreshUrl,{reportId: reportId, lastRowCount: lastRowCount},
+            function(result) {
+                var currentCount = result.RowCount;
+
+                var elementId = "#cloud_" + reportId;
+
+                $(elementId).text(currentCount);
+
+                $(cloudRefreshnerId).removeClass('fa-spin');
+
+            });
+    }
+
+
+    $(document).ready(function () {
+        //$('.btn-refresh').on('mouseover', function () {
+        //    $(this).addClass('fa-spin');
+        //}).on('mouseleave', function () {
+        //    $(this).removeClass('fa-spin');
+        //});
+
+        @*// change refresh buttons class for animation
+        // must be adapted for ajax request
+      
+
+
+
+        var cloudCollectionUrl = '@Url.Action("GetCloudsInfo","Reports")';
+
+        var firstCloud;
+
+        $.post(cloudCollectionUrl,
+            function(result) {
+                firstCloud = result;
+            });*@
+
+        var firstCloud = [
+           { title: "My Portfolio", id: "1", category: "personal", items: "800", color: "", width: null, height: null, percent: 0 },
+             { title: "Sales Reports", id: "2", category: "metal", items: "52", color: "", width: null, height: null, percent: 0 },
+            { title: "Customer incidences", id: "3", category: "customer", items: "68", color: "", width: null, height: null, percent: 0 },
+            { title: "Opened incident", id: "4", category: "personal", items: "500", color: "", width: null, height: null, percent: 0 },
+            { title: "Account with no sales", id: "5", category: "accounts", items: "650", color: "", width: null, height: null, percent: 0 },
+             { title: "Suspended accounts", id: "6", category: "accounts", items: "350", color: "", width: null, height: null, percent: 0 },
+             { title: "Open Leads", id: "7", category: "accounts", items: "150", color: "", width: null, height: null, percent: 0 },
+             { title: "New Messages", id: "8", category: "messages", items: "3", color: "", width: null, height: null, percent: 0 },
+        ];
+
+        // if data is JSON data convert to object
+        //var firstCloud = firstCloud;
+
+        // Get min, max and total for range of values in array of objects (to calculate relative percent)
+        var arr = $.map(firstCloud, function (o) { return o.items; });
+        var minVal = Math.min.apply(Math, arr);
+        var maxVal = Math.max.apply(Math, arr);
+        var total = maxVal - minVal;
+        //console.log(total);
+
+        // base color
+        var mainColor = '#3776bd';
+
+        function ColorLuminance(hex, lum) {
+            // validate hex string
+            hex = String(hex).replace(/[^0-9a-f]/gi, '');
+            if (hex.length < 6) {
+                hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+            }
+            lum = lum || 0;
+
+            // convert to decimal and change luminosity
+            var rgb = "#", c, i;
+            for (i = 0; i < 3; i++) {
+                c = parseInt(hex.substr(i * 2, 2), 16);
+                c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
+                rgb += ("00" + c).substr(c.length);
+            }
+
+            return rgb;
+        }
+
+
+        // remap oldMax and oldMin to newMax and newMin
+        function map_range(value, oldMax, oldMin, newMin, newMax) {
+            return newMin + (newMax - newMin) * (value - oldMax) / (oldMin - oldMax);
+        }
+
+        // returns array of keys
+        var people = Object.keys(firstCloud);
+
+        people.forEach(function (person) {
+            var obj = firstCloud[person];
+            // returns array of keys
+            var items = Object.keys(obj);
+
+            if (obj.hasOwnProperty('percent')) {
+                var relativePercent = ((obj.items - minVal) / total) * 100
+                obj.percent = obj.percent + Math.round(relativePercent);
+            };
+
+            // shift color variation based on percent
+            //obj.color = shadeColor(mainColor, map_range(relativePercent,  - relativePercent)/10);
+            //obj.color = c.saturation(obj.percent);
+            var val = obj.items;
+
+            obj.color = ColorLuminance(mainColor, map_range(relativePercent, 100, 0, 0.2, 0.8));
+
+            obj.width_raw = map_range(val, minVal, maxVal, 100, 300)
+            obj.width = Math.ceil(obj.width_raw / 50) * 50;
+
+            obj.height_raw = map_range(val, minVal, maxVal, 70, 210)
+            obj.height = Math.ceil(obj.height_raw / 35) * 35;
+
+            items.forEach(function (item) {
+                var value = firstCloud[person][item];
+                console.log(person + ': ' + item + ' = ' + value);
+            });
+        });
+
+        var lang = '';
+        //
+        $.each(firstCloud, function () {
+            lang += '<div class="element-item width' + this['width'] + ' ' + this['category'] + '" data-category="' + this['category'] + '" style="width:' + this['width'] + 'px;height:' + this['height'] + 'px">';
+            lang += '<svg version="1.1" id="cloud_1" cx="0" cy="0" width="' + this['width'] + '" height="' + this['height'] + '" viewBox="0 0 305.9 191.6" preserveAspectRatio=""><path fill="' + this['color'] + '" d="M260.3,67.2c0-0.3,0-0.7,0-1c0-15.7-12.7-28.5-28.4-28.5c-4.5,0-8.8,1.1-12.6,2.9c-4.1-7.3-9.4-14.1-15.8-19.9C188.9,7.4,169.8,0,149.9,0C114.8,0,85,22.8,74.4,54.3c-1.9-0.2-3.8-0.3-5.7-0.3 C30.7,54.1,0,84.8,0,122.7c0,22.8,11.1,42.9,28.1,55.4c9.1,8.3,21.2,13.4,34.5,13.4h184.9c14.3,0,28-6.1,37.7-16.7 c13.2-12,20.7-29.1,20.7-46.8C305.9,99.3,286.6,74.9,260.3,67.2z"/></svg>';
+            // old clouds form
+            // lang += '<svg version="1.1" id="cloud_1" cx="0" cy="0" width="' + this['width'] + '" height="' + this['height'] + '" viewBox="-150 687 300 210" preserveAspectRatio=""><path fill="' + this['color'] + '"  d="M150,825.7c0-34.2-27.5-61.7-61.7-61.7c-6.8,0-12.8,1.2-18.9,3c-3.7-39.8-37.4-70.9-78.2-70.9c-43.3,0-78.8,35.5-78.8,78.8c0,5.5,0.6,10.4,1.9,15.2h-15.3c-26.9,0-48.9,22.1-48.9,48.9c0,26.9,22,48.9,48.9,48.9h195c14.1,0,26.9-6.1,36.1-15.8C142,860.5,150,844.1,150,825.7z"/></svg>';
+            lang+='  <a class="btn-refresh pull-right text-center"><i class="fa fa-refresh"></i></a>';
+            lang += ' <div class="item-details">';
+            lang += ' <div class="no-item">';
+            lang += '<span class="badge" style="font-size: ">' + this['items'] + '</span>';
+            lang += ' </div>';
+            lang += '<a class="name" href="Reports/ExecuteReport?reportId=40">' + this['title'] + '</a>';
+            lang += '</div>';
+            lang += '</div>';
+        });
+
+        //$('#isotope').html(lang);
+        // document.getElementById('isotope').html(lang);
+    });
+
+        // isotope & monsory
+        $(function () {
+            // init Isotope
+            var $container = $('.isotope').isotope({
+                itemSelector: '.element-item',
+                masonry: {
+                    columnWidth: 150,
+                    gutter: 15,
+                },
+
+                getSortData: {
+                    count: '.badge parseInt'
+                },
+
+                // sort by color then count
+                sortAscending: false,
+                sortBy: 'count'
+            });
+
+            // sort function (by items in item)
+            $('#filters').on('click', '.btn', function () {
+                var sortValue = $(this).attr('data-sort-by');
+                // make an array of values
+                //sortValue = sortValue.split(',');
+                $container.isotope({ sortBy: sortValue });
+            });
+
+            // filter functions
+            var filterFns = {
+                // show if number is greater than 50
+                numberGreaterThan50: function () {
+                    var number = $(this).find('.badge').text();
+                    return parseInt(number, 10) > 100;
+                },
+                // show if name ends with -ium
+                ium: function () {
+                    var name = $(this).find('.name').text();
+                    return name.match(/ium$/);
+                }
+            };
+
+            // bind filter button click
+            $('#filters').on('click', 'button', function () {
+                var filterValue = $(this).attr('data-filter');
+                // use filterFn if matches value
+                filterValue = filterFns[filterValue] || filterValue;
+                $container.isotope({ filter: filterValue });
+            });
+
+            // change is-checked class on buttons
+            $('.sort-buttons').each(function (i, buttonGroup) {
+                var $buttonGroup = $(buttonGroup);
+                $buttonGroup.on('click', 'button', function () {
+                    $buttonGroup.find('.is-checked').removeClass('is-checked');
+                    $(this).addClass('is-checked');
+                });
+            });
+        });
+</script>

@@ -1,0 +1,7 @@
+D:\Projects\Virtual Office\VirtualOffice\Domain.Blackstone\bin\Debug\Domain.Blackstone.dll
+D:\Projects\Virtual Office\VirtualOffice\Domain.Blackstone\bin\Debug\Domain.Blackstone.pdb
+D:\Projects\Virtual Office\VirtualOffice\Domain.Blackstone\bin\Debug\Domain.dll
+D:\Projects\Virtual Office\VirtualOffice\Domain.Blackstone\bin\Debug\Domain.pdb
+D:\Projects\Virtual Office\VirtualOffice\Domain.Blackstone\obj\Debug\Domain.Blackstone.csprojResolveAssemblyReference.cache
+D:\Projects\Virtual Office\VirtualOffice\Domain.Blackstone\obj\Debug\Domain.Blackstone.dll
+D:\Projects\Virtual Office\VirtualOffice\Domain.Blackstone\obj\Debug\Domain.Blackstone.pdb

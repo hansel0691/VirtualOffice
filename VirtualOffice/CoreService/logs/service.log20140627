@@ -1,0 +1,484 @@
+06/27/2014 10:39:10: DEBUG 10  Generic Logger - Starting operation: Token / TestPostToken
+06/27/2014 10:39:10: DEBUG 10  TokenController - Logging something
+06/27/2014 10:39:11: INFO 10  IApiUserService - User 2 found with key: abc
+06/27/2014 13:50:08: DEBUG 7  Generic Logger - Starting operation: User / TestGetUser
+06/27/2014 13:50:16: DEBUG 7  IUserService - Logging user 2272 with password 1010
+06/27/2014 13:51:46: DEBUG 7  Generic Logger - Starting operation: User / TestGetUser
+06/27/2014 13:51:49: DEBUG 7  IUserService - Logging user 2272 with password 1010
+06/27/2014 13:54:30: DEBUG 6  Generic Logger - Starting operation: User / TestGetUser
+06/27/2014 13:54:35: DEBUG 6  IUserService - Logging user 2272 with password 1010
+06/27/2014 13:55:30: DEBUG 7  Generic Logger - Starting operation: User / TestGetUser
+06/27/2014 13:55:33: DEBUG 7  IUserService - Logging user 2272 with password 1010
+06/27/2014 14:00:28: DEBUG 7  Generic Logger - Starting operation: User / TestGetUser
+06/27/2014 14:00:36: DEBUG 7  IUserService - Logging user 2272 with password 1010
+06/27/2014 14:00:36: DEBUG 7  IUserService - User with Id -1 found
+06/27/2014 14:00:36: DEBUG 7  Generic Logger - Ending operation: User / TestGetUser
+06/27/2014 14:00:36: INFO 7  Generic Logger - =========================================================================================================
+06/27/2014 14:00:36: INFO 7  Generic Logger - =========================================================================================================
+06/27/2014 14:00:36: INFO 7  Generic Logger - =========================================================================================================
+06/27/2014 14:07:47: DEBUG 7  Generic Logger - Starting operation: User / TestGetUser
+06/27/2014 14:07:50: DEBUG 7  IUserService - Logging user 2272 with password 1010
+06/27/2014 14:07:51: DEBUG 7  IUserService - User with Id -1 found
+06/27/2014 14:07:52: DEBUG 7  Generic Logger - Ending operation: User / TestGetUser
+06/27/2014 14:07:52: INFO 7  Generic Logger - =========================================================================================================
+06/27/2014 14:07:52: INFO 7  Generic Logger - =========================================================================================================
+06/27/2014 14:07:52: INFO 7  Generic Logger - =========================================================================================================
+06/27/2014 14:08:11: DEBUG 13  Generic Logger - Starting operation: User / TestGetUser
+06/27/2014 14:08:11: DEBUG 13  IUserService - Logging user 2272 with password 1010
+06/27/2014 14:08:11: DEBUG 13  IUserService - User with Id -1 found
+06/27/2014 14:08:11: DEBUG 13  Generic Logger - Ending operation: User / TestGetUser
+06/27/2014 14:08:11: INFO 13  Generic Logger - =========================================================================================================
+06/27/2014 14:08:11: INFO 13  Generic Logger - =========================================================================================================
+06/27/2014 14:08:11: INFO 13  Generic Logger - =========================================================================================================
+06/27/2014 14:13:22: DEBUG 12  Generic Logger - Starting operation: User / TestGetUser
+06/27/2014 14:13:22: DEBUG 12  IUserService - Logging user 2272 with password 1010
+06/27/2014 14:13:23: DEBUG 12  VirtualOfficeContext - Opened connection at 6/27/2014 2:13:23 PM -04:00
+
+06/27/2014 14:13:23: DEBUG 12  VirtualOfficeContext - get_user @userid, @passCredential
+06/27/2014 14:13:23: DEBUG 12  VirtualOfficeContext - 
+
+06/27/2014 14:13:23: DEBUG 12  VirtualOfficeContext - -- @userid: '2272' (Type = Int32, IsNullable = false)
+
+06/27/2014 14:13:23: DEBUG 12  VirtualOfficeContext - -- @passCredential: '1010' (Type = String, IsNullable = false, Size = 4)
+
+06/27/2014 14:13:23: DEBUG 12  VirtualOfficeContext - -- Executing at 6/27/2014 2:13:23 PM -04:00
+
+06/27/2014 14:13:23: DEBUG 12  VirtualOfficeContext - -- Completed in 39 ms with result: SqlDataReader
+
+06/27/2014 14:13:23: DEBUG 12  VirtualOfficeContext - 
+
+06/27/2014 14:13:23: DEBUG 12  VirtualOfficeContext - Closed connection at 6/27/2014 2:13:23 PM -04:00
+
+06/27/2014 14:13:23: DEBUG 12  IUserService - User with Id -1 found
+06/27/2014 14:13:23: DEBUG 12  VirtualOfficeContext - Opened connection at 6/27/2014 2:13:23 PM -04:00
+
+06/27/2014 14:13:24: DEBUG 12  VirtualOfficeContext - SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ([Extent1].[RefId] = @p__linq__0) AND ( CAST( [Extent1].[Category] AS int) = @p__linq__1)
+06/27/2014 14:13:24: DEBUG 12  VirtualOfficeContext - 
+
+06/27/2014 14:13:24: DEBUG 12  VirtualOfficeContext - -- p__linq__0: '2272' (Type = Int32, IsNullable = false)
+
+06/27/2014 14:13:24: DEBUG 12  VirtualOfficeContext - -- p__linq__1: '0' (Type = Int32, IsNullable = false)
+
+06/27/2014 14:13:24: DEBUG 12  VirtualOfficeContext - -- Executing at 6/27/2014 2:13:24 PM -04:00
+
+06/27/2014 14:13:24: DEBUG 12  VirtualOfficeContext - -- Completed in 4 ms with result: SqlDataReader
+
+06/27/2014 14:13:24: DEBUG 12  VirtualOfficeContext - 
+
+06/27/2014 14:13:24: DEBUG 12  VirtualOfficeContext - Closed connection at 6/27/2014 2:13:24 PM -04:00
+
+06/27/2014 14:13:24: DEBUG 12  Generic Logger - Ending operation: User / TestGetUser
+06/27/2014 14:13:24: INFO 12  Generic Logger - =========================================================================================================
+06/27/2014 14:13:24: INFO 12  Generic Logger - =========================================================================================================
+06/27/2014 14:13:24: INFO 12  Generic Logger - =========================================================================================================
+06/27/2014 14:30:54: DEBUG 7  Generic Logger - Starting operation: Token / TestPostToken
+06/27/2014 14:30:54: DEBUG 7  TokenController - Logging something
+06/27/2014 14:30:55: DEBUG 7  VirtualOfficeContext - Opened connection at 6/27/2014 2:30:55 PM -04:00
+
+06/27/2014 14:30:56: DEBUG 7  VirtualOfficeContext - SELECT TOP (1) 
+    [Extent1].[id] AS [id], 
+    [Extent1].[ApiKey] AS [ApiKey], 
+    [Extent1].[Secret] AS [Secret], 
+    [Extent1].[UserName] AS [UserName], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[ApiUsers] AS [Extent1]
+    WHERE [Extent1].[ApiKey] = @p__linq__0
+06/27/2014 14:30:56: DEBUG 7  VirtualOfficeContext - 
+
+06/27/2014 14:30:56: DEBUG 7  VirtualOfficeContext - -- p__linq__0: 'abc' (Type = String, Size = 4000)
+
+06/27/2014 14:30:56: DEBUG 7  VirtualOfficeContext - -- Executing at 6/27/2014 2:30:56 PM -04:00
+
+06/27/2014 14:30:56: DEBUG 7  VirtualOfficeContext - -- Completed in 2 ms with result: SqlDataReader
+
+06/27/2014 14:30:56: DEBUG 7  VirtualOfficeContext - 
+
+06/27/2014 14:30:56: DEBUG 7  VirtualOfficeContext - Closed connection at 6/27/2014 2:30:56 PM -04:00
+
+06/27/2014 14:30:56: INFO 7  IApiUserService - User 2 found with key: abc
+06/27/2014 15:03:41: DEBUG 6  Generic Logger - Starting operation: Report / TestRunReport
+06/27/2014 15:03:49: DEBUG 6  VirtualOfficeContext - Opened connection at 6/27/2014 3:03:49 PM -04:00
+
+06/27/2014 15:03:50: DEBUG 6  VirtualOfficeContext - SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Query] AS [Query], 
+    [Extent1].[Output] AS [Output], 
+    [Extent1].[IsEnable] AS [IsEnable], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Reports] AS [Extent1]
+    WHERE [Extent1].[Id] = @p0
+06/27/2014 15:03:50: DEBUG 6  VirtualOfficeContext - 
+
+06/27/2014 15:03:50: DEBUG 6  VirtualOfficeContext - -- p0: '13' (Type = Int32)
+
+06/27/2014 15:03:50: DEBUG 6  VirtualOfficeContext - -- Executing at 6/27/2014 3:03:50 PM -04:00
+
+06/27/2014 15:03:50: DEBUG 6  VirtualOfficeContext - -- Completed in 3 ms with result: SqlDataReader
+
+06/27/2014 15:03:50: DEBUG 6  VirtualOfficeContext - 
+
+06/27/2014 15:03:50: DEBUG 6  VirtualOfficeContext - Closed connection at 6/27/2014 3:03:50 PM -04:00
+
+06/27/2014 15:05:10: DEBUG 6  Generic Logger - Ending operation: Report / TestRunReport
+06/27/2014 15:05:10: INFO 6  Generic Logger - =========================================================================================================
+06/27/2014 15:05:10: INFO 6  Generic Logger - =========================================================================================================
+06/27/2014 15:05:10: INFO 6  Generic Logger - =========================================================================================================
+06/27/2014 15:05:47: DEBUG 7  Generic Logger - Starting operation: Report / TestRunReport
+06/27/2014 15:05:53: DEBUG 7  VirtualOfficeContext - Opened connection at 6/27/2014 3:05:53 PM -04:00
+
+06/27/2014 15:05:54: DEBUG 7  VirtualOfficeContext - SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Query] AS [Query], 
+    [Extent1].[Output] AS [Output], 
+    [Extent1].[IsEnable] AS [IsEnable], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Reports] AS [Extent1]
+    WHERE [Extent1].[Id] = @p0
+06/27/2014 15:05:54: DEBUG 7  VirtualOfficeContext - 
+
+06/27/2014 15:05:54: DEBUG 7  VirtualOfficeContext - -- p0: '13' (Type = Int32)
+
+06/27/2014 15:05:54: DEBUG 7  VirtualOfficeContext - -- Executing at 6/27/2014 3:05:54 PM -04:00
+
+06/27/2014 15:05:54: DEBUG 7  VirtualOfficeContext - -- Completed in 3 ms with result: SqlDataReader
+
+06/27/2014 15:05:54: DEBUG 7  VirtualOfficeContext - 
+
+06/27/2014 15:05:54: DEBUG 7  VirtualOfficeContext - Closed connection at 6/27/2014 3:05:54 PM -04:00
+
+06/27/2014 15:06:38: DEBUG 7  Generic Logger - Ending operation: Report / TestRunReport
+06/27/2014 15:06:38: INFO 7  Generic Logger - =========================================================================================================
+06/27/2014 15:06:38: INFO 7  Generic Logger - =========================================================================================================
+06/27/2014 15:06:38: INFO 7  Generic Logger - =========================================================================================================
+06/27/2014 15:07:01: DEBUG 9  Generic Logger - Starting operation: Report / TestRunReport
+06/27/2014 15:07:10: DEBUG 9  VirtualOfficeContext - Opened connection at 6/27/2014 3:07:10 PM -04:00
+
+06/27/2014 15:07:10: DEBUG 9  VirtualOfficeContext - SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Query] AS [Query], 
+    [Extent1].[Output] AS [Output], 
+    [Extent1].[IsEnable] AS [IsEnable], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Reports] AS [Extent1]
+    WHERE [Extent1].[Id] = @p0
+06/27/2014 15:07:10: DEBUG 9  VirtualOfficeContext - 
+
+06/27/2014 15:07:10: DEBUG 9  VirtualOfficeContext - -- p0: '13' (Type = Int32)
+
+06/27/2014 15:07:10: DEBUG 9  VirtualOfficeContext - -- Executing at 6/27/2014 3:07:10 PM -04:00
+
+06/27/2014 15:07:10: DEBUG 9  VirtualOfficeContext - -- Completed in 2 ms with result: SqlDataReader
+
+06/27/2014 15:07:10: DEBUG 9  VirtualOfficeContext - 
+
+06/27/2014 15:07:10: DEBUG 9  VirtualOfficeContext - Closed connection at 6/27/2014 3:07:10 PM -04:00
+
+06/27/2014 15:08:58: DEBUG 7  Generic Logger - Starting operation: Report / TestRunReport
+06/27/2014 15:09:03: DEBUG 7  VirtualOfficeContext - Opened connection at 6/27/2014 3:09:03 PM -04:00
+
+06/27/2014 15:09:03: DEBUG 7  VirtualOfficeContext - SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Query] AS [Query], 
+    [Extent1].[Output] AS [Output], 
+    [Extent1].[IsEnable] AS [IsEnable], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Reports] AS [Extent1]
+    WHERE [Extent1].[Id] = @p0
+06/27/2014 15:09:03: DEBUG 7  VirtualOfficeContext - 
+
+06/27/2014 15:09:03: DEBUG 7  VirtualOfficeContext - -- p0: '13' (Type = Int32)
+
+06/27/2014 15:09:03: DEBUG 7  VirtualOfficeContext - -- Executing at 6/27/2014 3:09:03 PM -04:00
+
+06/27/2014 15:09:03: DEBUG 7  VirtualOfficeContext - -- Completed in 2 ms with result: SqlDataReader
+
+06/27/2014 15:09:03: DEBUG 7  VirtualOfficeContext - 
+
+06/27/2014 15:09:04: DEBUG 7  VirtualOfficeContext - Closed connection at 6/27/2014 3:09:04 PM -04:00
+
+06/27/2014 15:10:13: DEBUG 7  Generic Logger - Starting operation: Report / TestRunReport
+06/27/2014 15:10:17: DEBUG 7  VirtualOfficeContext - Opened connection at 6/27/2014 3:10:17 PM -04:00
+
+06/27/2014 15:10:17: DEBUG 7  VirtualOfficeContext - SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Query] AS [Query], 
+    [Extent1].[Output] AS [Output], 
+    [Extent1].[IsEnable] AS [IsEnable], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Reports] AS [Extent1]
+    WHERE [Extent1].[Id] = @p0
+06/27/2014 15:10:17: DEBUG 7  VirtualOfficeContext - 
+
+06/27/2014 15:10:17: DEBUG 7  VirtualOfficeContext - -- p0: '13' (Type = Int32)
+
+06/27/2014 15:10:17: DEBUG 7  VirtualOfficeContext - -- Executing at 6/27/2014 3:10:17 PM -04:00
+
+06/27/2014 15:10:17: DEBUG 7  VirtualOfficeContext - -- Completed in 5 ms with result: SqlDataReader
+
+06/27/2014 15:10:17: DEBUG 7  VirtualOfficeContext - 
+
+06/27/2014 15:10:17: DEBUG 7  VirtualOfficeContext - Closed connection at 6/27/2014 3:10:17 PM -04:00
+
+06/27/2014 15:13:30: DEBUG 7  Generic Logger - Starting operation: Report / TestRunReport
+06/27/2014 15:13:35: DEBUG 7  VirtualOfficeContext - Opened connection at 6/27/2014 3:13:35 PM -04:00
+
+06/27/2014 15:13:36: DEBUG 7  VirtualOfficeContext - SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Query] AS [Query], 
+    [Extent1].[Output] AS [Output], 
+    [Extent1].[IsEnable] AS [IsEnable], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Reports] AS [Extent1]
+    WHERE [Extent1].[Id] = @p0
+06/27/2014 15:13:36: DEBUG 7  VirtualOfficeContext - 
+
+06/27/2014 15:13:36: DEBUG 7  VirtualOfficeContext - -- p0: '13' (Type = Int32)
+
+06/27/2014 15:13:36: DEBUG 7  VirtualOfficeContext - -- Executing at 6/27/2014 3:13:36 PM -04:00
+
+06/27/2014 15:13:36: DEBUG 7  VirtualOfficeContext - -- Completed in 4 ms with result: SqlDataReader
+
+06/27/2014 15:13:36: DEBUG 7  VirtualOfficeContext - 
+
+06/27/2014 15:13:36: DEBUG 7  VirtualOfficeContext - Closed connection at 6/27/2014 3:13:36 PM -04:00
+
+06/27/2014 15:15:37: DEBUG 7  Generic Logger - Starting operation: ReportConfiguration / TestGetReport
+06/27/2014 15:15:38: DEBUG 7  VirtualOfficeContext - Opened connection at 6/27/2014 3:15:38 PM -04:00
+
+06/27/2014 15:15:38: DEBUG 7  VirtualOfficeContext - SELECT TOP (1) 
+    [Extent1].[id] AS [id], 
+    [Extent1].[ApiKey] AS [ApiKey], 
+    [Extent1].[Secret] AS [Secret], 
+    [Extent1].[UserName] AS [UserName], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[ApiUsers] AS [Extent1]
+    WHERE [Extent1].[ApiKey] = @p__linq__0
+06/27/2014 15:15:38: DEBUG 7  VirtualOfficeContext - 
+
+06/27/2014 15:15:38: DEBUG 7  VirtualOfficeContext - -- p__linq__0: 'abc' (Type = String, Size = 4000)
+
+06/27/2014 15:15:38: DEBUG 7  VirtualOfficeContext - -- Executing at 6/27/2014 3:15:38 PM -04:00
+
+06/27/2014 15:15:38: DEBUG 7  VirtualOfficeContext - -- Completed in 1 ms with result: SqlDataReader
+
+06/27/2014 15:15:38: DEBUG 7  VirtualOfficeContext - 
+
+06/27/2014 15:15:38: DEBUG 7  VirtualOfficeContext - Closed connection at 6/27/2014 3:15:38 PM -04:00
+
+06/27/2014 15:15:38: INFO 7  IApiUserService - User 2 found with key: abc
+06/27/2014 15:21:12: DEBUG 11  Generic Logger - Starting operation: Report / TestRunReport
+06/27/2014 15:21:15: DEBUG 11  VirtualOfficeContext - Opened connection at 6/27/2014 3:21:15 PM -04:00
+
+06/27/2014 15:21:16: DEBUG 11  VirtualOfficeContext - SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Query] AS [Query], 
+    [Extent1].[Output] AS [Output], 
+    [Extent1].[IsEnable] AS [IsEnable], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Reports] AS [Extent1]
+    WHERE [Extent1].[Id] = @p0
+06/27/2014 15:21:16: DEBUG 11  VirtualOfficeContext - 
+
+06/27/2014 15:21:16: DEBUG 11  VirtualOfficeContext - -- p0: '13' (Type = Int32)
+
+06/27/2014 15:21:16: DEBUG 11  VirtualOfficeContext - -- Executing at 6/27/2014 3:21:16 PM -04:00
+
+06/27/2014 15:21:16: DEBUG 11  VirtualOfficeContext - -- Completed in 2 ms with result: SqlDataReader
+
+06/27/2014 15:21:16: DEBUG 11  VirtualOfficeContext - 
+
+06/27/2014 15:21:16: DEBUG 11  VirtualOfficeContext - Closed connection at 6/27/2014 3:21:16 PM -04:00
+
+06/27/2014 15:21:54: DEBUG 11  Generic Logger - Ending operation: Report / TestRunReport
+06/27/2014 15:21:54: INFO 11  Generic Logger - =========================================================================================================
+06/27/2014 15:21:54: INFO 11  Generic Logger - =========================================================================================================
+06/27/2014 15:21:54: INFO 11  Generic Logger - =========================================================================================================
+06/27/2014 15:24:18: DEBUG 15  Generic Logger - Starting operation: Report / TestRunReport
+06/27/2014 15:24:48: DEBUG 6  Generic Logger - Starting operation: ReportConfiguration / TestGetReport
+06/27/2014 15:24:49: DEBUG 6  VirtualOfficeContext - Opened connection at 6/27/2014 3:24:49 PM -04:00
+
+06/27/2014 15:24:49: DEBUG 6  VirtualOfficeContext - SELECT TOP (1) 
+    [Extent1].[id] AS [id], 
+    [Extent1].[ApiKey] AS [ApiKey], 
+    [Extent1].[Secret] AS [Secret], 
+    [Extent1].[UserName] AS [UserName], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[ApiUsers] AS [Extent1]
+    WHERE [Extent1].[ApiKey] = @p__linq__0
+06/27/2014 15:24:49: DEBUG 6  VirtualOfficeContext - 
+
+06/27/2014 15:24:49: DEBUG 6  VirtualOfficeContext - -- p__linq__0: 'abc' (Type = String, Size = 4000)
+
+06/27/2014 15:24:49: DEBUG 6  VirtualOfficeContext - -- Executing at 6/27/2014 3:24:49 PM -04:00
+
+06/27/2014 15:24:49: DEBUG 6  VirtualOfficeContext - -- Completed in 1 ms with result: SqlDataReader
+
+06/27/2014 15:24:49: DEBUG 6  VirtualOfficeContext - 
+
+06/27/2014 15:24:49: DEBUG 6  VirtualOfficeContext - Closed connection at 6/27/2014 3:24:49 PM -04:00
+
+06/27/2014 15:24:49: INFO 6  IApiUserService - User 2 found with key: abc
+06/27/2014 15:25:12: DEBUG 6  Generic Logger - Ending operation: ReportConfiguration / TestGetReport
+06/27/2014 15:25:12: INFO 6  Generic Logger - =========================================================================================================
+06/27/2014 15:25:12: INFO 6  Generic Logger - =========================================================================================================
+06/27/2014 15:25:12: INFO 6  Generic Logger - =========================================================================================================
+06/27/2014 15:25:15: DEBUG 11  Generic Logger - Starting operation: Report / TestRunReport
+06/27/2014 15:25:17: DEBUG 11  VirtualOfficeContext - Opened connection at 6/27/2014 3:25:17 PM -04:00
+
+06/27/2014 15:25:17: DEBUG 11  VirtualOfficeContext - SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Query] AS [Query], 
+    [Extent1].[Output] AS [Output], 
+    [Extent1].[IsEnable] AS [IsEnable], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Reports] AS [Extent1]
+    WHERE [Extent1].[Id] = @p0
+06/27/2014 15:25:17: DEBUG 11  VirtualOfficeContext - 
+
+06/27/2014 15:25:17: DEBUG 11  VirtualOfficeContext - -- p0: '13' (Type = Int32)
+
+06/27/2014 15:25:17: DEBUG 11  VirtualOfficeContext - -- Executing at 6/27/2014 3:25:17 PM -04:00
+
+06/27/2014 15:25:17: DEBUG 11  VirtualOfficeContext - -- Completed in 1 ms with result: SqlDataReader
+
+06/27/2014 15:25:17: DEBUG 11  VirtualOfficeContext - 
+
+06/27/2014 15:25:17: DEBUG 11  VirtualOfficeContext - Closed connection at 6/27/2014 3:25:17 PM -04:00
+
+06/27/2014 15:26:39: DEBUG 7  Generic Logger - Starting operation: Report / TestRunReport
+06/27/2014 15:26:48: DEBUG 7  VirtualOfficeContext - Opened connection at 6/27/2014 3:26:48 PM -04:00
+
+06/27/2014 15:26:49: DEBUG 7  VirtualOfficeContext - SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Query] AS [Query], 
+    [Extent1].[Output] AS [Output], 
+    [Extent1].[IsEnable] AS [IsEnable], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Reports] AS [Extent1]
+    WHERE [Extent1].[Id] = @p0
+06/27/2014 15:26:49: DEBUG 7  VirtualOfficeContext - 
+
+06/27/2014 15:26:49: DEBUG 7  VirtualOfficeContext - -- p0: '13' (Type = Int32)
+
+06/27/2014 15:26:49: DEBUG 7  VirtualOfficeContext - -- Executing at 6/27/2014 3:26:49 PM -04:00
+
+06/27/2014 15:26:49: DEBUG 7  VirtualOfficeContext - -- Completed in 3 ms with result: SqlDataReader
+
+06/27/2014 15:26:49: DEBUG 7  VirtualOfficeContext - 
+
+06/27/2014 15:26:49: DEBUG 7  VirtualOfficeContext - Closed connection at 6/27/2014 3:26:49 PM -04:00
+
+06/27/2014 15:28:10: DEBUG 7  Generic Logger - Starting operation: Report / TestRunReport
+06/27/2014 15:28:15: DEBUG 7  VirtualOfficeContext - Opened connection at 6/27/2014 3:28:15 PM -04:00
+
+06/27/2014 15:28:16: DEBUG 7  VirtualOfficeContext - SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Query] AS [Query], 
+    [Extent1].[Output] AS [Output], 
+    [Extent1].[IsEnable] AS [IsEnable], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Reports] AS [Extent1]
+    WHERE [Extent1].[Id] = @p0
+06/27/2014 15:28:16: DEBUG 7  VirtualOfficeContext - 
+
+06/27/2014 15:28:16: DEBUG 7  VirtualOfficeContext - -- p0: '13' (Type = Int32)
+
+06/27/2014 15:28:16: DEBUG 7  VirtualOfficeContext - -- Executing at 6/27/2014 3:28:16 PM -04:00
+
+06/27/2014 15:28:16: DEBUG 7  VirtualOfficeContext - -- Completed in 1 ms with result: SqlDataReader
+
+06/27/2014 15:28:16: DEBUG 7  VirtualOfficeContext - 
+
+06/27/2014 15:28:16: DEBUG 7  VirtualOfficeContext - Closed connection at 6/27/2014 3:28:16 PM -04:00
+
+06/27/2014 15:29:39: DEBUG 7  Generic Logger - Starting operation: Report / TestRunReport
+06/27/2014 15:29:43: DEBUG 7  VirtualOfficeContext - Opened connection at 6/27/2014 3:29:43 PM -04:00
+
+06/27/2014 15:29:44: DEBUG 7  VirtualOfficeContext - SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Query] AS [Query], 
+    [Extent1].[Output] AS [Output], 
+    [Extent1].[IsEnable] AS [IsEnable], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Reports] AS [Extent1]
+    WHERE [Extent1].[Id] = @p0
+06/27/2014 15:29:44: DEBUG 7  VirtualOfficeContext - 
+
+06/27/2014 15:29:44: DEBUG 7  VirtualOfficeContext - -- p0: '13' (Type = Int32)
+
+06/27/2014 15:29:44: DEBUG 7  VirtualOfficeContext - -- Executing at 6/27/2014 3:29:44 PM -04:00
+
+06/27/2014 15:29:44: DEBUG 7  VirtualOfficeContext - -- Completed in 2 ms with result: SqlDataReader
+
+06/27/2014 15:29:44: DEBUG 7  VirtualOfficeContext - 
+
+06/27/2014 15:29:44: DEBUG 7  VirtualOfficeContext - Closed connection at 6/27/2014 3:29:44 PM -04:00
+
+06/27/2014 15:30:38: DEBUG 7  Generic Logger - Ending operation: Report / TestRunReport
+06/27/2014 15:30:38: INFO 7  Generic Logger - =========================================================================================================
+06/27/2014 15:30:38: INFO 7  Generic Logger - =========================================================================================================
+06/27/2014 15:30:38: INFO 7  Generic Logger - =========================================================================================================
+06/27/2014 15:57:11: DEBUG 7  Generic Logger - Starting operation: Report / TestRunReport
+06/27/2014 15:57:12: DEBUG 7  VirtualOfficeContext - Opened connection at 6/27/2014 3:57:12 PM -04:00
+
+06/27/2014 15:57:12: DEBUG 7  VirtualOfficeContext - SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Query] AS [Query], 
+    [Extent1].[Output] AS [Output], 
+    [Extent1].[IsEnable] AS [IsEnable], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Reports] AS [Extent1]
+    WHERE [Extent1].[Id] = @p0
+06/27/2014 15:57:12: DEBUG 7  VirtualOfficeContext - 
+
+06/27/2014 15:57:12: DEBUG 7  VirtualOfficeContext - -- p0: '13' (Type = Int32)
+
+06/27/2014 15:57:12: DEBUG 7  VirtualOfficeContext - -- Executing at 6/27/2014 3:57:12 PM -04:00
+
+06/27/2014 15:57:12: DEBUG 7  VirtualOfficeContext - -- Completed in 1 ms with result: SqlDataReader
+
+06/27/2014 15:57:12: DEBUG 7  VirtualOfficeContext - 
+
+06/27/2014 15:57:12: DEBUG 7  VirtualOfficeContext - Closed connection at 6/27/2014 3:57:12 PM -04:00
+
+06/27/2014 15:57:23: DEBUG 7  Generic Logger - Ending operation: Report / TestRunReport
+06/27/2014 15:57:23: INFO 7  Generic Logger - =========================================================================================================
+06/27/2014 15:57:23: INFO 7  Generic Logger - =========================================================================================================
+06/27/2014 15:57:23: INFO 7  Generic Logger - =========================================================================================================

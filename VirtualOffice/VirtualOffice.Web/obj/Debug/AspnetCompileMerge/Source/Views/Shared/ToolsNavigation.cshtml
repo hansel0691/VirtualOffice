@@ -1,0 +1,27 @@
+﻿@using VirtualOffice.Web.Infrastructure
+@{
+    Layout = null;
+}
+<nav class="navbar navbar-default" id="secundaryNavbar" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#secundaryMenu">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="navbar-brand visible-xs" href="home.html" title="App logo"><span class="app-name">My Profile</span></span>
+        </div>
+
+        <div class="collapse navbar-collapse" id="secundaryMenu">
+            <ul class="nav navbar-nav">
+                <li class="@Utils.GetListItemClassByUrl(Request.Url.ToString(), Url.Action("MarketingMaterial", "Tools"))"><a href="@Url.Action("MarketingMaterial", "Tools")">Marketing Material <span class="badge"></span></a></li>    
+                <li class="@Utils.GetListItemClassByUrl(Request.Url.ToString(),Url.Action("FormsApplications", "Tools"))"><a href="@Url.Action("FormsApplications", "Tools")">Forms and Applications<span class="badge"></span></a></li>
+                <li class="@Utils.GetListItemClassByUrl(Request.Url.ToString(),Url.Action("SoftwareDownload", "Tools"))"><a href="@Url.Action("SoftwareDownload", "Tools")">Software Download<span class="badge"></span></a></li>
+                <!-- <li class=""><a href="tools-products.html">Products <span class="badge">25</span></a></li> -->
+            </ul>
+        </div>
+        <!-- Menu style like breadcumb http://css-tricks.com/triangle-breadcrumbs/ -->
+    </div> <!-- .container -->
+</nav> <!--end navbar-->

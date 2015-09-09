@@ -1,0 +1,59 @@
+﻿@using VirtualOffice.Web.Infrastructure
+@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    Layout = "~/Views/Shared/_NewUserLayout.cshtml";
+    
+    ViewBag.Title = "Error";
+
+    var errorMessage = !Model.IsNull() ? Model.Exception.Message : string.Empty;
+}
+
+<div class="container select" id="main">
+    <hr />
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-2 col-sm-push-8 col-md-push-10" id="sidebar">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a data-toggle="collapse" data-target="#collapse1" class="expand">Element on Report <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                    </div>
+                    <div class="panel-body panel-collapse collapse" id="collapse1">
+                        <label for="last-visit" class="control-label">Columns to show:</label>
+                        <div class="panel-body">
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a data-toggle="collapse" data-target="#collapse2" class="expand">Filter by Attributes <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                    </div>
+                    <div class="panel-body panel-collapse collapse" id="collapse2">
+                        <div class="form-group">
+                        </div>
+                    </div>
+                </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a data-toggle="collapse" data-target="#collapse3" class="expand">Configuration<span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-10 col-sm-pull-4 col-md-pull-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="hidden-xs col-sm-9 col-md-9">
+                            <h4 class="">No Results can be shown for this report at this time. There's no Data in the Report.</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body-kendo">
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- .container.select#main -->
+

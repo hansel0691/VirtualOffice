@@ -1,0 +1,22 @@
+﻿@using VirtualOficeTool.Models
+@(Html.Kendo().Grid<ReportColumn>()
+        .Name("UserFiltersGrid")
+    .HtmlAttributes(new { @style = "text-align: left;" })
+     .Resizable(config => config.Columns(true))
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.Name).Width(100);
+        columns.Bound(p => p.Selected).ClientTemplate("<input type='checkbox' name=\"UserFilters\" value=#=Id# #= Selected ? checked='checked' : '' # ></input>").Filterable(false).Width(20).Title("");
+    })
+        .AutoBind(true)
+        .Pageable()
+        .Sortable()
+         .Filterable()
+        .Scrollable(s => s.Height("auto"))
+        .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(100)
+        .Model(model => model.Id(p => p.Name))
+                    .Read(read => read.Action("GetUserFilters", "Reports").Data("getFilteringData"))
+      )) 
+

@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1569623E-F6EB-4128-8403-01FB780D9815}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Domain</RootNamespace>
+    <AssemblyName>Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.1.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.1.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Infrastructure\IUnitOfWork.cs" />
+    <Compile Include="Infrastructure\Log\ILogger.cs" />
+    <Compile Include="Infrastructure\Repositories\EntityAddedEventHandler.cs" />
+    <Compile Include="Infrastructure\Repositories\IConsignmentLeadRepository.cs" />
+    <Compile Include="Infrastructure\Repositories\IIncidentsRepository.cs" />
+    <Compile Include="Infrastructure\Repositories\IInventoryRepository.cs" />
+    <Compile Include="Infrastructure\Repositories\IPindataLeadRepository.cs" />
+    <Compile Include="Infrastructure\Repositories\IReportInfoRepository.cs" />
+    <Compile Include="Infrastructure\Repositories\ITokenRepository.cs" />
+    <Compile Include="Infrastructure\Services\IIncidentService.cs" />
+    <Compile Include="Infrastructure\Services\IInventoryService.cs" />
+    <Compile Include="Infrastructure\Services\IOrderService.cs" />
+    <Compile Include="Infrastructure\Services\IQueryLeadService.cs" />
+    <Compile Include="Models\ConsignmentType.cs" />
+    <Compile Include="Models\Exceptions\InternalServerErrorException.cs" />
+    <Compile Include="Models\Exceptions\LoginFailedException.cs" />
+    <Compile Include="Models\Exceptions\NotFoundException.cs" />
+    <Compile Include="Models\Handlers\EntityAddedEventHandlerArgs.cs" />
+    <Compile Include="Models\HashKey.cs" />
+    <Compile Include="Models\Incident.cs" />
+    <Compile Include="Models\Lead.cs" />
+    <Compile Include="Models\Orders\InventoryItem.cs" />
+    <Compile Include="Models\NewLead.cs" />
+    <Compile Include="Models\Orders\Order.cs" />
+    <Compile Include="Models\Orders\OrderItem.cs" />
+    <Compile Include="Models\Orders\ShippingInfo.cs" />
+    <Compile Include="Models\ReportLabel.cs" />
+    <Compile Include="Models\UserReportFilter.cs" />
+    <Compile Include="Models\UserReportFilterValue.cs" />
+    <Compile Include="UModelExtensions.cs" />
+    <Compile Include="Models\Handlers\UserAddedEventHandlerArgs.cs" />
+    <Compile Include="Infrastructure\Repositories\IRepository.cs" />
+    <Compile Include="Infrastructure\Repositories\IUserRepository.cs" />
+    <Compile Include="Infrastructure\Services\IReportService.cs" />
+    <Compile Include="Infrastructure\Services\IUserService.cs" />
+    <Compile Include="Infrastructure\Services\IHashProvider.cs" />
+    <Compile Include="Models\ApiUser.cs" />
+    <Compile Include="Models\AuthToken.cs" />
+    <Compile Include="Infrastructure\Services\IApiUserService.cs" />
+    <Compile Include="Infrastructure\Services\IOutputParser.cs" />
+    <Compile Include="Infrastructure\Services\IQueryExecutor.cs" />
+    <Compile Include="Infrastructure\Services\IReportConfigurator.cs" />
+    <Compile Include="Infrastructure\Services\IReportExecuter.cs" />
+    <Compile Include="Infrastructure\Services\ITokenService.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Exceptions\DataAccessException.cs" />
+    <Compile Include="Models\Exceptions\ReportExecuterException.cs" />
+    <Compile Include="Models\Argument.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\BaseUModel.cs" />
+    <Compile Include="Models\FilterType.cs" />
+    <Compile Include="Models\Parameter.cs" />
+    <Compile Include="Models\Filter.cs" />
+    <Compile Include="Models\PredefinedFilter.cs" />
+    <Compile Include="Models\ReportModel.cs" />
+    <Compile Include="Models\ReportPredefinedFilterRel.cs" />
+    <Compile Include="Models\ReportToReportRel.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserReport.cs" />
+    <Compile Include="Models\UserType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

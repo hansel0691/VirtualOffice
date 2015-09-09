@@ -1,0 +1,170 @@
+07/08/2014 14:42:52: DEBUG 14  Generic Logger - Starting operation: ReportConfiguration / GetUserReports
+07/08/2014 14:42:54: DEBUG 14  IInterceptor - Method GetUserReports called with parameters:
+07/08/2014 14:42:54: DEBUG 14  IInterceptor - userId: <2272>
+07/08/2014 14:42:54: DEBUG 14  IInterceptor - 
+07/08/2014 14:42:54: DEBUG 14  IInterceptor - 
+07/08/2014 14:42:56: DEBUG 14  IInterceptor - Method: GetUserReports returned: 
+07/08/2014 14:42:56: DEBUG 14  IInterceptor - SELECT 
+07/08/2014 14:42:56: DEBUG 14  IInterceptor -     [Extent1].[UserId] AS [UserId], 
+07/08/2014 14:42:56: DEBUG 14  IInterceptor -     [Extent1].[ReportId] AS [ReportId], 
+07/08/2014 14:42:56: DEBUG 14  IInterceptor -     [Extent1].[Output] AS [Output], 
+07/08/2014 14:42:56: DEBUG 14  IInterceptor -     [Extent1].[Name] AS [Name], 
+07/08/2014 14:42:56: DEBUG 14  IInterceptor -     [Extent1].[RowVersion] AS [RowVersion], 
+07/08/2014 14:42:56: DEBUG 14  IInterceptor -     [Extent1].[TimeSpan] AS [TimeSpan]
+07/08/2014 14:42:56: DEBUG 14  IInterceptor -     FROM  [dbo].[UserReports] AS [Extent1]
+07/08/2014 14:42:56: DEBUG 14  IInterceptor -     INNER JOIN [dbo].[Users] AS [Extent2] ON [Extent1].[UserId] = [Extent2].[Id]
+07/08/2014 14:42:56: DEBUG 14  IInterceptor -     WHERE [Extent2].[RefId] = @p__linq__0
+07/08/2014 14:42:56: DEBUG 14  IInterceptor - 
+07/08/2014 14:42:58: DEBUG 14  Generic Logger - Ending operation: ReportConfiguration / GetUserReports
+07/08/2014 14:42:58: INFO 14  Generic Logger - =========================================================================================================
+07/08/2014 14:42:58: INFO 14  Generic Logger - =========================================================================================================
+07/08/2014 14:42:58: INFO 14  Generic Logger - =========================================================================================================
+07/08/2014 14:42:58: DEBUG 14  VirtualOfficeContext - Opened connection at 7/8/2014 2:42:58 PM -04:00
+
+07/08/2014 14:42:58: DEBUG 14  VirtualOfficeContext - SELECT 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[ReportId] AS [ReportId], 
+    [Extent1].[Output] AS [Output], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM  [dbo].[UserReports] AS [Extent1]
+    INNER JOIN [dbo].[Users] AS [Extent2] ON [Extent1].[UserId] = [Extent2].[Id]
+    WHERE [Extent2].[RefId] = @p__linq__0
+07/08/2014 14:42:58: DEBUG 14  VirtualOfficeContext - 
+
+07/08/2014 14:42:58: DEBUG 14  VirtualOfficeContext - -- p__linq__0: '2272' (Type = Int32, IsNullable = false)
+
+07/08/2014 14:42:58: DEBUG 14  VirtualOfficeContext - -- Executing at 7/8/2014 2:42:58 PM -04:00
+
+07/08/2014 14:42:58: DEBUG 14  VirtualOfficeContext - -- Completed in 2 ms with result: SqlDataReader
+
+07/08/2014 14:42:58: DEBUG 14  VirtualOfficeContext - 
+
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Query] AS [Query], 
+    [Extent1].[Output] AS [Output], 
+    [Extent1].[DefaultOutput] AS [DefaultOutput], 
+    [Extent1].[ParamsDefaultConfiguration] AS [ParamsDefaultConfiguration], 
+    [Extent1].[UserFilters] AS [UserFilters], 
+    [Extent1].[IsEnable] AS [IsEnable], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Reports] AS [Extent1]
+    WHERE [Extent1].[Id] = @EntityKeyValue1
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - 
+
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - -- EntityKeyValue1: '34' (Type = Int32, IsNullable = false)
+
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - -- Executing at 7/8/2014 2:42:59 PM -04:00
+
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - -- Completed in 1 ms with result: SqlDataReader
+
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - 
+
+07/08/2014 14:42:59: DEBUG 14  IInterceptor - Method GetReportParameters called with parameters:
+07/08/2014 14:42:59: DEBUG 14  IInterceptor - reportName: <My Second Report>
+07/08/2014 14:42:59: DEBUG 14  IInterceptor - 
+07/08/2014 14:42:59: DEBUG 14  IInterceptor - 
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - sp_retrieve_parameters @procedure_name
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - 
+
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - -- @procedure_name: 'My Second Report' (Type = String, IsNullable = false, Size = 16)
+
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - -- Executing at 7/8/2014 2:42:59 PM -04:00
+
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - -- Completed in 1 ms with result: SqlDataReader
+
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - 
+
+07/08/2014 14:42:59: DEBUG 14  IInterceptor - Method: GetReportParameters returned: 
+07/08/2014 14:42:59: DEBUG 14  IInterceptor - Domain.Models.Parameter[]
+07/08/2014 14:42:59: DEBUG 14  IInterceptor - 
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - SELECT 
+    [Extent1].[FromId] AS [FromId], 
+    [Extent1].[ToId] AS [ToId], 
+    [Extent1].[DependencyProperty] AS [DependencyProperty], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[ReportToReportRel] AS [Extent1]
+    WHERE [Extent1].[ToId] = @EntityKeyValue1
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - 
+
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - -- EntityKeyValue1: '34' (Type = Int32, IsNullable = false)
+
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - -- Executing at 7/8/2014 2:42:59 PM -04:00
+
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - -- Completed in 1 ms with result: SqlDataReader
+
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - 
+
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - SELECT 
+    [Extent1].[ReportId] AS [ReportId], 
+    [Extent1].[FilterId] AS [FilterId], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[ReportPredefinedFilterRels] AS [Extent1]
+    WHERE [Extent1].[ReportId] = @EntityKeyValue1
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - 
+
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - -- EntityKeyValue1: '34' (Type = Int32, IsNullable = false)
+
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - -- Executing at 7/8/2014 2:42:59 PM -04:00
+
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - -- Completed in 1 ms with result: SqlDataReader
+
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - 
+
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - SELECT 
+    [Extent1].[FromId] AS [FromId], 
+    [Extent1].[ToId] AS [ToId], 
+    [Extent1].[DependencyProperty] AS [DependencyProperty], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[ReportToReportRel] AS [Extent1]
+    WHERE [Extent1].[FromId] = @EntityKeyValue1
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - 
+
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - -- EntityKeyValue1: '34' (Type = Int32, IsNullable = false)
+
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - -- Executing at 7/8/2014 2:42:59 PM -04:00
+
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - -- Completed in 1 ms with result: SqlDataReader
+
+07/08/2014 14:42:59: DEBUG 14  VirtualOfficeContext - 
+
+07/08/2014 14:43:10: DEBUG 14  IInterceptor - Method GetReportParameters called with parameters:
+07/08/2014 14:43:10: DEBUG 14  IInterceptor - reportName: <My Second Report>
+07/08/2014 14:43:10: DEBUG 14  IInterceptor - 
+07/08/2014 14:43:10: DEBUG 14  IInterceptor - 
+07/08/2014 14:43:10: DEBUG 14  VirtualOfficeContext - sp_retrieve_parameters @procedure_name
+07/08/2014 14:43:10: DEBUG 14  VirtualOfficeContext - 
+
+07/08/2014 14:43:10: DEBUG 14  VirtualOfficeContext - -- @procedure_name: 'My Second Report' (Type = String, IsNullable = false, Size = 16)
+
+07/08/2014 14:43:10: DEBUG 14  VirtualOfficeContext - -- Executing at 7/8/2014 2:43:10 PM -04:00
+
+07/08/2014 14:43:10: DEBUG 14  VirtualOfficeContext - -- Completed in 1 ms with result: SqlDataReader
+
+07/08/2014 14:43:10: DEBUG 14  VirtualOfficeContext - 
+
+07/08/2014 14:43:10: DEBUG 14  IInterceptor - Method: GetReportParameters returned: 
+07/08/2014 14:43:10: DEBUG 14  IInterceptor - Domain.Models.Parameter[]
+07/08/2014 14:43:10: DEBUG 14  IInterceptor - 
+07/08/2014 14:43:25: DEBUG 14  IInterceptor - Method GetReportParameters called with parameters:
+07/08/2014 14:43:25: DEBUG 14  IInterceptor - reportName: <My Second Report>
+07/08/2014 14:43:25: DEBUG 14  IInterceptor - 
+07/08/2014 14:43:25: DEBUG 14  IInterceptor - 
+07/08/2014 14:43:44: DEBUG 14  VirtualOfficeContext - sp_retrieve_parameters @procedure_name
+07/08/2014 14:43:44: DEBUG 14  VirtualOfficeContext - 
+
+07/08/2014 14:43:44: DEBUG 14  VirtualOfficeContext - -- @procedure_name: 'My Second Report' (Type = String, IsNullable = false, Size = 16)
+
+07/08/2014 14:43:44: DEBUG 14  VirtualOfficeContext - -- Executing at 7/8/2014 2:43:44 PM -04:00
+
+07/08/2014 14:43:44: DEBUG 14  VirtualOfficeContext - -- Completed in 4 ms with result: SqlDataReader
+
+07/08/2014 14:43:44: DEBUG 14  VirtualOfficeContext - 
+

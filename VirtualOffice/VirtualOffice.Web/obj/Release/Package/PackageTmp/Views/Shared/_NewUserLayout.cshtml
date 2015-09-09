@@ -1,0 +1,203 @@
+﻿@using System.Diagnostics.Eventing.Reader
+@using System.Web.Services.Description
+@using ClassLibrary2.Domain
+@using Domain.Models
+@using VirtualOffice.Web.Infrastructure
+@using VirtualOffice.Web.Models
+<!DOCTYPE html>
+@{
+    
+    var user = Session[Utils.LoggedUserKey] as UserModel;
+
+    var userCategory = user != null ? Utils.GetUserCategory(user.UserCategory) : default(Category);
+
+    var reportsCounter = Utils.GetReportsCountByUser(user);
+    
+    var customerService = user.IsFullcarga? "1(888)684-7323" : "1 (800) 483-2891";
+    
+}
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Virtual Office | Home">
+
+    <title>@ViewBag.Title - Virtual Office</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- jQuery -->
+    @*<script src="~/Scripts/jquery-1.10.2.js"></script>*@
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <![if lt IE 9]>
+    <script src="/Scripts/html5shiv.js"></script>
+    <![endif]>
+
+    <!-- IE10 Mobile for Windows 8 or Windows Phone 8 -->
+    <script>
+        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+            //var msViewportStyle = document.createElement("style");
+            //msViewportStyle.appendChild(document.createTextNode("-ms-viewport{width:auto!important}"));
+            //document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+        }
+    </script>
+    <!--script to measure viewport to match media queries-->
+    <script>
+        function viewport() {
+            var e = window, a = 'inner';
+            if (!('innerWidth' in window)) {
+                a = 'client';
+                e = document.documentElement || document.body;
+            }
+            return { width: e[a + 'Width'], height: e[a + 'Height'] };
+        }
+
+    </script>
+
+    <link href="@Url.Content("~/Content/kendo/2014.1.415/kendo.common.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2014.1.415/kendo.dataviz.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2014.1.415/kendo.black.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2014.1.415/kendo.dataviz.black.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2014.1.415/kendo.dataviz.min.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/kendo/2014.1.415/jquery.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2014.1.415/kendo.all.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2014.1.415/kendo.aspnetmvc.min.js")"></script>
+
+    <!-- Custom CSS-->
+    <link href="@Url.Content("~/Content/styles.css")" rel="stylesheet">
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/global.js"></script>
+    <script src="/Scripts/jquery.printpage.js"></script>
+</head>
+<body>
+    <header class="" id="headerArea">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-sm-5 col-md-5 hidden-xs" id="logoArea">
+                    <a class="logo" href='@Url.Action("Index","Reports")' title="App logo">
+                        <img src="../Images/logo-virtualoffice.svg" class="" style="width: 40px" />
+                        <strong class="h2"> Virtual Office</strong>
+                    </a>
+                </div>
+                @*<div class="col-xs-12 col-sm-4 col-md-4" id="logoArea">
+                    <a class="logo" href="/" title="App logo">
+                        <img src="../Images/logo-virtualoffice.svg" class="" style="width: 40px"> <strong class="h2"> Virtual Office</strong>
+                    </a>
+                </div>*@
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </header>
+
+    <!-- navigation container -->
+    <nav class="navbar-area" id="navbar">
+        <!-- navbar -->
+        <nav class="navbar navbar-inverse" id="mainNavbar" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainMenu">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @*<a class="navbar-brand app-logo"  title="App logo"><span class="app-name">Virtual <strong>Office</strong></span></a>*@
+                    <span class="visible-xs navbar-brand"><img src="../Images/logo-virtualoffice.svg" class="" style="width: 40px" /> Virtual Office</span>
+                </div>
+
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <ul class="nav navbar-nav">
+                     @if (!user.IsFullcarga && userCategory != Category.Merchant) //Agent Users
+                     {
+                        <li class="dropdown">
+                            <a href="@Url.Action("Index","Reports")" class="dropdown-toggle" data-toggle="dropdown">Merchant Services Reports <span class="badge">@reportsCounter[DashboardItemType.MerchantServices]</span><b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+
+                                <li><a href='@Url.Action("PortfolioSummary", "MerchantServicesReports")'><span class="badge"></span> Merchant Services Accounts</a></li>
+                                <li><a href='@Url.Action("SalesSummary", "MerchantServicesReports")'><span class="badge"></span> Merchant Services Sales Summary</a></li>
+                            </ul>
+                        </li>
+                     }
+                        <li class="dropdown">
+                            <a href="@Url.Action("Index","Reports")" class="dropdown-toggle" data-toggle="dropdown"> Prepaid Reports<span class="badge">@reportsCounter[DashboardItemType.Prepaid]</span><b class="caret"></b></a>
+
+                            <ul class="dropdown-menu">
+                                @if (userCategory != Category.Merchant)
+                                {
+                                    <li><a href='@Url.Action("PortfolioSummary", "PrepaidReports")'><span class="badge"></span> Prepaid Accounts</a></li>
+                                    <li><a href='@Url.Action("AccountsInCollection", "PrepaidReports")'><span class="badge"></span> Accounts In Collection</a></li>
+                                }
+                                <li><a href='@Url.Action("MerchantCreditLimits", "PrepaidReports")'><span class="badge"></span> Merchant Credit Limits</a></li>
+                                <li><a href='@Url.Action("TodayTransactions", "PrepaidReports")'><span class="badge"></span> Today's Transactions</a></li>
+                                <li><a href='@Url.Action("MerchantCommissions", "PrepaidReports")'><span class="badge"></span> Merchant Commissions</a></li>
+                                <li><a href='@Url.Action("TransactionsSummary", "PrepaidReports")'><span class="badge"></span>Transactions Summary</a></li>
+                                @if (!user.IsFullcarga)
+                                {
+                                    <li><a href='@Url.Action("SalesSummary", "PrepaidReports")'><span class="badge"></span> Prepaid Sales Summary</a></li>
+                                    <li><a href='@Url.Action("IppBrowser", "PrepaidReports")'><span class="badge"></span> Ipp Monitor</a></li>
+                                    <li><a href='@Url.Action("AccountRegister", "PrepaidReports")'><span class="badge"></span> Account Register</a></li>
+                                    <li><a href='@Url.Action("MerchantStatements", "PrepaidReports")'><span class="badge"></span> Merchant Statements</a></li>
+                                }
+                                else
+                                {
+                                    <li><a href='@Url.Action("FullcargaStatements", "PrepaidReports")'><span class="badge"></span> Statements</a></li>
+                                    @*<li><a href='@Url.Action("FullcargaPrepaidSummary", "PrepaidReports")'><span class="badge"></span> Prepaid Sales Summary</a></li>*@
+                                }
+
+                            </ul>
+                        </li>
+                        <li class="@Utils.GetListItemClassByController(Url.Action("ChangePassword", "MyProfile"), Request.Url.ToString())">
+                            <a href="@Url.Action("ChangePassword", "MyProfile")">My Profile <span class="badge"></span></a>
+                        </li>
+                        @if (!user.IsFullcarga && userCategory != Category.Merchant) //Agent Users
+                        {
+                            <li class="">
+                                <a href="@Url.Action("OpenLeads","MyProfile")">Open Leads <span class="badge"></span></a>
+                            </li>
+                            
+                            <li class="">
+                                <a href="@Url.Action("Incidents","MyProfile")">Incidents <span class="badge"></span></a>
+                            </li>
+                        }
+                        @if (!user.IsFullcarga) //Blackstone Users
+                        {
+                            <li class="@Utils.GetListItemClassByController(Url.Action("MarketingMaterial", "Tools"), Request.Url.ToString())">
+                                <a href="@Url.Action("MarketingMaterial","Tools")">Tools <span class="badge"></span></a>
+                            </li>
+                            <li class="">
+                                <a href="http://news.blackstoneonline.com" target="_blank"> News <span class="badge"></span></a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <!-- Menu style like breadcumb http://css-tricks.com/triangle-breadcrumbs/ -->
+            </div> <!-- .container -->
+        </nav> <!--end navbar-->
+    </nav>
+
+    @RenderBody()
+
+    <div class="footer-area" id="footer">
+        <footer class="container">
+            <div class="row">
+                <div class="col-xs-8">&copy;Virtual Office 2014 - @DateTime.Now.Year. <b>Customer Service: @customerService</b></div>
+                @*<div class="col-xs-4 text-right">
+                    <a href="#" target="_blank"><img src="../Images/facebook.png"></a>
+                    <a href="#" target="_blank"><img src="../Images/twitter-2.png"></a>
+                </div>*@
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+</body>
+</html>
+
+

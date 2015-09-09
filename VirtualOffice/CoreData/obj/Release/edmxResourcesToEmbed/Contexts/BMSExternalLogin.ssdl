@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BMSExternalLoginModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="VonageExternalLogin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MerchantId" Type="int" />
+    <Property Name="MerchantPassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="EncryptedToken" Type="nvarchar(max)" />
+    <Property Name="ExpirationDate" Type="datetime2" Precision="7" />
+  </EntityType>
+  <EntityContainer Name="BMSExternalLoginModelStoreContainer">
+    <EntitySet Name="VonageExternalLogin" EntityType="Self.VonageExternalLogin" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

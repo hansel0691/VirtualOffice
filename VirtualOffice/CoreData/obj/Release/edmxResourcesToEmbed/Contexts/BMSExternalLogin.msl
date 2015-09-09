@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BMSExternalLoginModelStoreContainer" CdmEntityContainer="BMSExternalLoginContext">
+    <EntitySetMapping Name="VonageExternalLogins">
+      <EntityTypeMapping TypeName="BMSExternalLoginModel.VonageExternalLogin">
+        <MappingFragment StoreEntitySet="VonageExternalLogin">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MerchantId" ColumnName="MerchantId" />
+          <ScalarProperty Name="MerchantPassword" ColumnName="MerchantPassword" />
+          <ScalarProperty Name="EncryptedToken" ColumnName="EncryptedToken" />
+          <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

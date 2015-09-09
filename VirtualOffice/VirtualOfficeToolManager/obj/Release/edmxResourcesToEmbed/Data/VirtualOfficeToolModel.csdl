@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VirtualOfficeModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="VirtualOfficeEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="PredefinedFilters" EntityType="VirtualOfficeModel.PredefinedFilter" />
+    <EntitySet Name="ReportPredefinedFilterRels" EntityType="VirtualOfficeModel.ReportPredefinedFilterRel" />
+    <EntitySet Name="Reports" EntityType="VirtualOfficeModel.Report" />
+    <EntitySet Name="ReportToReportRels" EntityType="VirtualOfficeModel.ReportToReportRel" />
+    <EntitySet Name="sysdiagrams" EntityType="VirtualOfficeModel.sysdiagram" />
+    <EntitySet Name="UserReports" EntityType="VirtualOfficeModel.UserReport" />
+    <EntitySet Name="Users" EntityType="VirtualOfficeModel.User" />
+    <AssociationSet Name="FK_dbo_ReportPredefinedFilterRels_dbo_PredefinedFilters_FilterId" Association="VirtualOfficeModel.FK_dbo_ReportPredefinedFilterRels_dbo_PredefinedFilters_FilterId">
+      <End Role="PredefinedFilters" EntitySet="PredefinedFilters" />
+      <End Role="ReportPredefinedFilterRels" EntitySet="ReportPredefinedFilterRels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ReportPredefinedFilterRels_dbo_Reports_ReportId" Association="VirtualOfficeModel.FK_dbo_ReportPredefinedFilterRels_dbo_Reports_ReportId">
+      <End Role="Reports" EntitySet="Reports" />
+      <End Role="ReportPredefinedFilterRels" EntitySet="ReportPredefinedFilterRels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ReportToReportRel_dbo_Reports_FromId" Association="VirtualOfficeModel.FK_dbo_ReportToReportRel_dbo_Reports_FromId">
+      <End Role="Reports" EntitySet="Reports" />
+      <End Role="ReportToReportRel" EntitySet="ReportToReportRels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ReportToReportRel_dbo_Reports_ToId" Association="VirtualOfficeModel.FK_dbo_ReportToReportRel_dbo_Reports_ToId">
+      <End Role="Reports" EntitySet="Reports" />
+      <End Role="ReportToReportRel" EntitySet="ReportToReportRels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UserReports_dbo_Reports_ReportId" Association="VirtualOfficeModel.FK_dbo_UserReports_dbo_Reports_ReportId">
+      <End Role="Reports" EntitySet="Reports" />
+      <End Role="UserReports" EntitySet="UserReports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UserReports_dbo_Users_UserId" Association="VirtualOfficeModel.FK_dbo_UserReports_dbo_Users_UserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserReports" EntitySet="UserReports" />
+    </AssociationSet>
+    <EntitySet Name="Sql_HtmlTypeNameMappings" EntityType="VirtualOfficeModel.Sql_HtmlTypeNameMappings" />
+    <FunctionImport Name="sp_retrieve_spNames" ReturnType="Collection(String)" />
+    <FunctionImport Name="sp_retrieve_sp_columns" ReturnType="Collection(String)">
+      <Parameter Name="procedure_name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_retrieve_storedprocedure_columns" ReturnType="Collection(String)">
+      <Parameter Name="spname" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="ReportLabels" EntityType="VirtualOfficeModel.ReportLabel" />
+    <AssociationSet Name="FK_dbo_ReportLabels_dbo_Reports_Report_Id" Association="VirtualOfficeModel.FK_dbo_ReportLabels_dbo_Reports_Report_Id">
+      <End Role="Report" EntitySet="Reports" />
+      <End Role="ReportLabel" EntitySet="ReportLabels" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="PredefinedFilter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="RowVersion" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" />
+    <Property Name="TimeSpan" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Value" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ReportPredefinedFilterRels" Relationship="VirtualOfficeModel.FK_dbo_ReportPredefinedFilterRels_dbo_PredefinedFilters_FilterId" FromRole="PredefinedFilters" ToRole="ReportPredefinedFilterRels" />
+    <Property Name="ColumnName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ParameterName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ReportPredefinedFilterRel">
+    <Key>
+      <PropertyRef Name="ReportId" />
+      <PropertyRef Name="FilterId" />
+    </Key>
+    <Property Name="ReportId" Type="Int32" Nullable="false" />
+    <Property Name="FilterId" Type="Int32" Nullable="false" />
+    <Property Name="RowVersion" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" />
+    <Property Name="TimeSpan" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="PredefinedFilter" Relationship="VirtualOfficeModel.FK_dbo_ReportPredefinedFilterRels_dbo_PredefinedFilters_FilterId" FromRole="ReportPredefinedFilterRels" ToRole="PredefinedFilters" />
+    <NavigationProperty Name="Report" Relationship="VirtualOfficeModel.FK_dbo_ReportPredefinedFilterRels_dbo_Reports_ReportId" FromRole="ReportPredefinedFilterRels" ToRole="Reports" />
+  </EntityType>
+  <EntityType Name="Report">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="Query" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="IsEnable" Type="Boolean" Nullable="false" />
+    <Property Name="RowVersion" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" />
+    <Property Name="TimeSpan" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Output" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="ReportPredefinedFilterRels" Relationship="VirtualOfficeModel.FK_dbo_ReportPredefinedFilterRels_dbo_Reports_ReportId" FromRole="Reports" ToRole="ReportPredefinedFilterRels" />
+    <NavigationProperty Name="ReportToReportRels" Relationship="VirtualOfficeModel.FK_dbo_ReportToReportRel_dbo_Reports_FromId" FromRole="Reports" ToRole="ReportToReportRel" />
+    <NavigationProperty Name="ReportToReportRels1" Relationship="VirtualOfficeModel.FK_dbo_ReportToReportRel_dbo_Reports_ToId" FromRole="Reports" ToRole="ReportToReportRel" />
+    <NavigationProperty Name="UserReports" Relationship="VirtualOfficeModel.FK_dbo_UserReports_dbo_Reports_ReportId" FromRole="Reports" ToRole="UserReports" />
+    <Property Name="DefaultOutput" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ParamsDefaultConfiguration" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserFilters" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IndexColumnName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsStandAlone" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ReportLabels" Relationship="VirtualOfficeModel.FK_dbo_ReportLabels_dbo_Reports_Report_Id" FromRole="Report" ToRole="ReportLabel" />
+    <Property Name="Category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ReportToReportRel">
+    <Key>
+      <PropertyRef Name="FromId" />
+      <PropertyRef Name="ToId" />
+    </Key>
+    <Property Name="FromId" Type="Int32" Nullable="false" />
+    <Property Name="ToId" Type="Int32" Nullable="false" />
+    <Property Name="DependencyProperty" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="RowVersion" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" />
+    <Property Name="TimeSpan" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Report" Relationship="VirtualOfficeModel.FK_dbo_ReportToReportRel_dbo_Reports_FromId" FromRole="ReportToReportRel" ToRole="Reports" />
+    <NavigationProperty Name="Report1" Relationship="VirtualOfficeModel.FK_dbo_ReportToReportRel_dbo_Reports_ToId" FromRole="ReportToReportRel" ToRole="Reports" />
+    <Property Name="IndexParamName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="UserReport">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="ReportId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="ReportId" Type="Int32" Nullable="false" />
+    <Property Name="Output" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="RowVersion" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" />
+    <Property Name="TimeSpan" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Report" Relationship="VirtualOfficeModel.FK_dbo_UserReports_dbo_Reports_ReportId" FromRole="UserReports" ToRole="Reports" />
+    <NavigationProperty Name="User" Relationship="VirtualOfficeModel.FK_dbo_UserReports_dbo_Users_UserId" FromRole="UserReports" ToRole="Users" />
+    <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="OutputConfiguration" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="RefId" Type="Int32" Nullable="false" />
+    <Property Name="Category" Type="Int32" Nullable="false" />
+    <Property Name="RowVersion" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" />
+    <Property Name="TimeSpan" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="UserReports" Relationship="VirtualOfficeModel.FK_dbo_UserReports_dbo_Users_UserId" FromRole="Users" ToRole="UserReports" />
+  </EntityType>
+  <Association Name="FK_dbo_ReportPredefinedFilterRels_dbo_PredefinedFilters_FilterId">
+    <End Role="PredefinedFilters" Type="VirtualOfficeModel.PredefinedFilter" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ReportPredefinedFilterRels" Type="VirtualOfficeModel.ReportPredefinedFilterRel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PredefinedFilters">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ReportPredefinedFilterRels">
+        <PropertyRef Name="FilterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ReportPredefinedFilterRels_dbo_Reports_ReportId">
+    <End Role="Reports" Type="VirtualOfficeModel.Report" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ReportPredefinedFilterRels" Type="VirtualOfficeModel.ReportPredefinedFilterRel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reports">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ReportPredefinedFilterRels">
+        <PropertyRef Name="ReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ReportToReportRel_dbo_Reports_FromId">
+    <End Role="Reports" Type="VirtualOfficeModel.Report" Multiplicity="1" />
+    <End Role="ReportToReportRel" Type="VirtualOfficeModel.ReportToReportRel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reports">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ReportToReportRel">
+        <PropertyRef Name="FromId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ReportToReportRel_dbo_Reports_ToId">
+    <End Role="Reports" Type="VirtualOfficeModel.Report" Multiplicity="1" />
+    <End Role="ReportToReportRel" Type="VirtualOfficeModel.ReportToReportRel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reports">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ReportToReportRel">
+        <PropertyRef Name="ToId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UserReports_dbo_Reports_ReportId">
+    <End Role="Reports" Type="VirtualOfficeModel.Report" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserReports" Type="VirtualOfficeModel.UserReport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reports">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserReports">
+        <PropertyRef Name="ReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UserReports_dbo_Users_UserId">
+    <End Role="Users" Type="VirtualOfficeModel.User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserReports" Type="VirtualOfficeModel.UserReport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserReports">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Sql_HtmlTypeNameMappings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="SqlTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HtmlTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ReportLabel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ColumnName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Label" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="TimeSpan" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ReportId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Report" Relationship="VirtualOfficeModel.FK_dbo_ReportLabels_dbo_Reports_Report_Id" FromRole="ReportLabel" ToRole="Report" />
+  </EntityType>
+  <Association Name="FK_dbo_ReportLabels_dbo_Reports_Report_Id">
+    <End Type="VirtualOfficeModel.Report" Role="Report" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="VirtualOfficeModel.ReportLabel" Role="ReportLabel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Report">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ReportLabel">
+        <PropertyRef Name="ReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D75BCE54-1D78-4048-B36A-1CDE6AC6DBD1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClassLibrary2</RootNamespace>
+    <AssemblyName>ClassLibrary2</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.2.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.2.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Domain\Equality Comparers\MsComissionSummaryByTotalsComparer.cs" />
+    <Compile Include="Domain\MerchantServices\MsComissionSummaryForAmex.cs" />
+    <Compile Include="Domain\MerchantServices\MsComissionSummaryResult.cs" />
+    <Compile Include="Domain\MerchantServices\MsCommissionSummaryByTotals.cs" />
+    <Compile Include="Domain\MerchantServices\MsCommsissionSummaryForOthers.cs" />
+    <Compile Include="Domain\MerchantServices\MsCommssionSummaryForVmC.cs" />
+    <Compile Include="Domain\Others\DateRange.cs" />
+    <Compile Include="Domain\Others\Document.cs" />
+    <Compile Include="Domain\Others\ExternalLoginResponse.cs" />
+    <Compile Include="Domain\Others\Incident.cs" />
+    <Compile Include="Domain\Others\Lead.cs" />
+    <Compile Include="Domain\Others\MarketingMaterial.cs" />
+    <Compile Include="Domain\Others\Report.cs" />
+    <Compile Include="Domain\Others\VirtualOfficeUser.cs" />
+    <Compile Include="Domain\Prepaid\AccountRegisterResult.cs" />
+    <Compile Include="Domain\Prepaid\AccountsInCollectionResult.cs" />
+    <Compile Include="Domain\DashboardItem.cs" />
+    <Compile Include="Domain\Prepaid\FullcargaInvoiceDetail.cs" />
+    <Compile Include="Domain\Prepaid\FullcargaPrepaidSummary.cs" />
+    <Compile Include="Domain\Prepaid\FullCargaStatement.cs" />
+    <Compile Include="Domain\Prepaid\GetMerchantCreditLimitsResult.cs" />
+    <Compile Include="Domain\Prepaid\IppBrowserResult.cs" />
+    <Compile Include="Domain\MerchantServices\MsPortfolioResult.cs" />
+    <Compile Include="Domain\Prepaid\MerchantComissionResult.cs" />
+    <Compile Include="Domain\Prepaid\MerchantStatementResult.cs" />
+    <Compile Include="Domain\Prepaid\PrepaidInvoiceDetailsResult.cs" />
+    <Compile Include="Domain\Prepaid\PrepaidPortfolioResult.cs" />
+    <Compile Include="Domain\Prepaid\PrepaidSalesDetailsResult.cs" />
+    <Compile Include="Domain\Prepaid\PrepaidSalesSummaryResult.cs" />
+    <Compile Include="Domain\Prepaid\PrepaidTodayTransactions.cs" />
+    <Compile Include="Domain\Prepaid\TransactionSummaryResult.cs" />
+    <Compile Include="Domain\ReportLog.cs" />
+    <Compile Include="Domain\Roles.cs" />
+    <Compile Include="Domain\UserReport.cs" />
+    <Compile Include="Infrastructure\Helper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\VirtualOfficeService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VirtualOffice.Data\VirtualOffice.Data.csproj">
+      <Project>{5b2ac6e1-5bad-4620-b492-ba1c85bc3854}</Project>
+      <Name>VirtualOffice.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\AutoMapper.3.2.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.2.1\tools\AutoMapper.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

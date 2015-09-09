@@ -1,0 +1,36 @@
+﻿@using System.Globalization
+@using VirtualOffice.Web.Infrastructure
+@using VirtualOffice.Web.Models
+@{
+    var user = Session[Utils.UserKey] as UserModel;
+
+    var comission = !user.IsNull() ? user.Comission : 0;
+
+    var userType = user.UserCategory;
+    
+}
+<div class="col-xs-12 col-sm-8 col-md-8" id="userArea">
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6" id="userDetails">
+            <ul class="list-inline" id="">
+                <li class="merchant">
+                    <span class="icon icon18 icon-user"></span> <span class="hidden-xs">User:</span> <strong><span class="limitChar">@user.Name</span></strong>
+                </li>
+                <li class="exit">
+                    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <span class="icon icon18 icon-logout"></span> <a href="javascript:document.getElementById('logoutForm').submit()">Log Off</a>
+                    }
+                </li>
+            </ul>
+        </div>
+
+        <div id="infoArea" class="col-xs-6 col-sm-6 col-md-6 text-right">
+            <ul>
+                <li>For the running month of <strong>@DateTime.Now.ToString("MMM", CultureInfo.InvariantCulture)</strong></li>
+                <li>My Commissions on Prepaid:  <strong class="text-secundary h4">@comission.ToString("C")</strong></li>
+            </ul>
+        </div><!-- .col -->
+    </div>
+</div>

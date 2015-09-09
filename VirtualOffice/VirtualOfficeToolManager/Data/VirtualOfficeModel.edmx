@@ -1,0 +1,859 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="VirtualOfficeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ApiUsers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ApiKey" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Secret" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RowVersion" Type="varbinary(max)" />
+          <Property Name="TimeSpan" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PredefinedFilters">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RowVersion" Type="varbinary(max)" />
+          <Property Name="TimeSpan" Type="datetime" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="FieldName" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReportPredefinedFilterRels">
+          <Key>
+            <PropertyRef Name="ReportId" />
+            <PropertyRef Name="FilterId" />
+          </Key>
+          <Property Name="ReportId" Type="int" Nullable="false" />
+          <Property Name="FilterId" Type="int" Nullable="false" />
+          <Property Name="RowVersion" Type="varbinary(max)" />
+          <Property Name="TimeSpan" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reports">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Query" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IsEnable" Type="bit" Nullable="false" />
+          <Property Name="RowVersion" Type="varbinary(max)" />
+          <Property Name="TimeSpan" Type="datetime" Nullable="false" />
+          <Property Name="Output" Type="nvarchar(max)" />
+          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReportToReportRel">
+          <Key>
+            <PropertyRef Name="FromId" />
+            <PropertyRef Name="ToId" />
+          </Key>
+          <Property Name="FromId" Type="int" Nullable="false" />
+          <Property Name="ToId" Type="int" Nullable="false" />
+          <Property Name="DependencyProperty" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RowVersion" Type="varbinary(max)" />
+          <Property Name="TimeSpan" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReportUserFilterRels">
+          <Key>
+            <PropertyRef Name="ReportId" />
+            <PropertyRef Name="FilterId" />
+          </Key>
+          <Property Name="ReportId" Type="int" Nullable="false" />
+          <Property Name="FilterId" Type="int" Nullable="false" />
+          <Property Name="RowVersion" Type="varbinary(max)" />
+          <Property Name="TimeSpan" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sql_HtmlTypeNameMappings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SqlTypeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="HtmlTypeName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Tokens">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="value" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ApiUserId" Type="int" Nullable="false" />
+          <Property Name="ExpirationDate" Type="datetime" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="RowVersion" Type="varbinary(max)" />
+          <Property Name="TimeSpan" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserFilters">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RowVersion" Type="varbinary(max)" />
+          <Property Name="TimeSpan" Type="datetime" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Label" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="FilterOptions" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="UserReports">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="ReportId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="ReportId" Type="int" Nullable="false" />
+          <Property Name="Output" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RowVersion" Type="varbinary(max)" />
+          <Property Name="TimeSpan" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RefId" Type="int" Nullable="false" />
+          <Property Name="Category" Type="int" Nullable="false" />
+          <Property Name="RowVersion" Type="varbinary(max)" />
+          <Property Name="TimeSpan" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_dbo_ReportPredefinedFilterRels_dbo_PredefinedFilters_FilterId">
+          <End Role="PredefinedFilters" Type="Self.PredefinedFilters" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ReportPredefinedFilterRels" Type="Self.ReportPredefinedFilterRels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PredefinedFilters">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ReportPredefinedFilterRels">
+              <PropertyRef Name="FilterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ReportPredefinedFilterRels_dbo_Reports_ReportId">
+          <End Role="Reports" Type="Self.Reports" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ReportPredefinedFilterRels" Type="Self.ReportPredefinedFilterRels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reports">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ReportPredefinedFilterRels">
+              <PropertyRef Name="ReportId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ReportToReportRel_dbo_Reports_FromId">
+          <End Role="Reports" Type="Self.Reports" Multiplicity="1" />
+          <End Role="ReportToReportRel" Type="Self.ReportToReportRel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reports">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ReportToReportRel">
+              <PropertyRef Name="FromId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ReportToReportRel_dbo_Reports_ToId">
+          <End Role="Reports" Type="Self.Reports" Multiplicity="1" />
+          <End Role="ReportToReportRel" Type="Self.ReportToReportRel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reports">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ReportToReportRel">
+              <PropertyRef Name="ToId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ReportUserFilterRels_dbo_Reports_ReportId">
+          <End Role="Reports" Type="Self.Reports" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ReportUserFilterRels" Type="Self.ReportUserFilterRels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reports">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ReportUserFilterRels">
+              <PropertyRef Name="ReportId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ReportUserFilterRels_dbo_UserFilters_FilterId">
+          <End Role="UserFilters" Type="Self.UserFilters" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ReportUserFilterRels" Type="Self.ReportUserFilterRels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserFilters">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ReportUserFilterRels">
+              <PropertyRef Name="FilterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Tokens_dbo_ApiUsers_UserId">
+          <End Role="ApiUsers" Type="Self.ApiUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tokens" Type="Self.Tokens" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ApiUsers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Tokens">
+              <PropertyRef Name="ApiUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UserReports_dbo_Reports_ReportId">
+          <End Role="Reports" Type="Self.Reports" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserReports" Type="Self.UserReports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reports">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserReports">
+              <PropertyRef Name="ReportId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UserReports_dbo_Users_UserId">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserReports" Type="Self.UserReports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserReports">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="sp_retrieve_spNames" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="VirtualOfficeModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ApiUsers" EntityType="Self.ApiUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PredefinedFilters" EntityType="Self.PredefinedFilters" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReportPredefinedFilterRels" EntityType="Self.ReportPredefinedFilterRels" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reports" EntityType="Self.Reports" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReportToReportRel" EntityType="Self.ReportToReportRel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReportUserFilterRels" EntityType="Self.ReportUserFilterRels" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sql_HtmlTypeNameMappings" EntityType="Self.Sql_HtmlTypeNameMappings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tokens" EntityType="Self.Tokens" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserFilters" EntityType="Self.UserFilters" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserReports" EntityType="Self.UserReports" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_ReportPredefinedFilterRels_dbo_PredefinedFilters_FilterId" Association="Self.FK_dbo_ReportPredefinedFilterRels_dbo_PredefinedFilters_FilterId">
+            <End Role="PredefinedFilters" EntitySet="PredefinedFilters" />
+            <End Role="ReportPredefinedFilterRels" EntitySet="ReportPredefinedFilterRels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ReportPredefinedFilterRels_dbo_Reports_ReportId" Association="Self.FK_dbo_ReportPredefinedFilterRels_dbo_Reports_ReportId">
+            <End Role="Reports" EntitySet="Reports" />
+            <End Role="ReportPredefinedFilterRels" EntitySet="ReportPredefinedFilterRels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ReportToReportRel_dbo_Reports_FromId" Association="Self.FK_dbo_ReportToReportRel_dbo_Reports_FromId">
+            <End Role="Reports" EntitySet="Reports" />
+            <End Role="ReportToReportRel" EntitySet="ReportToReportRel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ReportToReportRel_dbo_Reports_ToId" Association="Self.FK_dbo_ReportToReportRel_dbo_Reports_ToId">
+            <End Role="Reports" EntitySet="Reports" />
+            <End Role="ReportToReportRel" EntitySet="ReportToReportRel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ReportUserFilterRels_dbo_Reports_ReportId" Association="Self.FK_dbo_ReportUserFilterRels_dbo_Reports_ReportId">
+            <End Role="Reports" EntitySet="Reports" />
+            <End Role="ReportUserFilterRels" EntitySet="ReportUserFilterRels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ReportUserFilterRels_dbo_UserFilters_FilterId" Association="Self.FK_dbo_ReportUserFilterRels_dbo_UserFilters_FilterId">
+            <End Role="UserFilters" EntitySet="UserFilters" />
+            <End Role="ReportUserFilterRels" EntitySet="ReportUserFilterRels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Tokens_dbo_ApiUsers_UserId" Association="Self.FK_dbo_Tokens_dbo_ApiUsers_UserId">
+            <End Role="ApiUsers" EntitySet="ApiUsers" />
+            <End Role="Tokens" EntitySet="Tokens" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UserReports_dbo_Reports_ReportId" Association="Self.FK_dbo_UserReports_dbo_Reports_ReportId">
+            <End Role="Reports" EntitySet="Reports" />
+            <End Role="UserReports" EntitySet="UserReports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UserReports_dbo_Users_UserId" Association="Self.FK_dbo_UserReports_dbo_Users_UserId">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserReports" EntitySet="UserReports" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VirtualOfficeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ApiUser">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ApiKey" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Secret" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RowVersion" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TimeSpan" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Tokens" Relationship="Self.FK_dbo_Tokens_dbo_ApiUsers_UserId" FromRole="ApiUsers" ToRole="Tokens" />
+        </EntityType>
+        <EntityType Name="PredefinedFilter">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TimeSpan" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="FieldName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ReportPredefinedFilterRels" Relationship="Self.FK_dbo_ReportPredefinedFilterRels_dbo_PredefinedFilters_FilterId" FromRole="PredefinedFilters" ToRole="ReportPredefinedFilterRels" />
+        </EntityType>
+        <EntityType Name="ReportPredefinedFilterRel">
+          <Key>
+            <PropertyRef Name="ReportId" />
+            <PropertyRef Name="FilterId" />
+          </Key>
+          <Property Name="ReportId" Type="Int32" Nullable="false" />
+          <Property Name="FilterId" Type="Int32" Nullable="false" />
+          <Property Name="RowVersion" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TimeSpan" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="PredefinedFilter" Relationship="Self.FK_dbo_ReportPredefinedFilterRels_dbo_PredefinedFilters_FilterId" FromRole="ReportPredefinedFilterRels" ToRole="PredefinedFilters" />
+          <NavigationProperty Name="Report" Relationship="Self.FK_dbo_ReportPredefinedFilterRels_dbo_Reports_ReportId" FromRole="ReportPredefinedFilterRels" ToRole="Reports" />
+        </EntityType>
+        <EntityType Name="Report">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Query" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsEnable" Type="Boolean" Nullable="false" />
+          <Property Name="RowVersion" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TimeSpan" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Output" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ReportPredefinedFilterRels" Relationship="Self.FK_dbo_ReportPredefinedFilterRels_dbo_Reports_ReportId" FromRole="Reports" ToRole="ReportPredefinedFilterRels" />
+          <NavigationProperty Name="ReportToReportRels" Relationship="Self.FK_dbo_ReportToReportRel_dbo_Reports_FromId" FromRole="Reports" ToRole="ReportToReportRel" />
+          <NavigationProperty Name="ReportToReportRels1" Relationship="Self.FK_dbo_ReportToReportRel_dbo_Reports_ToId" FromRole="Reports" ToRole="ReportToReportRel" />
+          <NavigationProperty Name="ReportUserFilterRels" Relationship="Self.FK_dbo_ReportUserFilterRels_dbo_Reports_ReportId" FromRole="Reports" ToRole="ReportUserFilterRels" />
+          <NavigationProperty Name="UserReports" Relationship="Self.FK_dbo_UserReports_dbo_Reports_ReportId" FromRole="Reports" ToRole="UserReports" />
+        </EntityType>
+        <EntityType Name="ReportToReportRel">
+          <Key>
+            <PropertyRef Name="FromId" />
+            <PropertyRef Name="ToId" />
+          </Key>
+          <Property Name="FromId" Type="Int32" Nullable="false" />
+          <Property Name="ToId" Type="Int32" Nullable="false" />
+          <Property Name="DependencyProperty" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RowVersion" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TimeSpan" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Report" Relationship="Self.FK_dbo_ReportToReportRel_dbo_Reports_FromId" FromRole="ReportToReportRel" ToRole="Reports" />
+          <NavigationProperty Name="Report1" Relationship="Self.FK_dbo_ReportToReportRel_dbo_Reports_ToId" FromRole="ReportToReportRel" ToRole="Reports" />
+        </EntityType>
+        <EntityType Name="ReportUserFilterRel">
+          <Key>
+            <PropertyRef Name="ReportId" />
+            <PropertyRef Name="FilterId" />
+          </Key>
+          <Property Name="ReportId" Type="Int32" Nullable="false" />
+          <Property Name="FilterId" Type="Int32" Nullable="false" />
+          <Property Name="RowVersion" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TimeSpan" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Report" Relationship="Self.FK_dbo_ReportUserFilterRels_dbo_Reports_ReportId" FromRole="ReportUserFilterRels" ToRole="Reports" />
+          <NavigationProperty Name="UserFilter" Relationship="Self.FK_dbo_ReportUserFilterRels_dbo_UserFilters_FilterId" FromRole="ReportUserFilterRels" ToRole="UserFilters" />
+        </EntityType>
+        <EntityType Name="Sql_HtmlTypeNameMappings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SqlTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HtmlTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Token">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="value" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ApiUserId" Type="Int32" Nullable="false" />
+          <Property Name="ExpirationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="RowVersion" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TimeSpan" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="ApiUser" Relationship="Self.FK_dbo_Tokens_dbo_ApiUsers_UserId" FromRole="Tokens" ToRole="ApiUsers" />
+        </EntityType>
+        <EntityType Name="UserFilter">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TimeSpan" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Label" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FilterOptions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ReportUserFilterRels" Relationship="Self.FK_dbo_ReportUserFilterRels_dbo_UserFilters_FilterId" FromRole="UserFilters" ToRole="ReportUserFilterRels" />
+        </EntityType>
+        <EntityType Name="UserReport">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="ReportId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="ReportId" Type="Int32" Nullable="false" />
+          <Property Name="Output" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RowVersion" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TimeSpan" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Report" Relationship="Self.FK_dbo_UserReports_dbo_Reports_ReportId" FromRole="UserReports" ToRole="Reports" />
+          <NavigationProperty Name="User" Relationship="Self.FK_dbo_UserReports_dbo_Users_UserId" FromRole="UserReports" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RefId" Type="Int32" Nullable="false" />
+          <Property Name="Category" Type="Int32" Nullable="false" />
+          <Property Name="RowVersion" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TimeSpan" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="UserReports" Relationship="Self.FK_dbo_UserReports_dbo_Users_UserId" FromRole="Users" ToRole="UserReports" />
+        </EntityType>
+        <Association Name="FK_dbo_Tokens_dbo_ApiUsers_UserId">
+          <End Role="ApiUsers" Type="Self.ApiUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tokens" Type="Self.Token" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ApiUsers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Tokens">
+              <PropertyRef Name="ApiUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ReportPredefinedFilterRels_dbo_PredefinedFilters_FilterId">
+          <End Role="PredefinedFilters" Type="Self.PredefinedFilter" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ReportPredefinedFilterRels" Type="Self.ReportPredefinedFilterRel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PredefinedFilters">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ReportPredefinedFilterRels">
+              <PropertyRef Name="FilterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ReportPredefinedFilterRels_dbo_Reports_ReportId">
+          <End Role="Reports" Type="Self.Report" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ReportPredefinedFilterRels" Type="Self.ReportPredefinedFilterRel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reports">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ReportPredefinedFilterRels">
+              <PropertyRef Name="ReportId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ReportToReportRel_dbo_Reports_FromId">
+          <End Role="Reports" Type="Self.Report" Multiplicity="1" />
+          <End Role="ReportToReportRel" Type="Self.ReportToReportRel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reports">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ReportToReportRel">
+              <PropertyRef Name="FromId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ReportToReportRel_dbo_Reports_ToId">
+          <End Role="Reports" Type="Self.Report" Multiplicity="1" />
+          <End Role="ReportToReportRel" Type="Self.ReportToReportRel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reports">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ReportToReportRel">
+              <PropertyRef Name="ToId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ReportUserFilterRels_dbo_Reports_ReportId">
+          <End Role="Reports" Type="Self.Report" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ReportUserFilterRels" Type="Self.ReportUserFilterRel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reports">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ReportUserFilterRels">
+              <PropertyRef Name="ReportId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UserReports_dbo_Reports_ReportId">
+          <End Role="Reports" Type="Self.Report" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserReports" Type="Self.UserReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reports">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserReports">
+              <PropertyRef Name="ReportId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ReportUserFilterRels_dbo_UserFilters_FilterId">
+          <End Role="UserFilters" Type="Self.UserFilter" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ReportUserFilterRels" Type="Self.ReportUserFilterRel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserFilters">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ReportUserFilterRels">
+              <PropertyRef Name="FilterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UserReports_dbo_Users_UserId">
+          <End Role="Users" Type="Self.User" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserReports" Type="Self.UserReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserReports">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="VirtualOfficeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="ApiUsers" EntityType="Self.ApiUser" />
+          <EntitySet Name="PredefinedFilters" EntityType="Self.PredefinedFilter" />
+          <EntitySet Name="ReportPredefinedFilterRels" EntityType="Self.ReportPredefinedFilterRel" />
+          <EntitySet Name="Reports" EntityType="Self.Report" />
+          <EntitySet Name="ReportToReportRels" EntityType="Self.ReportToReportRel" />
+          <EntitySet Name="ReportUserFilterRels" EntityType="Self.ReportUserFilterRel" />
+          <EntitySet Name="Sql_HtmlTypeNameMappings" EntityType="Self.Sql_HtmlTypeNameMappings" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Tokens" EntityType="Self.Token" />
+          <EntitySet Name="UserFilters" EntityType="Self.UserFilter" />
+          <EntitySet Name="UserReports" EntityType="Self.UserReport" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK_dbo_Tokens_dbo_ApiUsers_UserId" Association="Self.FK_dbo_Tokens_dbo_ApiUsers_UserId">
+            <End Role="ApiUsers" EntitySet="ApiUsers" />
+            <End Role="Tokens" EntitySet="Tokens" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ReportPredefinedFilterRels_dbo_PredefinedFilters_FilterId" Association="Self.FK_dbo_ReportPredefinedFilterRels_dbo_PredefinedFilters_FilterId">
+            <End Role="PredefinedFilters" EntitySet="PredefinedFilters" />
+            <End Role="ReportPredefinedFilterRels" EntitySet="ReportPredefinedFilterRels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ReportPredefinedFilterRels_dbo_Reports_ReportId" Association="Self.FK_dbo_ReportPredefinedFilterRels_dbo_Reports_ReportId">
+            <End Role="Reports" EntitySet="Reports" />
+            <End Role="ReportPredefinedFilterRels" EntitySet="ReportPredefinedFilterRels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ReportToReportRel_dbo_Reports_FromId" Association="Self.FK_dbo_ReportToReportRel_dbo_Reports_FromId">
+            <End Role="Reports" EntitySet="Reports" />
+            <End Role="ReportToReportRel" EntitySet="ReportToReportRels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ReportToReportRel_dbo_Reports_ToId" Association="Self.FK_dbo_ReportToReportRel_dbo_Reports_ToId">
+            <End Role="Reports" EntitySet="Reports" />
+            <End Role="ReportToReportRel" EntitySet="ReportToReportRels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ReportUserFilterRels_dbo_Reports_ReportId" Association="Self.FK_dbo_ReportUserFilterRels_dbo_Reports_ReportId">
+            <End Role="Reports" EntitySet="Reports" />
+            <End Role="ReportUserFilterRels" EntitySet="ReportUserFilterRels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UserReports_dbo_Reports_ReportId" Association="Self.FK_dbo_UserReports_dbo_Reports_ReportId">
+            <End Role="Reports" EntitySet="Reports" />
+            <End Role="UserReports" EntitySet="UserReports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ReportUserFilterRels_dbo_UserFilters_FilterId" Association="Self.FK_dbo_ReportUserFilterRels_dbo_UserFilters_FilterId">
+            <End Role="UserFilters" EntitySet="UserFilters" />
+            <End Role="ReportUserFilterRels" EntitySet="ReportUserFilterRels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UserReports_dbo_Users_UserId" Association="Self.FK_dbo_UserReports_dbo_Users_UserId">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserReports" EntitySet="UserReports" />
+          </AssociationSet>
+          <FunctionImport Name="sp_retrieve_spNames" ReturnType="Collection(String)" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="VirtualOfficeModelStoreContainer" CdmEntityContainer="VirtualOfficeEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="VirtualOfficeModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ApiUsers">
+            <EntityTypeMapping TypeName="VirtualOfficeModel.ApiUser">
+              <MappingFragment StoreEntitySet="ApiUsers">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ApiKey" ColumnName="ApiKey" />
+                <ScalarProperty Name="Secret" ColumnName="Secret" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PredefinedFilters">
+            <EntityTypeMapping TypeName="VirtualOfficeModel.PredefinedFilter">
+              <MappingFragment StoreEntitySet="PredefinedFilters">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReportPredefinedFilterRels">
+            <EntityTypeMapping TypeName="VirtualOfficeModel.ReportPredefinedFilterRel">
+              <MappingFragment StoreEntitySet="ReportPredefinedFilterRels">
+                <ScalarProperty Name="ReportId" ColumnName="ReportId" />
+                <ScalarProperty Name="FilterId" ColumnName="FilterId" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reports">
+            <EntityTypeMapping TypeName="VirtualOfficeModel.Report">
+              <MappingFragment StoreEntitySet="Reports">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Query" ColumnName="Query" />
+                <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+                <ScalarProperty Name="Output" ColumnName="Output" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReportToReportRels">
+            <EntityTypeMapping TypeName="VirtualOfficeModel.ReportToReportRel">
+              <MappingFragment StoreEntitySet="ReportToReportRel">
+                <ScalarProperty Name="FromId" ColumnName="FromId" />
+                <ScalarProperty Name="ToId" ColumnName="ToId" />
+                <ScalarProperty Name="DependencyProperty" ColumnName="DependencyProperty" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReportUserFilterRels">
+            <EntityTypeMapping TypeName="VirtualOfficeModel.ReportUserFilterRel">
+              <MappingFragment StoreEntitySet="ReportUserFilterRels">
+                <ScalarProperty Name="ReportId" ColumnName="ReportId" />
+                <ScalarProperty Name="FilterId" ColumnName="FilterId" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sql_HtmlTypeNameMappings">
+            <EntityTypeMapping TypeName="VirtualOfficeModel.Sql_HtmlTypeNameMappings">
+              <MappingFragment StoreEntitySet="Sql_HtmlTypeNameMappings">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SqlTypeName" ColumnName="SqlTypeName" />
+                <ScalarProperty Name="HtmlTypeName" ColumnName="HtmlTypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="VirtualOfficeModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tokens">
+            <EntityTypeMapping TypeName="VirtualOfficeModel.Token">
+              <MappingFragment StoreEntitySet="Tokens">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="ApiUserId" ColumnName="ApiUserId" />
+                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserFilters">
+            <EntityTypeMapping TypeName="VirtualOfficeModel.UserFilter">
+              <MappingFragment StoreEntitySet="UserFilters">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Label" ColumnName="Label" />
+                <ScalarProperty Name="FilterOptions" ColumnName="FilterOptions" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserReports">
+            <EntityTypeMapping TypeName="VirtualOfficeModel.UserReport">
+              <MappingFragment StoreEntitySet="UserReports">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ReportId" ColumnName="ReportId" />
+                <ScalarProperty Name="Output" ColumnName="Output" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="VirtualOfficeModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RefId" ColumnName="RefId" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_retrieve_spNames" FunctionName="VirtualOfficeModel.Store.sp_retrieve_spNames" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram DiagramId="580508c1b21a48abb845c8368f47e845" Name="Diagram1">
+        <EntityTypeShape EntityType="VirtualOfficeModel.C__MigrationHistory" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.ApiUser" Width="1.5" PointX="8.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.PredefinedFilter" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.ReportPredefinedFilterRel" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.Report" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.ReportToReportRel" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.ReportUserFilterRel" Width="1.5" PointX="6" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.Sql_HtmlTypeNameMappings" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.sysdiagram" Width="1.5" PointX="5.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.Token" Width="1.5" PointX="11" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.UserFilter" Width="1.5" PointX="3.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.UserReport" Width="1.5" PointX="6" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualOfficeModel.User" Width="1.5" PointX="3.75" PointY="2" IsExpanded="true" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_Tokens_dbo_ApiUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_ReportPredefinedFilterRels_dbo_PredefinedFilters_FilterId" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_ReportPredefinedFilterRels_dbo_Reports_ReportId" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_ReportToReportRel_dbo_Reports_FromId" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_ReportToReportRel_dbo_Reports_ToId" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_ReportUserFilterRels_dbo_Reports_ReportId" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_UserReports_dbo_Reports_ReportId" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_ReportUserFilterRels_dbo_UserFilters_FilterId" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualOfficeModel.FK_dbo_UserReports_dbo_Users_UserId" ManuallyRouted="false" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

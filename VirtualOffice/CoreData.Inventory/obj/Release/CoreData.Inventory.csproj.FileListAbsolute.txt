@@ -1,0 +1,16 @@
+D:\Projects\Virtual Office\VirtualOffice\CoreData.Inventory\bin\Release\CoreData.Inventory.dll.config
+D:\Projects\Virtual Office\VirtualOffice\CoreData.Inventory\bin\Release\CoreData.Inventory.dll
+D:\Projects\Virtual Office\VirtualOffice\CoreData.Inventory\bin\Release\CoreData.Inventory.pdb
+D:\Projects\Virtual Office\VirtualOffice\CoreData.Inventory\bin\Release\Domain.dll
+D:\Projects\Virtual Office\VirtualOffice\CoreData.Inventory\bin\Release\Domain.Inventory.dll
+D:\Projects\Virtual Office\VirtualOffice\CoreData.Inventory\bin\Release\EntityFramework.dll
+D:\Projects\Virtual Office\VirtualOffice\CoreData.Inventory\bin\Release\EntityFramework.SqlServer.dll
+D:\Projects\Virtual Office\VirtualOffice\CoreData.Inventory\bin\Release\Ninject.dll
+D:\Projects\Virtual Office\VirtualOffice\CoreData.Inventory\bin\Release\Domain.Inventory.pdb
+D:\Projects\Virtual Office\VirtualOffice\CoreData.Inventory\bin\Release\Domain.pdb
+D:\Projects\Virtual Office\VirtualOffice\CoreData.Inventory\bin\Release\EntityFramework.xml
+D:\Projects\Virtual Office\VirtualOffice\CoreData.Inventory\bin\Release\EntityFramework.SqlServer.xml
+D:\Projects\Virtual Office\VirtualOffice\CoreData.Inventory\bin\Release\Ninject.xml
+D:\Projects\Virtual Office\VirtualOffice\CoreData.Inventory\obj\Release\CoreData.Inventory.csprojResolveAssemblyReference.cache
+D:\Projects\Virtual Office\VirtualOffice\CoreData.Inventory\obj\Release\CoreData.Inventory.dll
+D:\Projects\Virtual Office\VirtualOffice\CoreData.Inventory\obj\Release\CoreData.Inventory.pdb

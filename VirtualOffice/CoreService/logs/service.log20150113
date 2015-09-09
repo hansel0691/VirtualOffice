@@ -1,0 +1,306 @@
+01/13/2015 09:40:18: DEBUG 9  Generic Logger - Starting operation: ReportConfiguration / TestUpdateUserReportConfiguration
+01/13/2015 09:40:21: DEBUG 9  ReportConfigurationController - ShowReportOnDesktop: True
+01/13/2015 09:40:21: DEBUG 9  IInterceptor - Method GetUserReports called with parameters:
+01/13/2015 09:40:21: DEBUG 9  IInterceptor - userId: <5581>
+01/13/2015 09:40:21: DEBUG 9  IInterceptor - 
+01/13/2015 09:40:21: DEBUG 9  IInterceptor - 
+01/13/2015 09:40:23: DEBUG 9  IInterceptor - Method: GetUserReports returned: 
+01/13/2015 09:40:23: DEBUG 9  IInterceptor - SELECT 
+01/13/2015 09:40:23: DEBUG 9  IInterceptor -     [Extent1].[UserId] AS [UserId], 
+01/13/2015 09:40:23: DEBUG 9  IInterceptor -     [Extent1].[ReportId] AS [ReportId], 
+01/13/2015 09:40:23: DEBUG 9  IInterceptor -     [Extent1].[Output] AS [Output], 
+01/13/2015 09:40:23: DEBUG 9  IInterceptor -     [Extent1].[OutputConfiguration] AS [OutputConfiguration], 
+01/13/2015 09:40:23: DEBUG 9  IInterceptor -     [Extent1].[Name] AS [Name], 
+01/13/2015 09:40:23: DEBUG 9  IInterceptor -     [Extent1].[ExecutionCount] AS [ExecutionCount], 
+01/13/2015 09:40:23: DEBUG 9  IInterceptor -     [Extent1].[RowCount] AS [RowCount], 
+01/13/2015 09:40:23: DEBUG 9  IInterceptor -     [Extent1].[ShouldBeShownAtDesktop] AS [ShouldBeShownAtDesktop], 
+01/13/2015 09:40:23: DEBUG 9  IInterceptor -     [Extent1].[StartDate] AS [StartDate], 
+01/13/2015 09:40:23: DEBUG 9  IInterceptor -     [Extent1].[EndDate] AS [EndDate], 
+01/13/2015 09:40:23: DEBUG 9  IInterceptor -     [Extent1].[RowVersion] AS [RowVersion], 
+01/13/2015 09:40:23: DEBUG 9  IInterceptor -     [Extent1].[TimeSpan] AS [TimeSpan]
+01/13/2015 09:40:23: DEBUG 9  IInterceptor -     FROM  [dbo].[UserReports] AS [Extent1]
+01/13/2015 09:40:23: DEBUG 9  IInterceptor -     INNER JOIN [dbo].[Users] AS [Extent2] ON [Extent1].[UserId] = [Extent2].[Id]
+01/13/2015 09:40:23: DEBUG 9  IInterceptor -     WHERE [Extent2].[RefId] = @p__linq__0
+01/13/2015 09:40:23: DEBUG 9  IInterceptor - 
+01/13/2015 09:40:23: DEBUG 9  VirtualOfficeContext - Opened connection at 1/13/2015 9:40:23 AM -05:00
+
+01/13/2015 09:40:23: DEBUG 9  VirtualOfficeContext - SELECT 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[ReportId] AS [ReportId], 
+    [Extent1].[Output] AS [Output], 
+    [Extent1].[OutputConfiguration] AS [OutputConfiguration], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[ExecutionCount] AS [ExecutionCount], 
+    [Extent1].[RowCount] AS [RowCount], 
+    [Extent1].[ShouldBeShownAtDesktop] AS [ShouldBeShownAtDesktop], 
+    [Extent1].[StartDate] AS [StartDate], 
+    [Extent1].[EndDate] AS [EndDate], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM  [dbo].[UserReports] AS [Extent1]
+    INNER JOIN [dbo].[Users] AS [Extent2] ON [Extent1].[UserId] = [Extent2].[Id]
+    WHERE [Extent2].[RefId] = @p__linq__0
+01/13/2015 09:40:23: DEBUG 9  VirtualOfficeContext - 
+
+01/13/2015 09:40:23: DEBUG 9  VirtualOfficeContext - -- p__linq__0: '5581' (Type = Int32, IsNullable = false)
+
+01/13/2015 09:40:23: DEBUG 9  VirtualOfficeContext - -- Executing at 1/13/2015 9:40:23 AM -05:00
+
+01/13/2015 09:40:23: DEBUG 9  VirtualOfficeContext - -- Completed in 37 ms with result: SqlDataReader
+
+01/13/2015 09:40:23: DEBUG 9  VirtualOfficeContext - 
+
+01/13/2015 09:40:23: DEBUG 9  VirtualOfficeContext - Closed connection at 1/13/2015 9:40:23 AM -05:00
+
+01/13/2015 09:40:23: DEBUG 9  Generic Logger - Ending operation: ReportConfiguration / TestUpdateUserReportConfiguration
+01/13/2015 09:40:23: INFO 9  Generic Logger - =========================================================================================================
+01/13/2015 09:40:23: INFO 9  Generic Logger - =========================================================================================================
+01/13/2015 09:40:23: INFO 9  Generic Logger - =========================================================================================================
+01/13/2015 09:40:42: DEBUG 8  Generic Logger - Starting operation: ReportConfiguration / TestUpdateUserReportConfiguration
+01/13/2015 09:40:49: DEBUG 8  ReportConfigurationController - ShowReportOnDesktop: True
+01/13/2015 09:40:51: DEBUG 8  IInterceptor - Method GetUserReports called with parameters:
+01/13/2015 09:40:51: DEBUG 8  IInterceptor - userId: <5581>
+01/13/2015 09:40:51: DEBUG 8  IInterceptor - 
+01/13/2015 09:40:51: DEBUG 8  IInterceptor - 
+01/13/2015 09:40:51: DEBUG 8  IInterceptor - Method: GetUserReports returned: 
+01/13/2015 09:40:51: DEBUG 8  IInterceptor - SELECT 
+01/13/2015 09:40:51: DEBUG 8  IInterceptor -     [Extent1].[UserId] AS [UserId], 
+01/13/2015 09:40:51: DEBUG 8  IInterceptor -     [Extent1].[ReportId] AS [ReportId], 
+01/13/2015 09:40:51: DEBUG 8  IInterceptor -     [Extent1].[Output] AS [Output], 
+01/13/2015 09:40:51: DEBUG 8  IInterceptor -     [Extent1].[OutputConfiguration] AS [OutputConfiguration], 
+01/13/2015 09:40:51: DEBUG 8  IInterceptor -     [Extent1].[Name] AS [Name], 
+01/13/2015 09:40:51: DEBUG 8  IInterceptor -     [Extent1].[ExecutionCount] AS [ExecutionCount], 
+01/13/2015 09:40:51: DEBUG 8  IInterceptor -     [Extent1].[RowCount] AS [RowCount], 
+01/13/2015 09:40:51: DEBUG 8  IInterceptor -     [Extent1].[ShouldBeShownAtDesktop] AS [ShouldBeShownAtDesktop], 
+01/13/2015 09:40:51: DEBUG 8  IInterceptor -     [Extent1].[StartDate] AS [StartDate], 
+01/13/2015 09:40:51: DEBUG 8  IInterceptor -     [Extent1].[EndDate] AS [EndDate], 
+01/13/2015 09:40:51: DEBUG 8  IInterceptor -     [Extent1].[RowVersion] AS [RowVersion], 
+01/13/2015 09:40:51: DEBUG 8  IInterceptor -     [Extent1].[TimeSpan] AS [TimeSpan]
+01/13/2015 09:40:51: DEBUG 8  IInterceptor -     FROM  [dbo].[UserReports] AS [Extent1]
+01/13/2015 09:40:51: DEBUG 8  IInterceptor -     INNER JOIN [dbo].[Users] AS [Extent2] ON [Extent1].[UserId] = [Extent2].[Id]
+01/13/2015 09:40:51: DEBUG 8  IInterceptor -     WHERE [Extent2].[RefId] = @p__linq__0
+01/13/2015 09:40:51: DEBUG 8  IInterceptor - 
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - Opened connection at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - SELECT 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[ReportId] AS [ReportId], 
+    [Extent1].[Output] AS [Output], 
+    [Extent1].[OutputConfiguration] AS [OutputConfiguration], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[ExecutionCount] AS [ExecutionCount], 
+    [Extent1].[RowCount] AS [RowCount], 
+    [Extent1].[ShouldBeShownAtDesktop] AS [ShouldBeShownAtDesktop], 
+    [Extent1].[StartDate] AS [StartDate], 
+    [Extent1].[EndDate] AS [EndDate], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM  [dbo].[UserReports] AS [Extent1]
+    INNER JOIN [dbo].[Users] AS [Extent2] ON [Extent1].[UserId] = [Extent2].[Id]
+    WHERE [Extent2].[RefId] = @p__linq__0
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - 
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- p__linq__0: '5581' (Type = Int32, IsNullable = false)
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- Executing at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- Completed in 14 ms with result: SqlDataReader
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - 
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - Closed connection at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - Opened connection at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[ColunmName] AS [ColunmName], 
+    [Extent1].[Deleted] AS [Deleted], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan], 
+    [Extent1].[UserReport_UserId] AS [UserReport_UserId], 
+    [Extent1].[UserReport_ReportId] AS [UserReport_ReportId]
+    FROM [dbo].[UserReportFilter] AS [Extent1]
+    WHERE ([Extent1].[UserReport_UserId] = @EntityKeyValue1) AND ([Extent1].[UserReport_ReportId] = @EntityKeyValue2)
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - 
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- EntityKeyValue1: '19' (Type = Int32, IsNullable = false)
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- EntityKeyValue2: '40' (Type = Int32, IsNullable = false)
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- Executing at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- Completed in 1 ms with result: SqlDataReader
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - 
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - Closed connection at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - Opened connection at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Query] AS [Query], 
+    [Extent1].[Output] AS [Output], 
+    [Extent1].[DefaultOutput] AS [DefaultOutput], 
+    [Extent1].[ParamsDefaultConfiguration] AS [ParamsDefaultConfiguration], 
+    [Extent1].[UserFilters] AS [UserFilters], 
+    [Extent1].[IndexColumnName] AS [IndexColumnName], 
+    [Extent1].[IsEnable] AS [IsEnable], 
+    [Extent1].[IsStandAlone] AS [IsStandAlone], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Reports] AS [Extent1]
+    WHERE [Extent1].[Id] = @EntityKeyValue1
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - 
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- EntityKeyValue1: '40' (Type = Int32, IsNullable = false)
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- Executing at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- Completed in 1 ms with result: SqlDataReader
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - 
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - Closed connection at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - Opened connection at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[ColumnName] AS [ColumnName], 
+    [Extent1].[Label] AS [Label], 
+    [Extent1].[ReportId] AS [ReportId], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[ReportLabels] AS [Extent1]
+    WHERE [Extent1].[ReportId] = @EntityKeyValue1
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - 
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- EntityKeyValue1: '40' (Type = Int32, IsNullable = false)
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- Executing at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- Completed in 1 ms with result: SqlDataReader
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - 
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - Closed connection at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - Opened connection at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - SELECT 
+    [Extent1].[FromId] AS [FromId], 
+    [Extent1].[ToId] AS [ToId], 
+    [Extent1].[DependencyProperty] AS [DependencyProperty], 
+    [Extent1].[IndexParamName] AS [IndexParamName], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[ReportToReportRel] AS [Extent1]
+    WHERE [Extent1].[ToId] = @EntityKeyValue1
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - 
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- EntityKeyValue1: '40' (Type = Int32, IsNullable = false)
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- Executing at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- Completed in 1 ms with result: SqlDataReader
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - 
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - Closed connection at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - Opened connection at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - SELECT 
+    [Extent1].[ReportId] AS [ReportId], 
+    [Extent1].[FilterId] AS [FilterId], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[ReportPredefinedFilterRels] AS [Extent1]
+    WHERE [Extent1].[ReportId] = @EntityKeyValue1
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - 
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- EntityKeyValue1: '40' (Type = Int32, IsNullable = false)
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- Executing at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- Completed in 1 ms with result: SqlDataReader
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - 
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - Closed connection at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - Opened connection at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - SELECT 
+    [Extent1].[FromId] AS [FromId], 
+    [Extent1].[ToId] AS [ToId], 
+    [Extent1].[DependencyProperty] AS [DependencyProperty], 
+    [Extent1].[IndexParamName] AS [IndexParamName], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[ReportToReportRel] AS [Extent1]
+    WHERE [Extent1].[FromId] = @EntityKeyValue1
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - 
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- EntityKeyValue1: '40' (Type = Int32, IsNullable = false)
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- Executing at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- Completed in 1 ms with result: SqlDataReader
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - 
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - Closed connection at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - Opened connection at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE [Extent1].[Id] = @EntityKeyValue1
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - 
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- EntityKeyValue1: '19' (Type = Int32, IsNullable = false)
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- Executing at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- Completed in 3 ms with result: SqlDataReader
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - 
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - Closed connection at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - Opened connection at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Hash] AS [Hash], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[HashKeys] AS [Extent1]
+    WHERE [Extent1].[UserId] = @EntityKeyValue1
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - 
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- EntityKeyValue1: '19' (Type = Int32, IsNullable = false)
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- Executing at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - -- Completed in 2 ms with result: SqlDataReader
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - 
+
+01/13/2015 09:40:51: DEBUG 8  VirtualOfficeContext - Closed connection at 1/13/2015 9:40:51 AM -05:00
+
+01/13/2015 09:41:34: DEBUG 8  Generic Logger - Ending operation: ReportConfiguration / TestUpdateUserReportConfiguration
+01/13/2015 09:41:34: INFO 8  Generic Logger - =========================================================================================================
+01/13/2015 09:41:34: INFO 8  Generic Logger - =========================================================================================================
+01/13/2015 09:41:34: INFO 8  Generic Logger - =========================================================================================================

@@ -1,0 +1,86 @@
+﻿@using Kendo.Mvc.UI.Fluent
+@using VirtualOficeTool.Models
+@model bool
+@{
+    const string levelClientTemplate = "<select name='Levels' style='text-align: left; width: 50px' class='valid'>" +
+                                       "<option value='0' selected='selected'>0</option>" +
+                                       "<option value='1'>1</option>" +
+                                       "<option value='2'>2</option>" +
+                                       "<option value='3'>3</option>" +
+                                       "</select>";
+}
+
+<h4>Column Names</h4>
+@(Html.Kendo().Grid<ReportColumn>()
+        .Name("ReportColumnNames")
+    .HtmlAttributes(new { @style = "text-align: left;" })
+     .Resizable(config => config.Columns(true))
+     .ToolBar(tool => tool.Template("<input id='selectColumnsCheck' type=\"checkbox\" onchange='selectColumns()'>Select Columns</input>" +
+                                            "</br>" + "<input id='selectFiltersCheck' type=\"checkbox\" onchange='selectFilters()'>Select Filters</input>"))
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.Name).Width(100).Title("Column Name");
+        columns.Bound(p => p.Label).ClientTemplate("<input type='text' style=\"width: 100px\" name=\"ColumnLabels\" value=#=Label#></input>").Filterable(false).Width(120);
+        columns.Bound(p => p.Level).ClientTemplate("<input type='text' style=\"width: 50px\" name=\"Levels\" value=#=Level#></input>").Filterable(false).Width(60);
+        columns.Bound(p => p.Selected).ClientTemplate("<input type='checkbox' name=\"OutPut\" value=#=Name# #= Selected ? checked='checked' : '' # ></input>").Filterable(false).Width(50).Title("Select");
+        columns.Bound(p => p.Filterable).ClientTemplate("<input type='checkbox' name=\"UserFilters\" value=#=Name# #= Filterable ? checked='checked' : '' # ></input>").Filterable(false).Width(50).Title("Filterable");
+        columns.Bound(p => p.IsIndex).ClientTemplate("<input type='radio' style='text-align: left; width: 50px' name=\"IndexColumnName\" value=#=Name# #= IsIndex ? checked='checked' : '' # ></input>").Filterable(false).Width(50).Title("Index");
+    })
+        .AutoBind(false)
+        .Pageable()
+        .Sortable()
+         .Filterable()
+        .Scrollable(s => s.Height("auto"))
+        .Events(events => events.DataBound("CheckColumnNamesEmptyness"))
+        .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(100)
+        .Model(model => model.Id(p => p))
+                    .Read(read => read.Action("GetColumnNames", "Reports").Data("getColumnNames"))
+      ).AutoBind(Model)) 
+
+<script>
+    function CheckColumnNamesEmptyness(data) {
+        if (data.sender._data.length != 0) {
+            $("#outPut").fadeIn();
+            $("#resetOutPutSelection").fadeIn();
+            $("#parametersSelection").fadeOut();
+        } else {
+            var message = 'SP Not Found or errors on execution.Please, try again later!';
+            $("#OutPutError").text(message);
+            $("#OutPutSummary").fadeIn();
+            setTimeout(function () {
+                $("#OutPutSummary").fadeOut();
+            }, 4000);
+
+            $("#outPutSelection").fadeIn();
+        }
+    };
+
+    function selectColumns() {
+        var selectFiltersCheck = document.getElementById("selectColumnsCheck").checked;
+
+        changeColumnsSelectionStatus('OutPut', selectFiltersCheck);
+    }
+
+    function selectFilters() {
+
+        var selectFiltersCheck = document.getElementById("selectFiltersCheck").checked;
+
+        changeColumnsSelectionStatus('UserFilters', selectFiltersCheck);
+    }
+
+    function changeColumnsSelectionStatus(checkName, value) {
+
+        var checkBoxes = $('input:checkbox');
+
+        for (var i = 0; i < checkBoxes.length; i ++) {
+            if (checkBoxes[i].name === checkName) {
+                checkBoxes[i].checked = value;
+            }
+        }
+
+    }
+
+
+</script>

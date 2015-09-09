@@ -1,0 +1,138 @@
+07/07/2014 14:05:45: DEBUG 14  Generic Logger - Starting operation: ReportConfiguration / GetUserReports
+07/07/2014 14:05:48: DEBUG 14  IInterceptor - Method GetUserReports called with parameters:
+07/07/2014 14:05:48: DEBUG 14  IInterceptor - userId: <9>
+07/07/2014 14:05:48: DEBUG 14  IInterceptor - 
+07/07/2014 14:05:48: DEBUG 14  IInterceptor - 
+07/07/2014 14:05:50: DEBUG 14  IInterceptor - Method: GetUserReports returned: 
+07/07/2014 14:05:50: DEBUG 14  IInterceptor - SELECT 
+07/07/2014 14:05:50: DEBUG 14  IInterceptor -     [Extent1].[UserId] AS [UserId], 
+07/07/2014 14:05:50: DEBUG 14  IInterceptor -     [Extent1].[ReportId] AS [ReportId], 
+07/07/2014 14:05:50: DEBUG 14  IInterceptor -     [Extent1].[Output] AS [Output], 
+07/07/2014 14:05:50: DEBUG 14  IInterceptor -     [Extent1].[Name] AS [Name], 
+07/07/2014 14:05:50: DEBUG 14  IInterceptor -     [Extent1].[RowVersion] AS [RowVersion], 
+07/07/2014 14:05:50: DEBUG 14  IInterceptor -     [Extent1].[TimeSpan] AS [TimeSpan]
+07/07/2014 14:05:50: DEBUG 14  IInterceptor -     FROM [dbo].[UserReports] AS [Extent1]
+07/07/2014 14:05:50: DEBUG 14  IInterceptor -     WHERE [Extent1].[UserId] = @p__linq__0
+07/07/2014 14:05:50: DEBUG 14  IInterceptor - 
+07/07/2014 14:05:55: DEBUG 14  Generic Logger - Ending operation: ReportConfiguration / GetUserReports
+07/07/2014 14:05:55: INFO 14  Generic Logger - =========================================================================================================
+07/07/2014 14:05:55: INFO 14  Generic Logger - =========================================================================================================
+07/07/2014 14:05:55: INFO 14  Generic Logger - =========================================================================================================
+07/07/2014 14:06:34: DEBUG 7  Generic Logger - Starting operation: ReportConfiguration / GetUserReports
+07/07/2014 14:06:41: DEBUG 7  IInterceptor - Method GetUserReports called with parameters:
+07/07/2014 14:06:41: DEBUG 7  IInterceptor - userId: <9>
+07/07/2014 14:06:41: DEBUG 7  IInterceptor - 
+07/07/2014 14:06:41: DEBUG 7  IInterceptor - 
+07/07/2014 14:07:43: DEBUG 7  IInterceptor - Method: GetUserReports returned: 
+07/07/2014 14:07:43: DEBUG 7  IInterceptor - SELECT 
+07/07/2014 14:07:43: DEBUG 7  IInterceptor -     [Extent1].[UserId] AS [UserId], 
+07/07/2014 14:07:43: DEBUG 7  IInterceptor -     [Extent1].[ReportId] AS [ReportId], 
+07/07/2014 14:07:43: DEBUG 7  IInterceptor -     [Extent1].[Output] AS [Output], 
+07/07/2014 14:07:43: DEBUG 7  IInterceptor -     [Extent1].[Name] AS [Name], 
+07/07/2014 14:07:43: DEBUG 7  IInterceptor -     [Extent1].[RowVersion] AS [RowVersion], 
+07/07/2014 14:07:43: DEBUG 7  IInterceptor -     [Extent1].[TimeSpan] AS [TimeSpan]
+07/07/2014 14:07:43: DEBUG 7  IInterceptor -     FROM [dbo].[UserReports] AS [Extent1]
+07/07/2014 14:07:43: DEBUG 7  IInterceptor -     WHERE [Extent1].[UserId] = @p__linq__0
+07/07/2014 14:07:43: DEBUG 7  IInterceptor - 
+07/07/2014 14:08:03: DEBUG 7  Generic Logger - Ending operation: ReportConfiguration / GetUserReports
+07/07/2014 14:08:03: INFO 7  Generic Logger - =========================================================================================================
+07/07/2014 14:08:03: INFO 7  Generic Logger - =========================================================================================================
+07/07/2014 14:08:03: INFO 7  Generic Logger - =========================================================================================================
+07/07/2014 14:16:49: DEBUG 7  Generic Logger - Starting operation: ReportConfiguration / GetUserReports
+07/07/2014 14:16:51: DEBUG 7  IInterceptor - Method GetUserReports called with parameters:
+07/07/2014 14:16:51: DEBUG 7  IInterceptor - userId: <9>
+07/07/2014 14:16:51: DEBUG 7  IInterceptor - 
+07/07/2014 14:16:51: DEBUG 7  IInterceptor - 
+07/07/2014 14:20:29: DEBUG 11  Generic Logger - Starting operation: ReportConfiguration / GetUserReports
+07/07/2014 14:20:31: DEBUG 11  IInterceptor - Method GetUserReports called with parameters:
+07/07/2014 14:20:31: DEBUG 11  IInterceptor - userId: <9>
+07/07/2014 14:20:31: DEBUG 11  IInterceptor - 
+07/07/2014 14:20:31: DEBUG 11  IInterceptor - 
+07/07/2014 14:21:09: DEBUG 11  IInterceptor - Method: GetUserReports returned: 
+07/07/2014 14:21:09: DEBUG 11  IInterceptor - SELECT 
+07/07/2014 14:21:09: DEBUG 11  IInterceptor -     [Extent1].[UserId] AS [UserId], 
+07/07/2014 14:21:09: DEBUG 11  IInterceptor -     [Extent1].[ReportId] AS [ReportId], 
+07/07/2014 14:21:09: DEBUG 11  IInterceptor -     [Extent1].[Output] AS [Output], 
+07/07/2014 14:21:09: DEBUG 11  IInterceptor -     [Extent1].[Name] AS [Name], 
+07/07/2014 14:21:09: DEBUG 11  IInterceptor -     [Extent1].[RowVersion] AS [RowVersion], 
+07/07/2014 14:21:09: DEBUG 11  IInterceptor -     [Extent1].[TimeSpan] AS [TimeSpan]
+07/07/2014 14:21:09: DEBUG 11  IInterceptor -     FROM [dbo].[UserReports] AS [Extent1]
+07/07/2014 14:21:09: DEBUG 11  IInterceptor -     WHERE [Extent1].[UserId] = @p__linq__0
+07/07/2014 14:21:09: DEBUG 11  IInterceptor - 
+07/07/2014 14:21:18: DEBUG 11  Generic Logger - Ending operation: ReportConfiguration / GetUserReports
+07/07/2014 14:21:18: INFO 11  Generic Logger - =========================================================================================================
+07/07/2014 14:21:18: INFO 11  Generic Logger - =========================================================================================================
+07/07/2014 14:21:18: INFO 11  Generic Logger - =========================================================================================================
+07/07/2014 14:21:24: DEBUG 11  IInterceptor - Method GetReportParameters called with parameters:
+07/07/2014 14:21:24: DEBUG 11  IInterceptor - reportName: <My 3rd Report>
+07/07/2014 14:21:24: DEBUG 11  IInterceptor - 
+07/07/2014 14:21:24: DEBUG 11  IInterceptor - 
+07/07/2014 14:21:24: DEBUG 11  IInterceptor - Method: GetReportParameters returned: 
+07/07/2014 14:21:24: DEBUG 11  IInterceptor - Domain.Models.Parameter[]
+07/07/2014 14:21:24: DEBUG 11  IInterceptor - 
+07/07/2014 14:22:43: DEBUG 8  Generic Logger - Starting operation: ReportConfiguration / GetUserReports
+07/07/2014 14:22:44: DEBUG 8  IInterceptor - Method ToString called with parameters:
+07/07/2014 14:22:44: DEBUG 8  IInterceptor - 
+07/07/2014 14:22:44: DEBUG 8  IInterceptor - 
+07/07/2014 14:22:44: DEBUG 8  IInterceptor - Method: ToString returned: 
+07/07/2014 14:22:44: DEBUG 8  IInterceptor - Services.Concrete.ReportConfigurator
+07/07/2014 14:22:44: DEBUG 8  IInterceptor - 
+07/07/2014 14:22:44: DEBUG 8  IInterceptor - Method ToString called with parameters:
+07/07/2014 14:22:44: DEBUG 8  IInterceptor - 
+07/07/2014 14:22:44: DEBUG 8  IInterceptor - 
+07/07/2014 14:22:44: DEBUG 8  IInterceptor - Method: ToString returned: 
+07/07/2014 14:22:44: DEBUG 8  IInterceptor - Services.Concrete.ReportConfigurator
+07/07/2014 14:22:44: DEBUG 8  IInterceptor - 
+07/07/2014 14:22:46: DEBUG 8  IInterceptor - Method GetUserReports called with parameters:
+07/07/2014 14:22:46: DEBUG 8  IInterceptor - userId: <9>
+07/07/2014 14:22:46: DEBUG 8  IInterceptor - 
+07/07/2014 14:22:46: DEBUG 8  IInterceptor - 
+07/07/2014 14:22:48: DEBUG 8  IInterceptor - Method: GetUserReports returned: 
+07/07/2014 14:22:48: DEBUG 8  IInterceptor - SELECT 
+07/07/2014 14:22:48: DEBUG 8  IInterceptor -     [Extent1].[UserId] AS [UserId], 
+07/07/2014 14:22:48: DEBUG 8  IInterceptor -     [Extent1].[ReportId] AS [ReportId], 
+07/07/2014 14:22:48: DEBUG 8  IInterceptor -     [Extent1].[Output] AS [Output], 
+07/07/2014 14:22:48: DEBUG 8  IInterceptor -     [Extent1].[Name] AS [Name], 
+07/07/2014 14:22:48: DEBUG 8  IInterceptor -     [Extent1].[RowVersion] AS [RowVersion], 
+07/07/2014 14:22:48: DEBUG 8  IInterceptor -     [Extent1].[TimeSpan] AS [TimeSpan]
+07/07/2014 14:22:48: DEBUG 8  IInterceptor -     FROM [dbo].[UserReports] AS [Extent1]
+07/07/2014 14:22:48: DEBUG 8  IInterceptor -     WHERE [Extent1].[UserId] = @p__linq__0
+07/07/2014 14:22:48: DEBUG 8  IInterceptor - 
+07/07/2014 14:22:48: DEBUG 8  Generic Logger - Ending operation: ReportConfiguration / GetUserReports
+07/07/2014 14:22:48: INFO 8  Generic Logger - =========================================================================================================
+07/07/2014 14:22:48: INFO 8  Generic Logger - =========================================================================================================
+07/07/2014 14:22:48: INFO 8  Generic Logger - =========================================================================================================
+07/07/2014 14:22:52: DEBUG 8  IInterceptor - Method GetReportParameters called with parameters:
+07/07/2014 14:22:52: DEBUG 8  IInterceptor - reportName: <My 3rd Report>
+07/07/2014 14:22:52: DEBUG 8  IInterceptor - 
+07/07/2014 14:22:52: DEBUG 8  IInterceptor - 
+07/07/2014 14:22:52: DEBUG 8  IInterceptor - Method: GetReportParameters returned: 
+07/07/2014 14:22:52: DEBUG 8  IInterceptor - Domain.Models.Parameter[]
+07/07/2014 14:22:52: DEBUG 8  IInterceptor - 
+07/07/2014 14:42:31: DEBUG 13  Generic Logger - Starting operation: ReportConfiguration / GetUserReports
+07/07/2014 14:42:36: DEBUG 13  IInterceptor - Method GetUserReports called with parameters:
+07/07/2014 14:42:36: DEBUG 13  IInterceptor - userId: <9>
+07/07/2014 14:42:36: DEBUG 13  IInterceptor - 
+07/07/2014 14:42:36: DEBUG 13  IInterceptor - 
+07/07/2014 14:43:12: DEBUG 13  IInterceptor - Method: GetUserReports returned: 
+07/07/2014 14:43:12: DEBUG 13  IInterceptor - SELECT 
+07/07/2014 14:43:12: DEBUG 13  IInterceptor -     [Extent1].[UserId] AS [UserId], 
+07/07/2014 14:43:12: DEBUG 13  IInterceptor -     [Extent1].[ReportId] AS [ReportId], 
+07/07/2014 14:43:12: DEBUG 13  IInterceptor -     [Extent1].[Output] AS [Output], 
+07/07/2014 14:43:12: DEBUG 13  IInterceptor -     [Extent1].[Name] AS [Name], 
+07/07/2014 14:43:12: DEBUG 13  IInterceptor -     [Extent1].[RowVersion] AS [RowVersion], 
+07/07/2014 14:43:12: DEBUG 13  IInterceptor -     [Extent1].[TimeSpan] AS [TimeSpan]
+07/07/2014 14:43:12: DEBUG 13  IInterceptor -     FROM [dbo].[UserReports] AS [Extent1]
+07/07/2014 14:43:12: DEBUG 13  IInterceptor -     WHERE [Extent1].[UserId] = @p__linq__0
+07/07/2014 14:43:12: DEBUG 13  IInterceptor - 
+07/07/2014 14:43:19: DEBUG 13  Generic Logger - Ending operation: ReportConfiguration / GetUserReports
+07/07/2014 14:43:19: INFO 13  Generic Logger - =========================================================================================================
+07/07/2014 14:43:19: INFO 13  Generic Logger - =========================================================================================================
+07/07/2014 14:43:19: INFO 13  Generic Logger - =========================================================================================================
+07/07/2014 14:43:20: DEBUG 13  IInterceptor - Method GetReportParameters called with parameters:
+07/07/2014 14:43:20: DEBUG 13  IInterceptor - reportName: <My 3rd Report>
+07/07/2014 14:43:20: DEBUG 13  IInterceptor - 
+07/07/2014 14:43:20: DEBUG 13  IInterceptor - 
+07/07/2014 14:43:20: DEBUG 13  IInterceptor - Method: GetReportParameters returned: 
+07/07/2014 14:43:20: DEBUG 13  IInterceptor - Domain.Models.Parameter[]
+07/07/2014 14:43:20: DEBUG 13  IInterceptor - 

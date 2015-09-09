@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="Virtual Office | Home">
+
+        <title>@ViewBag.Title - Virtual Office</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+
+        <!-- jQuery -->
+        <script src="@Url.Content("~/Scripts/modernizr-2.6.2.js")"></script>
+        <script src="@Url.Content("~/Scripts/jquery-1.10.2.js")"></script>
+        <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+        <script src="@Url.Content("~/Scripts/bootstrap-datepicker.js")"></script>
+        <script src="@Url.Content("~/Scripts/global.js")"></script>
+
+        <!-- CSS-->
+        <link href="@Url.Content("~/Content/styles.css")" rel="stylesheet" type="text/css" />
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <![if lt IE 9]>
+            <script src="@Url.Content("~/Scripts/html5shiv.js")"></script>
+            <script src="@Url.Content("~/Scripts/respond.min.js")"></script>
+        <![endif]>
+
+        <!-- IE10 Mobile for Windows 8 or Windows Phone 8 -->
+        <script>
+            if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+                var msViewportStyle = document.createElement("style");
+                msViewportStyle.appendChild(
+    	            document.createTextNode(
+    	                "ms-viewport{width:auto!important}"
+    	            )
+    	        );
+                document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+            }
+        </script>
+  
+	    <!--This CSS entry was added by the Telerik VS Extensions for compatibility reasons-->
+	    <link href="@Url.Content("~/Content/kendo.compatibility.css")" rel="stylesheet" type="text/css" />
+	    <link href="@Url.Content("~/Content/kendo/2014.1.415/kendo.common.min.css")" rel="stylesheet" type="text/css" />
+	    <link href="@Url.Content("~/Content/kendo/2014.1.415/kendo.dataviz.min.css")" rel="stylesheet" type="text/css" />
+	    <link href="@Url.Content("~/Content/kendo/2014.1.415/kendo.default.min.css")" rel="stylesheet" type="text/css" />
+	    <link href="@Url.Content("~/Content/kendo/2014.1.415/kendo.dataviz.default.min.css")" rel="stylesheet" type="text/css" />
+	    <script src="@Url.Content("~/Scripts/kendo/2014.1.415/jquery.min.js")"></script>
+	    <script src="@Url.Content("~/Scripts/kendo/2014.1.415/kendo.all.min.js")"></script>
+	    <script src="@Url.Content("~/Scripts/kendo/2014.1.415/kendo.aspnetmvc.min.js")"></script>
+	    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+
+</head>
+    <body>
+        <header class="" id="headerArea">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4 col-md-4" id="logoArea">
+                        <a class="logo" href="home.html" title="App logo">
+                            <img src="../Images/logo-virtualoffice.svg" class="" style="width: 40px"> <strong class="h2"> Virtual Office</strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <ul id="scene">
+            <li class="layer" data-depth="0.00"></li>
+            <li class="layer blue" data-depth="0.20"></li>
+            <li class="layer white" data-depth="0.40"></li>
+        </ul>
+        <style type="text/css">
+            .layer {
+                width: 3096px;
+                min-height: 137px;
+                margin: 0 auto 0 -300px;
+                background-repeat: repeat-x;
+                background-position: center top;
+            }
+
+            .blue {
+                background-image: url('../Images/clouds-bg-blue.png');
+                /*background-color: #3f8ac9;*/
+            }
+
+            .white {
+                background-image: url('../Images/clouds-bg-white.png');
+                /*background-color: #fff;*/
+            }
+            /*.white .bottom-cloud{
+                    height: 20px;
+                    background-color: #fff;
+                    display: block;
+                    vertical-align: baseline;
+                }*/
+        </style>
+
+        <div class="container landing" id="main">
+            <div class="row">
+                @RenderBody()
+            </div>
+        </div>
+
+        <div class="footer-area" id="footer">
+            <footer class="container">
+                <div class="row">
+                    <div class="col-xs-8">&copy; Blackstone Virtual Office 2014</div>
+                    <div class="col-xs-4 text-right">
+                        <a href="#" target="_blank"><img src="../Images/facebook.png"></a>
+                        <a href="#" target="_blank"><img src="../Images/twitter-2.png"></a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <script src="@Url.Content("~/Scripts/jquery.validate.js")"></script>
+        <script src="@Url.Content("~/Scripts/parallax.min.js")"></script>
+
+        <script type="text/javascript">
+            var scene = document.getElementById('scene');
+            var parallax = new Parallax(scene);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+﻿@using Microsoft.Ajax.Utilities
+@model VirtualOficeTool.Models.ReportViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Reports</h2>
+
+<a href="@Url.Action("CreateReport","Reports")" class="btn-warning">Add New Report</a>
+
+@Html.ValidationSummary(true,"",new{@class="alert-danger"})
+
+@Html.Partial("~/Views/PartialViews/ReportsGrid.cshtml")
+

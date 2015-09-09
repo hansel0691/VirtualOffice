@@ -1,0 +1,194 @@
+﻿@using ClassLibrary2.Domain.Others
+@using VirtualOffice.Web.Infrastructure
+@{
+    Layout = "~/Views/Shared/_NewUserLayout.cshtml";
+
+    IEnumerable<Document> documents = ViewBag.Documents;
+}
+
+@Html.Partial("ToolsNavigation")
+
+<div class="container">
+
+
+    <div class="container select" id="main">
+
+        <!-- <div class="alert alert-warning alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <span class="msg"></span>
+        </div> -->
+
+        <div class="page-header">
+            <h4>My Profile / Forms and Applications </h4>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-3 col-md-2 col-sm-push-9 col-md-push-10" id="sidebar">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <a data-toggle="collapse" data-target="#filters" class="expand">Categories <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                    </div>
+                    <div class="panel-body collapse in" id="filters">
+                        <div class="checkbox">
+                            <label>
+                                <input id="showAllCheck" type="checkbox" value="" onclick="ShowAll()" checked>
+                                VIEW ALL
+                            </label>
+                        </div>
+
+                        <div class="checkbox">
+                            <label>
+                                <input id="agreementsCheck" type="checkbox" value="" onclick="ShowAgreements()"  checked >
+                                Agreements
+                            </label>
+                        </div>
+
+                        <div class="checkbox">
+                            <label>
+                                <input id="agentFormsCheck" type="checkbox" value="" onclick="ShowAgentForms()" checked>
+                                Agent Forms
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input id="distributorFormsCheck" type="checkbox" value="" onclick="ShowDistributorsForms()" checked>
+                                Distributor Forms
+                            </label>
+                        </div>
+                    </div>
+                </div> <!-- .panel -->
+            </div>
+
+            <div class="col-xs-12 col-sm-8 col-md-10 col-sm-pull-4 col-md-pull-2 ">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="hidden-xs col-sm-9 col-md-9">
+                                <h4 class="">Forms and Applications</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-subheader">Applications and Agreements</div>
+                    <div id="agreementsDiv" class="panel-body">
+                        <table class="table table-condensed table-hover">
+                            <tbody>
+                                @foreach (var doc in documents.Where(doc=> String.Equals(doc.subcategory.Trim(),Utils.AppsAgreements , StringComparison.InvariantCultureIgnoreCase)))
+                                {
+                                 <tr>
+                                    <td class="name"><a class="list-icon" href="#">@doc.file_title</a></td>
+                                    <td class="name"><a class="btn btn-danger btn-sm" href='@doc.file_name' target="_blank">View</a></td>
+                                </tr>
+                                }
+                              
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="panel-subheader">Agents Forms</div>
+                    <div id="agentFormsDiv" class="panel-body">
+                        <table class="table table-condensed table-hover">
+                            <tbody>
+                                @foreach (var doc in documents.Where(doc => String.Equals(doc.subcategory.Trim(), Utils.AgentForms, StringComparison.InvariantCultureIgnoreCase)))
+                                {
+                                    <tr>
+                                        <td class="name"><a class="list-icon" href="" title="">@doc.file_title</a></td>
+                                        <td class="name"><a class="btn btn-danger btn-sm" href='@doc.file_name' title="">View</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="panel-subheader">Distributor Forms</div>
+                    <div id="distributorFormsDiv" class="panel-body">
+                        <table class="table table-condensed table-hover">
+                            <tbody>
+                                @foreach (var doc in documents.Where(doc => String.Equals(doc.subcategory.Trim(), Utils.DistributorForms, StringComparison.InvariantCultureIgnoreCase)))
+                                {
+                                    <tr>
+                                        <td class="name"><a class="list-icon" href="" title="">@doc.file_title</a></td>
+                                        <td class="name"><a class="btn btn-danger btn-sm" href='@doc.file_name' title="">View</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- .container.select#main -->
+</div>
+
+<script>
+    
+    function ShowAll() {
+
+        if ($("#showAllCheck").is(':checked')) {
+            $("#agreementsDiv").fadeIn();
+            $("#agentFormsDiv").fadeIn();
+            $("#distributorFormsDiv").fadeIn();
+
+            $('#agreementsCheck').prop('checked', true);
+            $('#agentFormsCheck').prop('checked', true);
+            $('#distributorFormsCheck').prop('checked', true);
+
+
+        }
+    }
+
+    function HideAll() {
+
+        $("#agreementsDiv").fadeOut();
+        $("#agentFormsDiv").fadeOut();
+        $("#distributorFormsDiv").fadeOut();
+    }
+
+    function ShowGroup(id) {
+
+        $(id).fadeIn();
+    }
+
+    function HideGroup(id) {
+
+        $(id).fadeOut();
+        $('#showAllCheck').prop('checked', false);
+    }
+
+    function ShowAgreements() {
+
+        if ($("#agreementsCheck").is(':checked')) {
+            ShowGroup("#agreementsDiv");
+        }
+        else {
+            HideGroup("#agreementsDiv");
+        }
+    }
+
+    function ShowAgentForms() {
+        if ($("#agentFormsCheck").is(':checked')) {
+            ShowGroup("#agentFormsDiv");
+        }
+        else {
+            HideGroup("#agentFormsDiv");
+        }
+    }
+
+    function ShowDistributorsForms() {
+        if ($("#distributorFormsCheck").is(':checked')) {
+            ShowGroup("#distributorFormsDiv");
+        }
+        else {
+            HideGroup("#distributorFormsDiv");
+        }
+    }
+
+    function printpage1(url) {
+        var child = window.open(url, "", "height=1, width=1");  //Open the child in a tiny window.
+        window.focus();  //Hide the child as soon as it is opened.
+        child.print();  //Print the child.
+        child.close();  //Immediately close the child.
+    }
+
+</script>

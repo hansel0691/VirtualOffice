@@ -1,0 +1,77 @@
+﻿
+
+@{
+    Layout = "~/Views/Shared/_NewUserLayout.cshtml";
+}
+@Html.Partial("ToolsNavigation")
+
+<div class="container">
+
+
+    <div class="container select" id="main">
+
+        <!-- <div class="alert alert-warning alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <span class="msg"></span>
+        </div> -->
+
+        <div class="page-header">
+            <h4>Tools / Contact List </h4>
+            <a class="btn text-primary pull-right" href="http://mail.blackstoneonline.com" target="_blank"><span class="fa fa-envelope"></span> Check my email</a>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-3 col-md-2 col-sm-push-9 col-md-push-10" id="sidebar">
+
+            </div>
+
+            <div class="col-xs-12 col-sm-8 col-md-10 col-sm-pull-4 col-md-pull-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Service Teams</h4>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td class="item"><a class="list-icon mime-pdf" href="http://virtualoffice.blackstoneonline.com/documents/generic%20contact%20list.pdf" title="" target="_blank"><i class="fa fa-file-pdf-o"></i> Contact List</a></td>
+                                </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Usefull Links</h4>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td class="item"><a class="list-icon" href="http://www.fedex.com/us/" title="" target="_blank"><span class="fa fa-link"></span>FedEx</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="item"><a class="list-icon" href="http://www.mapquest.com/" title="" target="_blank"><span class="fa fa-link"></span>MapQuest</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="item"><a class="list-icon" href="http://www.sunbiz.org/" title="" target="_blank"><span class="fa fa-link"></span>Sunbiz - Florida Division of Corporations</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="item"><a class="list-icon" href="http://www.touch-n-buy.com/" title="" target="_blank"><span class="fa fa-link"></span>Touch-n-Buy.com</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!-- .container.select#main -->
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('#contactMenuItem').addClass('active');
+    });
+</script>

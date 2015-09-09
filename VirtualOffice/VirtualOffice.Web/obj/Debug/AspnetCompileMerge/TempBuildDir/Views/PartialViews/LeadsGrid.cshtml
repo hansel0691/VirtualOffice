@@ -1,0 +1,68 @@
+﻿@using VirtualOffice.Web.Models
+@model int
+           
+<input type="hidden" id="leadType" value="@Model">
+
+
+    @(Html.Kendo().Grid<LeadViewModel>()
+                 .Name("leads")
+                 .HtmlAttributes(new { @style = "text-align: left;" })
+                 .Resizable(config => config.Columns(true))
+              .Columns(columns =>
+                 {
+                     columns.Bound(p => p.CreatedBy);
+                     columns.Bound(p => p.LeadSource).Width(100);
+                     columns.Bound(p => p.AssignedTo).Width(130);
+                     columns.Bound(p => p.ContactPerson).Width(130);
+                     columns.Bound(p => p.BusinessAddress).Width(130);
+                     columns.Bound(p => p.BusinessType).Width(130);
+                     columns.Bound(p => p.AreaOfInterest).Width(130);
+                     columns.Bound(p => p.Entered).Width(80).Format("{0:MM/dd/yyyy hh:mm tt}");
+                     columns.Bound(p => p.Contacted).Width(80).Format("{0:MM/dd/yyyy hh:mm tt}");
+                     columns.Bound(p => p.ClosedOn).Width(80).Format("{0:MM/dd/yyyy hh:mm tt}");
+                     columns.Bound(p => p.Status).Width(130);
+                     columns.Bound(p => p.Comments).Width(400);
+                     columns.Bound(p => p.AgentId).Width(50);
+                     columns.Bound(p => p.Company).Width(130);
+                     columns.Bound(p => p.City).Width(120);
+                     columns.Bound(p => p.State).Width(50);
+                     columns.Bound(p => p.Zip).Width(50);
+                     columns.Bound(p => p.Phone).Width(80);
+                     columns.Bound(p => p.NextVisit).Width(80).Format("{0:MM/dd/yyyy hh:mm tt}");
+
+
+                 })
+                             .AutoBind(false)
+                             .Pageable()
+                             .Selectable()
+                             .Scrollable(s => s.Height("auto"))
+                             .DataSource(dataSource => dataSource
+                                 .Ajax()
+                                 .PageSize(7)
+                                 .Read(read => read.Action("GetLeads", "MyProfile").Data("onLeadsGridRead"))
+                             )
+    )
+
+
+<script>
+
+    function onLeadsGridRead() {
+
+        var leadtType = $("#leadType").val();
+
+        if (leadtType == 0) {
+            return {
+                leadType: 0,
+                startDate: $("#openStartDate").val(),
+                endDate: $("#openEndDate").val()
+            };
+        } else {
+            return {
+                leadType: 1,
+                startDate: $("#historicStartDate").val(),
+                endDate: $("#historicEndDate").val()
+            };
+        }
+    }
+
+</script>

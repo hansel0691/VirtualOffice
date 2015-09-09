@@ -1,0 +1,106 @@
+﻿@{
+    Layout = "~/Views/Shared/_NewUserLayout.cshtml";
+}
+
+@Html.Partial("ToolsNavigation")
+
+<div class="container">
+    
+
+    <div class="container select" id="main">
+
+        <!-- <div class="alert alert-warning alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <span class="msg"></span>
+        </div> -->
+
+        <div class="page-header">
+            <h4>Tools / Company Policies</h4>
+            <a class="btn text-primary pull-right" href="mailto:blackstone@blackstoneonline.com"><span class="fa fa-envelope"></span> Check my email</a>
+        </div>
+
+        <div class="row">
+            @*<div class="col-xs-12 col-sm-3 col-md-2 col-sm-push-9 col-md-push-10" id="sidebar">
+                 <button type="submit" class="btn btn-secundary btn-block"><span class="glyphicon glyphicon-envelope"></span> Check my email</button> 
+            </div>*@
+
+            <div class="col-xs-12 col-sm-12 col-md-12">@*col-sm-pull-4 col-md-pull-2*@
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Blackstone POS Policies and Procedures</h4>
+                    </div>
+                    <div class="panel-body">
+
+                        <p><b>NEW MERCHANT APPLICATION PROCEDURES</b></p>
+                        <ol>
+                            <li> Merchant Applications, Product Profile Forms, Processor and Leasing Agreements required for the approval of a new merchant must be completed in their entirety and signed in all appropriate sections of the documents. No red ink, pencils marks, errors, corrections or whiteout is permitted anywhere on the forms.</li>
+
+                            <li> Blackstone will only accept and process original and properly completed applications. Applications received by fax will not be processed.</li>
+
+                            <li> A sample Void Check or Bank Letter and a copy of the applicant’s driver’s license must be returned with the original application forms.</li>
+
+                            <li> Applications will be completed and processed within approximately 3 to 4 working days. Blackstone reserves the right to decline any application.</li>
+                            
+                            <li> All leases must be accompanied by First and Last payment check. The First and Last can be collected upon the installation of the equipment. In the event that the First and Last payment is not collected with the lease agreement or upon installation, the First and Last payment amount will be deducted from the commission.</li>
+                            
+                            <li> Blackstone may contact the Merchant or Distributor to acquire additional information needed to process the application.</li>
+
+                        </ol>
+                        <br>
+                        <p><b>INITIAL INSTALLATION AND VERIFICATION</b></p>
+                        <ol>
+                            <li> Distributor is responsible for the delivery of any initial marketing items, ("Blackstone Kit"), required for new installations as indicated by Blackstone.</li>
+                            
+                            <li>Distributors will be notified by Blackstone of the estimated delivery date of the POS terminal to each retail site.</li>
+                            
+                            <li>Distributors will be responsible for assisting the retailer in the installation and training of the Blackstone POS terminal within no more than 5 working days after receipt of the terminal by the Merchant. In the event a Merchant is Tele-Trained by our National Merchant Services Team, there will be a $25 charge against commissions.</li>
+                            
+                            <li>Distributor is responsible for performing a test Calling Card Pin transaction as well as a Credit Card Test Transaction after installation has taken place.</li>
+                            
+                            <li>Distributor is responsible for calling the Leasing Company at the time of installation so that the Merchant may verify with the Leasing Company the terms of the lease as well as confirm receipt and functionality of the terminal.</li>
+                            
+                        </ol>
+                        <br>
+                        <p><b>MONTHLY VISITS TO RETAIL SITES</b></p>
+
+                            Distributor must visit each retail location at least once per month to check that the following is in order:<br>
+                        <ol>
+                            <li>Distributor must deliver and display current marketing materials related to POS and/or its existing products and services in a visible location in the store. This includes the most recent posters, decals, counter mats, and other marketing items supplied to the distributor by Blackstone.</li>
+                            
+                            <li>Distributor must ensure that there is an adequate supply of blank paper stock at the retail location at all times.</li>
+                            
+                            <li>Distributor must check each terminal&#146;s product mix and ensure that it is programmed with a product mix that best suits the retailer&#146;s market and its customers. If a new product mix is desired, the Distributor will assist the retailer in selecting the best possible products for the location and will complete the necessary applications in order to make the changes effective. Product Profile change forms must then be sent to Blackstone by the distributor for approval and reconfiguration in our system.</li>
+                            
+                            <li>Distributor must use the LOGON feature in the terminal to indicate with their unique code and password that the Distributor serviced the retail location as per the items listed in this document.</li>
+
+                        </ol>
+                          
+                        <br>
+                        
+                        <p><b>SOFTWARE UPDATES AND PROGRAM LOAD ASSISTANCE</b></p>
+                        <ol>
+                            <li>Blackstone may notify its distributors when updates in the terminal&#146;s software application have taken place which require reprogramming of the terminals.</li>
+                            <li>Should Blackstone request Program Load Assistance, distributors are responsible for visiting the indicated retail sites to perform a new Program Load or Initialization as instructed by Blackstone within 15 days of the notification.</li>
+                            <li>If a terminal is to lose its program load as a result of power failure or other unforeseen circumstances, the distributor agrees to assist Blackstone in performing a new program load at the retail location.</li>
+                        </ol>
+                        <br>
+                        
+                        <p><b>PUBLISHED DISCOUNT RATES</b></p>
+                        <ol>
+                            <li>Distributor shall receive the official discount rate posted on the Blackstone Website for the sale of all Blackstone authorized prepaid products and services.</li>
+                            <li> Blackstone reserves the right to change the official discount rates at its sole discretion at anytime.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- .container.select#main -->
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('#policiesMenuItem').addClass('active');
+    });
+</script>
+

@@ -1,0 +1,53 @@
+﻿@using VirtualOffice.Web.Models
+@{
+    Layout = "~/Views/Shared/_NewUserLayout.cshtml";
+}
+@Html.Partial("MyProfileNavigation")
+
+<div class="container">
+
+
+    <div class="container select" id="main">
+
+        <div class="page-header">
+            <h4>My Profile / Historic Incidents </h4>
+            <a class="btn text-primary pull-right" href="mailto:blackstone@blackstoneonline.com"><span class="fa fa-envelope"></span> Check my email</a>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-3 col-md-2 col-sm-push-9 col-md-push-10" id="sidebar">
+                <a class="btn btn-primary btn-block" href="@Url.Action("Incidents")">Open Incidents</a>
+                <a class="btn btn-secundary btn-block" href="#">Historics Incidents</a>
+                <div class="form-group">
+                    <div class="form-group">
+                        @Html.Kendo().DatePicker().Name("startDate").Value(DateTime.Today.AddMonths(-1))
+                    </div>
+                    <div class="form-group">
+                        @Html.Kendo().DatePicker().Name("endDate").Value(DateTime.Today)
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary btn-block" onclick="FilterLeadsByDate()">Go</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-8 col-md-10 col-sm-pull-4 col-md-pull-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4> Leads</h4>
+                    </div>
+                    @Html.Partial("~/Views/PartialViews/IncidentsGrid.cshtml", (int)LeadType.Closed)
+                </div>
+
+            </div>
+        </div> <!-- .row -->
+    </div> <!-- .container.select#main -->
+</div>
+<script>
+
+
+    function FilterLeadsByDate() {
+        $("#incidents").data("kendoGrid").dataSource.read();
+    }
+
+</script>

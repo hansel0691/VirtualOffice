@@ -1,0 +1,63 @@
+﻿@using System.Data
+@using VirtualOffice.Web.Infrastructure
+@model VirtualOffice.Web.Models.UserReportViewModel
+@{
+    Layout = null;
+
+}
+<style type="text/css">
+     body {
+         font-family: Tahoma;
+     }
+
+     h2 {
+         color: red;
+     }
+
+     table {
+         border: 1px solid black;
+         border-spacing: 0;
+     }
+
+     td {
+         color: green;
+         font-size: .8em;
+         padding: 5px;
+     }
+
+     .heading {
+         background: #ccc;
+     }
+ </style>
+
+<table class="table" border="1">
+    <thead>
+        <tr>
+            @*Show all the properties but the Id*@
+            @foreach (var propertyInfo in Model.Columns.Where(col => col.Selected))
+            {
+                <th>
+                    @propertyInfo.Label
+                </th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        
+        @foreach (var reportRow in Model.Data)
+        {
+            var row = reportRow as IDictionary<string, object>;
+            
+              <tr>
+
+                @*Displaying all the visible properties of a promotion*@
+                @foreach (var column in Model.Columns.Where(col=> col.Selected))
+                {
+                    <td>
+                        @row[column.Name]
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

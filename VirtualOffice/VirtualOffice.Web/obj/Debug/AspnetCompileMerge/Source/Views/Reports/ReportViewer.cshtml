@@ -1,0 +1,453 @@
+﻿@using VirtualOffice.Web.Controllers
+@using VirtualOffice.Web.Infrastructure
+@using VirtualOffice.Web.Models
+@model VirtualOffice.Web.Models.UserReportViewModel
+
+<input type="hidden" value="@Model.ReportId" name="ReportId" id="ReportId" />
+
+@{
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+
+    var subReports = Model.SubReport;
+
+    var user = Session[Utils.UserKey] as UserModel;
+
+    var startDate = Model.StartDate.IsNull() || Model.StartDate == new DateTime() ? Utils.DefaultStartDate : Model.StartDate;
+
+    var endDate = Model.EndDate.IsNull() || Model.EndDate == new DateTime() ? Utils.DefaultEndDate : Model.EndDate;
+}
+<div class="container select" id="main">
+    <h3 class="text-secundary">@Model.Name</h3>
+    <hr />
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-2 col-sm-push-8 col-md-push-10" id="sidebar">
+            <div class="panel-group" id="accordion">
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <a data-toggle="collapse" data-target="#collapse1" class="expand">Element on Report <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+    </div>
+    <div class="panel-body panel-collapse collapse" id="collapse1">
+        <label for="last-visit" class="control-label">Columns to show:</label>
+        <div class="panel-body">
+            <div class="form-group">
+                @foreach (var column in Model.Columns.Where(col=> col.Level <= Utils.GetUserLevel(user.UserCategory)))
+                {
+                    <div class="checkbox">
+                        <label id=@string.Format("label^{0}", column.Name)>
+
+                            @Html.CheckBox("columnName^" + column.Name.Replace(' ', '_'), column.Selected, new { @value = column.Name, onchange = "UpdateDataProjection()" })@column.Label
+
+                        </label>
+                    </div>
+                }
+                <div class="checkbox">
+                    <label class="text-secundary">
+                        @Html.CheckBox("saveOutputAsDefault")Save as default
+                    </label>
+                </div>
+            </div>
+            <div class="">
+                <button type="button" class="btn btn-secundary" onclick="applyUserfilters()">Go!</button>
+            </div>
+        </div>
+    </div>
+</div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a data-toggle="collapse" data-target="#collapse2" class="expand">Filter by Attributes <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                        </div>
+                        <div class="panel-body panel-collapse" id="collapse2">
+
+                            @if (Model.IsFilterableByDate)
+                            {
+                                <label>Start Date: </label>
+                                @(Html.Kendo().DatePicker().Name("startDate").Value(startDate))
+                                <br>
+
+                                <label>End Date: </label>
+                                @(Html.Kendo().DatePicker().Name("endDate").Value(endDate))
+                            }
+
+                            @foreach (var column in Model.Columns.Where(col => col.Selected && col.Filterable))
+                            {
+                                var filterName = "userFilter^" + column.Name.Replace(' ', '_');
+
+                                <div class="form-group">
+                                    <label class="control-label">@column.Label</label>
+                                    @(Html.Kendo().MultiSelect()
+                                      .Name(filterName)
+                                      .Value(Model.UserFiltersConfig.Where(filterConfig => filterConfig.Key.Replace(' ', '_') == column.Name).Select(f => f.Value))
+                                      .BindTo(Model.FiltersData[column.Name]))
+                                </div>
+                            }
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label class="text-secundary">
+                                        @Html.CheckBox("saveFiltersAsDefault")Save as default
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="">
+                                <button type="button" class="btn btn-secundary" onclick="applyUserfilters()">Go!</button>
+                            </div>
+                        </div>
+                    </div>
+
+                @*@if (Model.IsStandAlone)
+                {
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a data-toggle="collapse" data-target="#collapse3" class="expand">Configuration<span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                        </div>
+                        <div class="panel-body panel-collapse collapse" id="collapse3">
+                            <div class="checkbox">
+                                <label class="text-secundary">
+                                    @Html.CheckBoxFor(model => model.ShouldBeShownAtDesktop)Save On Desktop
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <button id="updateConfigButton" type="button" class="btn btn-secundary" onclick="UpdateReportConfiguration()">Go!</button>
+                                <div id="myAccountSuccessMessageConfirmation" class="collapse alert alert-success">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                    <label id="myAccountSuccessMessageText"></label>
+                                </div>
+                                <div id="myAccountFailedMessageConfirmation" class="collapse  alert alert-danger">
+                                    <label id="myAccountFailedMessageText"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }*@
+
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-10 col-sm-pull-4 col-md-pull-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="hidden-xs col-sm-9 col-md-9">
+                            <h4 class="">Your Results</h4>
+                        </div>
+                        <div class="col-xs-4 col-sm-3 col-md-3 text-right">
+                            <a class="btn btn-print btn-sm" id="PrintReportsBtn" onclick="PrintReport()"><span class="glyphicon glyphicon-print"></span> Print</a>
+                            <a id="exportButton" class="btn btn-print btn-sm" onclick="ExportReport()"><span class="glyphicon glyphicon-export"></span> Export</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body-kendo">
+                    @(Html.Kendo().Grid<dynamic>()
+                          .Name("Reports")
+                                          .HtmlAttributes(new { @style = "text-align: left;" }).EnableCustomBinding(true)
+                          .Columns(col =>
+                          {
+                              foreach (var column in Model.Columns)
+                              {
+                                  var columnName = column.Name.Replace('.', '_').Replace(' ', '_');
+
+                                  var columnResult = col.Bound(columnName).Hidden(!column.Selected).Width(column.Width).Title(column.Label);
+
+                                  if (column.IsNumeric)
+                                  {
+                                      columnResult = columnResult.ClientFooterTemplate("#=sum#").Format("{0:c}");
+                                  }
+
+                                  var subReportColumn = subReports.FirstOrDefault(sub => sub.DependencyProperty == columnName);
+                                  
+                                  if (!subReportColumn.IsNull())
+                                  {
+                                      var dataTemplate = Utils.GetClientTemplate(Url.Action("ExecuteSubReport", "Reports"), Model, subReportColumn, column.IsNumeric);
+
+                                      columnResult.ClientTemplate(dataTemplate);
+                                  }
+                              }
+                          })
+                          .DataSource(ds => ds.Ajax()
+                          .Aggregates(aggregates =>
+                                     {
+                                         foreach (var col in Model.Columns.Where(col => col.IsNumeric))
+                                         {
+                                             aggregates.Add(col.Name, typeof(double)).Sum();
+                                         }
+                                     })
+                              .Read(r => r.Action("ReadReport", "Reports").Data("getReportParams"))
+                              .PageSize(20)
+                              )
+                          .Events(ev => ev.ColumnReorder("saveNewOutPutOrder").ColumnResize("saveColumnWidth"))
+                          .Resizable(config => config.Columns(true))
+                          .Sortable()
+                          .Selectable()
+                          .Reorderable(reorder => reorder.Columns(true))
+                          .Scrollable(scr => scr.Height(600))
+                          .Pageable(page => page.PageSizes(true))
+                          .AutoBind(true)
+                    )
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div> <!-- .container.select#main -->
+
+<script>
+
+    $(document).ready(function () {
+        applyUserfilters();
+        $("#PrintReportsBtn").printPage();
+    });
+
+    function ExportReport() {
+        var startDate = $("#startDate").val();
+        var endDate = $("#endDate").val();
+        var reportId = $("#ReportId").val();
+
+        var exportUrl = "/Reports/ExportReportsToExcel?reportId=" + reportId + "&startDate=" + startDate + "&endDate=" + endDate;
+
+        $("#exportButton").attr('href', exportUrl);
+    }
+
+    function PrintReport() {
+        var startDate = $("#startDate").val();
+        var endDate = $("#endDate").val();
+        var reportId = $("#ReportId").val();
+
+        var exportUrl = "/Reports/PrintReport?reportId=" + reportId + "&startDate=" + startDate + "&endDate=" + endDate;
+
+        $("#PrintReportsBtn").attr('href', exportUrl);
+    }
+
+    function getReportParams() {
+
+        var reportId = $("#ReportId").val();
+
+        var filters = JSON.stringify(getUserFilters());
+
+        var outPut = JSON.stringify(getOutPut());
+
+        var saveFiltersConfig = document.getElementById("saveFiltersAsDefault").checked;
+
+        var saveOutPutConfig = document.getElementById("saveOutputAsDefault").checked;
+
+
+
+        return {
+            reportId: reportId,
+            filters: filters,
+            outPut: outPut,
+            saveFilters: saveFiltersConfig,
+            saveOutPut: saveOutPutConfig,
+            startDate: $("#startDate").val(),
+            endDate: $("#endDate").val()
+        };
+    }
+
+    function UpdateReportConfiguration() {
+
+        var url = '@Url.Action("UpdateReportConfiguration", "Reports")';
+
+        var saveOndesktop = document.getElementById("ShouldBeShownAtDesktop").checked;
+
+        $.post(url, { reportId: $("#ReportId").val(), saveOnDesktop: saveOndesktop }, myAccountShowResultMessage);
+    }
+
+    function UpdateDataProjection() {
+
+        var checkboxes = $("input:checkbox");
+
+        for (var i = 0; i < checkboxes.length; i++) {
+            var checkboxName = checkboxes[i].name;
+            if (checkboxName.indexOf('columnName') !== -1) {
+
+                var tokens = checkboxName.split('^');
+
+                var columnName = tokens[1];
+
+                if (checkboxes[i].checked) {
+
+                    ShowColumnFromKendo(columnName);
+                } else {
+                    HideColumnFromKendo(columnName);
+                }
+            }
+        }
+
+    }
+
+
+    function HideColumnFromKendo(columnName) {
+
+        var grid = $("#Reports").data("kendoGrid");
+
+        grid.hideColumn(columnName);
+
+    }
+
+
+    function ShowColumnFromKendo(columnName) {
+
+        var grid = $("#Reports").data("kendoGrid");
+
+        grid.showColumn(columnName);
+    }
+
+    function getUserFilters() {
+
+        var filters = [];
+
+        var inputs = document.getElementsByTagName('select');
+
+        for (var i = 0; i < inputs.length; i++) {
+
+            var userFilter = inputs[i];
+
+            if (userFilter.name.indexOf('userFilter') !== -1) {
+
+                var tokens = userFilter.name.split('^');
+
+                var filterColumnName = tokens[1];
+
+                var values = [];
+
+                for (var j = 0; j < userFilter.options.length; j++)
+                    if (userFilter.options[j].selected)
+                        values.push(userFilter.options[j].value);
+
+                var filter = {
+                    Options: filterColumnName,
+                    Value: values
+                };
+
+                filters.push(filter);
+            }
+        }
+        return filters;
+    }
+
+    function applyUserfilters() {
+        $("#Reports").data("kendoGrid").dataSource.read();
+    }
+
+    function getOutPut() {
+        var checkboxes = $("input:checkbox");
+        var outPut = [];
+        for (var i = 0; i < checkboxes.length; i++) {
+            var checkboxName = checkboxes[i].name;
+            if (checkboxName.indexOf('columnName') !== -1) {
+
+                var tokens = checkboxName.split('^');
+
+                var columnName = tokens[1];
+
+                if (checkboxes[i].checked) {
+
+                    outPut.push(columnName);
+                }
+
+            }
+        }
+
+        return outPut;
+    }
+
+    function saveNewOutPutOrder(e)
+    {
+
+        var newIndex = e.newIndex;
+
+        var oldIndex = e.oldIndex;
+
+        var columnName = e.column.field;
+
+        var updateOrderUrl = '@Url.Action("UpdateColumnOrder", "Reports")';
+
+        $.post(updateOrderUrl, { reportId: $("#ReportId").val(), columnName: columnName, oldIndex: oldIndex, newIndex: newIndex });
+    }
+
+    function saveColumnWidth(e) {
+        var columnName = e.column.field;
+
+        var newWidth = e.newWidth;
+
+        var updateWidthUrl = '@Url.Action("UpdateColumnWidth", "Reports")';
+
+        $.post(updateWidthUrl, { reportId: $("#ReportId").val(), columnName: columnName, width: newWidth });
+
+    }
+
+
+
+    function changeCheckBoxedNames_Values(column, otherColumn) {
+
+        var checkboxes = $("input:checkbox");
+
+        for (var i = 0; i < checkboxes.length; i++) {
+            var checkboxName = checkboxes[i].name;
+            if (checkboxName.indexOf('columnName') !== -1) {
+
+                var tokens = checkboxName.split('^');
+
+                var columnName = tokens[1];
+
+                if (columnName === column) {
+                    checkboxes[i].name = 'columnName^' + otherColumn;
+                    checkboxes[i].id = 'columnName^' + otherColumn;
+                    checkboxes[i].value = otherColumn;
+                    continue;
+                }
+                if (columnName === otherColumn) {
+                    checkboxes[i].name = 'columnName^' + column;
+                    checkboxes[i].id = 'columnName^' + column;
+                    checkboxes[i].value = column;
+                }
+
+            }
+        }
+    }
+
+    function changeLabelsText(column, otherColumn) {
+
+        var labels = $("label");
+
+        for (var i = 0; i < labels.length; i++) {
+            var labelId = labels[i].id;
+            if (labelId.indexOf('label') !== -1) {
+
+                var tokens = labelId.split('^');
+
+                var columnName = tokens[1];
+
+                if (columnName === column) {
+                    labelId[i].id = 'label^' + otherColumn;
+                    labelId[i].InnerHTML = otherColumn;
+                    continue;
+                }
+                if (columnName === otherColumn) {
+                    labelId[i].id = 'label^' + column;
+                    labelId[i].InnerHTML = column;
+                }
+
+            }
+        }
+    }
+
+    function myAccountShowResultMessage(result) {
+        var response = result.Result;
+        var message = result.Message;
+
+        if (response == "Success") {
+            $("#myAccountSuccessMessageText").text(message);
+            $("#myAccountSuccessMessageConfirmation").fadeIn();
+            setTimeout(timeOut("#myAccountSuccessMessageConfirmation", 3000));
+        } else {
+            $("#myAccountFailedMessageText").text(message);
+            $("#myAccountFailedMessageConfirmation").fadeIn();
+            setTimeout(timeOut("#myAccountFailedMessageConfirmation", 3000));
+        }
+    }
+
+    function timeOut(id, time) {
+        $(id).fadeOut(time);
+    }
+
+</script>

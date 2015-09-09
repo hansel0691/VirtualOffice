@@ -1,0 +1,63 @@
+﻿@using System.Data
+@using VirtualOffice.Web.Infrastructure
+@model VirtualOffice.Web.Models.NewReports.VirtualOfficeReportModel
+@{
+    Layout = null;
+    
+    var visibleColumns = Model.ColumnsConfig.Where(col => !col.Value.Hidden).Select(c => c.Key);
+}
+<style type="text/css">
+    body {
+        font-family: Tahoma;
+    }
+
+    h2 {
+        color: red;
+    }
+
+    table {
+        border: 1px solid black;
+        border-spacing: 0;
+    }
+
+    td {
+        color: green;
+        font-size: .8em;
+        padding: 5px;
+    }
+
+    .heading {
+        background: #ccc;
+    }
+</style>
+
+<table class="table" border="1">
+    <thead>
+        <tr>
+            @foreach (var columnName in visibleColumns)
+            {
+                <th>
+                    @columnName
+                </th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var reportRows in Model.Data)
+        {
+            <tr>
+                @foreach (var row in reportRows.Keys)
+                {
+                    if (!visibleColumns.Contains(row))
+                    {
+                        continue;
+                    }
+                    <td>
+                        @reportRows[row]
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
