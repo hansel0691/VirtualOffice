@@ -67,10 +67,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="panel-body-kendo">
+                <div class="panel-body-kendo" id="peaceOfShit">
                     @(Html.Kendo().Grid<MerchantCreditLimitResultViewModel>()
                           .Name("Reports")
-                                  .HtmlAttributes(new { @style = "text-align: left; height: 450px" }).EnableCustomBinding(true)
+                          .HtmlAttributes(new { @style = "text-align: left; height: 450px;" }).EnableCustomBinding(true)
                           .Columns(col =>
                           {
                               foreach (var column in columnsCofig.Keys)
@@ -89,18 +89,28 @@
 
                                   else if (columnConfig.IsNumeric)
                                       columnResult.ClientFooterTemplate("$#=sum#").Format("{0:c}");
-                              }
 
+                              }
                           })
+                          .ToolBar(toolbar => toolbar.Save())
+                          .Editable(editable => editable.Mode(GridEditMode.InCell)) // Use in-cell editing mode
                           .DataSource(ds => ds.Ajax()
                               .Aggregates(aggregates =>
                               {
-                                  foreach (var col in columnsCofig.Where(col=> col.Value.IsNumeric))
+                                  foreach (var col in columnsCofig.Where(col => col.Value.IsNumeric))
                                   {
                                       aggregates.Add(col.Key, typeof(double)).Sum();
                                   }
                               })
+                              .Model(model =>
+                              {
+                                  //change to do generic
+                                  model.Id(c => c.merchant_pk);
+                                  model.Field(c => c.merchant_pk).Editable(false);
+                                  model.Field(c => c.mer_name).Editable(false);
+                              })
                               .Read(r => r.Action("RunMerchantCreditLimits", "PrepaidReports").Data("getReportParams"))
+                              .Update(r => r.Action("UpdateCreditLimit", "PrepaidReports"))
                               .PageSize(20)
                           )
                           .Events(ev => ev.ColumnReorder("saveNewOutPutOrder").ColumnResize("saveColumnWidth"))
@@ -111,7 +121,7 @@
                           .Scrollable(scr => scr.Height(600))
                           .Pageable(page => page.PageSizes(true))
                           .AutoBind(true)
-                          )
+                    )
                 </div>
 
 

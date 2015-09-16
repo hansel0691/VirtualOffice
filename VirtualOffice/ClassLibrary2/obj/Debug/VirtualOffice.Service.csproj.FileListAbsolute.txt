@@ -12,3 +12,17 @@ D:\Projects\Virtual Office\VirtualOffice\ClassLibrary2\bin\Debug\Newtonsoft.Json
 D:\Projects\Virtual Office\VirtualOffice\ClassLibrary2\obj\Debug\VirtualOffice.Service.csprojResolveAssemblyReference.cache
 D:\Projects\Virtual Office\VirtualOffice\ClassLibrary2\obj\Debug\ClassLibrary2.dll
 D:\Projects\Virtual Office\VirtualOffice\ClassLibrary2\obj\Debug\ClassLibrary2.pdb
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Debug\AutoMapper.Net4.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Debug\ClassLibrary2.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Debug\ClassLibrary2.pdb
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Debug\AutoMapper.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Debug\VirtualOffice.Data.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Debug\EntityFramework.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Debug\Newtonsoft.Json.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Debug\VirtualOffice.Data.pdb
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Debug\AutoMapper.xml
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Debug\EntityFramework.xml
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Debug\Newtonsoft.Json.xml
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\ClassLibrary2\obj\Debug\VirtualOffice.Service.csprojResolveAssemblyReference.cache
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\ClassLibrary2\obj\Debug\ClassLibrary2.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\ClassLibrary2\obj\Debug\ClassLibrary2.pdb

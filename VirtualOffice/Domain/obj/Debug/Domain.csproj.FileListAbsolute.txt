@@ -21,3 +21,26 @@ D:\Projects\Virtual Office\VirtualOffice\Domain\bin\Debug\System.Web.WebPages.Ra
 D:\Projects\Virtual Office\VirtualOffice\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
 D:\Projects\Virtual Office\VirtualOffice\Domain\obj\Debug\Domain.dll
 D:\Projects\Virtual Office\VirtualOffice\Domain\obj\Debug\Domain.pdb
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\bin\Debug\Domain.dll.config
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\bin\Debug\Domain.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\bin\Debug\Domain.pdb
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\bin\Debug\EntityFramework.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\bin\Debug\System.Web.Helpers.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\bin\Debug\System.Web.Mvc.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\bin\Debug\System.Web.Razor.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\bin\Debug\System.Web.WebPages.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\bin\Debug\EntityFramework.xml
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\bin\Debug\System.Web.Helpers.xml
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\bin\Debug\System.Web.Mvc.xml
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\bin\Debug\System.Web.Razor.xml
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\bin\Debug\System.Web.WebPages.xml
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\obj\Debug\Domain.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\obj\Debug\Domain.pdb

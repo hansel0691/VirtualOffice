@@ -936,5 +936,15 @@ namespace VirtualOffice.Web.Controllers
          }
 
         #endregion
+
+         [HttpPost]
+         public ActionResult UpdateCreditLimit([DataSourceRequest] DataSourceRequest request)
+         {
+//             using (var _db = new VirtualOfficeContext())
+//             {
+//                 _db.sp_FullCarga_change_credit_limit(0, 0, 0);
+//             }
+             return null;
+         }
     }
 }

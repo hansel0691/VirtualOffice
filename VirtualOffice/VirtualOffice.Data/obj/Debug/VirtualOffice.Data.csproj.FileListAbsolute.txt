@@ -22,3 +22,27 @@ D:\Projects\Virtual Office\VirtualOffice\VirtualOffice.Data\bin\Debug\System.Net
 D:\Projects\Virtual Office\VirtualOffice\VirtualOffice.Data\obj\Debug\VirtualOffice.Data.csprojResolveAssemblyReference.cache
 D:\Projects\Virtual Office\VirtualOffice\VirtualOffice.Data\obj\Debug\VirtualOffice.Data.dll
 D:\Projects\Virtual Office\VirtualOffice\VirtualOffice.Data\obj\Debug\VirtualOffice.Data.pdb
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\VirtualOffice.Data.dll.config
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\VirtualOffice.Data.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\VirtualOffice.Data.pdb
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\ApiRestClient.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\Domain.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\EntityFramework.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\Newtonsoft.Json.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\Ninject.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\RestSharp.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\System.Web.Http.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\ApiRestClient.pdb
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\Domain.pdb
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\EntityFramework.xml
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\Newtonsoft.Json.xml
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\Ninject.xml
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\RestSharp.xml
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\System.Web.Http.xml
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\obj\Debug\VirtualOffice.Data.csprojResolveAssemblyReference.cache
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\obj\Debug\VirtualOffice.Data.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\obj\Debug\VirtualOffice.Data.pdb
