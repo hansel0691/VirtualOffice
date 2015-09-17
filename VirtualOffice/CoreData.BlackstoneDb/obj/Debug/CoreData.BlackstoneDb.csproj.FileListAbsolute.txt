@@ -14,3 +14,19 @@ D:\Projects\Virtual Office\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\Ninject
 D:\Projects\Virtual Office\VirtualOffice\CoreData.BlackstoneDb\obj\Debug\CoreData.BlackstoneDb.csprojResolveAssemblyReference.cache
 D:\Projects\Virtual Office\VirtualOffice\CoreData.BlackstoneDb\obj\Debug\CoreData.BlackstoneDb.dll
 D:\Projects\Virtual Office\VirtualOffice\CoreData.BlackstoneDb\obj\Debug\CoreData.BlackstoneDb.pdb
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\CoreData.BlackstoneDb.dll.config
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\CoreData.BlackstoneDb.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\CoreData.BlackstoneDb.pdb
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\Domain.Blackstone.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\Domain.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\EntityFramework.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\Ninject.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\Domain.Blackstone.pdb
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\Domain.pdb
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\EntityFramework.xml
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\Ninject.xml
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\obj\Debug\CoreData.BlackstoneDb.csprojResolveAssemblyReference.cache
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\obj\Debug\CoreData.BlackstoneDb.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\obj\Debug\CoreData.BlackstoneDb.pdb

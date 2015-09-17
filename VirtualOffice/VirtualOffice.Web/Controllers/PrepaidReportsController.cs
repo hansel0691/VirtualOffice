@@ -938,13 +938,24 @@ namespace VirtualOffice.Web.Controllers
         #endregion
 
          [HttpPost]
-         public ActionResult UpdateCreditLimit([DataSourceRequest] DataSourceRequest request)
+         public ActionResult UpdateCreditLimit([DataSourceRequest] DataSourceRequest request, [Bind(Prefix = "models")]IEnumerable<MerchantCreditLimitResultViewModel> creditLimits)
          {
-//             using (var _db = new VirtualOfficeContext())
-//             {
-//                 _db.sp_FullCarga_change_credit_limit(0, 0, 0);
-//             }
-             return null;
+             try
+             {
+                 if (ModelState.IsValid)
+                 {
+                     var result = creditLimits.Aggregate(true, (current, credit) => current && _virtualOfficeService.UpdateCreditLimit(credit.merchant_pk, credit.dailylimit_max, credit.creditlimit_max));
+                     return Json(new { Success = result });
+                 }
+                 else
+                 {
+                     throw new Exception();
+                 }
+             }
+             catch (Exception)
+             {
+                 return Json(new { Success = false }); ;
+             }
          }
     }
 }

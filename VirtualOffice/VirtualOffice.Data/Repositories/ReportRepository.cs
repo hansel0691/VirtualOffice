@@ -267,7 +267,11 @@ namespace VirtualOffice.Data.Repositories
         #endregion
 
 
-
+        public dynamic UpdateCreditLimit(int? merchantId, decimal? generalLimit, decimal? dailyLimit)
+        {
+            var result = VirtualOfficeContext.sp_FullCarga_change_credit_limit(merchantId, generalLimit, dailyLimit);
+            return result;
+        } 
 
     }
 }

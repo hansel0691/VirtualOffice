@@ -102,6 +102,7 @@
                                       aggregates.Add(col.Key, typeof(double)).Sum();
                                   }
                               })
+                              .Batch(true) // Enable batch updates
                               .Model(model =>
                               {
                                   //change to do generic

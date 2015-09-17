@@ -1063,6 +1063,13 @@ namespace VirtualOffice.Service.Services
 
         #endregion
 
-        
+        public bool UpdateCreditLimit(int? merchantId, decimal? generalLimit, decimal? dailyLimit)
+        {
+            var prepaidSummary = _reportRepository.UpdateCreditLimit(merchantId, generalLimit, dailyLimit);
+
+            //var result = prepaidSummary.MapTo<IEnumerable<SP_Fullcarga_PrepaidSalesSummary_Result>, IEnumerable<FullcargaPrepaidSummary>>();
+
+            return prepaidSummary;
+        }
     }
 }

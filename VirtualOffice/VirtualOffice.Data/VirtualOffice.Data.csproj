@@ -115,6 +115,9 @@
     <Compile Include="EFModels\ReportToReportRel.cs">
       <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EFModels\SP_Fullcarga_DetailInvoicebck_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="EFModels\SP_Fullcarga_DetailInvoice_Result.cs">
       <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
     </Compile>
@@ -209,6 +212,9 @@
       <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="EFModels\SP_ShowAccountRegister_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\Sp_TransactionsSummaryBCK_Result.cs">
       <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="EFModels\Sp_TransactionsSummary_Result.cs">

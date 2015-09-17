@@ -32,3 +32,4 @@ D:\Projects\Virtual Office\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Ninj
 D:\Projects\Virtual Office\VirtualOffice\VirtualOfficeToolManager\obj\Debug\VirtualOfficeToolManager.csprojResolveAssemblyReference.cache
 D:\Projects\Virtual Office\VirtualOffice\VirtualOfficeToolManager\obj\Debug\VirtualOfficeToolManager.dll
 D:\Projects\Virtual Office\VirtualOffice\VirtualOfficeToolManager\obj\Debug\VirtualOfficeToolManager.pdb
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\obj\Debug\VirtualOfficeToolManager.csprojResolveAssemblyReference.cache

@@ -1187,5 +1187,41 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_FullCarga_change_credit_limit" FunctionName="VirtualOfficeModel.Store.sp_FullCarga_change_credit_limit" />
+    <FunctionImportMapping FunctionImportName="SP_Fullcarga_DetailInvoicebck" FunctionName="VirtualOfficeModel.Store.SP_Fullcarga_DetailInvoicebck">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.SP_Fullcarga_DetailInvoicebck_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Store" ColumnName="Store" />
+          <ScalarProperty Name="Store_Name" ColumnName="Store_Name" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Denomination" ColumnName="Denomination" />
+          <ScalarProperty Name="Net_Sale" ColumnName="Net_Sale" />
+          <ScalarProperty Name="Merchant_Comm_V" ColumnName="Merchant_Comm V" />
+          <ScalarProperty Name="Merchant_Comm_P" ColumnName="Merchant_Comm P" />
+          <ScalarProperty Name="Dist_Comm_V" ColumnName="Dist_Comm V" />
+          <ScalarProperty Name="Dist_Comm_P" ColumnName="Dist_Comm P" />
+          <ScalarProperty Name="ISO_Comm_V" ColumnName="ISO_Comm V" />
+          <ScalarProperty Name="ISO_Comm_P" ColumnName="ISO_Comm P" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_TransactionsSummaryBCK" FunctionName="VirtualOfficeModel.Store.Sp_TransactionsSummaryBCK">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.Sp_TransactionsSummaryBCK_Result">
+          <ScalarProperty Name="Merchant_Id" ColumnName="Merchant Id" />
+          <ScalarProperty Name="Merchant_Name" ColumnName="Merchant Name" />
+          <ScalarProperty Name="Distributor_Id" ColumnName="Distributor Id" />
+          <ScalarProperty Name="Transaction_Date" ColumnName="Transaction Date" />
+          <ScalarProperty Name="Phone_Number" ColumnName="Phone Number" />
+          <ScalarProperty Name="Product_Name" ColumnName="Product Name" />
+          <ScalarProperty Name="Transaction_Id" ColumnName="Transaction Id" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

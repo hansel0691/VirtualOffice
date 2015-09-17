@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="VirtualOfficeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="VirtualOfficeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="__MigrationHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -604,7 +604,16 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
         </Function>
+        <Function Name="sp_FullCarga_change_credit_limit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="parMid" Type="int" Mode="In" />
+          <Parameter Name="parNewCL" Type="money" Mode="In" />
+          <Parameter Name="parNewDailyCL" Type="money" Mode="In" />
+        </Function>
         <Function Name="SP_Fullcarga_DetailInvoice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ParInvId" Type="int" Mode="In" />
+          <Parameter Name="UniqueId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_Fullcarga_DetailInvoicebck" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ParInvId" Type="int" Mode="In" />
           <Parameter Name="UniqueId" Type="int" Mode="In" />
         </Function>
@@ -832,6 +841,11 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
           <Parameter Name="DateF" Type="datetime" Mode="In" />
           <Parameter Name="UniqueId" Type="int" Mode="In" />
           <Parameter Name="isMerchant" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Sp_TransactionsSummaryBCK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="isoId" Type="int" Mode="In" />
+          <Parameter Name="startDate" Type="datetime" Mode="In" />
+          <Parameter Name="endDate" Type="datetime" Mode="In" />
         </Function>
         <Function Name="sp_update_user_password" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="user_id" Type="int" Mode="In" />
@@ -1984,6 +1998,20 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
             <Parameter Name="merchantId" Mode="In" Type="Int32" />
             <Parameter Name="emptyRecord" Mode="In" Type="Boolean" />
           </FunctionImport>
+          <FunctionImport Name="sp_FullCarga_change_credit_limit">
+            <Parameter Name="parMid" Mode="In" Type="Int32" />
+            <Parameter Name="parNewCL" Mode="In" Type="Decimal" />
+            <Parameter Name="parNewDailyCL" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Fullcarga_DetailInvoicebck" ReturnType="Collection(VirtualOfficeModel.SP_Fullcarga_DetailInvoicebck_Result)">
+            <Parameter Name="ParInvId" Mode="In" Type="Int32" />
+            <Parameter Name="UniqueId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_TransactionsSummaryBCK" ReturnType="Collection(VirtualOfficeModel.Sp_TransactionsSummaryBCK_Result)">
+            <Parameter Name="isoId" Mode="In" Type="Int32" />
+            <Parameter Name="startDate" Mode="In" Type="DateTime" />
+            <Parameter Name="endDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="AccountsInCollection_Result">
           <Property Type="Int32" Name="agentID" Nullable="true" />
@@ -2609,6 +2637,33 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
           <Property Type="Decimal" Name="creditlimit_max" Nullable="true" Precision="19" />
           <Property Type="String" Name="dailyLevels" Nullable="true" MaxLength="1000" />
           <Property Type="String" Name="creditLevels" Nullable="true" MaxLength="1000" />
+        </ComplexType>
+        <ComplexType Name="SP_Fullcarga_DetailInvoicebck_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="Store" Nullable="false" />
+          <Property Type="String" Name="Store_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Product" Nullable="true" MaxLength="6" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="512" />
+          <Property Type="Int32" Name="Qty" Nullable="true" />
+          <Property Type="Decimal" Name="Denomination" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Net_Sale" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Merchant_Comm_V" Nullable="true" Precision="10" Scale="4" />
+          <Property Type="String" Name="Merchant_Comm_P" Nullable="true" MaxLength="31" />
+          <Property Type="Decimal" Name="Dist_Comm_V" Nullable="true" Precision="22" Scale="4" />
+          <Property Type="String" Name="Dist_Comm_P" Nullable="true" MaxLength="31" />
+          <Property Type="Decimal" Name="ISO_Comm_V" Nullable="true" Precision="21" Scale="4" />
+          <Property Type="String" Name="ISO_Comm_P" Nullable="true" MaxLength="31" />
+        </ComplexType>
+        <ComplexType Name="Sp_TransactionsSummaryBCK_Result">
+          <Property Type="Int32" Name="Merchant_Id" Nullable="true" />
+          <Property Type="String" Name="Merchant_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Distributor_Id" Nullable="true" MaxLength="40" />
+          <Property Type="DateTime" Name="Transaction_Date" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Phone_Number" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Product_Name" Nullable="true" MaxLength="512" />
+          <Property Type="Int32" Name="Transaction_Id" Nullable="true" />
+          <Property Type="Decimal" Name="Amount" Nullable="true" Precision="19" />
+          <Property Type="String" Name="Type" Nullable="false" MaxLength="8" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -3799,6 +3854,42 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
                 <ScalarProperty Name="creditlimit_max" ColumnName="creditlimit_max" />
                 <ScalarProperty Name="dailyLevels" ColumnName="dailyLevels" />
                 <ScalarProperty Name="creditLevels" ColumnName="creditLevels" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_FullCarga_change_credit_limit" FunctionName="VirtualOfficeModel.Store.sp_FullCarga_change_credit_limit" />
+          <FunctionImportMapping FunctionImportName="SP_Fullcarga_DetailInvoicebck" FunctionName="VirtualOfficeModel.Store.SP_Fullcarga_DetailInvoicebck">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VirtualOfficeModel.SP_Fullcarga_DetailInvoicebck_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Store" ColumnName="Store" />
+                <ScalarProperty Name="Store_Name" ColumnName="Store_Name" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Denomination" ColumnName="Denomination" />
+                <ScalarProperty Name="Net_Sale" ColumnName="Net_Sale" />
+                <ScalarProperty Name="Merchant_Comm_V" ColumnName="Merchant_Comm V" />
+                <ScalarProperty Name="Merchant_Comm_P" ColumnName="Merchant_Comm P" />
+                <ScalarProperty Name="Dist_Comm_V" ColumnName="Dist_Comm V" />
+                <ScalarProperty Name="Dist_Comm_P" ColumnName="Dist_Comm P" />
+                <ScalarProperty Name="ISO_Comm_V" ColumnName="ISO_Comm V" />
+                <ScalarProperty Name="ISO_Comm_P" ColumnName="ISO_Comm P" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_TransactionsSummaryBCK" FunctionName="VirtualOfficeModel.Store.Sp_TransactionsSummaryBCK">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VirtualOfficeModel.Sp_TransactionsSummaryBCK_Result">
+                <ScalarProperty Name="Merchant_Id" ColumnName="Merchant Id" />
+                <ScalarProperty Name="Merchant_Name" ColumnName="Merchant Name" />
+                <ScalarProperty Name="Distributor_Id" ColumnName="Distributor Id" />
+                <ScalarProperty Name="Transaction_Date" ColumnName="Transaction Date" />
+                <ScalarProperty Name="Phone_Number" ColumnName="Phone Number" />
+                <ScalarProperty Name="Product_Name" ColumnName="Product Name" />
+                <ScalarProperty Name="Transaction_Id" ColumnName="Transaction Id" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

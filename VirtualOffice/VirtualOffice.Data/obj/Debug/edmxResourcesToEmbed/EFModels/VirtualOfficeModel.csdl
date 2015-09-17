@@ -928,6 +928,20 @@
       <Parameter Name="merchantId" Mode="In" Type="Int32" />
       <Parameter Name="emptyRecord" Mode="In" Type="Boolean" />
     </FunctionImport>
+    <FunctionImport Name="sp_FullCarga_change_credit_limit">
+      <Parameter Name="parMid" Mode="In" Type="Int32" />
+      <Parameter Name="parNewCL" Mode="In" Type="Decimal" />
+      <Parameter Name="parNewDailyCL" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Fullcarga_DetailInvoicebck" ReturnType="Collection(VirtualOfficeModel.SP_Fullcarga_DetailInvoicebck_Result)">
+      <Parameter Name="ParInvId" Mode="In" Type="Int32" />
+      <Parameter Name="UniqueId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_TransactionsSummaryBCK" ReturnType="Collection(VirtualOfficeModel.Sp_TransactionsSummaryBCK_Result)">
+      <Parameter Name="isoId" Mode="In" Type="Int32" />
+      <Parameter Name="startDate" Mode="In" Type="DateTime" />
+      <Parameter Name="endDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="AccountsInCollection_Result">
     <Property Type="Int32" Name="agentID" Nullable="true" />
@@ -1553,5 +1567,32 @@
     <Property Type="Decimal" Name="creditlimit_max" Nullable="true" Precision="19" />
     <Property Type="String" Name="dailyLevels" Nullable="true" MaxLength="1000" />
     <Property Type="String" Name="creditLevels" Nullable="true" MaxLength="1000" />
+  </ComplexType>
+  <ComplexType Name="SP_Fullcarga_DetailInvoicebck_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="Store" Nullable="false" />
+    <Property Type="String" Name="Store_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Product" Nullable="true" MaxLength="6" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="512" />
+    <Property Type="Int32" Name="Qty" Nullable="true" />
+    <Property Type="Decimal" Name="Denomination" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="Net_Sale" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="Merchant_Comm_V" Nullable="true" Precision="10" Scale="4" />
+    <Property Type="String" Name="Merchant_Comm_P" Nullable="true" MaxLength="31" />
+    <Property Type="Decimal" Name="Dist_Comm_V" Nullable="true" Precision="22" Scale="4" />
+    <Property Type="String" Name="Dist_Comm_P" Nullable="true" MaxLength="31" />
+    <Property Type="Decimal" Name="ISO_Comm_V" Nullable="true" Precision="21" Scale="4" />
+    <Property Type="String" Name="ISO_Comm_P" Nullable="true" MaxLength="31" />
+  </ComplexType>
+  <ComplexType Name="Sp_TransactionsSummaryBCK_Result">
+    <Property Type="Int32" Name="Merchant_Id" Nullable="true" />
+    <Property Type="String" Name="Merchant_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Distributor_Id" Nullable="true" MaxLength="40" />
+    <Property Type="DateTime" Name="Transaction_Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Phone_Number" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Product_Name" Nullable="true" MaxLength="512" />
+    <Property Type="Int32" Name="Transaction_Id" Nullable="true" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="19" />
+    <Property Type="String" Name="Type" Nullable="false" MaxLength="8" />
   </ComplexType>
 </Schema>

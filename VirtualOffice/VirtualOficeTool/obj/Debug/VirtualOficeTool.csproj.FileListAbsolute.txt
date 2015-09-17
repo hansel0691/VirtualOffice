@@ -133,3 +133,5 @@ D:\Projects\Virtual Office\VirtualOffice\VirtualOficeTool\obj\Debug\VirtualOfice
 D:\Projects\Virtual Office\VirtualOffice\VirtualOficeTool\obj\Debug\VirtualOficeTool.csprojResolveAssemblyReference.cache
 D:\Projects\Virtual Office\VirtualOffice\VirtualOficeTool\obj\Debug\VirtualOficeTool.dll
 D:\Projects\Virtual Office\VirtualOffice\VirtualOficeTool\obj\Debug\VirtualOficeTool.pdb
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOficeTool\obj\Debug\VirtualOficeTool.csproj.App.config
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOficeTool\obj\Debug\VirtualOficeTool.csprojResolveAssemblyReference.cache

@@ -14,3 +14,19 @@ D:\Projects\Virtual Office\VirtualOffice\CoreData.Inventory\bin\Debug\Ninject.xm
 D:\Projects\Virtual Office\VirtualOffice\CoreData.Inventory\obj\Debug\CoreData.Inventory.csprojResolveAssemblyReference.cache
 D:\Projects\Virtual Office\VirtualOffice\CoreData.Inventory\obj\Debug\CoreData.Inventory.dll
 D:\Projects\Virtual Office\VirtualOffice\CoreData.Inventory\obj\Debug\CoreData.Inventory.pdb
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.Inventory\bin\Debug\CoreData.Inventory.dll.config
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.Inventory\bin\Debug\CoreData.Inventory.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.Inventory\bin\Debug\CoreData.Inventory.pdb
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.Inventory\bin\Debug\Domain.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.Inventory\bin\Debug\Domain.Inventory.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.Inventory\bin\Debug\EntityFramework.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.Inventory\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.Inventory\bin\Debug\Ninject.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.Inventory\bin\Debug\Domain.Inventory.pdb
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.Inventory\bin\Debug\Domain.pdb
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.Inventory\bin\Debug\EntityFramework.xml
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.Inventory\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.Inventory\bin\Debug\Ninject.xml
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.Inventory\obj\Debug\CoreData.Inventory.csprojResolveAssemblyReference.cache
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.Inventory\obj\Debug\CoreData.Inventory.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\CoreData.Inventory\obj\Debug\CoreData.Inventory.pdb

@@ -41,6 +41,6 @@ C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\bin\Debug\System.
 C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\bin\Debug\System.Web.WebPages.xml
 C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\bin\Debug\System.Web.WebPages.Razor.xml
-C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
 C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\obj\Debug\Domain.dll
 C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\obj\Debug\Domain.pdb
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache

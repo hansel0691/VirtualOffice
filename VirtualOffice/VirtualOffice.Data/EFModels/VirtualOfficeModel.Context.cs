@@ -1087,5 +1087,52 @@ namespace VirtualOffice.Data.EFModels
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetMerchantCreditLimits_Result>("GetMerchantCreditLimits", agentIdParameter, merchantIdParameter, emptyRecordParameter);
         }
+    
+        public virtual int sp_FullCarga_change_credit_limit(Nullable<int> parMid, Nullable<decimal> parNewCL, Nullable<decimal> parNewDailyCL)
+        {
+            var parMidParameter = parMid.HasValue ?
+                new ObjectParameter("parMid", parMid) :
+                new ObjectParameter("parMid", typeof(int));
+    
+            var parNewCLParameter = parNewCL.HasValue ?
+                new ObjectParameter("parNewCL", parNewCL) :
+                new ObjectParameter("parNewCL", typeof(decimal));
+    
+            var parNewDailyCLParameter = parNewDailyCL.HasValue ?
+                new ObjectParameter("parNewDailyCL", parNewDailyCL) :
+                new ObjectParameter("parNewDailyCL", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_FullCarga_change_credit_limit", parMidParameter, parNewCLParameter, parNewDailyCLParameter);
+        }
+    
+        public virtual ObjectResult<SP_Fullcarga_DetailInvoicebck_Result> SP_Fullcarga_DetailInvoicebck(Nullable<int> parInvId, Nullable<int> uniqueId)
+        {
+            var parInvIdParameter = parInvId.HasValue ?
+                new ObjectParameter("ParInvId", parInvId) :
+                new ObjectParameter("ParInvId", typeof(int));
+    
+            var uniqueIdParameter = uniqueId.HasValue ?
+                new ObjectParameter("UniqueId", uniqueId) :
+                new ObjectParameter("UniqueId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Fullcarga_DetailInvoicebck_Result>("SP_Fullcarga_DetailInvoicebck", parInvIdParameter, uniqueIdParameter);
+        }
+    
+        public virtual ObjectResult<Sp_TransactionsSummaryBCK_Result> Sp_TransactionsSummaryBCK(Nullable<int> isoId, Nullable<System.DateTime> startDate, Nullable<System.DateTime> endDate)
+        {
+            var isoIdParameter = isoId.HasValue ?
+                new ObjectParameter("isoId", isoId) :
+                new ObjectParameter("isoId", typeof(int));
+    
+            var startDateParameter = startDate.HasValue ?
+                new ObjectParameter("startDate", startDate) :
+                new ObjectParameter("startDate", typeof(System.DateTime));
+    
+            var endDateParameter = endDate.HasValue ?
+                new ObjectParameter("endDate", endDate) :
+                new ObjectParameter("endDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Sp_TransactionsSummaryBCK_Result>("Sp_TransactionsSummaryBCK", isoIdParameter, startDateParameter, endDateParameter);
+        }
     }
 }
