@@ -21,7 +21,7 @@
     <input id="printLink" type="hidden" value="@Model.PrintLink">
     <input id="storeProcedure" type="hidden" value="@Model.StoreProcedureName">
     <input id="alertsMode" type="hidden" value="@alertsMode">
-
+    
     <h3 class="text-secundary">Prepaid Accounts</h3>
     <hr />
     <div class="row">
@@ -85,7 +85,7 @@
                                   var columnConfig = columnsCofig[column];
                                   var label = columnsCofig[column].Label;
                                   var columnResult = col.Bound(column).Width(columnConfig.Width).Hidden(columnConfig.Hidden).Title(label).Groupable(columnConfig.Groupable);
-
+                                  
                                   if (!string.IsNullOrEmpty(columnConfig.Link))
                                   {
                                       columnResult = columnResult.ClientTemplate(columnConfig.Link);
@@ -108,7 +108,7 @@
                                   }
                               })
                               .Read(r => r.Action("RunPortfolioSummary", "PrepaidReports").Data("getReportParams"))
-                              .PageSize(20)
+                              .PageSize(100)
                           )
                           .Events(ev => ev.ColumnReorder("saveNewOutPutOrder").ColumnResize("saveColumnWidth"))
                           .Resizable(config => config.Columns(true))
@@ -117,12 +117,13 @@
                           .Selectable()
                           .Reorderable(reorder => reorder.Columns(true))
                           .Scrollable(scr => scr.Height(600))
-                          .Pageable(page => page.PageSizes(true))
+                          .Pageable(pageable => pageable
+                                            .Refresh(true)
+                                            .PageSizes(new []{100, 200, 500})
+                                            .ButtonCount(5))
                           .AutoBind(true)
                           )
                 </div>
-
-
             </div>
         </div>
     </div>

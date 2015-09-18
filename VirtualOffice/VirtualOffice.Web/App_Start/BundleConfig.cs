@@ -38,6 +38,15 @@ namespace VirtualOffice.Web
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+
+
+            /*my styling*/
+
+            bundles.Add(new StyleBundle("~/kendo.style").Include(
+                        "~/Content/kendo/2014.1.415/kendo.common.min.css",
+                        "~/Content/styles.css",
+                        "~/Content/kendo.bootstrap.theme/kendo.custom.css"));
+
         }
     }
 }

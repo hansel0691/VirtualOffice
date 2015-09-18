@@ -19,11 +19,15 @@ namespace VirtualOffice.Web.Infrastructure
         {
 
             #region Prepaid
+
             Mapper.CreateMap<PrepaidPortfolioResult, PrepaidPortfolioSummaryResultViewModel>()
-           .ForMember(p => p.last_month_sales, k => k.MapFrom(m => double.Parse(m.last_month_sales.GetPlaneFormat())))
-           .ForMember(p => p.this_month_sales, k => k.MapFrom(m => double.Parse(m.this_month_sales.GetPlaneFormat())))
-           .ForMember(p => p.seven_day_sales, k => k.MapFrom(m => double.Parse(m.seven_day_sales.GetPlaneFormat())))
-           .ForMember(p => p.today_sales, k => k.MapFrom(m => double.Parse(m.today_sales.GetPlaneFormat())));
+                .ForMember(p => p.last_month_sales,
+                    k => k.MapFrom(m => double.Parse(m.last_month_sales.GetPlaneFormat())))
+                .ForMember(p => p.this_month_sales,
+                    k => k.MapFrom(m => double.Parse(m.this_month_sales.GetPlaneFormat())))
+                .ForMember(p => p.seven_day_sales, k => k.MapFrom(m => double.Parse(m.seven_day_sales.GetPlaneFormat())))
+                .ForMember(p => p.today_sales, k => k.MapFrom(m => double.Parse(m.today_sales.GetPlaneFormat())));
+//           .ForMember(p => p.Status, k => k.MapFrom(m => m.Status == "ACTIVE"));
            
             Mapper.CreateMap<PrepaidSalesSummaryResult, PrepaidSalesSummaryResultViewModel>()
             .ForMember(p => p.grSalesLD, k => k.MapFrom(m => double.Parse(m.grSalesLD.GetPlaneFormat())))

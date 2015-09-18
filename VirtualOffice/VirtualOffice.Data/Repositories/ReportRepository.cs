@@ -273,5 +273,11 @@ namespace VirtualOffice.Data.Repositories
             return result;
         } 
 
+        public dynamic UpdatePrepaidAcountStatus(int? merchantId, string status)
+        {
+//            var result = VirtualOfficeContext.sp_FullCarga_change_credit_limit(merchantId, status);
+//            return result;
+            return null;
+        }
     }
 }

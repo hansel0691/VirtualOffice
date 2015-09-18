@@ -21,6 +21,7 @@ using WebGrease.Css.Extensions;
 
 namespace VirtualOffice.Web.Controllers
 {
+
      [Authorize(Roles = "User")]
     public class PrepaidReportsController : VirtualOfficeController
     {
@@ -956,6 +957,29 @@ namespace VirtualOffice.Web.Controllers
              {
                  return Json(new { Success = false }); ;
              }
+         }
+
+         [HttpPost]
+         public ActionResult UpdatePrepaidAcountStatus([DataSourceRequest] DataSourceRequest request, [Bind(Prefix = "models")]IEnumerable<PrepaidPortfolioSummaryResultViewModel> prepaidAccounts)
+         {
+             try
+             {
+                 if (ModelState.IsValid)
+                 {
+//                     var result = prepaidAccounts.Aggregate(true, (current, account) => current && _virtualOfficeService.UpdatePrepaidAcountStatus(account.MID, account.Status ? "ACTIVE" : "INACTIVE"));
+//                     return Json(new { Success = result });
+                 }
+                 else
+                 {
+                     throw new Exception();
+                 }
+             }
+             catch (Exception)
+             {
+                 return Json(new { Success = false }); ;
+             }
+
+             return null;
          }
     }
 }

@@ -26,6 +26,7 @@ namespace VirtualOffice.Web.Models.NewReports
         public string Balance { get; set; }
         public int returned_achs { get; set; }
         public string Status { get; set; }
+//        public bool Status { get; set; }
         public string suspended_reason { get; set; }
         public string connection_type { get; set; }
         public string bill_payment { get; set; }

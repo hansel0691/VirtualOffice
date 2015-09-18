@@ -96,8 +96,7 @@
                                                      }
                                                  })
                               .Read(r => r.Action("RunPortfolioSummary", "MerchantServicesReports").Data("getReportParams"))
-                                              
-                              .PageSize(20)
+                                       .PageSize(100)
                           )
                           .Events(ev => ev.ColumnReorder("saveNewOutPutOrder").ColumnResize("saveColumnWidth"))
                           .Resizable(config => config.Columns(true))
@@ -105,7 +104,10 @@
                           .Selectable()
                           .Reorderable(reorder => reorder.Columns(true))
                           .Scrollable(scr => scr.Height(600))
-                          .Pageable(page => page.PageSizes(true))
+                                  .Pageable(pageable => pageable
+                                                    .Refresh(true)
+                                                    .PageSizes(new[] { 100, 200, 500 })
+                                                    .ButtonCount(5))
                           .AutoBind(true)
                           )
                 </div>

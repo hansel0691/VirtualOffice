@@ -126,7 +126,7 @@
                                   }
                               })
                               .Read(r => r.Action("RunTransactionsSummary", "PrepaidReports").Data("getReportParams"))
-                              .PageSize(20)
+                              .PageSize(100)
                           )
                           .Events(ev => ev.ColumnReorder("saveNewOutPutOrder").ColumnResize("saveColumnWidth"))
                           .Resizable(config => config.Columns(true))

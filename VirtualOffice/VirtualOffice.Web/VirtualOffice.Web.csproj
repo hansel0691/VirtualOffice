@@ -381,6 +381,8 @@
     <Content Include="Content\img\square.png" />
     <Content Include="Content\img\yellow%402x.png" />
     <Content Include="Content\img\yellow.png" />
+    <Content Include="Content\kendo.bootstrap.theme\kendo.custom.css" />
+    <Content Include="Content\kendo.bootstrap.theme\kendo.custom.js" />
     <Content Include="Content\kendo.compatibility.css" />
     <Content Include="Content\kendo\2014.1.415\Black\editor.png" />
     <Content Include="Content\kendo\2014.1.415\Black\imagebrowser.png" />
@@ -670,6 +672,7 @@
     <Content Include="Content\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
     <None Include="bin\VirtualOffice.Web.dll.config" />
+    <Content Include="Content\kendo.bootstrap.theme\kendo.custom.less" />
     <None Include="Properties\PublishProfiles\Virtual Office.pubxml" />
     <Content Include="Images\chat.svg" />
     <Content Include="Images\cloud-logo-test.svg" />

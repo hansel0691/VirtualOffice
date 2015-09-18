@@ -1071,5 +1071,14 @@ namespace VirtualOffice.Service.Services
 
             return prepaidSummary;
         }
+
+        public bool UpdatePrepaidAcountStatus(int? merchantId, string status)
+        {
+            var prepaidSummary = _reportRepository.UpdatePrepaidAcountStatus(merchantId, status);
+
+            //var result = prepaidSummary.MapTo<IEnumerable<SP_Fullcarga_PrepaidSalesSummary_Result>, IEnumerable<FullcargaPrepaidSummary>>();
+
+            return prepaidSummary;
+        }
     }
 }

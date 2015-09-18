@@ -112,7 +112,7 @@
                               })
                               .Read(r => r.Action("RunMerchantCreditLimits", "PrepaidReports").Data("getReportParams"))
                               .Update(r => r.Action("UpdateCreditLimit", "PrepaidReports"))
-                              .PageSize(20)
+                              .PageSize(100)
                           )
                           .Events(ev => ev.ColumnReorder("saveNewOutPutOrder").ColumnResize("saveColumnWidth"))
                           .Resizable(config => config.Columns(true))
