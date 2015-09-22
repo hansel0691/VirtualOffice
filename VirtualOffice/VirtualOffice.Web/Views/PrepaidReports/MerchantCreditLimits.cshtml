@@ -44,15 +44,12 @@
                                         <label id=@string.Format("label^{0}", column)>
                                             <span>@Html.CheckBox("columnName^" + column, !columnsCofig[column].Hidden, new { @value = column, onchange = "UpdateDataProjection()" })</span>
                                             <span class="fix_checkbox">@columnsCofig[column].Label</span>
-                                            
-
                                         </label>
                                     </div>
                                 }
                                 <div class="checkbox">
                                     <label class="text-secundary">
-                                        @Html.CheckBox("saveOutputAsDefault")
-                                        <span class="fix_checkbox">Save as default</span>
+                                        @Html.CheckBox("saveOutputAsDefault")<span class="fix_checkbox">Save as default</span>
                                     </label>
                                 </div>
                             </div>
