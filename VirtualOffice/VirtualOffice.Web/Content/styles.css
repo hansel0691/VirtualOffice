@@ -9439,3 +9439,9 @@ table tbody tr td[aligntext=right] { text-align: right;}
 .k-grid-footer-wrap tr.k-footer-template td {
     text-align: right;
 }
+
+.under15 {
+    margin-top: 15px;
+}
+
+.top20{ margin-top: 20px;}

@@ -17,128 +17,105 @@
     var endDate = Model.EndDate.IsNull() || Model.EndDate == new DateTime() ? Utils.DefaultEndDate : Model.EndDate;
 }
 <div class="container select" id="main">
-    <h3 class="text-secundary">@Model.Name</h3>
     <hr />
-    <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-2 col-sm-push-8 col-md-push-10" id="sidebar">
-            <div class="panel-group" id="accordion">
-<div class="panel panel-default">
+    
+    
     <div class="panel-heading">
-        <a data-toggle="collapse" data-target="#collapse1" class="expand">Element on Report <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
-    </div>
-    <div class="panel-body panel-collapse collapse" id="collapse1">
-        <label for="last-visit" class="control-label">Columns to show:</label>
-        <div class="panel-body">
-            <div class="form-group">
-                @foreach (var column in Model.Columns.Where(col=> col.Level <= Utils.GetUserLevel(user.UserCategory)))
-                {
-                    <div class="checkbox">
-                        <label id=@string.Format("label^{0}", column.Name)>
-
-                            @Html.CheckBox("columnName^" + column.Name.Replace(' ', '_'), column.Selected, new { @value = column.Name, onchange = "UpdateDataProjection()" })@column.Label
-
-                        </label>
-                    </div>
-                }
-                <div class="checkbox">
-                    <label class="text-secundary">
-                        @Html.CheckBox("saveOutputAsDefault")<span class="fix_checkbox">Save as default</span>
-                    </label>
-                </div>
+        <div class="row">
+            <div class="hidden-xs col-sm-9 col-md-9">
+                <h3 class="text-secundary">@Model.Name</h3>
             </div>
-            <div class="">
-                <button type="button" class="btn btn-secundary" onclick="applyUserfilters()">Go!</button>
+            <div class="col-xs-4 col-sm-3 col-md-3 text-right under15">
+                <a class="btn btn-print btn-sm" id="PrintReportsBtn" onclick="PrintReport(false)"><span class="glyphicon glyphicon-print"></span> Print</a>
+                <a id="exportButton" class="btn btn-print btn-sm" onclick="ExportReport()"><span class="glyphicon glyphicon-export"></span> Export</a>
             </div>
         </div>
     </div>
-</div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <a data-toggle="collapse" data-target="#collapse2" class="expand">Filter by Attributes <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
-                        </div>
-                        <div class="panel-body panel-collapse" id="collapse2">
-
-                            @if (Model.IsFilterableByDate)
-                            {
-                                <label>Start Date: </label>
-                                @(Html.Kendo().DatePicker().Name("startDate").Value(startDate))
-                                <br>
-
-                                <label>End Date: </label>
-                                @(Html.Kendo().DatePicker().Name("endDate").Value(endDate))
-                            }
-
-                            @foreach (var column in Model.Columns.Where(col => col.Selected && col.Filterable))
-                            {
-                                var filterName = "userFilter^" + column.Name.Replace(' ', '_');
-
-                                <div class="form-group">
-                                    <label class="control-label">@column.Label</label>
-                                    @(Html.Kendo().MultiSelect()
-                                      .Name(filterName)
-                                      .Value(Model.UserFiltersConfig.Where(filterConfig => filterConfig.Key.Replace(' ', '_') == column.Name).Select(f => f.Value))
-                                      .BindTo(Model.FiltersData[column.Name]))
-                                </div>
-                            }
+    
+    
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12" id="sidebar">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a data-toggle="collapse" data-target="#collapse1" class="expand">Element on Report <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                    </div>
+                    <div class="panel-body panel-collapse collapse" id="collapse1">
+                        <label for="last-visit" class="control-label">Columns to show:</label>
+                        <div class="panel-body">
                             <div class="form-group">
+                                @foreach (var column in Model.Columns.Where(col => col.Level <= Utils.GetUserLevel(user.UserCategory)))
+                                {
+                                    <div class="checkbox">
+                                        <label id=@string.Format("label^{0}", column.Name)>
+                                            <span>@Html.CheckBox("columnName^" + column.Name.Replace(' ', '_'), column.Selected, new { @value = column.Name, onchange = "UpdateDataProjection()" })</span>
+                                            <span class="fix_checkbox">@column.Label</span>
+                                        </label>
+                                    </div>
+                                }
                                 <div class="checkbox">
                                     <label class="text-secundary">
-                                        @Html.CheckBox("saveFiltersAsDefault")Save as default
+                                        @Html.CheckBox("saveOutputAsDefault")<span class="fix_checkbox">Save as default</span>
                                     </label>
                                 </div>
                             </div>
-
                             <div class="">
                                 <button type="button" class="btn btn-secundary" onclick="applyUserfilters()">Go!</button>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a data-toggle="collapse" data-target="#collapse2" class="expand">Filter by Attributes <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                    </div>
+                    <div class="panel-body panel-collapse collapse" id="collapse2">
+                        @if (Model.IsFilterableByDate)
+                        {
+                            <label>Start Date: </label>
+                            @(Html.Kendo().DatePicker().Name("startDate").Value(startDate))
+                            <br />
 
-                @*@if (Model.IsStandAlone)
-                {
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <a data-toggle="collapse" data-target="#collapse3" class="expand">Configuration<span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
-                        </div>
-                        <div class="panel-body panel-collapse collapse" id="collapse3">
+                            <label>End Date: </label>
+                            @(Html.Kendo().DatePicker().Name("endDate").Value(endDate))
+                        }
+
+                        @foreach (var column in Model.Columns.Where(col => col.Selected && col.Filterable))
+                        {
+                            var filterName = "userFilter^" + column.Name.Replace(' ', '_');
+
+                            <div class="form-group">
+                                <label class="control-label">@column.Label</label>
+                                @(Html.Kendo().MultiSelect()
+                                      .Name(filterName)
+                                      .Value(Model.UserFiltersConfig.Where(filterConfig => filterConfig.Key.Replace(' ', '_') == column.Name).Select(f => f.Value))
+                                      .BindTo(Model.FiltersData[column.Name]))
+                            </div>
+                        }
+                        <div class="form-group">
                             <div class="checkbox">
                                 <label class="text-secundary">
-                                    @Html.CheckBoxFor(model => model.ShouldBeShownAtDesktop)Save On Desktop
+                                    @Html.CheckBox("saveFiltersAsDefault")Save as default
                                 </label>
                             </div>
-                            <div class="form-group">
-                                <button id="updateConfigButton" type="button" class="btn btn-secundary" onclick="UpdateReportConfiguration()">Go!</button>
-                                <div id="myAccountSuccessMessageConfirmation" class="collapse alert alert-success">
-                                    <span class="glyphicon glyphicon-ok"></span>
-                                    <label id="myAccountSuccessMessageText"></label>
-                                </div>
-                                <div id="myAccountFailedMessageConfirmation" class="collapse  alert alert-danger">
-                                    <label id="myAccountFailedMessageText"></label>
-                                </div>
-                            </div>
                         </div>
-                    </div>
-                }*@
 
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-8 col-md-10 col-sm-pull-4 col-md-pull-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="hidden-xs col-sm-9 col-md-9">
-                            <h4 class="">Your Results</h4>
-                        </div>
-                        <div class="col-xs-4 col-sm-3 col-md-3 text-right">
-                            <a class="btn btn-print btn-sm" id="PrintReportsBtn" onclick="PrintReport(false)"><span class="glyphicon glyphicon-print"></span> Print</a>
-                            <a id="exportButton" class="btn btn-print btn-sm" onclick="ExportReport()"><span class="glyphicon glyphicon-export"></span> Export</a>
+                        <div class="">
+                            <button type="button" class="btn btn-secundary" onclick="applyUserfilters()">Go!</button>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row top20">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="panel panel-default">
                 <div class="panel-body-kendo">
                     @(Html.Kendo().Grid<dynamic>()
                           .Name("Reports")
-                                          .HtmlAttributes(new { @style = "text-align: left;" }).EnableCustomBinding(true)
+                            .HtmlAttributes(new { @style = "text-align: left; height: 850px;" }).EnableCustomBinding(true)
                           .Columns(col =>
                           {
                               foreach (var column in Model.Columns)
@@ -189,6 +166,10 @@
         </div>
     </div>
 </div> <!-- .container.select#main -->
+
+
+
+
 
 <script>
 
