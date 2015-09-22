@@ -17,10 +17,18 @@
 <div class="container select" id="main">
     <input id="printLink" type="hidden" value="@Model.PrintLink">
     <input id="storeProcedure" type="hidden" value="@Model.StoreProcedureName">
-    <h3 class="text-secundary">Merchant Credit Limits</h3>
     <hr />
+    <div class="row panel-heading">
+        <div class="hidden-xs col-sm-9 col-md-9">
+            <h3 class="text-secundary">Merchant Credit Limits</h3>
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-3 text-right" style="margin-top: 15px;">
+            <a class="btn btn-print btn-sm" id="PrintReportsBtn" onclick="PrintReport(false)"><span class="glyphicon glyphicon-print"></span> Print</a>
+            <a id="exportButton" class="btn btn-print btn-sm" onclick="PrintReport(true)"><span class="glyphicon glyphicon-export"></span> Export</a>
+        </div>
+    </div>
     <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-2 col-sm-push-8 col-md-push-10" id="sidebar">
+        <div class="col-xs-12 col-sm-12 col-md-12" id="sidebar">
             <div class="panel-group" id="accordion">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -34,15 +42,17 @@
                                 {
                                     <div class="checkbox">
                                         <label id=@string.Format("label^{0}", column)>
-
-                                            @Html.CheckBox("columnName^" + column, !columnsCofig[column].Hidden, new { @value = column, onchange = "UpdateDataProjection()" })@column
+                                            <span>@Html.CheckBox("columnName^" + column, !columnsCofig[column].Hidden, new { @value = column, onchange = "UpdateDataProjection()" })</span>
+                                            <span class="fix_checkbox">@columnsCofig[column].Label</span>
+                                            
 
                                         </label>
                                     </div>
                                 }
                                 <div class="checkbox">
                                     <label class="text-secundary">
-                                        @Html.CheckBox("saveOutputAsDefault")Save as default
+                                        @Html.CheckBox("saveOutputAsDefault")
+                                        <span class="fix_checkbox">Save as default</span>
                                     </label>
                                 </div>
                             </div>
@@ -54,23 +64,16 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-8 col-md-10 col-sm-pull-4 col-md-pull-2">
+    </div>
+    
+
+    <div class="row" style="margin-top: 20px">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="hidden-xs col-sm-9 col-md-9">
-                            <h4 class="">Your Results</h4>
-                        </div>
-                        <div class="col-xs-4 col-sm-3 col-md-3 text-right">
-                            <a class="btn btn-print btn-sm" id="PrintReportsBtn" onclick="PrintReport(false)"><span class="glyphicon glyphicon-print"></span> Print</a>
-                            <a id="exportButton" class="btn btn-print btn-sm" onclick="PrintReport(true)"><span class="glyphicon glyphicon-export"></span> Export</a>
-                        </div>
-                    </div>
-                </div>
                 <div class="panel-body-kendo" id="peaceOfShit">
                     @(Html.Kendo().Grid<MerchantCreditLimitResultViewModel>()
                           .Name("Reports")
-                          .HtmlAttributes(new { @style = "text-align: left; height: 450px;" }).EnableCustomBinding(true)
+                          .HtmlAttributes(new { @style = "text-align: left; height: 850px;" }).EnableCustomBinding(true)
                           .Columns(col =>
                           {
                               foreach (var column in columnsCofig.Keys)
@@ -78,7 +81,7 @@
                                   var columnConfig = columnsCofig[column];
                                   var label = columnsCofig[column].Label;
                                   var columnResult = col.Bound(column).Width(columnConfig.Width).Hidden(columnConfig.Hidden).Title(label);
-
+                                  
                                   if (!string.IsNullOrEmpty(columnConfig.Link))
                                   {
                                       columnResult = columnResult.ClientTemplate(columnConfig.Link);
@@ -86,9 +89,9 @@
 
                                   if (columnConfig.IsDate)
                                       columnResult.Format("{0:dd/MM/yyyy}");
-
+                                  
                                   else if (columnConfig.IsNumeric)
-                                      columnResult.ClientFooterTemplate("$#=sum#").Format("{0:c}");
+                                      columnResult.ClientFooterTemplate("#= kendo.format('{0:c2}', sum)#").FooterHtmlAttributes(new { alignText = "right" }).Format("{0:c2}").HtmlAttributes(new { alignText = "right" });
 
                               }
                           })
@@ -120,7 +123,7 @@
                           .Selectable()
                           .Reorderable(reorder => reorder.Columns(true))
                           .Scrollable(scr => scr.Height(600))
-                          .Pageable(page => page.PageSizes(true))
+                          .Pageable(pageable => pageable.Refresh(true).PageSizes(new []{100, 200, 500}).ButtonCount(5))
                           .AutoBind(true)
                     )
                 </div>

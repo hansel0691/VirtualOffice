@@ -516,8 +516,8 @@ html .km-pane-wrapper .k-header {
 .k-scheduler .k-today.k-state-selected,
 .k-marquee-color {
   color: #ffffff;
-  background-color: #428bca;
-  border-color: #428bca;
+  background-color: #428bca !important;
+  border-color: #428bca !important;
 }
 .k-virtual-item.k-first,
 .k-group-header + .k-list > .k-item.k-first,

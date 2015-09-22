@@ -122,7 +122,7 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult AccountsInCollection()
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "SP_accountsInCollection");
+            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "SP_accountsInCollection", typeof(PrepaidAccountsInCollectionViewModel));
 
             const string printLink = "/PrepaidReports/PrintAccountInCollection";
 
@@ -144,7 +144,7 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult MerchantCreditLimits()
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_GetMerchantCreditLimits");
+            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_GetMerchantCreditLimits", typeof(MerchantCreditLimitResultViewModel));
 
             const string printLink = "/PrepaidReports/PrintMerchantCreditLimits";
 
@@ -155,7 +155,7 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult MerchantCommissions()
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_GetMerchantCommissionsProfile");
+            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_GetMerchantCommissionsProfile", typeof(MerchantCommissionsResultViewModel));
 
             const string printLink = "/PrepaidReports/PrintMerchantComissions";
 
@@ -514,7 +514,7 @@ namespace VirtualOffice.Web.Controllers
                 {
                     var outPutDeserialized = new JavaScriptSerializer().Deserialize<List<string>>(outPut);
 
-                    _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "sp_GetMerchantCommissionsProfile", outPutDeserialized.GetCommaSeparatedTokens());
+                    _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "sp_GetttCommissionsProfile", outPutDeserialized.GetCommaSeparatedTokens());
                 }
                 
                 var userLevel = GetUserLevel();

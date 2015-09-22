@@ -951,5 +951,11 @@ namespace VirtualOffice.Web.Infrastructure
                 return result;
             }
         }
+
+        public static bool IsNumeric(object member)
+        {
+            double output;
+            return member != null && double.TryParse(member.ToString(), out output);
+        }
     }
 }

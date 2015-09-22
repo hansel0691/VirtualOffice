@@ -95,7 +95,7 @@
                 <div class="panel-body-kendo">
                     @(Html.Kendo().Grid<MsComissionSummaryResultViewModel>()
                           .Name("Reports")
-                          .HtmlAttributes(new { @style = "text-align: left;" }).EnableCustomBinding(true)
+                          .HtmlAttributes(new { @style = "text-align: left; height: 850px;" }).EnableCustomBinding(true)
                           .Columns(col =>
                           {
                               foreach (var column in columnsCofig.Keys)
@@ -116,7 +116,7 @@
                                       columnResult.Format("{0:dd/MM/yyyy}");
 
                                   else if (columnConfig.IsNumeric)
-                                      columnResult.ClientFooterTemplate("$#=sum#").Format("{0:c}");
+                                      columnResult.ClientFooterTemplate("$#= kendo.format('{0:n2}', sum)#").Format("{0:n2}").HtmlAttributes(new {alignText = "right"});
                               }
 
                           })
@@ -138,7 +138,7 @@
                           .Selectable()
                           .Reorderable(reorder => reorder.Columns(true))
                           .Scrollable(scr => scr.Height(600))
-                          .Pageable(page => page.PageSizes(true))
+                          .Pageable(pageable => pageable.Refresh(true).PageSizes(new []{100, 200, 500}).ButtonCount(5))
                           .AutoBind(true)
                           )
                 </div>

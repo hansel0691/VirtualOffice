@@ -35,7 +35,7 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult PortfolioSummary()
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_report_msv_portfolio_summary");
+            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_report_msv_portfolio_summary", typeof(MsPortfolioResultViewModel));
 
             const string printLink = "/MerchantServicesReports/PrintMsPortfolioSummary";
 

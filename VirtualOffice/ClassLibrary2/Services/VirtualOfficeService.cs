@@ -985,7 +985,13 @@ namespace VirtualOffice.Service.Services
             }
             catch (Exception exception)
             {
-                return columnName;
+                var words = columnName.Split(new[] {'.', '_'}, StringSplitOptions.RemoveEmptyEntries);
+                var label = words.Aggregate("", (current, word) => current + word + " ");
+
+                TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+                label = textInfo.ToTitleCase(label);
+
+                return label;
             }
         }
 

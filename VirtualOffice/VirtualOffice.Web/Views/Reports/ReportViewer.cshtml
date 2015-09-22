@@ -149,7 +149,7 @@
 
                                   if (column.IsNumeric)
                                   {
-                                      columnResult = columnResult.ClientFooterTemplate("#=sum#").Format("{0:c}");
+                                      columnResult = columnResult.ClientFooterTemplate("#=sum#").Format("{0:n2}").HtmlAttributes(new {alignText = "right"});
                                   }
 
                                   var subReportColumn = subReports.FirstOrDefault(sub => sub.DependencyProperty == columnName);
@@ -179,7 +179,7 @@
                           .Selectable()
                           .Reorderable(reorder => reorder.Columns(true))
                           .Scrollable(scr => scr.Height(600))
-                          .Pageable(page => page.PageSizes(true))
+                          .Pageable(pageable => pageable.Refresh(true).PageSizes(new []{100, 200, 500}).ButtonCount(5))
                           .AutoBind(true)
                     )
                 </div>
@@ -207,7 +207,7 @@
         $("#exportButton").attr('href', exportUrl);
     }
 
-    function PrintReport(false) {
+    function PrintReport(e) {
         var startDate = $("#startDate").val();
         var endDate = $("#endDate").val();
         var reportId = $("#ReportId").val();
