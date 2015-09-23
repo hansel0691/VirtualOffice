@@ -69,6 +69,15 @@ namespace VirtualOffice.Web.Controllers
             ViewBag.OpenIncidents = openIncidents.Count();
             ViewBag.MarketingMaterials = marketingMaterials.Count();
             return View();
+
+
+            foreach (var cloud in clouds)
+            {
+                foreach (var item in cloud.Items)
+                {
+                    item.
+                }
+            }
         }
 
         [HttpPost]

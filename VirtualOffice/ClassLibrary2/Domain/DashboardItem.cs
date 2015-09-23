@@ -16,6 +16,8 @@ namespace ClassLibrary2.Domain
         public string Remark { get; set; }
         public DashboardItemType DashboardItemType { get; set; }
         public string LinkUrl { get; set; }
+
+        public Dictionary<string, string> ItemsUrl { get; set; }
     }
 
     public enum DashboardItemType
