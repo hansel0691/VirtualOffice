@@ -53,7 +53,8 @@ function getReportParams() {
         endDate: $("#endDate").val(),
         merchantId: $("#merchantId").val(),
         invoiceId: $("#invoiceId").val(),
-        alertsMode: $("#alertsMode").val()
+        alertsMode: $("#alertsMode").val(),
+        status : status
     };
 }
 

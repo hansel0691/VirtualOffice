@@ -22,7 +22,16 @@ namespace VirtualOffice.Web.Controllers
         {
         }
 
-    
+
+        public ActionResult PersonalInfo()
+        {
+            var a = GetUserReports(GetLoggedUserId()).Where(rep => rep.IsStandAlone).ToList();
+            ViewBag.Reports = a;
+
+            return View();
+        }
+
+
 
         public ActionResult ChangePassword()
         {

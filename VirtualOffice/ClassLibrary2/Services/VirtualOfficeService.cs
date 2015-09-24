@@ -487,7 +487,9 @@ namespace VirtualOffice.Service.Services
                 dashboardItems.ForEach(
                 dashboardConfig =>
                 {
-                    dashboardConfig.Items = GetDashboardConfigItems(dashboardConfig, agentId, runReports);
+                    var result = GetDashboardConfigItems(dashboardConfig, agentId, runReports);
+                    dashboardConfig.Items = result.Items;
+                    dashboardConfig.ItemsUrl = result.UrlLinks;
                 });
 
                 return dashboardItems;
@@ -553,7 +555,7 @@ namespace VirtualOffice.Service.Services
 
         #region Aux Ops
 
-        private Dictionary<string, string> GetDashboardConfigItems(DashboardItem dashboardConfig, int agentId,  bool runReports)
+        private ItemValueUrl GetDashboardConfigItems(DashboardItem dashboardConfig, int agentId, bool runReports)
         {
             try
             {
@@ -561,13 +563,13 @@ namespace VirtualOffice.Service.Services
 
                 var parameters = GetMethodParametersValues(function, agentId,runReports, dashboardConfig.Remark);
 
-                var items = function.Invoke(this, parameters) as Dictionary<string, string>;
+                var items = function.Invoke(this, parameters) as ItemValueUrl;
 
                 return items;
             }
             catch (Exception exception)
             {
-               return new Dictionary<string, string>();
+                return new ItemValueUrl();
             }
         }
 
@@ -575,7 +577,7 @@ namespace VirtualOffice.Service.Services
 
         #region Dashboard Items
 
-        public Dictionary<string, string> GetPrepaidAccounts(int agentId, bool runReports)
+        public ItemValueUrl GetPrepaidAccounts(int agentId, bool runReports)
         {
             
                 var prepaidActives = runReports? PrepaidAccountsActive(agentId): 0;
@@ -586,13 +588,18 @@ namespace VirtualOffice.Service.Services
                     {"Actives", prepaidActives.ToString()},
                     {"Inactives", prepaidInactive.ToString()}
                 };
+                var resultUrls = new Dictionary<string, string>
+                {
+                    {"Actives", "PrepaidReports/PortfolioSummary?status=1"},
+                    {"Inactives", "PrepaidReports/PortfolioSummary?status=0"}
+                };
 
-                return result;
+                return new ItemValueUrl(result, resultUrls);
         
             
         }
 
-        public Dictionary<string, string> GetPrepaidSalesSummary(int agentId,  bool runReports, DateTime startDate, DateTime endDate)
+        public ItemValueUrl GetPrepaidSalesSummary(int agentId, bool runReports, DateTime startDate, DateTime endDate)
         {
             
                 var prepaidSales = runReports? PrepaidSalesSummary(agentId, startDate, endDate): 0;
@@ -605,12 +612,17 @@ namespace VirtualOffice.Service.Services
                     {"Total BillPayment", ippTransactions.ToString("C")},
                     {"Running Commission", commission.HasValue? commission.Value.ToString("C"): "0"}
                 };
+                var resultUrls = new Dictionary<string, string>
+                {
+                    {"Total Prepaid", ""},
+                    {"Total BillPayment", ""},
+                    {"Running Commission", ""}
+                };
 
-                return result;
-          
+                return new ItemValueUrl(result, resultUrls);
         }
 
-        public Dictionary<string, string> GetTodayTransactions(int agentId, bool runReports)
+        public ItemValueUrl GetTodayTransactions(int agentId, bool runReports)
         {
           
                 var todayTransactions = runReports? TodayTransactions(agentId): 0;
@@ -619,12 +631,16 @@ namespace VirtualOffice.Service.Services
                 {
                     {"All Merchants", todayTransactions.ToString("C")}
                 };
+                var resultUrls = new Dictionary<string, string>
+                {
+                    {"All Merchants", "/PrepaidReports/TodayTransactions"}
+                };
 
-                return result;
+                return new ItemValueUrl(result, resultUrls);
   
         }
 
-        public Dictionary<string, string> GetAccountsWithAlerts(int agentId, bool runReports)
+        public ItemValueUrl GetAccountsWithAlerts(int agentId, bool runReports)
         {
            
                 var allAccounts = runReports? _reportRepository.RunPrepaidPortfolioSummary(agentId).ToList(): new List<sp_report_portfolio_summary_Result>();
@@ -634,13 +650,19 @@ namespace VirtualOffice.Service.Services
                 var closedAccountsWithBalance = allAccounts.Count(c => c.closed == 1 && decimal.Parse(c.Balance, NumberStyles.Currency) > 0);
 
                 var result = new Dictionary<string, string>
-            {
-                {"In Compliance", accountsInCompliance.ToString()},
-                {"Suspended", suspendedAccounts.ToString()},
-                {"Closed with Balance", closedAccountsWithBalance.ToString()}
-            };
+                {
+                    {"In Compliance", accountsInCompliance.ToString()},
+                    {"Suspended", suspendedAccounts.ToString()},
+                    {"Closed with Balance", closedAccountsWithBalance.ToString()}
+                };
+                var resultUrls = new Dictionary<string, string>
+                {
+                    {"In Compliance", ""},
+                    {"Suspended", ""},
+                    {"Closed with Balance", ""}
+                };
 
-                return result;
+                return new ItemValueUrl(result, resultUrls);
         
         }
 
@@ -752,7 +774,7 @@ namespace VirtualOffice.Service.Services
 
         #region Dashboard Items
 
-        public Dictionary<string, string> GetMerchantServicesAccounts(int agentId, bool runReports)
+        public ItemValueUrl GetMerchantServicesAccounts(int agentId, bool runReports)
         {
             var prepaidActives = runReports? MerchantServicesAccountsActive(agentId): 0;
             var prepaidInactive = runReports? MerchantServicesAccountsInactive(agentId): 0;
@@ -762,11 +784,16 @@ namespace VirtualOffice.Service.Services
                 {"Actives", prepaidActives.ToString()},
                 {"Inactives", prepaidInactive.ToString()}
             };
+            var resultUrls = new Dictionary<string, string>
+            {
+                {"Actives", "/MerchantServicesReports/PortfolioSummary"},
+                {"Inactives", "/MerchantServicesReports/PortfolioSummary?status=0" }
+            };
 
-            return result;
+            return new ItemValueUrl(result, resultUrls);
         }
 
-        public Dictionary<string, string> GetMerchantServicesSalesSummary(int agentId, bool runReports,  DateTime startDate, DateTime endDate)
+        public ItemValueUrl GetMerchantServicesSalesSummary(int agentId, bool runReports, DateTime startDate, DateTime endDate)
         {
             var salesSummary = runReports? RunMsComissionSummary(agentId, startDate, endDate): new List<MsComissionSummaryResult>();
 
@@ -782,11 +809,18 @@ namespace VirtualOffice.Service.Services
                 {"Others", commissionsOthers.ToString("C")},
                 {"Total", commissionsTotals.ToString("C")}
             };
+            var resultUrls = new Dictionary<string, string>
+            {
+                {"Visa/ Master Card", "/MerchantServicesReports/MsComissionSummaryForVisaMasterCard?agentId="+ agentId +"&startDate="+startDate.ToString("MM/dd/yyyy")+"&endDate=" + endDate.ToString("MM/dd/yyyy")},
+                {"AMEX", "/MerchantServicesReports/MsComissionSummaryForAmex?agentId="+ agentId +"&startDate="+startDate.ToString("MM/dd/yyyy")+"&endDate=" + endDate.ToString("MM/dd/yyyy")},
+                {"Others", "/MerchantServicesReports/MsComissionSummaryForOthers?agentId="+ agentId +"&startDate="+startDate.ToString("MM/dd/yyyy")+"&endDate=" + endDate.ToString("MM/dd/yyyy")},
+                {"Total", "/MerchantServicesReports/MsComissionSummaryTotal?agentId="+ agentId +"&startDate="+startDate.ToString("MM/dd/yyyy")+"&endDate=" + endDate.ToString("MM/dd/yyyy")}
+            };
 
-            return result;
+            return new ItemValueUrl(result, resultUrls);
         }
 
-        public Dictionary<string, string> GetMerchantServicesApplicationStatus(int agentId, bool runReports)
+        public ItemValueUrl GetMerchantServicesApplicationStatus(int agentId, bool runReports)
         {
             var approvedAccounts = runReports? _reportRepository.RunMerchantServicesPortfolioByAccountsType(agentId, 0).Count(): 0;
             var pendingAccounts = runReports? _reportRepository.RunMerchantServicesPortfolioByAccountsType(agentId, 1).Count(): 0;
@@ -798,8 +832,14 @@ namespace VirtualOffice.Service.Services
                 {"Pending", pendingAccounts.ToString()},
                 {"Cancelled", cancelledAccounts.ToString()}
             };
+            var resultUrls = new Dictionary<string, string>
+            {
+                {"Approved", ""},
+                {"Pending", ""},
+                {"Cancelled", ""}
+            };
 
-            return result;
+            return new ItemValueUrl(result, resultUrls);
         }
 
         #endregion
@@ -1087,4 +1127,26 @@ namespace VirtualOffice.Service.Services
             return prepaidSummary;
         }
     }
+
+    public class ItemValueUrl
+    {
+        public ItemValueUrl()
+        {
+            this.Items = new Dictionary<string, string>();
+            this.UrlLinks = new Dictionary<string, string>();
+        }
+
+        public ItemValueUrl(Dictionary<string, string> items, Dictionary<string, string> urlLinks )
+        {
+            this.Items = items;
+            this.UrlLinks = urlLinks;
+        }
+
+
+        public Dictionary<string, string> Items { get; set; }
+        public Dictionary<string, string> UrlLinks { get; set; }
+
+    }
+
+
 }

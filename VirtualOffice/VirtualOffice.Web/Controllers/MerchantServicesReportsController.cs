@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
@@ -33,13 +34,14 @@ namespace VirtualOffice.Web.Controllers
         {
         }
 
-        public ActionResult PortfolioSummary()
+        public ActionResult PortfolioSummary(int status = 1)
         {
             var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_report_msv_portfolio_summary", typeof(MsPortfolioResultViewModel));
 
             const string printLink = "/MerchantServicesReports/PrintMsPortfolioSummary";
 
             var model = GetReportModel(columnsConfig, printLink, "sp_report_msv_portfolio_summary");
+            ViewBag.Status = status;
 
             return View(model);
         }
@@ -57,6 +59,13 @@ namespace VirtualOffice.Web.Controllers
 
             return View(model);
         }
+
+
+        public string MsTransactionSummary()
+        {
+            return "hola";
+        }
+
 
         public ActionResult MsComissionSummaryForAmex(int agentId, string startDate, string endDate)
         {
@@ -121,11 +130,12 @@ namespace VirtualOffice.Web.Controllers
             return View(model);
         }
 
+
         #endregion
 
         #region Data Manipulation
         [HttpPost]
-        public ActionResult RunPortfolioSummary([DataSourceRequest] DataSourceRequest request,string outPut, bool saveOutPut)
+        public ActionResult RunPortfolioSummary([DataSourceRequest] DataSourceRequest request,string outPut, bool saveOutPut, int status = 1)
         {
             if (saveOutPut)
             {
@@ -138,9 +148,10 @@ namespace VirtualOffice.Web.Controllers
 
             var reportData = _virtualOfficeService.RunMsPortfolioSummary(userId).ToList();
 
-            var activeAccounts = reportData.Where(r => r.Status.HasValue && r.Status == 1);
 
-            var mappedResult = activeAccounts.MapTo<IEnumerable<MsPortfolioResult>, IEnumerable<MsPortfolioResultViewModel>>().ToList();
+            var accounts = reportData.Where(r => r.Status.HasValue && ((r.Status == 1 && status == 1) || (r.Status != 1 && status == 0)));
+
+            var mappedResult = accounts.MapTo<IEnumerable<MsPortfolioResult>, IEnumerable<MsPortfolioResultViewModel>>().ToList();
 
             var result = mappedResult.ToDataSourceResult(request);
 

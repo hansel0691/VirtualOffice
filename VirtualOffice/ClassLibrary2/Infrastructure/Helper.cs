@@ -103,12 +103,12 @@ namespace VirtualOffice.Service.Domain.Infrastructure
         {
             var pastDate = DateTime.Now.AddMonths((-1) * months);
 
-            var first_lastDate = GetFirst_LastDayRange(pastDate.Month, pastDate.Year);
+            //var first_lastDate = GetFirst_LastDayRange(pastDate.Month, pastDate.Year);
 
             return new DateRange
             {
-                StartDate = first_lastDate.StartDate,
-                EndDate = first_lastDate.EndDate
+                StartDate = pastDate,
+                EndDate = DateTime.Now
             };
         }
 

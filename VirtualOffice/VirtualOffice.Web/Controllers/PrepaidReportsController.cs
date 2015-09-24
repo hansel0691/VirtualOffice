@@ -32,7 +32,7 @@ namespace VirtualOffice.Web.Controllers
          {
          }
 
-         public ActionResult PortfolioSummary(int? alertsMode)
+         public ActionResult PortfolioSummary(int? alertsMode, int status = -1)
         {
             var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_report_portfolio_summary",typeof(PrepaidPortfolioSummaryResultViewModel));
 
@@ -46,6 +46,7 @@ namespace VirtualOffice.Web.Controllers
             var model = GetReportModel(columnsConfig, printLink, "sp_report_portfolio_summary");
 
              ViewBag.AlertsMode = alertsMode;
+             ViewBag.Status = status;
 
             return View(model);
         }
@@ -242,7 +243,7 @@ namespace VirtualOffice.Web.Controllers
         
         #region Data Manipulation
         [HttpPost]
-        public ActionResult RunPortfolioSummary([DataSourceRequest] DataSourceRequest request, string outPut, bool saveOutPut, int? alertsMode)
+        public ActionResult RunPortfolioSummary([DataSourceRequest] DataSourceRequest request, string outPut, bool saveOutPut, int? alertsMode, int status = -1)
         {
             try
             {
@@ -254,6 +255,9 @@ namespace VirtualOffice.Web.Controllers
                 }
                 
                 var reportData = _virtualOfficeService.RunPrepaidPortfolioSummary(GetLoggedUserId());
+
+                reportData = reportData.Where(r => !r.Status.IsNullOrEmpty() && (status == -1 || (r.Status == "ACTIVE" && status == 1) || (r.Status != "ACTIVE" && status == 0)));
+                
 
                 if (alertsMode.HasValue && alertsMode.Value != 0)//Filters just accounts with Alerts
                 {
