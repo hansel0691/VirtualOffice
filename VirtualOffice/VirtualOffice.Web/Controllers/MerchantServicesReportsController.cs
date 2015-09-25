@@ -12,6 +12,7 @@ using ClassLibrary2.Domain;
 using ClassLibrary2.Domain.Equality_Comparers;
 using ClassLibrary2.Domain.MerchantServices;
 using ClassLibrary2.Domain.Prepaid;
+using DotNetOpenAuth.OpenId.Extensions.AttributeExchange;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
 using VirtualOffice.Service.Domain;
@@ -63,8 +64,16 @@ namespace VirtualOffice.Web.Controllers
         public ActionResult MsTransactionSummary()
         {
             var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_getTransactions", typeof(MsTransactionSummaryViewModel));
+
             const string printLink = "/MerchantServicesReports/PrintTransactionSummary";
+
             var model = GetReportModel(columnsConfig, printLink, "sp_getTransactions");
+
+            AddLinksToTransactionsColumnConfig(columnsConfig);
+
+            columnsConfig["mer_name"].Groupable = true;
+            columnsConfig["datestamp"].Groupable = true;
+
             return View(model);
         }
 
@@ -373,14 +382,44 @@ namespace VirtualOffice.Web.Controllers
             Utils.AddLinkToColumnsConfig(columnsConfig, "oth_commission", othersLink);
             Utils.AddLinkToColumnsConfig(columnsConfig, "tot_commission", totalsLink);
         }
-
-        private string GetMsComissionSummaryLink(string url, string columnName, bool isNumeric= false)
+        private string GetMsComissionSummaryLink(string url, string columnName, bool isNumeric = false)
         {
             var numericPrefix = isNumeric ? "$" : string.Empty;
 
             var mainPath = "/MerchantServicesReports/" + url;
 
-            var dataTemplate = "<a href='" + mainPath + string.Format("?agentId=#=code#&startDate=#=begindate#&endDate=#=enddate#") + "'>" + numericPrefix + "#=" + columnName +"#" +"</a>";
+            var dataTemplate = "<a href='" + mainPath + string.Format("?agentId=#=code#&startDate=#=begindate#&endDate=#=enddate#") + "'>" + numericPrefix + "#=" + columnName + "#" + "</a>";
+
+            return dataTemplate;
+        }
+
+       
+
+        private void AddLinksToTransactionsColumnConfig(Dictionary<string, ColumnConfig> columnsConfig)
+        {
+            var nameLink = GetMsTransactionLink("MsTransactionSummary", "mer_name");
+            var amexLink = GetMsTransactionLink("MsTransactionSummary", "amex_amount");
+            var visaMasterCardLink = GetMsTransactionLink("MsTransactionSummary", "vmc_amount");
+            var dscvLink = GetMsTransactionLink("MsTransactionSummary", "dscv_amount");
+            var ebtLink = GetMsTransactionLink("MsTransactionSummary", "ebt_amount");
+            var othLink = GetMsTransactionLink("MsTransactionSummary", "oth_amount");
+            var transLink = GetMsTransactionLink("MsTransactionSummary", "tran_amt");
+
+            Utils.AddLinkToColumnsConfig(columnsConfig, "mer_name", nameLink);
+            Utils.AddLinkToColumnsConfig(columnsConfig, "vmc_amount", visaMasterCardLink);
+            Utils.AddLinkToColumnsConfig(columnsConfig, "amex_amount", amexLink);
+            Utils.AddLinkToColumnsConfig(columnsConfig, "dscv_amount", dscvLink);
+            Utils.AddLinkToColumnsConfig(columnsConfig, "ebt_amount", ebtLink);
+            Utils.AddLinkToColumnsConfig(columnsConfig, "oth_amount", othLink);
+            Utils.AddLinkToColumnsConfig(columnsConfig, "tran_amt", transLink);
+        }
+
+
+        private string GetMsTransactionLink(string url, string columnName)
+        {
+            var mainPath = "/MerchantServicesReports/" + url;
+
+            var dataTemplate = "<a href='" + mainPath + string.Format("?agentId=#=merchant_pk#&startDate=#=startDate#&endDate=#=endDate#") + "'>" + "#=" + columnName +"#" +"</a>";
 
             return dataTemplate;   
         }
@@ -469,7 +508,6 @@ namespace VirtualOffice.Web.Controllers
             return exportMode ? ExportReportsToExcel(procedureName, methodName, objParams) :
                               PrintReport(procedureName, methodName, objParams);
         }
-
 
 
         #endregion

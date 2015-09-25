@@ -939,7 +939,7 @@ namespace VirtualOffice.Web.Infrastructure
                     default:
                     {
                         result[DashboardItemType.Prepaid] = 10;
-                        result[DashboardItemType.MerchantServices] = 2;
+                        result[DashboardItemType.MerchantServices] = 3;
                         break;
                     }
                 }

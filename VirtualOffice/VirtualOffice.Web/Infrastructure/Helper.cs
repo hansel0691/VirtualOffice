@@ -158,7 +158,7 @@ namespace VirtualOffice.Web.Infrastructure
                .ForMember(p => p.ebt_amount, k => k.MapFrom(m => double.Parse(m.ebt_amount.GetPlaneFormat())))
                .ForMember(p => p.oth_amount, k => k.MapFrom(m => double.Parse(m.oth_amount.GetPlaneFormat())))
                .ForMember(p => p.tran_amt, k => k.MapFrom(m => double.Parse(m.tran_amt.GetPlaneFormat())))
-               .ForMember(p => p.datestamp, k => k.MapFrom(m => m.datestamp == null ? new DateTime() : (DateTime)m.datestamp));
+               .ForMember(p => p.datestamp, k => k.MapFrom(m => m.datestamp == null ? new DateTime() : DateTime.Parse(m.datestamp)));
 
 
 
@@ -175,7 +175,7 @@ namespace VirtualOffice.Web.Infrastructure
             .ForMember(p => p.Email, k => k.MapFrom(m => m.email))
             .ForMember(p => p.Phone, k => k.MapFrom(m => m.phone))
             .ForMember(p => p.State, k => k.MapFrom(m => m.state))
-            .ForMember(p => p.UserId, k => k.MapFrom(m => m.userid.ToString()))
+            .ForMember(p => p.UserId, k => k.MapFrom(m => m.userid))
             .ForMember(p => p.Name, k => k.MapFrom(m => m.username))
             .ForMember(p => p.UserCategory, k => k.MapFrom(m => m.usertype.ToString()))
             .ForMember(p => p.IsFullcarga, k => k.MapFrom(m => m.isFullcarga == 1))

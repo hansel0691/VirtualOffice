@@ -9,7 +9,7 @@ namespace ClassLibrary2.Domain.MerchantServices
     public class MsTransactionSummaryResult
     {
         public int? merchant_pk { get; set; }
-        public DateTime? datestamp { get; set; }
+        public string datestamp { get; set; }
         public string mer_name { get; set; }
 
         public string vmc_amount { get; set; }

@@ -17,7 +17,7 @@
         <div class="collapse navbar-collapse" id="secundaryMenu">
             <ul class="nav navbar-nav">
                 <li class="@Utils.GetListItemClassByUrl(Request.Url.ToString(),Url.Action("ChangePassword", "MyProfile"))" id="passwordMenuItem"><a href="@Url.Action("ChangePassword", "MyProfile")">Password Change <span class="badge"></span></a></li>
-                <li class="@Utils.GetListItemClassByUrl(Request.Url.ToString(),Url.Action("ChangePassword", "MyProfile"))" id="passwordMenuItem"><a href="@Url.Action("PersonalInfo", "MyProfile")">Personal Info <span class="badge"></span></a></li>    
+                <li class="@Utils.GetListItemClassByUrl(Request.Url.ToString(), Url.Action("PersonalInfo", "MyProfile"))" id="passwordMenuItem"><a href="@Url.Action("PersonalInfo", "MyProfile")">Personal Info <span class="badge"></span></a></li>    
 @*                <li class="@Utils.GetListItemClassByUrl(Request.Url.ToString(), Url.Action("OpenLeads", "MyProfile"), Url.Action("HistoricLeads", "MyProfile"), Url.Action("NewLead", "MyProfile"))" id="leadsMenuItem"><a href="@Url.Action("OpenLeads", "MyProfile")">Leads <span class="badge"></span></a></li>    *@
 @*                <li class="@Utils.GetListItemClassByUrl(Request.Url.ToString(), Url.Action("Incidents", "MyProfile"), Url.Action("HistoricIncidents", "MyProfile"))" id="incidentsMenuItem"><a href="@Url.Action("Incidents", "MyProfile")">Incidents <span class="badge"></span></a></li>*@
             </ul>

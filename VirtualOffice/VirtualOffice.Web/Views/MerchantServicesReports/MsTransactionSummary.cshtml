@@ -97,19 +97,18 @@
                               {
                                   var columnConfig = columnsConfig[column];
                                   var label = columnsConfig[column].Label;
-                                  var columnResult = col.Bound(column).Width(columnConfig.Width).Hidden(columnConfig.Hidden).Title(label);
+                                  var columnResult = col.Bound(column).Width(columnConfig.Width).Hidden(columnConfig.Hidden).Title(label).Groupable(columnConfig.Groupable); ;
 
                                   if (!string.IsNullOrEmpty(columnConfig.Link))
                                   {
                                       columnResult = columnResult.ClientTemplate(columnConfig.Link);
                                   }
 
-
                                   if (columnConfig.IsDate)
                                       columnResult.Format("{0:dd/MM/yyyy}");
 
                                   else if (columnConfig.IsNumeric)
-                                      columnResult.ClientFooterTemplate("$#= kendo.format('{0:n2}', sum)#").Format("{0:n2}").HtmlAttributes(new { alignText = "right" });
+                                      columnResult.ClientFooterTemplate("#= kendo.format('{0:n2}', sum)#").Format("{0:n2}").HtmlAttributes(new { alignText = "right" });
                               }
 
                           })
@@ -127,6 +126,8 @@
                           .Events(ev => ev.ColumnReorder("saveNewOutPutOrder").ColumnResize("saveColumnWidth"))
                           .Resizable(resize => resize.Columns(true))
                           .Sortable()
+                          .Filterable()
+                          .Groupable()
                           .Selectable()
                           .Reorderable(reorder => reorder.Columns(true))
                           .Scrollable(scr => scr.Height(600))

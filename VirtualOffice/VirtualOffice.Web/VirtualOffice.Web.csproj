@@ -1925,6 +1925,7 @@
     <Content Include="Views\PrepaidReports\FullcargaInvoiceDetails.cshtml" />
     <Content Include="Views\PrepaidReports\FullcargaPrepaidSummary.cshtml" />
     <Content Include="Views\MerchantServicesReports\MsTransactionSummary.cshtml" />
+    <Content Include="Views\MyProfile\PersonalInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
