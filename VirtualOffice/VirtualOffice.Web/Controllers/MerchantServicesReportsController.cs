@@ -60,12 +60,13 @@ namespace VirtualOffice.Web.Controllers
             return View(model);
         }
 
-
-        public string MsTransactionSummary()
+        public ActionResult MsTransactionSummary()
         {
-            return "hola";
+            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_getTransactions", typeof(MsTransactionSummaryViewModel));
+            const string printLink = "/MerchantServicesReports/PrintTransactionSummary";
+            var model = GetReportModel(columnsConfig, printLink, "sp_getTransactions");
+            return View(model);
         }
-
 
         public ActionResult MsComissionSummaryForAmex(int agentId, string startDate, string endDate)
         {
@@ -180,6 +181,29 @@ namespace VirtualOffice.Web.Controllers
 
             return Json(result);
         }
+
+
+        [HttpPost]
+        public ActionResult RunTransactionSummary([DataSourceRequest] DataSourceRequest request, DateTime startDate, DateTime endDate, string outPut, bool saveOutPut)
+        {
+            if (saveOutPut)
+            {
+                var outPutDeserialized = new JavaScriptSerializer().Deserialize<List<string>>(outPut);
+
+                _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "sp_getTransactions", outPutDeserialized.GetCommaSeparatedTokens());
+            }
+
+            SaveLastDateRangeInSession(startDate, endDate);
+
+            var reportData = _virtualOfficeService.RunTransactionSummary(GetLoggedUserId(), startDate, endDate);
+
+            var mappedResult = reportData.MapTo<IEnumerable<MsTransactionSummaryResult>, IEnumerable<MsTransactionSummaryViewModel>>();
+
+            var result = mappedResult.ToDataSourceResult(request);
+
+            return Json(result);
+        }
+
 
         [HttpPost]
         public ActionResult RunComissionSummaryForAmex([DataSourceRequest] DataSourceRequest request, int? agentId, DateTime startDate, DateTime endDate, string outPut, bool saveOutPut)
@@ -434,6 +458,19 @@ namespace VirtualOffice.Web.Controllers
             return exportMode ? ExportReportsToExcel(procedureName, methodName, objParams) :
                               PrintReport(procedureName, methodName, objParams);
         }
+        public ActionResult PrintTransactionSummary(string startDate, string endDate, bool exportMode)
+        {
+            var dateRange = GetDateRange(startDate, endDate);
+
+            var objParams = new object[] { GetLoggedUserId(), dateRange.StartDate, dateRange.EndDate };
+
+            const string procedureName = "sp_getTransactions", methodName = "RunTransactionSummary";
+
+            return exportMode ? ExportReportsToExcel(procedureName, methodName, objParams) :
+                              PrintReport(procedureName, methodName, objParams);
+        }
+
+
 
         #endregion
 

@@ -180,6 +180,19 @@ namespace VirtualOffice.Data.Repositories
             return reportResult;
         }
         /// <summary>
+        /// MS Commission Summary 
+        /// </summary>
+        /// <param name="agentId"></param>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <returns></returns>
+        public IEnumerable<sp_get_transactions_Result> RunMerchantServicesTransactions(int agentId, DateTime startDate, DateTime endDate)
+        {
+            var reportResult = VirtualOfficeContext.sp_get_transactions(agentId, startDate, endDate);
+
+            return reportResult;
+        }
+        /// <summary>
         /// Processing Commission Amex Details
         /// </summary>
         /// <param name="agentId"></param>

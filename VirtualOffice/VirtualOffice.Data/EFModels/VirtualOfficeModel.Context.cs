@@ -7,6 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using VirtualOffice.Data.Helpers;
+
 namespace VirtualOffice.Data.EFModels
 {
     using System;
@@ -592,7 +597,29 @@ namespace VirtualOffice.Data.EFModels
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_report_msv_commission_details_from_amex_Result>("sp_report_msv_commission_details_from_amex", agentIDParameter, ini_dateParameter, end_dateParameter, columnIDParameter, emptyRecordParameter);
         }
-    
+
+        public virtual IEnumerable<sp_get_transactions_Result> sp_get_transactions(Nullable<int> agentID, DateTime ini_date, DateTime end_date)
+        {
+            var result = new List<sp_get_transactions_Result>();
+            using (var connection = new SqlConnection("data source=PSSQLWAREHOUSE;initial catalog=Merchant_sign_up;user id=webuser;password=dog33156"))
+            {
+
+                var command = new SqlCommand("sp_getTransactions", connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@agentid", agentID);
+                command.Parameters.AddWithValue("@dateinit", ini_date.ToString("MM-dd-yyyy"));
+                command.Parameters.AddWithValue("@dateend", end_date.ToString("MM-dd-yyyy"));
+
+                connection.Open();
+
+                using (var reader = command.ExecuteReader())
+                    result.AddRange(reader.Select(r => r.MapTo<IDataReader, sp_get_transactions_Result>()));
+
+                connection.Close();
+            }
+            return result;
+        }
+
         public virtual ObjectResult<sp_report_msv_commission_details_from_other_Result> sp_report_msv_commission_details_from_other(Nullable<int> agentID, Nullable<System.DateTime> ini_date, Nullable<System.DateTime> end_date, Nullable<int> columnID, Nullable<bool> emptyRecord)
         {
             var agentIDParameter = agentID.HasValue ?
@@ -1134,5 +1161,19 @@ namespace VirtualOffice.Data.EFModels
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Sp_TransactionsSummaryBCK_Result>("Sp_TransactionsSummaryBCK", isoIdParameter, startDateParameter, endDateParameter);
         }
+    }
+
+
+    public static class A
+    {
+        public static IEnumerable<T> Select<T>(this IDataReader reader,
+                                       Func<IDataReader, T> projection)
+        {
+            while (reader.Read())
+            {
+                yield return projection(reader);
+            }
+        }
+
     }
 }

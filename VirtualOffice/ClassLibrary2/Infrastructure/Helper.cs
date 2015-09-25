@@ -26,7 +26,7 @@ namespace VirtualOffice.Service.Domain.Infrastructure
             Mapper.CreateMap<sp_report_prepaid_portfolio_inAlert_Result, PrepaidPortfolioResult>();
             Mapper.CreateMap<sp_report_general_sales_summary_Result, PrepaidSalesSummaryResult>();
             Mapper.CreateMap<GetTodayTransactions_Result, PrepaidTodayTransactionsResult>()
-            .ForMember(p => p.date, k => k.MapFrom(m =>m.date.ToString()));
+            .ForMember(p => p.date, k => k.MapFrom(m => m.date.ToString()));
 
             Mapper.CreateMap<AccountsInCollection_Result, AccountsInCollectionResult>();
             Mapper.CreateMap<SP_ippBrowser_Result, IppBrowserResult>();
@@ -34,7 +34,7 @@ namespace VirtualOffice.Service.Domain.Infrastructure
             Mapper.CreateMap<SP_ShowAccountRegister_Result, AccountRegisterResult>();
             Mapper.CreateMap<sp_GetMerchantCommissionsProfile_Result, MerchantComissionResult>();
             Mapper.CreateMap<Sp_GetMerchantStatement_Result, MerchantStatementResult>();
-            Mapper.CreateMap<Sp_TransactionsSummary_Result, TransactionSummaryResult>();
+            Mapper.CreateMap<Sp_TransactionsSummary_Result, ClassLibrary2.Domain.Prepaid.TransactionSummaryResult>();
             Mapper.CreateMap<SP_Fullcarga_Statetement_Result, FullCargaStatement>();
             Mapper.CreateMap<SP_Fullcarga_DetailInvoice_Result, FullcargaInvoiceDetail>();
             Mapper.CreateMap<SP_Fullcarga_PrepaidSalesSummary_Result, FullcargaPrepaidSummary>();
@@ -44,6 +44,9 @@ namespace VirtualOffice.Service.Domain.Infrastructure
 
             Mapper.CreateMap<sp_report_msv_portfolio_summary_Result, MsPortfolioResult>();
             Mapper.CreateMap<sp_report_msv_commission_summary_Result, MsComissionSummaryResult>();
+
+            Mapper.CreateMap<sp_get_transactions_Result, MsTransactionSummaryResult>();
+
             Mapper.CreateMap<sp_report_msv_commission_details_from_amex_Result, MsComissionSummaryForAmex>();
             Mapper.CreateMap<sp_report_msv_commission_details_from_visamc_Result, MsCommssionSummaryForVmC>();
             Mapper.CreateMap<sp_report_msv_commission_details_from_other_Result, MsCommsissionSummaryForOthers>();
@@ -72,14 +75,14 @@ namespace VirtualOffice.Service.Domain.Infrastructure
         /// <typeparam name="TK"></typeparam>
         /// <param name="aEntity"></param>
         /// <returns></returns>
-        public static TK MapTo<T,TK>(this T aEntity)
+        public static TK MapTo<T, TK>(this T aEntity)
         {
-            var modelResult = Mapper.Map<T,TK>(aEntity);
+            var modelResult = Mapper.Map<T, TK>(aEntity);
 
             return modelResult;
         }
-  
-  
+
+
         ///Created By: Carlos Raul (03102014)
         /// <summary>
         /// Extension Method to determine if a IEnumerable is Empty
@@ -95,20 +98,20 @@ namespace VirtualOffice.Service.Domain.Infrastructure
         private static bool IsNumericColumn<T>(this T obj)
         {
             double numericValueIfAny;
-            
-            return  obj.ToString().Contains('$') && Double.TryParse(obj.ToString(), out numericValueIfAny);
+
+            return obj.ToString().Contains('$') && Double.TryParse(obj.ToString(), out numericValueIfAny);
         }
 
         public static DateRange GetFirst_LastDayInLastMonths(int months)
         {
             var pastDate = DateTime.Now.AddMonths((-1) * months);
 
-            //var first_lastDate = GetFirst_LastDayRange(pastDate.Month, pastDate.Year);
+            var first_lastDate = GetFirst_LastDayRange(pastDate.Month, pastDate.Year);
 
             return new DateRange
             {
-                StartDate = pastDate,
-                EndDate = DateTime.Now
+                StartDate = first_lastDate.StartDate,
+                EndDate = first_lastDate.EndDate
             };
         }
 
@@ -137,18 +140,18 @@ namespace VirtualOffice.Service.Domain.Infrastructure
 
         public static DateRange GetFirst_LastDayRange(string summaryRemark)
         {
-          if (string.IsNullOrEmpty(summaryRemark))
-              return null;
+            if (string.IsNullOrEmpty(summaryRemark))
+                return null;
 
-          var firstDigit = summaryRemark.FirstOrDefault(char.IsDigit);
+            var firstDigit = summaryRemark.FirstOrDefault(char.IsDigit);
 
-          int months;
+            int months;
 
-          if (int.TryParse(firstDigit.ToString(), out months))
-              return GetFirst_LastDayInLastMonths(months);
+            if (int.TryParse(firstDigit.ToString(), out months))
+                return GetFirst_LastDayInLastMonths(months);
 
-          return GetFirst_LastDayInLastMonths(1);
-          
+            return GetFirst_LastDayInLastMonths(1);
+
         }
     }
 }

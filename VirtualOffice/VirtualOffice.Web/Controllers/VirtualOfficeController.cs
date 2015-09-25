@@ -51,7 +51,7 @@ namespace VirtualOffice.Web.Controllers
                 Hidden = !userReportOutput.Contains(column.Name),
                 Width = column.Width,
                 Level = column.Level,
-                Label = _virtualOfficeService.GetColumnLabel(storeProcedureName, column.Name),
+                Label = column.Label ?? _virtualOfficeService.GetColumnLabel(storeProcedureName, column.Name),
                 IsNumeric = type!= null && type.IsNumericColumn(column.Name),
                 IsDate = type!= null && type.IsDateColumn(column.Name)
             });

@@ -10,7 +10,7 @@ using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using ClassLibrary2.Domain;
-using ClassLibrary2.Domain.MerchantServices;
+using MerchantServices = ClassLibrary2.Domain.MerchantServices;
 using ClassLibrary2.Domain.Others;
 using ClassLibrary2.Domain.Prepaid;
 using VirtualOffice.Data.EFModels;
@@ -276,94 +276,109 @@ namespace VirtualOffice.Service.Services
         #endregion
 
         #region MS Reports
-        public IEnumerable<MsPortfolioResult> RunMsPortfolioSummary(int agentId)
+        public IEnumerable<MerchantServices.MsPortfolioResult> RunMsPortfolioSummary(int agentId)
         {
             try
             {
                 var reportResult = _reportRepository.RunMerchantServicesPortfolioSummary(agentId);
 
-                var result = reportResult.MapTo<IEnumerable<sp_report_msv_portfolio_summary_Result>, IEnumerable<MsPortfolioResult>>();
+                var result = reportResult.MapTo<IEnumerable<sp_report_msv_portfolio_summary_Result>, IEnumerable<MerchantServices.MsPortfolioResult>>();
 
                 return result;
             }
             catch (Exception exception)
             {
-                return new List<MsPortfolioResult>();
+                return new List<MerchantServices.MsPortfolioResult>();
             }
         }
-        public IEnumerable<MsComissionSummaryResult> RunMsComissionSummary(int agentId, DateTime startDate, DateTime endDate)
+        public IEnumerable<MerchantServices.MsComissionSummaryResult> RunMsComissionSummary(int agentId, DateTime startDate, DateTime endDate)
         {
             try
             {
                 var reportResult = _reportRepository.RunMerchantServicesComissionSummary(agentId, startDate, endDate);
 
-                var result = reportResult.MapTo<IEnumerable<sp_report_msv_commission_summary_Result>, IEnumerable<MsComissionSummaryResult>>();
+                var result = reportResult.MapTo<IEnumerable<sp_report_msv_commission_summary_Result>, IEnumerable<MerchantServices.MsComissionSummaryResult>>();
 
                 return result;
             }
             catch (Exception exception)
             {
-               return new List<MsComissionSummaryResult>();
+               return new List<MerchantServices.MsComissionSummaryResult>();
             }
         }
-        public IEnumerable<MsComissionSummaryForAmex> RunMsComissionDetailsForAmex(int agentId, DateTime startDate, DateTime endDate)
+        public IEnumerable<MerchantServices.MsTransactionSummaryResult> RunTransactionSummary(int agentId, DateTime startDate, DateTime endDate)
+        {
+            try
+            {
+                var reportResult = _reportRepository.RunMerchantServicesTransactions(agentId, startDate, endDate);
+
+                var result = reportResult.MapTo<IEnumerable<sp_get_transactions_Result>, IEnumerable<MerchantServices.MsTransactionSummaryResult>>();
+
+                return result;
+            }
+            catch (Exception exception)
+            {
+                return new List<MerchantServices.MsTransactionSummaryResult>();
+            }
+        }
+        public IEnumerable<MerchantServices.MsComissionSummaryForAmex> RunMsComissionDetailsForAmex(int agentId, DateTime startDate, DateTime endDate)
         {
             try
             {
                 var reportResult = _reportRepository.RunProccessingCommissionAmexDetails(agentId, startDate, endDate);
 
-                var result = reportResult.MapTo<IEnumerable<sp_report_msv_commission_details_from_amex_Result>, IEnumerable<MsComissionSummaryForAmex>>();
+                var result = reportResult.MapTo<IEnumerable<sp_report_msv_commission_details_from_amex_Result>, IEnumerable<MerchantServices.MsComissionSummaryForAmex>>();
 
                 return result;
             }
             catch (Exception exception) 
             {
-               return new List<MsComissionSummaryForAmex>();
+               return new List<MerchantServices.MsComissionSummaryForAmex>();
             }
         }
-        public IEnumerable<MsCommssionSummaryForVmC> RunMsComissionDetailsForVmC(int agentId, DateTime startDate, DateTime endDate)
+        public IEnumerable<MerchantServices.MsCommssionSummaryForVmC> RunMsComissionDetailsForVmC(int agentId, DateTime startDate, DateTime endDate)
         {
             try
             {
                 var reportResult = _reportRepository.RunProccessingCommissionVisa_MasterCardDetails(agentId, startDate, endDate);
 
-                var result = reportResult.MapTo<IEnumerable<sp_report_msv_commission_details_from_visamc_Result>, IEnumerable<MsCommssionSummaryForVmC>>();
+                var result = reportResult.MapTo<IEnumerable<sp_report_msv_commission_details_from_visamc_Result>, IEnumerable<MerchantServices.MsCommssionSummaryForVmC>>();
 
                 return result;
             }
             catch (Exception exception)
             {
-               return new List<MsCommssionSummaryForVmC>();
+               return new List<MerchantServices.MsCommssionSummaryForVmC>();
             }
         }
-        public IEnumerable<MsCommsissionSummaryForOthers> RunMsComissionDetailsForOthers(int agentId, DateTime startDate, DateTime endDate)
+        public IEnumerable<MerchantServices.MsCommsissionSummaryForOthers> RunMsComissionDetailsForOthers(int agentId, DateTime startDate, DateTime endDate)
         {
             try
             {
                 var reportResult = _reportRepository.RunProccessingCommissionOtherDetails(agentId, startDate, endDate);
 
-                var result = reportResult.MapTo<IEnumerable<sp_report_msv_commission_details_from_other_Result>, IEnumerable<MsCommsissionSummaryForOthers>>();
+                var result = reportResult.MapTo<IEnumerable<sp_report_msv_commission_details_from_other_Result>, IEnumerable<MerchantServices.MsCommsissionSummaryForOthers>>();
 
                 return result;
             }
             catch (Exception exception)
             {
-               return new List<MsCommsissionSummaryForOthers>();
+               return new List<MerchantServices.MsCommsissionSummaryForOthers>();
             }
         }
-        public IEnumerable<MsCommissionSummaryByTotals> RunMsComissionDetailsByTotals(int agentId, DateTime startDate, DateTime endDate)
+        public IEnumerable<MerchantServices.MsCommissionSummaryByTotals> RunMsComissionDetailsByTotals(int agentId, DateTime startDate, DateTime endDate)
         {
             try
             {
                 var reportResult = _reportRepository.RunProccessingCommissionTotalDetails(agentId, startDate, endDate);
 
-                var result = reportResult.MapTo<IEnumerable<sp_report_msv_commission_details_by_totals_Result>, IEnumerable<MsCommissionSummaryByTotals>>();
+                var result = reportResult.MapTo<IEnumerable<sp_report_msv_commission_details_by_totals_Result>, IEnumerable<MerchantServices.MsCommissionSummaryByTotals>>();
 
                 return result;
             }
             catch (Exception exception)
             {
-                return new List<MsCommissionSummaryByTotals>();
+                return new List<MerchantServices.MsCommissionSummaryByTotals>();
             }
         }
 
@@ -795,7 +810,7 @@ namespace VirtualOffice.Service.Services
 
         public ItemValueUrl GetMerchantServicesSalesSummary(int agentId, bool runReports, DateTime startDate, DateTime endDate)
         {
-            var salesSummary = runReports? RunMsComissionSummary(agentId, startDate, endDate): new List<MsComissionSummaryResult>();
+            var salesSummary = runReports? RunMsComissionSummary(agentId, startDate, endDate): new List<MerchantServices.MsComissionSummaryResult>();
 
             var commissionsVM = salesSummary.Sum(c => decimal.Parse(c.vmc_commission, NumberStyles.Currency));
             var commissionsAmex = salesSummary.Sum(c => decimal.Parse(c.amex_commission, NumberStyles.Currency));

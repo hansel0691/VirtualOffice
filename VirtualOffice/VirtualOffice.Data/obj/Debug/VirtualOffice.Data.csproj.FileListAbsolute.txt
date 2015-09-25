@@ -46,3 +46,5 @@ C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\D
 C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\obj\Debug\VirtualOffice.Data.csprojResolveAssemblyReference.cache
 C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\obj\Debug\VirtualOffice.Data.dll
 C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\obj\Debug\VirtualOffice.Data.pdb
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\AutoMapper.dll
+C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\AutoMapper.xml

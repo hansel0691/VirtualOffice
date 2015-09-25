@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
 using ClassLibrary2.Domain.MerchantServices;
 using ClassLibrary2.Domain.Others;
 using ClassLibrary2.Domain.Prepaid;
@@ -87,8 +88,8 @@ namespace VirtualOffice.Web.Infrastructure
 
             Mapper.CreateMap<MerchantStatementResult, MerchantStatementResultViewModel>();
 
-            Mapper.CreateMap<TransactionSummaryResult, TransactionSummaryViewModel>();
-            Mapper.CreateMap<TransactionSummaryViewModel, TransactionSummaryResult>();
+            Mapper.CreateMap<ClassLibrary2.Domain.Prepaid.TransactionSummaryResult, TransactionSummaryViewModel>();
+            Mapper.CreateMap<TransactionSummaryViewModel, ClassLibrary2.Domain.Prepaid.TransactionSummaryResult>();
 
             Mapper.CreateMap<FullCargaStatement, FullcargaStatementsViewModel>();
             Mapper.CreateMap<FullcargaStatementsViewModel, FullCargaStatement>();
@@ -149,6 +150,18 @@ namespace VirtualOffice.Web.Infrastructure
                 .ForMember(p => p.expenses, k => k.MapFrom(m => double.Parse(m.expenses.GetPlaneFormat())))
                 .ForMember(p => p.netincome, k => k.MapFrom(m => double.Parse(m.netincome.GetPlaneFormat())))
                 .ForMember(p => p.adjustments, k => k.MapFrom(m => double.Parse(m.adjustments.GetPlaneFormat())));
+
+            Mapper.CreateMap<MsTransactionSummaryResult, MsTransactionSummaryViewModel>()
+               .ForMember(p => p.vmc_amount, k => k.MapFrom(m => double.Parse(m.vmc_amount.GetPlaneFormat())))
+               .ForMember(p => p.amex_amount, k => k.MapFrom(m => double.Parse(m.amex_amount.GetPlaneFormat())))
+               .ForMember(p => p.dscv_amount, k => k.MapFrom(m => double.Parse(m.dscv_amount.GetPlaneFormat())))
+               .ForMember(p => p.ebt_amount, k => k.MapFrom(m => double.Parse(m.ebt_amount.GetPlaneFormat())))
+               .ForMember(p => p.oth_amount, k => k.MapFrom(m => double.Parse(m.oth_amount.GetPlaneFormat())))
+               .ForMember(p => p.tran_amt, k => k.MapFrom(m => double.Parse(m.tran_amt.GetPlaneFormat())))
+               .ForMember(p => p.datestamp, k => k.MapFrom(m => m.datestamp == null ? new DateTime() : (DateTime)m.datestamp));
+
+
+
             #endregion
 
             #region Others
