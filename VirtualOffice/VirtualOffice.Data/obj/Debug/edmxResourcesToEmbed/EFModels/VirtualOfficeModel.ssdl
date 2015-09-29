@@ -578,6 +578,16 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
     <Parameter Name="vendingType" Type="int" Mode="In" />
     <Parameter Name="emptyRecord" Type="bit" Mode="In" />
   </Function>
+  <Function Name="GetTodayTransactions_New" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="agentid" Type="int" Mode="In" />
+    <Parameter Name="merchantid" Type="int" Mode="In" />
+    <Parameter Name="iniDate" Type="varchar" Mode="In" />
+    <Parameter Name="endDate" Type="varchar" Mode="In" />
+    <Parameter Name="TrxType_hyp_fk" Type="varchar" Mode="In" />
+    <Parameter Name="item_fk" Type="varchar" Mode="In" />
+    <Parameter Name="vendingType" Type="int" Mode="In" />
+    <Parameter Name="emptyRecord" Type="bit" Mode="In" />
+  </Function>
   <Function Name="SetStandAloneReportsOnDesktop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="SP_accountsInCollection" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="agentid" Type="int" Mode="In" />

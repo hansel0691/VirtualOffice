@@ -34,5 +34,7 @@ namespace ClassLibrary2.Domain.Prepaid
         public Nullable<int> SettledSale { get; set; }
         public Nullable<bool> vending { get; set; }
         public int VendingType { get; set; }
+        public string Cashier_ID { get; set; }
+
     }
 }

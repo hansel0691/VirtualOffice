@@ -1589,6 +1589,53 @@ public partial class VirtualOfficeEntities : DbContext
         return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Sp_TransactionsSummary_new_Result>("Sp_TransactionsSummary_new", dateiParameter, dateFParameter, uniqueIdParameter, isMerchantParameter);
     }
 
+
+    public virtual ObjectResult<GetTodayTransactions_New_Result> GetTodayTransactions_New(Nullable<int> agentid, Nullable<int> merchantid, string iniDate, string endDate, string trxType_hyp_fk, string item_fk, Nullable<int> vendingType, Nullable<bool> emptyRecord)
+    {
+
+        var agentidParameter = agentid.HasValue ?
+            new ObjectParameter("agentid", agentid) :
+            new ObjectParameter("agentid", typeof(int));
+
+
+        var merchantidParameter = merchantid.HasValue ?
+            new ObjectParameter("merchantid", merchantid) :
+            new ObjectParameter("merchantid", typeof(int));
+
+
+        var iniDateParameter = iniDate != null ?
+            new ObjectParameter("iniDate", iniDate) :
+            new ObjectParameter("iniDate", typeof(string));
+
+
+        var endDateParameter = endDate != null ?
+            new ObjectParameter("endDate", endDate) :
+            new ObjectParameter("endDate", typeof(string));
+
+
+        var trxType_hyp_fkParameter = trxType_hyp_fk != null ?
+            new ObjectParameter("TrxType_hyp_fk", trxType_hyp_fk) :
+            new ObjectParameter("TrxType_hyp_fk", typeof(string));
+
+
+        var item_fkParameter = item_fk != null ?
+            new ObjectParameter("item_fk", item_fk) :
+            new ObjectParameter("item_fk", typeof(string));
+
+
+        var vendingTypeParameter = vendingType.HasValue ?
+            new ObjectParameter("vendingType", vendingType) :
+            new ObjectParameter("vendingType", typeof(int));
+
+
+        var emptyRecordParameter = emptyRecord.HasValue ?
+            new ObjectParameter("emptyRecord", emptyRecord) :
+            new ObjectParameter("emptyRecord", typeof(bool));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetTodayTransactions_New_Result>("GetTodayTransactions_New", agentidParameter, merchantidParameter, iniDateParameter, endDateParameter, trxType_hyp_fkParameter, item_fkParameter, vendingTypeParameter, emptyRecordParameter);
+    }
+
 }
 
 }

@@ -33,5 +33,7 @@ namespace VirtualOffice.Web.Models.NewReports
         public Nullable<int> SettledSale { get; set; }
         public Nullable<bool> vending { get; set; }
         public int VendingType { get; set; }
+
+        public string Cashier_ID { get; set; }
     }
 }

@@ -1254,5 +1254,38 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetTodayTransactions_New" FunctionName="VirtualOfficeModel.Store.GetTodayTransactions_New">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.GetTodayTransactions_New_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="TrxType_hyp_fk" ColumnName="TrxType_hyp_fk" />
+          <ScalarProperty Name="Product_Hyp_fk" ColumnName="Product_Hyp_fk" />
+          <ScalarProperty Name="pro_description" ColumnName="pro_description" />
+          <ScalarProperty Name="mer_MID" ColumnName="mer_MID" />
+          <ScalarProperty Name="mer_name" ColumnName="mer_name" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="language" ColumnName="language" />
+          <ScalarProperty Name="carrier_fk" ColumnName="carrier_fk" />
+          <ScalarProperty Name="pin_controlno" ColumnName="pin_controlno" />
+          <ScalarProperty Name="product_sbt" ColumnName="product_sbt" />
+          <ScalarProperty Name="systemtracenumber" ColumnName="systemtracenumber" />
+          <ScalarProperty Name="TransPaymentMethod" ColumnName="TransPaymentMethod" />
+          <ScalarProperty Name="SaleStatus" ColumnName="SaleStatus" />
+          <ScalarProperty Name="OriginalSaleDate" ColumnName="OriginalSaleDate" />
+          <ScalarProperty Name="merchant_BusAddress" ColumnName="merchant_BusAddress" />
+          <ScalarProperty Name="merchant_AddressCityID" ColumnName="merchant_AddressCityID" />
+          <ScalarProperty Name="merchant_AddressStateID" ColumnName="merchant_AddressStateID" />
+          <ScalarProperty Name="merchant_AddressZIP" ColumnName="merchant_AddressZIP" />
+          <ScalarProperty Name="merchant_busphone" ColumnName="merchant_busphone" />
+          <ScalarProperty Name="Status_Message" ColumnName="Status_Message" />
+          <ScalarProperty Name="ReversedTrans" ColumnName="ReversedTrans" />
+          <ScalarProperty Name="SettledSale" ColumnName="SettledSale" />
+          <ScalarProperty Name="vending" ColumnName="vending" />
+          <ScalarProperty Name="VendingType" ColumnName="VendingType" />
+          <ScalarProperty Name="Cashier_ID" ColumnName="Cashier_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

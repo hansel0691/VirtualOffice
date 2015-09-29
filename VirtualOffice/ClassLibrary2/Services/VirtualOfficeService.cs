@@ -154,7 +154,7 @@ namespace VirtualOffice.Service.Services
             {
                 var reportResult = _reportRepository.RunTodayTransactions(agentId, merchantId);
 
-                var result = reportResult.MapTo<IEnumerable<GetTodayTransactions_Result>, IEnumerable<PrepaidTodayTransactionsResult>>();
+                var result = reportResult.MapTo<IEnumerable<GetTodayTransactions_New_Result>, IEnumerable<PrepaidTodayTransactionsResult>>();
 
                 return result;
             }

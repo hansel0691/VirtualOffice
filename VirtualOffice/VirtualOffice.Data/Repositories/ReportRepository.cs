@@ -80,11 +80,11 @@ namespace VirtualOffice.Data.Repositories
             return reportResult;
         }
 
-        public IEnumerable<GetTodayTransactions_Result> RunTodayTransactions(int agentId, int? merchantId)
+        public IEnumerable<GetTodayTransactions_New_Result> RunTodayTransactions(int agentId, int? merchantId)
         {
 
-            var reportResult = merchantId != 0 ? VirtualOfficeContext.GetTodayTransactions(agentId, merchantId, null, null, null, null, null, null) :
-                                               VirtualOfficeContext.GetTodayTransactions(agentId, null, null, null, null, null, null, null);
+            var reportResult = merchantId != 0 ? VirtualOfficeContext.GetTodayTransactions_New(agentId, merchantId, null, null, null, null, null, null) :
+                                               VirtualOfficeContext.GetTodayTransactions_New(agentId, null, null, null, null, null, null, null);
             return reportResult;
         }
 

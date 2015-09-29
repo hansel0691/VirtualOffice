@@ -48,7 +48,7 @@ namespace VirtualOffice.Web.Controllers
 
             ViewBag.AlertsMode = alertsMode;
 
-            ViewData["categories"] = new[] { new { Value = "ACTIVE", Text = "ACTIVE" }, new { Value = "CLOSED ACCOUNT", Text = "CLOSED ACCOUNT" }, new { Value = "SUSPENDED", Text = "SUSPENDED" } };
+            ViewData["categories"] = new[] { new { Value = "ACTIVE", Text = "ACTIVE" }, new { Value = "SUSPENDED", Text = "SUSPENDED" } };
 
             return View(model);
         }
@@ -115,6 +115,8 @@ namespace VirtualOffice.Web.Controllers
         public ActionResult TodayTransactions()
         {
             var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "Sp_get_Today_Transactions", typeof(PrepaidTodayTransactionsViewModel));
+
+            MarkColumnsAsGroupable(columnsConfig, "Cashier_ID");
 
             const string printLink = "/PrepaidReports/PrintTodayTransactions";
 
@@ -190,7 +192,7 @@ namespace VirtualOffice.Web.Controllers
         {
             var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "Sp_TransactionsSummary", typeof(TransactionSummaryViewModel));
 
-            MarkColumnsAsGroupable(columnsConfig, "Store", "Store_Name", "Product", "Type");
+            MarkColumnsAsGroupable(columnsConfig, "Store", "Store_Name", "Product", "Type", "Cahier_id");
 
             const string printLink = "/PrepaidReports/PrintTransactionsSummary";
 

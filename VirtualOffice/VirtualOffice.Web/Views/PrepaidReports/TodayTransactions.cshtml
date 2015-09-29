@@ -81,7 +81,7 @@
                               {
                                   var columnConfig = columnsCofig[column];
                                   var label = columnsCofig[column].Label;
-                                  var columnResult = col.Bound(column).Width(columnConfig.Width).Hidden(columnConfig.Hidden).Title(label);
+                                  var columnResult = col.Bound(column).Width(columnConfig.Width).Hidden(columnConfig.Hidden).Title(label).Groupable(columnConfig.Groupable); ;
 
                                   if (!string.IsNullOrEmpty(columnConfig.Link))
                                   {
@@ -110,6 +110,7 @@
                           .Events(ev => ev.ColumnReorder("saveNewOutPutOrder").ColumnResize("saveColumnWidth"))
                           .Resizable(config => config.Columns(true))
                           .Sortable()
+                          .Groupable()
                           .Selectable()
                           .Reorderable(reorder => reorder.Columns(true))
                           .Scrollable(scr => scr.Height(600))

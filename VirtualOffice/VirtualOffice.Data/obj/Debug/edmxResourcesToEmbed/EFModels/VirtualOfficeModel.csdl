@@ -966,6 +966,16 @@
       <Parameter Name="UniqueId" Mode="In" Type="Int32" />
       <Parameter Name="isMerchant" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="GetTodayTransactions_New" ReturnType="Collection(VirtualOfficeModel.GetTodayTransactions_New_Result)">
+      <Parameter Name="agentid" Mode="In" Type="Int32" />
+      <Parameter Name="merchantid" Mode="In" Type="Int32" />
+      <Parameter Name="iniDate" Mode="In" Type="String" />
+      <Parameter Name="endDate" Mode="In" Type="String" />
+      <Parameter Name="TrxType_hyp_fk" Mode="In" Type="String" />
+      <Parameter Name="item_fk" Mode="In" Type="String" />
+      <Parameter Name="vendingType" Mode="In" Type="Int32" />
+      <Parameter Name="emptyRecord" Mode="In" Type="Boolean" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="AccountsInCollection_Result">
     <Property Type="Int32" Name="agentID" Nullable="true" />
@@ -1639,5 +1649,34 @@
     <Property Type="Int32" Name="Qty" Nullable="true" />
     <Property Type="Decimal" Name="Gross_Sale" Nullable="true" Precision="19" />
     <Property Type="String" Name="Cahier_id" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetTodayTransactions_New_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="TrxType_hyp_fk" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="Product_Hyp_fk" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="pro_description" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="mer_MID" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="mer_name" Nullable="true" MaxLength="103" />
+    <Property Type="Decimal" Name="amount" Nullable="true" Precision="19" />
+    <Property Type="String" Name="language" Nullable="true" MaxLength="2" />
+    <Property Type="Int32" Name="carrier_fk" Nullable="true" />
+    <Property Type="Double" Name="pin_controlno" Nullable="true" />
+    <Property Type="String" Name="product_sbt" Nullable="true" MaxLength="6" />
+    <Property Type="Int32" Name="systemtracenumber" Nullable="true" />
+    <Property Type="String" Name="TransPaymentMethod" Nullable="true" MaxLength="11" />
+    <Property Type="String" Name="SaleStatus" Nullable="true" MaxLength="94" />
+    <Property Type="String" Name="OriginalSaleDate" Nullable="false" MaxLength="61" />
+    <Property Type="String" Name="merchant_BusAddress" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="merchant_AddressCityID" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="merchant_AddressStateID" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="merchant_AddressZIP" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="merchant_busphone" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Status_Message" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="ReversedTrans" Nullable="false" />
+    <Property Type="Int32" Name="SettledSale" Nullable="true" />
+    <Property Type="Boolean" Name="vending" Nullable="true" />
+    <Property Type="Int32" Name="VendingType" Nullable="true" />
+    <Property Type="String" Name="Cashier_ID" Nullable="true" MaxLength="20" />
   </ComplexType>
 </Schema>
