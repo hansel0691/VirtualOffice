@@ -225,6 +225,9 @@
     <Compile Include="EFModels\Sp_TransactionsSummaryBCK_Result.cs">
       <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EFModels\Sp_TransactionsSummary_new_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="EFModels\Sp_TransactionsSummary_Result.cs">
       <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
     </Compile>

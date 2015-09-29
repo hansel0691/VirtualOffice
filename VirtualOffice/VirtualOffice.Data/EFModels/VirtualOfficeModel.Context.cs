@@ -1515,6 +1515,80 @@ public partial class VirtualOfficeEntities : DbContext
         return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Fullcarga_DetailInvoice_with_hrf_Result>("SP_Fullcarga_DetailInvoice_with_hrf", parInvIdParameter, uniqueIdParameter);
     }
 
+
+    public virtual int Sp_get_Today_Transactions_with_Credits(Nullable<int> agentid, Nullable<int> merchantid, string iniDate, string endDate, string trxType_hyp_fk, string item_fk, Nullable<int> vendingType, Nullable<bool> emptyRecord)
+    {
+
+        var agentidParameter = agentid.HasValue ?
+            new ObjectParameter("agentid", agentid) :
+            new ObjectParameter("agentid", typeof(int));
+
+
+        var merchantidParameter = merchantid.HasValue ?
+            new ObjectParameter("merchantid", merchantid) :
+            new ObjectParameter("merchantid", typeof(int));
+
+
+        var iniDateParameter = iniDate != null ?
+            new ObjectParameter("iniDate", iniDate) :
+            new ObjectParameter("iniDate", typeof(string));
+
+
+        var endDateParameter = endDate != null ?
+            new ObjectParameter("endDate", endDate) :
+            new ObjectParameter("endDate", typeof(string));
+
+
+        var trxType_hyp_fkParameter = trxType_hyp_fk != null ?
+            new ObjectParameter("TrxType_hyp_fk", trxType_hyp_fk) :
+            new ObjectParameter("TrxType_hyp_fk", typeof(string));
+
+
+        var item_fkParameter = item_fk != null ?
+            new ObjectParameter("item_fk", item_fk) :
+            new ObjectParameter("item_fk", typeof(string));
+
+
+        var vendingTypeParameter = vendingType.HasValue ?
+            new ObjectParameter("vendingType", vendingType) :
+            new ObjectParameter("vendingType", typeof(int));
+
+
+        var emptyRecordParameter = emptyRecord.HasValue ?
+            new ObjectParameter("emptyRecord", emptyRecord) :
+            new ObjectParameter("emptyRecord", typeof(bool));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Sp_get_Today_Transactions_with_Credits", agentidParameter, merchantidParameter, iniDateParameter, endDateParameter, trxType_hyp_fkParameter, item_fkParameter, vendingTypeParameter, emptyRecordParameter);
+    }
+
+
+    public virtual ObjectResult<Sp_TransactionsSummary_new_Result> Sp_TransactionsSummary_new(Nullable<System.DateTime> datei, Nullable<System.DateTime> dateF, Nullable<int> uniqueId, Nullable<int> isMerchant)
+    {
+
+        var dateiParameter = datei.HasValue ?
+            new ObjectParameter("Datei", datei) :
+            new ObjectParameter("Datei", typeof(System.DateTime));
+
+
+        var dateFParameter = dateF.HasValue ?
+            new ObjectParameter("DateF", dateF) :
+            new ObjectParameter("DateF", typeof(System.DateTime));
+
+
+        var uniqueIdParameter = uniqueId.HasValue ?
+            new ObjectParameter("UniqueId", uniqueId) :
+            new ObjectParameter("UniqueId", typeof(int));
+
+
+        var isMerchantParameter = isMerchant.HasValue ?
+            new ObjectParameter("isMerchant", isMerchant) :
+            new ObjectParameter("isMerchant", typeof(int));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Sp_TransactionsSummary_new_Result>("Sp_TransactionsSummary_new", dateiParameter, dateFParameter, uniqueIdParameter, isMerchantParameter);
+    }
+
 }
 
 }

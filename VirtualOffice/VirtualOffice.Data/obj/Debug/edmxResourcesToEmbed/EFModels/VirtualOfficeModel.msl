@@ -1238,5 +1238,21 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_get_Today_Transactions_with_Credits" FunctionName="VirtualOfficeModel.Store.Sp_get_Today_Transactions_with_Credits" />
+    <FunctionImportMapping FunctionImportName="Sp_TransactionsSummary_new" FunctionName="VirtualOfficeModel.Store.Sp_TransactionsSummary_new">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.Sp_TransactionsSummary_new_Result">
+          <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
+          <ScalarProperty Name="Store" ColumnName="Store" />
+          <ScalarProperty Name="Store_Name" ColumnName="Store_Name" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Gross_Sale" ColumnName="Gross_Sale" />
+          <ScalarProperty Name="Cahier_id" ColumnName="Cahier_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

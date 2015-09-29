@@ -950,6 +950,22 @@
       <Parameter Name="ParInvId" Mode="In" Type="Int32" />
       <Parameter Name="UniqueId" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="Sp_get_Today_Transactions_with_Credits">
+      <Parameter Name="agentid" Mode="In" Type="Int32" />
+      <Parameter Name="merchantid" Mode="In" Type="Int32" />
+      <Parameter Name="iniDate" Mode="In" Type="String" />
+      <Parameter Name="endDate" Mode="In" Type="String" />
+      <Parameter Name="TrxType_hyp_fk" Mode="In" Type="String" />
+      <Parameter Name="item_fk" Mode="In" Type="String" />
+      <Parameter Name="vendingType" Mode="In" Type="Int32" />
+      <Parameter Name="emptyRecord" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_TransactionsSummary_new" ReturnType="Collection(VirtualOfficeModel.Sp_TransactionsSummary_new_Result)">
+      <Parameter Name="Datei" Mode="In" Type="DateTime" />
+      <Parameter Name="DateF" Mode="In" Type="DateTime" />
+      <Parameter Name="UniqueId" Mode="In" Type="Int32" />
+      <Parameter Name="isMerchant" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="AccountsInCollection_Result">
     <Property Type="Int32" Name="agentID" Nullable="true" />
@@ -1612,5 +1628,16 @@
     <Property Type="Int32" Name="Qty" Nullable="true" />
     <Property Type="Decimal" Name="Denomination" Nullable="true" Precision="19" />
     <Property Type="Decimal" Name="Net_Sale" Nullable="true" Precision="19" />
+  </ComplexType>
+  <ComplexType Name="Sp_TransactionsSummary_new_Result">
+    <Property Type="DateTime" Name="Date_Time" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Store" Nullable="false" />
+    <Property Type="String" Name="Store_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Product" Nullable="true" MaxLength="6" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="512" />
+    <Property Type="String" Name="Type" Nullable="false" MaxLength="8" />
+    <Property Type="Int32" Name="Qty" Nullable="true" />
+    <Property Type="Decimal" Name="Gross_Sale" Nullable="true" Precision="19" />
+    <Property Type="String" Name="Cahier_id" Nullable="true" MaxLength="50" />
   </ComplexType>
 </Schema>

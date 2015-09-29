@@ -647,6 +647,16 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
           <Parameter Name="vendingType" Type="int" Mode="In" />
           <Parameter Name="emptyRecord" Type="bit" Mode="In" />
         </Function>
+        <Function Name="Sp_get_Today_Transactions_with_Credits" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="agentid" Type="int" Mode="In" />
+          <Parameter Name="merchantid" Type="int" Mode="In" />
+          <Parameter Name="iniDate" Type="varchar" Mode="In" />
+          <Parameter Name="endDate" Type="varchar" Mode="In" />
+          <Parameter Name="TrxType_hyp_fk" Type="varchar" Mode="In" />
+          <Parameter Name="item_fk" Type="varchar" Mode="In" />
+          <Parameter Name="vendingType" Type="int" Mode="In" />
+          <Parameter Name="emptyRecord" Type="bit" Mode="In" />
+        </Function>
         <Function Name="sp_GetMerchantCommissionsProfile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="merchant_fk" Type="int" Mode="In" />
           <Parameter Name="AgentId" Type="int" Mode="In" />
@@ -845,6 +855,12 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
           <Parameter Name="endDate" Type="varchar" Mode="In" />
         </Function>
         <Function Name="Sp_TransactionsSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Datei" Type="datetime" Mode="In" />
+          <Parameter Name="DateF" Type="datetime" Mode="In" />
+          <Parameter Name="UniqueId" Type="int" Mode="In" />
+          <Parameter Name="isMerchant" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Sp_TransactionsSummary_new" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Datei" Type="datetime" Mode="In" />
           <Parameter Name="DateF" Type="datetime" Mode="In" />
           <Parameter Name="UniqueId" Type="int" Mode="In" />
@@ -2028,6 +2044,22 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
             <Parameter Name="ParInvId" Mode="In" Type="Int32" />
             <Parameter Name="UniqueId" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="Sp_get_Today_Transactions_with_Credits">
+            <Parameter Name="agentid" Mode="In" Type="Int32" />
+            <Parameter Name="merchantid" Mode="In" Type="Int32" />
+            <Parameter Name="iniDate" Mode="In" Type="String" />
+            <Parameter Name="endDate" Mode="In" Type="String" />
+            <Parameter Name="TrxType_hyp_fk" Mode="In" Type="String" />
+            <Parameter Name="item_fk" Mode="In" Type="String" />
+            <Parameter Name="vendingType" Mode="In" Type="Int32" />
+            <Parameter Name="emptyRecord" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_TransactionsSummary_new" ReturnType="Collection(VirtualOfficeModel.Sp_TransactionsSummary_new_Result)">
+            <Parameter Name="Datei" Mode="In" Type="DateTime" />
+            <Parameter Name="DateF" Mode="In" Type="DateTime" />
+            <Parameter Name="UniqueId" Mode="In" Type="Int32" />
+            <Parameter Name="isMerchant" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="AccountsInCollection_Result">
           <Property Type="Int32" Name="agentID" Nullable="true" />
@@ -2690,6 +2722,17 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
           <Property Type="Int32" Name="Qty" Nullable="true" />
           <Property Type="Decimal" Name="Denomination" Nullable="true" Precision="19" />
           <Property Type="Decimal" Name="Net_Sale" Nullable="true" Precision="19" />
+        </ComplexType>
+        <ComplexType Name="Sp_TransactionsSummary_new_Result">
+          <Property Type="DateTime" Name="Date_Time" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Store" Nullable="false" />
+          <Property Type="String" Name="Store_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Product" Nullable="true" MaxLength="6" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="512" />
+          <Property Type="String" Name="Type" Nullable="false" MaxLength="8" />
+          <Property Type="Int32" Name="Qty" Nullable="true" />
+          <Property Type="Decimal" Name="Gross_Sale" Nullable="true" Precision="19" />
+          <Property Type="String" Name="Cahier_id" Nullable="true" MaxLength="50" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -3931,6 +3974,22 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
                 <ScalarProperty Name="Qty" ColumnName="Qty" />
                 <ScalarProperty Name="Denomination" ColumnName="Denomination" />
                 <ScalarProperty Name="Net_Sale" ColumnName="Net_Sale" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_get_Today_Transactions_with_Credits" FunctionName="VirtualOfficeModel.Store.Sp_get_Today_Transactions_with_Credits" />
+          <FunctionImportMapping FunctionImportName="Sp_TransactionsSummary_new" FunctionName="VirtualOfficeModel.Store.Sp_TransactionsSummary_new">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VirtualOfficeModel.Sp_TransactionsSummary_new_Result">
+                <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
+                <ScalarProperty Name="Store" ColumnName="Store" />
+                <ScalarProperty Name="Store_Name" ColumnName="Store_Name" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Gross_Sale" ColumnName="Gross_Sale" />
+                <ScalarProperty Name="Cahier_id" ColumnName="Cahier_id" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

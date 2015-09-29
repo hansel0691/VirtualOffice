@@ -15,5 +15,8 @@ namespace VirtualOffice.Web.Models.NewReports
         public string Type { get; set; }
         public int? Qty { get; set; }
         public decimal? Gross_Sale { get; set; }
+
+        public string Cahier_id { get; set; }
+
     }
 }

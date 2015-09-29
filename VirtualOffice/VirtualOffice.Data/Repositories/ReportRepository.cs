@@ -123,9 +123,9 @@ namespace VirtualOffice.Data.Repositories
             return result;
         }
 
-        public IEnumerable<Sp_TransactionsSummary_Result> GetTransactionSummary(int agentId, bool isMerchant, DateTime startDate, DateTime endDate)
+        public IEnumerable<Sp_TransactionsSummary_new_Result> GetTransactionSummary(int agentId, bool isMerchant, DateTime startDate, DateTime endDate)
         {
-            var result = VirtualOfficeContext.Sp_TransactionsSummary(startDate, endDate, agentId, isMerchant ? 1 : 0);
+            var result = VirtualOfficeContext.Sp_TransactionsSummary_new(startDate, endDate, agentId, isMerchant ? 1 : 0);
 
             return result;
         }

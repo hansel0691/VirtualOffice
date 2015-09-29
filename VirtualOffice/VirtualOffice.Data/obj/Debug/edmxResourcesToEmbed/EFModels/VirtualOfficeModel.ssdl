@@ -642,6 +642,16 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
     <Parameter Name="vendingType" Type="int" Mode="In" />
     <Parameter Name="emptyRecord" Type="bit" Mode="In" />
   </Function>
+  <Function Name="Sp_get_Today_Transactions_with_Credits" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="agentid" Type="int" Mode="In" />
+    <Parameter Name="merchantid" Type="int" Mode="In" />
+    <Parameter Name="iniDate" Type="varchar" Mode="In" />
+    <Parameter Name="endDate" Type="varchar" Mode="In" />
+    <Parameter Name="TrxType_hyp_fk" Type="varchar" Mode="In" />
+    <Parameter Name="item_fk" Type="varchar" Mode="In" />
+    <Parameter Name="vendingType" Type="int" Mode="In" />
+    <Parameter Name="emptyRecord" Type="bit" Mode="In" />
+  </Function>
   <Function Name="sp_GetMerchantCommissionsProfile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="merchant_fk" Type="int" Mode="In" />
     <Parameter Name="AgentId" Type="int" Mode="In" />
@@ -840,6 +850,12 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
     <Parameter Name="endDate" Type="varchar" Mode="In" />
   </Function>
   <Function Name="Sp_TransactionsSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Datei" Type="datetime" Mode="In" />
+    <Parameter Name="DateF" Type="datetime" Mode="In" />
+    <Parameter Name="UniqueId" Type="int" Mode="In" />
+    <Parameter Name="isMerchant" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Sp_TransactionsSummary_new" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Datei" Type="datetime" Mode="In" />
     <Parameter Name="DateF" Type="datetime" Mode="In" />
     <Parameter Name="UniqueId" Type="int" Mode="In" />

@@ -34,7 +34,7 @@ namespace VirtualOffice.Service.Domain.Infrastructure
             Mapper.CreateMap<SP_ShowAccountRegister_Result, AccountRegisterResult>();
             Mapper.CreateMap<sp_GetMerchantCommissionsProfile_Result, MerchantComissionResult>();
             Mapper.CreateMap<Sp_GetMerchantStatement_Result, MerchantStatementResult>();
-            Mapper.CreateMap<Sp_TransactionsSummary_Result, ClassLibrary2.Domain.Prepaid.TransactionSummaryResult>();
+            Mapper.CreateMap<Sp_TransactionsSummary_new_Result, ClassLibrary2.Domain.Prepaid.TransactionSummaryResult>();
             Mapper.CreateMap<SP_Fullcarga_Statetement_Result, FullCargaStatement>();
             Mapper.CreateMap<SP_Fullcarga_DetailInvoice_with_hrf_Result, FullcargaInvoiceDetail>()
                 .ForMember(p => p.Id, k => k.MapFrom(m => int.Parse(m.id)));

@@ -241,7 +241,7 @@ namespace VirtualOffice.Service.Services
         {
             var transactionsSummary = _reportRepository.GetTransactionSummary(agentId, isMerchant, startDate, endDate);
 
-            var result = transactionsSummary.MapTo<IEnumerable<Sp_TransactionsSummary_Result>, IEnumerable<TransactionSummaryResult>>();
+            var result = transactionsSummary.MapTo<IEnumerable<Sp_TransactionsSummary_new_Result>, IEnumerable<TransactionSummaryResult>>();
 
             return result;
         }
