@@ -942,6 +942,14 @@
       <Parameter Name="startDate" Mode="In" Type="DateTime" />
       <Parameter Name="endDate" Mode="In" Type="DateTime" />
     </FunctionImport>
+    <FunctionImport Name="sp_FullCarga_change_status">
+      <Parameter Name="parMid" Mode="In" Type="Int32" />
+      <Parameter Name="parisActive" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Fullcarga_DetailInvoice_with_hrf" ReturnType="Collection(VirtualOfficeModel.SP_Fullcarga_DetailInvoice_with_hrf_Result)">
+      <Parameter Name="ParInvId" Mode="In" Type="Int32" />
+      <Parameter Name="UniqueId" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="AccountsInCollection_Result">
     <Property Type="Int32" Name="agentID" Nullable="true" />
@@ -1594,5 +1602,15 @@
     <Property Type="Int32" Name="Transaction_Id" Nullable="true" />
     <Property Type="Decimal" Name="Amount" Nullable="true" Precision="19" />
     <Property Type="String" Name="Type" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="SP_Fullcarga_DetailInvoice_with_hrf_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="Store" Nullable="false" />
+    <Property Type="String" Name="Store_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Product" Nullable="true" MaxLength="6" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="512" />
+    <Property Type="Int32" Name="Qty" Nullable="true" />
+    <Property Type="Decimal" Name="Denomination" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="Net_Sale" Nullable="true" Precision="19" />
   </ComplexType>
 </Schema>

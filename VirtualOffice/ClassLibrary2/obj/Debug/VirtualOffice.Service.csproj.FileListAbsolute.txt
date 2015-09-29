@@ -26,3 +26,17 @@ C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Debug\
 C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\ClassLibrary2\obj\Debug\VirtualOffice.Service.csprojResolveAssemblyReference.cache
 C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\ClassLibrary2\obj\Debug\ClassLibrary2.dll
 C:\Users\hgarcia\Desktop\vo\VirtualOffice\VirtualOffice\ClassLibrary2\obj\Debug\ClassLibrary2.pdb
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\bin\Debug\AutoMapper.Net4.dll
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\bin\Debug\ClassLibrary2.dll
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\bin\Debug\ClassLibrary2.pdb
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\bin\Debug\AutoMapper.dll
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\bin\Debug\VirtualOffice.Data.dll
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\bin\Debug\EntityFramework.dll
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\bin\Debug\Newtonsoft.Json.dll
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\bin\Debug\VirtualOffice.Data.pdb
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\bin\Debug\AutoMapper.xml
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\bin\Debug\EntityFramework.xml
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\bin\Debug\Newtonsoft.Json.xml
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\obj\Debug\VirtualOffice.Service.csprojResolveAssemblyReference.cache
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\obj\Debug\ClassLibrary2.dll
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\obj\Debug\ClassLibrary2.pdb

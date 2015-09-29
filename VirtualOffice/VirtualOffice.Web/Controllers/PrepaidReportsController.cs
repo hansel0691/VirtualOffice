@@ -22,31 +22,33 @@ using WebGrease.Css.Extensions;
 namespace VirtualOffice.Web.Controllers
 {
 
-     [Authorize(Roles = "User")]
+    [Authorize(Roles = "User")]
     public class PrepaidReportsController : VirtualOfficeController
     {
 
         #region Report Entry Points
 
-         public PrepaidReportsController(IWebClient webClient) : base(webClient)
-         {
-         }
-
-         public ActionResult PortfolioSummary(int? alertsMode, int status = -1)
+        public PrepaidReportsController(IWebClient webClient)
+            : base(webClient)
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_report_portfolio_summary",typeof(PrepaidPortfolioSummaryResultViewModel));
+        }
+
+        public ActionResult PortfolioSummary(int? alertsMode, int status = -1)
+        {
+            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_report_portfolio_summary", typeof(PrepaidPortfolioSummaryResultViewModel));
 
             columnsConfig["DistName"].Groupable = true;
 
             var printLink = "/PrepaidReports/PrintPortfolioSummary";
 
-             if (!alertsMode.HasValue || alertsMode == 0)
-                 printLink += "?alertsMode=1";
+            if (!alertsMode.HasValue || alertsMode == 0)
+                printLink += "?alertsMode=1";
 
             var model = GetReportModel(columnsConfig, printLink, "sp_report_portfolio_summary");
 
-             ViewBag.AlertsMode = alertsMode;
-             ViewBag.Status = status;
+            ViewBag.AlertsMode = alertsMode;
+
+            ViewData["categories"] = new[] { new { Value = "ACTIVE", Text = "ACTIVE" }, new { Value = "CLOSED ACCOUNT", Text = "CLOSED ACCOUNT" }, new { Value = "SUSPENDED", Text = "SUSPENDED" } };
 
             return View(model);
         }
@@ -97,26 +99,26 @@ namespace VirtualOffice.Web.Controllers
         }
 
         public ActionResult InvoiceDetails(int invoiceId)
-         {
+        {
 
-             var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_report_invoice_details", typeof(PrepaidInvoiceDetailsResultViewModel));
+            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_report_invoice_details", typeof(PrepaidInvoiceDetailsResultViewModel));
 
-             const string printLink = "/PrepaidReports/PrintInvoiceDetails";
+            const string printLink = "/PrepaidReports/PrintInvoiceDetails";
 
-             var model = GetReportModel(columnsConfig, printLink, "sp_report_invoice_details");
+            var model = GetReportModel(columnsConfig, printLink, "sp_report_invoice_details");
 
-             ViewBag.InvoiceId = invoiceId;
+            ViewBag.InvoiceId = invoiceId;
 
-             return View(model); 
-         }
+            return View(model);
+        }
 
         public ActionResult TodayTransactions()
         {
             var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "Sp_get_Today_Transactions", typeof(PrepaidTodayTransactionsViewModel));
 
-             const string printLink = "/PrepaidReports/PrintTodayTransactions";
+            const string printLink = "/PrepaidReports/PrintTodayTransactions";
 
-             var model = GetReportModel(columnsConfig, printLink, "Sp_get_Today_Transactions");
+            var model = GetReportModel(columnsConfig, printLink, "Sp_get_Today_Transactions");
 
             return View(model);
         }
@@ -197,50 +199,50 @@ namespace VirtualOffice.Web.Controllers
             return View(model);
         }
 
-         public ActionResult FullcargaStatements()
-         {
-             var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "SP_Fullcarga_Statetement", typeof(FullcargaStatementsViewModel));
+        public ActionResult FullcargaStatements()
+        {
+            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "SP_Fullcarga_Statetement", typeof(FullcargaStatementsViewModel));
 
-             const string printLink = "/PrepaidReports/PrintFullcargaStatement";
+            const string printLink = "/PrepaidReports/PrintFullcargaStatement";
 
-             columnsConfig["Billed_Name"].Groupable = true;
+            columnsConfig["Billed_Name"].Groupable = true;
 
-             AddLinksToFullCargaInvoiceColumnConfig(columnsConfig);
+            AddLinksToFullCargaInvoiceColumnConfig(columnsConfig);
 
-             var model = GetReportModel(columnsConfig, printLink, "SP_Fullcarga_Statetement");
+            var model = GetReportModel(columnsConfig, printLink, "SP_Fullcarga_Statetement");
 
-             return View(model);
+            return View(model);
 
-         }
+        }
 
-         public ActionResult FullcargaInvoiceDetails(int invoiceId)
-         {
-             var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "SP_Fullcarga_DetailInvoice", typeof(FullcargaInvoiceDetailViewModel));
+        public ActionResult FullcargaInvoiceDetails(int invoiceId)
+        {
+            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "SP_Fullcarga_DetailInvoice", typeof(FullcargaInvoiceDetailViewModel));
 
-             const string printLink = "/PrepaidReports/PrintInvoiceDetails";
+            const string printLink = "/PrepaidReports/PrintInvoiceDetails";
 
-             var model = GetReportModel(columnsConfig, printLink, "SP_Fullcarga_DetailInvoice");
+            var model = GetReportModel(columnsConfig, printLink, "SP_Fullcarga_DetailInvoice");
 
-             ViewBag.InvoiceId = invoiceId;
+            ViewBag.InvoiceId = invoiceId;
 
-             return View(model); 
-         }
+            return View(model);
+        }
 
-         public ActionResult FullcargaPrepaidSummary()
-         {
-             var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "SP_Fullcarga_PrepaidSalesSummary", typeof(FullcargaPrepaidSummaryViewModel));
+        public ActionResult FullcargaPrepaidSummary()
+        {
+            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "SP_Fullcarga_PrepaidSalesSummary", typeof(FullcargaPrepaidSummaryViewModel));
 
-             const string printLink = "/PrepaidReports/PrintFullcargaPrepaidSummary";
+            const string printLink = "/PrepaidReports/PrintFullcargaPrepaidSummary";
 
-             MarkColumnsAsGroupable(columnsConfig,"Store_Name","Type");
+            MarkColumnsAsGroupable(columnsConfig, "Store_Name", "Type");
 
-             var model = GetReportModel(columnsConfig, printLink, "SP_Fullcarga_PrepaidSalesSummary");
+            var model = GetReportModel(columnsConfig, printLink, "SP_Fullcarga_PrepaidSalesSummary");
 
-             return View(model);
-         }
+            return View(model);
+        }
 
         #endregion
-        
+
         #region Data Manipulation
         [HttpPost]
         public ActionResult RunPortfolioSummary([DataSourceRequest] DataSourceRequest request, string outPut, bool saveOutPut, int? alertsMode, int status = -1)
@@ -253,11 +255,11 @@ namespace VirtualOffice.Web.Controllers
 
                     _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "sp_report_portfolio_summary", outPutDeserialized.GetCommaSeparatedTokens());
                 }
-                
+
                 var reportData = _virtualOfficeService.RunPrepaidPortfolioSummary(GetLoggedUserId());
 
                 reportData = reportData.Where(r => !r.Status.IsNullOrEmpty() && (status == -1 || (r.Status == "ACTIVE" && status == 1) || (r.Status != "ACTIVE" && status == 0)));
-                
+
 
                 if (alertsMode.HasValue && alertsMode.Value != 0)//Filters just accounts with Alerts
                 {
@@ -272,7 +274,7 @@ namespace VirtualOffice.Web.Controllers
 
                 var result = mappedResult.ToDataSourceResult(request);
 
-                _virtualOfficeService.LogReportResult(GetLoggedUserId().ToString(),"Prepaid Portfolio Summary", mappedResult.Count(),Utils.MaximunReportCount);
+                _virtualOfficeService.LogReportResult(GetLoggedUserId().ToString(), "Prepaid Portfolio Summary", mappedResult.Count(), Utils.MaximunReportCount);
 
                 return Json(result);
             }
@@ -302,7 +304,7 @@ namespace VirtualOffice.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult RunSalesDetails([DataSourceRequest] DataSourceRequest request, DateTime startDate, DateTime endDate, string outPut, bool saveOutPut, int merchantId= 0)
+        public ActionResult RunSalesDetails([DataSourceRequest] DataSourceRequest request, DateTime startDate, DateTime endDate, string outPut, bool saveOutPut, int merchantId = 0)
         {
             if (saveOutPut)
             {
@@ -332,7 +334,7 @@ namespace VirtualOffice.Web.Controllers
 
             var userIsMerchant = GetUserCategory() == Category.Merchant;
 
-            var reportData = _virtualOfficeService.GetFullcargaPrepaidSummary(GetLoggedUserId(),userIsMerchant,startDate, endDate);
+            var reportData = _virtualOfficeService.GetFullcargaPrepaidSummary(GetLoggedUserId(), userIsMerchant, startDate, endDate);
 
             var mappedResult = reportData.MapTo<IEnumerable<FullcargaPrepaidSummary>, IEnumerable<FullcargaPrepaidSummaryViewModel>>();
 
@@ -389,7 +391,7 @@ namespace VirtualOffice.Web.Controllers
             {
                 return null;
             }
-            
+
         }
 
         [HttpPost]
@@ -433,7 +435,7 @@ namespace VirtualOffice.Web.Controllers
 
                 var userCategory = GetUserCategory();
 
-                var reportData = userCategory == Category.Merchant?_virtualOfficeService.GetMerchantCreditLimits(null, GetLoggedUserId()):
+                var reportData = userCategory == Category.Merchant ? _virtualOfficeService.GetMerchantCreditLimits(null, GetLoggedUserId()) :
                                                                    _virtualOfficeService.GetMerchantCreditLimits(GetLoggedUserId(), null);
 
                 var mappedResult = reportData.MapTo<IEnumerable<GetMerchantCreditLimitsResult>, IEnumerable<MerchantCreditLimitResultViewModel>>();
@@ -520,7 +522,7 @@ namespace VirtualOffice.Web.Controllers
 
                     _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "sp_GetttCommissionsProfile", outPutDeserialized.GetCommaSeparatedTokens());
                 }
-                
+
                 var userLevel = GetUserLevel();
                 var agentId = userLevel != 0 ? GetLoggedUserId() : 0;
 
@@ -655,9 +657,9 @@ namespace VirtualOffice.Web.Controllers
         {
             var objParams = new object[] { GetLoggedUserId() };
 
-            var procedureName = !alertsMode.HasValue || alertsMode == 0 ? "sp_report_portfolio_summary" : 
+            var procedureName = !alertsMode.HasValue || alertsMode == 0 ? "sp_report_portfolio_summary" :
                                                                           "sp_report_prepaid_portfolio_inAlert";
-            var methodName = !alertsMode.HasValue || alertsMode == 0 ? "RunPrepaidPortfolioSummary":
+            var methodName = !alertsMode.HasValue || alertsMode == 0 ? "RunPrepaidPortfolioSummary" :
                                                                        "RunPrepaidPortfolioInAlert";
 
             return exportMode ? ExportReportsToExcel(procedureName, methodName, objParams) :
@@ -693,7 +695,7 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult PrintInvoiceDetails(int invoiceId, bool exportMode)
         {
-            var objParams = new object[] { invoiceId};
+            var objParams = new object[] { invoiceId };
 
             const string procedureName = "sp_report_invoice_details", methodName = "RunPrepaidInvoiceDetails";
 
@@ -742,7 +744,7 @@ namespace VirtualOffice.Web.Controllers
 
             return exportMode ? ExportReportsToExcel(procedureName, methodName, objParams) :
                                 PrintReport(procedureName, methodName, objParams);
-        
+
         }
         public ActionResult PrintAccountRegister(string startDate, string endDate, bool exportMode)
         {
@@ -780,7 +782,7 @@ namespace VirtualOffice.Web.Controllers
         {
             var dateRange = GetDateRange(startDate, endDate);
 
-            var objParams = new object[] {GetLoggedUserId(), dateRange.StartDate, dateRange.EndDate };
+            var objParams = new object[] { GetLoggedUserId(), dateRange.StartDate, dateRange.EndDate };
 
             const string procedureName = "Sp_TransactionsSummary", methodName = "GetTransactionsSummary";
 
@@ -884,42 +886,42 @@ namespace VirtualOffice.Web.Controllers
             return dataTemplate;
         }
 
-         private IEnumerable<SelectListItem> GetMerchants()
-         {
-             var userCategory = GetUserCategory();
+        private IEnumerable<SelectListItem> GetMerchants()
+        {
+            var userCategory = GetUserCategory();
 
-             var result = userCategory == Category.Merchant ? GetSelfUser() : GetOptionsForUser();
+            var result = userCategory == Category.Merchant ? GetSelfUser() : GetOptionsForUser();
 
-             return result;
-         }
+            return result;
+        }
 
-         private IEnumerable<SelectListItem> GetOptionsForUser()
-         {
-             var result = new List<SelectListItem>();
+        private IEnumerable<SelectListItem> GetOptionsForUser()
+        {
+            var result = new List<SelectListItem>();
 
-             var prepaidAccounts = _virtualOfficeService.RunPrepaidPortfolioSummary(GetLoggedUserId()).ToList();
+            var prepaidAccounts = _virtualOfficeService.RunPrepaidPortfolioSummary(GetLoggedUserId()).ToList();
 
-             if (prepaidAccounts.Any())
-             {
-                 var prepaids = prepaidAccounts.Select(p => new SelectListItem
-                 {
-                     Text = p.business_name,
-                     Value = p.MID.ToString()
-                 });
+            if (prepaidAccounts.Any())
+            {
+                var prepaids = prepaidAccounts.Select(p => new SelectListItem
+                {
+                    Text = p.business_name,
+                    Value = p.MID.ToString()
+                });
 
-                 result.AddRange(prepaids);
+                result.AddRange(prepaids);
 
-                 return result;
-             }
+                return result;
+            }
 
-             return result;
-         } 
+            return result;
+        }
 
-         private IEnumerable<SelectListItem> GetSelfUser()
-         {
-             var user = GetCurrentUser();
+        private IEnumerable<SelectListItem> GetSelfUser()
+        {
+            var user = GetCurrentUser();
 
-             return new List<SelectListItem>
+            return new List<SelectListItem>
              {
                  new SelectListItem
                  {
@@ -927,63 +929,63 @@ namespace VirtualOffice.Web.Controllers
                      Value = user.UserId.ToString()
                  }
              };
-         } 
+        }
 
-         private void MarkColumnsAsGroupable(Dictionary<string, ColumnConfig> columnConfig, params string[] columns)
-         {
-             foreach (var column in columns)
-             {
-                 if (columnConfig.ContainsKey(column))
-                 {
-                     columnConfig[column].Groupable = true;
-                 }
-             }
-         }
+        private void MarkColumnsAsGroupable(Dictionary<string, ColumnConfig> columnConfig, params string[] columns)
+        {
+            foreach (var column in columns)
+            {
+                if (columnConfig.ContainsKey(column))
+                {
+                    columnConfig[column].Groupable = true;
+                }
+            }
+        }
 
         #endregion
 
-         [HttpPost]
-         public ActionResult UpdateCreditLimit([DataSourceRequest] DataSourceRequest request, [Bind(Prefix = "models")]IEnumerable<MerchantCreditLimitResultViewModel> creditLimits)
-         {
-             try
-             {
-                 if (ModelState.IsValid)
-                 {
-                     var result = creditLimits.Aggregate(true, (current, credit) => current && _virtualOfficeService.UpdateCreditLimit(credit.merchant_pk, credit.dailylimit_max, credit.creditlimit_max));
-                     return Json(new { Success = result });
-                 }
-                 else
-                 {
-                     throw new Exception();
-                 }
-             }
-             catch (Exception)
-             {
-                 return Json(new { Success = false }); ;
-             }
-         }
+        [HttpPost]
+        public ActionResult UpdateCreditLimit([DataSourceRequest] DataSourceRequest request, [Bind(Prefix = "models")]IEnumerable<MerchantCreditLimitResultViewModel> creditLimits)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var result = creditLimits.Aggregate(true, (current, credit) => current && _virtualOfficeService.UpdateCreditLimit(credit.merchant_pk, credit.dailylimit_max, credit.creditlimit_max));
+                    return Json(new { Success = result });
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception)
+            {
+                return Json(new { Success = false }); ;
+            }
+        }
 
-         [HttpPost]
-         public ActionResult UpdatePrepaidAcountStatus([DataSourceRequest] DataSourceRequest request, [Bind(Prefix = "models")]IEnumerable<PrepaidPortfolioSummaryResultViewModel> prepaidAccounts)
-         {
-             try
-             {
-                 if (ModelState.IsValid)
-                 {
-//                     var result = prepaidAccounts.Aggregate(true, (current, account) => current && _virtualOfficeService.UpdatePrepaidAcountStatus(account.MID, account.Status ? "ACTIVE" : "INACTIVE"));
-//                     return Json(new { Success = result });
-                 }
-                 else
-                 {
-                     throw new Exception();
-                 }
-             }
-             catch (Exception)
-             {
-                 return Json(new { Success = false }); ;
-             }
+        [HttpPost]
+        public ActionResult UpdatePrepaidAcountStatus([DataSourceRequest] DataSourceRequest request, [Bind(Prefix = "models")]IEnumerable<PrepaidPortfolioSummaryResultViewModel> prepaidAccounts)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var result = prepaidAccounts.Aggregate(true, (current, account) => current && _virtualOfficeService.UpdatePrepaidAcountStatus(account.MID, account.Status == "ACTIVE" ? 1 : 0));
+                    return Json(new { Success = result });
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception)
+            {
+                return Json(new { Success = false }); ;
+            }
 
-             return null;
-         }
+            return null;
+        }
     }
 }

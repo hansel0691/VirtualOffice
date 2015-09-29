@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -25,8 +26,9 @@ namespace VirtualOffice.Web.Models.NewReports
         public string daily_credit_limit { get; set; }
         public string Balance { get; set; }
         public int returned_achs { get; set; }
+
+        [UIHint("StatusEditor")]
         public string Status { get; set; }
-//        public bool Status { get; set; }
         public string suspended_reason { get; set; }
         public string connection_type { get; set; }
         public string bill_payment { get; set; }

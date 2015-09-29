@@ -259,7 +259,7 @@ namespace VirtualOffice.Service.Services
         {
             var invoices = _reportRepository.GetFullcargaInvoiceDetail(invoiceId, userId);
 
-            var result = invoices.MapTo<IEnumerable<SP_Fullcarga_DetailInvoice_Result>, IEnumerable<FullcargaInvoiceDetail>>();
+            var result = invoices.MapTo<IEnumerable<SP_Fullcarga_DetailInvoice_with_hrf_Result>, IEnumerable<FullcargaInvoiceDetail>>();
 
             return result;
         }
@@ -1133,13 +1133,13 @@ namespace VirtualOffice.Service.Services
             return prepaidSummary;
         }
 
-        public bool UpdatePrepaidAcountStatus(int? merchantId, string status)
+        public bool UpdatePrepaidAcountStatus(int? merchantId, int status)
         {
             var prepaidSummary = _reportRepository.UpdatePrepaidAcountStatus(merchantId, status);
 
             //var result = prepaidSummary.MapTo<IEnumerable<SP_Fullcarga_PrepaidSalesSummary_Result>, IEnumerable<FullcargaPrepaidSummary>>();
 
-            return prepaidSummary;
+            return prepaidSummary > 0;
         }
     }
 

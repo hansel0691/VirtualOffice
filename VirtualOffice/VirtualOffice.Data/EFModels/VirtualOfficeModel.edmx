@@ -609,7 +609,15 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
           <Parameter Name="parNewCL" Type="money" Mode="In" />
           <Parameter Name="parNewDailyCL" Type="money" Mode="In" />
         </Function>
+        <Function Name="sp_FullCarga_change_status" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="parMid" Type="int" Mode="In" />
+          <Parameter Name="parisActive" Type="int" Mode="In" />
+        </Function>
         <Function Name="SP_Fullcarga_DetailInvoice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ParInvId" Type="int" Mode="In" />
+          <Parameter Name="UniqueId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_Fullcarga_DetailInvoice_with_hrf" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ParInvId" Type="int" Mode="In" />
           <Parameter Name="UniqueId" Type="int" Mode="In" />
         </Function>
@@ -2012,6 +2020,14 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
             <Parameter Name="startDate" Mode="In" Type="DateTime" />
             <Parameter Name="endDate" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <FunctionImport Name="sp_FullCarga_change_status">
+            <Parameter Name="parMid" Mode="In" Type="Int32" />
+            <Parameter Name="parisActive" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Fullcarga_DetailInvoice_with_hrf" ReturnType="Collection(VirtualOfficeModel.SP_Fullcarga_DetailInvoice_with_hrf_Result)">
+            <Parameter Name="ParInvId" Mode="In" Type="Int32" />
+            <Parameter Name="UniqueId" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="AccountsInCollection_Result">
           <Property Type="Int32" Name="agentID" Nullable="true" />
@@ -2664,6 +2680,16 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
           <Property Type="Int32" Name="Transaction_Id" Nullable="true" />
           <Property Type="Decimal" Name="Amount" Nullable="true" Precision="19" />
           <Property Type="String" Name="Type" Nullable="false" MaxLength="8" />
+        </ComplexType>
+        <ComplexType Name="SP_Fullcarga_DetailInvoice_with_hrf_Result">
+          <Property Type="String" Name="id" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="Store" Nullable="false" />
+          <Property Type="String" Name="Store_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Product" Nullable="true" MaxLength="6" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="512" />
+          <Property Type="Int32" Name="Qty" Nullable="true" />
+          <Property Type="Decimal" Name="Denomination" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Net_Sale" Nullable="true" Precision="19" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -3890,6 +3916,21 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
                 <ScalarProperty Name="Transaction_Id" ColumnName="Transaction Id" />
                 <ScalarProperty Name="Amount" ColumnName="Amount" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_FullCarga_change_status" FunctionName="VirtualOfficeModel.Store.sp_FullCarga_change_status" />
+          <FunctionImportMapping FunctionImportName="SP_Fullcarga_DetailInvoice_with_hrf" FunctionName="VirtualOfficeModel.Store.SP_Fullcarga_DetailInvoice_with_hrf">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VirtualOfficeModel.SP_Fullcarga_DetailInvoice_with_hrf_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Store" ColumnName="Store" />
+                <ScalarProperty Name="Store_Name" ColumnName="Store_Name" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Denomination" ColumnName="Denomination" />
+                <ScalarProperty Name="Net_Sale" ColumnName="Net_Sale" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

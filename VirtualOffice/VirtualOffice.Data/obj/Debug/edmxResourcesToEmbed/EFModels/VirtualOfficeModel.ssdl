@@ -604,7 +604,15 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
     <Parameter Name="parNewCL" Type="money" Mode="In" />
     <Parameter Name="parNewDailyCL" Type="money" Mode="In" />
   </Function>
+  <Function Name="sp_FullCarga_change_status" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="parMid" Type="int" Mode="In" />
+    <Parameter Name="parisActive" Type="int" Mode="In" />
+  </Function>
   <Function Name="SP_Fullcarga_DetailInvoice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ParInvId" Type="int" Mode="In" />
+    <Parameter Name="UniqueId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_Fullcarga_DetailInvoice_with_hrf" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ParInvId" Type="int" Mode="In" />
     <Parameter Name="UniqueId" Type="int" Mode="In" />
   </Function>

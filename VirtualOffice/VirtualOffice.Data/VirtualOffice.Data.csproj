@@ -125,6 +125,9 @@
     <Compile Include="EFModels\SP_Fullcarga_DetailInvoice_Result.cs">
       <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EFModels\SP_Fullcarga_DetailInvoice_with_hrf_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="EFModels\SP_Fullcarga_PrepaidSalesSummary_Result.cs">
       <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
     </Compile>
@@ -270,6 +273,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VirtualOfficeModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="External\ExtentionMethods.cs" />
+    <Compile Include="External\OldConector.cs" />
     <Compile Include="Helpers\Helper.cs" />
     <Compile Include="Helpers\MapperHelper.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />

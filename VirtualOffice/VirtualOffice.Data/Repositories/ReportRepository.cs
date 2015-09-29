@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VirtualOffice.Data.EFModels;
+using VirtualOffice.Data.External;
 
 namespace VirtualOffice.Data.Repositories
 {
-    public class ReportRepository: BaseRepository
+    public class ReportRepository : BaseRepository
     {
         #region Prepaid Reports
- 
+
         /// <summary>
         /// Prepaid Portfolio Summary
         /// </summary>
@@ -82,7 +83,7 @@ namespace VirtualOffice.Data.Repositories
         public IEnumerable<GetTodayTransactions_Result> RunTodayTransactions(int agentId, int? merchantId)
         {
 
-            var reportResult = merchantId!= 0? VirtualOfficeContext.GetTodayTransactions(agentId, merchantId, null, null, null, null, null, null):
+            var reportResult = merchantId != 0 ? VirtualOfficeContext.GetTodayTransactions(agentId, merchantId, null, null, null, null, null, null) :
                                                VirtualOfficeContext.GetTodayTransactions(agentId, null, null, null, null, null, null, null);
             return reportResult;
         }
@@ -103,7 +104,7 @@ namespace VirtualOffice.Data.Repositories
 
         public IEnumerable<GetMerchantCreditLimits_Result> GetMerchantCreditLimits(int? agentId, int? merchantId)
         {
-            var reportResult = VirtualOfficeContext.GetMerchantCreditLimits(agentId,merchantId,null);
+            var reportResult = VirtualOfficeContext.GetMerchantCreditLimits(agentId, merchantId, null);
 
             return reportResult;
         }
@@ -124,7 +125,7 @@ namespace VirtualOffice.Data.Repositories
 
         public IEnumerable<Sp_TransactionsSummary_Result> GetTransactionSummary(int agentId, bool isMerchant, DateTime startDate, DateTime endDate)
         {
-            var result = VirtualOfficeContext.Sp_TransactionsSummary(startDate, endDate,agentId, isMerchant?1:0);
+            var result = VirtualOfficeContext.Sp_TransactionsSummary(startDate, endDate, agentId, isMerchant ? 1 : 0);
 
             return result;
         }
@@ -138,17 +139,17 @@ namespace VirtualOffice.Data.Repositories
 
         public IEnumerable<SP_Fullcarga_PrepaidSalesSummary_Result> GetFullcargaPrepaidSummary(int userId, bool isMerchant, DateTime startDate, DateTime endDate)
         {
-            var result = VirtualOfficeContext.SP_Fullcarga_PrepaidSalesSummary(startDate, endDate,userId, isMerchant? 1: 0);
+            var result = VirtualOfficeContext.SP_Fullcarga_PrepaidSalesSummary(startDate, endDate, userId, isMerchant ? 1 : 0);
 
             return result;
         }
 
-        public IEnumerable<SP_Fullcarga_DetailInvoice_Result> GetFullcargaInvoiceDetail(int invoiceId, int userId)
+        public IEnumerable<SP_Fullcarga_DetailInvoice_with_hrf_Result> GetFullcargaInvoiceDetail(int invoiceId, int userId)
         {
-            var result = VirtualOfficeContext.SP_Fullcarga_DetailInvoice(invoiceId, userId);
+            var result = VirtualOfficeContext.SP_Fullcarga_DetailInvoice_with_hrf(invoiceId, userId);
 
             return result;
-        } 
+        }
 
         #endregion
 
@@ -188,7 +189,7 @@ namespace VirtualOffice.Data.Repositories
         /// <returns></returns>
         public IEnumerable<sp_get_transactions_Result> RunMerchantServicesTransactions(int agentId, DateTime startDate, DateTime endDate)
         {
-            var reportResult = VirtualOfficeContext.sp_get_transactions(agentId, startDate, endDate);
+            var reportResult = OldConector.sp_get_transactions(agentId, startDate, endDate);
 
             return reportResult;
         }
@@ -256,7 +257,7 @@ namespace VirtualOffice.Data.Repositories
 
         #region Others
 
-        public IEnumerable<SP_ippBrowser_Result> RunIppTransactions(int agentId, int merchantId,  DateTime startDate, DateTime endDate)
+        public IEnumerable<SP_ippBrowser_Result> RunIppTransactions(int agentId, int merchantId, DateTime startDate, DateTime endDate)
         {
             var reportResult = VirtualOfficeContext.SP_ippBrowser(agentId, merchantId, startDate, endDate, false);
 
@@ -284,13 +285,12 @@ namespace VirtualOffice.Data.Repositories
         {
             var result = VirtualOfficeContext.sp_FullCarga_change_credit_limit(merchantId, generalLimit, dailyLimit);
             return result;
-        } 
+        }
 
-        public dynamic UpdatePrepaidAcountStatus(int? merchantId, string status)
+        public dynamic UpdatePrepaidAcountStatus(int? merchantId, int status)
         {
-//            var result = VirtualOfficeContext.sp_FullCarga_change_credit_limit(merchantId, status);
-//            return result;
-            return null;
+            var result = VirtualOfficeContext.sp_FullCarga_change_status(merchantId, status);
+            return result;
         }
     }
 }
