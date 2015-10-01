@@ -45,6 +45,8 @@ function getReportParams() {
 
     var saveOutPutConfig = document.getElementById("saveOutputAsDefault").checked;
 
+    var s = $("#status").val();
+
     return {
         outPut: outPut,
         saveOutPut: saveOutPutConfig,
@@ -54,7 +56,7 @@ function getReportParams() {
         merchantId: $("#merchantId").val(),
         invoiceId: $("#invoiceId").val(),
         alertsMode: $("#alertsMode").val(),
-        status: status,
+        status: $("#status").val(),
         columnName: $("#columnName").val(),
     };
 }

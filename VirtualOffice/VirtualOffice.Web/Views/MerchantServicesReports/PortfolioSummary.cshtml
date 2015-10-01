@@ -13,6 +13,7 @@
 <div class="container select" id="main">
     <input id="printLink" type="hidden" value="@Model.PrintLink">
     <input id="storeProcedure" type="hidden" value="@Model.StoreProcedureName">
+    <input id="status" type="hidden" value="@ViewBag.Status">
     <hr />
     
     <div class="panel-heading">
@@ -124,7 +125,5 @@
     </div>
 </div> <!-- .container.select#main -->
 
-<script>
-    var status = @ViewBag.Status
-</script>
+
 <script src="~/Scripts/reportManager.js"></script>

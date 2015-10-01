@@ -440,12 +440,14 @@ namespace VirtualOffice.Web.Controllers
         }
         private string GetMsTransactionLink(string url, string columnName, bool merchantName = false)
         {
-            var endDateStr = merchantName ? "enddate" : "begindate";
-
             var mainPath = "/MerchantServicesReports/" + url;
+            var dataTemplate = "";
 
-            var dataTemplate = "<a href='" + mainPath + string.Format("?agentId=#=merchant_pk#&startDate=#=begindate#&endDate=#=" + endDateStr + "#&columnName=" + columnName) + "'>" + "#=" + columnName + "#" + "</a>";
-
+            if (merchantName)
+                dataTemplate = "<a href='" + mainPath + string.Format("?agentId=#=merchant_pk#&startDate=#=begindate#&endDate=#=enddate#&columnName=" + columnName) + "'>" + "#=" + columnName + "#" + "</a>";
+            else
+                dataTemplate = "<a href='" + mainPath + string.Format("?agentId=#=merchant_pk#&startDate=#=kendo.toString(datestamp, 'd')#&endDate=#=kendo.toString(datestamp, 'd')#&columnName=" + columnName) + "'>" + "#=" + columnName + "#" + "</a>";
+           
             return dataTemplate;   
         }
 

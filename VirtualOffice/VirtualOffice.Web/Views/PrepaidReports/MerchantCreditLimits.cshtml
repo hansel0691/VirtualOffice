@@ -110,6 +110,8 @@
                                   model.Id(c => c.merchant_pk);
                                   model.Field(c => c.merchant_pk).Editable(false);
                                   model.Field(c => c.mer_name).Editable(false);
+                                  model.Field(c => c.creditlimit_max).Editable(false);
+                                  model.Field(c => c.dailylimit_max).Editable(false);
                               })
                               .Read(r => r.Action("RunMerchantCreditLimits", "PrepaidReports").Data("getReportParams"))
                               .Update(r => r.Action("UpdateCreditLimit", "PrepaidReports"))

@@ -47,7 +47,7 @@ namespace VirtualOffice.Web.Controllers
             var model = GetReportModel(columnsConfig, printLink, "sp_report_portfolio_summary");
 
             ViewBag.AlertsMode = alertsMode;
-
+            ViewBag.StatusView = status;
             ViewData["categories"] = new[] { new { Value = "ACTIVE", Text = "ACTIVE" }, new { Value = "SUSPENDED", Text = "SUSPENDED" }, new { Value = "CLOSED", Text = "CLOSED" } };
 
             return View(model);
@@ -260,7 +260,11 @@ namespace VirtualOffice.Web.Controllers
 
                 var reportData = _virtualOfficeService.RunPrepaidPortfolioSummary(GetLoggedUserId());
 
-                reportData = reportData.Where(r => !r.Status.IsNullOrEmpty() && (status == -1 || (r.Status == "ACTIVE" && status == 1) || (r.Status != "ACTIVE" && status == 0)));
+                
+                reportData = reportData.Where(c => 
+                    status == -1 ||
+                    (!c.suspended && c.closed == 0 && status == 1) ||
+                    (c.suspended && c.closed == 0 && status == 0));
 
 
                 if (alertsMode.HasValue && alertsMode.Value != 0)//Filters just accounts with Alerts
