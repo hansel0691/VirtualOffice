@@ -9,9 +9,11 @@ namespace ClassLibrary2.Domain.MerchantServices
     public class MsTransactionSummaryResult
     {
         public int? merchant_pk { get; set; }
+        public string begindate { get; set; }
+        public string enddate { get; set; }
+
         public string datestamp { get; set; }
         public string mer_name { get; set; }
-
         public string vmc_amount { get; set; }
         public string amex_amount { get; set; }
         public string dscv_amount { get; set; }

@@ -69,10 +69,24 @@ namespace VirtualOffice.Web.Controllers
 
             var model = GetReportModel(columnsConfig, printLink, "sp_getTransactions");
 
-            AddLinksToTransactionsColumnConfig(columnsConfig);
+            AddLinksToTransactionsColumnConfig(columnsConfig, new[] { "mer_name", "vmc_amount", "amex_amount", "dscv_amount", "ebt_amount", "oth_amount", "tran_amt" });
 
             columnsConfig["mer_name"].Groupable = true;
             columnsConfig["datestamp"].Groupable = true;
+
+            return View(model);
+        }
+
+        public ActionResult TransactionsDetails(int agentId, DateTime startDate, DateTime endDate, string columnName)
+        {
+            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_getTransactions_details", typeof(MsTransactionDetailsViewModel));
+
+            const string printLink = "/MerchantServicesReports/PrintTransactionDetails";
+
+            var model = GetReportModel(columnsConfig, printLink, "sp_getTransactions_details");
+
+            ViewBag.AgentId = agentId;
+            ViewBag.ColumnName = columnName;
 
             return View(model);
         }
@@ -159,7 +173,7 @@ namespace VirtualOffice.Web.Controllers
             var reportData = _virtualOfficeService.RunMsPortfolioSummary(userId).ToList();
 
 
-            var accounts = reportData.Where(r => r.Status.HasValue && ((r.Status == 1 && status == 1) || (r.Status != 1 && status == 0)));
+            var accounts = reportData.Where(r => r.Status != -1 && ((r.Status == 1 && status == 1) || (r.Status != 1 && status == 0)));
 
             var mappedResult = accounts.MapTo<IEnumerable<MsPortfolioResult>, IEnumerable<MsPortfolioResultViewModel>>().ToList();
 
@@ -207,6 +221,27 @@ namespace VirtualOffice.Web.Controllers
             var reportData = _virtualOfficeService.RunTransactionSummary(GetLoggedUserId(), startDate, endDate);
 
             var mappedResult = reportData.MapTo<IEnumerable<MsTransactionSummaryResult>, IEnumerable<MsTransactionSummaryViewModel>>();
+
+            var result = mappedResult.ToDataSourceResult(request);
+
+            return Json(result);
+        }
+
+        [HttpPost]
+        public ActionResult RunTransactionsDetails([DataSourceRequest] DataSourceRequest request, int? agentId, DateTime startDate, DateTime endDate, string outPut, bool saveOutPut, string columnName = null)
+        {
+            if (saveOutPut)
+            {
+                var outPutDeserialized = new JavaScriptSerializer().Deserialize<List<string>>(outPut);
+
+                _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "sp_getTransactions_details", outPutDeserialized.GetCommaSeparatedTokens());
+            }
+
+            SaveLastDateRangeInSession(startDate, endDate);
+
+            var reportData = _virtualOfficeService.RunTransactionsDetails(agentId, startDate, endDate, columnName);
+
+            var mappedResult = reportData.MapTo<IEnumerable<MsTransactionDetailsResult>, IEnumerable<MsTransactionDetailsViewModel>>();
 
             var result = mappedResult.ToDataSourceResult(request);
 
@@ -395,31 +430,21 @@ namespace VirtualOffice.Web.Controllers
 
        
 
-        private void AddLinksToTransactionsColumnConfig(Dictionary<string, ColumnConfig> columnsConfig)
+        private void AddLinksToTransactionsColumnConfig(Dictionary<string, ColumnConfig> columnsConfig, params string[] columns)
         {
-            var nameLink = GetMsTransactionLink("MsTransactionSummary", "mer_name");
-            var amexLink = GetMsTransactionLink("MsTransactionSummary", "amex_amount");
-            var visaMasterCardLink = GetMsTransactionLink("MsTransactionSummary", "vmc_amount");
-            var dscvLink = GetMsTransactionLink("MsTransactionSummary", "dscv_amount");
-            var ebtLink = GetMsTransactionLink("MsTransactionSummary", "ebt_amount");
-            var othLink = GetMsTransactionLink("MsTransactionSummary", "oth_amount");
-            var transLink = GetMsTransactionLink("MsTransactionSummary", "tran_amt");
-
-            Utils.AddLinkToColumnsConfig(columnsConfig, "mer_name", nameLink);
-            Utils.AddLinkToColumnsConfig(columnsConfig, "vmc_amount", visaMasterCardLink);
-            Utils.AddLinkToColumnsConfig(columnsConfig, "amex_amount", amexLink);
-            Utils.AddLinkToColumnsConfig(columnsConfig, "dscv_amount", dscvLink);
-            Utils.AddLinkToColumnsConfig(columnsConfig, "ebt_amount", ebtLink);
-            Utils.AddLinkToColumnsConfig(columnsConfig, "oth_amount", othLink);
-            Utils.AddLinkToColumnsConfig(columnsConfig, "tran_amt", transLink);
+            foreach (var column in columns)
+            {
+                var link = GetMsTransactionLink("TransactionsDetails", column, column == "mer_name");
+                Utils.AddLinkToColumnsConfig(columnsConfig, column, link);
+            }
         }
-
-
-        private string GetMsTransactionLink(string url, string columnName)
+        private string GetMsTransactionLink(string url, string columnName, bool merchantName = false)
         {
+            var endDateStr = merchantName ? "enddate" : "begindate";
+
             var mainPath = "/MerchantServicesReports/" + url;
 
-            var dataTemplate = "<a href='" + mainPath + string.Format("?agentId=#=merchant_pk#&startDate=#=startDate#&endDate=#=endDate#") + "'>" + "#=" + columnName +"#" +"</a>";
+            var dataTemplate = "<a href='" + mainPath + string.Format("?agentId=#=merchant_pk#&startDate=#=begindate#&endDate=#=" + endDateStr + "#&columnName=" + columnName) + "'>" + "#=" + columnName + "#" + "</a>";
 
             return dataTemplate;   
         }

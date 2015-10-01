@@ -48,7 +48,7 @@ namespace VirtualOffice.Web.Controllers
 
             ViewBag.AlertsMode = alertsMode;
 
-            ViewData["categories"] = new[] { new { Value = "ACTIVE", Text = "ACTIVE" }, new { Value = "SUSPENDED", Text = "SUSPENDED" } };
+            ViewData["categories"] = new[] { new { Value = "ACTIVE", Text = "ACTIVE" }, new { Value = "SUSPENDED", Text = "SUSPENDED" }, new { Value = "CLOSED", Text = "CLOSED" } };
 
             return View(model);
         }
@@ -974,7 +974,7 @@ namespace VirtualOffice.Web.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var result = prepaidAccounts.Aggregate(true, (current, account) => current && _virtualOfficeService.UpdatePrepaidAcountStatus(account.MID, account.Status == "ACTIVE" ? 1 : 0));
+                    var result = prepaidAccounts.Aggregate(true, (current, account) => current && _virtualOfficeService.UpdatePrepaidAcountStatus(account.MID, account.Status == "ACTIVE" ? 1 : account.Status == "CLOSED" ? 2 : 0));
                     return Json(new { Success = result });
                 }
                 else

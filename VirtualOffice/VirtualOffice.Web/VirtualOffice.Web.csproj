@@ -272,6 +272,7 @@
     <Compile Include="Models\NewReports\MerchantServices\MsCommissionSummaryForOthersViewModel.cs" />
     <Compile Include="Models\NewReports\MerchantServices\MsCommissionSummaryForVmCViewModel.cs" />
     <Compile Include="Models\NewReports\MerchantServices\MsPortfolioResultViewModel.cs" />
+    <Compile Include="Models\NewReports\MerchantServices\MsTransactionDetailsViewModel.cs" />
     <Compile Include="Models\NewReports\MerchantServices\MsTransactionSummaryViewModel.cs" />
     <Compile Include="Models\NewReports\MerchantStatementResultViewModel.cs" />
     <Compile Include="Models\NewReports\PrepaidAccountRegisterViewModel.cs" />
@@ -1927,6 +1928,7 @@
     <Content Include="Views\MerchantServicesReports\MsTransactionSummary.cshtml" />
     <Content Include="Views\MyProfile\PersonalInfo.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\StatusEditor.cshtml" />
+    <Content Include="Views\MerchantServicesReports\TransactionsDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

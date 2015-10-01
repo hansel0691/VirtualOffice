@@ -19,6 +19,6 @@ namespace ClassLibrary2.Domain.MerchantServices
         public string merchant_guarantorname { get; set; }
         public string merchant_busphone { get; set; }
         public string merchant_email { get; set; }
-        public int? Status { get; set; }
+        public int Status { get; set; }
     }
 }

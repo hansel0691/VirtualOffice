@@ -52,6 +52,7 @@
     <Compile Include="Domain\MerchantServices\MsCommissionSummaryByTotals.cs" />
     <Compile Include="Domain\MerchantServices\MsCommsissionSummaryForOthers.cs" />
     <Compile Include="Domain\MerchantServices\MsCommssionSummaryForVmC.cs" />
+    <Compile Include="Domain\MerchantServices\MsTransactionDetailsResult.cs" />
     <Compile Include="Domain\MerchantServices\MsTransactionSummaryResult.cs" />
     <Compile Include="Domain\Others\DateRange.cs" />
     <Compile Include="Domain\Others\Document.cs" />

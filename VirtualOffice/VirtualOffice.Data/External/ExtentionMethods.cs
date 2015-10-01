@@ -14,7 +14,8 @@ namespace VirtualOffice.Data.External
         {
             while (reader.Read())
             {
-                yield return projection(reader);
+                var a = projection(reader);
+                yield return a;
             }
         }
 

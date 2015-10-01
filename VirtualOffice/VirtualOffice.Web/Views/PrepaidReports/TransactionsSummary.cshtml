@@ -1,4 +1,4 @@
-﻿@using ClassLibrary2.Domain
+﻿﻿@using ClassLibrary2.Domain
 @using Domain.Models
 @using VirtualOffice.Web.Infrastructure
 @using VirtualOffice.Web.Models
@@ -26,7 +26,7 @@
     <input id="printLink" type="hidden" value="@Model.PrintLink">
     <input id="storeProcedure" type="hidden" value="@Model.StoreProcedureName">
     <hr />
-    
+
 
     <div class="panel-heading">
         <div class="row">
@@ -39,7 +39,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12" id="sidebar">
             <div class="panel-group" id="accordion">
@@ -92,8 +92,8 @@
             </div>
         </div>
     </div>
-    
-    <div class="row top20">        
+
+    <div class="row top20">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="panel panel-default">
                 <div class="panel-body-kendo">
@@ -117,7 +117,7 @@
                                       columnResult.Format("{0:M/d/yyyy h:mm:ss tt}");
 
                                   else if (columnConfig.IsNumeric)
-                                      columnResult.ClientFooterTemplate("#= kendo.format('{0:n2}', sum)#").Format("{0:n2}").HtmlAttributes(new {alignText = "right"});
+                                      columnResult.ClientFooterTemplate("#= kendo.format('{0:n2}', sum)#").Format("{0:n2}").HtmlAttributes(new { alignText = "right" });
                               }
 
                           })
@@ -139,7 +139,7 @@
                           .Groupable()
                           .Reorderable(reorder => reorder.Columns(true))
                           .Scrollable(scr => scr.Height(600))
-                          .Pageable(pageable => pageable.Refresh(true).PageSizes(new []{100, 200, 500}).ButtonCount(5))
+                          .Pageable(pageable => pageable.Refresh(true).PageSizes(new[] { 100, 200, 500 }).ButtonCount(5))
                           .AutoBind(true)
                     )
                 </div>

@@ -44,10 +44,12 @@ namespace VirtualOffice.Service.Domain.Infrastructure
 
             #region MS Mapping
 
-            Mapper.CreateMap<sp_report_msv_portfolio_summary_Result, MsPortfolioResult>();
+            Mapper.CreateMap<sp_report_msv_portfolio_summary_Result, MsPortfolioResult>()
+                .ForMember(p => p.Status, k => k.MapFrom(m => m.Status == null ? -1 : m.Status == "1" ? 1 : m.Status == "2" ? 2 : 0));
             Mapper.CreateMap<sp_report_msv_commission_summary_Result, MsComissionSummaryResult>();
 
             Mapper.CreateMap<sp_get_transactions_Result, MsTransactionSummaryResult>();
+            Mapper.CreateMap<sp_getTransactions_details, MsTransactionDetailsResult>();
 
             Mapper.CreateMap<sp_report_msv_commission_details_from_amex_Result, MsComissionSummaryForAmex>();
             Mapper.CreateMap<sp_report_msv_commission_details_from_visamc_Result, MsCommssionSummaryForVmC>();

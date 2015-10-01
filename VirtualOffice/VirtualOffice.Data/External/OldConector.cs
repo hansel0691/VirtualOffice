@@ -18,8 +18,10 @@ namespace VirtualOffice.Data.External
             using (var connection = new SqlConnection("data source=PSSQLWAREHOUSE;initial catalog=Merchant_sign_up;user id=webuser;password=dog33156"))
             {
 
-                var command = new SqlCommand("sp_getTransactions", connection);
-                command.CommandType = CommandType.StoredProcedure;
+                var command = new SqlCommand("sp_getTransactions", connection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
                 command.Parameters.AddWithValue("@agentid", agentID);
                 command.Parameters.AddWithValue("@dateinit", ini_date.ToString("MM-dd-yyyy"));
                 command.Parameters.AddWithValue("@dateend", end_date.ToString("MM-dd-yyyy"));
@@ -29,9 +31,66 @@ namespace VirtualOffice.Data.External
                 using (var reader = command.ExecuteReader())
                     result.AddRange(reader.Select(r => r.MapTo<IDataReader, sp_get_transactions_Result>()));
 
+                result.ForEach(r => { r.begindate = ini_date.ToString("d"); r.enddate = end_date.ToString("d"); });
                 connection.Close();
             }
             return result;
+        }
+
+        public static IEnumerable<sp_getTransactions_details> sp_getTransactions_details(int agentId, DateTime startDate, DateTime endDate, string columnName)
+        {
+            var result = new List<sp_getTransactions_details>();
+            using (var connection = new SqlConnection("data source=PSSQLWAREHOUSE;initial catalog=Merchant_sign_up;user id=webuser;password=dog33156"))
+            {
+
+                var command = new SqlCommand("sp_getTransactions_details", connection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                command.Parameters.AddWithValue("@merchant_pk", agentId);
+                command.Parameters.AddWithValue("@data_column", GetColumnId(columnName) );
+                command.Parameters.AddWithValue("@dateinit", startDate.ToString("d"));
+                command.Parameters.AddWithValue("@dateend", endDate.ToString("d"));
+
+                connection.Open();
+
+                using (var reader = command.ExecuteReader())
+                    result.AddRange(reader.Select(r => r.MapTo<IDataReader, sp_getTransactions_details>()));
+
+                connection.Close();
+            }
+            return result;
+        }
+
+
+        /*
+            0: mer_name link
+            1: vmc_amount link
+            2: amex_amount link
+            3: dscv_amount link
+            4: ebt_amount link
+            5: oth_amount link
+            6: tran_amt link
+        */
+        private static int GetColumnId(string columnName)
+        {
+            switch (columnName)
+            {
+                case "mer_name":
+                    return 0;
+                case "vmc_amount":
+                    return 1;
+                case "amex_amount":
+                    return 2;
+                case "dscv_amount":
+                    return 3;
+                case "ebt_amount":
+                    return 4;
+                case "oth_amount":
+                    return 5;
+                default:
+                    return 6;
+            }
         }
     }
 }

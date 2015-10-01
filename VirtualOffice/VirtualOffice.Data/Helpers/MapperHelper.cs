@@ -29,6 +29,15 @@ namespace VirtualOffice.Data.Helpers
                .ForMember(p => p.ebt_amount, k => k.MapFrom(m => m["ebt_amount"] is DBNull ? null : m["ebt_amount"].ToString()))
                .ForMember(p => p.oth_amount, k => k.MapFrom(m => m["oth_amount"] is DBNull ? null : m["oth_amount"].ToString()))
                .ForMember(p => p.tran_amt, k => k.MapFrom(m => m["tran_amt"] is DBNull ? null : m["tran_amt"].ToString()));
+
+            Mapper.CreateMap<IDataReader, sp_getTransactions_details>()
+               .ForMember(p => p.date_time, k => k.MapFrom(r => r["transdatetime"] is DBNull ? null : r["transdatetime"]))
+               .ForMember(p => p.merchant, k => k.MapFrom(m => m["mer_name"] is DBNull ? null : m["mer_name"]))
+               .ForMember(p => p.card_type, k => k.MapFrom(m => m["cardtype"] is DBNull ? null : m["cardtype"]))
+               .ForMember(p => p.card_number, k => k.MapFrom(m => m["cardholdernumber"] is DBNull ? null : m["cardholdernumber"]))
+               .ForMember(p => p.trans_type, k => k.MapFrom(m => m["trn_type"] is DBNull ? null : m["trn_type"]))
+               .ForMember(p => p.category, k => k.MapFrom(m => m["trn_category"] is DBNull ? null : m["trn_category"]))
+               .ForMember(p => p.amount, k => k.MapFrom(m => m["transamount"] is DBNull ? null : m["transamount"]));
         }
 
         public static K MapTo<T, K>(this T aModelSource)

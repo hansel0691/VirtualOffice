@@ -160,7 +160,8 @@ namespace VirtualOffice.Web.Infrastructure
                .ForMember(p => p.tran_amt, k => k.MapFrom(m => double.Parse(m.tran_amt.GetPlaneFormat())))
                .ForMember(p => p.datestamp, k => k.MapFrom(m => m.datestamp == null ? new DateTime() : DateTime.Parse(m.datestamp)));
 
-
+            Mapper.CreateMap<MsTransactionDetailsResult, MsTransactionDetailsViewModel>()
+                .ForMember(p => p.date_time, k => k.MapFrom(m => m.date_time == null ? "" : m.date_time.ToString("g")));
 
             #endregion
 

@@ -193,6 +193,13 @@ namespace VirtualOffice.Data.Repositories
 
             return reportResult;
         }
+        public IEnumerable<sp_getTransactions_details> RunTransactionsDetails(int agentId, DateTime startDate, DateTime endDate, string columnName)
+        {
+            var reportResult = OldConector.sp_getTransactions_details(agentId, startDate, endDate, columnName);
+
+            return reportResult;
+        }
+
         /// <summary>
         /// Processing Commission Amex Details
         /// </summary>

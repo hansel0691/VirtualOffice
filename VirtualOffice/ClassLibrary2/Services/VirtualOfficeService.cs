@@ -321,6 +321,23 @@ namespace VirtualOffice.Service.Services
                 return new List<MerchantServices.MsTransactionSummaryResult>();
             }
         }
+        public IEnumerable<MerchantServices.MsTransactionDetailsResult> RunTransactionsDetails(int? agentId, DateTime startDate, DateTime endDate, string columnName)
+        {
+            try
+            {
+                if (agentId == null)throw new Exception("agent id cant be null");
+                var reportResult = _reportRepository.RunTransactionsDetails((int)agentId, startDate, endDate, columnName);
+
+                var result = reportResult.MapTo<IEnumerable<sp_getTransactions_details>, IEnumerable<MerchantServices.MsTransactionDetailsResult>>();
+
+                return result;
+            }
+            catch (Exception exception)
+            {
+                return new List<MerchantServices.MsTransactionDetailsResult>();
+            }
+        }
+
         public IEnumerable<MerchantServices.MsComissionSummaryForAmex> RunMsComissionDetailsForAmex(int agentId, DateTime startDate, DateTime endDate)
         {
             try

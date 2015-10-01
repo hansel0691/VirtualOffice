@@ -8,6 +8,8 @@ namespace VirtualOffice.Web.Models.NewReports.MerchantServices
     public class MsTransactionSummaryViewModel
     {
         public int merchant_pk { get; set; }
+        public string begindate { get; set; }
+        public string enddate { get; set; }
         public DateTime datestamp { get; set; }
         public string mer_name { get; set; }
         public double vmc_amount { get; set; }

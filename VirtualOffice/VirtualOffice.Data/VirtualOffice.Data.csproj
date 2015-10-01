@@ -143,6 +143,7 @@
     <Compile Include="EFModels\Sp_GetMerchantStatement_Result.cs">
       <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EFModels\sp_getTransactions_details.cs" />
     <Compile Include="EFModels\sp_getTransactions_Result.cs" />
     <Compile Include="EFModels\sp_get_marketing_materials_Result.cs">
       <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
