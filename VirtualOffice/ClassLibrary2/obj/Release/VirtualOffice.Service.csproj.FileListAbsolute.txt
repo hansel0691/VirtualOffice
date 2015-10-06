@@ -12,3 +12,17 @@ D:\Projects\Virtual Office\VirtualOffice\ClassLibrary2\bin\Release\Newtonsoft.Js
 D:\Projects\Virtual Office\VirtualOffice\ClassLibrary2\obj\Release\VirtualOffice.Service.csprojResolveAssemblyReference.cache
 D:\Projects\Virtual Office\VirtualOffice\ClassLibrary2\obj\Release\ClassLibrary2.dll
 D:\Projects\Virtual Office\VirtualOffice\ClassLibrary2\obj\Release\ClassLibrary2.pdb
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\bin\Release\AutoMapper.Net4.dll
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\bin\Release\ClassLibrary2.dll
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\bin\Release\ClassLibrary2.pdb
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\bin\Release\AutoMapper.dll
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\bin\Release\VirtualOffice.Data.dll
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\bin\Release\EntityFramework.dll
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\bin\Release\Newtonsoft.Json.dll
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\bin\Release\VirtualOffice.Data.pdb
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\bin\Release\AutoMapper.xml
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\bin\Release\EntityFramework.xml
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\bin\Release\Newtonsoft.Json.xml
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\obj\Release\VirtualOffice.Service.csprojResolveAssemblyReference.cache
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\obj\Release\ClassLibrary2.dll
+D:\VirtualOffice-develop\VirtualOffice\ClassLibrary2\obj\Release\ClassLibrary2.pdb

@@ -67,3 +67,4 @@ D:\VirtualOffice-develop\VirtualOffice\Domain\bin\Debug\System.Web.WebPages.Razo
 D:\VirtualOffice-develop\VirtualOffice\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
 D:\VirtualOffice-develop\VirtualOffice\Domain\obj\Debug\Domain.dll
 D:\VirtualOffice-develop\VirtualOffice\Domain\obj\Debug\Domain.pdb
+D:\VirtualOffice-develop\VirtualOffice\Domain\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll

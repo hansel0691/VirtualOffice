@@ -5,3 +5,10 @@ D:\Projects\Virtual Office\VirtualOffice\Domain.Blackstone\bin\Release\Domain.pd
 D:\Projects\Virtual Office\VirtualOffice\Domain.Blackstone\obj\Release\Domain.Blackstone.csprojResolveAssemblyReference.cache
 D:\Projects\Virtual Office\VirtualOffice\Domain.Blackstone\obj\Release\Domain.Blackstone.dll
 D:\Projects\Virtual Office\VirtualOffice\Domain.Blackstone\obj\Release\Domain.Blackstone.pdb
+D:\VirtualOffice-develop\VirtualOffice\Domain.Blackstone\bin\Release\Domain.Blackstone.dll
+D:\VirtualOffice-develop\VirtualOffice\Domain.Blackstone\bin\Release\Domain.Blackstone.pdb
+D:\VirtualOffice-develop\VirtualOffice\Domain.Blackstone\bin\Release\Domain.dll
+D:\VirtualOffice-develop\VirtualOffice\Domain.Blackstone\bin\Release\Domain.pdb
+D:\VirtualOffice-develop\VirtualOffice\Domain.Blackstone\obj\Release\Domain.Blackstone.csprojResolveAssemblyReference.cache
+D:\VirtualOffice-develop\VirtualOffice\Domain.Blackstone\obj\Release\Domain.Blackstone.dll
+D:\VirtualOffice-develop\VirtualOffice\Domain.Blackstone\obj\Release\Domain.Blackstone.pdb

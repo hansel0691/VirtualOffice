@@ -100,3 +100,4 @@ D:\VirtualOffice-develop\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Ninjec
 D:\VirtualOffice-develop\VirtualOffice\VirtualOfficeToolManager\obj\Debug\VirtualOfficeToolManager.csprojResolveAssemblyReference.cache
 D:\VirtualOffice-develop\VirtualOffice\VirtualOfficeToolManager\obj\Debug\VirtualOfficeToolManager.dll
 D:\VirtualOffice-develop\VirtualOffice\VirtualOfficeToolManager\obj\Debug\VirtualOfficeToolManager.pdb
+D:\VirtualOffice-develop\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll

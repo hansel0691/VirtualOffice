@@ -365,3 +365,4 @@ D:\VirtualOffice-develop\VirtualOffice\VirtualOficeTool\obj\Debug\VirtualOficeTo
 D:\VirtualOffice-develop\VirtualOffice\VirtualOficeTool\obj\Debug\VirtualOficeTool.csprojResolveAssemblyReference.cache
 D:\VirtualOffice-develop\VirtualOffice\VirtualOficeTool\obj\Debug\VirtualOficeTool.dll
 D:\VirtualOffice-develop\VirtualOffice\VirtualOficeTool\obj\Debug\VirtualOficeTool.pdb
+D:\VirtualOffice-develop\VirtualOffice\VirtualOficeTool\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll

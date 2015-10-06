@@ -321,6 +321,24 @@ namespace VirtualOffice.Service.Services
                 return new List<MerchantServices.MsTransactionSummaryResult>();
             }
         }
+
+        public IEnumerable<SalesAgentMerchantSalesResult> RunReportAgentSummary(int agentId, DateTime startDate, DateTime endDate)
+        {
+            try
+            {
+                var reportResult = _reportRepository.RunReportAgentSummary(agentId, startDate, endDate);
+
+                var result = reportResult.MapTo<IEnumerable<SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2>, IEnumerable<SalesAgentMerchantSalesResult>>();
+
+                return result;
+                
+            }
+            catch (Exception exception)
+            {
+                return new List<SalesAgentMerchantSalesResult>();
+            }
+        }
+
         public IEnumerable<MerchantServices.MsTransactionDetailsResult> RunTransactionsDetails(int? agentId, DateTime startDate, DateTime endDate, string columnName)
         {
             try

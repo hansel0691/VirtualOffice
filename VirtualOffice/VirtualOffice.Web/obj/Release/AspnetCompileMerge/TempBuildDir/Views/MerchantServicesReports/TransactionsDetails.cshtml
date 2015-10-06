@@ -1,0 +1,151 @@
+﻿@using System.Web.UI.WebControls
+@using VirtualOffice.Web.Models.NewReports
+@using VirtualOffice.Web.Models.NewReports.MerchantServices
+
+@model VirtualOfficeReportModel
+@{
+    Layout = "~/Views/Shared/_NewUserLayout.cshtml";
+
+    var columnsConfig = Model.ColumnsConfig;
+
+    var dateRange = Model.DateRange;
+
+    var startDate = dateRange.StartDate;
+
+    var endDate = dateRange.EndDate;
+
+
+}
+<div class="container select" id="main">
+    <input id="printLink" type="hidden" value="@Model.PrintLink">
+    <input id="storeProcedure" type="hidden" value="@Model.StoreProcedureName">
+    <input id="agentId" type="hidden" value="@ViewBag.AgentId">
+    <input id="columnName" type="hidden" value="@ViewBag.ColumnName">
+    <hr />
+
+    <div class="panel-heading">
+        <div class="row">
+            <div class="hidden-xs col-sm-9 col-md-9">
+                <h3 class="text-secundary">MS Transactions</h3>
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-3 text-right under15">
+                <a class="btn btn-print btn-sm" id="PrintReportsBtn" onclick="PrintReport(false)"><span class="glyphicon glyphicon-print"></span> Print</a>
+                <a id="exportButton" class="btn btn-print btn-sm" onclick="PrintReport(true)"><span class="glyphicon glyphicon-export"></span> Export</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12" id="sidebar">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a data-toggle="collapse" data-target="#collapse1" class="expand">Element on Report <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                    </div>
+                    <div class="panel-body panel-collapse collapse" id="collapse1">
+                        <label for="last-visit" class="control-label">Columns to show:</label>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                @foreach (var column in columnsConfig.Keys)
+                                {
+                                    <div class="checkbox">
+                                        <label id=@string.Format("label^{0}", column)>
+                                            <span>@Html.CheckBox("columnName^" + column, !columnsConfig[column].Hidden, new { @value = column, onchange = "UpdateDataProjection()" })</span>
+                                            <span class="fix_checkbox">@columnsConfig[column].Label</span>
+                                        </label>
+                                    </div>
+                                }
+                                <div class="checkbox">
+                                    <label class="text-secundary">
+                                        @Html.CheckBox("saveOutputAsDefault")<span class="fix_checkbox">Save as default</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <button type="button" class="btn btn-secundary" onclick="applyUserfilters()">Go!</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a data-toggle="collapse" data-target="#collapse2" class="expand">Filter by Attributes <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                    </div>
+                    <div class="panel-body panel-collapse collapse" id="collapse2">
+
+                        <label>Start Date: </label>
+                        @(Html.Kendo().DatePicker().Name("startDate").Value(startDate).HtmlAttributes(new { style = "width: 115px;" }))
+                        <br>
+                        <label>End Date: </label>
+                        @(Html.Kendo().DatePicker().Name("endDate").Value(endDate).HtmlAttributes(new { style = "width: 115px;" }))
+                        <br>
+
+                        <div class="">
+                            <button type="button" class="btn btn-secundary" onclick="applyUserfilters()">Go!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row top20">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body-kendo">
+                    @(Html.Kendo().Grid<MsTransactionDetailsViewModel>()
+                          .Name("Reports")
+                                  .HtmlAttributes(new { @style = "text-align: left; height: 850px;" }).EnableCustomBinding(true)
+                          .Columns(col =>
+                          {
+                              foreach (var column in columnsConfig.Keys)
+                              {
+                                  var columnConfig = columnsConfig[column];
+                                  var label = columnsConfig[column].Label;
+                                  var columnResult = col.Bound(column).Width(columnConfig.Width).Hidden(columnConfig.Hidden).Title(label); ;
+
+                                  if (!string.IsNullOrEmpty(columnConfig.Link))
+                                  {
+                                      columnResult = columnResult.ClientTemplate(columnConfig.Link);
+                                  }
+
+                                  if (columnConfig.IsDate)
+                                      columnResult.Format("{0:dd/MM/yyyy}");
+
+                                  else if (columnConfig.IsNumeric)
+                                      columnResult.ClientFooterTemplate("#= kendo.format('{0:n2}', sum)#").Format("{0:n2}").HtmlAttributes(new { alignText = "right" });
+                              }
+
+                          })
+                          .DataSource(ds => ds.Ajax()
+                                      .Aggregates(aggregates =>
+                                                 {
+                                                     foreach (var col in columnsConfig.Where(col => col.Value.IsNumeric))
+                                                     {
+                                                         aggregates.Add(col.Key, typeof(double)).Sum();
+                                                     }
+                                                 })
+                                       .Read(r => r.Action("RunTransactionsDetails", "MerchantServicesReports").Data("getReportParams"))
+                                       .PageSize(100)
+                          )
+                          .Events(ev => ev.ColumnReorder("saveNewOutPutOrder").ColumnResize("saveColumnWidth"))
+                          .Resizable(resize => resize.Columns(true))
+                          .Sortable()
+                          .Selectable()
+                          .Reorderable(reorder => reorder.Columns(true))
+                          .Scrollable(scr => scr.Height(600))
+                                  .Pageable(pageable => pageable
+                                                    .Refresh(true)
+                                                    .PageSizes(new[] { 100, 200, 500 })
+                                                    .ButtonCount(5))
+                          .AutoBind(true)
+                    )
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Scripts/reportManager.js"></script>

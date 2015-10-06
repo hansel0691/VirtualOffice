@@ -45,6 +45,8 @@ function getReportParams() {
 
     var saveOutPutConfig = document.getElementById("saveOutputAsDefault").checked;
 
+    var s = $("#status").val();
+
     return {
         outPut: outPut,
         saveOutPut: saveOutPutConfig,
@@ -53,9 +55,31 @@ function getReportParams() {
         endDate: $("#endDate").val(),
         merchantId: $("#merchantId").val(),
         invoiceId: $("#invoiceId").val(),
-        alertsMode: $("#alertsMode").val()
+        alertsMode: $("#alertsMode").val(),
+        status: $("#status").val(),
+        columnName: $("#columnName").val(),
     };
 }
+
+
+//function getParamsCreditLimit() {
+//    var dirtyOnes = [{merchant_pk : -1, dailylimit_max : -1, creditlimit_max: -1 }];
+//    var rows = $("table tbody tr");
+//    for (var i = 0; i < rows.length; i++) {
+//        var tr = rows[i];
+//        for (var j = 0; j < tr.cells.length; j++) {
+//            var td = tr.cells[j];
+//            if (td.className.indexOf("k-dirty-cell") > -1) {
+//                dirtyOnes.push({ merchant_pk: tr, dailylimit_max: tr, creditlimit_max: tr });
+//                break;
+//            }
+//        }
+//    }
+//
+//
+//    return dirtyOnes;
+//}
+
 
 function UpdateReportConfiguration() {
 

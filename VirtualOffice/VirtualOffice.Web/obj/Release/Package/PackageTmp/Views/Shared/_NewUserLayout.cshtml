@@ -59,16 +59,18 @@
     </script>
 
     <link href="@Url.Content("~/Content/kendo/2014.1.415/kendo.common.min.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/Content/kendo/2014.1.415/kendo.dataviz.min.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/Content/kendo/2014.1.415/kendo.black.min.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/Content/kendo/2014.1.415/kendo.dataviz.black.min.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/Content/kendo/2014.1.415/kendo.dataviz.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/styles.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo.bootstrap.theme/kendo.custom.css")" rel="stylesheet" type="text/css" />
+@*    <script src="@Url.Content("~/Scripts/kendo/kendo.custom.js")"></script>    *@
+    
+    
+
     <script src="@Url.Content("~/Scripts/kendo/2014.1.415/jquery.min.js")"></script>
     <script src="@Url.Content("~/Scripts/kendo/2014.1.415/kendo.all.min.js")"></script>
     <script src="@Url.Content("~/Scripts/kendo/2014.1.415/kendo.aspnetmvc.min.js")"></script>
 
     <!-- Custom CSS-->
-    <link href="@Url.Content("~/Content/styles.css")" rel="stylesheet">
+@*    <link href="@Url.Content("~/Content/styles.css")" rel="stylesheet">*@
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/Scripts/bootstrap.min.js"></script>
@@ -117,10 +119,10 @@
                      {
                         <li class="dropdown">
                             <a href="@Url.Action("Index","Reports")" class="dropdown-toggle" data-toggle="dropdown">Merchant Services Reports <span class="badge">@reportsCounter[DashboardItemType.MerchantServices]</span><b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-
-                                <li><a href='@Url.Action("PortfolioSummary", "MerchantServicesReports")'><span class="badge"></span> Merchant Services Accounts</a></li>
-                                <li><a href='@Url.Action("SalesSummary", "MerchantServicesReports")'><span class="badge"></span> Merchant Services Sales Summary</a></li>
+                            <ul class="dropdown-menu" style="min-width: 257px">
+                                <li><a href='@Url.Action("PortfolioSummary", "MerchantServicesReports")'><span class="badge"></span> Accounts</a></li>
+                                <li><a href='@Url.Action("SalesSummary", "MerchantServicesReports")'><span class="badge"></span> Comission Summary</a></li>
+                                <li><a href='@Url.Action("MsTransactionSummary", "MerchantServicesReports")'><span class="badge"></span> Transactions</a></li>
                             </ul>
                         </li>
                      }

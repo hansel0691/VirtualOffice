@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -283,6 +284,7 @@
     <Compile Include="Models\NewReports\PrepaidSalesSummaryResultViewModel.cs" />
     <Compile Include="Models\NewReports\PrepaidTodayTransactionsViewModel.cs" />
     <Compile Include="Models\NewReports\ReportModel.cs" />
+    <Compile Include="Models\NewReports\SalesAgentMerchantSalesResultViewModel.cs" />
     <Compile Include="Models\NewReports\TransactionSummaryViewModel.cs" />
     <Compile Include="Models\OrderConfirmation.cs" />
     <Compile Include="Models\ReportFileActionResult.cs" />
@@ -675,6 +677,7 @@
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
     <None Include="bin\VirtualOffice.Web.dll.config" />
     <Content Include="Content\kendo.bootstrap.theme\kendo.custom.less" />
+    <None Include="Properties\PublishProfiles\test.pubxml" />
     <None Include="Properties\PublishProfiles\Virtual Office.pubxml" />
     <Content Include="Images\chat.svg" />
     <Content Include="Images\cloud-logo-test.svg" />
@@ -1929,6 +1932,7 @@
     <Content Include="Views\MyProfile\PersonalInfo.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\StatusEditor.cshtml" />
     <Content Include="Views\MerchantServicesReports\TransactionsDetails.cshtml" />
+    <Content Include="Views\PrepaidReports\ReportAgentSummary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

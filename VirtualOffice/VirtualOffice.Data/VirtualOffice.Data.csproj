@@ -157,6 +157,7 @@
     <Compile Include="EFModels\SP_ippBrowser_Result.cs">
       <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EFModels\SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2.cs" />
     <Compile Include="EFModels\sp_report_balance_details_Result.cs">
       <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
     </Compile>

@@ -1,0 +1,151 @@
+﻿@using ClassLibrary2.Domain
+@using VirtualOffice.Web.Infrastructure
+@using VirtualOffice.Web.Models
+@using VirtualOffice.Web.Models.NewReports
+@model VirtualOfficeReportModel
+@{
+    Layout = "~/Views/Shared/_NewUserLayout.cshtml";
+
+    var accountSectionHeader = ViewBag.AccountSectionHeader;
+
+    var columnsCofig = Model.ColumnsConfig;
+
+    var dateRange = Model.DateRange;
+
+    var startDate = dateRange.StartDate;
+
+    var endDate = dateRange.EndDate;
+
+    var activePos = @ViewBag.Data;
+
+}
+
+<div class="container select" id="main">
+    <input id="printLink" type="hidden" value="@Model.PrintLink">
+    <input id="storeProcedure" type="hidden" value="@Model.StoreProcedureName">
+
+    <hr />
+
+
+    <div class="panel-heading">
+        <div class="row">
+            <div class="hidden-xs col-sm-9 col-md-9">
+                <h3 class="text-secundary">General Sales Summary</h3>
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-3 text-right under15">
+                <a class="btn btn-print btn-sm" id="PrintReportsBtn" onclick="PrintReport(false)"><span class="glyphicon glyphicon-print"></span> Print</a>
+                <a id="exportButton" class="btn btn-print btn-sm" onclick="PrintReport(true)"><span class="glyphicon glyphicon-export"></span> Export</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12" id="sidebar">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a data-toggle="collapse" data-target="#collapse1" class="expand">Elements on Report <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                    </div>
+                    <div class="panel-body panel-collapse collapse" id="collapse1">
+                        <label for="last-visit" class="control-label">View Accounts:</label>
+                        <div class="">
+                            @foreach (var column in columnsCofig.Keys)
+                            {
+                                <div class="checkbox">
+                                    <label id=@string.Format("label^{0}", column)>
+                                        <span>@Html.CheckBox("columnName^" + column, !columnsCofig[column].Hidden, new { @value = column, onchange = "UpdateDataProjection()" })</span>
+                                        <span class="fix_checkbox">@columnsCofig[column].Label</span>
+                                    </label>
+                                </div>
+                            }
+                            <div class="checkbox">
+                                <label class="text-secundary">
+                                    @Html.CheckBox("saveOutputAsDefault")<span class="fix_checkbox">Save as default</span>
+                                </label>
+                            </div>
+                            <br />
+                            <div class="">
+                                <button type="button" class="btn btn-secundary" onclick="applyUserfilters()">Go!</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a data-toggle="collapse" data-target="#collapse2" class="expand">Filter by Attributes <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                    </div>
+                    <div class="panel-body panel-collapse collapse" id="collapse2">
+                        <label>Start Date: </label>
+                        @(Html.Kendo().DatePicker().Name("startDate").Value(startDate).HtmlAttributes(new { style = "width: 115px;" }))
+                        <br>
+                        <label>End Date: </label>
+                        @(Html.Kendo().DatePicker().Name("endDate").Value(endDate).HtmlAttributes(new { style = "width: 115px;" }))
+                        <br>
+                        <div class="">
+                            <button type="button" class="btn btn-secundary" onclick="applyUserfilters()">Go!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="top20">
+        @foreach (var header in accountSectionHeader.Keys)
+        {
+            if (!accountSectionHeader[header].Hidden)
+            {
+                <div style="display:inline-block">
+                    <div style="text-align: center;font-size: 14pt; ">
+                        @accountSectionHeader[header].Label
+                    </div>
+                    <div style="font-size: 11px;">
+                        @foreach (var col in columnsCofig.Keys){
+                            if (!columnsCofig[col].Hidden) {
+                                <span style="margin-right: 17px;"><a href="#">@columnsCofig[col].Label</a></span>
+                            }
+                        }
+                    </div>
+                </div>
+            }
+        }
+        <div style="margin-top: 10px;background-color: #fafad2;border: solid 1px #999;padding: 5px;">
+            Distributor General Sales Summary for @startDate.ToString("d") to @endDate.ToString("d") <br>
+            <strong>ACTIVE ACCOUNT</strong>
+        </div>
+        <table>
+            <thead style="font-size:12px;">
+                <tr>
+                    <th>[MID] Merchant Name / Merchant DBA City, State ZIP</th>
+                    <th>Long Distance</th>
+                    <th>Cellular Recharge</th>
+                    <th>Other Prepaid</th>
+                    <th>Total Sales</th>
+                    <th>Merchant Commission</th>
+                    <th>Fees & Debt/Crdt</th>
+                    <th>Net Amount</th>
+                    <th>Distributor Commission</th>
+                    <th>Balance as of @endDate.ToString("d")</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in activePos)
+                {
+                    <tr>
+                        <td>@item.Mer_Name </td>
+                        <td>Long Distance</td>
+                        <td>Cellular Recharge</td>
+                        <td>Otder Prepaid</td>
+                        <td>Total Sales</td>
+                        <td>Merchant Commission</td>
+                        <td>Fees & Debt/Crdt</td>
+                        <td>Net Amount</td>
+                        <td>Distributor Commission</td>
+                        <td>Balance as of @endDate.ToString("d")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

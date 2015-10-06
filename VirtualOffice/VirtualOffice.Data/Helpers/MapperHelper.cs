@@ -38,7 +38,13 @@ namespace VirtualOffice.Data.Helpers
                .ForMember(p => p.trans_type, k => k.MapFrom(m => m["trn_type"] is DBNull ? null : m["trn_type"]))
                .ForMember(p => p.category, k => k.MapFrom(m => m["trn_category"] is DBNull ? null : m["trn_category"]))
                .ForMember(p => p.amount, k => k.MapFrom(m => m["transamount"] is DBNull ? null : m["transamount"]));
+
+
+            Mapper.CreateMap<IDataReader, SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2>();
+
         }
+
+
 
         public static K MapTo<T, K>(this T aModelSource)
         {

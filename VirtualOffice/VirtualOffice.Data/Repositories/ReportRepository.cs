@@ -200,6 +200,20 @@ namespace VirtualOffice.Data.Repositories
             return reportResult;
         }
 
+
+        public IEnumerable<SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2> RunReportAgentSummary(int agentId, DateTime startDate, DateTime endDate)
+        {
+            var reportResult = OldConector.CallStoreProcedure<SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2>("SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2", "Pin_Data", new Tuple<string, object>[] 
+                        {
+                            new Tuple<string, object> ("@AgentId", agentId),
+                            new Tuple<string, object> ("@dtmInit", startDate.ToString("d")),
+                            new Tuple<string, object> ("@dtmEnd", endDate.ToString("d"))
+                        });
+
+            return reportResult;
+        }
+
+
         /// <summary>
         /// Processing Commission Amex Details
         /// </summary>

@@ -229,3 +229,4 @@ D:\VirtualOffice-develop\VirtualOffice\CoreService\bin\Mono.Math.xml
 D:\VirtualOffice-develop\VirtualOffice\CoreService\obj\Debug\CoreService.csprojResolveAssemblyReference.cache
 D:\VirtualOffice-develop\VirtualOffice\CoreService\obj\Debug\CoreService.dll
 D:\VirtualOffice-develop\VirtualOffice\CoreService\obj\Debug\CoreService.pdb
+D:\VirtualOffice-develop\VirtualOffice\CoreService\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll

@@ -17,10 +17,19 @@
 <div class="container select" id="main">
     <input id="printLink" type="hidden" value="@Model.PrintLink">
     <input id="storeProcedure" type="hidden" value="@Model.StoreProcedureName">
-    <h3 class="text-secundary">Merchant Credit Limits</h3>
     <hr />
+    <div class="row panel-heading">
+        <div class="hidden-xs col-sm-9 col-md-9">
+            <h3 class="text-secundary">Merchant Credit Limits</h3>
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-3 text-right under15" >
+            <a class="btn btn-print btn-sm" id="PrintReportsBtn" onclick="PrintReport(false)"><span class="glyphicon glyphicon-print"></span> Print</a>
+            <a id="exportButton" class="btn btn-print btn-sm" onclick="PrintReport(true)"><span class="glyphicon glyphicon-export"></span> Export</a>
+        </div>
+    </div>
+    
     <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-2 col-sm-push-8 col-md-push-10" id="sidebar">
+        <div class="col-xs-12 col-sm-12 col-md-12" id="sidebar">
             <div class="panel-group" id="accordion">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -34,15 +43,14 @@
                                 {
                                     <div class="checkbox">
                                         <label id=@string.Format("label^{0}", column)>
-
-                                            @Html.CheckBox("columnName^" + column, !columnsCofig[column].Hidden, new { @value = column, onchange = "UpdateDataProjection()" })@column
-
+                                            <span>@Html.CheckBox("columnName^" + column, !columnsCofig[column].Hidden, new { @value = column, onchange = "UpdateDataProjection()" })</span>
+                                            <span class="fix_checkbox">@columnsCofig[column].Label</span>
                                         </label>
                                     </div>
                                 }
                                 <div class="checkbox">
                                     <label class="text-secundary">
-                                        @Html.CheckBox("saveOutputAsDefault")Save as default
+                                        @Html.CheckBox("saveOutputAsDefault")<span class="fix_checkbox">Save as default</span>
                                     </label>
                                 </div>
                             </div>
@@ -54,23 +62,16 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-8 col-md-10 col-sm-pull-4 col-md-pull-2">
+    </div>
+    
+
+    <div class="row top20">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="hidden-xs col-sm-9 col-md-9">
-                            <h4 class="">Your Results</h4>
-                        </div>
-                        <div class="col-xs-4 col-sm-3 col-md-3 text-right">
-                            <a class="btn btn-print btn-sm" id="PrintReportsBtn" onclick="PrintReport(false)"><span class="glyphicon glyphicon-print"></span> Print</a>
-                            <a id="exportButton" class="btn btn-print btn-sm" onclick="PrintReport(true)"><span class="glyphicon glyphicon-export"></span> Export</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel-body-kendo">
+                <div class="panel-body-kendo" id="peaceOfShit">
                     @(Html.Kendo().Grid<MerchantCreditLimitResultViewModel>()
                           .Name("Reports")
-                                  .HtmlAttributes(new { @style = "text-align: left; height: 450px" }).EnableCustomBinding(true)
+                          .HtmlAttributes(new { @style = "text-align: left; height: 850px;" }).EnableCustomBinding(true)
                           .Columns(col =>
                           {
                               foreach (var column in columnsCofig.Keys)
@@ -88,20 +89,33 @@
                                       columnResult.Format("{0:dd/MM/yyyy}");
 
                                   else if (columnConfig.IsNumeric)
-                                      columnResult.ClientFooterTemplate("$#=sum#").Format("{0:c}");
-                              }
+                                      columnResult.ClientFooterTemplate("#= kendo.format('{0:n2}', sum)#").FooterHtmlAttributes(new { alignText = "right" }).Format("{0:n2}").HtmlAttributes(new { alignText = "right" });
 
+                              }
                           })
+                          .ToolBar(toolbar => toolbar.Save())
+                          .Editable(editable => editable.Mode(GridEditMode.InCell)) // Use in-cell editing mode
                           .DataSource(ds => ds.Ajax()
                               .Aggregates(aggregates =>
                               {
-                                  foreach (var col in columnsCofig.Where(col=> col.Value.IsNumeric))
+                                  foreach (var col in columnsCofig.Where(col => col.Value.IsNumeric))
                                   {
                                       aggregates.Add(col.Key, typeof(double)).Sum();
                                   }
                               })
+                              .Batch(true) // Enable batch updates
+                              .Model(model =>
+                              {
+                                  //change to do generic
+                                  model.Id(c => c.merchant_pk);
+                                  model.Field(c => c.merchant_pk).Editable(false);
+                                  model.Field(c => c.mer_name).Editable(false);
+                                  model.Field(c => c.creditlimit_max).Editable(false);
+                                  model.Field(c => c.dailylimit_max).Editable(false);
+                              })
                               .Read(r => r.Action("RunMerchantCreditLimits", "PrepaidReports").Data("getReportParams"))
-                              .PageSize(20)
+                              .Update(r => r.Action("UpdateCreditLimit", "PrepaidReports"))
+                              .PageSize(100)
                           )
                           .Events(ev => ev.ColumnReorder("saveNewOutPutOrder").ColumnResize("saveColumnWidth"))
                           .Resizable(config => config.Columns(true))
@@ -109,15 +123,16 @@
                           .Selectable()
                           .Reorderable(reorder => reorder.Columns(true))
                           .Scrollable(scr => scr.Height(600))
-                          .Pageable(page => page.PageSizes(true))
+                          .Pageable(pageable => pageable.Refresh(true).PageSizes(new[] { 100, 200, 500 }).ButtonCount(5))
                           .AutoBind(true)
-                          )
+                    )
                 </div>
 
 
             </div>
         </div>
     </div>
+
 </div> <!-- .container.select#main -->
 
 <script src="~/Scripts/reportManager.js"></script>

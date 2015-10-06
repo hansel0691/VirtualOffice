@@ -79,3 +79,4 @@ D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Web\obj\Debug\VirtualOffice
 D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Web\obj\Debug\VirtualOffice.Web.csprojResolveAssemblyReference.cache
 D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Web\obj\Debug\VirtualOffice.Web.dll
 D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Web\obj\Debug\VirtualOffice.Web.pdb
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Web\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll

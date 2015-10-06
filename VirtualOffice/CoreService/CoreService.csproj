@@ -253,6 +253,7 @@
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <Content Include="logs\service_test.log" />
     <None Include="Properties\PublishProfiles\CoreServicePub.pubxml" />
+    <None Include="Properties\PublishProfiles\test.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

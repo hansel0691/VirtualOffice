@@ -7,6 +7,17 @@ namespace VirtualOffice.Web.Models
 {
     public class DateRange
     {
+        public DateRange()
+        {
+        }
+
+        public DateRange(DateTime startDate, DateTime endDate)
+        {
+            this.StartDate = new DateTime(startDate.Ticks);
+            this.EndDate = endDate;
+        }
+
+
         public DateTime StartDate { get; set; }
 
         public DateTime EndDate { get; set; }

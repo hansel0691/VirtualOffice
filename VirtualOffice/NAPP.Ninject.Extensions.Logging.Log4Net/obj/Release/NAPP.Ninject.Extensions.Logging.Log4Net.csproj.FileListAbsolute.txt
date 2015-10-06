@@ -9,3 +9,14 @@ D:\Projects\Virtual Office\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net
 D:\Projects\Virtual Office\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\obj\Release\NAPP.Ninject.Extensions.Logging.Log4Net.csprojResolveAssemblyReference.cache
 D:\Projects\Virtual Office\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\obj\Release\NAPP.Ninject.Extensions.Logging.Log4Net.dll
 D:\Projects\Virtual Office\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\obj\Release\NAPP.Ninject.Extensions.Logging.Log4Net.pdb
+D:\VirtualOffice-develop\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\bin\Release\NAPP.Ninject.Extensions.Logging.Log4Net.dll
+D:\VirtualOffice-develop\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\bin\Release\NAPP.Ninject.Extensions.Logging.Log4Net.pdb
+D:\VirtualOffice-develop\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\bin\Release\Domain.dll
+D:\VirtualOffice-develop\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\bin\Release\log4net.dll
+D:\VirtualOffice-develop\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\bin\Release\Ninject.dll
+D:\VirtualOffice-develop\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\bin\Release\Domain.pdb
+D:\VirtualOffice-develop\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\bin\Release\log4net.xml
+D:\VirtualOffice-develop\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\bin\Release\Ninject.xml
+D:\VirtualOffice-develop\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\obj\Release\NAPP.Ninject.Extensions.Logging.Log4Net.csprojResolveAssemblyReference.cache
+D:\VirtualOffice-develop\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\obj\Release\NAPP.Ninject.Extensions.Logging.Log4Net.dll
+D:\VirtualOffice-develop\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\obj\Release\NAPP.Ninject.Extensions.Logging.Log4Net.pdb

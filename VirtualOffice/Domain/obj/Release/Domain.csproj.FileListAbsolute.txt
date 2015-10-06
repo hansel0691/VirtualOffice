@@ -21,3 +21,26 @@ D:\Projects\Virtual Office\VirtualOffice\Domain\bin\Release\System.Web.WebPages.
 D:\Projects\Virtual Office\VirtualOffice\Domain\obj\Release\Domain.csprojResolveAssemblyReference.cache
 D:\Projects\Virtual Office\VirtualOffice\Domain\obj\Release\Domain.dll
 D:\Projects\Virtual Office\VirtualOffice\Domain\obj\Release\Domain.pdb
+D:\VirtualOffice-develop\VirtualOffice\Domain\bin\Release\Domain.dll.config
+D:\VirtualOffice-develop\VirtualOffice\Domain\bin\Release\Domain.dll
+D:\VirtualOffice-develop\VirtualOffice\Domain\bin\Release\Domain.pdb
+D:\VirtualOffice-develop\VirtualOffice\Domain\bin\Release\EntityFramework.dll
+D:\VirtualOffice-develop\VirtualOffice\Domain\bin\Release\EntityFramework.SqlServer.dll
+D:\VirtualOffice-develop\VirtualOffice\Domain\bin\Release\Microsoft.Web.Infrastructure.dll
+D:\VirtualOffice-develop\VirtualOffice\Domain\bin\Release\System.Web.Helpers.dll
+D:\VirtualOffice-develop\VirtualOffice\Domain\bin\Release\System.Web.Mvc.dll
+D:\VirtualOffice-develop\VirtualOffice\Domain\bin\Release\System.Web.Razor.dll
+D:\VirtualOffice-develop\VirtualOffice\Domain\bin\Release\System.Web.WebPages.Deployment.dll
+D:\VirtualOffice-develop\VirtualOffice\Domain\bin\Release\System.Web.WebPages.dll
+D:\VirtualOffice-develop\VirtualOffice\Domain\bin\Release\System.Web.WebPages.Razor.dll
+D:\VirtualOffice-develop\VirtualOffice\Domain\bin\Release\EntityFramework.xml
+D:\VirtualOffice-develop\VirtualOffice\Domain\bin\Release\EntityFramework.SqlServer.xml
+D:\VirtualOffice-develop\VirtualOffice\Domain\bin\Release\System.Web.Helpers.xml
+D:\VirtualOffice-develop\VirtualOffice\Domain\bin\Release\System.Web.Mvc.xml
+D:\VirtualOffice-develop\VirtualOffice\Domain\bin\Release\System.Web.Razor.xml
+D:\VirtualOffice-develop\VirtualOffice\Domain\bin\Release\System.Web.WebPages.xml
+D:\VirtualOffice-develop\VirtualOffice\Domain\bin\Release\System.Web.WebPages.Deployment.xml
+D:\VirtualOffice-develop\VirtualOffice\Domain\bin\Release\System.Web.WebPages.Razor.xml
+D:\VirtualOffice-develop\VirtualOffice\Domain\obj\Release\Domain.csprojResolveAssemblyReference.cache
+D:\VirtualOffice-develop\VirtualOffice\Domain\obj\Release\Domain.dll
+D:\VirtualOffice-develop\VirtualOffice\Domain\obj\Release\Domain.pdb

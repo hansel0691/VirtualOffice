@@ -41,7 +41,6 @@ D:\VirtualOffice-develop\VirtualOffice\ApiRestClient\bin\Debug\Domain.dll
 D:\VirtualOffice-develop\VirtualOffice\ApiRestClient\bin\Debug\Newtonsoft.Json.dll
 D:\VirtualOffice-develop\VirtualOffice\ApiRestClient\bin\Debug\Ninject.dll
 D:\VirtualOffice-develop\VirtualOffice\ApiRestClient\bin\Debug\RestSharp.dll
-D:\VirtualOffice-develop\VirtualOffice\ApiRestClient\bin\Debug\System.Web.Http.dll
 D:\VirtualOffice-develop\VirtualOffice\ApiRestClient\bin\Debug\System.Net.Http.Formatting.dll
 D:\VirtualOffice-develop\VirtualOffice\ApiRestClient\bin\Debug\Domain.pdb
 D:\VirtualOffice-develop\VirtualOffice\ApiRestClient\bin\Debug\Newtonsoft.Json.xml

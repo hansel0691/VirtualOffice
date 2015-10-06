@@ -993,5 +993,37 @@ namespace VirtualOffice.Web.Controllers
 
             return null;
         }
+
+        public ActionResult ReportAgentSummary(DateTime? startDate, DateTime? endDate)
+        {
+            var initDte = startDate == null ? new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1) : (DateTime)startDate;
+            var endDte = endDate == null ? DateTime.Today : (DateTime)endDate;
+
+            var reportData = _virtualOfficeService.RunReportAgentSummary(GetLoggedUserId(), initDte, endDte);
+            var mappedResult = reportData.MapTo<IEnumerable<SalesAgentMerchantSalesResult>, IEnumerable<SalesAgentMerchantSalesResultViewModel>>();
+            var activeAccounts = mappedResult.Where(a => a.MerType == 0 && !a.IsClosed && !a.suspended);
+
+
+            var columnConfig = new Dictionary<string, ColumnConfig>() {
+                                                                            {"POS", new ColumnConfig(){ Hidden = false, Label = "POS"}},
+                                                                            {"TnB", new ColumnConfig(){ Hidden = false, Label = "TnB"}},
+                                                                            {"Portal", new ColumnConfig(){ Hidden = false, Label = "Portal"}},
+                                                                            {"TnB.com", new ColumnConfig(){ Hidden = false, Label = "TnB.com"}},
+                                                                            {"OK Pinless", new ColumnConfig(){ Hidden = false, Label = "OK Pinlessll"}}
+                                                                        };
+            var accountSectionHeader = new Dictionary<string, ColumnConfig>()
+                                                                        {
+                                                                            {"ACTIVE ACCOUNTS", new ColumnConfig(){ Hidden = false, Label = "ACTIVE ACCOUNTS"}},
+                                                                            {"CLOSED ACCOUNTS", new ColumnConfig(){ Hidden = false, Label = "CLOSED ACCOUNTS"}},
+                                                                            {"COMPLIANCE ACCOUNTS", new ColumnConfig(){ Hidden = false, Label = "COMPLIANCE ACCOUNTS"}},
+                                                                            {"COLLECTION ACCOUNTS", new ColumnConfig(){ Hidden = false, Label = "COLLECTION ACCOUNTS"}}
+                                                                        };
+
+
+            ViewBag.AccountSectionHeader = accountSectionHeader;
+            ViewBag.Data = activeAccounts;
+            var model = new VirtualOfficeReportModel { PrintLink= "", StoreProcedureName = "", DateRange = new DateRange(initDte, endDte), ColumnsConfig = columnConfig};
+            return View(model);
+        }
     }
 }

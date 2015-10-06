@@ -27,7 +27,8 @@ namespace VirtualOffice.Service.Domain.Infrastructure
             Mapper.CreateMap<sp_report_general_sales_summary_Result, PrepaidSalesSummaryResult>();
             Mapper.CreateMap<GetTodayTransactions_New_Result, PrepaidTodayTransactionsResult>()
                 .ForMember(p => p.id, k => k.MapFrom(m => int.Parse(string.IsNullOrEmpty(m.id) ? "0" : m.id)))
-                .ForMember(p => p.date, k => k.MapFrom(m => m.date.ToString()));
+                .ForMember(p => p.date, k => k.MapFrom(m => m.date.ToString()))
+                .ForMember(p => p.amount, k => k.MapFrom(m => m.amount == null ? "0" : m.amount.ToString()));
 
             Mapper.CreateMap<AccountsInCollection_Result, AccountsInCollectionResult>();
             Mapper.CreateMap<SP_ippBrowser_Result, IppBrowserResult>();
@@ -40,6 +41,10 @@ namespace VirtualOffice.Service.Domain.Infrastructure
             Mapper.CreateMap<SP_Fullcarga_DetailInvoice_with_hrf_Result, FullcargaInvoiceDetail>()
                 .ForMember(p => p.Id, k => k.MapFrom(m => int.Parse(m.id)));
             Mapper.CreateMap<SP_Fullcarga_PrepaidSalesSummary_Result, FullcargaPrepaidSummary>();
+            Mapper.CreateMap<SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2, SalesAgentMerchantSalesResult>();
+
+
+            
             #endregion
 
             #region MS Mapping

@@ -1187,5 +1187,105 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_FullCarga_change_credit_limit" FunctionName="VirtualOfficeModel.Store.sp_FullCarga_change_credit_limit" />
+    <FunctionImportMapping FunctionImportName="SP_Fullcarga_DetailInvoicebck" FunctionName="VirtualOfficeModel.Store.SP_Fullcarga_DetailInvoicebck">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.SP_Fullcarga_DetailInvoicebck_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Store" ColumnName="Store" />
+          <ScalarProperty Name="Store_Name" ColumnName="Store_Name" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Denomination" ColumnName="Denomination" />
+          <ScalarProperty Name="Net_Sale" ColumnName="Net_Sale" />
+          <ScalarProperty Name="Merchant_Comm_V" ColumnName="Merchant_Comm V" />
+          <ScalarProperty Name="Merchant_Comm_P" ColumnName="Merchant_Comm P" />
+          <ScalarProperty Name="Dist_Comm_V" ColumnName="Dist_Comm V" />
+          <ScalarProperty Name="Dist_Comm_P" ColumnName="Dist_Comm P" />
+          <ScalarProperty Name="ISO_Comm_V" ColumnName="ISO_Comm V" />
+          <ScalarProperty Name="ISO_Comm_P" ColumnName="ISO_Comm P" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_TransactionsSummaryBCK" FunctionName="VirtualOfficeModel.Store.Sp_TransactionsSummaryBCK">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.Sp_TransactionsSummaryBCK_Result">
+          <ScalarProperty Name="Merchant_Id" ColumnName="Merchant Id" />
+          <ScalarProperty Name="Merchant_Name" ColumnName="Merchant Name" />
+          <ScalarProperty Name="Distributor_Id" ColumnName="Distributor Id" />
+          <ScalarProperty Name="Transaction_Date" ColumnName="Transaction Date" />
+          <ScalarProperty Name="Phone_Number" ColumnName="Phone Number" />
+          <ScalarProperty Name="Product_Name" ColumnName="Product Name" />
+          <ScalarProperty Name="Transaction_Id" ColumnName="Transaction Id" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_FullCarga_change_status" FunctionName="VirtualOfficeModel.Store.sp_FullCarga_change_status" />
+    <FunctionImportMapping FunctionImportName="SP_Fullcarga_DetailInvoice_with_hrf" FunctionName="VirtualOfficeModel.Store.SP_Fullcarga_DetailInvoice_with_hrf">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.SP_Fullcarga_DetailInvoice_with_hrf_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Store" ColumnName="Store" />
+          <ScalarProperty Name="Store_Name" ColumnName="Store_Name" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Denomination" ColumnName="Denomination" />
+          <ScalarProperty Name="Net_Sale" ColumnName="Net_Sale" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_get_Today_Transactions_with_Credits" FunctionName="VirtualOfficeModel.Store.Sp_get_Today_Transactions_with_Credits" />
+    <FunctionImportMapping FunctionImportName="Sp_TransactionsSummary_new" FunctionName="VirtualOfficeModel.Store.Sp_TransactionsSummary_new">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.Sp_TransactionsSummary_new_Result">
+          <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
+          <ScalarProperty Name="Store" ColumnName="Store" />
+          <ScalarProperty Name="Store_Name" ColumnName="Store_Name" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Gross_Sale" ColumnName="Gross_Sale" />
+          <ScalarProperty Name="Cahier_id" ColumnName="Cahier_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetTodayTransactions_New" FunctionName="VirtualOfficeModel.Store.GetTodayTransactions_New">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.GetTodayTransactions_New_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="TrxType_hyp_fk" ColumnName="TrxType_hyp_fk" />
+          <ScalarProperty Name="Product_Hyp_fk" ColumnName="Product_Hyp_fk" />
+          <ScalarProperty Name="pro_description" ColumnName="pro_description" />
+          <ScalarProperty Name="mer_MID" ColumnName="mer_MID" />
+          <ScalarProperty Name="mer_name" ColumnName="mer_name" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="language" ColumnName="language" />
+          <ScalarProperty Name="carrier_fk" ColumnName="carrier_fk" />
+          <ScalarProperty Name="pin_controlno" ColumnName="pin_controlno" />
+          <ScalarProperty Name="product_sbt" ColumnName="product_sbt" />
+          <ScalarProperty Name="systemtracenumber" ColumnName="systemtracenumber" />
+          <ScalarProperty Name="TransPaymentMethod" ColumnName="TransPaymentMethod" />
+          <ScalarProperty Name="SaleStatus" ColumnName="SaleStatus" />
+          <ScalarProperty Name="OriginalSaleDate" ColumnName="OriginalSaleDate" />
+          <ScalarProperty Name="merchant_BusAddress" ColumnName="merchant_BusAddress" />
+          <ScalarProperty Name="merchant_AddressCityID" ColumnName="merchant_AddressCityID" />
+          <ScalarProperty Name="merchant_AddressStateID" ColumnName="merchant_AddressStateID" />
+          <ScalarProperty Name="merchant_AddressZIP" ColumnName="merchant_AddressZIP" />
+          <ScalarProperty Name="merchant_busphone" ColumnName="merchant_busphone" />
+          <ScalarProperty Name="Status_Message" ColumnName="Status_Message" />
+          <ScalarProperty Name="ReversedTrans" ColumnName="ReversedTrans" />
+          <ScalarProperty Name="SettledSale" ColumnName="SettledSale" />
+          <ScalarProperty Name="vending" ColumnName="vending" />
+          <ScalarProperty Name="VendingType" ColumnName="VendingType" />
+          <ScalarProperty Name="Cashier_ID" ColumnName="Cashier_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

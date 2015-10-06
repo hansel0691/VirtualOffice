@@ -5,3 +5,10 @@ D:\Projects\Virtual Office\VirtualOffice\Domain.Inventory\bin\Release\Domain.pdb
 D:\Projects\Virtual Office\VirtualOffice\Domain.Inventory\obj\Release\Domain.Inventory.dll
 D:\Projects\Virtual Office\VirtualOffice\Domain.Inventory\obj\Release\Domain.Inventory.pdb
 D:\Projects\Virtual Office\VirtualOffice\Domain.Inventory\obj\Release\Domain.Inventory.csprojResolveAssemblyReference.cache
+D:\VirtualOffice-develop\VirtualOffice\Domain.Inventory\bin\Release\Domain.Inventory.dll
+D:\VirtualOffice-develop\VirtualOffice\Domain.Inventory\bin\Release\Domain.Inventory.pdb
+D:\VirtualOffice-develop\VirtualOffice\Domain.Inventory\bin\Release\Domain.dll
+D:\VirtualOffice-develop\VirtualOffice\Domain.Inventory\bin\Release\Domain.pdb
+D:\VirtualOffice-develop\VirtualOffice\Domain.Inventory\obj\Release\Domain.Inventory.csprojResolveAssemblyReference.cache
+D:\VirtualOffice-develop\VirtualOffice\Domain.Inventory\obj\Release\Domain.Inventory.dll
+D:\VirtualOffice-develop\VirtualOffice\Domain.Inventory\obj\Release\Domain.Inventory.pdb

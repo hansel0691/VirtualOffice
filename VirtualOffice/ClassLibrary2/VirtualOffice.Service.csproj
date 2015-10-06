@@ -78,6 +78,7 @@
     <Compile Include="Domain\Prepaid\PrepaidSalesDetailsResult.cs" />
     <Compile Include="Domain\Prepaid\PrepaidSalesSummaryResult.cs" />
     <Compile Include="Domain\Prepaid\PrepaidTodayTransactions.cs" />
+    <Compile Include="Domain\Prepaid\SalesAgentMerchantSalesResult.cs" />
     <Compile Include="Domain\Prepaid\TransactionSummaryResult.cs" />
     <Compile Include="Domain\ReportLog.cs" />
     <Compile Include="Domain\Roles.cs" />

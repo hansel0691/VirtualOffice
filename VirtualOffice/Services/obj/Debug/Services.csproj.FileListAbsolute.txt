@@ -79,3 +79,4 @@ D:\VirtualOffice-develop\VirtualOffice\Services\bin\Debug\Ninject.Extensions.Int
 D:\VirtualOffice-develop\VirtualOffice\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
 D:\VirtualOffice-develop\VirtualOffice\Services\obj\Debug\Services.dll
 D:\VirtualOffice-develop\VirtualOffice\Services\obj\Debug\Services.pdb
+D:\VirtualOffice-develop\VirtualOffice\Services\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll

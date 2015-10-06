@@ -22,3 +22,29 @@ D:\Projects\Virtual Office\VirtualOffice\VirtualOffice.Data\bin\Release\System.N
 D:\Projects\Virtual Office\VirtualOffice\VirtualOffice.Data\obj\Release\VirtualOffice.Data.csprojResolveAssemblyReference.cache
 D:\Projects\Virtual Office\VirtualOffice\VirtualOffice.Data\obj\Release\VirtualOffice.Data.dll
 D:\Projects\Virtual Office\VirtualOffice\VirtualOffice.Data\obj\Release\VirtualOffice.Data.pdb
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\bin\Release\VirtualOffice.Data.dll.config
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\bin\Release\VirtualOffice.Data.dll
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\bin\Release\VirtualOffice.Data.pdb
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\bin\Release\ApiRestClient.dll
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\bin\Release\AutoMapper.dll
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\bin\Release\Domain.dll
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\bin\Release\EntityFramework.dll
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\bin\Release\EntityFramework.SqlServer.dll
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\bin\Release\Newtonsoft.Json.dll
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\bin\Release\Ninject.dll
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\bin\Release\RestSharp.dll
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\bin\Release\System.Web.Http.dll
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\bin\Release\System.Net.Http.Formatting.dll
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\bin\Release\ApiRestClient.pdb
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\bin\Release\Domain.pdb
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\bin\Release\AutoMapper.xml
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\bin\Release\EntityFramework.xml
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\bin\Release\EntityFramework.SqlServer.xml
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\bin\Release\Newtonsoft.Json.xml
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\bin\Release\Ninject.xml
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\bin\Release\RestSharp.xml
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\bin\Release\System.Web.Http.xml
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\bin\Release\System.Net.Http.Formatting.xml
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\obj\Release\VirtualOffice.Data.csprojResolveAssemblyReference.cache
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\obj\Release\VirtualOffice.Data.dll
+D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\obj\Release\VirtualOffice.Data.pdb

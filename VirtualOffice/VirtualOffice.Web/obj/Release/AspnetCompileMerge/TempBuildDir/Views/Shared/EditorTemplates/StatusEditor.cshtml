@@ -1,0 +1,8 @@
+﻿@using Kendo.Mvc.UI
+
+@(Html.Kendo().DropDownList()
+    .Name("Status")
+        .DataValueField("Value")
+        .DataTextField("Text")
+    .BindTo((System.Collections.IEnumerable)ViewData["categories"])
+)

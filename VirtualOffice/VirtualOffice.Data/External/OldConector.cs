@@ -63,6 +63,37 @@ namespace VirtualOffice.Data.External
         }
 
 
+        /// <summary>
+        /// Excecute a stored procedure from PSSQLWAREHOUSE
+        /// </summary>
+        /// <typeparam name="TResult">result of the store procedure type.</typeparam>
+        /// <param name="name">name of the stored procedure in the db.</param>
+        /// <param name="parameters">tuple with the name of the parameters for the stored procedure and the values.</param>
+        /// <returns></returns>
+        public static IEnumerable<TResult> CallStoreProcedure<TResult>(string name, string catalog, params Tuple<string, object>[] parameters )
+        {
+            var result = new List<TResult>();
+            using (var connection = new SqlConnection("data source=PSSQLWAREHOUSE;initial catalog=" + catalog + ";user id=webuser;password=dog33156"))
+            {
+
+                var command = new SqlCommand(name, connection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                foreach (var tuple in parameters)
+                    command.Parameters.AddWithValue(tuple.Item1, tuple.Item2);
+
+                connection.Open();
+
+                using (var reader = command.ExecuteReader())
+                    result.AddRange(reader.Select(r => r.MapTo<IDataReader, TResult>()));
+
+                connection.Close();
+            }
+            return result;
+        }
+
+
         /*
             0: mer_name link
             1: vmc_amount link

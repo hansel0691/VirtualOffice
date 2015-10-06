@@ -14,3 +14,19 @@ D:\Projects\Virtual Office\VirtualOffice\CoreData.BlackstoneDb\bin\Release\Ninje
 D:\Projects\Virtual Office\VirtualOffice\CoreData.BlackstoneDb\obj\Release\CoreData.BlackstoneDb.csprojResolveAssemblyReference.cache
 D:\Projects\Virtual Office\VirtualOffice\CoreData.BlackstoneDb\obj\Release\CoreData.BlackstoneDb.dll
 D:\Projects\Virtual Office\VirtualOffice\CoreData.BlackstoneDb\obj\Release\CoreData.BlackstoneDb.pdb
+D:\VirtualOffice-develop\VirtualOffice\CoreData.BlackstoneDb\bin\Release\CoreData.BlackstoneDb.dll.config
+D:\VirtualOffice-develop\VirtualOffice\CoreData.BlackstoneDb\bin\Release\CoreData.BlackstoneDb.dll
+D:\VirtualOffice-develop\VirtualOffice\CoreData.BlackstoneDb\bin\Release\CoreData.BlackstoneDb.pdb
+D:\VirtualOffice-develop\VirtualOffice\CoreData.BlackstoneDb\bin\Release\Domain.Blackstone.dll
+D:\VirtualOffice-develop\VirtualOffice\CoreData.BlackstoneDb\bin\Release\Domain.dll
+D:\VirtualOffice-develop\VirtualOffice\CoreData.BlackstoneDb\bin\Release\EntityFramework.dll
+D:\VirtualOffice-develop\VirtualOffice\CoreData.BlackstoneDb\bin\Release\EntityFramework.SqlServer.dll
+D:\VirtualOffice-develop\VirtualOffice\CoreData.BlackstoneDb\bin\Release\Ninject.dll
+D:\VirtualOffice-develop\VirtualOffice\CoreData.BlackstoneDb\bin\Release\Domain.Blackstone.pdb
+D:\VirtualOffice-develop\VirtualOffice\CoreData.BlackstoneDb\bin\Release\Domain.pdb
+D:\VirtualOffice-develop\VirtualOffice\CoreData.BlackstoneDb\bin\Release\EntityFramework.xml
+D:\VirtualOffice-develop\VirtualOffice\CoreData.BlackstoneDb\bin\Release\EntityFramework.SqlServer.xml
+D:\VirtualOffice-develop\VirtualOffice\CoreData.BlackstoneDb\bin\Release\Ninject.xml
+D:\VirtualOffice-develop\VirtualOffice\CoreData.BlackstoneDb\obj\Release\CoreData.BlackstoneDb.csprojResolveAssemblyReference.cache
+D:\VirtualOffice-develop\VirtualOffice\CoreData.BlackstoneDb\obj\Release\CoreData.BlackstoneDb.dll
+D:\VirtualOffice-develop\VirtualOffice\CoreData.BlackstoneDb\obj\Release\CoreData.BlackstoneDb.pdb

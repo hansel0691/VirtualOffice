@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using AutoMapper;
 using ClassLibrary2.Domain.MerchantServices;
 using ClassLibrary2.Domain.Others;
@@ -68,7 +69,8 @@ namespace VirtualOffice.Web.Infrastructure
             ;
         
             Mapper.CreateMap<PrepaidTodayTransactionsResult, PrepaidTodayTransactionsViewModel>()
-            .ForMember(p => p.amount, k => k.MapFrom(m => double.Parse(m.amount.GetPlaneFormat())));
+                .ForMember(p => p.amount, k => k.MapFrom(m => double.Parse(m.amount.GetPlaneFormat())))
+                .ForMember(p => p.date, k => k.MapFrom(m => string.IsNullOrEmpty(m.date) ? null : DateTime.Parse(m.date) as DateTime?));
 
             Mapper.CreateMap<IppBrowserResult, IppBrowserResultViewModel>()
             .ForMember(p => p.amount, k => k.MapFrom(m => double.Parse(m.amount.GetPlaneFormat())))
@@ -99,6 +101,7 @@ namespace VirtualOffice.Web.Infrastructure
 
             Mapper.CreateMap<FullcargaPrepaidSummary, FullcargaPrepaidSummaryViewModel>();
             Mapper.CreateMap<FullcargaPrepaidSummaryViewModel, FullcargaPrepaidSummary>();
+            Mapper.CreateMap<SalesAgentMerchantSalesResult, SalesAgentMerchantSalesResultViewModel>();
 
             #endregion
 

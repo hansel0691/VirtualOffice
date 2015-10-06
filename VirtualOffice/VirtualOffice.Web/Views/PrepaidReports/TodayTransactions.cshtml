@@ -84,9 +84,8 @@
                                   var columnResult = col.Bound(column).Width(columnConfig.Width).Hidden(columnConfig.Hidden).Title(label).Groupable(columnConfig.Groupable); ;
 
                                   if (!string.IsNullOrEmpty(columnConfig.Link))
-                                  {
                                       columnResult = columnResult.ClientTemplate(columnConfig.Link);
-                                  }
+                                  
 
                                   if (columnConfig.IsDate)
                                       columnResult.Format("{0:g}");
