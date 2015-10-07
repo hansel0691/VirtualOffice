@@ -1001,7 +1001,7 @@ namespace VirtualOffice.Web.Controllers
 
             var reportData = _virtualOfficeService.RunReportAgentSummary(GetLoggedUserId(), initDte, endDte);
             var mappedResult = reportData.MapTo<IEnumerable<SalesAgentMerchantSalesResult>, IEnumerable<SalesAgentMerchantSalesResultViewModel>>();
-            var activeAccounts = mappedResult.Where(a => a.MerType == 0 && !a.IsClosed && !a.suspended);
+            var activeAccounts = mappedResult.Where(a => a.MerType == 0 && !a.IsClosed && !a.compliance && !a.suspended && !a.isCollection);
 
 
             var columnConfig = new Dictionary<string, ColumnConfig>() {
@@ -1021,7 +1021,7 @@ namespace VirtualOffice.Web.Controllers
 
 
             ViewBag.AccountSectionHeader = accountSectionHeader;
-            ViewBag.Data = activeAccounts;
+            ViewBag.Data = activeAccounts.ToList();
             var model = new VirtualOfficeReportModel { PrintLink = "", StoreProcedureName = "", DateRange = new DateRange(initDte, endDte), ColumnsConfig = columnConfig };
             return View(model);
         }

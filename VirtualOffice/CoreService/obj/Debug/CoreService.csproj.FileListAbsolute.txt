@@ -307,3 +307,4 @@ C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\obj\Debug\CoreService.csprojResolveAssemblyReference.cache
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\obj\Debug\CoreService.dll
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\obj\Debug\CoreService.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\bin\AutoMapper.Net4.dll

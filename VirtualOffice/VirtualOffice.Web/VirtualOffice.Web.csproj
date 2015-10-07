@@ -241,6 +241,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HtmlHelpers\HtmlHelpers.cs" />
     <Compile Include="Infrastructure\Helper.cs" />
     <Compile Include="Infrastructure\Utils.cs" />
     <Compile Include="Membership\CustomMembershipProvider.cs" />
@@ -373,6 +374,16 @@
     <Content Include="Content\img\green.png" />
     <Content Include="Content\img\grey%402x.png" />
     <Content Include="Content\img\grey.png" />
+    <Content Include="Content\img\icon_no_sales.gif" />
+    <Content Include="Content\img\inv_ok.gif" />
+    <Content Include="Content\img\inv_portal.gif" />
+    <Content Include="Content\img\inv_portal_closed.gif" />
+    <Content Include="Content\img\inv_pos.gif" />
+    <Content Include="Content\img\inv_pos_closed.gif" />
+    <Content Include="Content\img\inv_tnbcom.gif" />
+    <Content Include="Content\img\inv_tnbcom_closed.gif" />
+    <Content Include="Content\img\inv_touchandgo.gif" />
+    <Content Include="Content\img\inv_touchandgo_closed.gif" />
     <Content Include="Content\img\orange%402x.png" />
     <Content Include="Content\img\orange.png" />
     <Content Include="Content\img\pink%402x.png" />

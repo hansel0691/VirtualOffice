@@ -2,23 +2,20 @@
 @using VirtualOffice.Web.Infrastructure
 @using VirtualOffice.Web.Models
 @using VirtualOffice.Web.Models.NewReports
+@using VirtualOffice.Web.HtmlHelpers
 
-@model VirtualOfficeReportModel
 
 @{
     Layout = "~/Views/Shared/_NewUserLayout.cshtml";
 
-    //var accountSectionHeader = new List<SalesAgentMerchantSalesResultViewModel>(ViewBag.AccountSectionHeader);
-
     var columnsCofig = Model.ColumnsConfig;
 
     var dateRange = Model.DateRange;
-
     var startDate = dateRange.StartDate;
-
     var endDate = dateRange.EndDate;
 
-    var activePos = @ViewBag.Data;
+    var accountSectionHeader = new Dictionary<string, ColumnConfig>(ViewBag.AccountSectionHeader);
+    var activePos = new List<SalesAgentMerchantSalesResultViewModel>(@ViewBag.Data);
 
 }
 
@@ -54,7 +51,7 @@
                             {
                                 <div class="checkbox">
                                     <label id=@string.Format("label^{0}", column)>
-                                        @*<span>@Html.CheckBox("columnName^" + column, !columnsCofig[column].Hidden, new { @value = column, onchange = "UpdateDataProjection()" })</span>*@
+                                        <span>@*@Html.CheckBox("columnName^" + column, !columnsCofig[column].Hidden, new { @value = column, onchange = "UpdateDataProjection()" })*@</span>
                                         <span class="fix_checkbox">@columnsCofig[column].Label</span>
                                     </label>
                                 </div>
@@ -91,36 +88,30 @@
         </div>
     </div>
 
-    <div class="top20">
-        @*@foreach (var header in accountSectionHeader.Keys)
+    <div class="top-20">
+        @foreach (var header in accountSectionHeader.Keys)
         {
-            if (!accountSectionHeader[header].Hidden)
-            {
-                <div style="display:inline-block">
-                    <div style="text-align: center;font-size: 14pt; ">
-                        @accountSectionHeader[header].Label
-                    </div>
-                    <div style="font-size: 11px;">
-                        @foreach (var col in columnsCofig.Keys)
-                        {
-                            if (!columnsCofig[col].Hidden)
-                            {
-                                <span style="margin-right: 17px;"><a href="#">@columnsCofig[col].Label</a></span>
-                            }
-                        }
-                    </div>
+            <div class="type-status-filter">
+                <div class="header">
+                    @accountSectionHeader[header].Label
                 </div>
-            }
-        }*@
-        <div style="margin-top: 10px;background-color: #fafad2;border: solid 1px #999;padding: 5px;">
+                <div class="body">
+                    @foreach (var col in columnsCofig.Keys)
+                    {
+                        <span><a href="#">@columnsCofig[col].Label</a></span>
+                    }
+                </div>
+            </div>
+        }
+        <div class="table-info">
             Distributor General Sales Summary for @startDate.ToString("d") to @endDate.ToString("d") <br>
             <strong>ACTIVE ACCOUNT</strong>
         </div>
+        
         <table>
-            <thead style="font-size:12px; background-color: #ddd">
+            <thead>
                 <tr>
-                    <th class="merchant-identifier">
-                        [MID] Merchant Name /
+                    <th class="merchant-identifier">[MID] Merchant Name /
                         Merchant DBA
                         City, State ZIP
                     </th>
@@ -135,77 +126,127 @@
                     <th>Balance as of @endDate.ToString("d")</th>
                 </tr>
             </thead>
-            <tbody style="FONT-SIZE: 12px; FONT-FAMILY: verdana;">
+            <tbody>
                 @foreach (var item in activePos)
                 {
                     <tr>
-                        <td class="merchant-identifier">
-                            [@item.Merchant_Pk] <b> @item.Mer_Name </b>
-                            @item.Merchant_dba
-                            @item.City,  @item.State @item.ZIP
-                        </td>
-                        <td><div class="numeric">@item.PrepaidTotal.ToString("C2")</div></td>
-                        <td><div class="numeric">@item.CellularTotal.ToString("C2")</div></td>
-                        <td><div class="numeric">@item.TotalOtherProducts.ToString("C2")</div></td>
-                        <td><div class="numeric">@item.GeneralTotal.ToString("C2")</div></td>
-                        <td><div class="numeric">@item.GeneralDiscount.ToString("C2")</div></td>
-                        <td><div class="numeric">@item.FeesDebitCreditSales.ToString("C2")</div></td>
-                        <td><div class="numeric">@item.GeneralNet.ToString("C2")</div></td>
-                        <td><div class="numeric">@item.AgentDiscount.ToString("C2")</div></td>
-                        <td><div class="numeric">@item.CurrentBalance.ToString("C2")</div></td>
+                        <td class="merchant-identifier">@Html.MerchantIdentifier(@item)</td>
+                        <td>@Html.DisplayCurrency(@item.PrepaidTotal)</td>
+                        <td>@Html.DisplayCurrency(@item.CellularTotal)</td>
+                        <td>@Html.DisplayCurrency(@item.TotalOtherProducts)</td>
+                        <td>@Html.DisplayCurrency(@item.GeneralTotal)</td>
+                        <td>@Html.DisplayCurrency(@item.GeneralDiscount)</td>
+                        <td>@Html.DisplayCurrency(@item.FeesDebitCreditSales)</td>
+                        <td>@Html.DisplayCurrency(@item.GeneralNet)</td>
+                        <td>@Html.DisplayCurrency(@item.AgentDiscount)</td>
+                        <td>@Html.DisplayCurrency(@item.CurrentBalance)</td>
                     </tr>
                 }
             </tbody>
-            <tfoot style="font-size:12px; background-color: #ddd">
-                <tr>
+            <tfoot>
+                <tr style="font-size:12px; background-color: #ddd">
                     <td></td>
-                    <td><div class="numeric"></div></td>
-                    <td><div class="numeric"></div></td>
-                    <td><div class="numeric"></div></td>
-                    <td><div class="numeric"></div></td>
-                    <td><div class="numeric"></div></td>
-                    <td><div class="numeric"></div></td>
-                    <td><div class="numeric"></div></td>
-                    <td><div class="numeric"></div></td>
-                    <td><div class="numeric"></div></td>
+                    <td>@Html.DisplayCurrency(@activePos.Sum(m => m.PrepaidTotal))</td>
+                    <td>@Html.DisplayCurrency(@activePos.Sum(m => m.CellularTotal))</td>
+                    <td>@Html.DisplayCurrency(@activePos.Sum(m => m.TotalOtherProducts))</td>
+                    <td>@Html.DisplayCurrency(@activePos.Sum(m => m.GeneralTotal))</td>
+                    <td>@Html.DisplayCurrency(@activePos.Sum(m => m.GeneralDiscount))</td>
+                    <td>@Html.DisplayCurrency(@activePos.Sum(m => m.FeesDebitCreditSales))</td>
+                    <td>@Html.DisplayCurrency(@activePos.Sum(m => m.GeneralNet))</td>
+                    <td>@Html.DisplayCurrency(@activePos.Sum(m => m.AgentDiscount))</td>
+                    <td>@Html.DisplayCurrency(@activePos.Sum(m => m.CurrentBalance))</td>
+                </tr>
+                <tr class="legend">
+                    <td colspan="100" >
+                        <img src="~/Content/img/icon_no_sales.gif" alt="No Sales Transactions registered in last 24+ hours" border="0">
+                        <small> = No invoiced sales transactions for the merchant in last 24+ hours.</small><br>
+                        <small>(*) Balance for the accounts as of @endDate.ToString("d") 11:59:59 PM.</small>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="merchant-identifier" style="text-align: center">[MID] Merchant Name /
+                        Merchant DBA
+                        City, State ZIP
+                    </th>
+                    <th>Long Distance</th>
+                    <th>Cellular Recharge</th>
+                    <th>Other Prepaid</th>
+                    <th>Total Sales</th>
+                    <th>Merchant Commission</th>
+                    <th>Fees & Debt/Crdt</th>
+                    <th>Net Amount</th>
+                    <th>Distributor Commission</th>
+                    <th>Balance as of @endDate.ToString("d")</th>
                 </tr>
             </tfoot>
         </table>
     </div>
 </div>
 
+#<!-- #region Draw Functions-->
+
+<!-- #endregion -->
 
 <style>
-    table tr .merchant-identifier {
-        white-space: pre-line;
-    }
 
-    table thead tr th {
-        text-align: center;
+    .type-status-filter{
+        display:inline-block;
     }
-
-    table tbody tr td {
-        padding: 0 2px;
-    }
-
     table .numeric {
         text-align: right;
         vertical-align: top;
-        min-width: 80px;
-        min-height: 30px;
     }
-
     table {
         border-bottom: 1px solid #999;
         border-right: 1px solid #999;
     }
-
     td,
     th {
+        padding: 5px 5px 5px 5px;
         border-left: 1px solid #999;
     }
-
     tr {
         border-top: 1px solid #999;
     }
+    .type-status-filter .header{
+	    text-align: center;
+	    font-size: 14pt;
+    }
+    .type-status-filter .body{
+	    font-size: 11px;
+    }
+    .type-status-filter .body span{
+	    margin-right: 17px;
+    }
+    .table-info{
+	    margin-top: 10px;
+	    background-color: #fafad2;
+	    border: solid 1px #999;
+	    padding: 5px;
+    }
+    table thead th, table tfoot tr th{
+	    font-size:12px; 
+	    background-color: #ddd;
+       text-align: center;
+    }
+    table tbody{
+	    FONT-SIZE: 12px; 
+	    FONT-FAMILY: verdana;
+    }
+    table tfoot tr.legend{
+	    background-color: #fff;
+    }
+    table tfoot tr.legend td{
+	    padding: 1px 10px
+    }
+    .no-wrap{
+	    white-space: nowrap;
+    }
+    table tbody tr td.merchant-identifier span{
+        display: block;
+    }
+    table tbody tr td.merchant-identifier span img{
+        margin: 0 2px;
+    }
+
 </style>
