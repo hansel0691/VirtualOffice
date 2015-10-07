@@ -31,3 +31,14 @@ D:\VirtualOffice-develop\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\b
 D:\VirtualOffice-develop\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\obj\Debug\NAPP.Ninject.Extensions.Logging.Log4Net.csprojResolveAssemblyReference.cache
 D:\VirtualOffice-develop\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\obj\Debug\NAPP.Ninject.Extensions.Logging.Log4Net.dll
 D:\VirtualOffice-develop\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\obj\Debug\NAPP.Ninject.Extensions.Logging.Log4Net.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\bin\Debug\NAPP.Ninject.Extensions.Logging.Log4Net.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\bin\Debug\NAPP.Ninject.Extensions.Logging.Log4Net.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\bin\Debug\Domain.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\bin\Debug\log4net.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\bin\Debug\Ninject.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\bin\Debug\Domain.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\bin\Debug\log4net.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\bin\Debug\Ninject.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\obj\Debug\NAPP.Ninject.Extensions.Logging.Log4Net.csprojResolveAssemblyReference.cache
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\obj\Debug\NAPP.Ninject.Extensions.Logging.Log4Net.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\NAPP.Ninject.Extensions.Logging.Log4Net\obj\Debug\NAPP.Ninject.Extensions.Logging.Log4Net.pdb

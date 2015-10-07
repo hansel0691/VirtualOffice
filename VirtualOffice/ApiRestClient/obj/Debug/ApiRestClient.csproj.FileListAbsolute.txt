@@ -51,3 +51,17 @@ D:\VirtualOffice-develop\VirtualOffice\ApiRestClient\bin\Debug\System.Net.Http.F
 D:\VirtualOffice-develop\VirtualOffice\ApiRestClient\obj\Debug\ApiRestClient.csprojResolveAssemblyReference.cache
 D:\VirtualOffice-develop\VirtualOffice\ApiRestClient\obj\Debug\ApiRestClient.dll
 D:\VirtualOffice-develop\VirtualOffice\ApiRestClient\obj\Debug\ApiRestClient.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\bin\Debug\ApiRestClient.dll.config
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\bin\Debug\ApiRestClient.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\bin\Debug\ApiRestClient.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\bin\Debug\Domain.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\bin\Debug\Newtonsoft.Json.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\bin\Debug\Ninject.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\bin\Debug\RestSharp.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\bin\Debug\Domain.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\bin\Debug\Newtonsoft.Json.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\bin\Debug\Ninject.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\bin\Debug\RestSharp.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\obj\Debug\ApiRestClient.csprojResolveAssemblyReference.cache
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\obj\Debug\ApiRestClient.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\obj\Debug\ApiRestClient.pdb

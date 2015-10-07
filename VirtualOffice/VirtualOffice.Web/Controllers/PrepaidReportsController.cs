@@ -1022,8 +1022,9 @@ namespace VirtualOffice.Web.Controllers
 
             ViewBag.AccountSectionHeader = accountSectionHeader;
             ViewBag.Data = activeAccounts;
-            var model = new VirtualOfficeReportModel { PrintLink= "", StoreProcedureName = "", DateRange = new DateRange(initDte, endDte), ColumnsConfig = columnConfig};
+            var model = new VirtualOfficeReportModel { PrintLink = "", StoreProcedureName = "", DateRange = new DateRange(initDte, endDte), ColumnsConfig = columnConfig };
             return View(model);
         }
+
     }
 }

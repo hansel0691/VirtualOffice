@@ -203,7 +203,7 @@ namespace VirtualOffice.Data.Repositories
 
         public IEnumerable<SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2> RunReportAgentSummary(int agentId, DateTime startDate, DateTime endDate)
         {
-            var reportResult = OldConector.CallStoreProcedure<SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2>("SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2", "Pin_Data", new Tuple<string, object>[] 
+            var reportResult = OldConector.CallStoreProcedure<SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2>("SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2", "Pin_Data", new Tuple<string, object>[]
                         {
                             new Tuple<string, object> ("@AgentId", agentId),
                             new Tuple<string, object> ("@dtmInit", startDate.ToString("d")),

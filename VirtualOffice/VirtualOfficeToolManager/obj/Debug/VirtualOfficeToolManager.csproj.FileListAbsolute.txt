@@ -101,3 +101,35 @@ D:\VirtualOffice-develop\VirtualOffice\VirtualOfficeToolManager\obj\Debug\Virtua
 D:\VirtualOffice-develop\VirtualOffice\VirtualOfficeToolManager\obj\Debug\VirtualOfficeToolManager.dll
 D:\VirtualOffice-develop\VirtualOffice\VirtualOfficeToolManager\obj\Debug\VirtualOfficeToolManager.pdb
 D:\VirtualOffice-develop\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\ApiRestClient.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\AutoMapper.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Domain.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\EntityFramework.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Newtonsoft.Json.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Ninject.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\RestSharp.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Services.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\System.Web.Http.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Ninject.Extensions.Interception.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Domain.Inventory.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Domain.Blackstone.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\ApiRestClient.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\AutoMapper.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Domain.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\EntityFramework.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Newtonsoft.Json.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Ninject.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\RestSharp.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Services.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Ninject.Extensions.Interception.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Domain.Inventory.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Domain.Blackstone.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\obj\Debug\VirtualOfficeToolManager.csprojResolveAssemblyReference.cache
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\obj\Debug\VirtualOfficeToolManager.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\obj\Debug\VirtualOfficeToolManager.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\VirtualOfficeToolManager.dll.config
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\VirtualOfficeToolManager.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\VirtualOfficeToolManager.pdb

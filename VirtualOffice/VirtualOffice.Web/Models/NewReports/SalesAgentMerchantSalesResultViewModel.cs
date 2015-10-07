@@ -37,13 +37,13 @@ namespace VirtualOffice.Web.Models.NewReports
         public int PostpaidCellPhoneSubTotal { get; set; }
         public int TrafficSchoolSubTotal { get; set; }
         public double FeesDebitCreditSales { get; set; }
-        public int AgentDiscount { get; set; }
+        public double AgentDiscount { get; set; }
         public double SRPRemainingOtherProducts { get; set; }
         public double DiscountRemainingOtherProducts { get; set; }
         public double GrossSaleRemainingOtherProducts { get; set; }
         public double GeneralTotal { get; set; }
         public int ProcTransTotal { get; set; }
-        public int GeneralDiscount { get; set; }
+        public double GeneralDiscount { get; set; }
         public double GeneralNet { get; set; }
         public int ACHTotal { get; set; }
         public int AmountSentNotPaid { get; set; }
@@ -54,16 +54,16 @@ namespace VirtualOffice.Web.Models.NewReports
         public int MerType { get; set; }
         public double CurrentBalance { get; set; }
         public bool IsClosed { get; set; }
-        public string LastInvoicedSale { get; set; }
-        public string DaysSinceLastSale { get; set; }
-        public int compliance { get; set; }
+        public DateTime LastInvoicedSale { get; set; }
+        public int DaysSinceLastSale { get; set; }
+        public bool compliance { get; set; }
         public bool suspended { get; set; }
         public bool isCollection { get; set; }
         public string City { get; set; }
         public string State { get; set; }
         public string ZIP { get; set; }
-        public int AgentCommission { get; set; }
-        public bool isPrepaidMerchant { get; set; }
+        public double AgentCommission { get; set; }
+        public double isPrepaidMerchant { get; set; }
         public double prepaidBalance { get; set; }
         public double merchantBalance { get; set; }
         public string merchant_BusAddress { get; set; }

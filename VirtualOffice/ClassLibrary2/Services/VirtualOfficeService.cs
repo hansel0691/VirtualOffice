@@ -331,7 +331,7 @@ namespace VirtualOffice.Service.Services
                 var result = reportResult.MapTo<IEnumerable<SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2>, IEnumerable<SalesAgentMerchantSalesResult>>();
 
                 return result;
-                
+
             }
             catch (Exception exception)
             {
