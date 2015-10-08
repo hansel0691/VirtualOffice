@@ -243,6 +243,19 @@ namespace VirtualOffice.Web.Controllers
             return View(model);
         }
 
+        private VirtualOfficeReportModel ReportAgentSummary()
+        {
+            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2", typeof(SalesAgentMerchantSalesResultViewModel));
+
+            const string printLink = "/PrepaidReports/PrintReportAgentSummary";
+
+            AddLinksToReportAgentSummaryColumnConfig(columnsConfig);
+
+            var model = GetReportModel(columnsConfig, printLink, "SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2");
+
+            return model;
+        }
+
         #endregion
 
         #region Data Manipulation
@@ -863,6 +876,11 @@ namespace VirtualOffice.Web.Controllers
             Utils.AddLinkToColumnsConfig(columnsConfig, "inv_id", invoiceDetailsLink);
         }
 
+        private void AddLinksToReportAgentSummaryColumnConfig(Dictionary<string, ColumnConfig> columnsConfig)
+        {
+            /*implement*/   
+        }
+
         private void AddLinksToFullCargaInvoiceColumnConfig(Dictionary<string, ColumnConfig> columnsConfig)
         {
             var invoiceDetailsLink = GetFullcargaInvoiceLink("FullcargaInvoiceDetails", "Invoice");
@@ -948,6 +966,54 @@ namespace VirtualOffice.Web.Controllers
             }
         }
 
+        private Dictionary<string, Dictionary<string, List<SalesAgentMerchantSalesResultViewModel>>> GetReportAgentSummaryData(IEnumerable<SalesAgentMerchantSalesResultViewModel> source)
+        {
+            var activeAccounts = source.Where(a => !a.IsClosed && !a.compliance && !a.suspended && !a.isCollection).OrderBy(m => m.Mer_Name);
+            var closedAccounts = source.Where(a => a.IsClosed).OrderBy(m => m.Mer_Name);
+            var complianceAccounts = source.Where(a => !a.IsClosed && a.compliance  && !a.isCollection || (!a.IsClosed && a.suspended)).OrderBy(m => m.Mer_Name);
+            var collectionAccounts = source.Where(a => !a.IsClosed && a.isCollection).OrderBy(m => m.Mer_Name);
+
+
+            var activeSubsections = new Dictionary<string, List<SalesAgentMerchantSalesResultViewModel>>()
+            {
+                { "POS", activeAccounts.Where(m => m.MerType == 0).ToList() },
+                { "TnB", activeAccounts.Where(m => m.MerType == 3).ToList() },
+                { "Portal", activeAccounts.Where(m => m.MerType == 1).ToList() },
+                { "TnB.com", activeAccounts.Where(m => m.MerType == 4).ToList() },
+                { "OK Pinless", activeAccounts.Where(m => m.MerType == 6).ToList() }
+            };
+            var closeSubsections = new Dictionary<string, List<SalesAgentMerchantSalesResultViewModel>>()
+            {
+                { "POS", closedAccounts.Where(m => m.MerType == 0).ToList() },
+                { "TnB", closedAccounts.Where(m => m.MerType == 3).ToList() },
+                { "Portal", closedAccounts.Where(m => m.MerType == 1).ToList() },
+                { "TnB.com", closedAccounts.Where(m => m.MerType == 4).ToList() },
+            };
+            var complianceSubsections = new Dictionary<string, List<SalesAgentMerchantSalesResultViewModel>>()
+            {
+                { "POS", complianceAccounts.Where(m => m.MerType == 0).ToList() },
+                { "TnB", complianceAccounts.Where(m => m.MerType == 3).ToList() },
+                { "Portal", complianceAccounts.Where(m => m.MerType == 1).ToList() },
+                { "TnB.com", complianceAccounts.Where(m => m.MerType == 4).ToList() },
+            };
+            var collectionSubsections = new Dictionary<string, List<SalesAgentMerchantSalesResultViewModel>>()
+            {
+                { "POS", collectionAccounts.Where(m => m.MerType == 0).ToList() },
+                { "TnB", collectionAccounts.Where(m => m.MerType == 3).ToList() },
+                { "Portal", collectionAccounts.Where(m => m.MerType == 1).ToList() },
+                { "TnB.com", collectionAccounts.Where(m => m.MerType == 4).ToList() },
+            };
+            var sections = new Dictionary<string, Dictionary<string, List<SalesAgentMerchantSalesResultViewModel>>>()
+            {
+                { "ACTIVE ACCOUNTS" , activeSubsections },
+                { "CLOSED ACCOUNTS" , closeSubsections },
+                { "COMPLIANCE ACCOUNTS" , complianceSubsections },
+                { "COLLECTION  ACCOUNTS" , collectionSubsections },
+            };
+
+            return sections;
+        }
+
         #endregion
 
         [HttpPost]
@@ -990,39 +1056,22 @@ namespace VirtualOffice.Web.Controllers
             {
                 return Json(new { Success = false }); ;
             }
-
-            return null;
         }
 
         public ActionResult ReportAgentSummary(DateTime? startDate, DateTime? endDate)
         {
             var initDte = startDate == null ? new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1) : (DateTime)startDate;
             var endDte = endDate == null ? DateTime.Today : (DateTime)endDate;
+            SaveLastDateRangeInSession(initDte, endDte);
 
             var reportData = _virtualOfficeService.RunReportAgentSummary(GetLoggedUserId(), initDte, endDte);
+
             var mappedResult = reportData.MapTo<IEnumerable<SalesAgentMerchantSalesResult>, IEnumerable<SalesAgentMerchantSalesResultViewModel>>();
-            var activeAccounts = mappedResult.Where(a => a.MerType == 0 && !a.IsClosed && !a.compliance && !a.suspended && !a.isCollection);
 
+            var model = ReportAgentSummary();
 
-            var columnConfig = new Dictionary<string, ColumnConfig>() {
-                                                                            {"POS", new ColumnConfig(){ Hidden = false, Label = "POS"}},
-                                                                            {"TnB", new ColumnConfig(){ Hidden = false, Label = "TnB"}},
-                                                                            {"Portal", new ColumnConfig(){ Hidden = false, Label = "Portal"}},
-                                                                            {"TnB.com", new ColumnConfig(){ Hidden = false, Label = "TnB.com"}},
-                                                                            {"OK Pinless", new ColumnConfig(){ Hidden = false, Label = "OK Pinlessll"}}
-                                                                        };
-            var accountSectionHeader = new Dictionary<string, ColumnConfig>()
-                                                                        {
-                                                                            {"ACTIVE ACCOUNTS", new ColumnConfig(){ Hidden = false, Label = "ACTIVE ACCOUNTS"}},
-                                                                            {"CLOSED ACCOUNTS", new ColumnConfig(){ Hidden = false, Label = "CLOSED ACCOUNTS"}},
-                                                                            {"COMPLIANCE ACCOUNTS", new ColumnConfig(){ Hidden = false, Label = "COMPLIANCE ACCOUNTS"}},
-                                                                            {"COLLECTION ACCOUNTS", new ColumnConfig(){ Hidden = false, Label = "COLLECTION ACCOUNTS"}}
-                                                                        };
+            ViewBag.Data = GetReportAgentSummaryData(mappedResult);
 
-
-            ViewBag.AccountSectionHeader = accountSectionHeader;
-            ViewBag.Data = activeAccounts.ToList();
-            var model = new VirtualOfficeReportModel { PrintLink = "", StoreProcedureName = "", DateRange = new DateRange(initDte, endDte), ColumnsConfig = columnConfig };
             return View(model);
         }
 
