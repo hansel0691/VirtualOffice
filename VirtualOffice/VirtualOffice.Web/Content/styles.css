@@ -9427,21 +9427,27 @@ input.ng-valid.ng-dirty {
 #dailylimit_max, #creditlimit_max {
     color: rgb(29, 29, 29) !important;
 }
-
 span.fix_checkbox {
     margin-left: 5px;
 }
+table[role=grid] tbody tr.k-alt {
+    background-color: #e0e0e0;
 
-table[role=grid] tbody tr.k-alt {background-color: #e0e0e0;}
+}
+table tbody tr td[aligntext=right] { 
+    text-align: right;
 
-table tbody tr td[aligntext=right] { text-align: right;}
-
+}
 .k-grid-footer-wrap tr.k-footer-template td {
     text-align: right;
 }
-
 .under15 {
     margin-top: 15px;
 }
+.top-20{ 
+    margin-top: 20px;
 
-.top-20{ margin-top: 20px;}
+}
+div.k-grid#Reports div.k-grid-content{
+    font-size: 12px;
+}

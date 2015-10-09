@@ -91,3 +91,4 @@ C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\bin\D
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\obj\Debug\Domain.dll
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\obj\Debug\Domain.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache

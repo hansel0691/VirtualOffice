@@ -51,7 +51,7 @@ namespace VirtualOffice.Web.Controllers
             var userCategory = GetUserCategory();
 
             if (userCategory == Category.Merchant)
-                return RedirectToAction("MerchantCommissions", "PrepaidReports");
+                return RedirectToAction("TodayTransactions", "PrepaidReports");
             
             if (user.IsFullcarga)
                 return RedirectToAction("PortfolioSummary", "PrepaidReports");
