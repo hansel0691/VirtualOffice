@@ -40,7 +40,7 @@ namespace VirtualOffice.Web.HtmlHelpers
                     break;
             }
 
-            var identifier = string.Format("<span class='no-wrap'><img src='{6}'/>[{0}] <b>{1}</b> {7}</span>{2}<span>{3}, {4} {5}</span>", pk, name, dba, city, state, zip, merchantTypeStatusIcon, noSalesImg);
+            var identifier = string.Format("<span class='no-wrap'><img src='{6}'/>[{0}] <a href='SalesDetails?merchantId={0}'><b>{1}</b></a> {7}</span>{2}<span>{3}, {4} {5}</span>", pk, name, dba, city, state, zip, merchantTypeStatusIcon, noSalesImg);
             return MvcHtmlString.Create(identifier);
         }
 

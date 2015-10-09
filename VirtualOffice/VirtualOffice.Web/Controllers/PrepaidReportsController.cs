@@ -972,7 +972,19 @@ namespace VirtualOffice.Web.Controllers
             var closedAccounts = source.Where(a => a.IsClosed).OrderBy(m => m.Mer_Name);
             var complianceAccounts = source.Where(a => !a.IsClosed && a.compliance  && !a.isCollection || (!a.IsClosed && a.suspended)).OrderBy(m => m.Mer_Name);
             var collectionAccounts = source.Where(a => !a.IsClosed && a.isCollection).OrderBy(m => m.Mer_Name);
-
+            //var total = new Dictionary<string, List<SalesAgentMerchantSalesResultViewModel>> {
+            //    { "TOTALS" , new List<SalesAgentMerchantSalesResultViewModel> { new SalesAgentMerchantSalesResultViewModel {
+            //        PrepaidTotal = source.Sum(p => p.PrepaidTotal),
+            //        CellularTotal = source.Sum(p => p.CellularTotal),
+            //        TotalOtherProducts = source.Sum(p => p.TotalOtherProducts),
+            //        GeneralTotal = source.Sum(p => p.GeneralTotal),
+            //        GeneralDiscount = source.Sum(p => p.GeneralDiscount),
+            //        FeesDebitCreditSales = source.Sum(p => p.FeesDebitCreditSales),
+            //        GeneralNet = source.Sum(p => p.GeneralNet),
+            //        AgentDiscount = source.Sum(p => p.AgentDiscount),
+            //        CurrentBalance = source.Sum(p => p.CurrentBalance),
+            //    }  } }
+            //};
 
             var activeSubsections = new Dictionary<string, List<SalesAgentMerchantSalesResultViewModel>>()
             {
@@ -1009,6 +1021,7 @@ namespace VirtualOffice.Web.Controllers
                 { "CLOSED ACCOUNTS" , closeSubsections },
                 { "COMPLIANCE ACCOUNTS" , complianceSubsections },
                 { "COLLECTION  ACCOUNTS" , collectionSubsections },
+                //{ "" , total },
             };
 
             return sections;

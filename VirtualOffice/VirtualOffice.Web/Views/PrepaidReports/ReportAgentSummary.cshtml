@@ -9,7 +9,7 @@
 @{
     Layout = "~/Views/Shared/_NewUserLayout.cshtml";
 
-    var columnsCofig = Model.ColumnsConfig;
+    var columnsCofig = Model.ColumnsConfig as Dictionary<string, ColumnConfig>;
 
     var startDate = Model.DateRange.StartDate;
     var endDate = Model.DateRange.EndDate;
@@ -50,8 +50,8 @@
                             {
                                 <div class="checkbox">
                                     <label id=@string.Format("label^{0}", column)>
-                                        <@*span>@Html.CheckBox("columnName^" + column, !columnsCofig[column].Hidden, new { @value = column, onchange = "UpdateDataProjection()" })</span>
-                                        <span class="fix_checkbox">@columnsCofig[column].Label</span>*@
+                                        <span>@Html.CheckBox("columnName^" + column, !(columnsCofig)[column].Hidden, new { @value = column, onchange = "UpdateDataProjection()" })</span>
+                                        <span class="fix_checkbox">@columnsCofig[column].Label</span>
                                     </label>
                                 </div>
                             }
@@ -124,7 +124,13 @@
                                 <td>@Html.DisplayCurrency(@item.PrepaidTotal)</td>
                                 <td>@Html.DisplayCurrency(@item.CellularTotal)</td>
                                 <td>@Html.DisplayCurrency(@item.TotalOtherProducts)</td>
-                                <td>@Html.DisplayCurrency(@item.GeneralTotal)</td>
+                                @if (item.GeneralTotal != 0)
+                                {
+                                    <td><a href="~/PrepaidReports/SalesDetails?merchantId=@item.Merchant_Pk">@Html.DisplayCurrency(@item.GeneralTotal)</a></td>
+                                }
+                                else{ 
+                                    <td>@Html.DisplayCurrency(@item.GeneralTotal)</td>
+                                }
                                 <td>@Html.DisplayCurrency(@item.GeneralDiscount)</td>
                                 <td>@Html.DisplayCurrency(@item.FeesDebitCreditSales)</td>
                                 <td>@Html.DisplayCurrency(@item.GeneralNet)</td>
