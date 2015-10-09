@@ -94,7 +94,7 @@
                 <div class="type-status-filter">
                     <div class="header">@header</div>
                     <div class="body"> @foreach (var merType in data[header].Keys)
-                    { <span><a href="#">@merType</a></span> } </div>
+                    { <span><a href="#@string.Format("{0}_{1}", header, merType)">@merType</a></span> } </div>
                 </div>
             }
         </div>
@@ -105,7 +105,7 @@
                 List<SalesAgentMerchantSalesResultViewModel> activePos = data[header][merType];
                 if (!activePos.Any()) { continue; }
 
-                <div class="table-info">
+                <div class="table-info" id="@string.Format("{0}_{1}", header, merType)">
                     Distributor General Sales Summary for @startDate.ToString("d") to @endDate.ToString("d") <br>
                     <strong>@header</strong>
                 </div>

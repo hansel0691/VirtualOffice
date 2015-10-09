@@ -99,6 +99,7 @@
                               {
                                   var columnConfig = columnsConfig[column];
                                   var label = columnsConfig[column].Label;
+
                                   var columnResult = col.Bound(column).Width(columnConfig.Width).Hidden(columnConfig.Hidden).Title(label).Groupable(columnConfig.Groupable); ;
 
                                   if (!string.IsNullOrEmpty(columnConfig.Link))
@@ -107,7 +108,8 @@
                                   }
 
                                   if (columnConfig.IsDate)
-                                      columnResult.Format("{0:dd/MM/yyyy}");
+                                      columnResult = columnResult.ClientTemplate("#= kendo.toString(getLocalDate(datestamp), 'd') #");
+                                  //    columnResult.Format("{0:dd/MM/yyyy}");
 
                                   else if (columnConfig.IsNumeric)
                                       columnResult.ClientFooterTemplate("#= kendo.format('{0:n2}', sum)#").Format("{0:n2}").HtmlAttributes(new { alignText = "right" });
@@ -116,12 +118,12 @@
                           })
                           .DataSource(ds => ds.Ajax()
                                       .Aggregates(aggregates =>
-                                                 {
-                                                     foreach (var col in columnsConfig.Where(col => col.Value.IsNumeric))
-                                                     {
-                                                         aggregates.Add(col.Key, typeof(double)).Sum();
-                                                     }
-                                                 })
+                                      {
+                                          foreach (var col in columnsConfig.Where(col => col.Value.IsNumeric))
+                                          {
+                                              aggregates.Add(col.Key, typeof(double)).Sum();
+                                          }
+                                      })
                                        .Read(r => r.Action("RunTransactionSummary", "MerchantServicesReports").Data("getReportParams"))
                                        .PageSize(100)
                           )
@@ -146,9 +148,5 @@
     </div>
 </div> 
 
-<script>
-    function getLocalDate(date) {
-        return date;
-    }
-</script>
+
 <script src="~/Scripts/reportManager.js"></script>

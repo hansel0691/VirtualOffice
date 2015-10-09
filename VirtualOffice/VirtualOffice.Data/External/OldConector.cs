@@ -31,7 +31,7 @@ namespace VirtualOffice.Data.External
                 using (var reader = command.ExecuteReader())
                     result.AddRange(reader.Select(r => r.MapTo<IDataReader, sp_get_transactions_Result>()));
 
-                result.ForEach(r => { r.begindate = ini_date.ToString("d"); r.enddate = end_date.ToString("d"); });
+                result.ForEach(r => { r.begindate = ini_date.ToUniversalTime().ToString("d"); r.enddate = end_date.ToUniversalTime().ToString("d"); });
                 connection.Close();
             }
             return result;

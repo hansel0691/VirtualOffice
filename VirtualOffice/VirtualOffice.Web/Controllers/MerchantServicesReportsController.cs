@@ -221,7 +221,7 @@ namespace VirtualOffice.Web.Controllers
             var reportData = _virtualOfficeService.RunTransactionSummary(GetLoggedUserId(), startDate, endDate);
 
             var mappedResult = reportData.MapTo<IEnumerable<MsTransactionSummaryResult>, IEnumerable<MsTransactionSummaryViewModel>>();
-
+            
             var result = mappedResult.ToDataSourceResult(request);
 
             return Json(result);
@@ -446,7 +446,7 @@ namespace VirtualOffice.Web.Controllers
             if (merchantName)
                 dataTemplate = "<a href='" + mainPath + string.Format("?agentId=#=merchant_pk#&startDate=#=begindate#&endDate=#=enddate#&columnName=" + columnName) + "'>" + "#=" + columnName + "#" + "</a>";
             else
-                dataTemplate = "<a href='" + mainPath + string.Format("?agentId=#=merchant_pk#&startDate=#=kendo.toString(datestamp, 'd')#&endDate=#=kendo.toString(datestamp, 'd')#&columnName=" + columnName) + "'>" + "#=" + columnName + "#" + "</a>";
+                dataTemplate = "<a href='" + mainPath + string.Format("?agentId=#=merchant_pk#&startDate=#= kendo.toString(getLocalDate(datestamp), 'd') #&endDate=#= kendo.toString(getLocalDate(datestamp), 'd') #&columnName=" + columnName) + "'>" + "#=" + columnName + "#" + "</a>";
            
             return dataTemplate;   
         }

@@ -286,3 +286,8 @@ function timeOut(id, time) {
     $(id).fadeOut(time);
 }
 
+
+function getLocalDate(date) {
+    var utcDate = new Date(date.getTime() + date.getTimezoneOffset() * 60000)
+    return utcDate;
+}
