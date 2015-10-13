@@ -841,6 +841,18 @@ namespace VirtualOffice.Web.Controllers
                                 PrintReport(procedureName, methodName, objParams);
         }
 
+        public ActionResult PrintReportAgentSummary(string startDate, string endDate, bool exportMode)
+        {
+            var dateRange = GetDateRange(startDate, endDate);
+
+            var objParams = new object[] { GetLoggedUserId(), dateRange.StartDate, dateRange.EndDate };
+
+            const string procedureName = "SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2", methodName = "RunReportAgentSummary";
+
+            return exportMode ? ExportReportsToExcel(procedureName, methodName, objParams) :
+                                PrintReport(procedureName, methodName, objParams);
+        }
+
         public ActionResult PrintFullcargaInvoiceDetails(int invoiceId, bool exportMode)
         {
             var userLevel = GetUserLevel();
@@ -978,19 +990,19 @@ namespace VirtualOffice.Web.Controllers
             var closedAccounts = source.Where(a => a.IsClosed).OrderBy(m => m.Mer_Name);
             var complianceAccounts = source.Where(a => !a.IsClosed && a.compliance  && !a.isCollection || (!a.IsClosed && a.suspended)).OrderBy(m => m.Mer_Name);
             var collectionAccounts = source.Where(a => !a.IsClosed && a.isCollection).OrderBy(m => m.Mer_Name);
-            //var total = new Dictionary<string, List<SalesAgentMerchantSalesResultViewModel>> {
-            //    { "TOTALS" , new List<SalesAgentMerchantSalesResultViewModel> { new SalesAgentMerchantSalesResultViewModel {
-            //        PrepaidTotal = source.Sum(p => p.PrepaidTotal),
-            //        CellularTotal = source.Sum(p => p.CellularTotal),
-            //        TotalOtherProducts = source.Sum(p => p.TotalOtherProducts),
-            //        GeneralTotal = source.Sum(p => p.GeneralTotal),
-            //        GeneralDiscount = source.Sum(p => p.GeneralDiscount),
-            //        FeesDebitCreditSales = source.Sum(p => p.FeesDebitCreditSales),
-            //        GeneralNet = source.Sum(p => p.GeneralNet),
-            //        AgentDiscount = source.Sum(p => p.AgentDiscount),
-            //        CurrentBalance = source.Sum(p => p.CurrentBalance),
-            //    }  } }
-            //};
+            var total = new Dictionary<string, List<SalesAgentMerchantSalesResultViewModel>> {
+                { "TOTALS" , new List<SalesAgentMerchantSalesResultViewModel> { new SalesAgentMerchantSalesResultViewModel {
+                    PrepaidTotal = source.Sum(p => p.PrepaidTotal),
+                    CellularTotal = source.Sum(p => p.CellularTotal),
+                    TotalOtherProducts = source.Sum(p => p.TotalOtherProducts),
+                    GeneralTotal = source.Sum(p => p.GeneralTotal),
+                    GeneralDiscount = source.Sum(p => p.GeneralDiscount),
+                    FeesDebitCreditSales = source.Sum(p => p.FeesDebitCreditSales),
+                    GeneralNet = source.Sum(p => p.GeneralNet),
+                    AgentDiscount = source.Sum(p => p.AgentDiscount),
+                    CurrentBalance = source.Sum(p => p.CurrentBalance),
+                }  } }
+            };
 
             var activeSubsections = new Dictionary<string, List<SalesAgentMerchantSalesResultViewModel>>()
             {
@@ -1027,7 +1039,7 @@ namespace VirtualOffice.Web.Controllers
                 { "CLOSED ACCOUNTS" , closeSubsections },
                 { "COMPLIANCE ACCOUNTS" , complianceSubsections },
                 { "COLLECTION  ACCOUNTS" , collectionSubsections },
-                //{ "" , total },
+                { "" , total },
             };
 
             return sections;
@@ -1090,19 +1102,6 @@ namespace VirtualOffice.Web.Controllers
             var model = ReportAgentSummary();
 
             ViewBag.Data = GetReportAgentSummaryData(mappedResult);
-            ViewBag.Totals =
-                new SalesAgentMerchantSalesResultViewModel
-                {
-                    PrepaidTotal = reportData.Sum(p => p.PrepaidTotal),
-                    CellularTotal = reportData.Sum(p => p.CellularTotal),
-                    TotalOtherProducts = reportData.Sum(p => p.TotalOtherProducts),
-                    GeneralTotal = reportData.Sum(p => p.GeneralTotal),
-                    GeneralDiscount = reportData.Sum(p => p.GeneralDiscount),
-                    FeesDebitCreditSales = reportData.Sum(p => p.FeesDebitCreditSales),
-                    GeneralNet = reportData.Sum(p => p.GeneralNet),
-                    AgentDiscount = reportData.Sum(p => p.AgentDiscount),
-                    CurrentBalance = reportData.Sum(p => p.CurrentBalance),
-                };
 
             return View(model);
         }

@@ -48,3 +48,29 @@ D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\bin\Release\System.Net
 D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\obj\Release\VirtualOffice.Data.csprojResolveAssemblyReference.cache
 D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\obj\Release\VirtualOffice.Data.dll
 D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Data\obj\Release\VirtualOffice.Data.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Release\VirtualOffice.Data.dll.config
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Release\VirtualOffice.Data.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Release\VirtualOffice.Data.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Release\ApiRestClient.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Release\AutoMapper.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Release\Domain.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Release\EntityFramework.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Release\Newtonsoft.Json.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Release\RestSharp.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Release\Ninject.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Release\System.Web.Http.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Release\System.Net.Http.Formatting.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Release\ApiRestClient.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Release\Domain.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Release\AutoMapper.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Release\EntityFramework.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Release\Newtonsoft.Json.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Release\RestSharp.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Release\Ninject.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Release\System.Web.Http.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Release\System.Net.Http.Formatting.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Data\obj\Release\VirtualOffice.Data.csprojResolveAssemblyReference.cache
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Data\obj\Release\VirtualOffice.Data.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Data\obj\Release\VirtualOffice.Data.pdb

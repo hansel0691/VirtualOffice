@@ -286,3 +286,12 @@ function timeOut(id, time) {
     $(id).fadeOut(time);
 }
 
+function reportAgentFilter() {
+    var url = '/PrepaidReports/ReportAgentSummary?startDate=' + $("#startDate").val() + "&endDate=" + $("#endDate").val();
+    window.location.href = url;
+}
+
+function getLocalDate(date) {
+    var utcDate = new Date(date.getTime() + date.getTimezoneOffset() * 60000)
+    return utcDate;
+}

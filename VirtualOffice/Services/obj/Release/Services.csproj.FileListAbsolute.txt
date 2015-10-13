@@ -52,3 +52,31 @@ D:\VirtualOffice-develop\VirtualOffice\Services\bin\Release\Ninject.Extensions.I
 D:\VirtualOffice-develop\VirtualOffice\Services\obj\Release\Services.csprojResolveAssemblyReference.cache
 D:\VirtualOffice-develop\VirtualOffice\Services\obj\Release\Services.dll
 D:\VirtualOffice-develop\VirtualOffice\Services\obj\Release\Services.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\bin\Release\Services.dll.config
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\bin\Release\Services.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\bin\Release\Services.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\bin\Release\Domain.Blackstone.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\bin\Release\Domain.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\bin\Release\Domain.Inventory.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\bin\Release\EntityFramework.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\bin\Release\LinFu.DynamicProxy.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\bin\Release\Moq.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\bin\Release\Newtonsoft.Json.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\bin\Release\Ninject.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\bin\Release\Ninject.Extensions.Interception.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\bin\Release\Ninject.Extensions.Interception.LinFu.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\bin\Release\Domain.Blackstone.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\bin\Release\Domain.Inventory.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\bin\Release\Domain.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\bin\Release\EntityFramework.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\bin\Release\Moq.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\bin\Release\Newtonsoft.Json.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\bin\Release\Ninject.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\bin\Release\Ninject.Extensions.Interception.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\bin\Release\Ninject.Extensions.Interception.LinFu.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\obj\Release\Services.csprojResolveAssemblyReference.cache
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\obj\Release\Services.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\obj\Release\Services.pdb

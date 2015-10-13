@@ -12,3 +12,10 @@ D:\VirtualOffice-develop\VirtualOffice\Domain.Inventory\bin\Release\Domain.pdb
 D:\VirtualOffice-develop\VirtualOffice\Domain.Inventory\obj\Release\Domain.Inventory.csprojResolveAssemblyReference.cache
 D:\VirtualOffice-develop\VirtualOffice\Domain.Inventory\obj\Release\Domain.Inventory.dll
 D:\VirtualOffice-develop\VirtualOffice\Domain.Inventory\obj\Release\Domain.Inventory.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain.Inventory\bin\Release\Domain.Inventory.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain.Inventory\bin\Release\Domain.Inventory.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain.Inventory\bin\Release\Domain.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain.Inventory\bin\Release\Domain.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain.Inventory\obj\Release\Domain.Inventory.csprojResolveAssemblyReference.cache
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain.Inventory\obj\Release\Domain.Inventory.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain.Inventory\obj\Release\Domain.Inventory.pdb

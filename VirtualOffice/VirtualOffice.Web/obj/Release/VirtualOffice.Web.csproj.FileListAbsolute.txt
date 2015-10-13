@@ -52,3 +52,31 @@ D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Web\obj\Release\VirtualOffi
 D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Web\obj\Release\VirtualOffice.Web.csprojResolveAssemblyReference.cache
 D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Web\obj\Release\VirtualOffice.Web.dll
 D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Web\obj\Release\VirtualOffice.Web.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\AutoMapper.Net4.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\VirtualOffice.Web.dll.config
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\VirtualOffice.Web.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\VirtualOffice.Web.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\ApiRestClient.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\ClassLibrary2.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\Domain.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\Services.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\System.Net.Http.Extensions.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\System.Net.Http.Primitives.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\System.Web.Cors.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\VirtualOffice.Data.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\Domain.Inventory.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\Domain.Blackstone.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\ApiRestClient.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\ClassLibrary2.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\Domain.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\Services.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\System.Net.Http.Extensions.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\System.Net.Http.Primitives.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\VirtualOffice.Data.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\Domain.Inventory.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\Domain.Blackstone.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\obj\Release\VirtualOffice.Web.csproj.App.config
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\obj\Release\VirtualOffice.Web.csprojResolveAssemblyReference.cache
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\obj\Release\VirtualOffice.Web.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\obj\Release\VirtualOffice.Web.pdb

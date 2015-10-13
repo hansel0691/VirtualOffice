@@ -44,3 +44,27 @@ D:\VirtualOffice-develop\VirtualOffice\Domain\bin\Release\System.Web.WebPages.Ra
 D:\VirtualOffice-develop\VirtualOffice\Domain\obj\Release\Domain.csprojResolveAssemblyReference.cache
 D:\VirtualOffice-develop\VirtualOffice\Domain\obj\Release\Domain.dll
 D:\VirtualOffice-develop\VirtualOffice\Domain\obj\Release\Domain.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\bin\Release\Domain.dll.config
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\bin\Release\Domain.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\bin\Release\Domain.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\bin\Release\EntityFramework.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\bin\Release\Microsoft.Web.Infrastructure.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\bin\Release\System.Web.Helpers.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\bin\Release\System.Web.Mvc.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\bin\Release\System.Web.Razor.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\bin\Release\System.Web.WebPages.Deployment.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\bin\Release\System.Web.WebPages.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\bin\Release\System.Web.WebPages.Razor.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\bin\Release\EntityFramework.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\bin\Release\System.Web.Helpers.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\bin\Release\System.Web.Mvc.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\bin\Release\System.Web.Razor.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\bin\Release\System.Web.WebPages.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\bin\Release\System.Web.WebPages.Deployment.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\bin\Release\System.Web.WebPages.Razor.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\obj\Release\Domain.csprojResolveAssemblyReference.cache
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\obj\Release\Domain.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain\obj\Release\Domain.pdb

@@ -34,3 +34,20 @@ D:\VirtualOffice-develop\VirtualOffice\ApiRestClient\bin\Release\System.Net.Http
 D:\VirtualOffice-develop\VirtualOffice\ApiRestClient\obj\Release\ApiRestClient.csprojResolveAssemblyReference.cache
 D:\VirtualOffice-develop\VirtualOffice\ApiRestClient\obj\Release\ApiRestClient.dll
 D:\VirtualOffice-develop\VirtualOffice\ApiRestClient\obj\Release\ApiRestClient.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\ApiRestClient.dll.config
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\ApiRestClient.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\ApiRestClient.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\Domain.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\Newtonsoft.Json.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\Ninject.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\RestSharp.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\System.Net.Http.Formatting.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\Domain.pdb
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\Newtonsoft.Json.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\Ninject.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\RestSharp.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\System.Web.Http.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\System.Net.Http.Formatting.xml
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\obj\Release\ApiRestClient.csprojResolveAssemblyReference.cache
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\obj\Release\ApiRestClient.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\obj\Release\ApiRestClient.pdb
