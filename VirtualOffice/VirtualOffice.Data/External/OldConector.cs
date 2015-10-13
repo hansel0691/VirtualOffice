@@ -83,6 +83,8 @@ namespace VirtualOffice.Data.External
                 foreach (var tuple in parameters)
                     command.Parameters.AddWithValue(tuple.Item1, tuple.Item2);
 
+                command.CommandTimeout = 3600;
+                
                 connection.Open();
                 using (var reader = command.ExecuteReader())
                     result.AddRange(reader.Select(r => r.MapTo<IDataReader, TResult>()));

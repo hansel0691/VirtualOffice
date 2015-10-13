@@ -15,6 +15,7 @@
     var endDate = Model.DateRange.EndDate;
 
     var data = @ViewBag.Data;
+    var totals = @ViewBag.Totals as SalesAgentMerchantSalesResultViewModel;
 
 }
 
@@ -62,7 +63,7 @@
                             </div>
                             <br />
                             <div class="">
-                                <button type="button" class="btn btn-secundary" onclick="applyUserfilters()">Go!</button>
+                                <button type="button" class="btn btn-secundary" onclick="reportAgentFilter()">Go!</button>
                             </div>
                         </div>
                     </div>
@@ -79,7 +80,7 @@
                         @(Html.Kendo().DatePicker().Name("endDate").Value(endDate).HtmlAttributes(new { style = "width: 115px;" }))
                         <br>
                         <div class="">
-                            <button type="button" class="btn btn-secundary" onclick="applyUserfilters()">Go!</button>
+                            <button type="button" class="btn btn-secundary" onclick="reportAgentFilter()">Go!</button>
                         </div>
                     </div>
                 </div>
@@ -174,10 +175,55 @@
                 </div>
             }
         }
+
+
+        @*<table>
+            <thead>
+                <tr>
+                    @foreach (var col in columnsCofig.Keys) { <th>@Html.Raw(columnsCofig[col].Label)</th> }
+                </tr>
+            </thead>
+            <tfoot>
+                <tr style="font-size:12px; background-color: #ddd">
+                    <td></td>
+                    <td>@Html.DisplayCurrency(totals.PrepaidTotal)</td>
+                    <td>@Html.DisplayCurrency(totals.CellularTotal)</td>
+                    <td>@Html.DisplayCurrency(totals.TotalOtherProducts)</td>
+                    <td>@Html.DisplayCurrency(totals.GeneralTotal)</td>
+                    <td>@Html.DisplayCurrency(totals.GeneralDiscount)</td>
+                    <td>@Html.DisplayCurrency(totals.FeesDebitCreditSales)</td>
+                    <td>@Html.DisplayCurrency(totals.GeneralNet)</td>
+                    <td>@Html.DisplayCurrency(totals.AgentDiscount)</td>
+                    <td>@Html.DisplayCurrency(totals.CurrentBalance)</td>
+                </tr>
+                <tr class="legend">
+                    <td colspan="100">
+                        <small>(*) Balance for the accounts as of @endDate.ToString("d") 11:59:59 PM.</small>
+                    </td>
+                </tr>
+                <tr>
+                    @foreach (var col in columnsCofig.Keys) { <th>@Html.Raw(columnsCofig[col].Label)</th> }
+                </tr>
+            </tfoot>
+        </table>
+        <div>
+            <p style="text-align: center;font-size: 11px;color: #666;line-height: 13px;font-family: Arial,Helvetica,Geneva;margin: 15px 0px;">This is not a legal statement</p>
+            <a href="#top" style="font-size: 12px;color: #000;font-family: Arial,Geneva,Helvetica;margin: 20px 0 10px 0">
+                <img src="~/Content/img/ASC.gif" />
+                top of page
+            </a>
+        </div>*@
+
     </div>
 </div>
 
 
+<script>
+    function reportAgentFilter() {
+        var url = '/PrepaidReports/ReportAgentSummary?startDate=' + $("#startDate").val() + "&endDate=" + $("#endDate").val();
+        window.location.href = url;
+    }
+</script>
 <style>
 
     .type-status-filter{

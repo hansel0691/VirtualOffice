@@ -53,7 +53,7 @@ namespace VirtualOffice.Web.Controllers
             return View(model);
         }
 
-        public ActionResult SalesSummary()
+        public ActionResult SalesSummary(DateTime? startDate = null, DateTime? endDate = null)
         {
             var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_report_general_sales_summary", typeof(PrepaidSalesSummaryResultViewModel));
 
@@ -62,6 +62,9 @@ namespace VirtualOffice.Web.Controllers
             AddLinksToPrepaidSalesColumnConfig(columnsConfig);
 
             var model = GetReportModel(columnsConfig, printLink, "sp_report_general_sales_summary");
+
+            if (startDate != null) model.DateRange.StartDate = (DateTime)startDate;
+            if (endDate != null) model.DateRange.EndDate = (DateTime)endDate;
 
             return View(model);
         }
@@ -136,13 +139,16 @@ namespace VirtualOffice.Web.Controllers
             return View(model);
         }
 
-        public ActionResult IppBrowser()
+        public ActionResult IppBrowser(DateTime? startDate = null, DateTime? endDate = null)
         {
             var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "SP_ippBrowser", typeof(IppBrowserResultViewModel));
 
             const string printLink = "/PrepaidReports/PrintIppBrowser";
 
             var model = GetReportModel(columnsConfig, printLink, "SP_ippBrowser");
+
+            if (startDate != null)model.DateRange.StartDate = (DateTime)startDate;
+            if (endDate != null)  model.DateRange.EndDate = (DateTime)endDate;
 
             return View(model);
         }
@@ -277,7 +283,7 @@ namespace VirtualOffice.Web.Controllers
                 reportData = reportData.Where(c => 
                     status == -1 ||
                     (!c.suspended && c.closed == 0 && status == 1) ||
-                    (c.suspended && c.closed == 0 && status == 0));
+                    (c.suspended || c.closed == 1 && status == 0));
 
 
                 if (alertsMode.HasValue && alertsMode.Value != 0)//Filters just accounts with Alerts
@@ -1084,6 +1090,19 @@ namespace VirtualOffice.Web.Controllers
             var model = ReportAgentSummary();
 
             ViewBag.Data = GetReportAgentSummaryData(mappedResult);
+            ViewBag.Totals =
+                new SalesAgentMerchantSalesResultViewModel
+                {
+                    PrepaidTotal = reportData.Sum(p => p.PrepaidTotal),
+                    CellularTotal = reportData.Sum(p => p.CellularTotal),
+                    TotalOtherProducts = reportData.Sum(p => p.TotalOtherProducts),
+                    GeneralTotal = reportData.Sum(p => p.GeneralTotal),
+                    GeneralDiscount = reportData.Sum(p => p.GeneralDiscount),
+                    FeesDebitCreditSales = reportData.Sum(p => p.FeesDebitCreditSales),
+                    GeneralNet = reportData.Sum(p => p.GeneralNet),
+                    AgentDiscount = reportData.Sum(p => p.AgentDiscount),
+                    CurrentBalance = reportData.Sum(p => p.CurrentBalance),
+                };
 
             return View(model);
         }

@@ -656,6 +656,9 @@ namespace VirtualOffice.Service.Services
                 var ippTransactions = runReports? PrepaidBillPaymentSales(agentId,0,startDate, endDate): 0;
                 var commission = runReports? GetUserRunningComission(agentId): 0;
 
+                var beginDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+                
+
                 var result = new Dictionary<string, string>
                 {
                     {"Total Prepaid", prepaidSales.ToString("C")},
@@ -664,9 +667,9 @@ namespace VirtualOffice.Service.Services
                 };
                 var resultUrls = new Dictionary<string, string>
                 {
-                    {"Total Prepaid", ""},
-                    {"Total BillPayment", ""},
-                    {"Running Commission", ""}
+                    {"Total Prepaid", "PrepaidReports/SalesSummary?startDate="+ startDate.ToString("d") +"&endDate=" + endDate.Date.ToString("d")},
+                    {"Total BillPayment", "PrepaidReports/IppBrowser?startDate="+ startDate.ToString("d") +"&endDate=" + endDate.Date.ToString("d")},
+                    {"Running Commission", "PrepaidReports/ReportAgentSummary?startDate=" + startDate.ToString("d") +"&endDate=" + endDate.Date.ToString("d")}
                 };
 
                 return new ItemValueUrl(result, resultUrls);
@@ -695,8 +698,8 @@ namespace VirtualOffice.Service.Services
            
                 var allAccounts = runReports? _reportRepository.RunPrepaidPortfolioSummary(agentId).ToList(): new List<sp_report_portfolio_summary_Result>();
 
-                var accountsInCompliance = allAccounts.Count(c => c.compliance.HasValue && c.compliance.Value);
-                var suspendedAccounts = allAccounts.Count(c => c.suspended);
+                var accountsInCompliance = allAccounts.Count(c => (c.compliance.HasValue && c.compliance.Value) && (c.closed == 0 && c.compliance == true || (c.closed == 0 && c.suspended)));
+                var suspendedAccounts = allAccounts.Count(c => c.closed == 0 && c.suspended);
                 var closedAccountsWithBalance = allAccounts.Count(c => c.closed == 1 && decimal.Parse(c.Balance, NumberStyles.Currency) > 0);
 
                 var result = new Dictionary<string, string>
@@ -848,21 +851,19 @@ namespace VirtualOffice.Service.Services
             var salesSummary = runReports? RunMsComissionSummary(agentId, startDate, endDate): new List<MerchantServices.MsComissionSummaryResult>();
 
             var commissionsVM = salesSummary.Sum(c => decimal.Parse(c.vmc_commission, NumberStyles.Currency));
-            var commissionsAmex = salesSummary.Sum(c => decimal.Parse(c.amex_commission, NumberStyles.Currency));
             var commissionsOthers = salesSummary.Sum(c => decimal.Parse(c.oth_commission, NumberStyles.Currency));
             var commissionsTotals = salesSummary.Sum(c => decimal.Parse(c.tot_commission, NumberStyles.Currency));
 
             var result = new Dictionary<string, string>
             {
-                {"Visa/ Master Card", commissionsVM.ToString("C")},
-                {"AMEX", commissionsAmex.ToString("C")},
+                {"Visa/ MC/ Amex", commissionsVM.ToString("C")},
                 {"Others", commissionsOthers.ToString("C")},
                 {"Total", commissionsTotals.ToString("C")}
             };
             var resultUrls = new Dictionary<string, string>
             {
-                {"Visa/ Master Card", "/MerchantServicesReports/MsComissionSummaryForVisaMasterCard?agentId="+ agentId +"&startDate="+startDate.ToString("MM/dd/yyyy")+"&endDate=" + endDate.ToString("MM/dd/yyyy")},
-                {"AMEX", "/MerchantServicesReports/MsComissionSummaryForAmex?agentId="+ agentId +"&startDate="+startDate.ToString("MM/dd/yyyy")+"&endDate=" + endDate.ToString("MM/dd/yyyy")},
+                {"Visa/ MC/ Amex", "/MerchantServicesReports/MsComissionSummaryForVisaMasterCard?agentId="+ agentId +"&startDate="+startDate.ToString("MM/dd/yyyy")+"&endDate=" + endDate.ToString("MM/dd/yyyy")},
+                
                 {"Others", "/MerchantServicesReports/MsComissionSummaryForOthers?agentId="+ agentId +"&startDate="+startDate.ToString("MM/dd/yyyy")+"&endDate=" + endDate.ToString("MM/dd/yyyy")},
                 {"Total", "/MerchantServicesReports/MsComissionSummaryTotal?agentId="+ agentId +"&startDate="+startDate.ToString("MM/dd/yyyy")+"&endDate=" + endDate.ToString("MM/dd/yyyy")}
             };

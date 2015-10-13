@@ -282,6 +282,7 @@ namespace VirtualOffice.Data.Repositories
         {
             var reportResult = VirtualOfficeContext.SP_ippBrowser(agentId, merchantId, startDate, endDate, false);
 
+
             return reportResult;
         }
 

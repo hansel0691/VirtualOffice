@@ -74,8 +74,8 @@ namespace VirtualOffice.Web.Infrastructure
 
             Mapper.CreateMap<IppBrowserResult, IppBrowserResultViewModel>()
             .ForMember(p => p.amount, k => k.MapFrom(m => double.Parse(m.amount.GetPlaneFormat())))
-            .ForMember(p => p.amount, k => k.MapFrom(m => double.Parse(m.merchantFeeShare.HasValue?m.merchantFeeShare.Value.GetPlaneFormat():"0")))
-            .ForMember(p => p.amount, k => k.MapFrom(m => double.Parse(m.fee.GetPlaneFormat())));
+            .ForMember(p => p.merchantFeeShare, k => k.MapFrom(m => double.Parse(m.merchantFeeShare.HasValue?m.merchantFeeShare.Value.GetPlaneFormat():"0")))
+            .ForMember(p => p.fee, k => k.MapFrom(m => double.Parse(m.fee.GetPlaneFormat())));
 
             Mapper.CreateMap<AccountsInCollectionResult, PrepaidAccountsInCollectionViewModel>();
             
