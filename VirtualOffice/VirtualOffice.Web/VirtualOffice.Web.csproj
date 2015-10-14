@@ -252,6 +252,7 @@
     <Compile Include="Models\ApiToken.cs" />
     <Compile Include="Models\ApiUrls.cs" />
     <Compile Include="Models\ChangePasswordModel.cs" />
+    <Compile Include="Models\ChangePersonalInfo.cs" />
     <Compile Include="Models\ColumnConfig.cs" />
     <Compile Include="Models\DateRange.cs" />
     <Compile Include="Models\Document.cs" />

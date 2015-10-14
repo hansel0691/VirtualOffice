@@ -25,10 +25,33 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult PersonalInfo()
         {
-            return View();
+            var user = Session[Utils.UserKey] as UserModel;
+
+            var model = user.MapTo<UserModel, ChangePersonalInfo>();
+
+            return View(model);
         }
 
+        [HttpPost]
+        public ActionResult ChangePersonalInfo(ChangePersonalInfo personalInfoModel)
+        {
+            try
+            {
 
+                SetPersonalInfo(GetLoggedUserId(), personalInfoModel);
+
+                return Json(new { Result = "Success", Message = "Your password was successfully updated." });
+            }
+            catch (Exception exception)
+            {
+                if (exception is NotFoundException)
+                {
+                    return Json(new { Result = "Errors", Message = "Old Password is Incorrect." });
+                }
+
+                return Json(new { Result = "Success", Message = "There were errors while proccesing your request.Try again later please." });
+            }
+        }
 
         public ActionResult ChangePassword()
         {
@@ -254,6 +277,13 @@ namespace VirtualOffice.Web.Controllers
            var getChangePasswordRequestInfo = Utils.GetRequestInfo(Method.POST, "/api/User/ChangePassword");
 
            var changePasswordResponse = _webClient.Execute<UserModel>(changePasswordModel, ApiUrls.API_KEY, ApiUrls.API_SECRET, getChangePasswordRequestInfo);
+
+        }
+        private void SetPersonalInfo(int id, ChangePersonalInfo personalInfo)
+        {
+           //var changeInfo = Utils.GetRequestInfo(Method.POST, "/api/User/PersonalInfo");
+
+           //var changePasswordResponse = _webClient.Execute<UserModel>(changeInfo, ApiUrls.API_KEY, ApiUrls.API_SECRET, changeInfo);
 
         }
 
