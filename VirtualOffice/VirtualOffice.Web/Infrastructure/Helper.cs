@@ -198,6 +198,10 @@ namespace VirtualOffice.Web.Infrastructure
                 .ForMember(p => p.Email, k => k.MapFrom(m => m.Email))
                 .ForMember(p => p.Phone, k => k.MapFrom(m => m.Phone));
 
+
+            //var mappedResult = reportData.MapTo<IEnumerable<AgentToBillMerchantsResult>, IEnumerable<AgentToBillMerchantsViewModel>>();
+            Mapper.CreateMap<AgentToBillMerchantsResult, AgentToBillMerchantsViewModel>();
+
             #endregion
         }
 

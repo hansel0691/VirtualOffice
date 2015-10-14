@@ -151,6 +151,14 @@ namespace VirtualOffice.Data.Repositories
             return result;
         }
 
+        //GetMerchantBilling
+        public IEnumerable<SP_Fullcarga_PrepaidSalesSummary_Result> GetMerchantBilling(int userId, DateTime startDate, DateTime endDate)
+        {
+            var result = VirtualOfficeContext.SP_Fullcarga_PrepaidSalesSummary_Result(userId, startDate, endDate);
+
+            return result;
+        }
+
         #endregion
 
         #region MS Reports

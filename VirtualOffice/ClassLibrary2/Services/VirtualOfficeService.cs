@@ -271,7 +271,19 @@ namespace VirtualOffice.Service.Services
             var result = prepaidSummary.MapTo<IEnumerable<SP_Fullcarga_PrepaidSalesSummary_Result>, IEnumerable<FullcargaPrepaidSummary>>();
 
             return result;
-        } 
+        }
+
+
+        public IEnumerable<AgentToBillMerchantsResult> GetMerchantBilling(int userId, bool isMerchant, DateTime startDate, DateTime endDate)
+        {
+            var prepaidSummary = _reportRepository.GetMerchantBilling(userId, startDate, endDate);
+
+            var result = prepaidSummary.MapTo<IEnumerable<SP_Send_AgentToBillMerchants>, IEnumerable<AgentToBillMerchantsResult>>();
+
+            return result;
+        }
+
+
 
         #endregion
 

@@ -65664,3 +65664,1431 @@
 
 10/14/2015 13:58:12: DEBUG 90  VirtualOfficeContext - Closed connection at 10/14/2015 1:58:12 PM -04:00
 
+10/14/2015 14:55:43: DEBUG 6  Generic Logger - Starting operation: User / GetUserExternalToken
+10/14/2015 14:55:43: DEBUG 6  Generic Logger - Ending operation: User / GetUserExternalToken
+10/14/2015 14:55:43: INFO 6  Generic Logger - =========================================================================================================
+10/14/2015 14:55:43: INFO 6  Generic Logger - =========================================================================================================
+10/14/2015 14:55:43: INFO 6  Generic Logger - =========================================================================================================
+10/14/2015 14:55:43: DEBUG 6  Generic Logger - An exception has been thrown by: UserController in action: GetUserExternalToken
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at CoreService.Controllers.UserController.GetUserExternalToken(LoginDataModel loginData) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\Controllers\UserController.cs:line 63
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+10/14/2015 14:55:43: DEBUG 6  Generic Logger - ERROR
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at CoreService.Filters.SystemErrorExceptionFilter.OnException(HttpActionExecutedContext actionExecutedContext) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\Filters\SystemErrorExceptionFilter.cs:line 30
+10/14/2015 14:55:59: DEBUG 6  Generic Logger - Starting operation: User / GetUserExternalToken
+10/14/2015 14:55:59: DEBUG 6  IInterceptor - Method GetUser called with parameters:
+10/14/2015 14:55:59: DEBUG 6  IInterceptor - userName: <>
+10/14/2015 14:55:59: DEBUG 6  IInterceptor - password: <0401>
+10/14/2015 14:55:59: DEBUG 6  IInterceptor - 
+10/14/2015 14:55:59: DEBUG 6  IInterceptor - 
+10/14/2015 14:56:00: DEBUG 6  VirtualOfficeContext - Opened connection at 10/14/2015 2:56:00 PM -04:00
+
+10/14/2015 14:56:00: DEBUG 6  VirtualOfficeContext - get_user @userid, @passCredential
+10/14/2015 14:56:00: DEBUG 6  VirtualOfficeContext - 
+
+10/14/2015 14:56:00: DEBUG 6  VirtualOfficeContext - -- @userid: 'null' (Type = String, IsNullable = false)
+
+10/14/2015 14:56:00: DEBUG 6  VirtualOfficeContext - -- @passCredential: '0401' (Type = String, IsNullable = false, Size = 4)
+
+10/14/2015 14:56:00: DEBUG 6  VirtualOfficeContext - -- Executing at 10/14/2015 2:56:00 PM -04:00
+
+10/14/2015 14:56:00: DEBUG 6  VirtualOfficeContext - -- Failed in 2 ms with error: The parameterized query '(@userid nvarchar(4000),@passCredential nvarchar(4))get_user @us' expects the parameter '@userid', which was not supplied.
+
+10/14/2015 14:56:00: DEBUG 6  VirtualOfficeContext - 
+
+10/14/2015 14:56:00: DEBUG 6  VirtualOfficeContext - Closed connection at 10/14/2015 2:56:00 PM -04:00
+
+10/14/2015 14:56:00: DEBUG 6  IInterceptor - Method GetUser EXCEPTION occured:
+10/14/2015 14:56:00: DEBUG 6  IInterceptor - Domain.Models.Exceptions.DataAccessException: Impossible to log in user ---> System.Data.SqlClient.SqlException: The parameterized query '(@userid nvarchar(4000),@passCredential nvarchar(4))get_user @us' expects the parameter '@userid', which was not supplied.
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.SqlClient.SqlDataReader.get_MetaData()
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<Reader>b__c(DbCommand t, DbCommandInterceptionContext`1 c)
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, ExecutionOptions executionOptions, Object[] parameters)
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass65`1.<ExecuteStoreQueryReliably>b__64()
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass65`1.<ExecuteStoreQueryReliably>b__63()
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQueryReliably[TElement](String commandText, String entitySetName, ExecutionOptions executionOptions, Object[] parameters)
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, ExecutionOptions executionOptions, Object[] parameters)
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass14`1.<ExecuteSqlQuery>b__13()
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at CoreData.Contexts.VirtualOfficeContext.LogInUser(String userName, String password) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreData\Contexts\VirtualOfficeContext.cs:line 102
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at CoreData.Concrete.SqlUserRepository.LogIn(String userName, String password) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreData\Concrete\SqlUserRepository.cs:line 27
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    --- End of inner exception stack trace ---
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at CoreData.Concrete.SqlUserRepository.LogIn(String userName, String password) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreData\Concrete\SqlUserRepository.cs:line 54
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at Services.Concrete.UserService.GetUser(String userName, String password) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\Concrete\UserService.cs:line 42
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at (Object , Object[] )
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at Ninject.Extensions.Interception.Injection.Dynamic.DynamicMethodInjector.Invoke(Object target, Object[] arguments)
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at Ninject.Extensions.Interception.Invocation.Invocation.CallTargetMethod()
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at Ninject.Extensions.Interception.Invocation.InvocationBase.Proceed()
+10/14/2015 14:56:00: DEBUG 6  IInterceptor -    at CoreService.Interceptors.LoggingInterceptor.Intercept(IInvocation invocation) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\Interceptors\LoggingInterceptor.cs:line 37
+10/14/2015 14:56:00: DEBUG 6  IInterceptor - 
+10/14/2015 14:56:00: DEBUG 6  Generic Logger - Ending operation: User / GetUserExternalToken
+10/14/2015 14:56:00: INFO 6  Generic Logger - =========================================================================================================
+10/14/2015 14:56:00: INFO 6  Generic Logger - =========================================================================================================
+10/14/2015 14:56:00: INFO 6  Generic Logger - =========================================================================================================
+10/14/2015 14:56:00: DEBUG 6  Generic Logger - An exception has been thrown by: UserController in action: GetUserExternalToken
+Domain.Models.Exceptions.DataAccessException: Impossible to log in user ---> System.Data.SqlClient.SqlException: The parameterized query '(@userid nvarchar(4000),@passCredential nvarchar(4))get_user @us' expects the parameter '@userid', which was not supplied.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<Reader>b__c(DbCommand t, DbCommandInterceptionContext`1 c)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, ExecutionOptions executionOptions, Object[] parameters)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass65`1.<ExecuteStoreQueryReliably>b__64()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass65`1.<ExecuteStoreQueryReliably>b__63()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQueryReliably[TElement](String commandText, String entitySetName, ExecutionOptions executionOptions, Object[] parameters)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, ExecutionOptions executionOptions, Object[] parameters)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass14`1.<ExecuteSqlQuery>b__13()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at CoreData.Contexts.VirtualOfficeContext.LogInUser(String userName, String password) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreData\Contexts\VirtualOfficeContext.cs:line 102
+   at CoreData.Concrete.SqlUserRepository.LogIn(String userName, String password) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreData\Concrete\SqlUserRepository.cs:line 27
+   --- End of inner exception stack trace ---
+   at CoreData.Concrete.SqlUserRepository.LogIn(String userName, String password) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreData\Concrete\SqlUserRepository.cs:line 54
+   at Services.Concrete.UserService.GetUser(String userName, String password) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\Concrete\UserService.cs:line 42
+   at (Object , Object[] )
+   at Ninject.Extensions.Interception.Injection.Dynamic.DynamicMethodInjector.Invoke(Object target, Object[] arguments)
+   at Ninject.Extensions.Interception.Invocation.Invocation.CallTargetMethod()
+   at Ninject.Extensions.Interception.Invocation.InvocationBase.Proceed()
+   at CoreService.Interceptors.LoggingInterceptor.Intercept(IInvocation invocation) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\Interceptors\LoggingInterceptor.cs:line 53
+   at Ninject.Extensions.Interception.Invocation.InvocationBase.Proceed()
+   at Ninject.Extensions.Interception.Wrapper.LinFuWrapper.LinFu.DynamicProxy.IInterceptor.Intercept(InvocationInfo info)
+   at ObjectProxy.GetUser(String , String )
+   at CoreService.Controllers.UserController.GetUserExternalToken(LoginDataModel loginData) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\Controllers\UserController.cs:line 63
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+10/14/2015 14:56:24: DEBUG 8  Generic Logger - Starting operation: User / GetUserExternalToken
+10/14/2015 14:56:24: DEBUG 8  IInterceptor - Method GetUser called with parameters:
+10/14/2015 14:56:24: DEBUG 8  IInterceptor - userName: <>
+10/14/2015 14:56:24: DEBUG 8  IInterceptor - password: <0401>
+10/14/2015 14:56:24: DEBUG 8  IInterceptor - 
+10/14/2015 14:56:24: DEBUG 8  IInterceptor - 
+10/14/2015 14:56:24: DEBUG 8  VirtualOfficeContext - Opened connection at 10/14/2015 2:56:24 PM -04:00
+
+10/14/2015 14:56:24: DEBUG 8  VirtualOfficeContext - get_user @userid, @passCredential
+10/14/2015 14:56:24: DEBUG 8  VirtualOfficeContext - 
+
+10/14/2015 14:56:24: DEBUG 8  VirtualOfficeContext - -- @userid: 'null' (Type = String, IsNullable = false)
+
+10/14/2015 14:56:24: DEBUG 8  VirtualOfficeContext - -- @passCredential: '0401' (Type = String, IsNullable = false, Size = 4)
+
+10/14/2015 14:56:24: DEBUG 8  VirtualOfficeContext - -- Executing at 10/14/2015 2:56:24 PM -04:00
+
+10/14/2015 14:56:24: DEBUG 8  VirtualOfficeContext - -- Failed in 2 ms with error: The parameterized query '(@userid nvarchar(4000),@passCredential nvarchar(4))get_user @us' expects the parameter '@userid', which was not supplied.
+
+10/14/2015 14:56:24: DEBUG 8  VirtualOfficeContext - 
+
+10/14/2015 14:56:24: DEBUG 8  VirtualOfficeContext - Closed connection at 10/14/2015 2:56:24 PM -04:00
+
+10/14/2015 14:56:24: DEBUG 8  IInterceptor - Method GetUser EXCEPTION occured:
+10/14/2015 14:56:24: DEBUG 8  IInterceptor - Domain.Models.Exceptions.DataAccessException: Impossible to log in user ---> System.Data.SqlClient.SqlException: The parameterized query '(@userid nvarchar(4000),@passCredential nvarchar(4))get_user @us' expects the parameter '@userid', which was not supplied.
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.SqlClient.SqlDataReader.get_MetaData()
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<Reader>b__c(DbCommand t, DbCommandInterceptionContext`1 c)
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, ExecutionOptions executionOptions, Object[] parameters)
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass65`1.<ExecuteStoreQueryReliably>b__64()
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass65`1.<ExecuteStoreQueryReliably>b__63()
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQueryReliably[TElement](String commandText, String entitySetName, ExecutionOptions executionOptions, Object[] parameters)
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, ExecutionOptions executionOptions, Object[] parameters)
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass14`1.<ExecuteSqlQuery>b__13()
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at CoreData.Contexts.VirtualOfficeContext.LogInUser(String userName, String password) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreData\Contexts\VirtualOfficeContext.cs:line 102
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at CoreData.Concrete.SqlUserRepository.LogIn(String userName, String password) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreData\Concrete\SqlUserRepository.cs:line 27
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    --- End of inner exception stack trace ---
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at CoreData.Concrete.SqlUserRepository.LogIn(String userName, String password) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreData\Concrete\SqlUserRepository.cs:line 54
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at Services.Concrete.UserService.GetUser(String userName, String password) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\Concrete\UserService.cs:line 42
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at (Object , Object[] )
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at Ninject.Extensions.Interception.Injection.Dynamic.DynamicMethodInjector.Invoke(Object target, Object[] arguments)
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at Ninject.Extensions.Interception.Invocation.Invocation.CallTargetMethod()
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at Ninject.Extensions.Interception.Invocation.InvocationBase.Proceed()
+10/14/2015 14:56:24: DEBUG 8  IInterceptor -    at CoreService.Interceptors.LoggingInterceptor.Intercept(IInvocation invocation) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\Interceptors\LoggingInterceptor.cs:line 37
+10/14/2015 14:56:24: DEBUG 8  IInterceptor - 
+10/14/2015 14:56:24: DEBUG 8  Generic Logger - Ending operation: User / GetUserExternalToken
+10/14/2015 14:56:24: INFO 8  Generic Logger - =========================================================================================================
+10/14/2015 14:56:24: INFO 8  Generic Logger - =========================================================================================================
+10/14/2015 14:56:24: INFO 8  Generic Logger - =========================================================================================================
+10/14/2015 14:56:24: DEBUG 8  Generic Logger - An exception has been thrown by: UserController in action: GetUserExternalToken
+Domain.Models.Exceptions.DataAccessException: Impossible to log in user ---> System.Data.SqlClient.SqlException: The parameterized query '(@userid nvarchar(4000),@passCredential nvarchar(4))get_user @us' expects the parameter '@userid', which was not supplied.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<Reader>b__c(DbCommand t, DbCommandInterceptionContext`1 c)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, ExecutionOptions executionOptions, Object[] parameters)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass65`1.<ExecuteStoreQueryReliably>b__64()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass65`1.<ExecuteStoreQueryReliably>b__63()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQueryReliably[TElement](String commandText, String entitySetName, ExecutionOptions executionOptions, Object[] parameters)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, ExecutionOptions executionOptions, Object[] parameters)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass14`1.<ExecuteSqlQuery>b__13()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at CoreData.Contexts.VirtualOfficeContext.LogInUser(String userName, String password) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreData\Contexts\VirtualOfficeContext.cs:line 102
+   at CoreData.Concrete.SqlUserRepository.LogIn(String userName, String password) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreData\Concrete\SqlUserRepository.cs:line 27
+   --- End of inner exception stack trace ---
+   at CoreData.Concrete.SqlUserRepository.LogIn(String userName, String password) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreData\Concrete\SqlUserRepository.cs:line 54
+   at Services.Concrete.UserService.GetUser(String userName, String password) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\Concrete\UserService.cs:line 42
+   at (Object , Object[] )
+   at Ninject.Extensions.Interception.Injection.Dynamic.DynamicMethodInjector.Invoke(Object target, Object[] arguments)
+   at Ninject.Extensions.Interception.Invocation.Invocation.CallTargetMethod()
+   at Ninject.Extensions.Interception.Invocation.InvocationBase.Proceed()
+   at CoreService.Interceptors.LoggingInterceptor.Intercept(IInvocation invocation) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\Interceptors\LoggingInterceptor.cs:line 53
+   at Ninject.Extensions.Interception.Invocation.InvocationBase.Proceed()
+   at Ninject.Extensions.Interception.Wrapper.LinFuWrapper.LinFu.DynamicProxy.IInterceptor.Intercept(InvocationInfo info)
+   at ObjectProxy.GetUser(String , String )
+   at CoreService.Controllers.UserController.GetUserExternalToken(LoginDataModel loginData) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\Controllers\UserController.cs:line 63
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+10/14/2015 14:57:01: DEBUG 7  Generic Logger - Starting operation: User / GetUserExternalToken
+10/14/2015 14:57:01: DEBUG 7  IInterceptor - Method GetUser called with parameters:
+10/14/2015 14:57:01: DEBUG 7  IInterceptor - userName: <>
+10/14/2015 14:57:01: DEBUG 7  IInterceptor - password: <0401>
+10/14/2015 14:57:01: DEBUG 7  IInterceptor - 
+10/14/2015 14:57:01: DEBUG 7  IInterceptor - 
+10/14/2015 14:57:01: DEBUG 7  VirtualOfficeContext - Opened connection at 10/14/2015 2:57:01 PM -04:00
+
+10/14/2015 14:57:01: DEBUG 7  VirtualOfficeContext - get_user @userid, @passCredential
+10/14/2015 14:57:01: DEBUG 7  VirtualOfficeContext - 
+
+10/14/2015 14:57:01: DEBUG 7  VirtualOfficeContext - -- @userid: 'null' (Type = String, IsNullable = false)
+
+10/14/2015 14:57:01: DEBUG 7  VirtualOfficeContext - -- @passCredential: '0401' (Type = String, IsNullable = false, Size = 4)
+
+10/14/2015 14:57:01: DEBUG 7  VirtualOfficeContext - -- Executing at 10/14/2015 2:57:01 PM -04:00
+
+10/14/2015 14:57:01: DEBUG 7  VirtualOfficeContext - -- Failed in 1 ms with error: The parameterized query '(@userid nvarchar(4000),@passCredential nvarchar(4))get_user @us' expects the parameter '@userid', which was not supplied.
+
+10/14/2015 14:57:01: DEBUG 7  VirtualOfficeContext - 
+
+10/14/2015 14:57:01: DEBUG 7  VirtualOfficeContext - Closed connection at 10/14/2015 2:57:01 PM -04:00
+
+10/14/2015 14:57:01: DEBUG 7  IInterceptor - Method GetUser EXCEPTION occured:
+10/14/2015 14:57:01: DEBUG 7  IInterceptor - Domain.Models.Exceptions.DataAccessException: Impossible to log in user ---> System.Data.SqlClient.SqlException: The parameterized query '(@userid nvarchar(4000),@passCredential nvarchar(4))get_user @us' expects the parameter '@userid', which was not supplied.
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.SqlClient.SqlDataReader.get_MetaData()
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<Reader>b__c(DbCommand t, DbCommandInterceptionContext`1 c)
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, ExecutionOptions executionOptions, Object[] parameters)
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass65`1.<ExecuteStoreQueryReliably>b__64()
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass65`1.<ExecuteStoreQueryReliably>b__63()
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQueryReliably[TElement](String commandText, String entitySetName, ExecutionOptions executionOptions, Object[] parameters)
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, ExecutionOptions executionOptions, Object[] parameters)
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass14`1.<ExecuteSqlQuery>b__13()
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at CoreData.Contexts.VirtualOfficeContext.LogInUser(String userName, String password) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreData\Contexts\VirtualOfficeContext.cs:line 102
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at CoreData.Concrete.SqlUserRepository.LogIn(String userName, String password) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreData\Concrete\SqlUserRepository.cs:line 27
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    --- End of inner exception stack trace ---
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at CoreData.Concrete.SqlUserRepository.LogIn(String userName, String password) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreData\Concrete\SqlUserRepository.cs:line 54
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at Services.Concrete.UserService.GetUser(String userName, String password) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\Concrete\UserService.cs:line 42
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at (Object , Object[] )
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at Ninject.Extensions.Interception.Injection.Dynamic.DynamicMethodInjector.Invoke(Object target, Object[] arguments)
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at Ninject.Extensions.Interception.Invocation.Invocation.CallTargetMethod()
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at Ninject.Extensions.Interception.Invocation.InvocationBase.Proceed()
+10/14/2015 14:57:01: DEBUG 7  IInterceptor -    at CoreService.Interceptors.LoggingInterceptor.Intercept(IInvocation invocation) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\Interceptors\LoggingInterceptor.cs:line 37
+10/14/2015 14:57:01: DEBUG 7  IInterceptor - 
+10/14/2015 14:57:01: DEBUG 7  Generic Logger - Ending operation: User / GetUserExternalToken
+10/14/2015 14:57:01: INFO 7  Generic Logger - =========================================================================================================
+10/14/2015 14:57:01: INFO 7  Generic Logger - =========================================================================================================
+10/14/2015 14:57:01: INFO 7  Generic Logger - =========================================================================================================
+10/14/2015 14:57:01: DEBUG 7  Generic Logger - An exception has been thrown by: UserController in action: GetUserExternalToken
+Domain.Models.Exceptions.DataAccessException: Impossible to log in user ---> System.Data.SqlClient.SqlException: The parameterized query '(@userid nvarchar(4000),@passCredential nvarchar(4))get_user @us' expects the parameter '@userid', which was not supplied.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<Reader>b__c(DbCommand t, DbCommandInterceptionContext`1 c)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, ExecutionOptions executionOptions, Object[] parameters)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass65`1.<ExecuteStoreQueryReliably>b__64()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass65`1.<ExecuteStoreQueryReliably>b__63()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQueryReliably[TElement](String commandText, String entitySetName, ExecutionOptions executionOptions, Object[] parameters)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, ExecutionOptions executionOptions, Object[] parameters)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass14`1.<ExecuteSqlQuery>b__13()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at CoreData.Contexts.VirtualOfficeContext.LogInUser(String userName, String password) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreData\Contexts\VirtualOfficeContext.cs:line 102
+   at CoreData.Concrete.SqlUserRepository.LogIn(String userName, String password) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreData\Concrete\SqlUserRepository.cs:line 27
+   --- End of inner exception stack trace ---
+   at CoreData.Concrete.SqlUserRepository.LogIn(String userName, String password) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreData\Concrete\SqlUserRepository.cs:line 54
+   at Services.Concrete.UserService.GetUser(String userName, String password) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\Concrete\UserService.cs:line 42
+   at (Object , Object[] )
+   at Ninject.Extensions.Interception.Injection.Dynamic.DynamicMethodInjector.Invoke(Object target, Object[] arguments)
+   at Ninject.Extensions.Interception.Invocation.Invocation.CallTargetMethod()
+   at Ninject.Extensions.Interception.Invocation.InvocationBase.Proceed()
+   at CoreService.Interceptors.LoggingInterceptor.Intercept(IInvocation invocation) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\Interceptors\LoggingInterceptor.cs:line 53
+   at Ninject.Extensions.Interception.Invocation.InvocationBase.Proceed()
+   at Ninject.Extensions.Interception.Wrapper.LinFuWrapper.LinFu.DynamicProxy.IInterceptor.Intercept(InvocationInfo info)
+   at ObjectProxy.GetUser(String , String )
+   at CoreService.Controllers.UserController.GetUserExternalToken(LoginDataModel loginData) in C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\Controllers\UserController.cs:line 63
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+10/14/2015 14:57:41: DEBUG 8  Generic Logger - Starting operation: User / GetUserExternalToken
+10/14/2015 14:57:41: DEBUG 8  IInterceptor - Method GetUser called with parameters:
+10/14/2015 14:57:41: DEBUG 8  IInterceptor - userName: <6259a>
+10/14/2015 14:57:41: DEBUG 8  IInterceptor - password: <0401>
+10/14/2015 14:57:41: DEBUG 8  IInterceptor - 
+10/14/2015 14:57:41: DEBUG 8  IInterceptor - 
+10/14/2015 14:57:41: DEBUG 8  VirtualOfficeContext - Opened connection at 10/14/2015 2:57:41 PM -04:00
+
+10/14/2015 14:57:41: DEBUG 8  VirtualOfficeContext - get_user @userid, @passCredential
+10/14/2015 14:57:41: DEBUG 8  VirtualOfficeContext - 
+
+10/14/2015 14:57:41: DEBUG 8  VirtualOfficeContext - -- @userid: '6259a' (Type = String, IsNullable = false, Size = 5)
+
+10/14/2015 14:57:41: DEBUG 8  VirtualOfficeContext - -- @passCredential: '0401' (Type = String, IsNullable = false, Size = 4)
+
+10/14/2015 14:57:41: DEBUG 8  VirtualOfficeContext - -- Executing at 10/14/2015 2:57:41 PM -04:00
+
+10/14/2015 14:57:41: DEBUG 8  VirtualOfficeContext - -- Completed in 59 ms with result: SqlDataReader
+
+10/14/2015 14:57:41: DEBUG 8  VirtualOfficeContext - 
+
+10/14/2015 14:57:41: DEBUG 8  VirtualOfficeContext - Closed connection at 10/14/2015 2:57:41 PM -04:00
+
+10/14/2015 14:57:41: DEBUG 8  VirtualOfficeContext - Opened connection at 10/14/2015 2:57:41 PM -04:00
+
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ([Extent1].[RefId] = @p__linq__0) AND ( CAST( [Extent1].[Category] AS int) = @p__linq__1)
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - 
+
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - -- p__linq__0: '5259' (Type = Int32, IsNullable = false)
+
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - -- p__linq__1: '2' (Type = Int32, IsNullable = false)
+
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - -- Executing at 10/14/2015 2:57:42 PM -04:00
+
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - -- Completed in 0 ms with result: SqlDataReader
+
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - 
+
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - Closed connection at 10/14/2015 2:57:42 PM -04:00
+
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - Opened connection at 10/14/2015 2:57:42 PM -04:00
+
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE [Extent1].[RefId] = @p__linq__0
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - 
+
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - -- p__linq__0: '5259' (Type = Int32, IsNullable = false)
+
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - -- Executing at 10/14/2015 2:57:42 PM -04:00
+
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - -- Completed in 0 ms with result: SqlDataReader
+
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - 
+
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - Closed connection at 10/14/2015 2:57:42 PM -04:00
+
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - Method: GetUser returned: 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - RefId : 5259 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - Category : Distributor 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - BusinessName :  
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - Address1 : 4357 LAKE LUCERNE CIR 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - Address2 :  
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - ZipCode : 33409 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - State : FL 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - Email : JOSHCHABRIA@YAHOO.COM 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - Phone : 5617079826 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - Comission : 1829.9660 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - Name : LUCKY 1 CORP 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - City : WEST PALM BEACH 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - Tokens : System.Collections.Generic.List`1[Domain.Models.HashKey] 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - Id : 1051 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - RowVersion :  
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - TimeSpan : 10/14/2015 2:57:41 PM 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - Method GetHash called with parameters:
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - key: <6259a>
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - data: <0401-8587567578227566697>
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - Method: GetHash returned: 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - eaaa395e-0c2b-4d14-a586-9ac31492795d
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - Method AddHashToUser called with parameters:
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - user: <RefId : 5259 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - Category : Distributor 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - BusinessName :  
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - Address1 : 4357 LAKE LUCERNE CIR 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - Address2 :  
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - ZipCode : 33409 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - State : FL 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - Email : JOSHCHABRIA@YAHOO.COM 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - Phone : 5617079826 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - Comission : 1829.9660 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - Name : LUCKY 1 CORP 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - City : WEST PALM BEACH 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - Tokens : System.Collections.Generic.List`1[Domain.Models.HashKey] 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - Id : 1051 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - RowVersion :  
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - TimeSpan : 10/14/2015 2:57:41 PM 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - >
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - hash: <eaaa395e-0c2b-4d14-a586-9ac31492795d>
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - 
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - Opened connection at 10/14/2015 2:57:42 PM -04:00
+
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - Started transaction at 10/14/2015 2:57:42 PM -04:00
+
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - INSERT [dbo].[HashKeys]([Hash], [UserId], [TimeSpan])
+VALUES (@0, @1, @2)
+SELECT [Id], [RowVersion]
+FROM [dbo].[HashKeys]
+WHERE @@ROWCOUNT > 0 AND [Id] = scope_identity()
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - 
+
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - -- @0: 'eaaa395e-0c2b-4d14-a586-9ac31492795d' (Type = String, Size = -1)
+
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - -- @1: '1051' (Type = Int32)
+
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - -- @2: '10/14/2015 2:57:42 PM' (Type = DateTime2)
+
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - -- Executing at 10/14/2015 2:57:42 PM -04:00
+
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - -- Completed in 0 ms with result: SqlDataReader
+
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - 
+
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - Committed transaction at 10/14/2015 2:57:42 PM -04:00
+
+10/14/2015 14:57:42: DEBUG 8  VirtualOfficeContext - Closed connection at 10/14/2015 2:57:42 PM -04:00
+
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - Method: AddHashToUser returned: 
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - void
+10/14/2015 14:57:42: DEBUG 8  IInterceptor - 
+10/14/2015 14:57:42: DEBUG 8  Generic Logger - Ending operation: User / GetUserExternalToken
+10/14/2015 14:57:42: INFO 8  Generic Logger - =========================================================================================================
+10/14/2015 14:57:42: INFO 8  Generic Logger - =========================================================================================================
+10/14/2015 14:57:42: INFO 8  Generic Logger - =========================================================================================================
+10/14/2015 15:01:00: DEBUG 14  Generic Logger - Starting operation: User / GetUserWithToken
+10/14/2015 15:01:00: DEBUG 14  IInterceptor - Method GetUserWithKey called with parameters:
+10/14/2015 15:01:00: DEBUG 14  IInterceptor - key: <eaaa395e-0c2b-4d14-a586-9ac31492795d>
+10/14/2015 15:01:00: DEBUG 14  IInterceptor - 
+10/14/2015 15:01:00: DEBUG 14  IInterceptor - 
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - Opened connection at 10/14/2015 3:01:00 PM -04:00
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Hash] AS [Hash], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[HashKeys] AS [Extent1]
+    WHERE ([Extent1].[Hash] = @p__linq__0) OR (([Extent1].[Hash] IS NULL) AND (@p__linq__0 IS NULL))
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - 
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - -- p__linq__0: 'eaaa395e-0c2b-4d14-a586-9ac31492795d' (Type = String, Size = 4000)
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - -- Executing at 10/14/2015 3:01:00 PM -04:00
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - -- Completed in 10 ms with result: SqlDataReader
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - 
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - Closed connection at 10/14/2015 3:01:00 PM -04:00
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - Opened connection at 10/14/2015 3:01:00 PM -04:00
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE [Extent1].[Id] = @EntityKeyValue1
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - 
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - -- EntityKeyValue1: '1051' (Type = Int32, IsNullable = false)
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - -- Executing at 10/14/2015 3:01:00 PM -04:00
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - -- Completed in 0 ms with result: SqlDataReader
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - 
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - Closed connection at 10/14/2015 3:01:00 PM -04:00
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - Opened connection at 10/14/2015 3:01:00 PM -04:00
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - get_user @userid, @passCredential
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - 
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - -- @userid: '5259' (Type = String, IsNullable = false, Size = 4)
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - -- @passCredential: 'EAA6DD0D-CE53-445E-976E-363814FCC77F' (Type = String, IsNullable = false, Size = 36)
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - -- Executing at 10/14/2015 3:01:00 PM -04:00
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - -- Completed in 56 ms with result: SqlDataReader
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - 
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - Closed connection at 10/14/2015 3:01:00 PM -04:00
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - Opened connection at 10/14/2015 3:01:00 PM -04:00
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ([Extent1].[RefId] = @p__linq__0) AND ( CAST( [Extent1].[Category] AS int) = @p__linq__1)
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - 
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - -- p__linq__0: '5259' (Type = Int32, IsNullable = false)
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - -- p__linq__1: '2' (Type = Int32, IsNullable = false)
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - -- Executing at 10/14/2015 3:01:00 PM -04:00
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - -- Completed in 0 ms with result: SqlDataReader
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - 
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - Closed connection at 10/14/2015 3:01:00 PM -04:00
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - Opened connection at 10/14/2015 3:01:00 PM -04:00
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE [Extent1].[RefId] = @p__linq__0
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - 
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - -- p__linq__0: '5259' (Type = Int32, IsNullable = false)
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - -- Executing at 10/14/2015 3:01:00 PM -04:00
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - -- Completed in 0 ms with result: SqlDataReader
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - 
+
+10/14/2015 15:01:00: DEBUG 14  VirtualOfficeContext - Closed connection at 10/14/2015 3:01:00 PM -04:00
+
+10/14/2015 15:01:00: DEBUG 14  IInterceptor - Method: GetUserWithKey returned: 
+10/14/2015 15:01:00: DEBUG 14  IInterceptor - RefId : 5259 
+10/14/2015 15:01:00: DEBUG 14  IInterceptor - Category : Distributor 
+10/14/2015 15:01:00: DEBUG 14  IInterceptor - BusinessName :  
+10/14/2015 15:01:00: DEBUG 14  IInterceptor - Address1 : 4357 LAKE LUCERNE CIR 
+10/14/2015 15:01:00: DEBUG 14  IInterceptor - Address2 :  
+10/14/2015 15:01:00: DEBUG 14  IInterceptor - ZipCode : 33409 
+10/14/2015 15:01:00: DEBUG 14  IInterceptor - State : FL 
+10/14/2015 15:01:00: DEBUG 14  IInterceptor - Email : JOSHCHABRIA@YAHOO.COM 
+10/14/2015 15:01:00: DEBUG 14  IInterceptor - Phone : 5617079826 
+10/14/2015 15:01:00: DEBUG 14  IInterceptor - Comission : 1829.9660 
+10/14/2015 15:01:00: DEBUG 14  IInterceptor - Name : LUCKY 1 CORP 
+10/14/2015 15:01:00: DEBUG 14  IInterceptor - City : WEST PALM BEACH 
+10/14/2015 15:01:00: DEBUG 14  IInterceptor - Tokens : System.Collections.Generic.List`1[Domain.Models.HashKey] 
+10/14/2015 15:01:00: DEBUG 14  IInterceptor - Id : 1051 
+10/14/2015 15:01:00: DEBUG 14  IInterceptor - RowVersion :  
+10/14/2015 15:01:00: DEBUG 14  IInterceptor - TimeSpan : 10/14/2015 3:01:00 PM 
+10/14/2015 15:01:00: DEBUG 14  IInterceptor - 
+10/14/2015 15:01:00: DEBUG 14  IInterceptor - 
+10/14/2015 15:01:00: DEBUG 14  Generic Logger - Ending operation: User / GetUserWithToken
+10/14/2015 15:01:00: INFO 14  Generic Logger - =========================================================================================================
+10/14/2015 15:01:00: INFO 14  Generic Logger - =========================================================================================================
+10/14/2015 15:01:00: INFO 14  Generic Logger - =========================================================================================================
+10/14/2015 15:02:34: DEBUG 15  Generic Logger - Starting operation: User / GetUserWithToken
+10/14/2015 15:02:34: DEBUG 15  IInterceptor - Method GetUserWithKey called with parameters:
+10/14/2015 15:02:34: DEBUG 15  IInterceptor - key: <eaaa395e-0c2b-4d14-a586-9ac31492795d>
+10/14/2015 15:02:34: DEBUG 15  IInterceptor - 
+10/14/2015 15:02:34: DEBUG 15  IInterceptor - 
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - Opened connection at 10/14/2015 3:02:34 PM -04:00
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Hash] AS [Hash], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[HashKeys] AS [Extent1]
+    WHERE ([Extent1].[Hash] = @p__linq__0) OR (([Extent1].[Hash] IS NULL) AND (@p__linq__0 IS NULL))
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - 
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - -- p__linq__0: 'eaaa395e-0c2b-4d14-a586-9ac31492795d' (Type = String, Size = 4000)
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - -- Executing at 10/14/2015 3:02:34 PM -04:00
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - -- Completed in 10 ms with result: SqlDataReader
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - 
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - Closed connection at 10/14/2015 3:02:34 PM -04:00
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - Opened connection at 10/14/2015 3:02:34 PM -04:00
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE [Extent1].[Id] = @EntityKeyValue1
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - 
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - -- EntityKeyValue1: '1051' (Type = Int32, IsNullable = false)
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - -- Executing at 10/14/2015 3:02:34 PM -04:00
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - -- Completed in 0 ms with result: SqlDataReader
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - 
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - Closed connection at 10/14/2015 3:02:34 PM -04:00
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - Opened connection at 10/14/2015 3:02:34 PM -04:00
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - get_user @userid, @passCredential
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - 
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - -- @userid: '5259' (Type = String, IsNullable = false, Size = 4)
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - -- @passCredential: 'EAA6DD0D-CE53-445E-976E-363814FCC77F' (Type = String, IsNullable = false, Size = 36)
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - -- Executing at 10/14/2015 3:02:34 PM -04:00
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - -- Completed in 56 ms with result: SqlDataReader
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - 
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - Closed connection at 10/14/2015 3:02:34 PM -04:00
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - Opened connection at 10/14/2015 3:02:34 PM -04:00
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ([Extent1].[RefId] = @p__linq__0) AND ( CAST( [Extent1].[Category] AS int) = @p__linq__1)
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - 
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - -- p__linq__0: '5259' (Type = Int32, IsNullable = false)
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - -- p__linq__1: '2' (Type = Int32, IsNullable = false)
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - -- Executing at 10/14/2015 3:02:34 PM -04:00
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - -- Completed in 0 ms with result: SqlDataReader
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - 
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - Closed connection at 10/14/2015 3:02:34 PM -04:00
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - Opened connection at 10/14/2015 3:02:34 PM -04:00
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE [Extent1].[RefId] = @p__linq__0
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - 
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - -- p__linq__0: '5259' (Type = Int32, IsNullable = false)
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - -- Executing at 10/14/2015 3:02:34 PM -04:00
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - -- Completed in 0 ms with result: SqlDataReader
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - 
+
+10/14/2015 15:02:34: DEBUG 15  VirtualOfficeContext - Closed connection at 10/14/2015 3:02:34 PM -04:00
+
+10/14/2015 15:02:34: DEBUG 15  IInterceptor - Method: GetUserWithKey returned: 
+10/14/2015 15:02:34: DEBUG 15  IInterceptor - RefId : 5259 
+10/14/2015 15:02:34: DEBUG 15  IInterceptor - Category : Distributor 
+10/14/2015 15:02:34: DEBUG 15  IInterceptor - BusinessName :  
+10/14/2015 15:02:34: DEBUG 15  IInterceptor - Address1 : 4357 LAKE LUCERNE CIR 
+10/14/2015 15:02:34: DEBUG 15  IInterceptor - Address2 :  
+10/14/2015 15:02:34: DEBUG 15  IInterceptor - ZipCode : 33409 
+10/14/2015 15:02:34: DEBUG 15  IInterceptor - State : FL 
+10/14/2015 15:02:34: DEBUG 15  IInterceptor - Email : JOSHCHABRIA@YAHOO.COM 
+10/14/2015 15:02:34: DEBUG 15  IInterceptor - Phone : 5617079826 
+10/14/2015 15:02:34: DEBUG 15  IInterceptor - Comission : 1829.9660 
+10/14/2015 15:02:34: DEBUG 15  IInterceptor - Name : LUCKY 1 CORP 
+10/14/2015 15:02:34: DEBUG 15  IInterceptor - City : WEST PALM BEACH 
+10/14/2015 15:02:34: DEBUG 15  IInterceptor - Tokens : System.Collections.Generic.List`1[Domain.Models.HashKey] 
+10/14/2015 15:02:34: DEBUG 15  IInterceptor - Id : 1051 
+10/14/2015 15:02:34: DEBUG 15  IInterceptor - RowVersion :  
+10/14/2015 15:02:34: DEBUG 15  IInterceptor - TimeSpan : 10/14/2015 3:02:34 PM 
+10/14/2015 15:02:34: DEBUG 15  IInterceptor - 
+10/14/2015 15:02:34: DEBUG 15  IInterceptor - 
+10/14/2015 15:02:34: DEBUG 15  Generic Logger - Ending operation: User / GetUserWithToken
+10/14/2015 15:02:34: INFO 15  Generic Logger - =========================================================================================================
+10/14/2015 15:02:34: INFO 15  Generic Logger - =========================================================================================================
+10/14/2015 15:02:34: INFO 15  Generic Logger - =========================================================================================================
+10/14/2015 15:04:31: DEBUG 8  Generic Logger - Starting operation: User / GetUserExternalToken
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - Method GetUser called with parameters:
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - userName: <6259a>
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - password: <0401>
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - 
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - Opened connection at 10/14/2015 3:04:31 PM -04:00
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - get_user @userid, @passCredential
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - 
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - -- @userid: '6259a' (Type = String, IsNullable = false, Size = 5)
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - -- @passCredential: '0401' (Type = String, IsNullable = false, Size = 4)
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - -- Executing at 10/14/2015 3:04:31 PM -04:00
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - -- Completed in 60 ms with result: SqlDataReader
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - 
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - Closed connection at 10/14/2015 3:04:31 PM -04:00
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - Opened connection at 10/14/2015 3:04:31 PM -04:00
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ([Extent1].[RefId] = @p__linq__0) AND ( CAST( [Extent1].[Category] AS int) = @p__linq__1)
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - 
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - -- p__linq__0: '5259' (Type = Int32, IsNullable = false)
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - -- p__linq__1: '2' (Type = Int32, IsNullable = false)
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - -- Executing at 10/14/2015 3:04:31 PM -04:00
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - -- Completed in 0 ms with result: SqlDataReader
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - 
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - Closed connection at 10/14/2015 3:04:31 PM -04:00
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - Opened connection at 10/14/2015 3:04:31 PM -04:00
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE [Extent1].[RefId] = @p__linq__0
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - 
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - -- p__linq__0: '5259' (Type = Int32, IsNullable = false)
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - -- Executing at 10/14/2015 3:04:31 PM -04:00
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - -- Completed in 0 ms with result: SqlDataReader
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - 
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - Closed connection at 10/14/2015 3:04:31 PM -04:00
+
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - Method: GetUser returned: 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - RefId : 5259 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - Category : Distributor 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - BusinessName :  
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - Address1 : 4357 LAKE LUCERNE CIR 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - Address2 :  
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - ZipCode : 33409 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - State : FL 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - Email : JOSHCHABRIA@YAHOO.COM 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - Phone : 5617079826 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - Comission : 1829.9660 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - Name : LUCKY 1 CORP 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - City : WEST PALM BEACH 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - Tokens : System.Collections.Generic.List`1[Domain.Models.HashKey] 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - Id : 1051 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - RowVersion :  
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - TimeSpan : 10/14/2015 3:04:31 PM 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - Method GetHash called with parameters:
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - key: <6259a>
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - data: <0401-8587567574137916059>
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - Method: GetHash returned: 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - f759b81c-bf32-4828-98af-19dc22820f25
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - Method AddHashToUser called with parameters:
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - user: <RefId : 5259 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - Category : Distributor 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - BusinessName :  
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - Address1 : 4357 LAKE LUCERNE CIR 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - Address2 :  
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - ZipCode : 33409 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - State : FL 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - Email : JOSHCHABRIA@YAHOO.COM 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - Phone : 5617079826 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - Comission : 1829.9660 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - Name : LUCKY 1 CORP 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - City : WEST PALM BEACH 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - Tokens : System.Collections.Generic.List`1[Domain.Models.HashKey] 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - Id : 1051 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - RowVersion :  
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - TimeSpan : 10/14/2015 3:04:31 PM 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - >
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - hash: <f759b81c-bf32-4828-98af-19dc22820f25>
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - 
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - Opened connection at 10/14/2015 3:04:31 PM -04:00
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - Started transaction at 10/14/2015 3:04:31 PM -04:00
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - INSERT [dbo].[HashKeys]([Hash], [UserId], [TimeSpan])
+VALUES (@0, @1, @2)
+SELECT [Id], [RowVersion]
+FROM [dbo].[HashKeys]
+WHERE @@ROWCOUNT > 0 AND [Id] = scope_identity()
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - 
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - -- @0: 'f759b81c-bf32-4828-98af-19dc22820f25' (Type = String, Size = -1)
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - -- @1: '1051' (Type = Int32)
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - -- @2: '10/14/2015 3:04:31 PM' (Type = DateTime2)
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - -- Executing at 10/14/2015 3:04:31 PM -04:00
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - -- Completed in 0 ms with result: SqlDataReader
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - 
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - Committed transaction at 10/14/2015 3:04:31 PM -04:00
+
+10/14/2015 15:04:31: DEBUG 8  VirtualOfficeContext - Closed connection at 10/14/2015 3:04:31 PM -04:00
+
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - Method: AddHashToUser returned: 
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - void
+10/14/2015 15:04:31: DEBUG 8  IInterceptor - 
+10/14/2015 15:04:31: DEBUG 8  Generic Logger - Ending operation: User / GetUserExternalToken
+10/14/2015 15:04:31: INFO 8  Generic Logger - =========================================================================================================
+10/14/2015 15:04:31: INFO 8  Generic Logger - =========================================================================================================
+10/14/2015 15:04:31: INFO 8  Generic Logger - =========================================================================================================
+10/14/2015 15:05:17: DEBUG 17  Generic Logger - Starting operation: User / GetUserWithToken
+10/14/2015 15:05:17: DEBUG 17  IInterceptor - Method GetUserWithKey called with parameters:
+10/14/2015 15:05:17: DEBUG 17  IInterceptor - key: <f759b81c-bf32-4828-98af-19dc22820f25>
+10/14/2015 15:05:17: DEBUG 17  IInterceptor - 
+10/14/2015 15:05:17: DEBUG 17  IInterceptor - 
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - Opened connection at 10/14/2015 3:05:17 PM -04:00
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Hash] AS [Hash], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[HashKeys] AS [Extent1]
+    WHERE ([Extent1].[Hash] = @p__linq__0) OR (([Extent1].[Hash] IS NULL) AND (@p__linq__0 IS NULL))
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - 
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - -- p__linq__0: 'f759b81c-bf32-4828-98af-19dc22820f25' (Type = String, Size = 4000)
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - -- Executing at 10/14/2015 3:05:17 PM -04:00
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - -- Completed in 10 ms with result: SqlDataReader
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - 
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - Closed connection at 10/14/2015 3:05:17 PM -04:00
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - Opened connection at 10/14/2015 3:05:17 PM -04:00
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE [Extent1].[Id] = @EntityKeyValue1
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - 
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - -- EntityKeyValue1: '1051' (Type = Int32, IsNullable = false)
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - -- Executing at 10/14/2015 3:05:17 PM -04:00
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - -- Completed in 0 ms with result: SqlDataReader
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - 
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - Closed connection at 10/14/2015 3:05:17 PM -04:00
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - Opened connection at 10/14/2015 3:05:17 PM -04:00
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - get_user @userid, @passCredential
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - 
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - -- @userid: '5259' (Type = String, IsNullable = false, Size = 4)
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - -- @passCredential: 'EAA6DD0D-CE53-445E-976E-363814FCC77F' (Type = String, IsNullable = false, Size = 36)
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - -- Executing at 10/14/2015 3:05:17 PM -04:00
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - -- Completed in 59 ms with result: SqlDataReader
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - 
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - Closed connection at 10/14/2015 3:05:17 PM -04:00
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - Opened connection at 10/14/2015 3:05:17 PM -04:00
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ([Extent1].[RefId] = @p__linq__0) AND ( CAST( [Extent1].[Category] AS int) = @p__linq__1)
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - 
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - -- p__linq__0: '5259' (Type = Int32, IsNullable = false)
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - -- p__linq__1: '2' (Type = Int32, IsNullable = false)
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - -- Executing at 10/14/2015 3:05:17 PM -04:00
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - -- Completed in 0 ms with result: SqlDataReader
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - 
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - Closed connection at 10/14/2015 3:05:17 PM -04:00
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - Opened connection at 10/14/2015 3:05:17 PM -04:00
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE [Extent1].[RefId] = @p__linq__0
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - 
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - -- p__linq__0: '5259' (Type = Int32, IsNullable = false)
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - -- Executing at 10/14/2015 3:05:17 PM -04:00
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - -- Completed in 0 ms with result: SqlDataReader
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - 
+
+10/14/2015 15:05:17: DEBUG 17  VirtualOfficeContext - Closed connection at 10/14/2015 3:05:17 PM -04:00
+
+10/14/2015 15:05:17: DEBUG 17  IInterceptor - Method: GetUserWithKey returned: 
+10/14/2015 15:05:17: DEBUG 17  IInterceptor - RefId : 5259 
+10/14/2015 15:05:17: DEBUG 17  IInterceptor - Category : Distributor 
+10/14/2015 15:05:17: DEBUG 17  IInterceptor - BusinessName :  
+10/14/2015 15:05:17: DEBUG 17  IInterceptor - Address1 : 4357 LAKE LUCERNE CIR 
+10/14/2015 15:05:17: DEBUG 17  IInterceptor - Address2 :  
+10/14/2015 15:05:17: DEBUG 17  IInterceptor - ZipCode : 33409 
+10/14/2015 15:05:17: DEBUG 17  IInterceptor - State : FL 
+10/14/2015 15:05:17: DEBUG 17  IInterceptor - Email : JOSHCHABRIA@YAHOO.COM 
+10/14/2015 15:05:17: DEBUG 17  IInterceptor - Phone : 5617079826 
+10/14/2015 15:05:17: DEBUG 17  IInterceptor - Comission : 1829.9660 
+10/14/2015 15:05:17: DEBUG 17  IInterceptor - Name : LUCKY 1 CORP 
+10/14/2015 15:05:17: DEBUG 17  IInterceptor - City : WEST PALM BEACH 
+10/14/2015 15:05:17: DEBUG 17  IInterceptor - Tokens : System.Collections.Generic.List`1[Domain.Models.HashKey] 
+10/14/2015 15:05:17: DEBUG 17  IInterceptor - Id : 1051 
+10/14/2015 15:05:17: DEBUG 17  IInterceptor - RowVersion :  
+10/14/2015 15:05:17: DEBUG 17  IInterceptor - TimeSpan : 10/14/2015 3:05:17 PM 
+10/14/2015 15:05:17: DEBUG 17  IInterceptor - 
+10/14/2015 15:05:17: DEBUG 17  IInterceptor - 
+10/14/2015 15:05:17: DEBUG 17  Generic Logger - Ending operation: User / GetUserWithToken
+10/14/2015 15:05:17: INFO 17  Generic Logger - =========================================================================================================
+10/14/2015 15:05:17: INFO 17  Generic Logger - =========================================================================================================
+10/14/2015 15:05:17: INFO 17  Generic Logger - =========================================================================================================
+10/14/2015 15:12:45: DEBUG 24  Generic Logger - Starting operation: User / GetUserWithToken
+10/14/2015 15:12:45: DEBUG 24  IInterceptor - Method GetUserWithKey called with parameters:
+10/14/2015 15:12:45: DEBUG 24  IInterceptor - key: <f759b81c-bf32-4828-98af-19dc22820f25>
+10/14/2015 15:12:45: DEBUG 24  IInterceptor - 
+10/14/2015 15:12:45: DEBUG 24  IInterceptor - 
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - Opened connection at 10/14/2015 3:12:45 PM -04:00
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Hash] AS [Hash], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[HashKeys] AS [Extent1]
+    WHERE ([Extent1].[Hash] = @p__linq__0) OR (([Extent1].[Hash] IS NULL) AND (@p__linq__0 IS NULL))
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - 
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - -- p__linq__0: 'f759b81c-bf32-4828-98af-19dc22820f25' (Type = String, Size = 4000)
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - -- Executing at 10/14/2015 3:12:45 PM -04:00
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - -- Completed in 10 ms with result: SqlDataReader
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - 
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - Closed connection at 10/14/2015 3:12:45 PM -04:00
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - Opened connection at 10/14/2015 3:12:45 PM -04:00
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE [Extent1].[Id] = @EntityKeyValue1
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - 
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - -- EntityKeyValue1: '1051' (Type = Int32, IsNullable = false)
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - -- Executing at 10/14/2015 3:12:45 PM -04:00
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - -- Completed in 0 ms with result: SqlDataReader
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - 
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - Closed connection at 10/14/2015 3:12:45 PM -04:00
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - Opened connection at 10/14/2015 3:12:45 PM -04:00
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - get_user @userid, @passCredential
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - 
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - -- @userid: '5259' (Type = String, IsNullable = false, Size = 4)
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - -- @passCredential: 'EAA6DD0D-CE53-445E-976E-363814FCC77F' (Type = String, IsNullable = false, Size = 36)
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - -- Executing at 10/14/2015 3:12:45 PM -04:00
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - -- Completed in 92 ms with result: SqlDataReader
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - 
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - Closed connection at 10/14/2015 3:12:45 PM -04:00
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - Opened connection at 10/14/2015 3:12:45 PM -04:00
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ([Extent1].[RefId] = @p__linq__0) AND ( CAST( [Extent1].[Category] AS int) = @p__linq__1)
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - 
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - -- p__linq__0: '5259' (Type = Int32, IsNullable = false)
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - -- p__linq__1: '2' (Type = Int32, IsNullable = false)
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - -- Executing at 10/14/2015 3:12:45 PM -04:00
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - -- Completed in 0 ms with result: SqlDataReader
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - 
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - Closed connection at 10/14/2015 3:12:45 PM -04:00
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - Opened connection at 10/14/2015 3:12:45 PM -04:00
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE [Extent1].[RefId] = @p__linq__0
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - 
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - -- p__linq__0: '5259' (Type = Int32, IsNullable = false)
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - -- Executing at 10/14/2015 3:12:45 PM -04:00
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - -- Completed in 0 ms with result: SqlDataReader
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - 
+
+10/14/2015 15:12:45: DEBUG 24  VirtualOfficeContext - Closed connection at 10/14/2015 3:12:45 PM -04:00
+
+10/14/2015 15:12:45: DEBUG 24  IInterceptor - Method: GetUserWithKey returned: 
+10/14/2015 15:12:45: DEBUG 24  IInterceptor - RefId : 5259 
+10/14/2015 15:12:45: DEBUG 24  IInterceptor - Category : Distributor 
+10/14/2015 15:12:45: DEBUG 24  IInterceptor - BusinessName :  
+10/14/2015 15:12:45: DEBUG 24  IInterceptor - Address1 : 4357 LAKE LUCERNE CIR 
+10/14/2015 15:12:45: DEBUG 24  IInterceptor - Address2 :  
+10/14/2015 15:12:45: DEBUG 24  IInterceptor - ZipCode : 33409 
+10/14/2015 15:12:45: DEBUG 24  IInterceptor - State : FL 
+10/14/2015 15:12:45: DEBUG 24  IInterceptor - Email : JOSHCHABRIA@YAHOO.COM 
+10/14/2015 15:12:45: DEBUG 24  IInterceptor - Phone : 5617079826 
+10/14/2015 15:12:45: DEBUG 24  IInterceptor - Comission : 1829.9660 
+10/14/2015 15:12:45: DEBUG 24  IInterceptor - Name : LUCKY 1 CORP 
+10/14/2015 15:12:45: DEBUG 24  IInterceptor - City : WEST PALM BEACH 
+10/14/2015 15:12:45: DEBUG 24  IInterceptor - Tokens : System.Collections.Generic.List`1[Domain.Models.HashKey] 
+10/14/2015 15:12:45: DEBUG 24  IInterceptor - Id : 1051 
+10/14/2015 15:12:45: DEBUG 24  IInterceptor - RowVersion :  
+10/14/2015 15:12:45: DEBUG 24  IInterceptor - TimeSpan : 10/14/2015 3:12:45 PM 
+10/14/2015 15:12:45: DEBUG 24  IInterceptor - 
+10/14/2015 15:12:45: DEBUG 24  IInterceptor - 
+10/14/2015 15:12:45: DEBUG 24  Generic Logger - Ending operation: User / GetUserWithToken
+10/14/2015 15:12:45: INFO 24  Generic Logger - =========================================================================================================
+10/14/2015 15:12:45: INFO 24  Generic Logger - =========================================================================================================
+10/14/2015 15:12:45: INFO 24  Generic Logger - =========================================================================================================
+10/14/2015 15:13:28: DEBUG 27  Generic Logger - Starting operation: User / GetUserWithToken
+10/14/2015 15:13:28: DEBUG 27  IInterceptor - Method GetUserWithKey called with parameters:
+10/14/2015 15:13:28: DEBUG 27  IInterceptor - key: <f759b81c-bf32-4828-98af-19dc22820f25>
+10/14/2015 15:13:28: DEBUG 27  IInterceptor - 
+10/14/2015 15:13:28: DEBUG 27  IInterceptor - 
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - Opened connection at 10/14/2015 3:13:28 PM -04:00
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Hash] AS [Hash], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[HashKeys] AS [Extent1]
+    WHERE ([Extent1].[Hash] = @p__linq__0) OR (([Extent1].[Hash] IS NULL) AND (@p__linq__0 IS NULL))
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - 
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - -- p__linq__0: 'f759b81c-bf32-4828-98af-19dc22820f25' (Type = String, Size = 4000)
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - -- Executing at 10/14/2015 3:13:28 PM -04:00
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - -- Completed in 10 ms with result: SqlDataReader
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - 
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - Closed connection at 10/14/2015 3:13:28 PM -04:00
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - Opened connection at 10/14/2015 3:13:28 PM -04:00
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE [Extent1].[Id] = @EntityKeyValue1
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - 
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - -- EntityKeyValue1: '1051' (Type = Int32, IsNullable = false)
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - -- Executing at 10/14/2015 3:13:28 PM -04:00
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - -- Completed in 0 ms with result: SqlDataReader
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - 
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - Closed connection at 10/14/2015 3:13:28 PM -04:00
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - Opened connection at 10/14/2015 3:13:28 PM -04:00
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - get_user @userid, @passCredential
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - 
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - -- @userid: '5259' (Type = String, IsNullable = false, Size = 4)
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - -- @passCredential: 'EAA6DD0D-CE53-445E-976E-363814FCC77F' (Type = String, IsNullable = false, Size = 36)
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - -- Executing at 10/14/2015 3:13:28 PM -04:00
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - -- Completed in 55 ms with result: SqlDataReader
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - 
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - Closed connection at 10/14/2015 3:13:28 PM -04:00
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - Opened connection at 10/14/2015 3:13:28 PM -04:00
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ([Extent1].[RefId] = @p__linq__0) AND ( CAST( [Extent1].[Category] AS int) = @p__linq__1)
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - 
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - -- p__linq__0: '5259' (Type = Int32, IsNullable = false)
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - -- p__linq__1: '2' (Type = Int32, IsNullable = false)
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - -- Executing at 10/14/2015 3:13:28 PM -04:00
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - -- Completed in 0 ms with result: SqlDataReader
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - 
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - Closed connection at 10/14/2015 3:13:28 PM -04:00
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - Opened connection at 10/14/2015 3:13:28 PM -04:00
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[RefId] AS [RefId], 
+    [Extent1].[Category] AS [Category], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[TimeSpan] AS [TimeSpan]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE [Extent1].[RefId] = @p__linq__0
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - 
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - -- p__linq__0: '5259' (Type = Int32, IsNullable = false)
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - -- Executing at 10/14/2015 3:13:28 PM -04:00
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - -- Completed in 0 ms with result: SqlDataReader
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - 
+
+10/14/2015 15:13:28: DEBUG 27  VirtualOfficeContext - Closed connection at 10/14/2015 3:13:28 PM -04:00
+
+10/14/2015 15:13:28: DEBUG 27  IInterceptor - Method: GetUserWithKey returned: 
+10/14/2015 15:13:28: DEBUG 27  IInterceptor - RefId : 5259 
+10/14/2015 15:13:28: DEBUG 27  IInterceptor - Category : Distributor 
+10/14/2015 15:13:28: DEBUG 27  IInterceptor - BusinessName :  
+10/14/2015 15:13:28: DEBUG 27  IInterceptor - Address1 : 4357 LAKE LUCERNE CIR 
+10/14/2015 15:13:28: DEBUG 27  IInterceptor - Address2 :  
+10/14/2015 15:13:28: DEBUG 27  IInterceptor - ZipCode : 33409 
+10/14/2015 15:13:28: DEBUG 27  IInterceptor - State : FL 
+10/14/2015 15:13:28: DEBUG 27  IInterceptor - Email : JOSHCHABRIA@YAHOO.COM 
+10/14/2015 15:13:28: DEBUG 27  IInterceptor - Phone : 5617079826 
+10/14/2015 15:13:28: DEBUG 27  IInterceptor - Comission : 1829.9660 
+10/14/2015 15:13:28: DEBUG 27  IInterceptor - Name : LUCKY 1 CORP 
+10/14/2015 15:13:28: DEBUG 27  IInterceptor - City : WEST PALM BEACH 
+10/14/2015 15:13:28: DEBUG 27  IInterceptor - Tokens : System.Collections.Generic.List`1[Domain.Models.HashKey] 
+10/14/2015 15:13:28: DEBUG 27  IInterceptor - Id : 1051 
+10/14/2015 15:13:28: DEBUG 27  IInterceptor - RowVersion :  
+10/14/2015 15:13:28: DEBUG 27  IInterceptor - TimeSpan : 10/14/2015 3:13:28 PM 
+10/14/2015 15:13:28: DEBUG 27  IInterceptor - 
+10/14/2015 15:13:28: DEBUG 27  IInterceptor - 
+10/14/2015 15:13:28: DEBUG 27  Generic Logger - Ending operation: User / GetUserWithToken
+10/14/2015 15:13:28: INFO 27  Generic Logger - =========================================================================================================
+10/14/2015 15:13:28: INFO 27  Generic Logger - =========================================================================================================
+10/14/2015 15:13:28: INFO 27  Generic Logger - =========================================================================================================

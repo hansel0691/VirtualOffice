@@ -938,7 +938,7 @@ namespace VirtualOffice.Web.Infrastructure
                     }
                     default:
                     {
-                        result[DashboardItemType.Prepaid] = 11;
+                        result[DashboardItemType.Prepaid] = 13;
                         result[DashboardItemType.MerchantServices] = 3;
                         break;
                     }

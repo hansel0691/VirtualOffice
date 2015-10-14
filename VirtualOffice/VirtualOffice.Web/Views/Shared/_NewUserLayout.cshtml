@@ -135,7 +135,9 @@
                                     <li><a href='@Url.Action("PortfolioSummary", "PrepaidReports")'><span class="badge"></span> Prepaid Accounts</a></li>
                                     <li><a href='@Url.Action("AccountsInCollection", "PrepaidReports")'><span class="badge"></span> Accounts In Collection</a></li>
                                     <li><a href='@Url.Action("ReportAgentSummary", "PrepaidReports", new { startDate =  "", endDate =  ""  })'><span class="badge"></span>General Sales Summary</a></li>
+                                    <li><a href='@Url.Action("MerchantBilling", "PrepaidReports")'><span class="badge"></span> Merchant Billing</a></li>
                                 }
+                                
                                 <li><a href='@Url.Action("MerchantCreditLimits", "PrepaidReports")'><span class="badge"></span> Merchant Credit Limits</a></li>
                                 <li><a href='@Url.Action("TodayTransactions", "PrepaidReports")'><span class="badge"></span> Today's Transactions</a></li>
                                 <li><a href='@Url.Action("MerchantCommissions", "PrepaidReports")'><span class="badge"></span> Merchant Commissions</a></li>
@@ -152,6 +154,7 @@
                                     <li><a href='@Url.Action("FullcargaStatements", "PrepaidReports")'><span class="badge"></span> Statements</a></li>
                                     @*<li><a href='@Url.Action("FullcargaPrepaidSummary", "PrepaidReports")'><span class="badge"></span> Prepaid Sales Summary</a></li>*@
                                 }
+                                <li><a href='@Url.Action("SendCommissionReport", "PrepaidReports")'><span class="badge"></span> Commission Report</a></li>
                             </ul>
                         </li>
                         <li class="@Utils.GetListItemClassByController(Url.Action("ChangePassword", "MyProfile"), Request.Url.ToString())">

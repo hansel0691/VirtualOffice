@@ -262,6 +262,34 @@ namespace VirtualOffice.Web.Controllers
             return model;
         }
 
+
+
+        public ActionResult MerchantBilling()
+        {
+            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "SP_Send_AgentToBillMerchants", typeof(AgentToBillMerchantsViewModel));
+
+            const string printLink = "/PrepaidReports/PrintMerchantBilling";
+            
+            var model = GetReportModel(columnsConfig, printLink, "SP_Send_AgentToBillMerchants");
+
+            return View(model);
+        }
+
+        public string SendCommissionReport()
+        {
+            //var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2", typeof(SalesAgentMerchantSalesResultViewModel));
+
+            //const string printLink = "/PrepaidReports/PrintReportAgentSummary";
+
+            //AddLinksToReportAgentSummaryColumnConfig(columnsConfig);
+
+            //var model = GetReportModel(columnsConfig, printLink, "SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2");
+
+            //return model;
+            return null;
+        }
+
+
         #endregion
 
         #region Data Manipulation
@@ -674,6 +702,37 @@ namespace VirtualOffice.Web.Controllers
 
             return Json(result);
         }
+
+
+        [HttpPost]
+        public ActionResult RunMerchantBilling([DataSourceRequest] DataSourceRequest request, string startDate, string endDate, string outPut, bool saveOutPut)
+        {
+            try
+            {
+                if (saveOutPut)
+                {
+                    var outPutDeserialized = new JavaScriptSerializer().Deserialize<List<string>>(outPut);
+
+                    _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "SP_Send_AgentToBillMerchants", outPutDeserialized.GetCommaSeparatedTokens());
+                }
+
+                var dateRange = GetDateRange(startDate, endDate);
+
+                var reportData = _virtualOfficeService.GetMerchantBilling(GetLoggedUserId(), dateRange.StartDate, dateRange.EndDate);
+
+                var mappedResult = reportData.MapTo<IEnumerable<AgentToBillMerchantsResult>, IEnumerable<AgentToBillMerchantsViewModel>>();
+
+                var result = mappedResult.ToDataSourceResult(request);
+
+                return Json(result);
+            }
+            catch (Exception exception)
+            {
+                return null;
+            }
+
+        }
+
 
         #endregion
 
