@@ -7,6 +7,7 @@ using ClassLibrary2.Domain.Prepaid;
 using VirtualOffice.Web.Models;
 using VirtualOffice.Web.Models.NewReports;
 using VirtualOffice.Web.Models.NewReports.MerchantServices;
+using System.Collections.Generic;
 
 namespace VirtualOffice.Web.Infrastructure
 {
@@ -103,6 +104,10 @@ namespace VirtualOffice.Web.Infrastructure
             Mapper.CreateMap<FullcargaPrepaidSummaryViewModel, FullcargaPrepaidSummary>();
             Mapper.CreateMap<SalesAgentMerchantSalesResult, SalesAgentMerchantSalesResultViewModel>();
 
+            Mapper.CreateMap<AgentToBillMerchants, AgentToBillMerchantsViewModel>();
+            Mapper.CreateMap<CommissionReport, CommissionReportViewModel>();
+
+           
             #endregion
 
             #region Merchant Services
@@ -199,9 +204,6 @@ namespace VirtualOffice.Web.Infrastructure
                 .ForMember(p => p.Phone, k => k.MapFrom(m => m.Phone));
 
 
-            //var mappedResult = reportData.MapTo<IEnumerable<AgentToBillMerchantsResult>, IEnumerable<AgentToBillMerchantsViewModel>>();
-            Mapper.CreateMap<AgentToBillMerchantsResult, AgentToBillMerchantsViewModel>();
-
             #endregion
         }
 
@@ -216,10 +218,18 @@ namespace VirtualOffice.Web.Infrastructure
         /// <returns></returns>
         public static TK MapTo<T,TK>(this T aEntity)
         {
-           
             var modelResult = Mapper.Map<T,TK>(aEntity);
 
             return modelResult;
+        }
+
+    }
+
+    public class VIPResolver : ValueResolver<decimal?, decimal>
+    {
+        protected override decimal ResolveCore(decimal? source)
+        {
+            return source == null ? 0 : decimal.Parse(source.GetPlaneFormat());
         }
     }
 }

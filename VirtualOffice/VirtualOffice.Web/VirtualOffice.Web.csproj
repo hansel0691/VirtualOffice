@@ -264,6 +264,7 @@
     <Compile Include="Models\MyDataSourceResult.cs" />
     <Compile Include="Models\NewLead.cs" />
     <Compile Include="Models\NewReports\AgentToBillMerchantsViewModel.cs" />
+    <Compile Include="Models\NewReports\CommissionReportViewModel.cs" />
     <Compile Include="Models\NewReports\FullcargaInvoiceDatailViewModel.cs" />
     <Compile Include="Models\NewReports\FullcargaPrepaidSummaryViewModel.cs" />
     <Compile Include="Models\NewReports\FullcargaStatementsViewModel.cs" />
@@ -1948,6 +1949,7 @@
     <Content Include="Views\MerchantServicesReports\TransactionsDetails.cshtml" />
     <Content Include="Views\PrepaidReports\ReportAgentSummary.cshtml" />
     <Content Include="Views\PrepaidReports\MerchantBilling.cshtml" />
+    <Content Include="Views\PrepaidReports\SendCommissionReport.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

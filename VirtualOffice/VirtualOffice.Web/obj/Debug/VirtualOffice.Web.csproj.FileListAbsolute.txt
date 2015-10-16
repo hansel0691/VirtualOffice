@@ -80,6 +80,8 @@ D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Web\obj\Debug\VirtualOffice
 D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Web\obj\Debug\VirtualOffice.Web.dll
 D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Web\obj\Debug\VirtualOffice.Web.pdb
 D:\VirtualOffice-develop\VirtualOffice\VirtualOffice.Web\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\obj\Debug\VirtualOffice.Web.csproj.App.config
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\obj\Debug\VirtualOffice.Web.csprojResolveAssemblyReference.cache
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\AutoMapper.Net4.dll
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\VirtualOffice.Web.dll.config
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\VirtualOffice.Web.dll
@@ -104,7 +106,5 @@ C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffic
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\VirtualOffice.Data.pdb
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\Domain.Inventory.pdb
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\Domain.Blackstone.pdb
-C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\obj\Debug\VirtualOffice.Web.csproj.App.config
-C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\obj\Debug\VirtualOffice.Web.csprojResolveAssemblyReference.cache
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\obj\Debug\VirtualOffice.Web.dll
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\obj\Debug\VirtualOffice.Web.pdb

@@ -91,7 +91,50 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="panel panel-default">
                 <div class="panel-body-kendo">
-                    
+                    @(Html.Kendo().Grid<AgentToBillMerchantsViewModel>()
+                          .Name("Reports")
+                                  .HtmlAttributes(new { @style = "text-align: left; height: 850px;" }).EnableCustomBinding(true)
+                          .Columns(col =>
+                          {
+                              foreach (var column in columnsCofig.Keys)
+                              {
+                                  var columnConfig = columnsCofig[column];
+                                  var label = columnsCofig[column].Label;
+                                  var columnResult = col.Bound(column).Width(columnConfig.Width).Hidden(columnConfig.Hidden).Title(label);
+
+                                  if (!string.IsNullOrEmpty(columnConfig.Link))
+                                  {
+                                      columnResult = columnResult.ClientTemplate(columnConfig.Link);
+                                  }
+
+                                  if (columnConfig.IsDate)
+                                      columnResult.Format("{0:dd/MM/yyyy}");
+
+                                  else if (columnConfig.IsNumeric)
+                                      columnResult.ClientFooterTemplate("#= kendo.format('{0:n2}', sum)#").Format("{0:n2}").HtmlAttributes(new { alignText = "right" });
+                              }
+
+                          })
+                          .DataSource(ds => ds.Ajax()
+                              .Aggregates(aggregates =>
+                              {
+                                  foreach (var col in columnsCofig.Where(col => col.Value.IsNumeric))
+                                  {
+                                      aggregates.Add(col.Key, typeof(double)).Sum();
+                                  }
+                              })
+                              .Read(r => r.Action("RunMerchantBilling", "PrepaidReports").Data("getReportParams"))
+                              .PageSize(100)
+                          )
+                          .Events(ev => ev.ColumnReorder("saveNewOutPutOrder").ColumnResize("saveColumnWidth"))
+                          .Resizable(config => config.Columns(true))
+                          .Sortable()
+                          .Selectable()
+                          .Reorderable(reorder => reorder.Columns(true))
+                          .Scrollable(scr => scr.Height(600))
+                          .Pageable(pageable => pageable.Refresh(true).PageSizes(new[] { 100, 200, 500 }).ButtonCount(5))
+                          .AutoBind(true)
+                    )
                 </div>
             </div>
         </div>

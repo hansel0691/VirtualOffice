@@ -42,8 +42,10 @@ namespace VirtualOffice.Service.Domain.Infrastructure
                 .ForMember(p => p.Id, k => k.MapFrom(m => int.Parse(m.id)));
             Mapper.CreateMap<SP_Fullcarga_PrepaidSalesSummary_Result, FullcargaPrepaidSummary>();
             Mapper.CreateMap<SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2, SalesAgentMerchantSalesResult>();
-            Mapper.CreateMap<SP_Send_AgentToBillMerchants, AgentToBillMerchantsResult>();
 
+            Mapper.CreateMap<SP_Send_AgentToBillMerchants_Result, AgentToBillMerchants>();
+            Mapper.CreateMap<SP_Send_CommissionReport_Result, CommissionReport>();
+            
 
 
             #endregion
@@ -72,6 +74,7 @@ namespace VirtualOffice.Service.Domain.Infrastructure
             Mapper.CreateMap<sp_retrieve_incidents_Result, Incident>();
             Mapper.CreateMap<sp_get_marketing_materials_Result, MarketingMaterial>();
             Mapper.CreateMap<sp_retrieve_documents_Result, Document>();
+
 
             #endregion
 

@@ -152,9 +152,16 @@ namespace VirtualOffice.Data.Repositories
         }
 
         //GetMerchantBilling
-        public IEnumerable<SP_Fullcarga_PrepaidSalesSummary_Result> GetMerchantBilling(int userId, DateTime startDate, DateTime endDate)
+        public IEnumerable<SP_Send_AgentToBillMerchants_Result> GetMerchantBilling(int userId, DateTime startDate, DateTime endDate)
         {
-            var result = VirtualOfficeContext.SP_Fullcarga_PrepaidSalesSummary_Result(userId, startDate, endDate);
+            var result = VirtualOfficeContext.SP_Send_AgentToBillMerchants(startDate, endDate, userId);
+
+            return result;
+        }
+
+        public IEnumerable<SP_Send_CommissionReport_Result> SendCommitionReport(int userId, DateTime startDate, DateTime endDate, bool isMerchant)
+        {
+            var result = VirtualOfficeContext.SP_Send_CommissionReport(startDate, endDate, userId, isMerchant ? 1 : 0);
 
             return result;
         }

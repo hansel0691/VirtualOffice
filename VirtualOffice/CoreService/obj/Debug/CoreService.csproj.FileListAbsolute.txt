@@ -230,6 +230,7 @@ D:\VirtualOffice-develop\VirtualOffice\CoreService\obj\Debug\CoreService.csprojR
 D:\VirtualOffice-develop\VirtualOffice\CoreService\obj\Debug\CoreService.dll
 D:\VirtualOffice-develop\VirtualOffice\CoreService\obj\Debug\CoreService.pdb
 D:\VirtualOffice-develop\VirtualOffice\CoreService\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\bin\AutoMapper.Net4.dll
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\bin\CoreService.dll.config
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\bin\CoreService.dll
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\bin\CoreService.pdb

@@ -262,8 +262,6 @@ namespace VirtualOffice.Web.Controllers
             return model;
         }
 
-
-
         public ActionResult MerchantBilling()
         {
             var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "SP_Send_AgentToBillMerchants", typeof(AgentToBillMerchantsViewModel));
@@ -275,18 +273,15 @@ namespace VirtualOffice.Web.Controllers
             return View(model);
         }
 
-        public string SendCommissionReport()
+        public ActionResult SendCommissionReport()
         {
-            //var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2", typeof(SalesAgentMerchantSalesResultViewModel));
+            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "SP_Send_CommissionReport", typeof(CommissionReportViewModel));
 
-            //const string printLink = "/PrepaidReports/PrintReportAgentSummary";
+            const string printLink = "/PrepaidReports/PrintCommissionReport";
 
-            //AddLinksToReportAgentSummaryColumnConfig(columnsConfig);
+            var model = GetReportModel(columnsConfig, printLink, "SP_Send_CommissionReport");
 
-            //var model = GetReportModel(columnsConfig, printLink, "SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2");
-
-            //return model;
-            return null;
+            return View(model);
         }
 
 
@@ -720,7 +715,36 @@ namespace VirtualOffice.Web.Controllers
 
                 var reportData = _virtualOfficeService.GetMerchantBilling(GetLoggedUserId(), dateRange.StartDate, dateRange.EndDate);
 
-                var mappedResult = reportData.MapTo<IEnumerable<AgentToBillMerchantsResult>, IEnumerable<AgentToBillMerchantsViewModel>>();
+                var mappedResult = reportData.MapTo<IEnumerable<AgentToBillMerchants>, IEnumerable<AgentToBillMerchantsViewModel>>();
+
+                var result = mappedResult.ToDataSourceResult(request);
+
+                return Json(result);
+            }
+            catch (Exception exception)
+            {
+                return null;
+            }
+
+        }
+
+        [HttpPost]
+        public ActionResult RunSendCommitionReport([DataSourceRequest] DataSourceRequest request, string startDate, string endDate, string outPut, bool saveOutPut)
+        {
+            try
+            {
+                if (saveOutPut)
+                {
+                    var outPutDeserialized = new JavaScriptSerializer().Deserialize<List<string>>(outPut);
+
+                    _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "SP_Send_CommissionReport", outPutDeserialized.GetCommaSeparatedTokens());
+                }
+
+                var dateRange = GetDateRange(startDate, endDate);
+
+                var reportData = _virtualOfficeService.SendCommitionReport(GetLoggedUserId(), dateRange.StartDate, dateRange.EndDate, GetUserCategory() == Category.Merchant);
+
+                var mappedResult = reportData.MapTo<IEnumerable<CommissionReport>, IEnumerable<CommissionReportViewModel>>();
 
                 var result = mappedResult.ToDataSourceResult(request);
 
@@ -925,6 +949,32 @@ namespace VirtualOffice.Web.Controllers
                                 PrintReport(procedureName, methodName, objParams);
 
         }
+
+        public ActionResult PrintMerchantBilling(string startDate, string endDate, bool exportMode)
+        {
+            var dateRange = GetDateRange(startDate, endDate);
+
+            var objParams = new object[] { GetLoggedUserId(), dateRange.StartDate, dateRange.EndDate };
+
+            const string procedureName = "SP_Send_AgentToBillMerchants", methodName = "GetMerchantBilling";
+
+            return exportMode ? ExportReportsToExcel(procedureName, methodName, objParams) :
+                                PrintReport(procedureName, methodName, objParams);
+        }
+
+        public ActionResult PrintCommissionReport(string startDate, string endDate, bool exportMode)
+        {
+            var dateRange = GetDateRange(startDate, endDate);
+
+            var objParams = new object[] { GetLoggedUserId(), dateRange.StartDate, dateRange.EndDate , GetUserCategory() == Category.Merchant };
+
+            const string procedureName = "SP_Send_CommissionReport", methodName = "SendCommitionReport";
+
+            return exportMode ? ExportReportsToExcel(procedureName, methodName, objParams) :
+                                PrintReport(procedureName, methodName, objParams);
+        }
+
+
         #endregion
 
         #region Aux Ops

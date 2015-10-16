@@ -274,15 +274,23 @@ namespace VirtualOffice.Service.Services
         }
 
 
-        public IEnumerable<AgentToBillMerchantsResult> GetMerchantBilling(int userId, bool isMerchant, DateTime startDate, DateTime endDate)
+        public IEnumerable<AgentToBillMerchants> GetMerchantBilling(int userId, DateTime startDate, DateTime endDate)
         {
             var prepaidSummary = _reportRepository.GetMerchantBilling(userId, startDate, endDate);
 
-            var result = prepaidSummary.MapTo<IEnumerable<SP_Send_AgentToBillMerchants>, IEnumerable<AgentToBillMerchantsResult>>();
+            var result = prepaidSummary.MapTo<IEnumerable<SP_Send_AgentToBillMerchants_Result>, IEnumerable<AgentToBillMerchants>>();
 
             return result;
         }
 
+        public IEnumerable<CommissionReport> SendCommitionReport(int userId, DateTime startDate, DateTime endDate, bool isMerchant)
+        {
+            var prepaidSummary = _reportRepository.SendCommitionReport(userId, startDate, endDate, isMerchant);
+
+            var result = prepaidSummary.MapTo<IEnumerable<SP_Send_CommissionReport_Result>, IEnumerable<CommissionReport>>();
+
+            return result;
+        }
 
 
         #endregion
@@ -740,7 +748,7 @@ namespace VirtualOffice.Service.Services
             {
                 var allAccounts = _reportRepository.RunPrepaidPortfolioSummary(agentId);
 
-                var result = allAccounts.Count(a => a.Status.ToLower().Equals("active"));
+                var result = allAccounts.Count(a => a.cl.Status.ToLower().Equals("active"));
 
                 return result;
             }

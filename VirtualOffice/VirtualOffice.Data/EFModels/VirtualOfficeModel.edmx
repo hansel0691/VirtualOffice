@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="VirtualOfficeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="VirtualOfficeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="__MigrationHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -857,6 +857,17 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
         <Function Name="sp_retrieve_spNames" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_retrieve_storedprocedure_columns" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="spname" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SP_Send_AgentToBillMerchants" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RundateI" Type="datetime" Mode="In" />
+          <Parameter Name="RundateF" Type="datetime" Mode="In" />
+          <Parameter Name="UniqueId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_Send_CommissionReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RundateI" Type="datetime" Mode="In" />
+          <Parameter Name="RundateF" Type="datetime" Mode="In" />
+          <Parameter Name="UniqueId" Type="int" Mode="In" />
+          <Parameter Name="isMerchant" Type="int" Mode="In" />
         </Function>
         <Function Name="SP_ShowAccountRegister" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="reportType" Type="int" Mode="In" />
@@ -2080,6 +2091,17 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
             <Parameter Name="vendingType" Mode="In" Type="Int32" />
             <Parameter Name="emptyRecord" Mode="In" Type="Boolean" />
           </FunctionImport>
+          <FunctionImport Name="SP_Send_CommissionReport" ReturnType="Collection(VirtualOfficeModel.SP_Send_CommissionReport_Result)">
+            <Parameter Name="RundateI" Mode="In" Type="DateTime" />
+            <Parameter Name="RundateF" Mode="In" Type="DateTime" />
+            <Parameter Name="UniqueId" Mode="In" Type="Int32" />
+            <Parameter Name="isMerchant" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Send_AgentToBillMerchants" ReturnType="Collection(VirtualOfficeModel.SP_Send_AgentToBillMerchants_Result)">
+            <Parameter Name="RundateI" Mode="In" Type="DateTime" />
+            <Parameter Name="RundateF" Mode="In" Type="DateTime" />
+            <Parameter Name="UniqueId" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="AccountsInCollection_Result">
           <Property Type="Int32" Name="agentID" Nullable="true" />
@@ -2782,6 +2804,44 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
           <Property Type="Boolean" Name="vending" Nullable="true" />
           <Property Type="Int32" Name="VendingType" Nullable="true" />
           <Property Type="String" Name="Cashier_ID" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="SP_Send_CommissionReport_Result">
+          <Property Type="Int32" Name="Dist_ID" Nullable="true" />
+          <Property Type="String" Name="Dist_Name" Nullable="false" MaxLength="40" />
+          <Property Type="Int32" Name="ISO_ID" Nullable="true" />
+          <Property Type="String" Name="ISO_Name" Nullable="false" MaxLength="40" />
+          <Property Type="Int32" Name="Order" Nullable="true" />
+          <Property Type="Int32" Name="Inv_ID" Nullable="false" />
+          <Property Type="String" Name="Inv_Date" Nullable="true" MaxLength="19" />
+          <Property Type="Int32" Name="Store" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Product" Nullable="true" MaxLength="512" />
+          <Property Type="Int32" Name="Qty" Nullable="true" />
+          <Property Type="Decimal" Name="Denomination" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Merchant_Discount__" Nullable="true" Precision="12" Scale="4" />
+          <Property Type="Decimal" Name="Dist_Comm__" Nullable="true" Precision="21" Scale="8" />
+          <Property Type="Decimal" Name="ISO_Comm__" Nullable="true" Precision="10" Scale="4" />
+        </ComplexType>
+        <ComplexType Name="SP_Send_AgentToBillMerchants_Result">
+          <Property Type="Int32" Name="DistISOID" Nullable="false" />
+          <Property Type="String" Name="DistISOName" Nullable="true" MaxLength="40" />
+          <Property Type="Int32" Name="Order" Nullable="true" />
+          <Property Type="String" Name="Phone" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="InvID" Nullable="false" />
+          <Property Type="String" Name="InvDate" Nullable="true" MaxLength="19" />
+          <Property Type="Int32" Name="Store" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Product" Nullable="true" MaxLength="512" />
+          <Property Type="Int32" Name="Qty" Nullable="true" />
+          <Property Type="Decimal" Name="Denomination" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="NetSale" Nullable="true" Precision="38" Scale="10" />
+          <Property Type="Decimal" Name="ISOCommD" Nullable="true" Precision="10" Scale="4" />
+          <Property Type="Decimal" Name="ISOCommP" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="DistCommM" Nullable="true" Precision="12" Scale="4" />
+          <Property Type="Decimal" Name="DistCommP" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="MerchCommM" Nullable="true" Precision="12" Scale="4" />
+          <Property Type="Decimal" Name="MerchCommP" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Margin" Nullable="true" Precision="13" Scale="4" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4072,6 +4132,52 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
                 <ScalarProperty Name="vending" ColumnName="vending" />
                 <ScalarProperty Name="VendingType" ColumnName="VendingType" />
                 <ScalarProperty Name="Cashier_ID" ColumnName="Cashier_ID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Send_CommissionReport" FunctionName="VirtualOfficeModel.Store.SP_Send_CommissionReport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VirtualOfficeModel.SP_Send_CommissionReport_Result">
+                <ScalarProperty Name="Dist_ID" ColumnName="Dist ID" />
+                <ScalarProperty Name="Dist_Name" ColumnName="Dist Name" />
+                <ScalarProperty Name="ISO_ID" ColumnName="ISO ID" />
+                <ScalarProperty Name="ISO_Name" ColumnName="ISO Name" />
+                <ScalarProperty Name="Order" ColumnName="Order" />
+                <ScalarProperty Name="Inv_ID" ColumnName="Inv ID" />
+                <ScalarProperty Name="Inv_Date" ColumnName="Inv Date" />
+                <ScalarProperty Name="Store" ColumnName="Store" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Denomination" ColumnName="Denomination" />
+                <ScalarProperty Name="Merchant_Discount__" ColumnName="Merchant Discount $" />
+                <ScalarProperty Name="Dist_Comm__" ColumnName="Dist Comm $" />
+                <ScalarProperty Name="ISO_Comm__" ColumnName="ISO Comm $" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Send_AgentToBillMerchants" FunctionName="VirtualOfficeModel.Store.SP_Send_AgentToBillMerchants">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VirtualOfficeModel.SP_Send_AgentToBillMerchants_Result">
+                <ScalarProperty Name="DistISOID" ColumnName="DistISOID" />
+                <ScalarProperty Name="DistISOName" ColumnName="DistISOName" />
+                <ScalarProperty Name="Order" ColumnName="Order" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="InvID" ColumnName="InvID" />
+                <ScalarProperty Name="InvDate" ColumnName="InvDate" />
+                <ScalarProperty Name="Store" ColumnName="Store" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Denomination" ColumnName="Denomination" />
+                <ScalarProperty Name="NetSale" ColumnName="NetSale" />
+                <ScalarProperty Name="ISOCommD" ColumnName="ISOCommD" />
+                <ScalarProperty Name="ISOCommP" ColumnName="ISOCommP" />
+                <ScalarProperty Name="DistCommM" ColumnName="DistCommM" />
+                <ScalarProperty Name="DistCommP" ColumnName="DistCommP" />
+                <ScalarProperty Name="MerchCommM" ColumnName="MerchCommM" />
+                <ScalarProperty Name="MerchCommP" ColumnName="MerchCommP" />
+                <ScalarProperty Name="Margin" ColumnName="Margin" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

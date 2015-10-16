@@ -224,6 +224,12 @@
     <Compile Include="EFModels\sp_retrieve_parameters_Result.cs">
       <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EFModels\SP_Send_AgentToBillMerchants_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\SP_Send_CommissionReport_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="EFModels\SP_ShowAccountRegister_Result.cs">
       <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
     </Compile>

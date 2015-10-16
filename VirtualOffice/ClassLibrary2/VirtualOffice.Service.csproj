@@ -65,6 +65,8 @@
     <Compile Include="Domain\Prepaid\AccountRegisterResult.cs" />
     <Compile Include="Domain\Prepaid\AccountsInCollectionResult.cs" />
     <Compile Include="Domain\DashboardItem.cs" />
+    <Compile Include="Domain\Prepaid\AgentToBillMerchants.cs" />
+    <Compile Include="Domain\Prepaid\CommissionReport.cs" />
     <Compile Include="Domain\Prepaid\FullcargaInvoiceDetail.cs" />
     <Compile Include="Domain\Prepaid\FullcargaPrepaidSummary.cs" />
     <Compile Include="Domain\Prepaid\FullCargaStatement.cs" />
