@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using ApiRestClient.Infrastructure;
+using Domain.Models;
 using Domain.Models.Exceptions;
 using DotNetOpenAuth.AspNet;
 using Microsoft.Web.WebPages.OAuth;
@@ -260,6 +261,27 @@ namespace VirtualOffice.Web.Controllers
 
                 if (!user.IsNull() && WebSecurity.Login(user.UserId.ToString(), Utils.ExternalLoginIdentifier))
                 {
+                    switch (user.UserCategory)
+                    {
+                        case "Merchant":
+                            user.UserCategory = "0";
+                            break;
+                        case "Agent":
+                            user.UserCategory = "1";
+                            break;
+                        case "Distributor":
+                            user.UserCategory = "2";
+                            break;
+                        case "AgentISO":
+                            user.UserCategory = "3";
+                            break;
+                        case "MerchantServiceUser":
+                            user.UserCategory = "4";
+                            break;
+                        default:
+                            user.UserCategory = "5";
+                            break;
+                    }
                     Session.Add(Utils.UserKey, user);
                     return RedirectToAction("Index", "Reports");                    
                 }

@@ -297,20 +297,8 @@ namespace VirtualOffice.Web.Controllers
         {
             var userModel = HttpContext.Session[Utils.UserKey] as UserModel;
 
-            switch (userModel.UserCategory) {
-                case "Merchant":
-                    return Category.Merchant;
-                case "Agent":
-                    return Category.Agent;
-                case "Distributor":
-                    return Category.Distributor;
-                case "AgentISO":
-                    return Category.AgentISO;
-                case "MerchantServiceUser":
-                    return Category.MerchantServiceUser;
-                default:
-                    return userModel != null ? (Category)int.Parse(userModel.UserCategory) : default(Category);
-            }
+            return userModel != null ? (Category)int.Parse(userModel.UserCategory) : default(Category);
+            
         }
 
         protected int GetLoggedAgentType()

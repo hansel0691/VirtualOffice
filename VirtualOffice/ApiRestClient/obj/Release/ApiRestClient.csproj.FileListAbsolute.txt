@@ -51,3 +51,21 @@ C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClien
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\obj\Release\ApiRestClient.csprojResolveAssemblyReference.cache
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\obj\Release\ApiRestClient.dll
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\ApiRestClient\obj\Release\ApiRestClient.pdb
+D:\Projects\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\ApiRestClient.dll.config
+D:\Projects\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\ApiRestClient.dll
+D:\Projects\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\ApiRestClient.pdb
+D:\Projects\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\Domain.dll
+D:\Projects\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\Newtonsoft.Json.dll
+D:\Projects\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\Ninject.dll
+D:\Projects\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\RestSharp.dll
+D:\Projects\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\System.Web.Http.dll
+D:\Projects\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\System.Net.Http.Formatting.dll
+D:\Projects\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\Domain.pdb
+D:\Projects\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\Newtonsoft.Json.xml
+D:\Projects\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\Ninject.xml
+D:\Projects\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\RestSharp.xml
+D:\Projects\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\System.Web.Http.xml
+D:\Projects\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\System.Net.Http.Formatting.xml
+D:\Projects\VirtualOffice\VirtualOffice\ApiRestClient\obj\Release\ApiRestClient.csprojResolveAssemblyReference.cache
+D:\Projects\VirtualOffice\VirtualOffice\ApiRestClient\obj\Release\ApiRestClient.dll
+D:\Projects\VirtualOffice\VirtualOffice\ApiRestClient\obj\Release\ApiRestClient.pdb

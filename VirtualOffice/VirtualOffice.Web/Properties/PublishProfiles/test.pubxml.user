@@ -6,41 +6,41 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Users\hgarcia\Desktop\deploy vo\psweb01inetpub$sites_devvirtualoffice.pinserve.com</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Users\hgarcia\Desktop\deploy\virtual</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>10/07/2015 09:24:39</publishTime>
     </File>
     <File Include="bin/ApiRestClient.dll">
-      <publishTime>10/13/2015 16:01:54</publishTime>
+      <publishTime>10/19/2015 17:03:01</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>10/13/2015 16:02:17</publishTime>
+      <publishTime>10/19/2015 17:03:21</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>10/13/2015 16:02:17</publishTime>
+      <publishTime>10/19/2015 17:03:21</publishTime>
     </File>
     <File Include="bin/AutoMapper.dll">
-      <publishTime>10/07/2015 09:28:36</publishTime>
+      <publishTime>10/19/2015 16:20:56</publishTime>
     </File>
     <File Include="bin/AutoMapper.Net4.dll">
-      <publishTime>10/07/2015 09:26:18</publishTime>
+      <publishTime>10/19/2015 16:20:56</publishTime>
     </File>
     <File Include="bin/ClassLibrary2.dll">
-      <publishTime>10/13/2015 16:01:56</publishTime>
+      <publishTime>10/19/2015 17:03:03</publishTime>
     </File>
     <File Include="bin/CoreData.dll">
       <publishTime>10/07/2015 09:24:39</publishTime>
     </File>
     <File Include="bin/Domain.Blackstone.dll">
-      <publishTime>10/13/2015 16:01:55</publishTime>
+      <publishTime>10/19/2015 17:03:01</publishTime>
     </File>
     <File Include="bin/Domain.dll">
-      <publishTime>10/13/2015 16:01:53</publishTime>
+      <publishTime>10/19/2015 17:03:00</publishTime>
     </File>
     <File Include="bin/Domain.Inventory.dll">
-      <publishTime>10/13/2015 16:01:55</publishTime>
+      <publishTime>10/19/2015 17:03:01</publishTime>
     </File>
     <File Include="bin/DotNetOpenAuth.AspNet.dll">
       <publishTime>10/07/2015 09:24:40</publishTime>
@@ -61,16 +61,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/07/2015 09:24:40</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
-      <publishTime>10/07/2015 09:26:22</publishTime>
+      <publishTime>10/19/2015 16:20:44</publishTime>
     </File>
     <File Include="bin/EntityFramework.SqlServer.dll">
-      <publishTime>10/07/2015 09:26:22</publishTime>
+      <publishTime>10/19/2015 16:20:44</publishTime>
     </File>
     <File Include="bin/Kendo.Mvc.dll">
       <publishTime>10/07/2015 09:24:40</publishTime>
     </File>
     <File Include="bin/LinFu.DynamicProxy.dll">
-      <publishTime>10/07/2015 09:26:33</publishTime>
+      <publishTime>10/19/2015 16:20:44</publishTime>
     </File>
     <File Include="bin/Microsoft.Data.Edm.dll">
       <publishTime>10/07/2015 11:22:18</publishTime>
@@ -91,19 +91,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/07/2015 09:24:40</publishTime>
     </File>
     <File Include="bin/Moq.dll">
-      <publishTime>10/07/2015 09:26:41</publishTime>
+      <publishTime>10/19/2015 16:20:57</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>10/07/2015 11:22:30</publishTime>
+      <publishTime>10/19/2015 16:20:55</publishTime>
     </File>
     <File Include="bin/Ninject.dll">
-      <publishTime>10/07/2015 09:26:46</publishTime>
+      <publishTime>10/19/2015 16:20:46</publishTime>
     </File>
     <File Include="bin/Ninject.Extensions.Interception.dll">
-      <publishTime>10/07/2015 09:26:46</publishTime>
+      <publishTime>10/19/2015 16:20:46</publishTime>
     </File>
     <File Include="bin/Ninject.Extensions.Interception.LinFu.dll">
-      <publishTime>10/07/2015 09:26:46</publishTime>
+      <publishTime>10/19/2015 16:20:46</publishTime>
     </File>
     <File Include="bin/Ninject.Web.Common.dll">
       <publishTime>10/07/2015 09:24:40</publishTime>
@@ -112,28 +112,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/07/2015 09:24:40</publishTime>
     </File>
     <File Include="bin/RestSharp.dll">
-      <publishTime>10/07/2015 09:26:47</publishTime>
+      <publishTime>10/19/2015 16:20:46</publishTime>
     </File>
     <File Include="bin/Services.dll">
-      <publishTime>10/13/2015 16:01:56</publishTime>
+      <publishTime>10/19/2015 17:03:02</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Extensions.dll">
-      <publishTime>10/07/2015 11:22:29</publishTime>
+      <publishTime>10/19/2015 16:20:52</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
       <publishTime>10/07/2015 09:24:40</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Primitives.dll">
-      <publishTime>10/07/2015 11:22:29</publishTime>
+      <publishTime>10/19/2015 16:20:52</publishTime>
     </File>
     <File Include="bin/System.Spatial.dll">
       <publishTime>10/07/2015 11:22:18</publishTime>
     </File>
     <File Include="bin/System.Web.Cors.dll">
-      <publishTime>10/07/2015 09:26:33</publishTime>
+      <publishTime>10/19/2015 16:20:44</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
-      <publishTime>10/07/2015 09:26:35</publishTime>
+      <publishTime>10/19/2015 16:20:45</publishTime>
     </File>
     <File Include="bin/System.Web.Http.dll">
       <publishTime>10/07/2015 09:24:11</publishTime>
@@ -145,28 +145,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/07/2015 09:24:40</publishTime>
     </File>
     <File Include="bin/System.Web.Mvc.dll">
-      <publishTime>10/07/2015 09:26:34</publishTime>
+      <publishTime>10/19/2015 16:20:44</publishTime>
     </File>
     <File Include="bin/System.Web.Optimization.dll">
       <publishTime>10/07/2015 09:24:40</publishTime>
     </File>
     <File Include="bin/System.Web.Razor.dll">
-      <publishTime>10/07/2015 09:26:34</publishTime>
+      <publishTime>10/19/2015 16:20:45</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Deployment.dll">
-      <publishTime>10/07/2015 09:26:35</publishTime>
+      <publishTime>10/19/2015 16:20:45</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.dll">
-      <publishTime>10/07/2015 09:26:35</publishTime>
+      <publishTime>10/19/2015 16:20:45</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Razor.dll">
-      <publishTime>10/07/2015 09:26:35</publishTime>
+      <publishTime>10/19/2015 16:20:45</publishTime>
     </File>
     <File Include="bin/VirtualOffice.Data.dll">
-      <publishTime>10/13/2015 16:01:55</publishTime>
+      <publishTime>10/19/2015 17:03:02</publishTime>
     </File>
     <File Include="bin/VirtualOffice.Web.dll">
-      <publishTime>10/13/2015 16:01:57</publishTime>
+      <publishTime>10/19/2015 17:03:05</publishTime>
     </File>
     <File Include="bin/WebActivatorEx.dll">
       <publishTime>10/07/2015 09:24:40</publishTime>
@@ -1210,7 +1210,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/07/2015 11:22:18</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>10/13/2015 16:02:09</publishTime>
+      <publishTime>10/19/2015 17:03:16</publishTime>
     </File>
     <File Include="Scripts/.DS_Store">
       <publishTime>10/07/2015 09:24:32</publishTime>
@@ -4684,7 +4684,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/08/2015 11:05:31</publishTime>
     </File>
     <File Include="Views/MyProfile/ChangePassword.cshtml">
-      <publishTime>10/07/2015 09:24:39</publishTime>
+      <publishTime>10/14/2015 11:25:52</publishTime>
     </File>
     <File Include="Views/MyProfile/HistoricIncidents.cshtml">
       <publishTime>10/07/2015 09:24:39</publishTime>
@@ -4702,7 +4702,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/07/2015 09:24:39</publishTime>
     </File>
     <File Include="Views/MyProfile/PersonalInfo.cshtml">
-      <publishTime>10/07/2015 09:28:35</publishTime>
+      <publishTime>10/14/2015 11:42:04</publishTime>
     </File>
     <File Include="Views/PartialViews/IncidentsGrid.cshtml">
       <publishTime>10/07/2015 09:24:39</publishTime>
@@ -4726,7 +4726,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/08/2015 11:05:31</publishTime>
     </File>
     <File Include="Views/PrepaidReports/FullcargaInvoiceDetails.cshtml">
-      <publishTime>10/08/2015 11:05:31</publishTime>
+      <publishTime>10/16/2015 14:32:31</publishTime>
     </File>
     <File Include="Views/PrepaidReports/FullcargaPrepaidSummary.cshtml">
       <publishTime>10/08/2015 11:05:31</publishTime>
@@ -4739,6 +4739,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Views/PrepaidReports/IppBrowser.cshtml">
       <publishTime>10/08/2015 11:05:31</publishTime>
+    </File>
+    <File Include="Views/PrepaidReports/MerchantBilling.cshtml">
+      <publishTime>10/15/2015 10:14:03</publishTime>
     </File>
     <File Include="Views/PrepaidReports/MerchantCommissions.cshtml">
       <publishTime>10/08/2015 11:05:31</publishTime>
@@ -4759,10 +4762,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/13/2015 16:01:28</publishTime>
     </File>
     <File Include="Views/PrepaidReports/SalesDetails.cshtml">
-      <publishTime>10/08/2015 11:05:31</publishTime>
+      <publishTime>10/16/2015 14:38:30</publishTime>
     </File>
     <File Include="Views/PrepaidReports/SalesSummary.cshtml">
       <publishTime>10/08/2015 11:05:31</publishTime>
+    </File>
+    <File Include="Views/PrepaidReports/SendCommissionReport.cshtml">
+      <publishTime>10/16/2015 10:11:13</publishTime>
     </File>
     <File Include="Views/PrepaidReports/TodayTransactions.cshtml">
       <publishTime>10/08/2015 11:05:31</publishTime>
@@ -4825,7 +4831,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/07/2015 09:24:39</publishTime>
     </File>
     <File Include="Views/Shared/MyProfileNavigation.cshtml">
-      <publishTime>10/07/2015 09:28:35</publishTime>
+      <publishTime>10/14/2015 09:31:34</publishTime>
     </File>
     <File Include="Views/Shared/ToolsNavigation.cshtml">
       <publishTime>10/07/2015 09:24:39</publishTime>
@@ -4837,7 +4843,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/07/2015 09:24:39</publishTime>
     </File>
     <File Include="Views/Shared/_NewUserLayout.cshtml">
-      <publishTime>10/12/2015 15:48:09</publishTime>
+      <publishTime>10/14/2015 16:06:43</publishTime>
     </File>
     <File Include="Views/Shared/_UserLayout.cshtml">
       <publishTime>10/07/2015 09:24:39</publishTime>
@@ -4870,7 +4876,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/07/2015 09:24:39</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/07/2015 11:22:18</publishTime>
+      <publishTime>10/19/2015 09:19:48</publishTime>
     </File>
   </ItemGroup>
 </Project>

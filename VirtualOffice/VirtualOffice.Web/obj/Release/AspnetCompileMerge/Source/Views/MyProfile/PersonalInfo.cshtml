@@ -1,4 +1,4 @@
-﻿@model VirtualOffice.Web.Models.ChangePasswordModel
+﻿@model VirtualOffice.Web.Models.ChangePersonalInfo
 @{
     Layout = "~/Views/Shared/_NewUserLayout.cshtml";
 }
@@ -12,19 +12,17 @@
     </div> -->
 
     <div class="page-header">
-        <h4>My Profile Change </h4>
+        <h4>My Profile / Personal Info </h4>
         <a class="btn text-primary pull-right" href="mailto:blackstone@blackstoneonline.com"><span class="fa fa-envelope"></span> Check my email</a>
     </div>
-
+    
     <div class="row">
-        <div class="col-xs-12 col-sm-3 col-md-2 col-sm-push-9 col-md-push-10" id="sidebar">
-
-        </div>
+        <div class="col-xs-12 col-sm-3 col-md-2 col-sm-push-9 col-md-push-10" id="sidebar"></div>
 
         <div class="col-xs-12 col-sm-8 col-md-10 col-sm-pull-4 col-md-pull-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4>Change Password</h4>
+                    <h4>Change My Personal Info</h4>
                 </div>
                 <div class="panel-body">
                     <div class="row">
@@ -37,39 +35,64 @@
                             <div id="myAccountFailedMessageConfirmation" class="collapse  alert alert-danger">
                                 <label id="myAccountFailedMessageText"></label>
                             </div>
-                            <div class="col-xs-12 col-sm-3 col-md-3">
-                                <div class="form-group">
-                                    @Html.TextBoxFor(model => model.NewPassword, new { @class = "form-control", @placeholder = "Enter your NEW Password", @type = "password" })
-                                    @Html.ValidationMessageFor(model => model.NewPassword)
+                            <div class="hidden-xs col-sm-5 col-md-5" >
+                                <div class="row form-group info">
+                                    @Html.Label("User")
+                                </div>
+                                <div class="row form-group info">
+                                    @Html.Label("Legal Name")
+                                </div>
+                                <div class="row form-group info">
+                                    @Html.Label("BDA")
+                                </div>
+                                <div class="row form-group info" >
+                                    @Html.Label("Email")
+                                </div>
+                                <div class="row form-group info" >
+                                    @Html.Label("Phone")
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-sm-3 col-md-3">
+                            <div class="col-xs-12 col-sm-5 col-md-5">
                                 <div class="form-group">
-                                    @Html.TextBoxFor(model => model.NewPassword, new { @class = "form-control", @placeholder = "Enter your NEW Password", @type = "password" })
-                                    @Html.ValidationMessageFor(model => model.NewPassword)
+                                    <span class="form-control">@Model.Id</span>
+                                </div>
+                                <div class="form-group">
+                                    <span class="form-control">@Model.UserName</span>
+                                </div>
+                                <div class="form-group">
+                                    <span class="form-control">@Model.DBA</span>
+                                </div>
+                                <div class="form-group">
+                                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Type your email", @type = "text" })
+                                    @Html.ValidationMessageFor(model => model.Email)
+                                </div>
+                                <div class="form-group">
+                                    @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", @placeholder = "Type your phone number", @type = "text" })
+                                    @Html.ValidationMessageFor(model => model.Phone)
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-sm-3 col-md-3">
-                                <div class="form-group">
-                                    @Html.TextBoxFor(model => model.NewPassword, new { @class = "form-control", @placeholder = "Enter your NEW Password", @type = "password" })
-                                    @Html.ValidationMessageFor(model => model.NewPassword)
+
+
+                            
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-3 col-md-3">
+                                    <button type="button" class="btn btn-secundary" onclick="ChangePersonalInfo()">Update Profile</button>
                                 </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-3 col-md-3">
-                                <div class="form-group">
-                                    @Html.TextBoxFor(model => model.ConfirmNewPassword, new { @class = "form-control", @placeholder = "Confirm your Password", @type = "password" })
-                                    @Html.ValidationMessageFor(model => model.ConfirmNewPassword)
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-3 col-md-3">
-                                <!-- <label class="control-label">&nbsp;</label> -->
-                                <button type="button" class="btn btn-secundary" onclick="ChangePassword()">Submit</button>
                             </div>
                         </form>
-                    </div> <!-- .row -->
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
+
+<style>
+    div.info{
+        text-align : right;
+        padding : 5px 15px;
+    }
+    span.form-control{
+        border : 0px ;
+    }
+</style>

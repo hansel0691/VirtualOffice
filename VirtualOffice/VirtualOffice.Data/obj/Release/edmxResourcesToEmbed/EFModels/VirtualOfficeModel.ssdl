@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="VirtualOfficeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="VirtualOfficeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="__MigrationHistory">
     <Key>
       <PropertyRef Name="MigrationId" />
@@ -852,6 +852,17 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
   <Function Name="sp_retrieve_spNames" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_retrieve_storedprocedure_columns" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="spname" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_Send_AgentToBillMerchants" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RundateI" Type="datetime" Mode="In" />
+    <Parameter Name="RundateF" Type="datetime" Mode="In" />
+    <Parameter Name="UniqueId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_Send_CommissionReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RundateI" Type="datetime" Mode="In" />
+    <Parameter Name="RundateF" Type="datetime" Mode="In" />
+    <Parameter Name="UniqueId" Type="int" Mode="In" />
+    <Parameter Name="isMerchant" Type="int" Mode="In" />
   </Function>
   <Function Name="SP_ShowAccountRegister" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="reportType" Type="int" Mode="In" />
