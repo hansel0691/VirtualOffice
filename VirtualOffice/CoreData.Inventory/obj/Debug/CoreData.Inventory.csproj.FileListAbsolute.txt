@@ -62,3 +62,19 @@ C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreData.Inv
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreData.Inventory\obj\Debug\CoreData.Inventory.csprojResolveAssemblyReference.cache
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreData.Inventory\obj\Debug\CoreData.Inventory.dll
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreData.Inventory\obj\Debug\CoreData.Inventory.pdb
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.Inventory\bin\Debug\CoreData.Inventory.dll.config
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.Inventory\bin\Debug\CoreData.Inventory.dll
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.Inventory\bin\Debug\CoreData.Inventory.pdb
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.Inventory\bin\Debug\Domain.dll
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.Inventory\bin\Debug\Domain.Inventory.dll
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.Inventory\bin\Debug\EntityFramework.dll
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.Inventory\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.Inventory\bin\Debug\Ninject.dll
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.Inventory\bin\Debug\Domain.Inventory.pdb
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.Inventory\bin\Debug\Domain.pdb
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.Inventory\bin\Debug\EntityFramework.xml
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.Inventory\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.Inventory\bin\Debug\Ninject.xml
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.Inventory\obj\Debug\CoreData.Inventory.csprojResolveAssemblyReference.cache
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.Inventory\obj\Debug\CoreData.Inventory.dll
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.Inventory\obj\Debug\CoreData.Inventory.pdb

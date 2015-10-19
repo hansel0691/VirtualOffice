@@ -108,3 +108,30 @@ C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\bin
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\obj\Debug\Services.dll
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Services\obj\Debug\Services.pdb
+D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\Services.dll.config
+D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\Services.dll
+D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\Services.pdb
+D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\Domain.Blackstone.dll
+D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\Domain.dll
+D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\Domain.Inventory.dll
+D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\EntityFramework.dll
+D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\LinFu.DynamicProxy.dll
+D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\Moq.dll
+D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\Ninject.dll
+D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\Ninject.Extensions.Interception.dll
+D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\Ninject.Extensions.Interception.LinFu.dll
+D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\Domain.Blackstone.pdb
+D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\Domain.Inventory.pdb
+D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\Domain.pdb
+D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\EntityFramework.xml
+D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\Moq.xml
+D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\Newtonsoft.Json.xml
+D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\Ninject.xml
+D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\Ninject.Extensions.Interception.xml
+D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\Ninject.Extensions.Interception.LinFu.xml
+D:\Projects\VirtualOffice\VirtualOffice\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+D:\Projects\VirtualOffice\VirtualOffice\Services\obj\Debug\Services.dll
+D:\Projects\VirtualOffice\VirtualOffice\Services\obj\Debug\Services.pdb

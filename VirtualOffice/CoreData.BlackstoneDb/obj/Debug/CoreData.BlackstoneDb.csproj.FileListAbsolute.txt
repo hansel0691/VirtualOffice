@@ -62,3 +62,19 @@ C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreData.Bla
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\obj\Debug\CoreData.BlackstoneDb.csprojResolveAssemblyReference.cache
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\obj\Debug\CoreData.BlackstoneDb.dll
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\obj\Debug\CoreData.BlackstoneDb.pdb
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\CoreData.BlackstoneDb.dll.config
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\CoreData.BlackstoneDb.dll
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\CoreData.BlackstoneDb.pdb
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\Domain.Blackstone.dll
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\Domain.dll
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\EntityFramework.dll
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\Ninject.dll
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\Domain.Blackstone.pdb
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\Domain.pdb
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\EntityFramework.xml
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\bin\Debug\Ninject.xml
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\obj\Debug\CoreData.BlackstoneDb.csprojResolveAssemblyReference.cache
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\obj\Debug\CoreData.BlackstoneDb.dll
+D:\Projects\VirtualOffice\VirtualOffice\CoreData.BlackstoneDb\obj\Debug\CoreData.BlackstoneDb.pdb

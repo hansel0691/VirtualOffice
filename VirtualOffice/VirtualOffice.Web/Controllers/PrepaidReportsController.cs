@@ -33,18 +33,26 @@ namespace VirtualOffice.Web.Controllers
         {
         }
 
+        private VirtualOfficeReportModel GetReportModel(string storeProcedureName, Type viewModelType, string printLink, Action<Dictionary<string, ColumnConfig>> columnConfigAction = null)
+        {
+            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), storeProcedureName, viewModelType);
+
+            if (columnConfigAction != null)
+                columnConfigAction(columnsConfig);
+
+            var model = GetReportModel(columnsConfig, printLink, storeProcedureName);
+
+            return model;
+        }
+
         public ActionResult PortfolioSummary(int? alertsMode, int status = -1)
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_report_portfolio_summary", typeof(PrepaidPortfolioSummaryResultViewModel));
-
-            columnsConfig["DistName"].Groupable = true;
-
             var printLink = "/PrepaidReports/PrintPortfolioSummary";
 
             if (!alertsMode.HasValue || alertsMode == 0)
                 printLink += "?alertsMode=1";
 
-            var model = GetReportModel(columnsConfig, printLink, "sp_report_portfolio_summary");
+            var model = GetReportModel("sp_report_portfolio_summary", typeof(PrepaidPortfolioSummaryResultViewModel), printLink, a => MarkColumnsAsGroupable(a, "DistName"));
 
             ViewBag.AlertsMode = alertsMode;
             ViewBag.StatusView = status;
@@ -55,13 +63,7 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult SalesSummary(DateTime? startDate = null, DateTime? endDate = null)
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_report_general_sales_summary", typeof(PrepaidSalesSummaryResultViewModel));
-
-            const string printLink = "/PrepaidReports/PrintSalesSummary";
-
-            AddLinksToPrepaidSalesColumnConfig(columnsConfig);
-
-            var model = GetReportModel(columnsConfig, printLink, "sp_report_general_sales_summary");
+            var model = GetReportModel("sp_report_general_sales_summary", typeof(PrepaidSalesSummaryResultViewModel), "/PrepaidReports/PrintSalesSummary", AddLinksToPrepaidSalesColumnConfig);
 
             if (startDate != null) model.DateRange.StartDate = (DateTime)startDate;
             if (endDate != null) model.DateRange.EndDate = (DateTime)endDate;
@@ -71,30 +73,14 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult AccountRegister()
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "SP_ShowAccountRegister", typeof(PrepaidAccountRegisterViewModel));
-
-            const string printLink = "/PrepaidReports/PrintAccountRegister";
-
-            AddLinksToPrepaidSalesColumnConfig(columnsConfig);
-
-            var model = GetReportModel(columnsConfig, printLink, "SP_ShowAccountRegister");
+            var model = GetReportModel("SP_ShowAccountRegister", typeof(PrepaidAccountRegisterViewModel), "/PrepaidReports/PrintAccountRegister", AddLinksToPrepaidSalesColumnConfig);
 
             return View(model);
         }
 
         public ActionResult SalesDetails(int merchantId)
         {
-            var dateRange = GetLastDateRangeInSession();
-
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_report_sales_details", typeof(PrepaidSalesDetailsResultViewModel));
-
-            const string printLink = "/PrepaidReports/PrintSalesDetails";
-
-            var model = GetReportModel(columnsConfig, printLink, "sp_report_sales_details");
-
-            model.DateRange = GetDateRange(dateRange.StartDate, dateRange.EndDate);
-
-            AddLinksToPrepaidInvoiceColumnConfig(columnsConfig);
+            var model = GetReportModel("sp_report_sales_details", typeof(PrepaidSalesDetailsResultViewModel), "/PrepaidReports/PrintSalesDetails", AddLinksToPrepaidInvoiceColumnConfig);
 
             ViewBag.MerchantId = merchantId;
 
@@ -103,12 +89,7 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult InvoiceDetails(int invoiceId)
         {
-
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_report_invoice_details", typeof(PrepaidInvoiceDetailsResultViewModel));
-
-            const string printLink = "/PrepaidReports/PrintInvoiceDetails";
-
-            var model = GetReportModel(columnsConfig, printLink, "sp_report_invoice_details");
+            var model = GetReportModel("sp_report_invoice_details", typeof(PrepaidInvoiceDetailsResultViewModel), "/PrepaidReports/PrintInvoiceDetails", AddLinksToPrepaidInvoiceColumnConfig);
 
             ViewBag.InvoiceId = invoiceId;
 
@@ -117,107 +98,66 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult TodayTransactions()
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "Sp_get_Today_Transactions", typeof(PrepaidTodayTransactionsViewModel));
-
-            MarkColumnsAsGroupable(columnsConfig, "Cashier_ID");
-
-            const string printLink = "/PrepaidReports/PrintTodayTransactions";
-
-            var model = GetReportModel(columnsConfig, printLink, "Sp_get_Today_Transactions");
+            var model = GetReportModel("Sp_get_Today_Transactions", typeof(PrepaidTodayTransactionsViewModel), "/PrepaidReports/PrintTodayTransactions", a => MarkColumnsAsGroupable(a, "Cashier_ID"));
 
             return View(model);
         }
 
         public ActionResult AccountsInCollection()
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "SP_accountsInCollection", typeof(PrepaidAccountsInCollectionViewModel));
-
-            const string printLink = "/PrepaidReports/PrintAccountInCollection";
-
-            var model = GetReportModel(columnsConfig, printLink, "SP_accountsInCollection");
+            var model = GetReportModel("SP_accountsInCollection", typeof(PrepaidAccountsInCollectionViewModel), "/PrepaidReports/PrintAccountInCollection", a => MarkColumnsAsGroupable(a, "Cashier_ID"));
 
             return View(model);
         }
 
         public ActionResult IppBrowser(DateTime? startDate = null, DateTime? endDate = null)
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "SP_ippBrowser", typeof(IppBrowserResultViewModel));
-
-            const string printLink = "/PrepaidReports/PrintIppBrowser";
-
-            var model = GetReportModel(columnsConfig, printLink, "SP_ippBrowser");
-
-            if (startDate != null)model.DateRange.StartDate = (DateTime)startDate;
-            if (endDate != null)  model.DateRange.EndDate = (DateTime)endDate;
+            var model = GetReportModel("SP_ippBrowser", typeof(IppBrowserResultViewModel), "/PrepaidReports/PrintIppBrowser");
+            
+            if (startDate != null) model.DateRange.StartDate = (DateTime)startDate;
+            if (endDate != null) model.DateRange.EndDate = (DateTime)endDate;
 
             return View(model);
         }
 
         public ActionResult MerchantCreditLimits()
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_GetMerchantCreditLimits", typeof(MerchantCreditLimitResultViewModel));
-
-            const string printLink = "/PrepaidReports/PrintMerchantCreditLimits";
-
-            var model = GetReportModel(columnsConfig, printLink, "sp_GetMerchantCreditLimits");
-
+            var model = GetReportModel("sp_GetMerchantCreditLimits", typeof(MerchantCreditLimitResultViewModel), "/PrepaidReports/PrintMerchantCreditLimits");
+            
             return View(model);
         }
 
         public ActionResult MerchantCommissions()
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_GetMerchantCommissionsProfile", typeof(MerchantCommissionsResultViewModel));
-
-            const string printLink = "/PrepaidReports/PrintMerchantComissions";
-
-            var model = GetReportModel(columnsConfig, printLink, "sp_GetMerchantCommissionsProfile");
-
-            var merchants = GetMerchants();
-
-            ViewBag.Merchants = merchants.ToList();
+            var model = GetReportModel("sp_GetMerchantCommissionsProfile", typeof(MerchantCommissionsResultViewModel), "/PrepaidReports/PrintMerchantComissions");
+            
+            ViewBag.Merchants = GetMerchants().ToList();
 
             return View(model);
         }
 
         public ActionResult MerchantStatements()
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "Sp_GetMerchantStatement", typeof(MerchantStatementResult));
-
-            const string printLink = "/PrepaidReports/PrintMerchantStatements";
-
-            var model = GetReportModel(columnsConfig, printLink, "Sp_GetMerchantStatement");
-
-            var merchants = GetMerchants();
-
-            ViewBag.Merchants = merchants.ToList();
+            var model = GetReportModel("Sp_GetMerchantStatement", typeof(MerchantStatementResult), "/PrepaidReports/PrintMerchantStatements");
+            
+            ViewBag.Merchants = GetMerchants().ToList();
 
             return View(model);
         }
 
         public ActionResult TransactionsSummary()
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "Sp_TransactionsSummary", typeof(TransactionSummaryViewModel));
-
-            MarkColumnsAsGroupable(columnsConfig, "Store", "Store_Name", "Product", "Type", "Cahier_id");
-
-            const string printLink = "/PrepaidReports/PrintTransactionsSummary";
-
-            var model = GetReportModel(columnsConfig, printLink, "Sp_TransactionsSummary");
-
+            var model = GetReportModel("Sp_TransactionsSummary", typeof(TransactionSummaryViewModel), "/PrepaidReports/PrintTransactionsSummary", a => MarkColumnsAsGroupable(a, "Store", "Store_Name", "Product", "Type", "Cahier_id"));
             return View(model);
         }
 
         public ActionResult FullcargaStatements()
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "SP_Fullcarga_Statetement", typeof(FullcargaStatementsViewModel));
-
-            const string printLink = "/PrepaidReports/PrintFullcargaStatement";
-
-            columnsConfig["Billed_Name"].Groupable = true;
-
-            AddLinksToFullCargaInvoiceColumnConfig(columnsConfig);
-
-            var model = GetReportModel(columnsConfig, printLink, "SP_Fullcarga_Statetement");
+            var model = GetReportModel("SP_Fullcarga_Statetement", typeof(FullcargaStatementsViewModel), "/PrepaidReports/PrintFullcargaStatement", a =>
+            {
+                MarkColumnsAsGroupable(a, "Billed_Name");
+                AddLinksToFullCargaInvoiceColumnConfig(a);
+            });
 
             return View(model);
 
@@ -225,12 +165,8 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult FullcargaInvoiceDetails(int invoiceId)
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "SP_Fullcarga_DetailInvoice", typeof(FullcargaInvoiceDetailViewModel));
-
-            const string printLink = "/PrepaidReports/PrintInvoiceDetails";
-
-            var model = GetReportModel(columnsConfig, printLink, "SP_Fullcarga_DetailInvoice");
-
+            var model = GetReportModel("SP_Fullcarga_DetailInvoice", typeof(FullcargaInvoiceDetailViewModel), "/PrepaidReports/PrintInvoiceDetails");
+            
             ViewBag.InvoiceId = invoiceId;
 
             return View(model);
@@ -238,52 +174,29 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult FullcargaPrepaidSummary()
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "SP_Fullcarga_PrepaidSalesSummary", typeof(FullcargaPrepaidSummaryViewModel));
-
-            const string printLink = "/PrepaidReports/PrintFullcargaPrepaidSummary";
-
-            MarkColumnsAsGroupable(columnsConfig, "Store_Name", "Type");
-
-            var model = GetReportModel(columnsConfig, printLink, "SP_Fullcarga_PrepaidSalesSummary");
-
+            var model = GetReportModel("SP_Fullcarga_PrepaidSalesSummary", typeof(FullcargaPrepaidSummaryViewModel), "/PrepaidReports/PrintFullcargaPrepaidSummary", a => MarkColumnsAsGroupable(a, "Store_Name", "Type"));
             return View(model);
         }
 
         private VirtualOfficeReportModel ReportAgentSummary()
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2", typeof(SalesAgentMerchantSalesResultViewModel));
-
-            const string printLink = "/PrepaidReports/PrintReportAgentSummary";
-
-            AddLinksToReportAgentSummaryColumnConfig(columnsConfig);
-
-            var model = GetReportModel(columnsConfig, printLink, "SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2");
-
+            var model = GetReportModel("SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2", typeof(SalesAgentMerchantSalesResultViewModel), "/PrepaidReports/PrintReportAgentSummary", AddLinksToReportAgentSummaryColumnConfig);
             return model;
         }
 
         public ActionResult MerchantBilling()
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "SP_Send_AgentToBillMerchants", typeof(AgentToBillMerchantsViewModel));
-
-            const string printLink = "/PrepaidReports/PrintMerchantBilling";
+            var model = GetReportModel("SP_Send_AgentToBillMerchants", typeof(AgentToBillMerchantsViewModel), "/PrepaidReports/PrintMerchantBilling");
             
-            var model = GetReportModel(columnsConfig, printLink, "SP_Send_AgentToBillMerchants");
-
             return View(model);
         }
 
         public ActionResult SendCommissionReport()
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "SP_Send_CommissionReport", typeof(CommissionReportViewModel));
-
-            const string printLink = "/PrepaidReports/PrintCommissionReport";
-
-            var model = GetReportModel(columnsConfig, printLink, "SP_Send_CommissionReport");
+            var model = GetReportModel("SP_Send_CommissionReport", typeof(CommissionReportViewModel), "/PrepaidReports/PrintCommissionReport");
 
             return View(model);
         }
-
 
         #endregion
 

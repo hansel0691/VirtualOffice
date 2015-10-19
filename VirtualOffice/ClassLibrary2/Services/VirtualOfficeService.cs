@@ -748,7 +748,7 @@ namespace VirtualOffice.Service.Services
             {
                 var allAccounts = _reportRepository.RunPrepaidPortfolioSummary(agentId);
 
-                var result = allAccounts.Count(a => a.cl.Status.ToLower().Equals("active"));
+                var result = allAccounts.Count(a => a.Status.ToLower().Equals("active"));
 
                 return result;
             }
