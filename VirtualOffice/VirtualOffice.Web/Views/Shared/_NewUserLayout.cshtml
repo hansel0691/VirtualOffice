@@ -133,8 +133,11 @@
                                 @if (userCategory != Category.Merchant)
                                 {
                                     <li><a href='@Url.Action("PortfolioSummary", "PrepaidReports")'><span class="badge"></span> Prepaid Accounts</a></li>
-                                    <li><a href='@Url.Action("AccountsInCollection", "PrepaidReports")'><span class="badge"></span> Accounts In Collection</a></li>
-                                    <li><a href='@Url.Action("ReportAgentSummary", "PrepaidReports", new { startDate =  "", endDate =  ""  })'><span class="badge"></span>General Sales Summary</a></li>
+                                    if (!user.IsFullcarga)
+                                    {
+                                        <li><a href='@Url.Action("AccountsInCollection", "PrepaidReports")'><span class="badge"></span> Accounts In Collection</a></li>
+                                        <li><a href='@Url.Action("ReportAgentSummary", "PrepaidReports", new {startDate = "", endDate = ""})'><span class="badge"></span>General Sales Summary</a></li>
+                                    }
                                     <li><a href='@Url.Action("MerchantBilling", "PrepaidReports")'><span class="badge"></span> Merchant Billing</a></li>
                                 }
                                 

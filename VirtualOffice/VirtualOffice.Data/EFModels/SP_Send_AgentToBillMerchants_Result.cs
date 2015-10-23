@@ -13,8 +13,8 @@ namespace VirtualOffice.Data.EFModels
     
     public partial class SP_Send_AgentToBillMerchants_Result
     {
-        public int DistISOID { get; set; }
-        public string DistISOName { get; set; }
+        public int DistID { get; set; }
+        public string DistName { get; set; }
         public Nullable<int> Order { get; set; }
         public string Phone { get; set; }
         public int InvID { get; set; }
