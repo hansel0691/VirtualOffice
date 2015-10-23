@@ -292,6 +292,6 @@ function reportAgentFilter() {
 }
 
 function getLocalDate(date) {
-    var utcDate = new Date(date.getTime() + date.getTimezoneOffset() * 60000)
+    var utcDate = new Date(date.getTime() + date.getTimezoneOffset() * 60000);
     return utcDate;
 }

@@ -91,7 +91,8 @@ namespace VirtualOffice.Web.Infrastructure
 
             Mapper.CreateMap<MerchantStatementResult, MerchantStatementResultViewModel>();
 
-            Mapper.CreateMap<ClassLibrary2.Domain.Prepaid.TransactionSummaryResult, TransactionSummaryViewModel>();
+            Mapper.CreateMap<ClassLibrary2.Domain.Prepaid.TransactionSummaryResult, TransactionSummaryViewModel>()
+                .ForMember(p => p.Date_Time, k => k.MapFrom(m => m.Date_Time == null ? new DateTime() : DateTime.SpecifyKind((DateTime)m.Date_Time, DateTimeKind.Utc)));
             Mapper.CreateMap<TransactionSummaryViewModel, ClassLibrary2.Domain.Prepaid.TransactionSummaryResult>();
 
             Mapper.CreateMap<FullCargaStatement, FullcargaStatementsViewModel>();

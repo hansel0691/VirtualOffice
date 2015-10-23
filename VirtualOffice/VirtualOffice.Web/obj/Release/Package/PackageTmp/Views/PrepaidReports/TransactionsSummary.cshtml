@@ -114,7 +114,8 @@
                                   }
 
                                   if (columnConfig.IsDate)
-                                      columnResult.Format("{0:M/d/yyyy h:mm:ss tt}");
+                                      columnResult = columnResult.ClientTemplate("#= kendo.toString(getLocalDate(Date_Time), 'M/d/yyyy h:mm:ss tt') #");
+                                      //columnResult.Format("{0:M/d/yyyy h:mm:ss tt}");
 
                                   else if (columnConfig.IsNumeric)
                                       columnResult.ClientFooterTemplate("#= kendo.format('{0:n2}', sum)#").Format("{0:n2}").HtmlAttributes(new { alignText = "right" });
