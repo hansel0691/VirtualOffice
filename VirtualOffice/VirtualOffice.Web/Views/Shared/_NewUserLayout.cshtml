@@ -157,7 +157,10 @@
                                     <li><a href='@Url.Action("FullcargaStatements", "PrepaidReports")'><span class="badge"></span> Statements</a></li>
                                     @*<li><a href='@Url.Action("FullcargaPrepaidSummary", "PrepaidReports")'><span class="badge"></span> Prepaid Sales Summary</a></li>*@
                                 }
-                                <li><a href='@Url.Action("SendCommissionReport", "PrepaidReports")'><span class="badge"></span> Profit Report</a></li>
+                                @if (userCategory != Category.Merchant)
+                                {
+                                    <li><a href='@Url.Action("SendCommissionReport", "PrepaidReports")'><span class="badge"></span> Profit Report</a></li>
+                                }
                             </ul>
                         </li>
                         <li class="@Utils.GetListItemClassByController(Url.Action("ChangePassword", "MyProfile"), Request.Url.ToString())">
