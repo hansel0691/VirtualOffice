@@ -1290,29 +1290,28 @@
     <FunctionImportMapping FunctionImportName="SP_Send_CommissionReport" FunctionName="VirtualOfficeModel.Store.SP_Send_CommissionReport">
       <ResultMapping>
         <ComplexTypeMapping TypeName="VirtualOfficeModel.SP_Send_CommissionReport_Result">
-          <ScalarProperty Name="Dist_ID" ColumnName="Dist ID" />
-          <ScalarProperty Name="Dist_Name" ColumnName="Dist Name" />
-          <ScalarProperty Name="ISO_ID" ColumnName="ISO ID" />
-          <ScalarProperty Name="ISO_Name" ColumnName="ISO Name" />
+          <ScalarProperty Name="DistID" ColumnName="DistID" />
+          <ScalarProperty Name="DistName" ColumnName="DistName" />
+          <ScalarProperty Name="ISOID" ColumnName="ISOID" />
+          <ScalarProperty Name="ISOName" ColumnName="ISOName" />
           <ScalarProperty Name="Order" ColumnName="Order" />
-          <ScalarProperty Name="Inv_ID" ColumnName="Inv ID" />
-          <ScalarProperty Name="Inv_Date" ColumnName="Inv Date" />
+          <ScalarProperty Name="InvID" ColumnName="InvID" />
+          <ScalarProperty Name="InvDate" ColumnName="InvDate" />
           <ScalarProperty Name="Store" ColumnName="Store" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Product" ColumnName="Product" />
           <ScalarProperty Name="Qty" ColumnName="Qty" />
-          <ScalarProperty Name="Denomination" ColumnName="Denomination" />
-          <ScalarProperty Name="Merchant_Discount__" ColumnName="Merchant Discount $" />
-          <ScalarProperty Name="Dist_Comm__" ColumnName="Dist Comm $" />
-          <ScalarProperty Name="ISO_Comm__" ColumnName="ISO Comm $" />
+          <ScalarProperty Name="MerchantDiscount" ColumnName="MerchantDiscount" />
+          <ScalarProperty Name="DistComm" ColumnName="DistComm" />
+          <ScalarProperty Name="ISOComm" ColumnName="ISOComm" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="SP_Send_AgentToBillMerchants" FunctionName="VirtualOfficeModel.Store.SP_Send_AgentToBillMerchants">
       <ResultMapping>
         <ComplexTypeMapping TypeName="VirtualOfficeModel.SP_Send_AgentToBillMerchants_Result">
-          <ScalarProperty Name="DistISOID" ColumnName="DistISOID" />
-          <ScalarProperty Name="DistISOName" ColumnName="DistISOName" />
+          <ScalarProperty Name="DistID" ColumnName="DistID" />
+          <ScalarProperty Name="DistName" ColumnName="DistName" />
           <ScalarProperty Name="Order" ColumnName="Order" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="InvID" ColumnName="InvID" />
@@ -1333,5 +1332,7 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_update_information" FunctionName="VirtualOfficeModel.Store.sp_update_information" />
+    <FunctionImportMapping FunctionImportName="sp_update_virtualoffice_commission" FunctionName="VirtualOfficeModel.Store.sp_update_virtualoffice_commission" />
   </EntityContainerMapping>
 </Mapping>

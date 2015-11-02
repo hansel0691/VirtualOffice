@@ -308,7 +308,6 @@ C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\obj\Debug\CoreService.csprojResolveAssemblyReference.cache
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\obj\Debug\CoreService.dll
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\obj\Debug\CoreService.pdb
-D:\Projects\VirtualOffice\VirtualOffice\CoreService\bin\AutoMapper.Net4.dll
 D:\Projects\VirtualOffice\VirtualOffice\CoreService\bin\CoreService.dll.config
 D:\Projects\VirtualOffice\VirtualOffice\CoreService\bin\CoreService.dll
 D:\Projects\VirtualOffice\VirtualOffice\CoreService\bin\CoreService.pdb
@@ -385,3 +384,4 @@ D:\Projects\VirtualOffice\VirtualOffice\CoreService\bin\Mono.Math.xml
 D:\Projects\VirtualOffice\VirtualOffice\CoreService\obj\Debug\CoreService.csprojResolveAssemblyReference.cache
 D:\Projects\VirtualOffice\VirtualOffice\CoreService\obj\Debug\CoreService.dll
 D:\Projects\VirtualOffice\VirtualOffice\CoreService\obj\Debug\CoreService.pdb
+D:\Projects\VirtualOffice\VirtualOffice\CoreService\bin\AutoMapper.Net4.dll

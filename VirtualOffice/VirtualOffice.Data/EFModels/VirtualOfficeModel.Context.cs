@@ -1293,5 +1293,55 @@ namespace VirtualOffice.Data.EFModels
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Send_AgentToBillMerchants_Result>("SP_Send_AgentToBillMerchants", rundateIParameter, rundateFParameter, uniqueIdParameter);
         }
+    
+        public virtual int sp_update_information(Nullable<int> parUniqueId, Nullable<int> parIsmerchant, string parEmail, string parPhone)
+        {
+            var parUniqueIdParameter = parUniqueId.HasValue ?
+                new ObjectParameter("parUniqueId", parUniqueId) :
+                new ObjectParameter("parUniqueId", typeof(int));
+    
+            var parIsmerchantParameter = parIsmerchant.HasValue ?
+                new ObjectParameter("parIsmerchant", parIsmerchant) :
+                new ObjectParameter("parIsmerchant", typeof(int));
+    
+            var parEmailParameter = parEmail != null ?
+                new ObjectParameter("parEmail", parEmail) :
+                new ObjectParameter("parEmail", typeof(string));
+    
+            var parPhoneParameter = parPhone != null ?
+                new ObjectParameter("parPhone", parPhone) :
+                new ObjectParameter("parPhone", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_update_information", parUniqueIdParameter, parIsmerchantParameter, parEmailParameter, parPhoneParameter);
+        }
+    
+        public virtual int sp_update_virtualoffice_commission(Nullable<int> parMerchant, Nullable<int> parProducSbt, Nullable<decimal> merchantcomm, Nullable<decimal> agentComm, Nullable<decimal> distComm, Nullable<decimal> isoComm)
+        {
+            var parMerchantParameter = parMerchant.HasValue ?
+                new ObjectParameter("parMerchant", parMerchant) :
+                new ObjectParameter("parMerchant", typeof(int));
+    
+            var parProducSbtParameter = parProducSbt.HasValue ?
+                new ObjectParameter("parProducSbt", parProducSbt) :
+                new ObjectParameter("parProducSbt", typeof(int));
+    
+            var merchantcommParameter = merchantcomm.HasValue ?
+                new ObjectParameter("merchantcomm", merchantcomm) :
+                new ObjectParameter("merchantcomm", typeof(decimal));
+    
+            var agentCommParameter = agentComm.HasValue ?
+                new ObjectParameter("AgentComm", agentComm) :
+                new ObjectParameter("AgentComm", typeof(decimal));
+    
+            var distCommParameter = distComm.HasValue ?
+                new ObjectParameter("DistComm", distComm) :
+                new ObjectParameter("DistComm", typeof(decimal));
+    
+            var isoCommParameter = isoComm.HasValue ?
+                new ObjectParameter("IsoComm", isoComm) :
+                new ObjectParameter("IsoComm", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_update_virtualoffice_commission", parMerchantParameter, parProducSbtParameter, merchantcommParameter, agentCommParameter, distCommParameter, isoCommParameter);
+        }
     }
 }

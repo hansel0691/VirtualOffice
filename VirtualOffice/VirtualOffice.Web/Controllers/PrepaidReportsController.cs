@@ -215,11 +215,17 @@ namespace VirtualOffice.Web.Controllers
 
                 var reportData = _virtualOfficeService.RunPrepaidPortfolioSummary(GetLoggedUserId());
 
-                
-                reportData = reportData.Where(c => 
-                    status == -1 ||
-                    (!c.suspended && c.closed == 0 && status == 1) ||
-                    (c.suspended || c.closed == 1 && status == 0));
+
+                switch (status)
+                {
+                    case 1:
+                        reportData = reportData.Where(c => c.UserStatus == UserStatus.Active);
+                        break;
+                    case 0:
+                        reportData = reportData.Where(c => c.UserStatus == UserStatus.Suspended || c.UserStatus == UserStatus.Close);
+                        break;
+                }
+
 
 
                 if (alertsMode.HasValue && alertsMode.Value != 0)//Filters just accounts with Alerts
@@ -227,7 +233,7 @@ namespace VirtualOffice.Web.Controllers
                     reportData =
                         reportData.Where(
                             c =>
-                                c.suspended || (c.closed == 1 && decimal.Parse(c.Balance, NumberStyles.Currency) > 0) ||
+                                c.UserStatus == UserStatus.Suspended || (c.UserStatus == UserStatus.Close && decimal.Parse(c.Balance, NumberStyles.Currency) > 0) ||
                                 c.compliance.HasValue && c.compliance.Value);
                 }
 

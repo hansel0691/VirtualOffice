@@ -1197,6 +1197,14 @@ namespace VirtualOffice.Service.Services
 
             return prepaidSummary > 0;
         }
+
+        public bool UpdatePersonalInfo(int id, string email, string phone, bool isMerchant)
+        {
+            var edited = _userRepository.UpdatePersonalInfo(id, email, phone, isMerchant);
+
+            return edited;
+        }
+
     }
 
     public class ItemValueUrl

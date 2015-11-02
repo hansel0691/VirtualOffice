@@ -1,6 +1,9 @@
 ﻿@model VirtualOffice.Web.Models.ChangePersonalInfo
 @{
     Layout = "~/Views/Shared/_NewUserLayout.cshtml";
+
+    var success = ViewBag.Success;
+    
 }
 @Html.Partial("MyProfileNavigation")
 
@@ -26,9 +29,9 @@
                 </div>
                 <div class="panel-body">
                     <div class="row">
-
-                        <form id="changePasswordForm">
-                            <div id="myAccountSuccessMessageConfirmation" class="collapse alert alert-success">
+                        @using (Html.BeginForm())
+                        {
+                           <div id="myAccountSuccessMessageConfirmation" class="collapse alert alert-success">
                                 <span class="glyphicon glyphicon-ok"></span>
                                 <label id="myAccountSuccessMessageText"></label>
                             </div>
@@ -41,9 +44,6 @@
                                 </div>
                                 <div class="row form-group info">
                                     @Html.Label("Legal Name")
-                                </div>
-                                <div class="row form-group info">
-                                    @Html.Label("BDA")
                                 </div>
                                 <div class="row form-group info" >
                                     @Html.Label("Email")
@@ -60,10 +60,7 @@
                                     <span class="form-control">@Model.UserName</span>
                                 </div>
                                 <div class="form-group">
-                                    <span class="form-control">@Model.DBA</span>
-                                </div>
-                                <div class="form-group">
-                                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Type your email", @type = "text" })
+                                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Type your email", @type = "email" })
                                     @Html.ValidationMessageFor(model => model.Email)
                                 </div>
                                 <div class="form-group">
@@ -76,10 +73,10 @@
                             
                             <div class="row">
                                 <div class="col-xs-6 col-sm-3 col-md-3">
-                                    <button type="button" class="btn btn-secundary" onclick="ChangePersonalInfo()">Update Profile</button>
+                                    <input type="submit" class="btn btn-secundary" value="Update Profile" />
                                 </div>
                             </div>
-                        </form>
+                        }
                     </div>
                 </div>
             </div>

@@ -987,6 +987,20 @@
       <Parameter Name="RundateF" Mode="In" Type="DateTime" />
       <Parameter Name="UniqueId" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="sp_update_information">
+      <Parameter Name="parUniqueId" Mode="In" Type="Int32" />
+      <Parameter Name="parIsmerchant" Mode="In" Type="Int32" />
+      <Parameter Name="parEmail" Mode="In" Type="String" />
+      <Parameter Name="parPhone" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_update_virtualoffice_commission">
+      <Parameter Name="parMerchant" Mode="In" Type="Int32" />
+      <Parameter Name="parProducSbt" Mode="In" Type="Int32" />
+      <Parameter Name="merchantcomm" Mode="In" Type="Decimal" />
+      <Parameter Name="AgentComm" Mode="In" Type="Decimal" />
+      <Parameter Name="DistComm" Mode="In" Type="Decimal" />
+      <Parameter Name="IsoComm" Mode="In" Type="Decimal" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="AccountsInCollection_Result">
     <Property Type="Int32" Name="agentID" Nullable="true" />
@@ -1691,25 +1705,24 @@
     <Property Type="String" Name="Cashier_ID" Nullable="true" MaxLength="20" />
   </ComplexType>
   <ComplexType Name="SP_Send_CommissionReport_Result">
-    <Property Type="Int32" Name="Dist_ID" Nullable="true" />
-    <Property Type="String" Name="Dist_Name" Nullable="false" MaxLength="40" />
-    <Property Type="Int32" Name="ISO_ID" Nullable="true" />
-    <Property Type="String" Name="ISO_Name" Nullable="false" MaxLength="40" />
+    <Property Type="Int32" Name="DistID" Nullable="true" />
+    <Property Type="String" Name="DistName" Nullable="false" MaxLength="40" />
+    <Property Type="Int32" Name="ISOID" Nullable="true" />
+    <Property Type="String" Name="ISOName" Nullable="false" MaxLength="40" />
     <Property Type="Int32" Name="Order" Nullable="true" />
-    <Property Type="Int32" Name="Inv_ID" Nullable="false" />
-    <Property Type="String" Name="Inv_Date" Nullable="true" MaxLength="19" />
+    <Property Type="Int32" Name="InvID" Nullable="false" />
+    <Property Type="String" Name="InvDate" Nullable="true" MaxLength="19" />
     <Property Type="Int32" Name="Store" Nullable="false" />
     <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="Product" Nullable="true" MaxLength="512" />
     <Property Type="Int32" Name="Qty" Nullable="true" />
-    <Property Type="Decimal" Name="Denomination" Nullable="true" Precision="19" />
-    <Property Type="Decimal" Name="Merchant_Discount__" Nullable="true" Precision="12" Scale="4" />
-    <Property Type="Decimal" Name="Dist_Comm__" Nullable="true" Precision="21" Scale="8" />
-    <Property Type="Decimal" Name="ISO_Comm__" Nullable="true" Precision="10" Scale="4" />
+    <Property Type="Decimal" Name="MerchantDiscount" Nullable="true" Precision="12" Scale="4" />
+    <Property Type="Decimal" Name="DistComm" Nullable="true" Precision="21" Scale="8" />
+    <Property Type="Decimal" Name="ISOComm" Nullable="true" Precision="10" Scale="4" />
   </ComplexType>
   <ComplexType Name="SP_Send_AgentToBillMerchants_Result">
-    <Property Type="Int32" Name="DistISOID" Nullable="false" />
-    <Property Type="String" Name="DistISOName" Nullable="true" MaxLength="40" />
+    <Property Type="Int32" Name="DistID" Nullable="false" />
+    <Property Type="String" Name="DistName" Nullable="false" MaxLength="40" />
     <Property Type="Int32" Name="Order" Nullable="true" />
     <Property Type="String" Name="Phone" Nullable="false" MaxLength="50" />
     <Property Type="Int32" Name="InvID" Nullable="false" />

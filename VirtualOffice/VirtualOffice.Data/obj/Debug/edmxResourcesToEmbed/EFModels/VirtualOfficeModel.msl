@@ -1332,5 +1332,7 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_update_information" FunctionName="VirtualOfficeModel.Store.sp_update_information" />
+    <FunctionImportMapping FunctionImportName="sp_update_virtualoffice_commission" FunctionName="VirtualOfficeModel.Store.sp_update_virtualoffice_commission" />
   </EntityContainerMapping>
 </Mapping>

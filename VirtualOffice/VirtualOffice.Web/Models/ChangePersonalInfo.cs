@@ -9,10 +9,10 @@ namespace VirtualOffice.Web.Models
     public class ChangePersonalInfo
     {
         [Required]
-        public string Id { get; set; }
-        [Required]
+        public int Id { get; set; }
         public string UserName { get; set; }
         public string DBA { get; set; }
+        [EmailAddress]
         public string Email { get; set; }
         public string Phone { get; set; }
     }

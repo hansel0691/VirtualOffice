@@ -198,7 +198,7 @@ namespace VirtualOffice.Web.Infrastructure
 
 
             Mapper.CreateMap<UserModel, ChangePersonalInfo>()
-                .ForMember(p => p.Id, k => k.MapFrom(m => m.UserId.ToString()))
+                .ForMember(p => p.Id, k => k.MapFrom(m => m.UserId))
                 .ForMember(p => p.UserName, k => k.MapFrom(m => m.Name))
                 .ForMember(p => p.DBA, k => k.MapFrom(m => ""))
                 .ForMember(p => p.Email, k => k.MapFrom(m => m.Email))

@@ -83,5 +83,12 @@ namespace VirtualOffice.Data.Repositories
 
         }
 
+        public bool UpdatePersonalInfo(int id, string email, string phone, bool isMerchant)
+        {
+            var editedUsers = VirtualOfficeContext.sp_update_information(id, isMerchant ? 1 : 0, email, phone);
+            
+            return editedUsers == 1;
+        }
+
     }
 }

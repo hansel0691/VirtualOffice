@@ -23,9 +23,14 @@ namespace VirtualOffice.Web.Controllers
         }
 
 
-        public ActionResult PersonalInfo()
+        public ActionResult PersonalInfo(bool success = true)
         {
             var user = Session[Utils.UserKey] as UserModel;
+
+            if (user.IsFullcarga)
+                return RedirectToAction("Index", "Reports");
+
+            ViewBag.Success = success;
 
             var model = user.MapTo<UserModel, ChangePersonalInfo>();
 
@@ -33,23 +38,25 @@ namespace VirtualOffice.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult ChangePersonalInfo(ChangePersonalInfo personalInfoModel)
+        public ActionResult PersonalInfo(ChangePersonalInfo personalInfoModel)
         {
             try
             {
+                if (!ModelState.IsValid)
+                    return RedirectToAction("PersonalInfo", new { success = false });
 
-                SetPersonalInfo(GetLoggedUserId(), personalInfoModel);
+                personalInfoModel.Id = GetLoggedUserId();
+                
+                var edited = SetPersonalInfo(personalInfoModel);
 
-                return Json(new { Result = "Success", Message = "Your password was successfully updated." });
+                if (!edited)
+                    throw new Exception();
+
+                return RedirectToAction("PersonalInfo", new { success = true, message = "Your inforfation have been changed successfully!" });
             }
             catch (Exception exception)
             {
-                if (exception is NotFoundException)
-                {
-                    return Json(new { Result = "Errors", Message = "Old Password is Incorrect." });
-                }
-
-                return Json(new { Result = "Success", Message = "There were errors while proccesing your request.Try again later please." });
+                return RedirectToAction("PersonalInfo", new { success = false, message = "There were errors while proccesing your request.Try again later please." });
             }
         }
 
@@ -279,12 +286,14 @@ namespace VirtualOffice.Web.Controllers
            var changePasswordResponse = _webClient.Execute<UserModel>(changePasswordModel, ApiUrls.API_KEY, ApiUrls.API_SECRET, getChangePasswordRequestInfo);
 
         }
-        private void SetPersonalInfo(int id, ChangePersonalInfo personalInfo)
+        
+        private bool SetPersonalInfo(ChangePersonalInfo personalInfo)
         {
-           //var changeInfo = Utils.GetRequestInfo(Method.POST, "/api/User/PersonalInfo");
+            var isMerchant = UserIsMerchant();
+            
+            var edited = this._virtualOfficeService.UpdatePersonalInfo(personalInfo.Id, personalInfo.Email, personalInfo.Phone, isMerchant);
 
-           //var changePasswordResponse = _webClient.Execute<UserModel>(changeInfo, ApiUrls.API_KEY, ApiUrls.API_SECRET, changeInfo);
-
+            return edited;
         }
 
         private void SetUpNewLead(NewLeadViewModel newLeadViewModel)

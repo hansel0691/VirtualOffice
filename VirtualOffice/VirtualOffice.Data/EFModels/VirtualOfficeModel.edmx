@@ -892,9 +892,23 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
           <Parameter Name="startDate" Type="datetime" Mode="In" />
           <Parameter Name="endDate" Type="datetime" Mode="In" />
         </Function>
+        <Function Name="sp_update_information" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="parUniqueId" Type="int" Mode="In" />
+          <Parameter Name="parIsmerchant" Type="int" Mode="In" />
+          <Parameter Name="parEmail" Type="varchar" Mode="In" />
+          <Parameter Name="parPhone" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="sp_update_user_password" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="user_id" Type="int" Mode="In" />
           <Parameter Name="password" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_update_virtualoffice_commission" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="parMerchant" Type="int" Mode="In" />
+          <Parameter Name="parProducSbt" Type="int" Mode="In" />
+          <Parameter Name="merchantcomm" Type="money" Mode="In" />
+          <Parameter Name="AgentComm" Type="money" Mode="In" />
+          <Parameter Name="DistComm" Type="money" Mode="In" />
+          <Parameter Name="IsoComm" Type="money" Mode="In" />
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Sp_WEB_POS_Merchant_GetTransactions_AgentGroup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -2101,6 +2115,20 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
             <Parameter Name="RundateI" Mode="In" Type="DateTime" />
             <Parameter Name="RundateF" Mode="In" Type="DateTime" />
             <Parameter Name="UniqueId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_update_information">
+            <Parameter Name="parUniqueId" Mode="In" Type="Int32" />
+            <Parameter Name="parIsmerchant" Mode="In" Type="Int32" />
+            <Parameter Name="parEmail" Mode="In" Type="String" />
+            <Parameter Name="parPhone" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_update_virtualoffice_commission">
+            <Parameter Name="parMerchant" Mode="In" Type="Int32" />
+            <Parameter Name="parProducSbt" Mode="In" Type="Int32" />
+            <Parameter Name="merchantcomm" Mode="In" Type="Decimal" />
+            <Parameter Name="AgentComm" Mode="In" Type="Decimal" />
+            <Parameter Name="DistComm" Mode="In" Type="Decimal" />
+            <Parameter Name="IsoComm" Mode="In" Type="Decimal" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="AccountsInCollection_Result">
@@ -4179,6 +4207,8 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_update_information" FunctionName="VirtualOfficeModel.Store.sp_update_information" />
+          <FunctionImportMapping FunctionImportName="sp_update_virtualoffice_commission" FunctionName="VirtualOfficeModel.Store.sp_update_virtualoffice_commission" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

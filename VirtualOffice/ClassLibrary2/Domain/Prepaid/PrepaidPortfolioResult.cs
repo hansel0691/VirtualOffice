@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VirtualOffice.Data.EFModels;
 
 namespace ClassLibrary2.Domain.Prepaid
 {
@@ -44,5 +45,45 @@ namespace ClassLibrary2.Domain.Prepaid
         public bool suspended { get; set; }
         public bool? compliance { get; set; }
         public int closed { get; set; }
+
+
+
+        public UserStatus UserStatus
+        {
+            get
+            {
+                if (closed == 0 && !suspended)
+                    return UserStatus.Active;
+                if (closed == 1) return UserStatus.Close;
+                return UserStatus.Suspended;
+            }
+            set
+            {
+                switch (value)
+                {
+                    case UserStatus.Close:
+                        closed = 1;
+                        suspended = false;
+                        break;
+                    case UserStatus.Active:
+                        closed = 0;
+                        suspended = false;
+                        break;
+                    default:
+                        closed = 0;
+                        suspended = true;
+                        break;
+                }
+            }
+        }
     }
+
+
+    public enum UserStatus
+    {
+        Active,
+        Suspended,
+        Close,
+    }
+
 }

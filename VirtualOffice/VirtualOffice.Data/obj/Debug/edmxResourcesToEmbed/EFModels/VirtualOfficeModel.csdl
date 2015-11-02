@@ -987,6 +987,20 @@
       <Parameter Name="RundateF" Mode="In" Type="DateTime" />
       <Parameter Name="UniqueId" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="sp_update_information">
+      <Parameter Name="parUniqueId" Mode="In" Type="Int32" />
+      <Parameter Name="parIsmerchant" Mode="In" Type="Int32" />
+      <Parameter Name="parEmail" Mode="In" Type="String" />
+      <Parameter Name="parPhone" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_update_virtualoffice_commission">
+      <Parameter Name="parMerchant" Mode="In" Type="Int32" />
+      <Parameter Name="parProducSbt" Mode="In" Type="Int32" />
+      <Parameter Name="merchantcomm" Mode="In" Type="Decimal" />
+      <Parameter Name="AgentComm" Mode="In" Type="Decimal" />
+      <Parameter Name="DistComm" Mode="In" Type="Decimal" />
+      <Parameter Name="IsoComm" Mode="In" Type="Decimal" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="AccountsInCollection_Result">
     <Property Type="Int32" Name="agentID" Nullable="true" />
