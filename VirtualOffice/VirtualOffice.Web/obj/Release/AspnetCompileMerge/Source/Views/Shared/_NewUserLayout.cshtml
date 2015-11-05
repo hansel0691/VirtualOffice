@@ -12,9 +12,17 @@
     var userCategory = user != null ? Utils.GetUserCategory(user.UserCategory) : default(Category);
 
     var reportsCounter = Utils.GetReportsCountByUser(user);
-    
-    var customerService = user.IsFullcarga? "1(888)684-7323" : "1 (800) 483-2891";
-    
+
+    var customerService = user.IsFullcarga ? "1(888)684-7323" : "1 (800) 483-2891";
+
+    var isFullCarga = Request.Url.ToString().ToLower().Contains("fcusa");
+    var color = "blue-logo";
+    var logoURL = "logo-virtualoffice.svg";
+    if (user.IsFullcarga)
+    {
+        color = "red-logo";
+        logoURL = "logo-fc-virtualoffice.svg";
+    }
 }
 <html lang="en">
 <head>
@@ -83,15 +91,10 @@
             <div class="row">
                 <div class="col-xs-6 col-sm-5 col-md-5 hidden-xs" id="logoArea">
                     <a class="logo" href='@Url.Action("Index","Reports")' title="App logo">
-                        <img src="../Images/logo-virtualoffice.svg" class="" style="width: 40px" />
-                        <strong class="h2"> Virtual Office</strong>
+                        <img src="../Images/@logoURL" class="" style="width: 40px" />
+                        <strong class="h2 @color"> Virtual Office</strong>
                     </a>
                 </div>
-                @*<div class="col-xs-12 col-sm-4 col-md-4" id="logoArea">
-                    <a class="logo" href="/" title="App logo">
-                        <img src="../Images/logo-virtualoffice.svg" class="" style="width: 40px"> <strong class="h2"> Virtual Office</strong>
-                    </a>
-                </div>*@
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
@@ -110,7 +113,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     @*<a class="navbar-brand app-logo"  title="App logo"><span class="app-name">Virtual <strong>Office</strong></span></a>*@
-                    <span class="visible-xs navbar-brand"><img src="../Images/logo-virtualoffice.svg" class="" style="width: 40px" /> Virtual Office</span>
+                    <span class="visible-xs navbar-brand"><img src="../Images/@logoURL" class="@color" style="width: 40px" /> Virtual Office</span>
                 </div>
 
                 <div class="collapse navbar-collapse" id="mainMenu">
@@ -157,7 +160,10 @@
                                     <li><a href='@Url.Action("FullcargaStatements", "PrepaidReports")'><span class="badge"></span> Statements</a></li>
                                     @*<li><a href='@Url.Action("FullcargaPrepaidSummary", "PrepaidReports")'><span class="badge"></span> Prepaid Sales Summary</a></li>*@
                                 }
-                                <li><a href='@Url.Action("SendCommissionReport", "PrepaidReports")'><span class="badge"></span> Profit Report</a></li>
+                                @if (userCategory != Category.Merchant)
+                                {
+                                    <li><a href='@Url.Action("SendCommissionReport", "PrepaidReports")'><span class="badge"></span> Profit Report</a></li>
+                                }
                             </ul>
                         </li>
                         <li class="@Utils.GetListItemClassByController(Url.Action("ChangePassword", "MyProfile"), Request.Url.ToString())">

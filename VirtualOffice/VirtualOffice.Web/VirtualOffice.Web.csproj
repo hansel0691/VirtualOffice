@@ -658,8 +658,10 @@
     <Content Include="Content\yamm.less" />
     <Content Include="Images\banners\01-banner-virtual-office.png" />
     <Content Include="Images\banners\02-banner-virtual-office.png" />
+    <Content Include="Images\banners\04-banner-virtual-office.png" />
     <Content Include="Images\icon-04.png" />
     <Content Include="Images\incidents.png" />
+    <Content Include="Images\logo-fc-virtualoffice.svg" />
     <Content Include="Images\logo-virtual-office-blackstone-horiz.svg" />
     <Content Include="Images\marketingMaterials.png" />
     <Content Include="Images\msAccounts.png" />
@@ -1950,6 +1952,7 @@
     <Content Include="Views\PrepaidReports\ReportAgentSummary.cshtml" />
     <Content Include="Views\PrepaidReports\MerchantBilling.cshtml" />
     <Content Include="Views\PrepaidReports\SendCommissionReport.cshtml" />
+    <Content Include="Views\PrepaidReports\UpdateMerchantCommission.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

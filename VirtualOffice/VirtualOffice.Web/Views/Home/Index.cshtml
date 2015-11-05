@@ -2,6 +2,10 @@
 
 @{
     ViewBag.Title = "Home Page";
+
+    var isFullCarga = Request.Url.ToString().ToLower().Contains("fcusa");
+
+    var bannerURL = isFullCarga ? "04-banner-virtual-office.png" : "02-banner-virtual-office.png";    
 }
 
 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-push-8">
@@ -65,28 +69,19 @@
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
-                    @*<div class="item active">
-                        <img src="../Images/banners/01-banner-virtual-office.png" alt="...">
-                   </div>*@
                     <div class="item active">
-                        <img src="../Images/banners/02-banner-virtual-office.png" alt="...">
-                        <!-- <div class="carousel-caption">...</div> -->
+                        <img src="../Images/banners/@bannerURL" alt="...">
                     </div>
                 </div>
 
                 <!-- Controls -->
-                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                @*<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
                 <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
                     <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
+                </a>*@
             </div>
-
-            @*<div class="">
-                <iframe width="480" height="327" src="http://www.youtube.com/embed/5yNXdpW33gU?autoplay=true"></iframe>
-            </div>*@
         </div> <!-- .col -->
     </div> <!-- .row -->
 </div>
-

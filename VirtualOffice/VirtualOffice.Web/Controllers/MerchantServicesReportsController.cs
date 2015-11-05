@@ -419,11 +419,9 @@ namespace VirtualOffice.Web.Controllers
         }
         private string GetMsComissionSummaryLink(string url, string columnName, bool isNumeric = false)
         {
-            var numericPrefix = isNumeric ? "$" : string.Empty;
-
             var mainPath = "/MerchantServicesReports/" + url;
 
-            var dataTemplate = "<a href='" + mainPath + string.Format("?agentId=#=code#&startDate=#=begindate#&endDate=#=enddate#") + "'>" + numericPrefix + "#=" + columnName + "#" + "</a>";
+            var dataTemplate = string.Format("<a href='{0}?agentId=#=code#&startDate=#=begindate#&endDate=#=enddate#' > {1} </a>", mainPath, isNumeric ? "$ #= kendo.format('{0:n2}', " + columnName + ")#" : "#= " + columnName + "#");
 
             return dataTemplate;
         }
@@ -446,7 +444,7 @@ namespace VirtualOffice.Web.Controllers
             if (merchantName)
                 dataTemplate = "<a href='" + mainPath + string.Format("?agentId=#=merchant_pk#&startDate=#=begindate#&endDate=#=enddate#&columnName=" + columnName) + "'>" + "#=" + columnName + "#" + "</a>";
             else
-                dataTemplate = "<a href='" + mainPath + string.Format("?agentId=#=merchant_pk#&startDate=#= kendo.toString(getLocalDate(datestamp), 'd') #&endDate=#= kendo.toString(getLocalDate(datestamp), 'd') #&columnName=" + columnName) + "'>" + "#=" + columnName + "#" + "</a>";
+                dataTemplate = "<a href='" + mainPath + string.Format("?agentId=#=merchant_pk#&startDate=#= kendo.toString(getLocalDate(datestamp), 'd') #&endDate=#= kendo.toString(getLocalDate(datestamp), 'd') #&columnName=" + columnName) + "'>" + "#= kendo.format('{0:n2}', " + columnName + ") #" + "</a>";
            
             return dataTemplate;   
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Linq;
 using System.Web;
@@ -906,11 +907,9 @@ namespace VirtualOffice.Web.Controllers
 
         private string GetPrepaidSalesLink(string url, string columnName, bool isNumeric = false)
         {
-            var numericPrefix = isNumeric ? "$" : string.Empty;
-
             var mainPath = "/PrepaidReports/" + url;
 
-            var dataTemplate = "<a href='" + mainPath + string.Format("?merchantId=#=mid#") + "'>" + numericPrefix + "#=" + columnName + "#" + "</a>";
+            var dataTemplate = string.Format("<a href='{1}?merchantId=#=mid#'>{0}</a>", isNumeric ? "$#= kendo.format('{0:n2}', " + columnName + ")#" : "#= " + columnName + "#", mainPath);
 
             return dataTemplate;
         }
@@ -936,22 +935,19 @@ namespace VirtualOffice.Web.Controllers
 
         private string GetFullcargaInvoiceLink(string url, string columnName, bool isNumeric = false)
         {
-            var numericPrefix = isNumeric ? "$" : string.Empty;
 
             var mainPath = "/PrepaidReports/" + url;
 
-            var dataTemplate = "<a href='" + mainPath + string.Format("?invoiceId=#=Invoice#") + "'>" + numericPrefix + "#=" + columnName + "#" + "</a>";
+            var dataTemplate = string.Format("<a href='{0}?invoiceId=#=Invoice#'>{1}</a>", mainPath, isNumeric ? "$#= kendo.format('{0:n2}', " + columnName + ")#" : "#= " + columnName + "#");
 
             return dataTemplate;
         }
 
         private string GetPrepaidInvoiceLink(string url, string columnName, bool isNumeric = false)
         {
-            var numericPrefix = isNumeric ? "$" : string.Empty;
-
             var mainPath = "/PrepaidReports/" + url;
 
-            var dataTemplate = "<a href='" + mainPath + string.Format("?invoiceId=#=inv_id#") + "'>" + numericPrefix + "#=" + columnName + "#" + "</a>";
+            var dataTemplate = string.Format("<a href='{0}?invoiceId=#=inv_id#'>{1}</a>", mainPath, isNumeric ? "$#= kendo.format('{0:n2}', " + columnName + ")#" : "#= " + columnName + "#");
 
             return dataTemplate;
         }
@@ -1134,5 +1130,38 @@ namespace VirtualOffice.Web.Controllers
             return View(model);
         }
 
+        public ActionResult UpdateMerchantCommission()
+        {
+            ViewBag.Clients = GetMerchants().ToList();
+            return View(new SearchUserModel());
+        }
+
+        public IEnumerable<SelectableClients> RunRunUpdateMerchantCommission()
+        {
+            var a = new List<SelectableClients>
+            {
+                new SelectableClients(){Name = "Hansel", Code = "0000", Type = "Distribuitor"},
+                new SelectableClients(){Name = "Yensy", Code = "0001", Type = "Merchant"}
+            };
+            return a;
+        }
+
+    }
+
+
+    public class SearchUserModel
+    {
+        [Display(Name = "Client Code")]
+        public string Code { get; set; }
+        
+        [Display(Name = "Client Name")]
+        public string Name { get; set; }
+    }
+
+    public class SelectableClients : SelectListItem
+    {
+        public string Code { get { return this.Value; } set { this.Value = value; } }
+        public string Name { get { return this.Text; } set { this.Text = value; } }
+        public string Type { get; set; }
     }
 }

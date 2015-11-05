@@ -9451,3 +9451,9 @@ table tbody tr td[aligntext=right] {
 div.k-grid#Reports div.k-grid-content{
     font-size: 12px;
 }
+.blue-logo {
+    color: #3776BD !important;
+}
+.red-logo {
+    color: #A23232 !important;
+}

@@ -2,6 +2,16 @@
 <!DOCTYPE html>
 @{
     var customerService = Request.Url.AbsoluteUri.Contains(Utils.FullCargaUrl) ? "1(888)684-7323" : "1 (800) 483-2891";
+
+    var isFullCarga = Request.Url.ToString().ToLower().Contains("fcusa");
+
+    var color = "blue-logo";
+    var logoURL = "logo-virtualoffice.svg";
+    if (isFullCarga)
+    {
+        color = "red-logo";
+        logoURL = "logo-fc-virtualoffice.svg";
+    }
 }
 <html lang="en">
     <head>
@@ -64,7 +74,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-md-4" id="logoArea">
                         <a class="logo" href="/" title="App logo">
-                            <img src="../Images/logo-virtualoffice.svg" class="" style="width: 40px"> <strong class="h2"> Virtual Office</strong>
+                            <img src="../Images/@logoURL" class="" style="width: 40px"> <strong class="h2 @color"> Virtual Office</strong>
                         </a>
                     </div>
                 </div>

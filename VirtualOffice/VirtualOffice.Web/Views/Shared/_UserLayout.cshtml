@@ -7,11 +7,24 @@
     
     IEnumerable<UserReportViewModel> reports = ViewBag.Reports;
 
+    var user = Session[Utils.LoggedUserKey] as UserModel;
+    
     var portfolioReports = reports!= null? reports.Where(rep => rep.Category == Utils.Portfolio): new List<UserReportViewModel>();
 
     var salesReports = reports != null ? reports.Where(rep => rep.Category == Utils.Sales) : new List<UserReportViewModel>();
 
     var additionalSalesReports = Utils.GetAdditionalSalesReport(this);
+
+    var isFullCarga = Request.Url.ToString().ToLower().Contains("fcusa");
+    
+    var color = "blue-logo";
+    var logoURL = "logo-virtualoffice.svg";
+    if (user.IsFullcarga)
+    {
+        color = "red-logo";
+        logoURL = "logo-fc-virtualoffice.svg";
+    }
+    
 }
 <html lang="en">
 <head>
@@ -78,7 +91,7 @@
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-4 hidden-xs" id="logoArea">
                     <a class="logo" href='@Url.Action("Index","Reports")' title="App logo">
-                        <img src="../Images/logo-virtualoffice.svg" class="" style="width: 40px"/> <strong class="h2"> Virtual Office</strong>
+                        <img src="../Images/@logoURL" class="" style="width: 40px"/> <strong class="h2 @color"> Virtual Office</strong>
                     </a>
                 </div>
                 @Html.Partial("_LoginPartial")
