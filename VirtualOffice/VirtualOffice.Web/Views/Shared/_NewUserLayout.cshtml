@@ -18,7 +18,7 @@
     var isFullCarga = Request.Url.ToString().ToLower().Contains("fcusa");
     var color = "blue-logo";
     var logoURL = "logo-virtualoffice.svg";
-    if (user.IsFullcarga)
+    if (!user.IsFullcarga)
     {
         color = "red-logo";
         logoURL = "logo-fc-virtualoffice.svg";
