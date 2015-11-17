@@ -7063,16 +7063,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/17/2015 12:49:20</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>08/28/2015 12:39:10</publishTime>
+      <publishTime>11/17/2015 14:13:07</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>06/10/2015 12:31:15</publishTime>
     </File>
     <File Include="Views/Shared/_NewUserLayout.cshtml">
-      <publishTime>08/28/2015 12:37:21</publishTime>
+      <publishTime>11/17/2015 14:13:07</publishTime>
     </File>
     <File Include="Views/Shared/_UserLayout.cshtml">
-      <publishTime>02/06/2015 17:08:32</publishTime>
+      <publishTime>11/17/2015 14:13:07</publishTime>
     </File>
     <File Include="Views/Tools/CompanyPolice.cshtml">
       <publishTime>08/17/2015 12:54:28</publishTime>

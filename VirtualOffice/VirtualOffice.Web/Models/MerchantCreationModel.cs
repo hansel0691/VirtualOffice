@@ -24,7 +24,6 @@ namespace VirtualOffice.Web.Models
         public string BusinessState { get; set; }
         [Required]
         public string BusinessZip { get; set; }
-        public string BusinessCountry { get; set; }
         [Required]
         public string GuarantorName { get; set; }
         public string GuarantorPhone { get; set; }

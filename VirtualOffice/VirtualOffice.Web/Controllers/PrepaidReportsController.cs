@@ -252,11 +252,9 @@ namespace VirtualOffice.Web.Controllers
 
                 if (alertsMode.HasValue && alertsMode.Value != 0)//Filters just accounts with Alerts
                 {
-                    reportData =
-                        reportData.Where(
-                            c =>
-                                c.UserStatus == UserStatus.Suspended || (c.UserStatus == UserStatus.Close && decimal.Parse(c.Balance, NumberStyles.Currency) > 0) ||
-                                c.compliance.HasValue && c.compliance.Value);
+                    reportData = reportData.Where( c => ((status == -1 || status == 2) && c.UserStatus == UserStatus.Suspended) ||
+                                ((status == -1 || status == 3) && (c.UserStatus == UserStatus.Close && decimal.Parse(c.Balance, NumberStyles.Currency) > 0)) ||
+                                ((status == -1 || status == 4) && c.compliance.HasValue && c.compliance.Value));
                 }
 
                 var mappedResult = reportData.MapTo<IEnumerable<PrepaidPortfolioResult>, IEnumerable<PrepaidPortfolioSummaryResultViewModel>>().ToList();

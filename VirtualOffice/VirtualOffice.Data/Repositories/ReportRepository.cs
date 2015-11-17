@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -330,6 +331,12 @@ namespace VirtualOffice.Data.Repositories
 
         #endregion
 
+        public sp_report_portfolio_summary_totals_Result ReportPortfolioSummaryTotals(int merchantId, DateTime startDate, DateTime endDate)
+        {
+            var result = VirtualOfficeContext.sp_report_portfolio_summary_totals(merchantId, startDate, endDate).First();
+
+            return result;
+        }
 
         public dynamic UpdateCreditLimit(int? merchantId, decimal? generalLimit, decimal? dailyLimit)
         {

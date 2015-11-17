@@ -1015,6 +1015,27 @@
       <Parameter Name="product_sbt" Mode="In" Type="Int32" />
       <Parameter Name="CommissionChange" Mode="In" Type="Decimal" />
     </FunctionImport>
+    <FunctionImport Name="sp_report_portfolio_summary_totals" ReturnType="Collection(VirtualOfficeModel.sp_report_portfolio_summary_totals_Result)">
+      <Parameter Name="agentID" Mode="In" Type="Int32" />
+      <Parameter Name="ini_date" Mode="In" Type="DateTime" />
+      <Parameter Name="end_date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Create_PosPendingMerchants">
+      <Parameter Name="BusinessName" Mode="In" Type="String" />
+      <Parameter Name="BusinessPhone" Mode="In" Type="String" />
+      <Parameter Name="BusinessFax" Mode="In" Type="String" />
+      <Parameter Name="DBA" Mode="In" Type="String" />
+      <Parameter Name="EmailAddress" Mode="In" Type="String" />
+      <Parameter Name="CellularNumber" Mode="In" Type="String" />
+      <Parameter Name="BusinessStreet" Mode="In" Type="String" />
+      <Parameter Name="BusinessCity" Mode="In" Type="String" />
+      <Parameter Name="BusinessState" Mode="In" Type="String" />
+      <Parameter Name="BusinessZip" Mode="In" Type="String" />
+      <Parameter Name="Merchant_MainContactPhone" Mode="In" Type="String" />
+      <Parameter Name="Merchant_MainContact" Mode="In" Type="String" />
+      <Parameter Name="Merchant_RepId" Mode="In" Type="Int32" />
+      <Parameter Name="RepName" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="AccountsInCollection_Result">
     <Property Type="Int32" Name="agentID" Nullable="true" />
@@ -1768,5 +1789,24 @@
     <Property Type="Single" Name="agentcomm" Nullable="false" />
     <Property Type="Single" Name="distcomm" Nullable="false" />
     <Property Type="Single" Name="isocomm" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_report_portfolio_summary_totals_Result">
+    <Property Type="Int32" Name="PrepaidAccounts_Actives" Nullable="false" />
+    <Property Type="Int32" Name="PrepaidAccounts_inactives" Nullable="false" />
+    <Property Type="Int32" Name="AccountsInAlert_incompliance" Nullable="false" />
+    <Property Type="Int32" Name="AccountsInAlert_suspended" Nullable="false" />
+    <Property Type="Int32" Name="AccountsInAlert_closedwithbalance" Nullable="false" />
+    <Property Type="Decimal" Name="GrSalesTOT" Nullable="false" Precision="19" />
+    <Property Type="Decimal" Name="BillPayment" Nullable="false" Precision="19" />
+    <Property Type="Decimal" Name="Running_Commission" Nullable="false" Precision="19" />
+    <Property Type="Decimal" Name="TodayTransactions" Nullable="false" Precision="19" />
+    <Property Type="Int32" Name="MSAccounts_Actives" Nullable="false" />
+    <Property Type="Int32" Name="MSAccounts_inactives" Nullable="false" />
+    <Property Type="Int32" Name="MSCommissionsVISAMCAME" Nullable="false" />
+    <Property Type="Int32" Name="MSCommissionsOthers" Nullable="false" />
+    <Property Type="Int32" Name="MSCommissionsTotal" Nullable="false" />
+    <Property Type="Int32" Name="MSApplicationsApproved" Nullable="false" />
+    <Property Type="Int32" Name="MSApplicationsPending" Nullable="false" />
+    <Property Type="Int32" Name="MSApplicationsCanceled" Nullable="false" />
   </ComplexType>
 </Schema>

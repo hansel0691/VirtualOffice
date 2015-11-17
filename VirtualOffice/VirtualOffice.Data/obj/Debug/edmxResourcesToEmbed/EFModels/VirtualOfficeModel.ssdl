@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="VirtualOfficeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="VirtualOfficeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="__MigrationHistory">
     <Key>
       <PropertyRef Name="MigrationId" />
@@ -602,6 +602,22 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
   <Function Name="sp_child_list_by_agent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="uniqueId" Type="int" Mode="In" />
   </Function>
+  <Function Name="SP_Create_PosPendingMerchants" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BusinessName" Type="varchar" Mode="In" />
+    <Parameter Name="BusinessPhone" Type="varchar" Mode="In" />
+    <Parameter Name="BusinessFax" Type="varchar" Mode="In" />
+    <Parameter Name="DBA" Type="varchar" Mode="In" />
+    <Parameter Name="EmailAddress" Type="varchar" Mode="In" />
+    <Parameter Name="CellularNumber" Type="varchar" Mode="In" />
+    <Parameter Name="BusinessStreet" Type="varchar" Mode="In" />
+    <Parameter Name="BusinessCity" Type="varchar" Mode="In" />
+    <Parameter Name="BusinessState" Type="varchar" Mode="In" />
+    <Parameter Name="BusinessZip" Type="varchar" Mode="In" />
+    <Parameter Name="Merchant_MainContactPhone" Type="varchar" Mode="In" />
+    <Parameter Name="Merchant_MainContact" Type="varchar" Mode="In" />
+    <Parameter Name="Merchant_RepId" Type="int" Mode="In" />
+    <Parameter Name="RepName" Type="varchar" Mode="In" />
+  </Function>
   <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
     <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -825,6 +841,11 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
   <Function Name="sp_report_portfolio_summary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="agentID" Type="int" Mode="In" />
     <Parameter Name="emptyRecord" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_report_portfolio_summary_totals" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="agentID" Type="int" Mode="In" />
+    <Parameter Name="ini_date" Type="datetime" Mode="In" />
+    <Parameter Name="end_date" Type="datetime" Mode="In" />
   </Function>
   <Function Name="sp_report_prepaid_portfolio_inAlert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="agentID" Type="int" Mode="In" />

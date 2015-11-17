@@ -1390,5 +1390,83 @@ namespace VirtualOffice.Data.EFModels
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_update_commission_virtualOffice", fatherIdParameter, childIdParameter, isChildMerchantParameter, product_sbtParameter, commissionChangeParameter);
         }
+    
+        public virtual ObjectResult<sp_report_portfolio_summary_totals_Result> sp_report_portfolio_summary_totals(Nullable<int> agentID, Nullable<System.DateTime> ini_date, Nullable<System.DateTime> end_date)
+        {
+            var agentIDParameter = agentID.HasValue ?
+                new ObjectParameter("agentID", agentID) :
+                new ObjectParameter("agentID", typeof(int));
+    
+            var ini_dateParameter = ini_date.HasValue ?
+                new ObjectParameter("ini_date", ini_date) :
+                new ObjectParameter("ini_date", typeof(System.DateTime));
+    
+            var end_dateParameter = end_date.HasValue ?
+                new ObjectParameter("end_date", end_date) :
+                new ObjectParameter("end_date", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_report_portfolio_summary_totals_Result>("sp_report_portfolio_summary_totals", agentIDParameter, ini_dateParameter, end_dateParameter);
+        }
+    
+        public virtual int SP_Create_PosPendingMerchants(string businessName, string businessPhone, string businessFax, string dBA, string emailAddress, string cellularNumber, string businessStreet, string businessCity, string businessState, string businessZip, string merchant_MainContactPhone, string merchant_MainContact, Nullable<int> merchant_RepId, string repName)
+        {
+            var businessNameParameter = businessName != null ?
+                new ObjectParameter("BusinessName", businessName) :
+                new ObjectParameter("BusinessName", typeof(string));
+    
+            var businessPhoneParameter = businessPhone != null ?
+                new ObjectParameter("BusinessPhone", businessPhone) :
+                new ObjectParameter("BusinessPhone", typeof(string));
+    
+            var businessFaxParameter = businessFax != null ?
+                new ObjectParameter("BusinessFax", businessFax) :
+                new ObjectParameter("BusinessFax", typeof(string));
+    
+            var dBAParameter = dBA != null ?
+                new ObjectParameter("DBA", dBA) :
+                new ObjectParameter("DBA", typeof(string));
+    
+            var emailAddressParameter = emailAddress != null ?
+                new ObjectParameter("EmailAddress", emailAddress) :
+                new ObjectParameter("EmailAddress", typeof(string));
+    
+            var cellularNumberParameter = cellularNumber != null ?
+                new ObjectParameter("CellularNumber", cellularNumber) :
+                new ObjectParameter("CellularNumber", typeof(string));
+    
+            var businessStreetParameter = businessStreet != null ?
+                new ObjectParameter("BusinessStreet", businessStreet) :
+                new ObjectParameter("BusinessStreet", typeof(string));
+    
+            var businessCityParameter = businessCity != null ?
+                new ObjectParameter("BusinessCity", businessCity) :
+                new ObjectParameter("BusinessCity", typeof(string));
+    
+            var businessStateParameter = businessState != null ?
+                new ObjectParameter("BusinessState", businessState) :
+                new ObjectParameter("BusinessState", typeof(string));
+    
+            var businessZipParameter = businessZip != null ?
+                new ObjectParameter("BusinessZip", businessZip) :
+                new ObjectParameter("BusinessZip", typeof(string));
+    
+            var merchant_MainContactPhoneParameter = merchant_MainContactPhone != null ?
+                new ObjectParameter("Merchant_MainContactPhone", merchant_MainContactPhone) :
+                new ObjectParameter("Merchant_MainContactPhone", typeof(string));
+    
+            var merchant_MainContactParameter = merchant_MainContact != null ?
+                new ObjectParameter("Merchant_MainContact", merchant_MainContact) :
+                new ObjectParameter("Merchant_MainContact", typeof(string));
+    
+            var merchant_RepIdParameter = merchant_RepId.HasValue ?
+                new ObjectParameter("Merchant_RepId", merchant_RepId) :
+                new ObjectParameter("Merchant_RepId", typeof(int));
+    
+            var repNameParameter = repName != null ?
+                new ObjectParameter("RepName", repName) :
+                new ObjectParameter("RepName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_Create_PosPendingMerchants", businessNameParameter, businessPhoneParameter, businessFaxParameter, dBAParameter, emailAddressParameter, cellularNumberParameter, businessStreetParameter, businessCityParameter, businessStateParameter, businessZipParameter, merchant_MainContactPhoneParameter, merchant_MainContactParameter, merchant_RepIdParameter, repNameParameter);
+        }
     }
 }

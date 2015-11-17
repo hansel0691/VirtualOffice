@@ -593,10 +593,12 @@ namespace VirtualOffice.Service.Services
 
                 var dashboardItems = dashBoardConfigs.MapTo<IEnumerable<DashboardConfig>, IEnumerable<DashboardItem>>().ToList();
 
+                var itemsCounts = runReports ? GetItemsCount(agentId) : null;
+
                 dashboardItems.ForEach(
                 dashboardConfig =>
                 {
-                    var result = GetDashboardConfigItems(dashboardConfig, agentId, false);
+                    var result = GetDashboardConfigItems(dashboardConfig, agentId, itemsCounts);
                     dashboardConfig.Items = result.Items;
                     dashboardConfig.ItemsUrl = result.UrlLinks;
                 });
@@ -611,6 +613,13 @@ namespace VirtualOffice.Service.Services
         #endregion
 
         #region Tools 
+
+        private sp_report_portfolio_summary_totals_Result GetItemsCount(int agentId)
+        {
+            var result = _reportRepository.ReportPortfolioSummaryTotals(agentId, new DateTime(2015, 10, 1), new DateTime(2015, 10, 31));
+
+            return result;
+        }
 
         public IEnumerable<Lead> GetAllLeads(int agentId, DateTime? startDate, DateTime? endDate)
         {
@@ -664,13 +673,13 @@ namespace VirtualOffice.Service.Services
 
         #region Aux Ops
 
-        private ItemValueUrl GetDashboardConfigItems(DashboardItem dashboardConfig, int agentId, bool runReports)
+        private ItemValueUrl GetDashboardConfigItems(DashboardItem dashboardConfig, int agentId, sp_report_portfolio_summary_totals_Result itemsCounts)
         {
             try
             {
                 var function = GetType().GetMethod(dashboardConfig.ItemsFunction);
 
-                var parameters = GetMethodParametersValues(function, agentId,runReports, dashboardConfig.Remark);
+                var parameters = GetMethodParametersValues(function, agentId, itemsCounts, dashboardConfig.Remark);
 
                 var items = function.Invoke(this, parameters) as ItemValueUrl;
 
@@ -684,18 +693,12 @@ namespace VirtualOffice.Service.Services
 
         #region Prepaid Accounts
 
-        #region Dashboard Items
 
-        private void AssignItemsCount(List<DashboardItem> dashboardConfig)
-        {
-
-        }
-
-        public ItemValueUrl GetPrepaidAccounts(int agentId, bool runReports)
+        public ItemValueUrl GetPrepaidAccounts(int agentId, sp_report_portfolio_summary_totals_Result itemsCounts)
         {
             
-                var prepaidActives = runReports? PrepaidAccountsActive(agentId): 0;
-                var prepaidInactive = runReports? PrepaidAccountsInactive(agentId): 0;
+                var prepaidActives = itemsCounts != null ? itemsCounts.PrepaidAccounts_Actives : 0;
+                var prepaidInactive = itemsCounts != null ? itemsCounts.PrepaidAccounts_inactives : 0;
 
                 var result = new Dictionary<string, string>
                 {
@@ -713,12 +716,12 @@ namespace VirtualOffice.Service.Services
             
         }
 
-        public ItemValueUrl GetPrepaidSalesSummary(int agentId, bool runReports, DateTime startDate, DateTime endDate)
+        public ItemValueUrl GetPrepaidSalesSummary(int agentId, sp_report_portfolio_summary_totals_Result itemsCounts, DateTime startDate, DateTime endDate)
         {
             
-                var prepaidSales = runReports? PrepaidSalesSummary(agentId, startDate, endDate): 0;
-                var ippTransactions = runReports? PrepaidBillPaymentSales(agentId,0,startDate, endDate): 0;
-                var commission = runReports? GetUserRunningComission(agentId): 0;
+                var prepaidSales = itemsCounts != null ? itemsCounts.GrSalesTOT : 0;
+                var ippTransactions = itemsCounts != null ? itemsCounts.BillPayment : 0;
+                var commission = itemsCounts != null ? itemsCounts.Running_Commission : 0;
 
                 var beginDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
                 
@@ -727,7 +730,7 @@ namespace VirtualOffice.Service.Services
                 {
                     {"Total Prepaid", prepaidSales.ToString("C")},
                     {"Total BillPayment", ippTransactions.ToString("C")},
-                    {"Running Commission", commission.HasValue? commission.Value.ToString("C"): "0"}
+                    {"Running Commission", commission.ToString("C")}
                 };
                 var resultUrls = new Dictionary<string, string>
                 {
@@ -739,10 +742,10 @@ namespace VirtualOffice.Service.Services
                 return new ItemValueUrl(result, resultUrls);
         }
 
-        public ItemValueUrl GetTodayTransactions(int agentId, bool runReports)
+        public ItemValueUrl GetTodayTransactions(int agentId, sp_report_portfolio_summary_totals_Result itemsCounts)
         {
           
-                var todayTransactions = runReports? TodayTransactions(agentId): 0;
+                var todayTransactions = itemsCounts != null ? itemsCounts.TodayTransactions : 0;
 
                 var result = new Dictionary<string, string>
                 {
@@ -757,14 +760,12 @@ namespace VirtualOffice.Service.Services
   
         }
 
-        public ItemValueUrl GetAccountsWithAlerts(int agentId, bool runReports)
+        public ItemValueUrl GetAccountsWithAlerts(int agentId, sp_report_portfolio_summary_totals_Result itemsCounts)
         {
            
-                var allAccounts = runReports? _reportRepository.RunPrepaidPortfolioSummary(agentId).ToList(): new List<sp_report_portfolio_summary_Result>();
-
-                var accountsInCompliance = allAccounts.Count(c => (c.compliance.HasValue && c.compliance.Value) && (c.closed == 0 && c.compliance == true || (c.closed == 0 && c.suspended)));
-                var suspendedAccounts = allAccounts.Count(c => c.closed == 0 && c.suspended);
-                var closedAccountsWithBalance = allAccounts.Count(c => c.closed == 1 && decimal.Parse(c.Balance, NumberStyles.Currency) > 0);
+                var accountsInCompliance = itemsCounts != null ? itemsCounts.AccountsInAlert_incompliance : 0;
+                var suspendedAccounts = itemsCounts != null ? itemsCounts.AccountsInAlert_suspended: 0;
+                var closedAccountsWithBalance = itemsCounts != null ? itemsCounts.AccountsInAlert_closedwithbalance : 0;
 
                 var result = new Dictionary<string, string>
                 {
@@ -774,9 +775,9 @@ namespace VirtualOffice.Service.Services
                 };
                 var resultUrls = new Dictionary<string, string>
                 {
-                    {"In Compliance", ""},
-                    {"Suspended", ""},
-                    {"Closed with Balance", ""}
+                    {"In Compliance", "/PrepaidReports/PortfolioSummary?alertsMode=1&status=4"},
+                    {"Suspended", "/PrepaidReports/PortfolioSummary?alertsMode=1&status=2"},
+                    {"Closed with Balance", "/PrepaidReports/PortfolioSummary?alertsMode=1&status=3"}
                 };
 
                 return new ItemValueUrl(result, resultUrls);
@@ -785,116 +786,12 @@ namespace VirtualOffice.Service.Services
 
         #endregion
 
-        #region Dashboard Data
-        private int PrepaidAccountsActive(int agentId)
-        {
-            try
-            {
-                var allAccounts = _reportRepository.RunPrepaidPortfolioSummary(agentId);
-
-                var result = allAccounts.Count(a => a.Status.ToLower().Equals("active"));
-
-                return result;
-            }
-            catch (Exception exception)
-            {
-                return 0;
-            }
-        }
-
-        private int PrepaidAccountsInactive(int agentId)
-        {
-            try
-            {
-                var allAccounts = _reportRepository.RunPrepaidPortfolioSummary(agentId);
-
-                var result = allAccounts.Count(a => !a.Status.ToLower().Equals("active"));
-
-                return result;
-            }
-            catch (Exception exception)
-            {
-                return 0;
-            }
-        }
-
-        private decimal PrepaidSalesSummary(int agentId, DateTime startDate, DateTime endDate)
-        {
-            try
-            {
-                var prepaidSalesSummary = RunPrepaidSalesSummary(agentId, startDate, endDate);
-
-                var total = prepaidSalesSummary.Sum(s => decimal.Parse(s.GrSalesTOT, NumberStyles.Currency));
-
-                return total;
-            }
-            catch (Exception exception)
-            {
-                return 0;
-            }
-        }
-
-        private decimal? GetUserRunningComission(int agentId)
-        {
-            try
-            {
-                var agents = agentId == 0
-               ? _userRepository.GetAllAgentUsers()
-               : new List<get_user_Result> { _userRepository.GetUser(agentId) };
-
-                var total = agents.Sum(a => a.comission);
-
-                return total;
-            }
-            catch (Exception exception)
-            {
-                return 0;
-            }
-        }
-
-        private decimal PrepaidBillPaymentSales(int agentId, int merchantId,  DateTime startDate, DateTime endDate)
-        {
-            try
-            {
-                var billPaymentSales = RunIppBrowser(agentId, merchantId, startDate, endDate);
-
-                var total = billPaymentSales.Sum(s => s.amount);
-
-                return total;
-            }
-            catch (Exception exception)
-            {
-                return 0;
-            }
-        }
-
-        private decimal TodayTransactions(int agentId, int? merchantId = null)
-        {
-            try
-            {
-                var transactions = RunTodayTransactions(agentId, merchantId);
-
-                var total = transactions.Sum(s => decimal.Parse(s.amount, NumberStyles.Currency));
-
-                return total;
-            }
-            catch (Exception exception)
-            {
-                return 0;
-            }
-        }
-
-        #endregion
-        #endregion
-
         #region M.S Accounts
 
-        #region Dashboard Items
-
-        public ItemValueUrl GetMerchantServicesAccounts(int agentId, bool runReports)
+        public ItemValueUrl GetMerchantServicesAccounts(int agentId, sp_report_portfolio_summary_totals_Result itemsCounts)
         {
-            var prepaidActives = runReports? MerchantServicesAccountsActive(agentId): 0;
-            var prepaidInactive = runReports? MerchantServicesAccountsInactive(agentId): 0;
+            var prepaidActives = itemsCounts != null ? itemsCounts.MSAccounts_Actives : 0;
+            var prepaidInactive = itemsCounts != null ? itemsCounts.MSAccounts_inactives : 0;
 
             var result = new Dictionary<string, string>
             {
@@ -910,13 +807,11 @@ namespace VirtualOffice.Service.Services
             return new ItemValueUrl(result, resultUrls);
         }
 
-        public ItemValueUrl GetMerchantServicesSalesSummary(int agentId, bool runReports, DateTime startDate, DateTime endDate)
+        public ItemValueUrl GetMerchantServicesSalesSummary(int agentId, sp_report_portfolio_summary_totals_Result itemsCounts, DateTime startDate, DateTime endDate)
         {
-            var salesSummary = runReports? RunMsComissionSummary(agentId, startDate, endDate): new List<MerchantServices.MsComissionSummaryResult>();
-
-            var commissionsVM = salesSummary.Sum(c => decimal.Parse(c.vmc_commission, NumberStyles.Currency));
-            var commissionsOthers = salesSummary.Sum(c => decimal.Parse(c.oth_commission, NumberStyles.Currency));
-            var commissionsTotals = salesSummary.Sum(c => decimal.Parse(c.tot_commission, NumberStyles.Currency));
+            var commissionsVM = itemsCounts != null ? itemsCounts.MSCommissionsVISAMCAME : 0;
+            var commissionsOthers = itemsCounts != null ? itemsCounts.MSCommissionsOthers : 0;
+            var commissionsTotals = itemsCounts != null ? itemsCounts.MSCommissionsTotal : 0;
 
             var result = new Dictionary<string, string>
             {
@@ -935,11 +830,11 @@ namespace VirtualOffice.Service.Services
             return new ItemValueUrl(result, resultUrls);
         }
 
-        public ItemValueUrl GetMerchantServicesApplicationStatus(int agentId, bool runReports)
+        public ItemValueUrl GetMerchantServicesApplicationStatus(int agentId, sp_report_portfolio_summary_totals_Result itemsCounts)
         {
-            var approvedAccounts = runReports? _reportRepository.RunMerchantServicesPortfolioByAccountsType(agentId, 0).Count(): 0;
-            var pendingAccounts = runReports? _reportRepository.RunMerchantServicesPortfolioByAccountsType(agentId, 1).Count(): 0;
-            var cancelledAccounts = runReports? _reportRepository.RunMerchantServicesPortfolioByAccountsType(agentId, 2).Count(): 0;
+            var approvedAccounts = itemsCounts != null ? itemsCounts.MSApplicationsApproved : 0;
+            var pendingAccounts = itemsCounts != null ? itemsCounts.MSApplicationsPending : 0;
+            var cancelledAccounts = itemsCounts != null ? itemsCounts.MSApplicationsCanceled : 0;
 
             var result = new Dictionary<string, string>
             {
@@ -959,107 +854,7 @@ namespace VirtualOffice.Service.Services
 
         #endregion
 
-        #region Dashboard Data
-        private int MerchantServicesAccountsActive(int agentId)
-        {
-            try
-            {
-                var allAccounts = _reportRepository.RunMerchantServicesPortfolioSummary(agentId);
-
-                var result = allAccounts.Count(a => a.Status == "1");
-
-                return result;
-            }
-            catch (Exception exception)
-            {
-                return 0;
-            }
-        }
-
-        private int MerchantServicesAccountsInactive(int agentId)
-        {
-            try
-            {
-                var allAccounts = _reportRepository.RunMerchantServicesPortfolioSummary(agentId);
-
-                var result = allAccounts.Count(a => a.Status != "1");
-
-                return result;
-            }
-            catch (Exception exception)
-            {
-                return 0;
-            }
-        }
-
-        private decimal MSCommissionVisaMc(int agentId, DateTime startDate, DateTime endDate)
-        {
-            try
-            {
-                var msCommissionVM = RunMsComissionSummary(agentId, startDate, endDate);
-
-                var total = msCommissionVM.Sum(s => decimal.Parse(s.vmc_commission, NumberStyles.Currency));
-
-                return total;
-            }
-            catch (Exception exception)
-            {
-                return 0;
-            }
-        }
-
-        private decimal MSCommissionAmex(int agentId, DateTime startDate, DateTime endDate)
-        {
-            try
-            {
-                var msCommissionVM = RunMsComissionSummary(agentId, startDate, endDate);
-
-                var total = msCommissionVM.Sum(s => decimal.Parse(s.amex_commission, NumberStyles.Currency));
-
-                return total;
-
-            }
-            catch (Exception exception)
-            {
-                return 0;
-            }
-        }
-        private decimal MSCommissionOthers(int agentId, DateTime startDate, DateTime endDate)
-        {
-            try
-            {
-                var msCommissionVM = RunMsComissionSummary(agentId, startDate, endDate);
-
-                var total = msCommissionVM.Sum(s => decimal.Parse(s.oth_commission, NumberStyles.Currency));
-
-                return total;
-            }
-            catch (Exception exception)
-            {
-                return 0;
-            }
-        }
-
-        private decimal MSCommissionTotals(int agentId, DateTime startDate, DateTime endDate)
-        {
-            try
-            {
-                var msCommissionVM = RunMsComissionSummary(agentId, startDate, endDate);
-
-                var total = msCommissionVM.Sum(s => decimal.Parse(s.tot_commission, NumberStyles.Currency));
-
-                return total;
-            }
-            catch (Exception exception)
-            {
-                return 0;
-            }
-        }
-
-        #endregion
-        #endregion
-
-        private object[] GetMethodParametersValues(MethodInfo function, int agentId, bool runReports, string remark)
+        private object[] GetMethodParametersValues(MethodInfo function, int agentId, sp_report_portfolio_summary_totals_Result itemsCounts, string remark)
         {
             var functionParameters = function.GetParameters();
 
@@ -1068,7 +863,7 @@ namespace VirtualOffice.Service.Services
             if(functionParameters.Any(p=> p.ParameterType == typeof(int)))
                 paramsResult.Add(agentId);
 
-            paramsResult.Add(runReports);
+            paramsResult.Add(itemsCounts);
 
             if (functionParameters.Any(p => p.ParameterType == typeof (DateTime)))
             {
@@ -1244,7 +1039,6 @@ namespace VirtualOffice.Service.Services
             return prepaidSummary;
         }
 
-
         public bool UpdatePrepaidAcountStatus(int? merchantId, int status)
         {
             var prepaidSummary = _reportRepository.UpdatePrepaidAcountStatus(merchantId, status);
@@ -1261,9 +1055,9 @@ namespace VirtualOffice.Service.Services
             return edited;
         }
 
-        public bool CreatePosPendingMerchants(int id, string email, string phone, bool isMerchant)
+        public bool CreatePosPendingMerchants(string businessName, string businessPhone, string businessFax, string dba, string emailAddress, string cellularNumber, string businessStreet, string businessCity, string businessState, string businessZip, string merchant_MainContactPhone, string merchant_MainContact, int merchant_RepId, string repName)
         {
-            var edited = _userRepository.UpdatePersonalInfo(id, email, phone, isMerchant);
+            var edited = _userRepository.CreatePosPendingMerchants(businessName, businessPhone, businessFax, dba, emailAddress, cellularNumber, businessStreet, businessCity, businessState, businessZip, merchant_MainContactPhone, merchant_MainContact, merchant_RepId, repName);
 
             return edited;
         }

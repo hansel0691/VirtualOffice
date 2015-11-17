@@ -64,7 +64,6 @@ D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Debug\System.Net.Http.
 D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Debug\System.Web.Http.dll
 D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Debug\System.Web.Http.WebHost.dll
 D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Debug\VirtualOffice.Data.dll
-D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Debug\EntityFramework.dll
 D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Debug\VirtualOffice.Data.pdb
 D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Debug\AutoMapper.xml
 D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Debug\Newtonsoft.Json.xml

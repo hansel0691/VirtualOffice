@@ -209,6 +209,9 @@
     <Compile Include="EFModels\sp_report_portfolio_summary_Result.cs">
       <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EFModels\sp_report_portfolio_summary_totals_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="EFModels\sp_report_prepaid_portfolio_inAlert_Result.cs">
       <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
     </Compile>

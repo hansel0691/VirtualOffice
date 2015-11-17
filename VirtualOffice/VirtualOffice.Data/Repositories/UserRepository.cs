@@ -90,5 +90,13 @@ namespace VirtualOffice.Data.Repositories
             return editedUsers == 1;
         }
 
+        public bool CreatePosPendingMerchants(string businessName, string businessPhone, string businessFax, string dba, string emailAddress, string cellularNumber, string businessStreet, string businessCity, string businessState, string businessZip, string merchant_MainContactPhone, string merchant_MainContact, int merchant_RepId, string repName)
+        {
+            var editedUsers = VirtualOfficeContext.SP_Create_PosPendingMerchants(businessName, businessPhone, businessFax, dba, emailAddress, cellularNumber, businessStreet, businessCity, businessState, businessZip, merchant_MainContactPhone, merchant_MainContact, merchant_RepId, repName);
+
+            return editedUsers == 1;
+        }
+
+
     }
 }

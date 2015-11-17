@@ -4858,7 +4858,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/07/2015 09:24:39</publishTime>
     </File>
     <File Include="Views/Shared/_NewUserLayout.cshtml">
-      <publishTime>11/10/2015 14:52:45</publishTime>
+      <publishTime>11/17/2015 09:28:39</publishTime>
     </File>
     <File Include="Views/Shared/_UserLayout.cshtml">
       <publishTime>11/10/2015 14:52:48</publishTime>

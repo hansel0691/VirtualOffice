@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="VirtualOfficeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="VirtualOfficeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="__MigrationHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -607,6 +607,22 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
         <Function Name="sp_child_list_by_agent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="uniqueId" Type="int" Mode="In" />
         </Function>
+        <Function Name="SP_Create_PosPendingMerchants" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessName" Type="varchar" Mode="In" />
+          <Parameter Name="BusinessPhone" Type="varchar" Mode="In" />
+          <Parameter Name="BusinessFax" Type="varchar" Mode="In" />
+          <Parameter Name="DBA" Type="varchar" Mode="In" />
+          <Parameter Name="EmailAddress" Type="varchar" Mode="In" />
+          <Parameter Name="CellularNumber" Type="varchar" Mode="In" />
+          <Parameter Name="BusinessStreet" Type="varchar" Mode="In" />
+          <Parameter Name="BusinessCity" Type="varchar" Mode="In" />
+          <Parameter Name="BusinessState" Type="varchar" Mode="In" />
+          <Parameter Name="BusinessZip" Type="varchar" Mode="In" />
+          <Parameter Name="Merchant_MainContactPhone" Type="varchar" Mode="In" />
+          <Parameter Name="Merchant_MainContact" Type="varchar" Mode="In" />
+          <Parameter Name="Merchant_RepId" Type="int" Mode="In" />
+          <Parameter Name="RepName" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -830,6 +846,11 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
         <Function Name="sp_report_portfolio_summary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="agentID" Type="int" Mode="In" />
           <Parameter Name="emptyRecord" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_report_portfolio_summary_totals" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="agentID" Type="int" Mode="In" />
+          <Parameter Name="ini_date" Type="datetime" Mode="In" />
+          <Parameter Name="end_date" Type="datetime" Mode="In" />
         </Function>
         <Function Name="sp_report_prepaid_portfolio_inAlert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="agentID" Type="int" Mode="In" />
@@ -2158,6 +2179,27 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
             <Parameter Name="product_sbt" Mode="In" Type="Int32" />
             <Parameter Name="CommissionChange" Mode="In" Type="Decimal" />
           </FunctionImport>
+          <FunctionImport Name="sp_report_portfolio_summary_totals" ReturnType="Collection(VirtualOfficeModel.sp_report_portfolio_summary_totals_Result)">
+            <Parameter Name="agentID" Mode="In" Type="Int32" />
+            <Parameter Name="ini_date" Mode="In" Type="DateTime" />
+            <Parameter Name="end_date" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Create_PosPendingMerchants">
+            <Parameter Name="BusinessName" Mode="In" Type="String" />
+            <Parameter Name="BusinessPhone" Mode="In" Type="String" />
+            <Parameter Name="BusinessFax" Mode="In" Type="String" />
+            <Parameter Name="DBA" Mode="In" Type="String" />
+            <Parameter Name="EmailAddress" Mode="In" Type="String" />
+            <Parameter Name="CellularNumber" Mode="In" Type="String" />
+            <Parameter Name="BusinessStreet" Mode="In" Type="String" />
+            <Parameter Name="BusinessCity" Mode="In" Type="String" />
+            <Parameter Name="BusinessState" Mode="In" Type="String" />
+            <Parameter Name="BusinessZip" Mode="In" Type="String" />
+            <Parameter Name="Merchant_MainContactPhone" Mode="In" Type="String" />
+            <Parameter Name="Merchant_MainContact" Mode="In" Type="String" />
+            <Parameter Name="Merchant_RepId" Mode="In" Type="Int32" />
+            <Parameter Name="RepName" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="AccountsInCollection_Result">
           <Property Type="Int32" Name="agentID" Nullable="true" />
@@ -2911,6 +2953,25 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
           <Property Type="Single" Name="agentcomm" Nullable="false" />
           <Property Type="Single" Name="distcomm" Nullable="false" />
           <Property Type="Single" Name="isocomm" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_report_portfolio_summary_totals_Result">
+          <Property Type="Int32" Name="PrepaidAccounts_Actives" Nullable="false" />
+          <Property Type="Int32" Name="PrepaidAccounts_inactives" Nullable="false" />
+          <Property Type="Int32" Name="AccountsInAlert_incompliance" Nullable="false" />
+          <Property Type="Int32" Name="AccountsInAlert_suspended" Nullable="false" />
+          <Property Type="Int32" Name="AccountsInAlert_closedwithbalance" Nullable="false" />
+          <Property Type="Decimal" Name="GrSalesTOT" Nullable="false" Precision="19" />
+          <Property Type="Decimal" Name="BillPayment" Nullable="false" Precision="19" />
+          <Property Type="Decimal" Name="Running_Commission" Nullable="false" Precision="19" />
+          <Property Type="Decimal" Name="TodayTransactions" Nullable="false" Precision="19" />
+          <Property Type="Int32" Name="MSAccounts_Actives" Nullable="false" />
+          <Property Type="Int32" Name="MSAccounts_inactives" Nullable="false" />
+          <Property Type="Int32" Name="MSCommissionsVISAMCAME" Nullable="false" />
+          <Property Type="Int32" Name="MSCommissionsOthers" Nullable="false" />
+          <Property Type="Int32" Name="MSCommissionsTotal" Nullable="false" />
+          <Property Type="Int32" Name="MSApplicationsApproved" Nullable="false" />
+          <Property Type="Int32" Name="MSApplicationsPending" Nullable="false" />
+          <Property Type="Int32" Name="MSApplicationsCanceled" Nullable="false" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4274,6 +4335,30 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_update_commission_virtualOffice" FunctionName="VirtualOfficeModel.Store.sp_update_commission_virtualOffice" />
+          <FunctionImportMapping FunctionImportName="sp_report_portfolio_summary_totals" FunctionName="VirtualOfficeModel.Store.sp_report_portfolio_summary_totals" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_report_portfolio_summary_totals_Result">
+                <ScalarProperty Name="PrepaidAccounts_Actives" ColumnName="PrepaidAccounts_Actives" />
+                <ScalarProperty Name="PrepaidAccounts_inactives" ColumnName="PrepaidAccounts_inactives" />
+                <ScalarProperty Name="AccountsInAlert_incompliance" ColumnName="AccountsInAlert_incompliance" />
+                <ScalarProperty Name="AccountsInAlert_suspended" ColumnName="AccountsInAlert_suspended" />
+                <ScalarProperty Name="AccountsInAlert_closedwithbalance" ColumnName="AccountsInAlert_closedwithbalance" />
+                <ScalarProperty Name="GrSalesTOT" ColumnName="GrSalesTOT" />
+                <ScalarProperty Name="BillPayment" ColumnName="BillPayment" />
+                <ScalarProperty Name="Running_Commission" ColumnName="Running_Commission" />
+                <ScalarProperty Name="TodayTransactions" ColumnName="TodayTransactions" />
+                <ScalarProperty Name="MSAccounts_Actives" ColumnName="MSAccounts_Actives" />
+                <ScalarProperty Name="MSAccounts_inactives" ColumnName="MSAccounts_inactives" />
+                <ScalarProperty Name="MSCommissionsVISAMCAME" ColumnName="MSCommissionsVISAMCAME" />
+                <ScalarProperty Name="MSCommissionsOthers" ColumnName="MSCommissionsOthers" />
+                <ScalarProperty Name="MSCommissionsTotal" ColumnName="MSCommissionsTotal" />
+                <ScalarProperty Name="MSApplicationsApproved" ColumnName="MSApplicationsApproved" />
+                <ScalarProperty Name="MSApplicationsPending" ColumnName="MSApplicationsPending" />
+                <ScalarProperty Name="MSApplicationsCanceled" ColumnName="MSApplicationsCanceled" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Create_PosPendingMerchants" FunctionName="VirtualOfficeModel.Store.SP_Create_PosPendingMerchants" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
