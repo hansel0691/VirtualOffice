@@ -12,7 +12,10 @@ using ClassLibrary2.Domain;
 using ClassLibrary2.Domain.Prepaid;
 using Domain.Models;
 using Kendo.Mvc.Extensions;
+using Kendo.Mvc.Resources;
 using Kendo.Mvc.UI;
+using Newtonsoft.Json;
+using RestSharp.Extensions;
 using VirtualOffice.Service.Domain;
 using VirtualOffice.Service.Services;
 using VirtualOffice.Web.Infrastructure;
@@ -196,6 +199,24 @@ namespace VirtualOffice.Web.Controllers
         {
             var model = GetReportModel("SP_Send_CommissionReport", typeof(CommissionReportViewModel), "/PrepaidReports/PrintCommissionReport");
 
+            return View(model);
+        }
+
+        public ActionResult UpdateMerchantCommission()
+        {
+            var model = GetReportModel("sp_child_list_by_agent", typeof(ChildrenByAgentViewModel), "", a => MarkColumnsAsGroupable(a, "Type"));
+            return View(model);
+        }
+
+        public ActionResult UpdateCommission(string selectedUsers = "")
+        {
+            if (string.IsNullOrEmpty(selectedUsers))
+                return RedirectToAction("UpdateMerchantCommission");
+            
+            var model = GetReportModel("sp_list_products_related ", typeof(CommissionByProductViewModel), "");
+
+            //ViewBag.State = Json(new { Valid = true, Messages = new List<string>() });
+            ViewBag.UsersCode = selectedUsers;
             return View(model);
         }
 
@@ -677,7 +698,94 @@ namespace VirtualOffice.Web.Controllers
 
         }
 
+        [HttpPost]
+        public ActionResult RunChildrenByAgentReport([DataSourceRequest] DataSourceRequest request, string name, string code, string outPut, bool saveOutPut)
+        {
+            try
+            {
+                if (saveOutPut)
+                {
+                    var outPutDeserialized = new JavaScriptSerializer().Deserialize<List<string>>(outPut);
 
+                    _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "SP_Send_CommissionReport", outPutDeserialized.GetCommaSeparatedTokens());
+                }
+
+                var reportData = _virtualOfficeService.GetChildrenByAgent(GetLoggedUserId());
+
+                reportData = reportData.Where(r => r.Code.StartsWith(code) && r.Name.ToLower().StartsWith(name.ToLower()));
+
+                var mappedResult = reportData.MapTo<IEnumerable<ChildrenByAgentReport>, IEnumerable<ChildrenByAgentViewModel>>();
+
+                var result = mappedResult.ToDataSourceResult(request);
+
+                return Json(result);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        [HttpPost]
+        public ActionResult RunUpdateCommission([DataSourceRequest] DataSourceRequest request, string selectedUsers, string outPut, bool saveOutPut, string code, string name)
+        {
+            try
+            {
+                if (saveOutPut)
+                {
+                    var outPutDeserialized = new JavaScriptSerializer().Deserialize<List<string>>(outPut);
+
+                    _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "SP_Send_CommissionReport", outPutDeserialized.GetCommaSeparatedTokens());
+                }
+
+                if (selectedUsers == null)
+                    return null;
+
+                var productsCommissions = new List<CommissionByProductViewModel>();
+                var users = new JavaScriptSerializer().Deserialize<List<string>>(selectedUsers);
+
+                var userLevel = GetUserLevel();
+
+                foreach (var userCode in users)
+                {
+                    if (string.IsNullOrEmpty(userCode))
+                        throw new Exception("User Id not valid");
+
+                    var user = _virtualOfficeService.GetUser(userCode);
+
+                    var reportData = _virtualOfficeService.ProductsCommission(user.userid, user.usertype == 0);
+
+                    var mappedResult = reportData.Select(p =>
+                    {
+                        var commissions = new[] {p.mercomm, p.agentcomm, p.distcomm, p.isocomm};
+                        return new CommissionByProductViewModel
+                        {
+                            UserId = userCode,
+                            UserDescription = user.businessName,
+
+                            Product = p.pro_description,
+                            ProductCode = p.merproduct_sbt,
+                            MyCommission = commissions[userLevel],
+                            Actual = commissions[user.usertype],
+                            OldCommission = commissions[user.usertype],
+                        };
+                    });
+
+                    
+                    productsCommissions.AddRange(mappedResult.Where(p => p.ProductCode.StartsWith(code) && p.Product.ToLower().StartsWith(name.ToLower())));
+                }
+
+                var result = productsCommissions.ToDataSourceResult(request);
+
+                return Json(result);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+       
         #endregion
 
         #region Print/Export Section
@@ -1093,6 +1201,48 @@ namespace VirtualOffice.Web.Controllers
         }
 
         [HttpPost]
+        public ActionResult UpdateCommission([Bind(Prefix = "models")]List<CommissionByProductViewModel> newCommissions)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var errors = newCommissions.Where(model => model.Actual > model.MyCommission).Select( model => string.Format(
+                                        "The commission you are trying to assign to the client {0} on the product {1} is higher than yours, please change it and try again.",
+                                        model.UserId, model.ProductCode)).ToList();
+                    if (errors.Any())
+                        return Json(new { Valid = false, Messages = errors });
+
+
+
+                    //change is merchant true
+                    errors.AddRange(from commission in newCommissions
+                        let value = commission.Actual - commission.OldCommission
+                        let userId = GetLoggedUserId()
+                        let clientId = int.Parse(commission.UserId)
+                        let productCode = int.Parse(commission.ProductCode)
+                        let succeded = _virtualOfficeService.UpdateUserCommision(userId, clientId, productCode, value)
+                        where !succeded
+                        select
+                            string.Format("There was a problem trying to change the commission from the client with id {0} on the product {1}, please try again.",
+                                commission.UserId, commission.ProductCode));
+
+                    return Json(new { Success = !errors.Any(), Messages = errors });
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception)
+            {
+                return Json(new { Success = false, Messages = new[] { "There was a problem on the system. Please refresh your page and try again." } });
+
+            }
+            return null;
+        }
+
+        [HttpPost]
         public ActionResult UpdatePrepaidAcountStatus([DataSourceRequest] DataSourceRequest request, [Bind(Prefix = "models")]IEnumerable<PrepaidPortfolioSummaryResultViewModel> prepaidAccounts)
         {
             try
@@ -1130,38 +1280,7 @@ namespace VirtualOffice.Web.Controllers
             return View(model);
         }
 
-        public ActionResult UpdateMerchantCommission()
-        {
-            ViewBag.Clients = GetMerchants().ToList();
-            return View(new SearchUserModel());
-        }
+       
 
-        public IEnumerable<SelectableClients> RunRunUpdateMerchantCommission()
-        {
-            var a = new List<SelectableClients>
-            {
-                new SelectableClients(){Name = "Hansel", Code = "0000", Type = "Distribuitor"},
-                new SelectableClients(){Name = "Yensy", Code = "0001", Type = "Merchant"}
-            };
-            return a;
-        }
-
-    }
-
-
-    public class SearchUserModel
-    {
-        [Display(Name = "Client Code")]
-        public string Code { get; set; }
-        
-        [Display(Name = "Client Name")]
-        public string Name { get; set; }
-    }
-
-    public class SelectableClients : SelectListItem
-    {
-        public string Code { get { return this.Value; } set { this.Value = value; } }
-        public string Name { get { return this.Text; } set { this.Text = value; } }
-        public string Type { get; set; }
     }
 }

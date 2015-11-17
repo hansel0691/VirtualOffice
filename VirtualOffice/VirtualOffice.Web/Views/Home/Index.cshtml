@@ -5,7 +5,7 @@
 
     var isFullCarga = Request.Url.ToString().ToLower().Contains("fcusa");
 
-    var bannerURL = !isFullCarga ? "04-banner-virtual-office.png" : "02-banner-virtual-office.png";    
+    var bannerURL = isFullCarga ? "04-banner-virtual-office.png" : "02-banner-virtual-office.png";    
 }
 
 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-push-8">

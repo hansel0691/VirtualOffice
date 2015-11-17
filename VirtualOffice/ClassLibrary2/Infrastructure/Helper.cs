@@ -45,7 +45,15 @@ namespace VirtualOffice.Service.Domain.Infrastructure
 
             Mapper.CreateMap<SP_Send_AgentToBillMerchants_Result, AgentToBillMerchants>();
             Mapper.CreateMap<SP_Send_CommissionReport_Result, CommissionReport>();
-            
+
+
+            Mapper.CreateMap<sp_child_list_by_agent_Result, ChildrenByAgentReport>()
+                .ForMember(p => p.Name, k => k.MapFrom(m => m.name))
+                .ForMember(p => p.Code, k => k.MapFrom(m => m.child.ToString()))
+                .ForMember(p => p.Type, k => k.MapFrom(m => m.LEVEL))
+                ;
+
+            Mapper.CreateMap<sp_list_products_related_Result, CommissionByProductReport>();
 
 
             #endregion

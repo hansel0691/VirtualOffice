@@ -61,25 +61,19 @@ function getReportParams() {
     };
 }
 
+function getReportFilters() {
 
-//function getParamsCreditLimit() {
-//    var dirtyOnes = [{merchant_pk : -1, dailylimit_max : -1, creditlimit_max: -1 }];
-//    var rows = $("table tbody tr");
-//    for (var i = 0; i < rows.length; i++) {
-//        var tr = rows[i];
-//        for (var j = 0; j < tr.cells.length; j++) {
-//            var td = tr.cells[j];
-//            if (td.className.indexOf("k-dirty-cell") > -1) {
-//                dirtyOnes.push({ merchant_pk: tr, dailylimit_max: tr, creditlimit_max: tr });
-//                break;
-//            }
-//        }
-//    }
-//
-//
-//    return dirtyOnes;
-//}
+    var outPut = JSON.stringify(getOutPut());
 
+    var saveOutPutConfig = document.getElementById("saveOutputAsDefault").checked;
+
+    return {
+        outPut: outPut,
+        saveOutPut: saveOutPutConfig,
+        code: $("#Code").val(),
+        name: $("#Name").val(),
+    };
+}
 
 function UpdateReportConfiguration() {
 
@@ -162,7 +156,8 @@ function getUserFilters() {
 }
 
 function applyUserfilters() {
-    $("#Reports").data("kendoGrid").dataSource.read();
+    var report = $("#Reports").data("kendoGrid");
+    report.dataSource.read();
 }
 
 function getOutPut() {

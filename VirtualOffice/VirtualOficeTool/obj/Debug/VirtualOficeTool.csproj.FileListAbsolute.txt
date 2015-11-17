@@ -483,6 +483,8 @@ C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfice
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\zh-Hant\System.Spatial.resources.dll
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOficeTool\obj\Debug\VirtualOficeTool.dll
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOficeTool\obj\Debug\VirtualOficeTool.pdb
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\obj\Debug\VirtualOficeTool.csproj.App.config
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\obj\Debug\VirtualOficeTool.csprojResolveAssemblyReference.cache
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\VirtualOficeTool.dll.config
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\VirtualOficeTool.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\VirtualOficeTool.pdb
@@ -517,15 +519,16 @@ D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\VirtualOfficeToolMa
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\WebGrease.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\WebMatrix.Data.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\WebMatrix.WebData.dll
-D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\EntityFramework.dll
-D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\Domain.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\ApiRestClient.dll
-D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\Services.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\RestSharp.dll
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\Domain.dll
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\EntityFramework.dll
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\Services.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\Org.Mentalis.Security.Cryptography.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\Ninject.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\Ninject.Extensions.Interception.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\Domain.Inventory.dll
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\Domain.Blackstone.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\Mono.Math.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\VirtualOfficeToolManager.pdb
@@ -557,11 +560,11 @@ D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\System.Web.WebPages
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\System.Web.WebPages.Razor.xml
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\WebMatrix.Data.xml
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\WebMatrix.WebData.xml
-D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\EntityFramework.xml
-D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\Domain.pdb
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\ApiRestClient.pdb
-D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\Services.pdb
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\RestSharp.xml
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\Domain.pdb
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\EntityFramework.xml
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\Services.pdb
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\Org.Mentalis.Security.Cryptography.xml
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\Ninject.xml
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\Ninject.Extensions.Interception.xml
@@ -595,7 +598,5 @@ D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\ko\System.Spatial.r
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\ru\System.Spatial.resources.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\zh-Hans\System.Spatial.resources.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\bin\zh-Hant\System.Spatial.resources.dll
-D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\obj\Debug\VirtualOficeTool.csproj.App.config
-D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\obj\Debug\VirtualOficeTool.csprojResolveAssemblyReference.cache
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\obj\Debug\VirtualOficeTool.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOficeTool\obj\Debug\VirtualOficeTool.pdb

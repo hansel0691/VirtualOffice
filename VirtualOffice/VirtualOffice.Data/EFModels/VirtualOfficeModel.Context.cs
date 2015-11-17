@@ -1343,5 +1343,52 @@ namespace VirtualOffice.Data.EFModels
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_update_virtualoffice_commission", parMerchantParameter, parProducSbtParameter, merchantcommParameter, agentCommParameter, distCommParameter, isoCommParameter);
         }
+    
+        public virtual ObjectResult<sp_child_list_by_agent_Result> sp_child_list_by_agent(Nullable<int> uniqueId)
+        {
+            var uniqueIdParameter = uniqueId.HasValue ?
+                new ObjectParameter("uniqueId", uniqueId) :
+                new ObjectParameter("uniqueId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_child_list_by_agent_Result>("sp_child_list_by_agent", uniqueIdParameter);
+        }
+    
+        public virtual ObjectResult<sp_list_products_related_Result> sp_list_products_related(Nullable<int> uniqueId, Nullable<int> isMerchant)
+        {
+            var uniqueIdParameter = uniqueId.HasValue ?
+                new ObjectParameter("uniqueId", uniqueId) :
+                new ObjectParameter("uniqueId", typeof(int));
+    
+            var isMerchantParameter = isMerchant.HasValue ?
+                new ObjectParameter("IsMerchant", isMerchant) :
+                new ObjectParameter("IsMerchant", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_list_products_related_Result>("sp_list_products_related", uniqueIdParameter, isMerchantParameter);
+        }
+    
+        public virtual int sp_update_commission_virtualOffice(Nullable<int> fatherId, Nullable<int> childId, Nullable<int> isChildMerchant, Nullable<int> product_sbt, Nullable<decimal> commissionChange)
+        {
+            var fatherIdParameter = fatherId.HasValue ?
+                new ObjectParameter("FatherId", fatherId) :
+                new ObjectParameter("FatherId", typeof(int));
+    
+            var childIdParameter = childId.HasValue ?
+                new ObjectParameter("ChildId", childId) :
+                new ObjectParameter("ChildId", typeof(int));
+    
+            var isChildMerchantParameter = isChildMerchant.HasValue ?
+                new ObjectParameter("IsChildMerchant", isChildMerchant) :
+                new ObjectParameter("IsChildMerchant", typeof(int));
+    
+            var product_sbtParameter = product_sbt.HasValue ?
+                new ObjectParameter("product_sbt", product_sbt) :
+                new ObjectParameter("product_sbt", typeof(int));
+    
+            var commissionChangeParameter = commissionChange.HasValue ?
+                new ObjectParameter("CommissionChange", commissionChange) :
+                new ObjectParameter("CommissionChange", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_update_commission_virtualOffice", fatherIdParameter, childIdParameter, isChildMerchantParameter, product_sbtParameter, commissionChangeParameter);
+        }
     }
 }

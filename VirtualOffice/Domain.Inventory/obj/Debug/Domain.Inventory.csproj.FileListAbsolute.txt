@@ -29,7 +29,15 @@ C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\Domain.Inven
 D:\Projects\VirtualOffice\VirtualOffice\Domain.Inventory\bin\Debug\Domain.Inventory.dll
 D:\Projects\VirtualOffice\VirtualOffice\Domain.Inventory\bin\Debug\Domain.Inventory.pdb
 D:\Projects\VirtualOffice\VirtualOffice\Domain.Inventory\bin\Debug\Domain.dll
+D:\Projects\VirtualOffice\VirtualOffice\Domain.Inventory\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\VirtualOffice\VirtualOffice\Domain.Inventory\bin\Debug\System.Net.Http.Formatting.dll
+D:\Projects\VirtualOffice\VirtualOffice\Domain.Inventory\bin\Debug\System.Web.Http.dll
+D:\Projects\VirtualOffice\VirtualOffice\Domain.Inventory\bin\Debug\System.Web.Http.WebHost.dll
 D:\Projects\VirtualOffice\VirtualOffice\Domain.Inventory\bin\Debug\Domain.pdb
+D:\Projects\VirtualOffice\VirtualOffice\Domain.Inventory\bin\Debug\Newtonsoft.Json.xml
+D:\Projects\VirtualOffice\VirtualOffice\Domain.Inventory\bin\Debug\System.Net.Http.Formatting.xml
+D:\Projects\VirtualOffice\VirtualOffice\Domain.Inventory\bin\Debug\System.Web.Http.xml
+D:\Projects\VirtualOffice\VirtualOffice\Domain.Inventory\bin\Debug\System.Web.Http.WebHost.xml
 D:\Projects\VirtualOffice\VirtualOffice\Domain.Inventory\obj\Debug\Domain.Inventory.csprojResolveAssemblyReference.cache
 D:\Projects\VirtualOffice\VirtualOffice\Domain.Inventory\obj\Debug\Domain.Inventory.dll
 D:\Projects\VirtualOffice\VirtualOffice\Domain.Inventory\obj\Debug\Domain.Inventory.pdb

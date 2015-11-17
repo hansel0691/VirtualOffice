@@ -108,6 +108,8 @@ C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffic
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\Domain.Blackstone.pdb
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\obj\Debug\VirtualOffice.Web.dll
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffice.Web\obj\Debug\VirtualOffice.Web.pdb
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\obj\Debug\VirtualOffice.Web.csproj.App.config
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\obj\Debug\VirtualOffice.Web.csprojResolveAssemblyReference.cache
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\AutoMapper.Net4.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\VirtualOffice.Web.dll.config
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\VirtualOffice.Web.dll
@@ -115,10 +117,12 @@ D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\VirtualOffice.Web.
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\ApiRestClient.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\ClassLibrary2.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\Domain.dll
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\Services.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\System.Net.Http.Extensions.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\System.Net.Http.Primitives.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\System.Web.Cors.dll
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\System.Web.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\VirtualOffice.Data.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\Domain.Inventory.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\Domain.Blackstone.dll
@@ -131,7 +135,5 @@ D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\System.Net.Http.Pr
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\VirtualOffice.Data.pdb
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\Domain.Inventory.pdb
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\Domain.Blackstone.pdb
-D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\obj\Debug\VirtualOffice.Web.csproj.App.config
-D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\obj\Debug\VirtualOffice.Web.csprojResolveAssemblyReference.cache
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\obj\Debug\VirtualOffice.Web.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\obj\Debug\VirtualOffice.Web.pdb

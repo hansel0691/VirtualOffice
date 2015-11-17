@@ -69,3 +69,5 @@ D:\Projects\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\System.Net.Htt
 D:\Projects\VirtualOffice\VirtualOffice\ApiRestClient\obj\Release\ApiRestClient.csprojResolveAssemblyReference.cache
 D:\Projects\VirtualOffice\VirtualOffice\ApiRestClient\obj\Release\ApiRestClient.dll
 D:\Projects\VirtualOffice\VirtualOffice\ApiRestClient\obj\Release\ApiRestClient.pdb
+D:\Projects\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\System.Web.Http.WebHost.dll
+D:\Projects\VirtualOffice\VirtualOffice\ApiRestClient\bin\Release\System.Web.Http.WebHost.xml

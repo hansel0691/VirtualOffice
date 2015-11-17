@@ -604,6 +604,9 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
           <Parameter Name="version" Type="int" Mode="In" />
           <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
         </Function>
+        <Function Name="sp_child_list_by_agent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="uniqueId" Type="int" Mode="In" />
+        </Function>
         <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -725,6 +728,10 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
           <Parameter Name="ini_Date" Type="datetime" Mode="In" />
           <Parameter Name="end_Date" Type="datetime" Mode="In" />
           <Parameter Name="emptyRecord" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="sp_list_products_related" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="uniqueId" Type="int" Mode="In" />
+          <Parameter Name="IsMerchant" Type="int" Mode="In" />
         </Function>
         <Function Name="sp_merchant_commisions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="merchant_fk" Type="int" Mode="In" />
@@ -891,6 +898,13 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
           <Parameter Name="isoId" Type="int" Mode="In" />
           <Parameter Name="startDate" Type="datetime" Mode="In" />
           <Parameter Name="endDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="sp_update_commission_virtualOffice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FatherId" Type="int" Mode="In" />
+          <Parameter Name="ChildId" Type="int" Mode="In" />
+          <Parameter Name="IsChildMerchant" Type="int" Mode="In" />
+          <Parameter Name="product_sbt" Type="int" Mode="In" />
+          <Parameter Name="CommissionChange" Type="money" Mode="In" />
         </Function>
         <Function Name="sp_update_information" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="parUniqueId" Type="int" Mode="In" />
@@ -2130,6 +2144,20 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
             <Parameter Name="DistComm" Mode="In" Type="Decimal" />
             <Parameter Name="IsoComm" Mode="In" Type="Decimal" />
           </FunctionImport>
+          <FunctionImport Name="sp_child_list_by_agent" ReturnType="Collection(VirtualOfficeModel.sp_child_list_by_agent_Result)">
+          <Parameter Name="uniqueId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_list_products_related" ReturnType="Collection(VirtualOfficeModel.sp_list_products_related_Result)">
+            <Parameter Name="uniqueId" Mode="In" Type="Int32" />
+            <Parameter Name="IsMerchant" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_update_commission_virtualOffice">
+            <Parameter Name="FatherId" Mode="In" Type="Int32" />
+            <Parameter Name="ChildId" Mode="In" Type="Int32" />
+            <Parameter Name="IsChildMerchant" Mode="In" Type="Int32" />
+            <Parameter Name="product_sbt" Mode="In" Type="Int32" />
+            <Parameter Name="CommissionChange" Mode="In" Type="Decimal" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="AccountsInCollection_Result">
           <Property Type="Int32" Name="agentID" Nullable="true" />
@@ -2869,6 +2897,20 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
           <Property Type="Decimal" Name="MerchCommM" Nullable="true" Precision="12" Scale="4" />
           <Property Type="Decimal" Name="MerchCommP" Nullable="true" Precision="19" />
           <Property Type="Decimal" Name="Margin" Nullable="true" Precision="13" Scale="4" />
+        </ComplexType>
+        <ComplexType Name="sp_child_list_by_agent_Result">
+          <Property Type="Int32" Name="child" Nullable="true" />
+          <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LEVEL" Nullable="false" MaxLength="11" />
+        </ComplexType>
+        <ComplexType Name="sp_list_products_related_Result">
+          <Property Type="String" Name="merproduct_sbt" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="pro_description" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Product_MainCode" Nullable="true" MaxLength="6" />
+          <Property Type="Single" Name="mercomm" Nullable="false" />
+          <Property Type="Single" Name="agentcomm" Nullable="false" />
+          <Property Type="Single" Name="distcomm" Nullable="false" />
+          <Property Type="Single" Name="isocomm" Nullable="false" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4209,6 +4251,29 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_update_information" FunctionName="VirtualOfficeModel.Store.sp_update_information" />
           <FunctionImportMapping FunctionImportName="sp_update_virtualoffice_commission" FunctionName="VirtualOfficeModel.Store.sp_update_virtualoffice_commission" />
+          <FunctionImportMapping FunctionImportName="sp_child_list_by_agent" FunctionName="VirtualOfficeModel.Store.sp_child_list_by_agent">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_child_list_by_agent_Result">
+                <ScalarProperty Name="child" ColumnName="child" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="LEVEL" ColumnName="LEVEL" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_list_products_related" FunctionName="VirtualOfficeModel.Store.sp_list_products_related">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_list_products_related_Result">
+                <ScalarProperty Name="merproduct_sbt" ColumnName="merproduct_sbt" />
+                <ScalarProperty Name="pro_description" ColumnName="pro_description" />
+                <ScalarProperty Name="Product_MainCode" ColumnName="Product_MainCode" />
+                <ScalarProperty Name="mercomm" ColumnName="mercomm" />
+                <ScalarProperty Name="agentcomm" ColumnName="agentcomm" />
+                <ScalarProperty Name="distcomm" ColumnName="distcomm" />
+                <ScalarProperty Name="isocomm" ColumnName="isocomm" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_update_commission_virtualOffice" FunctionName="VirtualOfficeModel.Store.sp_update_commission_virtualOffice" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

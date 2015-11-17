@@ -122,6 +122,9 @@
     <Compile Include="EFModels\ReportToReportRel.cs">
       <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EFModels\sp_child_list_by_agent_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="EFModels\SP_Fullcarga_DetailInvoicebck_Result.cs">
       <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
     </Compile>
@@ -155,6 +158,9 @@
       <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="EFModels\SP_ippBrowser_Result.cs">
+      <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFModels\sp_list_products_related_Result.cs">
       <DependentUpon>VirtualOfficeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="EFModels\SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2.cs" />

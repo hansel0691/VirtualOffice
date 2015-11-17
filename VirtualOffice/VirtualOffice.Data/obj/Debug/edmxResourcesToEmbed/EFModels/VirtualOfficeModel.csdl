@@ -1001,6 +1001,20 @@
       <Parameter Name="DistComm" Mode="In" Type="Decimal" />
       <Parameter Name="IsoComm" Mode="In" Type="Decimal" />
     </FunctionImport>
+    <FunctionImport Name="sp_child_list_by_agent" ReturnType="Collection(VirtualOfficeModel.sp_child_list_by_agent_Result)">
+      <Parameter Name="uniqueId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_list_products_related" ReturnType="Collection(VirtualOfficeModel.sp_list_products_related_Result)">
+      <Parameter Name="uniqueId" Mode="In" Type="Int32" />
+      <Parameter Name="IsMerchant" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_update_commission_virtualOffice">
+      <Parameter Name="FatherId" Mode="In" Type="Int32" />
+      <Parameter Name="ChildId" Mode="In" Type="Int32" />
+      <Parameter Name="IsChildMerchant" Mode="In" Type="Int32" />
+      <Parameter Name="product_sbt" Mode="In" Type="Int32" />
+      <Parameter Name="CommissionChange" Mode="In" Type="Decimal" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="AccountsInCollection_Result">
     <Property Type="Int32" Name="agentID" Nullable="true" />
@@ -1740,5 +1754,19 @@
     <Property Type="Decimal" Name="MerchCommM" Nullable="true" Precision="12" Scale="4" />
     <Property Type="Decimal" Name="MerchCommP" Nullable="true" Precision="19" />
     <Property Type="Decimal" Name="Margin" Nullable="true" Precision="13" Scale="4" />
+  </ComplexType>
+  <ComplexType Name="sp_child_list_by_agent_Result">
+    <Property Type="Int32" Name="child" Nullable="true" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LEVEL" Nullable="false" MaxLength="11" />
+  </ComplexType>
+  <ComplexType Name="sp_list_products_related_Result">
+    <Property Type="String" Name="merproduct_sbt" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="pro_description" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Product_MainCode" Nullable="true" MaxLength="6" />
+    <Property Type="Single" Name="mercomm" Nullable="false" />
+    <Property Type="Single" Name="agentcomm" Nullable="false" />
+    <Property Type="Single" Name="distcomm" Nullable="false" />
+    <Property Type="Single" Name="isocomm" Nullable="false" />
   </ComplexType>
 </Schema>

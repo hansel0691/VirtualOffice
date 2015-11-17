@@ -22,7 +22,7 @@ namespace VirtualOffice.Web.Controllers
         {
         }
 
-
+        
         public ActionResult PersonalInfo(bool success = true)
         {
             var user = Session[Utils.UserKey] as UserModel;
@@ -219,6 +219,10 @@ namespace VirtualOffice.Web.Controllers
             }
         }
 
+
+      
+
+
         private IEnumerable<ConsignmentType> GetLeadsPropose()
         {
             try
@@ -317,8 +321,6 @@ namespace VirtualOffice.Web.Controllers
             newLeadViewModel.nextVisit = DateTime.Today.AddMonths(1);
 
         }
-
-       
 
         private int GetLoggedUserId()
         {

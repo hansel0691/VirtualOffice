@@ -107,3 +107,4 @@ D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Release\Ninject.Extensions.
 D:\Projects\VirtualOffice\VirtualOffice\Services\obj\Release\Services.csprojResolveAssemblyReference.cache
 D:\Projects\VirtualOffice\VirtualOffice\Services\obj\Release\Services.dll
 D:\Projects\VirtualOffice\VirtualOffice\Services\obj\Release\Services.pdb
+D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll

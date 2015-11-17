@@ -97,6 +97,7 @@ D:\Projects\VirtualOffice\VirtualOffice\Domain\bin\Debug\Domain.dll
 D:\Projects\VirtualOffice\VirtualOffice\Domain\bin\Debug\Domain.pdb
 D:\Projects\VirtualOffice\VirtualOffice\Domain\bin\Debug\EntityFramework.dll
 D:\Projects\VirtualOffice\VirtualOffice\Domain\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\VirtualOffice\VirtualOffice\Domain\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 D:\Projects\VirtualOffice\VirtualOffice\Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
 D:\Projects\VirtualOffice\VirtualOffice\Domain\bin\Debug\System.Web.Helpers.dll
 D:\Projects\VirtualOffice\VirtualOffice\Domain\bin\Debug\System.Web.Mvc.dll

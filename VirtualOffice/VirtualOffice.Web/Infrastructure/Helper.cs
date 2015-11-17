@@ -108,7 +108,10 @@ namespace VirtualOffice.Web.Infrastructure
             Mapper.CreateMap<AgentToBillMerchants, AgentToBillMerchantsViewModel>();
             Mapper.CreateMap<CommissionReport, CommissionReportViewModel>();
 
-           
+            Mapper.CreateMap<ChildrenByAgentReport, ChildrenByAgentViewModel>();
+
+            Mapper.CreateMap<CommissionByProductReport, CommissionByProductViewModel>();
+
             #endregion
 
             #region Merchant Services

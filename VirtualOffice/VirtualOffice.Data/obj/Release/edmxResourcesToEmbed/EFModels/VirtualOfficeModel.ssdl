@@ -599,6 +599,9 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
     <Parameter Name="version" Type="int" Mode="In" />
     <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
   </Function>
+  <Function Name="sp_child_list_by_agent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="uniqueId" Type="int" Mode="In" />
+  </Function>
   <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
     <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -720,6 +723,10 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
     <Parameter Name="ini_Date" Type="datetime" Mode="In" />
     <Parameter Name="end_Date" Type="datetime" Mode="In" />
     <Parameter Name="emptyRecord" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_list_products_related" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="uniqueId" Type="int" Mode="In" />
+    <Parameter Name="IsMerchant" Type="int" Mode="In" />
   </Function>
   <Function Name="sp_merchant_commisions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="merchant_fk" Type="int" Mode="In" />
@@ -886,6 +893,13 @@ warning 6002: The table/view 'VirtualOffice.dbo.user_roles' does not have a prim
     <Parameter Name="isoId" Type="int" Mode="In" />
     <Parameter Name="startDate" Type="datetime" Mode="In" />
     <Parameter Name="endDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_update_commission_virtualOffice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FatherId" Type="int" Mode="In" />
+    <Parameter Name="ChildId" Type="int" Mode="In" />
+    <Parameter Name="IsChildMerchant" Type="int" Mode="In" />
+    <Parameter Name="product_sbt" Type="int" Mode="In" />
+    <Parameter Name="CommissionChange" Type="money" Mode="In" />
   </Function>
   <Function Name="sp_update_information" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="parUniqueId" Type="int" Mode="In" />

@@ -18,7 +18,7 @@
     var isFullCarga = Request.Url.ToString().ToLower().Contains("fcusa");
     var color = "blue-logo";
     var logoURL = "logo-virtualoffice.svg";
-    if (!user.IsFullcarga)
+    if (user.IsFullcarga)
     {
         color = "red-logo";
         logoURL = "logo-fc-virtualoffice.svg";
@@ -166,6 +166,12 @@
                                 }
                             </ul>
                         </li>
+                        @if (user.IsFullcarga && userCategory != Category.Merchant)
+                        {
+                            <li class="@Utils.GetListItemClassByController(Url.Action("CreateAccount", "Manager"), Request.Url.ToString())">
+                                <a href="@Url.Action("CreateAccount", "Manager")">Create Merchant <span class="badge"></span></a>
+                            </li>
+                        }
                         <li class="@Utils.GetListItemClassByController(Url.Action("ChangePassword", "MyProfile"), Request.Url.ToString())">
                             <a href="@Url.Action("ChangePassword", "MyProfile")">My Profile <span class="badge"></span></a>
                         </li>

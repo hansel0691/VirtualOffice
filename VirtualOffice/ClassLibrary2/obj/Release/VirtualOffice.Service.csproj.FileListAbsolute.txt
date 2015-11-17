@@ -54,3 +54,10 @@ D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Release\Newtonsoft.Jso
 D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\obj\Release\VirtualOffice.Service.csprojResolveAssemblyReference.cache
 D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\obj\Release\ClassLibrary2.dll
 D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\obj\Release\ClassLibrary2.pdb
+D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Release\ClassLibrary2.dll.config
+D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Release\System.Net.Http.Formatting.dll
+D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Release\System.Web.Http.dll
+D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Release\System.Web.Http.WebHost.dll
+D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Release\System.Net.Http.Formatting.xml
+D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Release\System.Web.Http.xml
+D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Release\System.Web.Http.WebHost.xml

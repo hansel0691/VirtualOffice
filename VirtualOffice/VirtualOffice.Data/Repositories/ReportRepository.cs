@@ -151,7 +151,6 @@ namespace VirtualOffice.Data.Repositories
             return result;
         }
 
-        //GetMerchantBilling
         public IEnumerable<SP_Send_AgentToBillMerchants_Result> GetMerchantBilling(int userId, DateTime startDate, DateTime endDate)
         {
             var result = VirtualOfficeContext.SP_Send_AgentToBillMerchants(startDate, endDate, userId);
@@ -162,6 +161,20 @@ namespace VirtualOffice.Data.Repositories
         public IEnumerable<SP_Send_CommissionReport_Result> SendCommitionReport(int userId, DateTime startDate, DateTime endDate, bool isMerchant)
         {
             var result = VirtualOfficeContext.SP_Send_CommissionReport(startDate, endDate, userId, isMerchant ? 1 : 0);
+
+            return result;
+        }
+
+        public IEnumerable<sp_child_list_by_agent_Result> GetChildrenByAgent(int userId)
+        {
+            var result = VirtualOfficeContext.sp_child_list_by_agent(userId);
+
+            return result;
+        }
+
+        public IEnumerable<sp_list_products_related_Result> ProductsCommission(int userId, bool isMerchant)
+        {
+            var result = VirtualOfficeContext.sp_list_products_related(userId, isMerchant? 1 : 0);
 
             return result;
         }
@@ -322,6 +335,13 @@ namespace VirtualOffice.Data.Repositories
         {
             var result = VirtualOfficeContext.sp_FullCarga_change_credit_limit(merchantId, generalLimit, dailyLimit);
             return result;
+        }
+
+        public bool UpdateUserCommision(int? parentId, int? childId, bool isMerchant, int? productCode, double commission)
+        {
+            var result = VirtualOfficeContext.sp_update_commission_virtualOffice(parentId, childId, isMerchant ? 1 : 0, productCode, Convert.ToDecimal(commission));
+            
+            return result > 0;
         }
 
         public dynamic UpdatePrepaidAcountStatus(int? merchantId, int status)

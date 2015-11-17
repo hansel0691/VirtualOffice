@@ -308,6 +308,7 @@ C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\obj\Debug\CoreService.csprojResolveAssemblyReference.cache
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\obj\Debug\CoreService.dll
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\CoreService\obj\Debug\CoreService.pdb
+D:\Projects\VirtualOffice\VirtualOffice\CoreService\bin\AutoMapper.Net4.dll
 D:\Projects\VirtualOffice\VirtualOffice\CoreService\bin\CoreService.dll.config
 D:\Projects\VirtualOffice\VirtualOffice\CoreService\bin\CoreService.dll
 D:\Projects\VirtualOffice\VirtualOffice\CoreService\bin\CoreService.pdb
@@ -322,6 +323,7 @@ D:\Projects\VirtualOffice\VirtualOffice\CoreService\bin\DotNetOpenAuth.OpenId.dl
 D:\Projects\VirtualOffice\VirtualOffice\CoreService\bin\EntityFramework.dll
 D:\Projects\VirtualOffice\VirtualOffice\CoreService\bin\EntityFramework.SqlServer.dll
 D:\Projects\VirtualOffice\VirtualOffice\CoreService\bin\LinFu.DynamicProxy.dll
+D:\Projects\VirtualOffice\VirtualOffice\CoreService\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 D:\Projects\VirtualOffice\VirtualOffice\CoreService\bin\Microsoft.Web.Infrastructure.dll
 D:\Projects\VirtualOffice\VirtualOffice\CoreService\bin\NAPP.Ninject.Extensions.Logging.Log4Net.dll
 D:\Projects\VirtualOffice\VirtualOffice\CoreService\bin\Newtonsoft.Json.dll
@@ -384,4 +386,3 @@ D:\Projects\VirtualOffice\VirtualOffice\CoreService\bin\Mono.Math.xml
 D:\Projects\VirtualOffice\VirtualOffice\CoreService\obj\Debug\CoreService.csprojResolveAssemblyReference.cache
 D:\Projects\VirtualOffice\VirtualOffice\CoreService\obj\Debug\CoreService.dll
 D:\Projects\VirtualOffice\VirtualOffice\CoreService\obj\Debug\CoreService.pdb
-D:\Projects\VirtualOffice\VirtualOffice\CoreService\bin\AutoMapper.Net4.dll

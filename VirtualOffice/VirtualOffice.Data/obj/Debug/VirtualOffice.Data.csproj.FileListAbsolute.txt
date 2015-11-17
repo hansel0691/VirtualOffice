@@ -106,8 +106,8 @@ D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\Domain.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\EntityFramework.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\EntityFramework.SqlServer.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\Newtonsoft.Json.dll
-D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\Ninject.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\RestSharp.dll
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\Ninject.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\System.Web.Http.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\System.Net.Http.Formatting.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\ApiRestClient.pdb
@@ -116,8 +116,8 @@ D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\AutoMapper.
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\EntityFramework.xml
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\EntityFramework.SqlServer.xml
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\Newtonsoft.Json.xml
-D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\Ninject.xml
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\RestSharp.xml
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\Ninject.xml
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\System.Web.Http.xml
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Data\bin\Debug\System.Net.Http.Formatting.xml
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Data\obj\Debug\VirtualOffice.Data.csprojResolveAssemblyReference.cache

@@ -117,6 +117,7 @@ D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\Domain.Inventory.dll
 D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\EntityFramework.dll
 D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\EntityFramework.SqlServer.dll
 D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\LinFu.DynamicProxy.dll
+D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\Moq.dll
 D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\Newtonsoft.Json.dll
 D:\Projects\VirtualOffice\VirtualOffice\Services\bin\Debug\Ninject.dll

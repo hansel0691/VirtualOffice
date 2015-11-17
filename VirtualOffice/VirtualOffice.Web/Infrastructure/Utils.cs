@@ -1,32 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.Entity.Core.Metadata.Edm;
-using System.Data.SqlTypes;
 using System.Dynamic;
-using System.Net;
-using System.Reflection;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography;
-using System.Security.Policy;
-using System.Text;
-using System.Web;
 using System.Web.Mvc;
-using System.Web.Mvc.Html;
 using System.Web.UI.WebControls;
 using ApiRestClient.Models;
 using ClassLibrary2.Domain;
-using Domain.Infrastructure.Services;
 using Domain.Models;
 using Kendo.Mvc;
 using Kendo.Mvc.Infrastructure;
 using Kendo.Mvc.UI;
-using Microsoft.Data.Edm.Expressions;
 using RestSharp;
 using VirtualOffice.Web.Models;
 using VirtualOffice.Web.Models.NewReports;
-using UrlHelper = System.Web.Http.Routing.UrlHelper;
 
 namespace VirtualOffice.Web.Infrastructure
 {

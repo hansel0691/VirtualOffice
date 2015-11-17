@@ -1334,5 +1334,28 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_update_information" FunctionName="VirtualOfficeModel.Store.sp_update_information" />
     <FunctionImportMapping FunctionImportName="sp_update_virtualoffice_commission" FunctionName="VirtualOfficeModel.Store.sp_update_virtualoffice_commission" />
+    <FunctionImportMapping FunctionImportName="sp_child_list_by_agent" FunctionName="VirtualOfficeModel.Store.sp_child_list_by_agent">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_child_list_by_agent_Result">
+          <ScalarProperty Name="child" ColumnName="child" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="LEVEL" ColumnName="LEVEL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_list_products_related" FunctionName="VirtualOfficeModel.Store.sp_list_products_related">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_list_products_related_Result">
+          <ScalarProperty Name="merproduct_sbt" ColumnName="merproduct_sbt" />
+          <ScalarProperty Name="pro_description" ColumnName="pro_description" />
+          <ScalarProperty Name="Product_MainCode" ColumnName="Product_MainCode" />
+          <ScalarProperty Name="mercomm" ColumnName="mercomm" />
+          <ScalarProperty Name="agentcomm" ColumnName="agentcomm" />
+          <ScalarProperty Name="distcomm" ColumnName="distcomm" />
+          <ScalarProperty Name="isocomm" ColumnName="isocomm" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_update_commission_virtualOffice" FunctionName="VirtualOfficeModel.Store.sp_update_commission_virtualOffice" />
   </EntityContainerMapping>
 </Mapping>

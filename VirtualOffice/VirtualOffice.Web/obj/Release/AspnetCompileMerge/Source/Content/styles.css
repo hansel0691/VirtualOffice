@@ -9455,5 +9455,8 @@ div.k-grid#Reports div.k-grid-content{
     color: #3776BD !important;
 }
 .red-logo {
-    color: #A23232 !important;
+    color: rgb(206, 0, 4); !important;
+}
+table tbody tr td[aligntext=center] {
+    text-align: center;
 }

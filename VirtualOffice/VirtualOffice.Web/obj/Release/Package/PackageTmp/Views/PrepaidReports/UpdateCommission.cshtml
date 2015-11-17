@@ -1,0 +1,180 @@
+﻿﻿@using ClassLibrary2.Domain
+@using VirtualOffice.Web.Infrastructure
+@using VirtualOffice.Web.Models
+@using VirtualOffice.Web.Models.NewReports
+@model VirtualOfficeReportModel
+@{
+    Layout = "~/Views/Shared/_NewUserLayout.cshtml";
+
+    var columnsCofig = Model.ColumnsConfig;
+
+    var usersCode = ViewBag.UsersCode as string;
+
+}
+<div class="container select" id="main">
+    <input id="storeProcedure" type="hidden" value="@Model.StoreProcedureName">
+    <hr />
+    <div class="panel-heading">
+        <div class="row">
+            <div class="hidden-xs col-sm-9 col-md-9">
+                <h3 class="text-secundary">Update Merchant Commissions</h3>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12" id="sidebar">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a data-toggle="collapse" data-target="#collapse1" class="expand">Elements on Report <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                    </div>
+                    <div class="panel-body panel-collapse collapse" id="collapse1">
+                        <label for="last-visit" class="control-label">Columns to show:</label>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                @foreach (var column in columnsCofig.Keys)
+                                {
+                                    <div class="checkbox">
+                                        <label id=@string.Format("label^{0}", column)>
+                                            <span>@Html.CheckBox("columnName^" + column, !columnsCofig[column].Hidden, new { @value = column, onchange = "UpdateDataProjection()" })</span>
+                                            <span class="fix_checkbox">@columnsCofig[column].Label</span>
+                                        </label>
+                                    </div>
+                                }
+                                <div class="checkbox">
+                                    <label class="text-secundary">
+                                        @Html.CheckBox("saveOutputAsDefault")<span class="fix_checkbox">Save as default</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <button type="button" class="btn btn-secundary" onclick="applyUserfilters()">Go!</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a data-toggle="collapse" data-target="#collapse" class="expand">Select a product's search criteria: <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                    </div>
+                    <div class="panel-body panel-collapse collapse" id="collapse">
+                        <div class="col-xs-12 col-sm-3 col-md-3">
+                            <div class="form-group">
+                                @Html.Label("Product's Code")
+                                @Html.TextBox("Code", "", new { @class = "form-control", @placeholder = "Enter a client code", @type = "text" })
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-3 col-md-3">
+                            <div class="form-group">
+                                @Html.Label("Product's Name")
+                                @Html.TextBox("Name", "", new { @class = "form-control", @placeholder = "Enter a client name", @type = "text" })
+                            </div>
+                        </div>
+                        <div>
+                            <br />
+                            <button type="button" class="btn btn-secundary" onclick="applyUserfilters()">Accept</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row top-20">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body-kendo">
+                    @(Html.Kendo().Grid<CommissionByProductViewModel>()
+                          .Name("Reports")
+                          .HtmlAttributes(new { @style = "text-align: left; height: 850px;" }).EnableCustomBinding(true)
+                          .Columns(col =>
+                          {
+                              foreach (var column in columnsCofig.Keys)
+                              {
+                                  var columnConfig = columnsCofig[column];
+                                  var label = columnsCofig[column].Label;
+                                  var columnResult = col.Bound(column).Width(columnConfig.Width).Hidden(columnConfig.Hidden).Title(label).Groupable(columnConfig.Groupable);
+
+                                  if (column == "Selected")
+                                      columnResult = columnResult.ClientTemplate("<input type='checkbox' #= Selected ? checked='checked' :'' #  onclick='CleanAllCheck()' />")
+                                          //.HeaderTemplate("<input id='selectAllChk' type='button' id='masterCheckBox' onclick='checkAll()' value='select all'/>")
+                                          .HtmlAttributes(new { alignText = "center" }).Sortable(false);
+
+                                  if (!string.IsNullOrEmpty(columnConfig.Link))
+                                      columnResult = columnResult.ClientTemplate(columnConfig.Link);
+
+                                  if (columnConfig.IsDate)
+                                      columnResult = columnResult.ClientTemplate("#= kendo.toString(getLocalDate(Date_Time), 'M/d/yyyy h:mm:ss tt') #");
+
+                                  else if (columnConfig.IsNumeric)
+                                      columnResult.ClientFooterTemplate("#= kendo.format('{0:n2}', sum)#").Format("{0:n2}").HtmlAttributes(new { alignText = "right", tabIndex = "-1" });
+                              }
+
+                          })
+                            .ToolBar(toolbar => toolbar.Save())
+                            .Editable(editable => editable.Mode(GridEditMode.InCell))
+                            .DataSource(ds => ds.Ajax()
+                            .Batch(true)
+                            .Model(model =>
+                            {
+                                //change to do generic
+                                model.Id(c => c.ProductCode);
+                                model.Field(c => c.ProductCode).Editable(false);
+                                model.Field(c => c.Product).Editable(false);
+                                model.Field(c => c.MyCommission).Editable(false);
+                                model.Field(c => c.UserDescription).Editable(false);
+                                model.Field(c => c.UserId).Editable(false);
+                            })
+                            .Events(e => e.RequestEnd("onRequestEnd"))
+                            .Aggregates(aggregates =>
+                            {
+                                foreach (var col in columnsCofig.Where(col => col.Value.IsNumeric))
+                                {
+                                    aggregates.Add(col.Key, typeof(double)).Sum();
+                                }
+                            })
+                                .Read(r => r.Action("RunUpdateCommission", "PrepaidReports", new { selectedUsers = usersCode }).Data("getReportFilters"))
+                                .Update(r => r.Action("UpdateCommission", "PrepaidReports"))
+                            .PageSize(100)
+                          )
+                          .Events(ev => ev.ColumnReorder("saveNewOutPutOrder").ColumnResize("saveColumnWidth"))
+                          .Resizable(config => config.Columns(true))
+                          .Sortable()
+                          .Groupable()
+                          .Reorderable(reorder => reorder.Columns(true))
+                          .Scrollable(scr => scr.Height(600))
+                          .Pageable(pageable => pageable.Refresh(true).PageSizes(new[] { 100, 200, 500 }).ButtonCount(5))
+                          .AutoBind(true)
+                    )
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- .container.select#main -->
+
+<script src="~/Scripts/reportManager.js"></script>
+<script>
+    function onRequestEnd(e) {
+        if (e.type == "update") {
+            //check for errors in the response
+            var response = e.response;
+            if (response == null || response.Errors == null) {
+                for (var i = 0; i < response.Messages.length; i++) {
+                    alert(response.Messages[i]);
+                }
+                if (response.Success)
+                    alert("Commissions successfully changed!")
+                if (!response.Success)
+                    var grid = $("#Reports").data("kendoGrid").cancelChanges();
+            }
+            else if (response == null) {
+                for (var i = 0; i < response.Errors.length; i++) {
+                    alert(response.Errors[i]);
+                }
+                var grid = $("#Reports").data("kendoGrid").cancelChanges();
+            }
+        }
+    }
+</script>

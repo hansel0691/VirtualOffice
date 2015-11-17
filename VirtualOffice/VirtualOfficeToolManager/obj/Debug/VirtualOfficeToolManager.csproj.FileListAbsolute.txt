@@ -133,6 +133,7 @@ C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOffic
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Domain.Blackstone.pdb
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\obj\Debug\VirtualOfficeToolManager.dll
 C:\Users\hgarcia\Desktop\virtual office\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\obj\Debug\VirtualOfficeToolManager.pdb
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\obj\Debug\VirtualOfficeToolManager.csprojResolveAssemblyReference.cache
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\VirtualOfficeToolManager.dll.config
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\VirtualOfficeToolManager.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\VirtualOfficeToolManager.pdb
@@ -141,14 +142,24 @@ D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\AutoM
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Domain.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\EntityFramework.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Microsoft.CSharp.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Newtonsoft.Json.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Ninject.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\RestSharp.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Services.dll
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\System.ComponentModel.DataAnnotations.dll
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\System.Data.DataSetExtensions.dll
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\System.Data.dll
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\System.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\System.Net.Http.Formatting.dll
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\System.Runtime.Serialization.dll
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\System.Security.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\System.Web.Http.dll
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\System.Xml.dll
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\System.Xml.Linq.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Ninject.Extensions.Interception.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Domain.Inventory.dll
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Domain.Blackstone.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\ApiRestClient.pdb
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\AutoMapper.xml
@@ -160,10 +171,9 @@ D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Ninje
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\RestSharp.xml
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Services.pdb
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\System.Net.Http.Formatting.xml
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\System.Web.Http.xml
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Ninject.Extensions.Interception.xml
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Domain.Inventory.pdb
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\Domain.Blackstone.pdb
-D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\obj\Debug\VirtualOfficeToolManager.csprojResolveAssemblyReference.cache
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\obj\Debug\VirtualOfficeToolManager.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\obj\Debug\VirtualOfficeToolManager.pdb
-D:\Projects\VirtualOffice\VirtualOffice\VirtualOfficeToolManager\bin\Debug\System.Web.Http.xml

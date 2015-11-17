@@ -91,3 +91,4 @@ D:\Projects\VirtualOffice\VirtualOffice\Domain\bin\Release\System.Web.WebPages.R
 D:\Projects\VirtualOffice\VirtualOffice\Domain\obj\Release\Domain.csprojResolveAssemblyReference.cache
 D:\Projects\VirtualOffice\VirtualOffice\Domain\obj\Release\Domain.dll
 D:\Projects\VirtualOffice\VirtualOffice\Domain\obj\Release\Domain.pdb
+D:\Projects\VirtualOffice\VirtualOffice\Domain\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll

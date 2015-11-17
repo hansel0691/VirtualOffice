@@ -292,6 +292,24 @@ namespace VirtualOffice.Service.Services
             return result;
         }
 
+        public IEnumerable<ChildrenByAgentReport> GetChildrenByAgent(int userId)
+        {
+            var prepaidSummary = _reportRepository.GetChildrenByAgent(userId);
+
+            var result = prepaidSummary.MapTo<IEnumerable<sp_child_list_by_agent_Result>, IEnumerable<ChildrenByAgentReport>>();
+
+            return result;
+        }
+
+        public IEnumerable<CommissionByProductReport> ProductsCommission(int userId, bool isMerchant)
+        {
+            var prepaidSummary = _reportRepository.ProductsCommission(userId, isMerchant);
+
+            var result = prepaidSummary.MapTo<IEnumerable<sp_list_products_related_Result>, IEnumerable<CommissionByProductReport>>();
+
+            return result;
+        }
+
 
         #endregion
 
@@ -458,6 +476,27 @@ namespace VirtualOffice.Service.Services
             }
         }
 
+        
+        public VirtualOfficeUser GetUser(string userId)
+        {
+            try
+            {
+                var user = _userRepository.GetUser(int.Parse(userId));
+
+                var userResult = user.MapTo<get_user_Result, VirtualOfficeUser>();
+
+                if (userResult != null) // Adding the user role (Luis's request for a Master User)
+                    userResult.Role = _userRepository.GetUserRole(userResult.userid);
+
+                return userResult;
+            }
+            catch (Exception exception)
+            {
+                return new VirtualOfficeUser();
+            }
+        }
+
+
         public VirtualOfficeUser GetUser(string userId, string password)
         {
             try
@@ -557,7 +596,7 @@ namespace VirtualOffice.Service.Services
                 dashboardItems.ForEach(
                 dashboardConfig =>
                 {
-                    var result = GetDashboardConfigItems(dashboardConfig, agentId, runReports);
+                    var result = GetDashboardConfigItems(dashboardConfig, agentId, false);
                     dashboardConfig.Items = result.Items;
                     dashboardConfig.ItemsUrl = result.UrlLinks;
                 });
@@ -646,6 +685,11 @@ namespace VirtualOffice.Service.Services
         #region Prepaid Accounts
 
         #region Dashboard Items
+
+        private void AssignItemsCount(List<DashboardItem> dashboardConfig)
+        {
+
+        }
 
         public ItemValueUrl GetPrepaidAccounts(int agentId, bool runReports)
         {
@@ -1189,6 +1233,18 @@ namespace VirtualOffice.Service.Services
             return prepaidSummary;
         }
 
+        public bool UpdateUserCommision(int parentId, int childId, int productCode, double commission)
+        {
+            var user = _userRepository.GetUser(childId);
+
+            var isMerchant = user.usertype == 0;
+
+            var prepaidSummary = _reportRepository.UpdateUserCommision(parentId, childId, isMerchant, productCode, commission);
+
+            return prepaidSummary;
+        }
+
+
         public bool UpdatePrepaidAcountStatus(int? merchantId, int status)
         {
             var prepaidSummary = _reportRepository.UpdatePrepaidAcountStatus(merchantId, status);
@@ -1199,6 +1255,13 @@ namespace VirtualOffice.Service.Services
         }
 
         public bool UpdatePersonalInfo(int id, string email, string phone, bool isMerchant)
+        {
+            var edited = _userRepository.UpdatePersonalInfo(id, email, phone, isMerchant);
+
+            return edited;
+        }
+
+        public bool CreatePosPendingMerchants(int id, string email, string phone, bool isMerchant)
         {
             var edited = _userRepository.UpdatePersonalInfo(id, email, phone, isMerchant);
 
