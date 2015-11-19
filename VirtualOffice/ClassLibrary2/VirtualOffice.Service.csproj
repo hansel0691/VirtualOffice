@@ -72,6 +72,7 @@
     <Compile Include="Domain\MerchantServices\MsCommssionSummaryForVmC.cs" />
     <Compile Include="Domain\MerchantServices\MsTransactionDetailsResult.cs" />
     <Compile Include="Domain\MerchantServices\MsTransactionSummaryResult.cs" />
+    <Compile Include="Domain\MerchantServices\PortfolioAccountsByType.cs" />
     <Compile Include="Domain\Others\DateRange.cs" />
     <Compile Include="Domain\Others\Document.cs" />
     <Compile Include="Domain\Others\ExternalLoginResponse.cs" />

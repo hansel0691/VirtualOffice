@@ -8,6 +8,7 @@ using VirtualOffice.Web.Models;
 using ApiRestClient.Infrastructure;
 using System.Net.Mail;
 using System.Net;
+using Mvc.Mailer;
 
 namespace VirtualOffice.Web.Controllers
 {
@@ -20,7 +21,7 @@ namespace VirtualOffice.Web.Controllers
         }
 
 
-        public ActionResult CreateAccount()
+        public ActionResult CreateAccount(string msg)
         {
             var user = Session[Utils.UserKey] as UserModel;
 
@@ -28,7 +29,8 @@ namespace VirtualOffice.Web.Controllers
                 return RedirectToAction("Index", "Reports");
 
             var model = new MerchantCreationModel();
-
+            ViewBag.Message = msg;
+            ViewBag.AllStates = GetAllStates();
             return View(model);
         }
 
@@ -59,37 +61,100 @@ namespace VirtualOffice.Web.Controllers
                 if (reportData)
                 {
                     SendConfirmationEmails();
+                    var msg = string.Format("The merchant {0} has been added to our systems and is pending for approval.", businessName);
+                    return RedirectToAction("CreateAccount", new { msg = msg });
                 }
-                return RedirectToAction("Index", "Report");
             }
+            ViewBag.Error = "There was an error trying to add the new merchant. Please check the information and try again.";
+            ViewBag.AllStates = GetAllStates();
             return View(model);
             
         }
 
         private void SendConfirmationEmails()
         {
-            var body = "<p>Email From: {0} ({1})</p><p>Message:</p><p>{2}</p>";
-            var message = new MailMessage();
-            message.To.Add(new MailAddress("hgarcia@blackstoneonline.com")); 
-            //message.To.Add(new MailAddress("svaras@nopin.us")); 
-            message.From = new MailAddress("sender@outlook.com"); 
-            message.Subject = "Creation of New Merchant In systems";
-            message.Body = "A new merchant has been created.";
-            message.IsBodyHtml = true;
-
-            using (var smtp = new SmtpClient())
+            try
             {
-                var credential = new NetworkCredential
+                var body = "<p>Email From: {0} ({1})</p><p>Message:</p><p>{2}</p>";
+                var mailer = new MailerBase();
+                var fromEmailId = @System.Configuration.ConfigurationManager.AppSettings["mailId"];
+                var toEmailId = @System.Configuration.ConfigurationManager.AppSettings["mailToCC"];
+                //var ccEmailId = @System.Configuration.ConfigurationManager.AppSettings["mailTo"];
+
+                var email = mailer.Populate(x =>
                 {
-                    UserName = "user@outlook.com",  // replace with valid value
-                    Password = "password"  // replace with valid value
-                };
-                smtp.Credentials = credential;
-                smtp.Host = "smtp-mail.outlook.com";
-                smtp.Port = 587;
-                smtp.EnableSsl = true;
-                smtp.SendMailAsync(message);
+                    x.From = new MailAddress(fromEmailId);
+                    x.Subject = "Creation of New Merchant In Systems";
+                    x.To.Add(toEmailId);
+                    x.Body = body;
+                    x.IsBodyHtml = true;
+                    x.ViewName = "Confirmation";
+                });
+                email.Send();
             }
+            catch (Exception e)
+            {
+                return;
+            }
+        }
+
+        private SelectList GetAllStates()
+        {
+            var states = new List<string>()
+            {
+                "Alabama",
+                "Alaska",
+                "Arizona",
+                "Arkansas",
+                "California",
+                "Colorado",
+                "Connecticut",
+                "Delaware",
+                "District Of Columbia",
+                "Florida",
+                "Georgia",
+                "Hawaii",
+                "Idaho",
+                "Illinois",
+                "Indiana",
+                "Iowa",
+                "Kansas",
+                "Kentucky",
+                "Louisiana",
+                "Maine",
+                "Maryland",
+                "Massachusetts",
+                "Michigan",
+                "Minnesota",
+                "Mississippi",
+                "Missouri",
+                "Montana",
+                "Nebraska",
+                "Nevada",
+                "New Hampshire",
+                "New Jersey",
+                "New Mexico",
+                "New York",
+                "North Carolina",
+                "North Dakota",
+                "Ohio",
+                "Oklahoma",
+                "Oregon",
+                "Pennsylvania",
+                "Rhode Island",
+                "South Carolina",
+                "South Dakota",
+                "Tennessee",
+                "Texas",
+                "Utah",
+                "Vermont",
+                "Virginia",
+                "Washington",
+                "West Virginia",
+                "Wisconsin",
+                "Wyoming"
+            };
+            return new SelectList(states);
         }
     }
 

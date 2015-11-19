@@ -79,6 +79,7 @@ namespace VirtualOffice.Web.Infrastructure
             .ForMember(p => p.fee, k => k.MapFrom(m => double.Parse(m.fee.GetPlaneFormat())));
 
             Mapper.CreateMap<AccountsInCollectionResult, PrepaidAccountsInCollectionViewModel>();
+            Mapper.CreateMap<PortfolioAccountsByType, MsAccountStatusViewModel>();
             
             Mapper.CreateMap<GetMerchantCreditLimitsResult, MerchantCreditLimitResultViewModel>();
             

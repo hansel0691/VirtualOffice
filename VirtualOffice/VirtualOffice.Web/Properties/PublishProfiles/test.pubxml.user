@@ -16,10 +16,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/16/2015 13:30:41</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>11/16/2015 13:31:09</publishTime>
+      <publishTime>11/18/2015 09:43:40</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>11/16/2015 13:31:09</publishTime>
+      <publishTime>11/18/2015 09:43:40</publishTime>
     </File>
     <File Include="bin/AutoMapper.dll">
       <publishTime>11/13/2015 09:13:35</publishTime>
@@ -28,7 +28,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/13/2015 09:13:34</publishTime>
     </File>
     <File Include="bin/ClassLibrary2.dll">
-      <publishTime>11/16/2015 13:30:43</publishTime>
+      <publishTime>11/18/2015 09:43:30</publishTime>
     </File>
     <File Include="bin/CoreData.dll">
       <publishTime>10/07/2015 09:24:39</publishTime>
@@ -166,10 +166,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/13/2015 09:13:22</publishTime>
     </File>
     <File Include="bin/VirtualOffice.Data.dll">
-      <publishTime>11/16/2015 13:30:42</publishTime>
+      <publishTime>11/18/2015 09:43:29</publishTime>
     </File>
     <File Include="bin/VirtualOffice.Web.dll">
-      <publishTime>11/16/2015 13:30:44</publishTime>
+      <publishTime>11/18/2015 09:43:31</publishTime>
     </File>
     <File Include="bin/WebActivatorEx.dll">
       <publishTime>10/07/2015 09:24:40</publishTime>
@@ -1000,7 +1000,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/07/2015 09:24:27</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>10/07/2015 09:24:27</publishTime>
+      <publishTime>11/17/2015 14:08:59</publishTime>
     </File>
     <File Include="Content/styles.css">
       <publishTime>11/09/2015 09:20:55</publishTime>
@@ -1219,7 +1219,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/16/2015 12:29:53</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>11/16/2015 13:31:01</publishTime>
+      <publishTime>11/18/2015 09:43:33</publishTime>
     </File>
     <File Include="Scripts/.DS_Store">
       <publishTime>10/07/2015 09:24:32</publishTime>
@@ -4665,6 +4665,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Home/Index.cshtml">
       <publishTime>11/10/2015 14:54:50</publishTime>
     </File>
+    <File Include="Views/Manager/CreateAccount.cshtml">
+      <publishTime>11/17/2015 15:20:55</publishTime>
+    </File>
+    <File Include="Views/MerchantServicesReports/MsAccountStatus.cshtml">
+      <publishTime>11/17/2015 15:35:16</publishTime>
+    </File>
     <File Include="Views/MerchantServicesReports/MsComissionSummaryForAmex.cshtml">
       <publishTime>10/08/2015 11:05:31</publishTime>
     </File>
@@ -4693,7 +4699,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/03/2015 15:11:36</publishTime>
     </File>
     <File Include="Views/MyProfile/ChangePassword.cshtml">
-      <publishTime>11/05/2015 11:15:59</publishTime>
+      <publishTime>11/16/2015 14:11:11</publishTime>
     </File>
     <File Include="Views/MyProfile/HistoricIncidents.cshtml">
       <publishTime>10/07/2015 09:24:39</publishTime>
@@ -4753,7 +4759,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/15/2015 10:14:03</publishTime>
     </File>
     <File Include="Views/PrepaidReports/MerchantCommissions.cshtml">
-      <publishTime>11/12/2015 13:27:32</publishTime>
+      <publishTime>11/16/2015 13:47:29</publishTime>
     </File>
     <File Include="Views/PrepaidReports/MerchantCreditLimits.cshtml">
       <publishTime>11/12/2015 13:03:22</publishTime>
@@ -4852,16 +4858,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/07/2015 09:24:39</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>11/10/2015 14:52:41</publishTime>
+      <publishTime>11/17/2015 14:13:07</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>10/07/2015 09:24:39</publishTime>
     </File>
     <File Include="Views/Shared/_NewUserLayout.cshtml">
-      <publishTime>11/17/2015 09:28:39</publishTime>
+      <publishTime>11/17/2015 14:13:07</publishTime>
     </File>
     <File Include="Views/Shared/_UserLayout.cshtml">
-      <publishTime>11/10/2015 14:52:48</publishTime>
+      <publishTime>11/17/2015 14:13:07</publishTime>
     </File>
     <File Include="Views/Tools/CompanyPolice.cshtml">
       <publishTime>10/07/2015 09:24:39</publishTime>
@@ -4891,7 +4897,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/07/2015 09:24:39</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/16/2015 12:29:53</publishTime>
+      <publishTime>11/18/2015 09:38:14</publishTime>
     </File>
   </ItemGroup>
 </Project>

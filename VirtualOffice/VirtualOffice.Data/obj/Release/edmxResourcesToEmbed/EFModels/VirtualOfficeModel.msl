@@ -1357,5 +1357,29 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_update_commission_virtualOffice" FunctionName="VirtualOfficeModel.Store.sp_update_commission_virtualOffice" />
+    <FunctionImportMapping FunctionImportName="sp_report_portfolio_summary_totals" FunctionName="VirtualOfficeModel.Store.sp_report_portfolio_summary_totals">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualOfficeModel.sp_report_portfolio_summary_totals_Result">
+          <ScalarProperty Name="PrepaidAccounts_Actives" ColumnName="PrepaidAccounts_Actives" />
+          <ScalarProperty Name="PrepaidAccounts_inactives" ColumnName="PrepaidAccounts_inactives" />
+          <ScalarProperty Name="AccountsInAlert_incompliance" ColumnName="AccountsInAlert_incompliance" />
+          <ScalarProperty Name="AccountsInAlert_suspended" ColumnName="AccountsInAlert_suspended" />
+          <ScalarProperty Name="AccountsInAlert_closedwithbalance" ColumnName="AccountsInAlert_closedwithbalance" />
+          <ScalarProperty Name="GrSalesTOT" ColumnName="GrSalesTOT" />
+          <ScalarProperty Name="BillPayment" ColumnName="BillPayment" />
+          <ScalarProperty Name="Running_Commission" ColumnName="Running_Commission" />
+          <ScalarProperty Name="TodayTransactions" ColumnName="TodayTransactions" />
+          <ScalarProperty Name="MSAccounts_Actives" ColumnName="MSAccounts_Actives" />
+          <ScalarProperty Name="MSAccounts_inactives" ColumnName="MSAccounts_inactives" />
+          <ScalarProperty Name="MSCommissionsVISAMCAME" ColumnName="MSCommissionsVISAMCAME" />
+          <ScalarProperty Name="MSCommissionsOthers" ColumnName="MSCommissionsOthers" />
+          <ScalarProperty Name="MSCommissionsTotal" ColumnName="MSCommissionsTotal" />
+          <ScalarProperty Name="MSApplicationsApproved" ColumnName="MSApplicationsApproved" />
+          <ScalarProperty Name="MSApplicationsPending" ColumnName="MSApplicationsPending" />
+          <ScalarProperty Name="MSApplicationsCanceled" ColumnName="MSApplicationsCanceled" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_Create_PosPendingMerchants" FunctionName="VirtualOfficeModel.Store.SP_Create_PosPendingMerchants" />
   </EntityContainerMapping>
 </Mapping>

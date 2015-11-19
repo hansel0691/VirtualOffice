@@ -45,7 +45,6 @@ D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Release\ClassLibrary2.
 D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Release\ClassLibrary2.pdb
 D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Release\AutoMapper.dll
 D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Release\VirtualOffice.Data.dll
-D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Release\EntityFramework.dll
 D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Release\Newtonsoft.Json.dll
 D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Release\VirtualOffice.Data.pdb
 D:\Projects\VirtualOffice\VirtualOffice\ClassLibrary2\bin\Release\AutoMapper.xml

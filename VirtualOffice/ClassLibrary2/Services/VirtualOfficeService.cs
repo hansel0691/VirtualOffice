@@ -454,6 +454,27 @@ namespace VirtualOffice.Service.Services
                 return new List<MerchantServices.MsCommissionSummaryByTotals>();
             }
         }
+        public IEnumerable<MerchantServices.PortfolioAccountsByType> RunMerchantServicesPortfolioByAccountsType(int agentId, int type = -1)
+        {
+            try
+            {
+                var reportResult = new List<sp_report_msv_portfolio_AccountsByType_Result>();
+                if (type == -1 || type == 0)
+                    reportResult.AddRange(_reportRepository.RunMerchantServicesPortfolioByAccountsType(agentId, 0));
+                if (type == -1 || type == 1)
+                    reportResult.AddRange(_reportRepository.RunMerchantServicesPortfolioByAccountsType(agentId, 1));
+                if (type == -1 || type == 2)
+                    reportResult.AddRange(_reportRepository.RunMerchantServicesPortfolioByAccountsType(agentId, 2));
+
+                var result = reportResult.MapTo<IEnumerable<sp_report_msv_portfolio_AccountsByType_Result>, IEnumerable<MerchantServices.PortfolioAccountsByType>>();
+
+                return result;
+            }
+            catch (Exception exception)
+            {
+                return new List<MerchantServices.PortfolioAccountsByType>();
+            }
+        }
 
         #endregion
 
@@ -844,9 +865,9 @@ namespace VirtualOffice.Service.Services
             };
             var resultUrls = new Dictionary<string, string>
             {
-                {"Approved", ""},
-                {"Pending", ""},
-                {"Cancelled", ""}
+                {"Approved", "MerchantServicesReports/MsAccountStatus?status=0"},
+                {"Pending", "MerchantServicesReports/MsAccountStatus?status=1"},
+                {"Cancelled", "MerchantServicesReports/MsAccountStatus?status=2"}
             };
 
             return new ItemValueUrl(result, resultUrls);

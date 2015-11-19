@@ -140,8 +140,7 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult MsComissionSummaryTotal(int agentId, string startDate, string endDate)
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_report_msv_commission_details_by_totals",
-                                                           typeof(MsCommissionSummaryByTotalsViewModel));
+            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_report_msv_commission_details_by_totals", typeof(MsCommissionSummaryByTotalsViewModel));
 
             const string printLink = "/MerchantServicesReports/PrintCommissionSummaryByTotals";
 
@@ -151,6 +150,18 @@ namespace VirtualOffice.Web.Controllers
 
             ViewBag.AgentId = agentId;
 
+            return View(model);
+        }
+
+
+        public ActionResult MsAccountStatus(int status = -1)
+        {
+            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_report_msv_portfolio_AccountsByType", typeof(MsAccountStatusViewModel));
+
+            const string printLink = "";
+
+            var model = GetReportModel(columnsConfig, printLink, "sp_report_msv_portfolio_AccountsByType");
+            ViewBag.Status = status;
             return View(model);
         }
 
@@ -399,6 +410,38 @@ namespace VirtualOffice.Web.Controllers
             }
 
         }
+
+        [HttpPost]
+        public ActionResult RunAccountStatus([DataSourceRequest] DataSourceRequest request, string outPut, bool saveOutPut, int status = -1)
+        {
+            try
+            {
+                if (saveOutPut)
+                {
+                    var outPutDeserialized = new JavaScriptSerializer().Deserialize<List<string>>(outPut);
+
+                    _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "sp_report_msv_portfolio_AccountsByType", outPutDeserialized.GetCommaSeparatedTokens());
+                }
+
+                //SaveLastDateRangeInSession(startDate, endDate);
+
+                var agent = GetLoggedUserId();
+
+                var reportData = _virtualOfficeService.RunMerchantServicesPortfolioByAccountsType(agent, status);
+
+                var mappedResult = reportData.MapTo<IEnumerable<PortfolioAccountsByType>, IEnumerable<MsAccountStatusViewModel>>();
+
+                var result = mappedResult.ToDataSourceResult(request);
+
+                return Json(result);
+            }
+            catch (Exception exception)
+            {
+                return null;
+            }
+        }
+
+
         #endregion
 
         #region Aux Ops

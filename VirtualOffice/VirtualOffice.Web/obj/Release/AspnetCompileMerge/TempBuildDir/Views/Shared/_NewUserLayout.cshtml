@@ -166,6 +166,12 @@
                                 }
                             </ul>
                         </li>
+                        @if (user.IsFullcarga && userCategory != Category.Merchant)
+                        {
+                            <li class="@Utils.GetListItemClassByController(Url.Action("CreateAccount", "Manager"), Request.Url.ToString())">
+                                <a href="@Url.Action("CreateAccount", "Manager")">Create Merchant <span class="badge"></span></a>
+                            </li>
+                        }
                         <li class="@Utils.GetListItemClassByController(Url.Action("ChangePassword", "MyProfile"), Request.Url.ToString())">
                             <a href="@Url.Action("ChangePassword", "MyProfile")">My Profile <span class="badge"></span></a>
                         </li>

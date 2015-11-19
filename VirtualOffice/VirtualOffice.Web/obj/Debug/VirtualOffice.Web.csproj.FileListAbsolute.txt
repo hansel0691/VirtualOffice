@@ -137,3 +137,4 @@ D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\Domain.Inventory.p
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\Domain.Blackstone.pdb
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\obj\Debug\VirtualOffice.Web.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\obj\Debug\VirtualOffice.Web.pdb
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\Mvc.Mailer.dll

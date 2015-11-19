@@ -71,6 +71,7 @@ namespace VirtualOffice.Service.Domain.Infrastructure
             Mapper.CreateMap<sp_report_msv_commission_details_from_visamc_Result, MsCommssionSummaryForVmC>();
             Mapper.CreateMap<sp_report_msv_commission_details_from_other_Result, MsCommsissionSummaryForOthers>();
             Mapper.CreateMap<sp_report_msv_commission_details_by_totals_Result, MsCommissionSummaryByTotals>();
+            Mapper.CreateMap<sp_report_msv_portfolio_AccountsByType_Result, PortfolioAccountsByType>();
             #endregion
 
             #region General
