@@ -109,3 +109,4 @@ D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\obj\Release\VirtualOff
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\obj\Release\VirtualOffice.Web.pdb
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\System.Web.dll
+D:\Projects\VirtualOffice\VirtualOffice\VirtualOffice.Web\bin\Mvc.Mailer.dll

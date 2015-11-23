@@ -73,7 +73,7 @@
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <a data-toggle="collapse" data-target="#collapse2" class="expand">Filters: <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                        <a data-toggle="collapse" data-target="#collapse2" class="expand">Select Date Range <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
                     </div>
                     <div class="panel-body panel-collapse collapse" id="collapse2">
 
@@ -115,7 +115,7 @@
                                   }
 
                                   if (columnConfig.IsDate)
-                                      columnResult.Format("{0:dd/MM/yyyy}");
+                                      columnResult.Format("{0:MM/dd/yyyy}");
 
                                   else if (columnConfig.IsNumeric)
                                       columnResult.ClientFooterTemplate("#= kendo.format('{0:n2}', sum)#").Format("{0:n2}").HtmlAttributes(new {alignText = "right"});

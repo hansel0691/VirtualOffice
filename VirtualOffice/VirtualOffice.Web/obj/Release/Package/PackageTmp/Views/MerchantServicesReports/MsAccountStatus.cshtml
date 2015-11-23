@@ -20,13 +20,14 @@
 <div class="container select" id="main">
     <input id="printLink" type="hidden" value="@Model.PrintLink">
     <input id="storeProcedure" type="hidden" value="@Model.StoreProcedureName">
+    <input id="status" type="hidden" value="@ViewBag.Status">
     <hr />
 
 
     <div class="panel-heading">
         <div class="row">
             <div class="hidden-xs col-sm-9 col-md-9">
-                <h3 class="text-secundary">Commission Totals Summary</h3>
+                <h3 class="text-secundary">Application Status</h3>
             </div>
             <div class="col-xs-4 col-sm-3 col-md-3 text-right">
                 <a class="btn btn-print btn-sm" id="PrintReportsBtn" onclick="PrintReport(false)"><span class="glyphicon glyphicon-print"></span> Print</a>
@@ -68,24 +69,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <a data-toggle="collapse" data-target="#collapse2" class="expand">Filter by Attributes <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
-                    </div>
-                    <div class="panel-body panel-collapse collapse" id="collapse2">
-
-                        <label>Start Date: </label>
-                        @(Html.Kendo().DatePicker().Name("startDate").Value(startDate))
-                        <br>
-
-                        <label>End Date: </label>
-                        @(Html.Kendo().DatePicker().Name("endDate").Value(endDate))
-
-                        <div class="">
-                            <button type="button" class="btn btn-secundary" onclick="applyUserfilters()">Go!</button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -112,7 +95,7 @@
                                       columnResult = columnResult.ClientTemplate(columnConfig.Link);
 
                                   if (columnConfig.IsDate)
-                                      columnResult.Format("{0:dd/MM/yyyy}");
+                                      columnResult.Format("{0:MM/dd/yyyy}");
 
                                   else if (columnConfig.IsNumeric)
                                       columnResult.ClientFooterTemplate("#= kendo.format('{0:n2}', sum)#").Format("{0:n2}").HtmlAttributes(new { alignText = "right" });

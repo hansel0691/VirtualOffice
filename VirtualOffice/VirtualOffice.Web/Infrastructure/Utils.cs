@@ -70,7 +70,7 @@ namespace VirtualOffice.Web.Infrastructure
         public static string CloudsWereRefreshed { get { return "CloudsWereRefreshed"; } }
 
         //public static DateTime DefaultStartDate { get { return GetFirst_LastDayInLastMonths(3).StartDate; } }
-        public static DateTime DefaultStartDate { get { return DateTime.Today.AddMonths(-3); } }
+        public static DateTime DefaultStartDate { get { return DateTime.Today.AddMonths(-1); } }
 
         //public static DateTime DefaultEndDate { get { return GetFirst_LastDayInLastMonths(1).EndDate; } }
         public static DateTime DefaultEndDate { get { return DateTime.Today; } }

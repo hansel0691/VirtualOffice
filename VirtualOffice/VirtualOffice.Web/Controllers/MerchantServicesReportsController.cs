@@ -37,11 +37,8 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult PortfolioSummary(int status = 1)
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_report_msv_portfolio_summary", typeof(MsPortfolioResultViewModel));
+            var model = GetReportViewModel("sp_report_msv_portfolio_summary", typeof(MsPortfolioResultViewModel), Url.Action("PrintMsPortfolioSummary"));
 
-            const string printLink = "/MerchantServicesReports/PrintMsPortfolioSummary";
-
-            var model = GetReportModel(columnsConfig, printLink, "sp_report_msv_portfolio_summary");
             ViewBag.Status = status;
 
             return View(model);
@@ -49,43 +46,28 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult SalesSummary()
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_report_msv_commission_summary",
-                                                           typeof(MsComissionSummaryResultViewModel));
-
-            AddLinksToColumnConfig(columnsConfig);
-
-            const string printLink = "/MerchantServicesReports/PrintCommissionSummary";
-
-            var model = GetReportModel(columnsConfig, printLink, "sp_report_msv_commission_summary");
+            var model = GetReportViewModel("sp_report_msv_commission_summary", typeof(MsComissionSummaryResultViewModel), Url.Action("PrintCommissionSummary"), AddLinksToColumnConfig);
 
             return View(model);
         }
 
         public ActionResult MsTransactionSummary()
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_getTransactions", typeof(MsTransactionSummaryViewModel));
-
-            const string printLink = "/MerchantServicesReports/PrintTransactionSummary";
-
-            var model = GetReportModel(columnsConfig, printLink, "sp_getTransactions");
-
-            AddLinksToTransactionsColumnConfig(columnsConfig, new[] { "mer_name", "vmc_amount", "amex_amount", "dscv_amount", "ebt_amount", "oth_amount", "tran_amt" });
-
-            columnsConfig["mer_name"].Groupable = true;
-            columnsConfig["datestamp"].Groupable = true;
+            var model = GetReportViewModel("sp_getTransactions", typeof(MsTransactionSummaryViewModel), Url.Action("PrintTransactionSummary"), 
+                config => {
+                    AddLinksToTransactionsColumnConfig(config, new[] { "mer_name", "vmc_amount", "amex_amount", "dscv_amount", "ebt_amount", "oth_amount", "tran_amt" });
+                    MarkColumnsAsGroupable(config, "mer_name", "datestamp");
+                });
 
             return View(model);
         }
 
         public ActionResult TransactionsDetails(int agentId, DateTime startDate, DateTime endDate, string columnName)
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_getTransactions_details", typeof(MsTransactionDetailsViewModel));
-
-            const string printLink = "/MerchantServicesReports/PrintTransactionDetails";
-
-            var model = GetReportModel(columnsConfig, printLink, "sp_getTransactions_details");
+            var model = GetReportViewModel("sp_getTransactions_details", typeof(MsTransactionDetailsViewModel), Url.Action("PrintTransactionDetails"));
 
             ViewBag.AgentId = agentId;
+
             ViewBag.ColumnName = columnName;
 
             return View(model);
@@ -93,11 +75,7 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult MsComissionSummaryForAmex(int agentId, string startDate, string endDate)
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_report_msv_commission_details_from_amex", typeof(MsComissionSummaryForAmexViewModel));
-
-            const string printLink = "/MerchantServicesReports/PrintCommissionSummaryAmex";
-
-            var model = GetReportModel(columnsConfig, printLink, "sp_report_msv_commission_details_from_amex");
+            var model = GetReportViewModel("sp_report_msv_commission_details_from_amex", typeof(MsComissionSummaryForAmexViewModel), Url.Action("PrintCommissionSummaryAmex"));
 
             model.DateRange = GetDateRange(startDate, endDate);
 
@@ -108,12 +86,7 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult MsComissionSummaryForVisaMasterCard(int agentId, string startDate, string endDate)
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_report_msv_commission_details_from_visamc",
-                                typeof(MsCommissionSummaryForVmCViewModel));
-
-            const string printLink = "/MerchantServicesReports/PrintCommissionSummaryVmc";
-
-            var model = GetReportModel(columnsConfig, printLink, "sp_report_msv_commission_details_from_visamc");
+            var model = GetReportViewModel("sp_report_msv_commission_details_from_visamc", typeof(MsCommissionSummaryForVmCViewModel), Url.Action("PrintCommissionSummaryVmc"));
 
             model.DateRange = GetDateRange(startDate, endDate);
 
@@ -124,12 +97,7 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult MsComissionSummaryForOthers(int agentId, string startDate, string endDate)
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_report_msv_commission_details_from_other",
-                                typeof(MsCommissionSummaryForOthersViewModel));
-
-            const string printLink = "/MerchantServicesReports/PrintCommissionSummaryOther";
-
-            var model = GetReportModel(columnsConfig, printLink, "sp_report_msv_commission_details_from_other");
+            var model = GetReportViewModel("sp_report_msv_commission_details_from_other", typeof(MsCommissionSummaryForOthersViewModel), Url.Action("PrintCommissionSummaryOther"));
 
             model.DateRange = GetDateRange(startDate, endDate);
 
@@ -140,11 +108,7 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult MsComissionSummaryTotal(int agentId, string startDate, string endDate)
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_report_msv_commission_details_by_totals", typeof(MsCommissionSummaryByTotalsViewModel));
-
-            const string printLink = "/MerchantServicesReports/PrintCommissionSummaryByTotals";
-
-            var model = GetReportModel(columnsConfig, printLink, "sp_report_msv_commission_details_by_totals");
+            var model = GetReportViewModel("sp_report_msv_commission_details_by_totals", typeof(MsCommissionSummaryByTotalsViewModel), Url.Action("PrintCommissionSummaryByTotals"));
 
             model.DateRange = GetDateRange(startDate, endDate);
 
@@ -156,12 +120,10 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult MsAccountStatus(int status = -1)
         {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), "sp_report_msv_portfolio_AccountsByType", typeof(MsAccountStatusViewModel));
+            var model = GetReportViewModel("sp_report_msv_portfolio_AccountsByType", typeof(MsAccountStatusViewModel), "");
 
-            const string printLink = "";
-
-            var model = GetReportModel(columnsConfig, printLink, "sp_report_msv_portfolio_AccountsByType");
             ViewBag.Status = status;
+
             return View(model);
         }
 
@@ -205,7 +167,7 @@ namespace VirtualOffice.Web.Controllers
                 _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "sp_report_msv_commission_summary", outPutDeserialized.GetCommaSeparatedTokens());
             }
 
-            SaveLastDateRangeInSession(startDate, endDate);
+            //SaveLastDateRangeInSession(startDate, endDate);
 
             var reportData = _virtualOfficeService.RunMsComissionSummary(GetLoggedUserId(), startDate, endDate);
 
@@ -227,7 +189,7 @@ namespace VirtualOffice.Web.Controllers
                 _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "sp_getTransactions", outPutDeserialized.GetCommaSeparatedTokens());
             }
 
-            SaveLastDateRangeInSession(startDate, endDate);
+            //SaveLastDateRangeInSession(startDate, endDate);
 
             var reportData = _virtualOfficeService.RunTransactionSummary(GetLoggedUserId(), startDate, endDate);
 
@@ -248,7 +210,7 @@ namespace VirtualOffice.Web.Controllers
                 _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "sp_getTransactions_details", outPutDeserialized.GetCommaSeparatedTokens());
             }
 
-            SaveLastDateRangeInSession(startDate, endDate);
+            //SaveLastDateRangeInSession(startDate, endDate);
 
             var reportData = _virtualOfficeService.RunTransactionsDetails(agentId, startDate, endDate, columnName);
 
@@ -272,7 +234,7 @@ namespace VirtualOffice.Web.Controllers
                     _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "sp_report_msv_commission_details_from_amex", outPutDeserialized.GetCommaSeparatedTokens());
                 }
 
-                SaveLastDateRangeInSession(startDate, endDate);
+                //SaveLastDateRangeInSession(startDate, endDate);
 
                 var agent = agentId.HasValue && agentId != 0 ? agentId.Value : GetLoggedUserId();
 
@@ -303,7 +265,7 @@ namespace VirtualOffice.Web.Controllers
                     _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "sp_report_msv_commission_details_from_visamc", outPutDeserialized.GetCommaSeparatedTokens());
                 }
 
-                SaveLastDateRangeInSession(startDate, endDate);
+                //SaveLastDateRangeInSession(startDate, endDate);
 
                 var agent = agentId.HasValue && agentId != 0 ? agentId.Value : GetLoggedUserId();
 
@@ -334,7 +296,7 @@ namespace VirtualOffice.Web.Controllers
                     _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "sp_report_msv_commission_details_from_other", outPutDeserialized.GetCommaSeparatedTokens());
                 }
 
-                SaveLastDateRangeInSession(startDate, endDate);
+                //SaveLastDateRangeInSession(startDate, endDate);
 
                 var agent = agentId.HasValue && agentId != 0 ? agentId.Value : GetLoggedUserId();
 
@@ -365,7 +327,7 @@ namespace VirtualOffice.Web.Controllers
                     _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "sp_report_msv_commission_details_by_totals", outPutDeserialized.GetCommaSeparatedTokens());
                 }
 
-                SaveLastDateRangeInSession(startDate, endDate);
+                //SaveLastDateRangeInSession(startDate, endDate);
 
                 var agent = agentId.HasValue && agentId != 0 ? agentId.Value : GetLoggedUserId();
 
@@ -576,12 +538,23 @@ namespace VirtualOffice.Web.Controllers
             return exportMode ? ExportReportsToExcel(procedureName, methodName, objParams) :
                               PrintReport(procedureName, methodName, objParams);
         }
+        public ActionResult PrintTransactionDetails(int? agentId, string startDate, string endDate, bool exportMode, string columnName = null)
+        {
+            var dateRange = GetDateRange(startDate, endDate);
+
+            var objParams = new object[] { agentId, dateRange.StartDate, dateRange.EndDate , columnName };
+
+            const string procedureName = "sp_getTransactions_details", methodName = "RunTransactionsDetails";
+
+            return exportMode ? ExportReportsToExcel(procedureName, methodName, objParams) :
+                              PrintReport(procedureName, methodName, objParams);
+        }
 
 
         #endregion
 
         #region Config
-     
+
         #endregion
     }
 }

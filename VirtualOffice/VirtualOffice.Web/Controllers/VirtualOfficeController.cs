@@ -59,25 +59,32 @@ namespace VirtualOffice.Web.Controllers
             return result;
         }
 
-        protected void SaveLastDateRangeInSession(DateTime startDate, DateTime endDate)
+        protected void SaveLastDateRangeInSession(DateTime startDate, DateTime endDate, string sessionName = null)
         {
-            var dateRange = new DateRange
-            {
-                StartDate = startDate,
-                EndDate = endDate
-            };
+            if (sessionName == null)
+                sessionName = Utils.DateRangeKey;
 
-            var currentRange = System.Web.HttpContext.Current.Session[Utils.DateRangeKey] as DateRange;
+            var dateRange = new DateRange { StartDate = startDate, EndDate = endDate };
+
+            var currentRange = System.Web.HttpContext.Current.Session[sessionName] as DateRange;
 
             if (currentRange.IsNull())
-                System.Web.HttpContext.Current.Session.Add(Utils.DateRangeKey, dateRange);
+                System.Web.HttpContext.Current.Session.Add(sessionName, dateRange);
             else
-                System.Web.HttpContext.Current.Session[Utils.DateRangeKey] = dateRange;
+                System.Web.HttpContext.Current.Session[sessionName] = dateRange;
         }
 
-        protected DateRange GetLastDateRangeInSession()
+        protected void SaveLastDateRangeInSession(string startDate, string endDate, string sessionName)
         {
-            var currentDateRange = System.Web.HttpContext.Current.Session[Utils.DateRangeKey] as DateRange;
+            SaveLastDateRangeInSession(DateTime.Parse(startDate), DateTime.Parse(endDate), sessionName);
+        }
+
+        protected DateRange GetLastDateRangeInSession(string storeProcedureName = null)
+        {
+            if (storeProcedureName == null)
+                storeProcedureName = Utils.DateRangeKey;
+
+            var currentDateRange = System.Web.HttpContext.Current.Session[storeProcedureName] as DateRange;
 
             var result = currentDateRange ?? new DateRange
             {
@@ -87,6 +94,7 @@ namespace VirtualOffice.Web.Controllers
 
             return result;
         }
+
 
         protected DateRange GetDateRange(string startDate, string endDate)
         {
@@ -139,8 +147,38 @@ namespace VirtualOffice.Web.Controllers
             return model;
         }
 
+        protected VirtualOfficeReportModel GetReportViewModel(string storeProcedureName, Type viewModelType, string printLink, Action<Dictionary<string, ColumnConfig>> columnConfigAction = null)
+        {
+            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), storeProcedureName, viewModelType);
+
+            var dateRange = GetLastDateRangeInSession(storeProcedureName);
+
+            if (columnConfigAction != null)
+                columnConfigAction(columnsConfig);
+
+            return new VirtualOfficeReportModel
+            {
+                ColumnsConfig = columnsConfig,
+                DateRange = dateRange,
+                PrintLink = printLink,
+                StoreProcedureName = storeProcedureName
+            };
+        }
+
+        protected void MarkColumnsAsGroupable(Dictionary<string, ColumnConfig> columnConfig, params string[] columns)
+        {
+            foreach (var column in columns)
+            {
+                if (columnConfig.ContainsKey(column))
+                {
+                    columnConfig[column].Groupable = true;
+                }
+            }
+        }
+
+
         #region Features and Config
-        
+
         [HttpPost]
         public virtual ActionResult UpdateColumnWidth(string storeProcedureName, string columnName, int width)
         {

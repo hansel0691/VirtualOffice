@@ -9,13 +9,14 @@ function PrintReport(exportMode) {
     var merchantId = $("#merchantId").val();
     var invoiceId = $("#invoiceId").val();
     var alertsMode = $("#alertsMode").val();
-    
+    var columnName = $("#columnName").val();
+    var agentId = $("#agentId").val();
+
     var exportUrl = printLink +"?";
     
     if (alertsMode != null) {
         exportUrl += "alertsMode=" + alertsMode + "&";
     }
-
     if (startDate != null) {
         exportUrl += "startDate=" + startDate + "&";
     }
@@ -27,6 +28,12 @@ function PrintReport(exportMode) {
     }
     if (invoiceId != null) {
         exportUrl += "invoiceId=" + invoiceId + "&";
+    }
+    if (columnName != null) {
+        exportUrl += "columnName=" + columnName + "&";
+    }
+    if (agentId != null) {
+        exportUrl += "agentId=" + agentId + "&";
     }
     exportUrl += "&exportMode=" + exportMode;
 

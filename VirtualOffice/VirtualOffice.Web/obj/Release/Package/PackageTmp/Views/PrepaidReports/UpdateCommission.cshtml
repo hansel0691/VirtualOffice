@@ -99,7 +99,6 @@
 
                                   if (column == "Selected")
                                       columnResult = columnResult.ClientTemplate("<input type='checkbox' #= Selected ? checked='checked' :'' #  onclick='CleanAllCheck()' />")
-                                          //.HeaderTemplate("<input id='selectAllChk' type='button' id='masterCheckBox' onclick='checkAll()' value='select all'/>")
                                           .HtmlAttributes(new { alignText = "center" }).Sortable(false);
 
                                   if (!string.IsNullOrEmpty(columnConfig.Link))

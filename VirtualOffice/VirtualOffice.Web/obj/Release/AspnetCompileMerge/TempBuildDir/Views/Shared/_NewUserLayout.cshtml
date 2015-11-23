@@ -121,7 +121,7 @@
                      @if (!user.IsFullcarga && userCategory != Category.Merchant) //Agent Users
                      {
                         <li class="dropdown">
-                            <a href="@Url.Action("Index","Reports")" class="dropdown-toggle" data-toggle="dropdown">Merchant Services Reports <span class="badge">@reportsCounter[DashboardItemType.MerchantServices]</span><b class="caret"></b></a>
+                            <a href="@Url.Action("Index","Reports")" class="dropdown-toggle" data-toggle="dropdown">Merchant Services Reports @*<span class="badge">@reportsCounter[DashboardItemType.MerchantServices]</span>*@<b class="caret"></b></a>
                             <ul class="dropdown-menu" style="min-width: 257px">
                                 <li><a href='@Url.Action("PortfolioSummary", "MerchantServicesReports")'><span class="badge"></span> Accounts</a></li>
                                 <li><a href='@Url.Action("SalesSummary", "MerchantServicesReports")'><span class="badge"></span> Commision Summary</a></li>
@@ -130,7 +130,7 @@
                         </li>
                      }
                         <li class="dropdown">
-                            <a href="@Url.Action("Index","Reports")" class="dropdown-toggle" data-toggle="dropdown"> Prepaid Reports<span class="badge">@reportsCounter[DashboardItemType.Prepaid]</span><b class="caret"></b></a>
+                            <a href="@Url.Action("Index","Reports")" class="dropdown-toggle" data-toggle="dropdown"> Prepaid Reports@*<span class="badge">@reportsCounter[DashboardItemType.Prepaid]</span>*@<b class="caret"></b></a>
 
                             <ul class="dropdown-menu">
                                 @if (userCategory != Category.Merchant)
@@ -153,7 +153,7 @@
                                     <li><a href='@Url.Action("SalesSummary", "PrepaidReports")'><span class="badge"></span> Prepaid Sales Summary</a></li>
                                     <li><a href='@Url.Action("IppBrowser", "PrepaidReports")'><span class="badge"></span> Ipp Monitor</a></li>
                                     <li><a href='@Url.Action("AccountRegister", "PrepaidReports")'><span class="badge"></span> Account Register</a></li>
-                                    <li><a href='@Url.Action("MerchantStatements", "PrepaidReports")'><span class="badge"></span> Merchant Statements</a></li>
+                                    @*<li><a href='@Url.Action("MerchantStatements", "PrepaidReports")'><span class="badge"></span> Merchant Statements</a></li>*@
                                 }
                                 else
                                 {

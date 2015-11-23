@@ -37,18 +37,6 @@ namespace VirtualOffice.Web.Controllers
         {
         }
 
-        private VirtualOfficeReportModel GetReportModel(string storeProcedureName, Type viewModelType, string printLink, Action<Dictionary<string, ColumnConfig>> columnConfigAction = null)
-        {
-            var columnsConfig = GetUserReportColumnsConfig(GetLoggedUserId(), storeProcedureName, viewModelType);
-
-            if (columnConfigAction != null)
-                columnConfigAction(columnsConfig);
-
-            var model = GetReportModel(columnsConfig, printLink, storeProcedureName);
-
-            return model;
-        }
-
         public ActionResult PortfolioSummary(int? alertsMode, int status = -1)
         {
             var printLink = "/PrepaidReports/PrintPortfolioSummary";
@@ -56,7 +44,7 @@ namespace VirtualOffice.Web.Controllers
             if (!alertsMode.HasValue || alertsMode == 0)
                 printLink += "?alertsMode=1";
 
-            var model = GetReportModel("sp_report_portfolio_summary", typeof(PrepaidPortfolioSummaryResultViewModel), printLink, a => MarkColumnsAsGroupable(a, "DistName"));
+            var model = GetReportViewModel("sp_report_portfolio_summary", typeof(PrepaidPortfolioSummaryResultViewModel), printLink, a => MarkColumnsAsGroupable(a, "DistName"));
 
             ViewBag.AlertsMode = alertsMode;
             ViewBag.StatusView = status;
@@ -67,7 +55,7 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult SalesSummary(DateTime? startDate = null, DateTime? endDate = null)
         {
-            var model = GetReportModel("sp_report_general_sales_summary", typeof(PrepaidSalesSummaryResultViewModel), "/PrepaidReports/PrintSalesSummary", AddLinksToPrepaidSalesColumnConfig);
+            var model = GetReportViewModel("sp_report_general_sales_summary", typeof(PrepaidSalesSummaryResultViewModel), Url.Action("PrintSalesSummary"), AddLinksToPrepaidSalesColumnConfig);
 
             if (startDate != null) model.DateRange.StartDate = (DateTime)startDate;
             if (endDate != null) model.DateRange.EndDate = (DateTime)endDate;
@@ -77,14 +65,14 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult AccountRegister()
         {
-            var model = GetReportModel("SP_ShowAccountRegister", typeof(PrepaidAccountRegisterViewModel), "/PrepaidReports/PrintAccountRegister", AddLinksToPrepaidSalesColumnConfig);
+            var model = GetReportViewModel("SP_ShowAccountRegister", typeof(PrepaidAccountRegisterViewModel), Url.Action("PrintAccountRegister"), AddLinksToPrepaidSalesColumnConfig);
 
             return View(model);
         }
 
-        public ActionResult SalesDetails(int merchantId)
+        public ActionResult SalesDetails(int merchantId, DateTime? startDate, DateTime? endDate)
         {
-            var model = GetReportModel("sp_report_sales_details", typeof(PrepaidSalesDetailsResultViewModel), "/PrepaidReports/PrintSalesDetails", AddLinksToPrepaidInvoiceColumnConfig);
+            var model = GetReportViewModel("sp_report_sales_details", typeof(PrepaidSalesDetailsResultViewModel), Url.Action("PrintSalesDetails"), AddLinksToPrepaidInvoiceColumnConfig);
 
             ViewBag.MerchantId = merchantId;
 
@@ -93,7 +81,7 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult InvoiceDetails(int invoiceId)
         {
-            var model = GetReportModel("sp_report_invoice_details", typeof(PrepaidInvoiceDetailsResultViewModel), "/PrepaidReports/PrintInvoiceDetails", AddLinksToPrepaidInvoiceColumnConfig);
+            var model = GetReportViewModel("sp_report_invoice_details", typeof(PrepaidInvoiceDetailsResultViewModel), Url.Action("PrintInvoiceDetails"), AddLinksToPrepaidInvoiceColumnConfig);
 
             ViewBag.InvoiceId = invoiceId;
 
@@ -102,21 +90,21 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult TodayTransactions()
         {
-            var model = GetReportModel("Sp_get_Today_Transactions", typeof(PrepaidTodayTransactionsViewModel), "/PrepaidReports/PrintTodayTransactions", a => MarkColumnsAsGroupable(a, "Cashier_ID"));
+            var model = GetReportViewModel("Sp_get_Today_Transactions", typeof(PrepaidTodayTransactionsViewModel), Url.Action("PrintTodayTransactions"), a => MarkColumnsAsGroupable(a, "Cashier_ID"));
 
             return View(model);
         }
 
         public ActionResult AccountsInCollection()
         {
-            var model = GetReportModel("SP_accountsInCollection", typeof(PrepaidAccountsInCollectionViewModel), "/PrepaidReports/PrintAccountInCollection", a => MarkColumnsAsGroupable(a, "Cashier_ID"));
+            var model = GetReportViewModel("SP_accountsInCollection", typeof(PrepaidAccountsInCollectionViewModel), Url.Action("PrintAccountInCollection"), a => MarkColumnsAsGroupable(a, "Cashier_ID"));
 
             return View(model);
         }
 
         public ActionResult IppBrowser(DateTime? startDate = null, DateTime? endDate = null)
         {
-            var model = GetReportModel("SP_ippBrowser", typeof(IppBrowserResultViewModel), "/PrepaidReports/PrintIppBrowser");
+            var model = GetReportViewModel("SP_ippBrowser", typeof(IppBrowserResultViewModel), Url.Action("PrintIppBrowser"));
             
             if (startDate != null) model.DateRange.StartDate = (DateTime)startDate;
             if (endDate != null) model.DateRange.EndDate = (DateTime)endDate;
@@ -126,14 +114,14 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult MerchantCreditLimits()
         {
-            var model = GetReportModel("sp_GetMerchantCreditLimits", typeof(MerchantCreditLimitResultViewModel), "/PrepaidReports/PrintMerchantCreditLimits");
+            var model = GetReportViewModel("sp_GetMerchantCreditLimits", typeof(MerchantCreditLimitResultViewModel), Url.Action("PrintMerchantCreditLimits"));
             
             return View(model);
         }
 
         public ActionResult MerchantCommissions()
         {
-            var model = GetReportModel("sp_GetMerchantCommissionsProfile", typeof(MerchantCommissionsResultViewModel), "/PrepaidReports/PrintMerchantComissions");
+            var model = GetReportViewModel("sp_GetMerchantCommissionsProfile", typeof(MerchantCommissionsResultViewModel), Url.Action("PrintMerchantComissions"));
             
             ViewBag.Merchants = GetMerchants().ToList();
 
@@ -142,7 +130,7 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult MerchantStatements()
         {
-            var model = GetReportModel("Sp_GetMerchantStatement", typeof(MerchantStatementResult), "/PrepaidReports/PrintMerchantStatements");
+            var model = GetReportViewModel("Sp_GetMerchantStatement", typeof(MerchantStatementResult), Url.Action("PrintMerchantStatements"));
             
             ViewBag.Merchants = GetMerchants().ToList();
 
@@ -151,13 +139,14 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult TransactionsSummary()
         {
-            var model = GetReportModel("Sp_TransactionsSummary", typeof(TransactionSummaryViewModel), "/PrepaidReports/PrintTransactionsSummary", a => MarkColumnsAsGroupable(a, "Store", "Store_Name", "Product", "Type", "Cahier_id"));
+            var model = GetReportViewModel("Sp_TransactionsSummary", typeof(TransactionSummaryViewModel), Url.Action("PrintMerchantStatements"), a => MarkColumnsAsGroupable(a, "Store", "Store_Name", "Product", "Type", "Cahier_id"));
+
             return View(model);
         }
 
         public ActionResult FullcargaStatements()
         {
-            var model = GetReportModel("SP_Fullcarga_Statetement", typeof(FullcargaStatementsViewModel), "/PrepaidReports/PrintFullcargaStatement", a =>
+            var model = GetReportViewModel("SP_Fullcarga_Statetement", typeof(FullcargaStatementsViewModel), Url.Action("PrintFullcargaStatement"), a =>
             {
                 MarkColumnsAsGroupable(a, "Billed_Name");
                 AddLinksToFullCargaInvoiceColumnConfig(a);
@@ -169,7 +158,7 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult FullcargaInvoiceDetails(int invoiceId)
         {
-            var model = GetReportModel("SP_Fullcarga_DetailInvoice", typeof(FullcargaInvoiceDetailViewModel), "/PrepaidReports/PrintInvoiceDetails");
+            var model = GetReportViewModel("SP_Fullcarga_DetailInvoice", typeof(FullcargaInvoiceDetailViewModel), Url.Action("PrintInvoiceDetails"));
             
             ViewBag.InvoiceId = invoiceId;
 
@@ -178,33 +167,36 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult FullcargaPrepaidSummary()
         {
-            var model = GetReportModel("SP_Fullcarga_PrepaidSalesSummary", typeof(FullcargaPrepaidSummaryViewModel), "/PrepaidReports/PrintFullcargaPrepaidSummary", a => MarkColumnsAsGroupable(a, "Store_Name", "Type"));
+            var model = GetReportViewModel("SP_Fullcarga_PrepaidSalesSummary", typeof(FullcargaPrepaidSummaryViewModel), Url.Action("PrintFullcargaPrepaidSummary"), a => MarkColumnsAsGroupable(a, "Store_Name", "Type"));
+
             return View(model);
         }
 
         private VirtualOfficeReportModel ReportAgentSummary()
         {
-            var model = GetReportModel("SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2", typeof(SalesAgentMerchantSalesResultViewModel), "/PrepaidReports/PrintReportAgentSummary", AddLinksToReportAgentSummaryColumnConfig);
+            var model = GetReportViewModel("SP_Pos_GetSalesAgentMerchantSales_WithACHNew_2", typeof(SalesAgentMerchantSalesResultViewModel), Url.Action("PrintReportAgentSummary"), AddLinksToReportAgentSummaryColumnConfig);
+
             return model;
         }
 
         public ActionResult MerchantBilling()
         {
-            var model = GetReportModel("SP_Send_AgentToBillMerchants", typeof(AgentToBillMerchantsViewModel), "/PrepaidReports/PrintMerchantBilling");
+            var model = GetReportViewModel("SP_Send_AgentToBillMerchants", typeof(AgentToBillMerchantsViewModel), "/PrepaidReports/PrintMerchantBilling");
             
             return View(model);
         }
 
         public ActionResult SendCommissionReport()
         {
-            var model = GetReportModel("SP_Send_CommissionReport", typeof(CommissionReportViewModel), "/PrepaidReports/PrintCommissionReport");
+            var model = GetReportViewModel("SP_Send_CommissionReport", typeof(CommissionReportViewModel), "/PrepaidReports/PrintCommissionReport");
 
             return View(model);
         }
 
         public ActionResult UpdateMerchantCommission()
         {
-            var model = GetReportModel("sp_child_list_by_agent", typeof(ChildrenByAgentViewModel), "", a => MarkColumnsAsGroupable(a, "Type"));
+            var model = GetReportViewModel("sp_child_list_by_agent", typeof(ChildrenByAgentViewModel), "", a => MarkColumnsAsGroupable(a, "Type"));
+
             return View(model);
         }
 
@@ -213,10 +205,10 @@ namespace VirtualOffice.Web.Controllers
             if (string.IsNullOrEmpty(selectedUsers))
                 return RedirectToAction("UpdateMerchantCommission");
             
-            var model = GetReportModel("sp_list_products_related ", typeof(CommissionByProductViewModel), "");
+            var model = GetReportViewModel("sp_list_products_related ", typeof(CommissionByProductViewModel), "");
 
-            //ViewBag.State = Json(new { Valid = true, Messages = new List<string>() });
             ViewBag.UsersCode = selectedUsers;
+
             return View(model);
         }
 
@@ -281,6 +273,8 @@ namespace VirtualOffice.Web.Controllers
                 _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "sp_report_general_sales_summary", outPutDeserialized.GetCommaSeparatedTokens());
             }
 
+            SaveLastDateRangeInSession(startDate, endDate, "sp_report_sales_details");
+
             var reportData = _virtualOfficeService.RunPrepaidSalesSummary(GetLoggedUserId(), startDate, endDate);
 
             var mappedResult = reportData.MapTo<IEnumerable<PrepaidSalesSummaryResult>, IEnumerable<PrepaidSalesSummaryResultViewModel>>();
@@ -318,6 +312,8 @@ namespace VirtualOffice.Web.Controllers
 
                 _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "SP_Fullcarga_PrepaidSalesSummary", outPutDeserialized.GetCommaSeparatedTokens());
             }
+
+            //SaveLastDateRangeInSession(startDate, endDate);
 
             var userIsMerchant = GetUserCategory() == Category.Merchant;
 
@@ -358,7 +354,7 @@ namespace VirtualOffice.Web.Controllers
                 {
                     var outPutDeserialized = new JavaScriptSerializer().Deserialize<List<string>>(outPut);
 
-                    _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "GetTodayTransactions", outPutDeserialized.GetCommaSeparatedTokens());
+                    _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "Sp_get_Today_Transactions", outPutDeserialized.GetCommaSeparatedTokens());
                 }
 
                 var userLevel = GetUserLevel();
@@ -450,6 +446,8 @@ namespace VirtualOffice.Web.Controllers
                     _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "SP_ippBrowser", outPutDeserialized.GetCommaSeparatedTokens());
                 }
 
+                //SaveLastDateRangeInSession(startDate, endDate);
+
                 var userLevel = GetUserLevel();
                 var agentId = userLevel != 0 ? GetLoggedUserId() : 0;
                 var merchantId = userLevel == 0 ? GetLoggedUserId() : 0;
@@ -480,6 +478,8 @@ namespace VirtualOffice.Web.Controllers
 
                     _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "SP_ShowAccountRegister", outPutDeserialized.GetCommaSeparatedTokens());
                 }
+
+                //SaveLastDateRangeInSession(startDate, endDate);
 
                 var agentType = GetLoggedAgentType();
 
@@ -540,6 +540,8 @@ namespace VirtualOffice.Web.Controllers
                     _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "Sp_GetMerchantStatement", outPutDeserialized.GetCommaSeparatedTokens());
                 }
 
+                //SaveLastDateRangeInSession(startDate, endDate);
+
                 var reportData = _virtualOfficeService.GetMerchantStatements(merchantId, startDate, endDate);
 
                 var mappedResult = reportData.MapTo<IEnumerable<MerchantStatementResult>, IEnumerable<MerchantStatementResultViewModel>>();
@@ -566,6 +568,8 @@ namespace VirtualOffice.Web.Controllers
 
                     _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "Sp_TransactionsSummary", outPutDeserialized.GetCommaSeparatedTokens());
                 }
+
+                //SaveLastDateRangeInSession(startDate, endDate);
 
                 var dateRange = GetDateRange(startDate, endDate);
 
@@ -597,6 +601,8 @@ namespace VirtualOffice.Web.Controllers
 
                     _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "SP_Fullcarga_Statetement", outPutDeserialized.GetCommaSeparatedTokens());
                 }
+
+                //SaveLastDateRangeInSession(startDate, endDate);
 
                 var dateRange = GetDateRange(startDate, endDate);
 
@@ -650,6 +656,8 @@ namespace VirtualOffice.Web.Controllers
                     _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "SP_Send_AgentToBillMerchants", outPutDeserialized.GetCommaSeparatedTokens());
                 }
 
+                //SaveLastDateRangeInSession(startDate, endDate);
+
                 var dateRange = GetDateRange(startDate, endDate);
 
                 var reportData = _virtualOfficeService.GetMerchantBilling(GetLoggedUserId(), dateRange.StartDate, dateRange.EndDate);
@@ -678,6 +686,8 @@ namespace VirtualOffice.Web.Controllers
 
                     _virtualOfficeService.UpdateUserReportOutPut(GetLoggedUserId(), "SP_Send_CommissionReport", outPutDeserialized.GetCommaSeparatedTokens());
                 }
+
+                //SaveLastDateRangeInSession(startDate, endDate);
 
                 var dateRange = GetDateRange(startDate, endDate);
 
@@ -759,7 +769,7 @@ namespace VirtualOffice.Web.Controllers
                         return new CommissionByProductViewModel
                         {
                             UserId = userCode,
-                            UserDescription = user.businessName,
+                            UserDescription = user.username,
 
                             Product = p.pro_description,
                             ProductCode = p.merproduct_sbt,
@@ -814,11 +824,10 @@ namespace VirtualOffice.Web.Controllers
 
         }
 
-        public ActionResult PrintSalesDetails(int merchantId, bool exportMode)
+        public ActionResult PrintSalesDetails(int merchantId, bool exportMode, string startDate, string endDate)
         {
-            var dateRange = GetLastDateRangeInSession();
 
-            var objParams = new object[] { merchantId, dateRange.StartDate, dateRange.EndDate };
+            var objParams = new object[] { merchantId, startDate, endDate };
 
             const string procedureName = "sp_report_sales_details", methodName = "RunPrepaidSalesDetails";
 
@@ -840,9 +849,15 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult PrintTodayTransactions(bool exportMode)
         {
-            var objParams = new object[] { GetLoggedUserId() };
+            var userLevel = GetUserLevel();
 
-            const string procedureName = "GetTodayTransactions", methodName = "RunTodayTransactions";
+            var agentId = userLevel != 0 ? GetLoggedUserId() : 0;
+
+            var merchantId = userLevel == 0 ? GetLoggedUserId() : 0;
+
+            var objParams = new object[] { agentId, merchantId };
+
+            const string procedureName = "Sp_get_Today_Transactions", methodName = "RunTodayTransactions";
 
             return exportMode ? ExportReportsToExcel(procedureName, methodName, objParams) :
                                 PrintReport(procedureName, methodName, objParams);
@@ -850,9 +865,15 @@ namespace VirtualOffice.Web.Controllers
 
         public ActionResult PrintMerchantCreditLimits(bool exportMode)
         {
-            var objParams = new object[] { GetLoggedUserId() };
+            var userLevel = GetUserLevel();
 
-            const string procedureName = "GetMerchantCreditLimits", methodName = "GetMerchantCreditLimits";
+            var agentId = userLevel != 0 ? GetLoggedUserId() : 0;
+
+            var merchantId = userLevel == 0 ? GetLoggedUserId() : 0;
+
+            var objParams = new object[] { agentId == 0 ? null : agentId as int?, merchantId == 0 ? null : merchantId as int?  };
+
+            const string procedureName = "sp_GetMerchantCreditLimits", methodName = "GetMerchantCreditLimits";
 
             return exportMode ? ExportReportsToExcel(procedureName, methodName, objParams) :
                                 PrintReport(procedureName, methodName, objParams);
@@ -862,7 +883,11 @@ namespace VirtualOffice.Web.Controllers
         {
             var dateRange = GetDateRange(startDate, endDate);
 
-            var objParams = new object[] { GetLoggedUserId(), dateRange.StartDate, dateRange.EndDate };
+            var userLevel = GetUserLevel();
+            var agentId = userLevel != 0 ? GetLoggedUserId() : 0;
+            var merchantId = userLevel == 0 ? GetLoggedUserId() : 0;
+
+            var objParams = new object[] { agentId, merchantId, dateRange.StartDate, dateRange.EndDate };
 
             const string procedureName = "SP_ippBrowser", methodName = "RunIppBrowser";
 
@@ -916,7 +941,9 @@ namespace VirtualOffice.Web.Controllers
         {
             var dateRange = GetDateRange(startDate, endDate);
 
-            var objParams = new object[] { GetLoggedUserId(), dateRange.StartDate, dateRange.EndDate };
+            var userIsMerchant = GetUserCategory() == Category.Merchant;
+
+            var objParams = new object[] { GetLoggedUserId(), userIsMerchant, dateRange.StartDate, dateRange.EndDate };
 
             const string procedureName = "Sp_TransactionsSummary", methodName = "GetTransactionsSummary";
 
@@ -1103,16 +1130,6 @@ namespace VirtualOffice.Web.Controllers
              };
         }
 
-        private void MarkColumnsAsGroupable(Dictionary<string, ColumnConfig> columnConfig, params string[] columns)
-        {
-            foreach (var column in columns)
-            {
-                if (columnConfig.ContainsKey(column))
-                {
-                    columnConfig[column].Groupable = true;
-                }
-            }
-        }
 
         private Dictionary<string, Dictionary<string, List<SalesAgentMerchantSalesResultViewModel>>> GetReportAgentSummaryData(IEnumerable<SalesAgentMerchantSalesResultViewModel> source)
         {
@@ -1205,8 +1222,8 @@ namespace VirtualOffice.Web.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var errors = newCommissions.Where(model => model.Actual > model.MyCommission).Select( model => string.Format(
-                                        "The commission you are trying to assign to the client {0} on the product {1} is higher than yours, please change it and try again.",
+                    var errors = newCommissions.Where(model => model.Actual > model.MyCommission || model.Actual < 0).Select( model => string.Format(
+                                        "The commission you are trying to assign to the client {0} on the product {1} it is invalid, please change it and try again.",
                                         model.UserId, model.ProductCode)).ToList();
                     if (errors.Any())
                         return Json(new { Valid = false, Messages = errors });
@@ -1264,8 +1281,10 @@ namespace VirtualOffice.Web.Controllers
         public ActionResult ReportAgentSummary(DateTime? startDate, DateTime? endDate)
         {
             var initDte = startDate == null ? new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1) : (DateTime)startDate;
+
             var endDte = endDate == null ? DateTime.Today : (DateTime)endDate;
-            SaveLastDateRangeInSession(initDte, endDte);
+
+            SaveLastDateRangeInSession(initDte, endDte, "sp_report_sales_details");
 
             var reportData = _virtualOfficeService.RunReportAgentSummary(GetLoggedUserId(), initDte, endDte);
 

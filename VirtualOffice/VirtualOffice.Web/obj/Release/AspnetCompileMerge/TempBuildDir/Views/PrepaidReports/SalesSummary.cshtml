@@ -69,7 +69,7 @@
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <a data-toggle="collapse" data-target="#collapse2" class="expand">Filter by Attributes <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                        <a data-toggle="collapse" data-target="#collapse2" class="expand">Select Date Range <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
                     </div>
                     <div class="panel-body panel-collapse collapse" id="collapse2">
 
@@ -97,24 +97,23 @@
                           .Name("Reports")
                                   .HtmlAttributes(new { @style = "text-align: left; height: 850px" }).EnableCustomBinding(true)
                           .Columns(col =>
-                                  {
-                                      foreach (var column in columnsCofig.Keys)
-                                      {
-                                          var columnConfig = columnsCofig[column];
-                                          var label = columnsCofig[column].Label;
-                                          var columnResult = col.Bound(column).Width(columnConfig.Width).Hidden(columnConfig.Hidden).Title(label);
+                          {
+                              foreach (var column in columnsCofig.Keys)
+                              {
+                                  var columnConfig = columnsCofig[column];
+                                  var label = columnsCofig[column].Label;
+                                  var columnResult = col.Bound(column).Width(columnConfig.Width).Hidden(columnConfig.Hidden).Title(label);
 
-                                          if (!string.IsNullOrEmpty(columnConfig.Link))
-                                          {
-                                              columnResult = columnResult.ClientTemplate(columnConfig.Link);
-                                          }
+                                  if (!string.IsNullOrEmpty(columnConfig.Link))
+                                      columnResult = columnResult.ClientTemplate(columnConfig.Link);
 
-                                          if (columnConfig.IsDate)
-                                              columnResult.Format("{0:dd/MM/yyyy}");
 
-                                          else if (columnConfig.IsNumeric)
-                                              columnResult.ClientFooterTemplate("#= kendo.format('{0:n2}', sum)#").Format("{0:n2}").HtmlAttributes(new {alignText = "right"});
-                                      }
+                                  if (columnConfig.IsDate)
+                                      columnResult.Format("{0:MM/dd/yyyy}");
+
+                                  else if (columnConfig.IsNumeric)
+                                      columnResult.ClientFooterTemplate("#= kendo.format('{0:n2}', sum)#").Format("{0:n2}").HtmlAttributes(new {alignText = "right"});
+                              }
 
                           })
                           .DataSource(ds => ds.Ajax()

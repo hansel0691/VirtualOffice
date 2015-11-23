@@ -840,6 +840,9 @@ namespace VirtualOffice.Service.Services
                 {"Others", commissionsOthers.ToString("C")},
                 {"Total", commissionsTotals.ToString("C")}
             };
+
+            endDate = DateTime.Today.Date;
+
             var resultUrls = new Dictionary<string, string>
             {
                 {"Visa/ MC/ Amex", "/MerchantServicesReports/MsComissionSummaryForVisaMasterCard?agentId="+ agentId +"&startDate="+startDate.ToString("MM/dd/yyyy")+"&endDate=" + endDate.ToString("MM/dd/yyyy")},

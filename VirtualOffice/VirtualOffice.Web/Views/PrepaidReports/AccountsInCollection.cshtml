@@ -90,7 +90,7 @@
                                   }
 
                                   if (columnConfig.IsDate)
-                                      columnResult.Format("{0:dd/MM/yyyy}");
+                                      columnResult.Format("{0:MM/dd/yyyy}");
 
                                   else if (columnConfig.IsNumeric)
                                       columnResult.ClientFooterTemplate("#= kendo.format('{0:n2}', sum)#").Format("{0:n2}").HtmlAttributes(new {alignText = "right"});

@@ -49,7 +49,7 @@ namespace VirtualOffice.Web.Controllers
                 var cellularNumber = model.CellPhone;
                 var businessStreet = model.BusinessStreet;
                 var businessCity = model.BusinessCity;
-                var businessState = model.BusinessStreet;
+                var businessState = model.BusinessState;
                 var businessZip = model.BusinessZip;
                 var merchant_MainContactPhone = model.GuarantorPhone;
                 var merchant_MainContact = model.GuarantorName;
